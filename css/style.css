@@ -210,13 +210,12 @@ h2#contact:before {
   right: 0;
   text-align: right;
 }
+#socialIcons .fab {
+  font-size: 26px;
+  margin-left:.5em;
+}
 
 .socialIcon {
-  width: 30px;
-  height: 30px;
-  margin: 0 0 0 3px;
-  display: inline-block;
-  background-image: url(../images/social.png);
   border: none;
 }
 
@@ -224,92 +223,18 @@ h2#contact:before {
   border: none;
 }
 
-#rssIcon {
-  background-position: 0 0;
-}
-
-#youTubeIcon {
-  background-position: -30px 0;
-}
-
-#vimeoIcon {
-  background-position: -60px 0;
-}
-
-#twitterIcon {
-  background-position: -90px 0;
-}
-
-#mySpaceIcon {
-  background-position: -120px 0;
-}
-
-#dribbbleIcon {
-  background-position: -150px 0;
-}
-
-#gplusIcon {
-  background-position: -180px 0;
-}
-
-#facebookIcon {
-  background-position: -210px 0
-}
-
-#flickrIcon {
-  background-position: -240px 0;
-}
-
-#favIcon {
-  background-position: -270px 0;
-}
-
-#linkedinIcon {
-  background-position: -300px 0;
-}
-
-#rssIcon:hover {
-  background-position: 0 -30px;
-}
-
-#youTubeIcon:hover {
-  background-position: -30px -30px;
-}
-
-#vimeoIcon:hover {
-  background-position: -60px -30px;
-}
-
 #twitterIcon:hover {
-  background-position: -90px -30px;
-}
-
-#mySpaceIcon:hover {
-  background-position: -120px -30px;
-}
-
-#dribbbleIcon:hover {
-  background-position: -150px -30px;
-}
-
-#gplusIcon:hover {
-  background-position: -180px -30px;
+  color: #1DA1F2;
 }
 
 #facebookIcon:hover {
-  background-position: -210px -30px;
+  color: #4267B2;
 }
-
-#flickrIcon:hover {
-  background-position: -240px -30px;
-}
-
-#favIcon:hover {
-  background-position: -270px -30px;
-}
-
 #linkedinIcon:hover {
-  background-position: -300px -30px;
+  color: #2867B2;
+}
+#githubIcon:hover {
+  color: black;
 }
 
 ul#skills {
