@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <title>Mathias Bosman</title>
+  <title>Mathias Bosman - personal resume</title>
   <meta name="viewport" content="initial-scale=1.0,width=device-width"/>
-  <link rel="stylesheet" href="./css/style.css" type="text/css" media="screen"/>
+  <meta name="description"
+        content="Home of my personal online resume. Read more about my education and work experience or find out what I have been working on."/>
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
   <link rel="stylesheet" href="./css/print.css" type="text/css" media="print"/>
   <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
@@ -13,48 +15,62 @@
   <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="Mathias Bosman - resume">
+  <meta property="og:site_name" content="Mathias Bosman">
+  <meta property="og:url" content="www.mathiasbosman.be">
+  <meta property="og:description" content="Home of my personal online resume. Read more about my education and work experience or find out what I have been working on.">
+  <meta property="og:type" content="profile">
+  <meta property="og:image" content="http://mathiasbosman.be/images/avatar.png">
 </head>
 <body>
 <div id="sticker"></div>
 <div id="wrapper">
-  <h2 id="titleName" class="sectionHead">Mathias Bosman</h2>
-  <div id="bio">
-    <h2>Web Designer &amp; Java Developer</h2>
-    <div id="socialIcons">
-      <a class="socialIcon" target="_blank" id="facebookIcon"
-         href="https://www.facebook.com/MathiasBosman"></a>
-      <a class="socialIcon" target="_blank" id="linkedinIcon"
-         href="https://www.linkedin.com/in/mathiasbosman"></a>
+  <main itemscope itemtype="http://schema.org/Person">
+    <h2 id="titleName" class="sectionHead" itemprop="name">
+      <span itemprop="givenName">Mathias</span>
+      <span itemprop="familyName">Bosman</span>
+    </h2>
+    <div id="bio">
+      <h2>Web Designer &amp; Java Developer</h2>
+      <div id="socialIcons">
+        <a class="socialIcon" target="_blank" id="facebookIcon" itemprop="url" rel="me"
+           href="https://www.facebook.com/MathiasBosman"></a>
+        <a class="socialIcon" target="_blank" id="linkedinIcon" itemprop="url" rel="me"
+           href="https://www.linkedin.com/in/mathiasbosman"></a>
+      </div>
+      <div class="flex flex-center">
+        <img itemprop="image" src="./images/avatar.png" id="avatar" alt="Mathias Bosman"/>
+        <p itemprop="description">
+          Known as "The little one", I'm a web designer and Java developer living in the
+          outskirts of <span itemprop="homeLocation">Dendermonde, Belgium</span>. I'm currently
+          full-time employed at the department of
+          Environment of the Flemish Government.<br/>
+          In my spare time you will find me on my (not so) super expensive Decathlon race bike.
+        </p>
+      </div>
     </div>
-    <div class="flex flex-center">
-      <img src="./images/avatar.png" id="avatar" alt="Avatar" title="Mathias Bosman"/>
-      <p>
-        Known as "The little one", I'm a web designer and Java developer living in the
-        outskirts of Dendermonde, Belgium. I'm currently full-time employed at the department of
-        Environment of the Flemish Government.<br/>
-        In my spare time you will find me on my (not so) super expensive Decathlon race bike.
-      </p>
-    </div>
-  </div>
+  </main>
   <div class="clear"></div>
-  <h2 id="tools" class="sectionHead">Skills</h2>
-  <ul id="skills">
-    <li id="skill2" class="s90"><span>PHP</span></li>
-    <li id="skill3" class="s90"><span>HTML + CSS</span></li>
-    <li id="skill4" class="s90"><span>jQuery</span></li>
-    <li id="skill5" class="s80"><span>Java</span></li>
-    <li id="skill7" class="s80"><span>SEO</span></li>
-    <li id="skill6" class="s70"><span>Photoshop</span></li>
-    <li id="skill9" class="s60"><span>WordPress Development</span></li>
-    <li id="skill10" class="s40"><span><del>Nitting &amp; sewing</del></span></li>
-  </ul>
+  <section itemscope itemtype="http://schema.org/ItemList">
+    <h2 id="tools" class="sectionHead" itemprop="name">Skills</h2>
+    <ul id="skills">
+      <li id="skill2" class="s90" itemprop="itemListElement"><span>PHP</span></li>
+      <li id="skill3" class="s90" itemprop="itemListElement"><span>HTML + CSS</span></li>
+      <li id="skill4" class="s90" itemprop="itemListElement"><span>jQuery</span></li>
+      <li id="skill5" class="s80" itemprop="itemListElement"><span>Java</span></li>
+      <li id="skill7" class="s80" itemprop="itemListElement"><span>SEO</span></li>
+      <li id="skill6" class="s70" itemprop="itemListElement"><span>Photoshop</span></li>
+      <li id="skill9" class="s60" itemprop="itemListElement"><span>WordPress Development</span></li>
+      <li id="skill10" class="s40" itemprop="itemListElement"><span><del>Nitting &amp; sewing</del></span></li>
+    </ul>
+  </section>
   <div class="clear"></div>
   <h2 id="clock" class="sectionHead">Experience</h2>
   <ul id="jobs">
     <li>
       <div class="details">
-        <h3>Flemish Government</h3>
-        <h4>Java Programmer</h4>
+        <h3 itemprop="worksFor" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">Flemish Government</span></h3>
+        <h4 itemprop="jobTitle">Java Programmer</h4>
         <h5>2018 - Present</h5>
       </div>
       <p>Currently I’m employed as a Java programmer for the department of Environment where I work
@@ -101,9 +117,9 @@
   <h2 id="learn" class="sectionHead">Education</h2>
   <ul id="schools">
     <li>
-      <div class="details">
-        <h3>University of Ghent</h3>
-        <h4>(B.A.Sc.) Multimedia &amp; Programming</h4>
+      <div class="details" itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
+        <h3 itemprop="name">University of Ghent</h3>
+        <h4 itemprop="description"><abbr title="Bachelor of Science">B.A.Sc.</abbr> Multimedia &amp; Programming</h4>
         <h5>2009 - 2012</h5>
       </div>
       <p>My main education in Computer Science with a specialty in Multimedia and in programming.

@@ -38,7 +38,7 @@ body {
 .flex.flex-center {
   align-items: center;
 }
-@media (max-width: 500px) {
+@media (max-width: 820px) {
   .flex {
     flex-direction: column;
     margin-top:1em;
@@ -209,10 +209,10 @@ h2#contact:before {
   padding: 40px 45px;
   max-width: 560px;
   background: #fbfbfb;
-  border: 1px solid #f3f3f3;
   border-radius: 8px;
+  border-style: solid;
   position: relative;
-  border-width: 0 1px 1px;
+  border-width: 0 1px 1px 1px;
   border-color: #fff #f3f3f3 #e8e8e8;
   line-height: 1.6em;
 }
@@ -522,97 +522,6 @@ li.s10 {
   margin-bottom: 8px;
 }
 
-/* ------------------------*/
-/*---CONTACT FORM STUFF---*/
-/* ----------------------*/
-#contactform input,
-#contactform textarea {
-  float: none;
-  width: 250px;
-  padding: 8px;
-  margin: 5px 0 10px 0;
-  background: #fcfcfc;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  color: #666;
-  font-size: 12px;
-}
-
-#contactform textarea {
-  height: 150px;
-  width: 380px;
-  margin-bottom: 20px;
-}
-
-#contactform input[type="submit"] {
-  width: inherit;
-  float: right;
-  clear: both;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  line-height: 30px;
-  font-size: 10px;
-  text-transform: uppercase;
-  height: 30px;
-  padding: 0 15px;
-  margin: 0;
-  background: #444;
-  border-radius: 3px;
-}
-
-#contactform input[type="submit"]:hover {
-  background: #000;
-}
-
-.required {
-  color: red;
-}
-
-#required {
-  float: left;
-  margin-top: 10px;
-  color: #bbb;
-  display: none;
-}
-
-#contactform input.error,
-#contactform textarea.error {
-  border: 1px solid red;
-  background: #ffd3c9
-}
-
-#the-quiz {
-  display: inline-block;
-  float: right;
-  margin: 0 15px 0 0;
-}
-
-#the-quiz > input {
-  margin: 0;
-  width: 50px !important;
-}
-
-#contactInfo {
-  float: left;
-  width: 40%;
-}
-
-#emailMessage {
-  float: right;
-  width: 57%;
-}
-
-#messageSent {
-  line-height: 40px;
-  font-size: 16px;
-  width: 100%;
-  text-align: center;
-  background: #5cd25c;
-  color: #fff;
-  display: none;
-}
-
 /* --------------------------*/
 /*---GENERAL LAYOUT STUFF---*/
 /* ------------------------*/
@@ -741,28 +650,4 @@ body.respond ul#recommends li > p {
   width: 100%;
   margin-bottom: 50px;
   margin-top: 10px;
-}
-
-body.respond #contactInfo,
-body.respond #emailMessage {
-  float: none;
-  width: 100%;
-}
-
-body.respond #contactform input[type="submit"] {
-  margin-right: 15px;
-  width: auto;
-}
-
-body.respond #contactform input,
-body.respond #contactform textarea {
-  width: 90%;
-}
-
-body.respond #copyright {
-  margin: 60px auto;
-}
-
-body.respond #messageSent {
-  margin-top: 20px;
 }

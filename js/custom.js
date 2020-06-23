@@ -4,9 +4,7 @@ $(document).ready(function(){
 	//VARIABLES
 	////////////////
 	var view = $(window),
-		html = $('html'),
-		body = $('body'),
-		quizAnswer = $('#the-quiz').data('answer');
+		body = $('body');
 
 	////////////////
 	//SKILLS ANIMATION
@@ -18,61 +16,7 @@ $(document).ready(function(){
 			$(this).children('span').fadeIn(600);
 		});	
 	});
-		
-	////////////////
-	//PRETTYPHOTO
-	////////////////
-	$('a[data-rel]').each(function() {
-    	$(this).attr('rel', $(this).data('rel'));
-	});
-	$("a[rel^='prettyPhoto']").prettyPhoto({
-		overlay_gallery: false,
-		social_tools: '',
-		deeplinking: false,
-		default_width: 500,
-		opacity:"1"
-	});
-	
-	////////////////
-	//FORM STUFF...
-	////////////////
-	$("#contactform #submit_btn").click(function() {  
-	
-		//RESET
-	    $("#contactform input, #contactform textarea").removeClass('error');
-	    		
-	    var quiz = $("#contactform input#quiz");
-		if(quiz.val() != quizAnswer){
-			quiz.addClass('error').focus();
-			return false;
-		}
-		
-		var name = $("#contactform input#name");
-		if (name.val() == "") {
-			name.addClass('error').focus();
-			return false;
-		}
-		var email = $("#contactform input#email");
-		if (email.val() == "") {
-	      	email.addClass('error').focus();
-	     	return false;
-		}		
-		var message = $("#contactform textarea#message");
-		if (message.val() == "") {
-	      	message.addClass('error').focus();
-	     	return false;
-		}
-	});
-	
-	////////////////
-	//SUCCESSFUL MESSAGE ALERT
-	////////////////
-	if(window.location.hash == "#contact") {
-  		$('#contactform').slideUp(800,function(){
-  			$('#messageSent').fadeIn(800);
-  		});	
-  	}
-	
+
 	////////////////
 	//CLONE NAME AND SOCIAL BUTTONS
 	////////////////
