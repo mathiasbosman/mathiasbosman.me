@@ -7,7 +7,7 @@ p {text-align: justify; font-size: 13px;}
 .clear {clear: both;}
 a {color: #444; text-decoration: none;}
 
-#sticker {display: none;}
+#sticker,#avatar {display: none;}
 
 h1,h2,h3,h4,h5,h6 {margin-bottom: 0px; font-weight: normal;}
 
