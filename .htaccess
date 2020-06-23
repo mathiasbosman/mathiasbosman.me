@@ -1,4 +1,6 @@
 RewriteEngine on
+RewriteCond %{HTTPS} on
+RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI}
 RewriteCond %{HTTP_HOST} ^www.mathiasbosman.be [NC]
 RewriteRule ^(.*)$ http://mathiasbosman.be/$1 [L,R=301,NC]
 ErrorDocument 404 /404.html
