@@ -3,9 +3,6 @@
 
 .flex {
   display: flex;
-}
-
-.flex.flex-center {
   align-items: center;
 }
 
@@ -13,6 +10,7 @@
   .flex {
     flex-direction: column;
     margin-top: 1em;
+    align-items: flex-start;
   }
 }
 
