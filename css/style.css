@@ -209,9 +209,9 @@ h2#contact:before {
   top: -35px;
   right: 0;
   text-align: right;
-}
-#socialIcons .fab {
   font-size: 26px;
+}
+#socialIcons .socialIcon:not(:first-child) {
   margin-left:.5em;
 }
 
