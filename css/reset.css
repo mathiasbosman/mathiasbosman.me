@@ -27,3 +27,7 @@ body {
   height: 100%;
   width: auto;
 }
+
+.hide {
+  display: none;
+}
