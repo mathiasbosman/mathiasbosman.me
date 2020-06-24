@@ -3,15 +3,15 @@ $(document).ready(function(){
 	////////////////	
 	//VARIABLES
 	////////////////
-	var view = $(window),
-		body = $('body');
+	const view = $(window),
+			body = $('body');
 
 	////////////////
 	//SKILLS ANIMATION
 	////////////////
 	$('ul#skills').addClass("ready");
 	$('ul#skills li').each(function(){
-		var i = $(this).index();
+		const i = $(this).index();
 		$(this).delay(100 * i).animate({right:"0%"},1000,function(){
 			$(this).children('span').fadeIn(600);
 		});	
@@ -46,7 +46,7 @@ $(document).ready(function(){
 		}
 		
 		//PARALLAX BACKGROUND STUFF
-		var scrollPosition = $(window).scrollTop() * .25;
+		const scrollPosition = $(window).scrollTop() * .25;
 		body.css({backgroundPosition:'0px -'+scrollPosition+'px'});
 	});
 		
@@ -58,6 +58,6 @@ $(document).ready(function(){
 	////////////////	
 	//WINDOW LOAD
 	////////////////
-	view.load(function(){ responsive(); });
-  	 
+	view.on('load', function() { responsive(); });
+
 });
