@@ -87,7 +87,7 @@ h2.sectionHead {
   text-transform: uppercase;
   position: relative;
 
-  &#titleName {
+  &.titleName {
     margin: 20px -60px 10px;
 
     &:before {
@@ -100,7 +100,7 @@ h2.sectionHead {
   }
 
   &#tools:before {
-    backgrond-position: left top;
+    background-position: left top;
   }
 
   &#learn:before {
@@ -143,14 +143,6 @@ h2.sectionHead {
   }
 }
 
-@media (max-width: $screen-break-point) {
-  .flex {
-    flex-direction: column;
-    margin-top: 1em;
-    align-items: flex-start;
-  }
-}
-
 .dark {
   text-decoration: none;
   border: none;
@@ -170,6 +162,7 @@ h2.sectionHead {
   height: 55px;
   box-shadow: 0 0 3px rgba(0, 0, 0, .3);
   z-index: 1000;
+  transition: 500ms;
 
   h2.sectionHead {
     &:before {
@@ -183,13 +176,13 @@ h2.sectionHead {
     padding: 0 0 0 8px;
   }
 
-  #socialIcons {
+  .socialIcons {
     top: 10px;
     right: 15px;
   }
 }
 
-#socialIcons {
+.socialIcons {
   width: 50%;
   height: 30px;
   position: absolute;
@@ -210,19 +203,19 @@ h2.sectionHead {
     }
   }
 
-  #twitterIcon:hover {
+  .twitterIcon:hover {
     color: #1DA1F2;
   }
 
-  #facebookIcon:hover {
+  .facebookIcon:hover {
     color: #4267B2;
   }
 
-  #linkedinIcon:hover {
+  .linkedinIcon:hover {
     color: #2867B2;
   }
 
-  #githubIcon:hover {
+  .githubIcon:hover {
     color: black;
   }
 }
@@ -283,15 +276,8 @@ ul#skills {
   margin: 0;
   width: 100%;
   overflow: hidden;
-  background: url(../images/loading.gif) no-repeat center 30%;
-
-  &.ready {
-    background: none;
-  }
 
   li {
-    position: relative;
-    right: 100%;
     background-color: $font-color;
     color: #fff;
     font: bold 9px/20px sans-serif;
@@ -299,35 +285,14 @@ ul#skills {
     margin-bottom: 3px;
     padding: 3px 1.1428571428571428% 0;
     text-transform: uppercase;
-    z-index: 1;
 
     &:hover {
       background: #222;
-    }
-
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 5px;
-      line-height: 26px;
-      width: 50px;
-      text-align: right;
-      color: #aaa;
-    }
-
-    span {
-      display: none;
     }
   }
 }
 $i: 10;
 @while $i <= 100 {
-  ul#skills li.s#{$i} {
-    &:after {
-      content: "#{$i}%";
-    }
-  }
   .s#{$i} {
     width: percentage($i/100);
   }
@@ -368,69 +333,71 @@ ul#jobs,ul#schools {
 }
 
 // responsive layout
-body.respond {
-  background: #fff;
-
-  #sticker {
-    display: none;
-  }
-
-  #wrapper {
-    margin: 0 auto;
-    padding: 30px;
+@media (max-width: $screen-break-point) {
+  body {
     background: #fff;
-    box-shadow: none;
-  }
 
-  h2{
-    &.sectionHead {
-      font-size: 15px;
-      letter-spacing: -1px;
-      margin: 40px 0 50px -60px;
-      padding-left: 8px;
+    #sticker {
+      display: none;
     }
-    &#titleName {
-      margin: 20px 0 10px -6Opx;
+
+    #wrapper {
+      margin: 0 auto;
+      padding: 30px;
+      background: #fff;
+      box-shadow: none;
     }
-  }
-  p {
-    text-align: left;
-  }
 
-  #socialIcons {
-    height: 30px;
-    margin-top: 20px;
-    position: relative;
-    right: auto;
-    text-align: left;
-    top: auto;
-    width: 100%;
-  }
-
-  #bio {
-    h2 {
-      font-size: 12px;
+    h2{
+      &.sectionHead {
+        font-size: 15px;
+        letter-spacing: -1px;
+        margin: 40px 0 50px -60px;
+        padding-left: 8px;
+      }
+      &.titleName {
+        margin: 20px 0 10px -6Opx;
+      }
     }
     p {
-      padding: 0;
-      background: #fff;
-      max-width: 100%;
-      border: none;
+      text-align: left;
     }
-  }
 
-  ul#jobs,  ul#schools {
-    li {
-      .details {
-        float: none;
-        width: 100%;
+    .socialIcons {
+      height: 30px;
+      margin-top: 20px;
+      position: relative;
+      right: auto;
+      text-align: left;
+      top: auto;
+      width: 100%;
+    }
+
+    #bio {
+      h2 {
+        font-size: 12px;
       }
-
       p {
-        float: none;
-        width: 100%;
-        margin-bottom: 50px;
-        margin-top: 10px;
+        padding: 0;
+        background: #fff;
+        max-width: 100%;
+        border: none;
+      }
+    }
+
+    ul#jobs,  ul#schools {
+      li {
+        .details {
+          float: none;
+          width: 100%;
+        }
+
+        p {
+          float: none;
+          width: 100%;
+          margin-bottom: 50px;
+          margin-top: 10px;
+        }
       }
     }
   }

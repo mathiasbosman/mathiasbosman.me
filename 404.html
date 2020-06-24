@@ -1,13 +1,15 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47485193-4"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
     gtag('config', 'UA-47485193-4');
   </script>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -16,7 +18,6 @@
   <meta name="description"
         content="404 page - the requested content was not found"/>
   <link rel="stylesheet" href="/css/main.css" type="text/css" media="screen"/>
-  <link rel="stylesheet" href="/css/print.css" type="text/css" media="print"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -26,20 +27,13 @@
   <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-<div id="sticker"></div>
 <div id="wrapper">
-  <h2 id="titleName" class="sectionHead">Mathias Bosman</h2>
+  <h2 class="sectionHead titleName">Mathias Bosman</h2>
   <div id="bio">
     <h2>Web Designer &amp; Java Developer</h2>
-    <div id="socialIcons">
-      <a class="socialIcon" target="_blank" id="facebookIcon"
-         href="https://www.facebook.com/MathiasBosman"></a>
-      <a class="socialIcon" target="_blank" id="linkedinIcon"
-         href="https://www.linkedin.com/in/mathiasbosman"></a>
-    </div>
     <div class="flex">
       <p>
-      <span class="dark">404</span> Page not found!<br/>
+        <span class="dark">404</span> Page not found!<br/>
         The page you requested could not be found!
         Please return to <a href="https://mathiasbosman.be">the home page</a>.
       </p>
@@ -47,8 +41,5 @@
   </div>
   <div class="clear"></div>
 </div>
-<script src="/js/jquery.js"></script>
-<script src="/js/backPosition.js"></script>
-<script src="/js/custom.js"></script>
 </body>
 </html>
