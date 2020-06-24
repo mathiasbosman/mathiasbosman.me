@@ -7,8 +7,8 @@ jobs:
     name: Deploy host
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.1.0
-        name: Checkout V2.1.0
+      - uses: actions/checkout@v2
+        name: Checkout repo
         with:
           fetch-depth: 2
       - name: Upload to FTP
