@@ -66,7 +66,7 @@ h3 {
   font-size: 14px;
 }
 
-h2.sectionHead {
+h1.sectionHead, h2.sectionHead {
   &:before {
     content: "";
     position: absolute;
@@ -164,7 +164,7 @@ h2.sectionHead {
   z-index: 1000;
   transition: 500ms;
 
-  h2.sectionHead {
+  h1.sectionHead, h2.sectionHead {
     &:before {
       left: -40px;
       top: 5px;
@@ -357,7 +357,7 @@ ul#jobs,ul#schools {
       box-shadow: none;
     }
 
-    h2{
+    h1, h2{
       &.sectionHead {
         font-size: 15px;
         letter-spacing: -1px;
@@ -383,7 +383,7 @@ ul#jobs,ul#schools {
     }
 
     #bio {
-      h2 {
+      h1, h2 {
         font-size: 12px;
       }
       p {
