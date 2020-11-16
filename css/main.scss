@@ -176,13 +176,13 @@ h2.sectionHead {
     padding: 0 0 0 8px;
   }
 
-  .socialIcons {
+  .platformIcons {
     top: 10px;
     right: 15px;
   }
 }
 
-.socialIcons {
+.platformIcons {
   width: 50%;
   height: 30px;
   position: absolute;
@@ -191,7 +191,7 @@ h2.sectionHead {
   text-align: right;
   font-size: 26px;
 
-  .socialIcon {
+  .platformIcon {
     &:hover {
       border: none;
     }
@@ -363,7 +363,7 @@ ul#jobs,ul#schools {
       text-align: left;
     }
 
-    .socialIcons {
+    .platformIcons {
       height: 30px;
       margin-top: 20px;
       position: relative;
