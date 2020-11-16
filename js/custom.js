@@ -7,3 +7,12 @@ window.onscroll = function () {
     sticker.style.top = "-60px";
   }
 }
+
+function scrollViewTo(element, behavior) {
+  let href = element.getAttribute('href');
+  let targetId = href.replace('#', '');
+  document.getElementById(targetId).scrollIntoView({
+    behavior: behavior ? behavior : "auto"
+  });
+  return false;
+}
