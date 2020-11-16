@@ -220,6 +220,30 @@ h2.sectionHead {
   }
 }
 
+.card {
+  clear: left;
+  margin: 40px auto;
+  padding: 40px 45px;
+  max-width: 560px;
+  background: #fbfbfb;
+  border-radius: 8px;
+  border-style: solid;
+  position: relative;
+  border-width: 0 1px 1px 1px;
+  border-color: #fff #f3f3f3 #e8e8e8;
+  line-height: 1.6em;
+
+  a {
+    @extend .dark;
+
+    &:hover {
+      text-decoration: none;
+      color: #fff;
+      background: #222;
+    }
+  }
+}
+
 #bio {
   position: relative;
 
@@ -228,28 +252,13 @@ h2.sectionHead {
   }
 
   p {
-    clear: left;
-    margin: 40px auto;
-    padding: 40px 45px;
-    max-width: 560px;
-    background: #fbfbfb;
-    border-radius: 8px;
-    border-style: solid;
-    position: relative;
-    border-width: 0 1px 1px 1px;
-    border-color: #fff #f3f3f3 #e8e8e8;
-    line-height: 1.6em;
-
-    a {
-      @extend .dark;
-
-      &:hover {
-        text-decoration: none;
-        color: #fff;
-        background: #222;
-      }
-    }
+    @extend .card;
   }
+}
+
+p.warning {
+  @extend .card;
+  background: #fdf5ef;
 }
 
 #avatar {
