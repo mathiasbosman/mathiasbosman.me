@@ -1,5 +1,5 @@
 name: Publish Website
-on: push
+on: release
 jobs:
   Publish:
     name: Build & Upload
