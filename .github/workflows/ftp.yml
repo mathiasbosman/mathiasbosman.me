@@ -1,8 +1,8 @@
-name: Compile SCSS
+name: Build NPM
 on: push
 jobs:
-  FTP-Deploy-Action:
-    name: Deploy host
+  Compile:
+    name: Node setup & Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
