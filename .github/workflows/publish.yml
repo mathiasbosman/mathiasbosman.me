@@ -24,4 +24,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ${{ secrets.FTP_PROTOCOL }}
-          server-dir: './domains/mathiasbosman.be/public_html'
+          server-dir: './domains/mathiasbosman.be/public_html/'
