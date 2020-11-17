@@ -1,9 +1,16 @@
 {
   "dependencies": {
-    "node-sass": "4.14.1"
+    "node-sass": "^5.0.0"
   },
   "scripts": {
     "scss": "node-sass --output-style compressed css/ -o css/",
     "build": "npm run scss"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:mathiasbosman/cv.git"
+  },
+  "homepage": "https://github.com/mathiasbosman/cv",
+  "license": "MIT",
+  "description": "Personal resume"
 }
