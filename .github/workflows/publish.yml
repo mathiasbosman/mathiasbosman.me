@@ -2,7 +2,7 @@ name: Publish Website
 on: push
 jobs:
   Publish:
-    name: Node setup & build
+    name: Build & Upload
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -24,3 +24,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ${{ secrets.FTP_PROTOCOL }}
+          server-dir: './domains/mathiasbosman.be/public_html'
