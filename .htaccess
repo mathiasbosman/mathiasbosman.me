@@ -1,8 +1,6 @@
 RewriteEngine on
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-RewriteCond %{HTTP_HOST} ^www.mathiasbosman.be [NC]
-RewriteRule ^(.*)$ https://mathiasbosman.be/$1 [L,R=301,NC]
 ErrorDocument 404 /404.html
 <ifModule mod_gzip.c>
 mod_gzip_on Yes
