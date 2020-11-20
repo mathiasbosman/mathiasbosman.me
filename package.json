@@ -6,7 +6,7 @@
   "scripts": {
     "scss": "node-sass --output-style compressed css/ -o css/",
     "minifyJs": "uglifyjs-folder js --output js/all.min.js --pattern \"**/*.js,!**/*min.js\"",
-    "build": "npm run scss minifyJs"
+    "build": "npm run scss & npm run minifyJs"
   },
   "repository": {
     "type": "git",
