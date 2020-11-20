@@ -1,10 +1,12 @@
 {
   "dependencies": {
-    "node-sass": "^5.0.0"
+    "node-sass": "^5.0.0",
+    "uglifyjs-folder": "^2.0.0"
   },
   "scripts": {
     "scss": "node-sass --output-style compressed css/ -o css/",
-    "build": "npm run scss"
+    "minifyJs": "uglifyjs-folder js --output js/all.min.js --pattern \"**/*.js,!**/*min.js\"",
+    "build": "npm run scss minifyJs"
   },
   "repository": {
     "type": "git",
