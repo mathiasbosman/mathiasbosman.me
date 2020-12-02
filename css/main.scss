@@ -409,5 +409,12 @@ ul#jobs,ul#schools {
         }
       }
     }
+
+    .warning {
+      border-radius: 0;
+      padding: .5em;
+      margin: 1em auto;
+      max-width: 100%;
+    }
   }
 }
