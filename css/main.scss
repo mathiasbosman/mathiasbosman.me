@@ -332,15 +332,6 @@ ul#jobs,ul#schools {
   }
 }
 
-#copyright {
-  text-align: center;
-  font: bold 10px sans-serif;
-  text-transform: uppercase;
-  color: #aaa;
-  margin: 20px 0 60px;
-  text-shadow: 1px 1px 1px #fff;
-}
-
 // responsive layout
 @media (max-width: $screen-break-point) {
   body {
