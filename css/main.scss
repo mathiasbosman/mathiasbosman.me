@@ -7,16 +7,16 @@ $link-color: #444;
   margin: 0;
   padding: 0;
   -moz-transition-property: background-color;
-  -moz-transition-duration: 0.20s;
+  -moz-transition-duration: .2s;
   -moz-transition-timing-function: linear;
   -webkit-transition-property: background-color;
-  -webkit-transition-duration: 0.20s;
+  -webkit-transition-duration: .2s;
   -webkit-transition-timing-function: linear;
   -o-transition-property: background-color;
-  -o-transition-duration: 0.20s;
+  -o-transition-duration: .2s;
   -o-transition-timing-function: linear;
   transition-property: background-color;
-  transition-duration: 0.20s;
+  transition-duration: .2s;
   transition-timing-function: linear;
 }
 
@@ -58,11 +58,11 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
+  font-weight: 400;
 }
 
 h3 {
-  font-weight: bold;
+  font-weight: 600;
   font-size: 14px;
 }
 
@@ -78,7 +78,7 @@ h1.sectionHead, h2.sectionHead {
   }
 
   clear: both;
-  font: bold 20px/12px 'verdana', sans-serif;
+  font: bold 20px/12px verdana, sans-serif;
   margin: 60px -60px;
   border-left: 52px solid $font-color;
   color: $font-color;
@@ -162,7 +162,7 @@ h1.sectionHead, h2.sectionHead {
   height: 55px;
   box-shadow: 0 0 3px rgba(0, 0, 0, .3);
   z-index: 1000;
-  transition: 500ms;
+  transition: .5s;
 
   h1.sectionHead, h2.sectionHead {
     &:before {
@@ -204,19 +204,19 @@ h1.sectionHead, h2.sectionHead {
   }
 
   .twitterIcon:hover {
-    color: #1DA1F2;
+    color: #1da1f2;
   }
 
   .facebookIcon:hover {
-    color: #4267B2;
+    color: #4267b2;
   }
 
   .linkedinIcon:hover {
-    color: #2867B2;
+    color: #2867b2;
   }
 
   .githubIcon:hover {
-    color: black;
+    color: #000;
   }
 }
 
