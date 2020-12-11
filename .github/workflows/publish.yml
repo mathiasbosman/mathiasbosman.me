@@ -44,3 +44,4 @@ jobs:
             - .{editorconfig,npmrc}
             - *.{md,json}
             - **/*.scss
+            - **/!(all.min).js
