@@ -350,9 +350,13 @@ ul#jobs,ul#schools {
 
     main {
       margin: 0 auto;
-      padding: 30px;
+      padding: 0 60px 30px 30px;
       background: #fff;
       box-shadow: none;
+    }
+
+    footer {
+      margin: 0 auto;
     }
 
     h1, h2{
