@@ -2,6 +2,7 @@
 @import "./fontawesome/brands.scss";
 
 $screen-break-point: 820px;
+$wrapping-width: 700px;
 $font-color: #444;
 $font-size: 13px;
 $link-color: #444;
@@ -125,10 +126,6 @@ h1.sectionHead, h2.sectionHead {
   &#contact:before {
     background-position: right bottom;
   }
-}
-
-.clear {
-  clear: both;
 }
 
 .flex {
@@ -275,13 +272,20 @@ p.warning {
   }
 }
 
-#wrapper {
-  max-width: 700px;
+main {
+  max-width: $wrapping-width;
   margin: 60px auto 30px;
   padding: 60px;
   background: #fff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
-  position: relative;
+}
+
+footer {
+  max-width: $wrapping-width;
+  margin: .5em auto;
+  text-align: center;
+  color: #999;
+  font-size: .8em;
 }
 
 ul#skills {
@@ -344,7 +348,7 @@ ul#jobs,ul#schools {
       display: none;
     }
 
-    #wrapper {
+    main {
       margin: 0 auto;
       padding: 30px;
       background: #fff;

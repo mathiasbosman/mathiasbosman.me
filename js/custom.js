@@ -16,3 +16,5 @@ function scrollViewTo(element, behavior) {
   });
   return false;
 }
+
+document.getElementById("year").innerText = new Date().getFullYear().toString();

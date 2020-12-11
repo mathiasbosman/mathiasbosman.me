@@ -11,11 +11,15 @@ body {
   padding: 1em;
 }
 
-#wrapper {
+main {
   margin: 0;
   padding: 0;
   background: #fff;
   box-shadow: none;
+}
+
+footer {
+  display: none;
 }
 
 ul {
@@ -32,10 +36,6 @@ li {
 p {
   text-align: justify;
   font-size: 13px;
-}
-
-.clear {
-  clear: both;
 }
 
 a {
