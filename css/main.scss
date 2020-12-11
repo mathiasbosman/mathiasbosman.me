@@ -83,7 +83,7 @@ h1.sectionHead, h2.sectionHead {
 
   clear: both;
   font: bold 20px/12px verdana, sans-serif;
-  margin: 60px -60px;
+  margin: 2em 0 1em -60px;
   border-left: 52px solid $font-color;
   color: $font-color;
   padding: 1px 0 0 8px;
@@ -137,6 +137,7 @@ h1.sectionHead, h2.sectionHead {
     flex: 1;
   }
 }
+
 @for $i from 1 through 10 {
   .flex-grow-#{$i} {
     flex-grow: #{$i};
@@ -307,6 +308,7 @@ ul#skills {
     }
   }
 }
+
 $i: 10;
 @while $i <= 100 {
   .s#{$i} {
@@ -320,21 +322,26 @@ $i: 10;
   margin-bottom: 8px;
 }
 
-ul#jobs,ul#schools {
+ul#jobs, ul#schools {
   margin: 0;
   list-style: none;
 
   li {
     margin: 0 0 2.5em 0;
-    clear: both;
+    @extend .flex;
+    align-items: flex-start;
 
-    .details {
-      float: left;
-      width: 40%;
+    aside {
+      @extend .flex-grow-2;
 
       h5 {
         font-style: italic;
       }
+    }
+
+    p {
+      @extend .flex-grow-3;
+      padding-left: 1em;
     }
   }
 }
@@ -359,17 +366,19 @@ ul#jobs,ul#schools {
       margin: 0 auto;
     }
 
-    h1, h2{
+    h1, h2 {
       &.sectionHead {
         font-size: 15px;
         letter-spacing: -1px;
-        margin: 40px 0 50px -60px;
+        margin: 3em 0 1em -60px;
         padding-left: 8px;
       }
+
       &.titleName {
         margin: 20px 0 10px -6Opx;
       }
     }
+
     p {
       text-align: left;
     }
@@ -388,6 +397,7 @@ ul#jobs,ul#schools {
       h1, h2 {
         font-size: 12px;
       }
+
       p {
         padding: 0;
         background: #fff;
@@ -395,23 +405,6 @@ ul#jobs,ul#schools {
         border: none;
       }
     }
-
-    ul#jobs,  ul#schools {
-      li {
-        .details {
-          float: none;
-          width: 100%;
-        }
-
-        p {
-          float: none;
-          width: 100%;
-          margin-bottom: 50px;
-          margin-top: 10px;
-        }
-      }
-    }
-
     .warning {
       border-radius: 0;
       padding: .5em;
