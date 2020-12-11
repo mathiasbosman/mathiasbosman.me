@@ -38,8 +38,7 @@ jobs:
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
           exclude: .git*
             - .git*/**
-            - .gitignore*/**
-            - .gitignore*
             - **/.git*/**
-            - **/*.{md,scss,editorconfig,npmrc}
-            - **/*(package)**/*.json
+            - .{editorconfig,npmrc}
+            - *.{md,json}
+            - **/*.scss
