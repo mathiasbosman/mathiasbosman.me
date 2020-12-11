@@ -1,4 +1,5 @@
 # Mathias Bosman - CV
+![Build](https://github.com/mathiasbosman/cv/workflows/Build%20NPM/badge.svg)
 
 Simple HTML website with a bit of Github automatisatio magic containing my personal resume
 on [mathiasbosman.be](http://mathiasbosman.be).
