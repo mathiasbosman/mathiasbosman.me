@@ -36,7 +36,13 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ${{ secrets.FTP_PROTOCOL }}
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
-          exclude: .git
-            - **/*.{git,scss,gitignore,md,npmrc}
-            - **/*.package.json
-            - **/*.package-lock.json
+          exclude: .git*
+            - .git*/**
+            - .gitignore*/**
+            - .gitignore*
+            -  **/.git*/**
+            - *.scss
+            - **/*.scss
+            - '.npmrc'
+            - '.package.json'
+            - '.package-lock.json'
