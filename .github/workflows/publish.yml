@@ -40,6 +40,6 @@ jobs:
             - .git*/**
             - .gitignore*/**
             - .gitignore*
-            - '**/.git*/**'
-            - '**/*.{md,scss,editorconfig,npmrc}'
-            - '**/*(package)**/*.json''
+            - **/.git*/**
+            - **/*.{md,scss,editorconfig,npmrc}
+            - **/*(package)**/*.json
