@@ -36,7 +36,7 @@ The workflow also takes care of creating the sitemap and adding a verification f
 ### Google site verification
 
 One of the methods to verify your website with Google is the presence of a certain html file in the
-root folder of the website. This is an HTML file. The name of the file is the actual verification
+root folder of the website. The name of the file is the actual verification
 code. For example: `someCool404Code.html`. The content should reference this file:
 
 ```text
