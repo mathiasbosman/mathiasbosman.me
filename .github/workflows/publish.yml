@@ -15,7 +15,7 @@ jobs:
         uses: cicirello/generate-sitemap@v1.6.1
         with:
           base-url-path: https://www.mathiasbosman.be
-      - name: Create google verification
+      - name: Create Google verification
         env:
           GOOGLE_CODE: ${{ secrets.GOOGLE_VERIFICATION_CODE }}
         run: |
