@@ -1,5 +1,5 @@
 name: Build NPM
-on: push
+on: [push, pull_request]
 jobs:
   Compile:
     name: Node setup & Build
