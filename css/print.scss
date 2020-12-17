@@ -18,6 +18,10 @@ main {
   box-shadow: none;
 }
 
+section {
+  page-break-inside: avoid;
+}
+
 ul {
   margin: 0 0 0 15px;
   position: relative;
