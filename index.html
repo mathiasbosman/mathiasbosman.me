@@ -57,12 +57,12 @@
   </div>
 </div>
 <main>
-  <section itemscope itemtype="http://schema.org/Person">
+  <section id="bio" itemscope itemtype="http://schema.org/Person">
     <h1 class="titleName sectionHead" itemprop="name">
       <span itemprop="givenName">Mathias</span>
       <span itemprop="familyName">Bosman</span>
     </h1>
-    <div id="bio">
+    <div>
       <h2>Web designer, Java developer &amp; network engineer</h2>
       <div class="platformIcons">
         <a class="platformIcon linkedinIcon" target="_blank" itemprop="url" rel="noreferrer"
@@ -82,15 +82,15 @@
           is my personal resume.. online! Currently I am full-time employed at the Department of
           Environment of the Flemish Government.<br/>
           In my spare time you will find me on my (not so) super expensive Decathlon race bike or
-          setting up some network somewhere. <span class="hideOnPrint">If you would like to hire me
-          for the latter you can <a href="#contact" onclick="return scrollViewTo(this,'smooth');">contact me</a>.</span>
+          setting up some network somewhere. If you would like to hire me
+          for the latter you can <a href="#contact" onclick="return scrollViewTo(this,'smooth');">contact me</a>.
         </p>
       </div>
     </div>
   </section>
-  <section>
-    <h2 id="tools" class="sectionHead">Skills</h2>
-    <ul id="skills">
+  <section id="skills">
+    <h2 class="sectionHead tools">Skills</h2>
+    <ul class="skills">
       <li class="s100"><span>Being awesome</span></li>
       <li class="s90"><span>HTML + CSS (HTML5, SASS, Mobile development, ...)</span></li>
       <li class="s90"><span>Version Control (Git, SVN)</span></li>
@@ -105,8 +105,8 @@
       <li class="s40"><span><del>Nitting &amp; sewing</del></span></li>
     </ul>
   </section>
-  <section>
-    <h2 id="clock" class="sectionHead">Experience</h2>
+  <section id="experience">
+    <h2 class="sectionHead clock">Experience</h2>
     <ul id="jobs">
       <li>
         <aside>
@@ -160,9 +160,9 @@
       </li>
     </ul>
   </section>
-  <section>
-    <h2 id="learn" class="sectionHead">Education</h2>
-    <ul id="schools">
+  <section id="education">
+    <h2 class="sectionHead learn">Education</h2>
+    <ul class="schools">
       <li>
         <aside>
           <h3>University of Ghent</h3>
@@ -191,16 +191,16 @@
       </li>
     </ul>
   </section>
-  <section>
-    <h2 id="ribbon" class="sectionHead">Honors &amp; Awards</h2>
-    <ul id="honorsAwards">
+  <section id="honorsAwards">
+    <h2 class="sectionHead ribbon">Honors &amp; Awards</h2>
+    <ul>
       <li>
         2011 <a rel="noreferrer" href="https://www.cera-award.be/" target="_blank">CERA Award</a>
       </li>
     </ul>
   </section>
-  <section class="hideOnPrint">
-    <h2 id="contact" class="sectionHead">Contact me</h2>
+  <section id="contact">
+    <h2 class="envelope sectionHead">Contact me</h2>
     <p>
       If you would like to setup a small to medium sized network at your home or office you can
       contact me below!
@@ -216,7 +216,7 @@
     </p>
   </section>
 </main>
-<footer class="hideOnPrint">&copy;<span id="year">#</span> Mathias Bosman</footer>
+<footer>&copy;<span id="year">#</span> Mathias Bosman</footer>
 <script src="./js/all.min.js"></script>
 </body>
 </html>
