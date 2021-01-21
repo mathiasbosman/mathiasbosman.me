@@ -11,25 +11,24 @@ jobs:
         name: Checkout repo
         with:
           fetch-depth: 2
-      - name: Generate sitemap
-        uses: cicirello/generate-sitemap@v1.6.1
-        with:
-          base-url-path: https://www.mathiasbosman.be
-      - name: Create Google verification
-        env:
-          GOOGLE_CODE: ${{ secrets.GOOGLE_VERIFICATION_CODE }}
-        run: |
-          echo "google-site-verification: $GOOGLE_CODE.html" > "$GOOGLE_CODE".html
       - name: Setup Node.js 12
         uses: actions/setup-node@v2-beta
         with:
           node-version: '12'
       - name: Build project
         run: |
-          npm install
-          npm run build
-          npm run clean
           npm install --production
+          npm run build
+      - name: Generate sitemap
+        uses: cicirello/generate-sitemap@v1.6.1
+        with:
+          path-to-root: build
+          base-url-path: https://www.mathiasbosman.be
+      - name: Create Google verification
+        env:
+          GOOGLE_CODE: ${{ secrets.GOOGLE_VERIFICATION_CODE }}
+        run: |
+          echo "./build/google-site-verification: $GOOGLE_CODE.html" > "$GOOGLE_CODE".html
       - name: Upload to FTP
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
@@ -38,6 +37,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ${{ secrets.FTP_PROTOCOL }}
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          local-dir: ./build/
           exclude: .git*
             - .git*/**
             - **/.git*/**
