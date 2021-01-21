@@ -18,6 +18,10 @@ main {
   box-shadow: none;
 }
 
+section {
+  page-break-inside: avoid;
+}
+
 ul {
   margin: 0 0 0 15px;
   position: relative;
@@ -84,53 +88,6 @@ h2.sectionHead {
   font: bold 22px serif;
 }
 
-ul#jobs,
-ul#schools {
-  margin: 0;
-  list-style: none;
-
-  li {
-    margin: 0 0 20px 0;
-    clear: both;
-
-    .details {
-      float: left;
-      width: 40%;
-    }
-
-    p {
-      float: right;
-      width: 75%;
-      margin-bottom: 25px;
-    }
-  }
-}
-
-ul#skills {
-  margin: 0;
-  width: 100%;
-  overflow: hidden;
-
-  li {
-    background-color: #507ea1;
-    color: #fff;
-    font: bold 9px/20px sans-serif;
-    letter-spacing: 1px;
-    margin-bottom: 3px;
-    padding: 0;
-    text-shadow: none;
-    text-transform: uppercase;
-  }
-}
-
-$i: 10;
-@while $i <= 100 {
-  .s#{$i} {
-    width: percentage($i/100);
-  }
-  $i: $i + 10;
-}
-
-.hideOnPrint {
+#contact, footer {
   display: none;
 }

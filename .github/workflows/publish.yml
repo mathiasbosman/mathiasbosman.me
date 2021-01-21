@@ -45,3 +45,4 @@ jobs:
             - *.{md,json}
             - **/*.scss
             - **/!(all.min).js
+            - LICENSE
