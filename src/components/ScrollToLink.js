@@ -13,7 +13,6 @@ class ScrollToLink extends React.Component {
   }
 
   scroll() {
-    console.log(this.state);
     document.getElementById(this.state.targetAnchor).scrollIntoView({
       behavior: this.state.behavior
     });
