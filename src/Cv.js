@@ -7,7 +7,7 @@ import Awards from "./containers/cv/Awards";
 import Contact from "./containers/cv/Contact";
 import Copyright from "./components/Copyright";
 
-function App() {
+function Cv() {
   return (
       <>
         <Sticker/>
@@ -26,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+export default Cv;

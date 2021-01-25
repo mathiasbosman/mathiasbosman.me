@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Cv from './Cv';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Cv />
   </React.StrictMode>,
   document.getElementById('root')
 );
