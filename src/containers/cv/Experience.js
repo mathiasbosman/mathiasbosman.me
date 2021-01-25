@@ -4,7 +4,7 @@ export default function Experience() {
   return (
       <section>
         <h2 id="tools" className="sectionHead">Skills</h2>
-        <ul id="skills">
+        <ul className="skills">
           <ExperienceElement percentage={100}>Being awesome</ExperienceElement>
           <ExperienceElement percentage={90}>HTML + CSS (HTML5, SASS, Mobile development, ...)</ExperienceElement>
           <ExperienceElement percentage={90}>Version Control (Git, SVN)</ExperienceElement>
