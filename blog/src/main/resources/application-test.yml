@@ -1,0 +1,9 @@
+logging:
+  level:
+    be:
+      DEBUG
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:7532/blog_db_ut
+    username: blog
+    password: admin_ut
