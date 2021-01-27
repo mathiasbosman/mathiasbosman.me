@@ -1,0 +1,10 @@
+version: "3"
+services:
+  cv-local-db-ut:
+    image: postgres:11-alpine
+    ports:
+      - 7654:5432
+    environment:
+      - POSTGRES_DB=cv_db_ut
+      - POSTGRES_USER=cv
+      - POSTGRES_PASSWORD=admin

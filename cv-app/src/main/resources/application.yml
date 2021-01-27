@@ -1,0 +1,15 @@
+logging:
+  file:
+    path: /var/log/${spring.application.name}
+  level:
+    ROOT: ERROR
+    be:
+      INFO
+spring:
+  main:
+    banner-mode: off
+  datasource:
+    url: jdbc:postgresql://localhost:7432/cv_db
+    username: cv
+    password: admin
+    driver-class-name: org.postgresql.Driver

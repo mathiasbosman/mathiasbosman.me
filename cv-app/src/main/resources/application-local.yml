@@ -1,0 +1,6 @@
+logging:
+  file:
+    path: "@project.basedir@/target"
+  level:
+    be:
+      TRACE
