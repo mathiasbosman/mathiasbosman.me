@@ -13,3 +13,5 @@ spring:
     username: cv
     password: admin
     driver-class-name: org.postgresql.Driver
+  application:
+    name: cv
