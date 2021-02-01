@@ -4,7 +4,7 @@ import Timeline from "../../components/timeline/Timeline";
 export default function Jobs() {
   return (
       <section>
-        <h2 id="clock" className="sectionHead">Experience</h2>
+        <h2 className="sectionHead clock">Experience</h2>
         <Timeline id="jobs">
             <TimeLineItem organisation="Flemish Government" title="Java Programmer"
                           from="2018">

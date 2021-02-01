@@ -8,16 +8,16 @@ export default class MailToLink extends React.Component {
     this.state = {
       mail: props.mail
     }
-    this.sendMail = this.sendMail.bind(this);
+    this._sendMail = this._sendMail.bind(this);
   }
 
-  sendMail() {
+  _sendMail() {
     window.open("mailto:" + this.state.mail, '_blank');
   }
 
   render() {
     return (
-        <button onClick={this.sendMail} {...this.props}>
+        <button onClick={this._sendMail} {...this.props}>
           {this.props.children}
         </button>
     )

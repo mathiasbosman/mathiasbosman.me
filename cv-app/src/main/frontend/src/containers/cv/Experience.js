@@ -3,7 +3,7 @@ import ExperienceElement from "../../components/ExperienceElement";
 export default function Experience() {
   return (
       <section>
-        <h2 id="tools" className="sectionHead">Skills</h2>
+        <h2 className="sectionHead tools">Skills</h2>
         <ul className="skills">
           <ExperienceElement percentage={100}>Being awesome</ExperienceElement>
           <ExperienceElement percentage={90}>HTML + CSS (HTML5, SASS, Mobile development, ...)</ExperienceElement>

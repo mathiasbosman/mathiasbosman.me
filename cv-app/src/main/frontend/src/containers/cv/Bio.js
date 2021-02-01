@@ -1,8 +1,9 @@
 import avatar from '../../images/avatar.webp';
 import ScrollToLink from "../../components/ScrollToLink";
 import SocialIcons from "../SocialIcons";
+import Age from "../../components/Age";
 
-function Bio() {
+export default function Bio() {
   return (
       <section itemScope itemType="http://schema.org/Person">
         <h1 className="titleName sectionHead" itemProp="name">
@@ -19,25 +20,23 @@ function Bio() {
             </aside>
             <p className="flex-grow-3" itemProp="description">
               Known as "The little one", I'm a web designer and Java developer
-              living in the
-              outskirts of <span
-                itemProp="homeLocation">Dendermonde, Belgium</span>. And this...
-              this
-              is my personal resume.. online! Currently I am full-time employed
-              at the Department of
+              living in the outskirts of <span itemProp="homeLocation">Dendermonde, Belgium</span> and
+              currently <Age birthdate="1990-12-05"/> of age. Welcome to my
+              online personal resume!<br/>
+              At the moment I'm full-time employed at the Department of
               Environment of the Flemish Government.<br/>
               In my spare time you will find me on my (not so) super expensive
-              Decathlon race bike or
-              setting up some network somewhere.
+              Decathlon race bike or setting up some network somewhere.
               <span className="hideOnPrint">
                 If you would like to hire me for the latter you can&nbsp;
-                <ScrollToLink className="linkButton" targetAnchor="contact" behavior="smooth">contact me</ScrollToLink>.
-              </span>
+                <ScrollToLink className="linkButton" targetAnchor="contact"
+                              behavior="smooth">contact me</ScrollToLink>.
+              </span><br/>
+              I am also the proud "hooman" of a <Age
+                birthdate="2020-08-28"/> old Beagle called Luna.
             </p>
           </div>
         </div>
       </section>
   );
 }
-
-export default Bio;

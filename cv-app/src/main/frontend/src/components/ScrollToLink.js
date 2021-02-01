@@ -9,10 +9,10 @@ class ScrollToLink extends React.Component {
       targetAnchor: props.targetAnchor,
       behavior: props.behavior ? props.behavior : "auto"
     }
-    this.scroll = this.scroll.bind(this);
+    this._scroll = this._scroll.bind(this);
   }
 
-  scroll() {
+  _scroll() {
     document.getElementById(this.state.targetAnchor).scrollIntoView({
       behavior: this.state.behavior
     });
@@ -21,7 +21,7 @@ class ScrollToLink extends React.Component {
 
   render() {
     return (
-        <button className={this.props.className} onClick={this.scroll}>
+        <button className={this.props.className} onClick={this._scroll}>
           {this.props.children}
         </button>
     )

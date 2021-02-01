@@ -4,7 +4,7 @@ import Timeline from "../../components/timeline/Timeline";
 export default function Education() {
   return (
       <section>
-        <h2 id="learn" className="sectionHead">Education</h2>
+        <h2 className="sectionHead learn">Education</h2>
         <Timeline id="schools">
           <TimeLineItem organisation="University of Ghent"
                         title={<><abbr

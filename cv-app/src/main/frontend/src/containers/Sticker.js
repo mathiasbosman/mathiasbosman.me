@@ -1,6 +1,6 @@
 import SocialIcons from "./SocialIcons";
 
-function Sticker() {
+export default function Sticker() {
   return (
       <div id="sticker">
         <h2 className="sectionHead titleName" itemProp="name">
@@ -11,5 +11,3 @@ function Sticker() {
       </div>
   );
 }
-
-export default Sticker;

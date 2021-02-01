@@ -5,7 +5,7 @@ import {faPaperPlane} from "@fortawesome/free-solid-svg-icons";
 export default function Contact() {
   return (
       <section className="hideOnPrint">
-        <h2 id="contact" className="sectionHead">Contact me</h2>
+        <h2 id="contact" className="sectionHead envelope">Contact me</h2>
         <p>
           If you would like to setup a small to medium sized network at your
           home or office you can
