@@ -1,6 +1,6 @@
-package be.mathiasbosman.cv.repo;
+package be.mathiasbosman.cv;
 
-import be.mathiasbosman.cv.RepositoryTestApplication;
+import be.mathiasbosman.cv.TestApplication;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureTestEntityManager;
@@ -16,9 +16,9 @@ import org.springframework.transaction.support.TransactionTemplate;
 @RunWith(SpringRunner.class)
 @Transactional
 @AutoConfigureTestEntityManager
-@SpringBootTest(classes = {RepositoryTestApplication.class})
+@SpringBootTest(classes = {TestApplication.class})
 @ActiveProfiles(profiles = "test")
-public abstract class RepositoryTest {
+public abstract class AbstractIntegrationTest {
 
   @Autowired
   private TestEntityManager entityManager;

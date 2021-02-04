@@ -1,10 +1,9 @@
-package be.mathiasbosman.cv.services;
+package be.mathiasbosman.cv.service;
 
 import be.mathiasbosman.cv.dto.PostContentDto;
 import be.mathiasbosman.cv.dto.PostDto;
 import be.mathiasbosman.cv.entity.Post;
 import be.mathiasbosman.cv.repo.PostRepository;
-import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.slf4j.Logger;
@@ -23,6 +22,15 @@ public class PostServiceImpl implements PostService {
 
   public PostServiceImpl(PostRepository postRepository) {
     this.postRepository = postRepository;
+  }
+
+  @Override
+  @Transactional
+  public PostDto delete(int postId) {
+    log.info("Deleting post [{}]", postId);
+    Post p = getPost(postId);
+    p.setDeleted(true);
+    return getPostDto(p);
   }
 
   @Override
@@ -46,6 +54,7 @@ public class PostServiceImpl implements PostService {
   }
 
   @Override
+  @Transactional(readOnly = true)
   public boolean validate(PostContentDto contentDto) {
     return StringUtils.hasLength(contentDto.getBody()) && StringUtils
         .hasLength(contentDto.getSubject());
@@ -54,5 +63,9 @@ public class PostServiceImpl implements PostService {
 
   private PostDto getPostDto(Post p) {
     return new PostDto(p.getId(), p.getSubject(), p.getBody(), p.getCreated(), p.getUpdated());
+  }
+
+  private Post getPost(int id) {
+    return postRepository.getOne(id);
   }
 }

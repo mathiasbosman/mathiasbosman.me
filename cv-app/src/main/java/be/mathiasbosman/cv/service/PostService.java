@@ -1,10 +1,12 @@
-package be.mathiasbosman.cv.services;
+package be.mathiasbosman.cv.service;
 
 import be.mathiasbosman.cv.dto.PostContentDto;
 import be.mathiasbosman.cv.dto.PostDto;
 import java.util.List;
 
 public interface PostService {
+
+  PostDto delete(int postId);
 
   List<PostDto> getPosts();
 

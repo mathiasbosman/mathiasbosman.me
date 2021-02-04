@@ -58,4 +58,8 @@ public class Post extends Entity<Integer> {
   public LocalDate getPostdate() {
     return postdate;
   }
+
+  public void setDeleted(boolean deleted) {
+    this.deleted = deleted;
+  }
 }

@@ -2,13 +2,14 @@ package be.mathiasbosman.cv.repo;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import be.mathiasbosman.cv.AbstractIntegrationTest;
 import be.mathiasbosman.cv.entity.Post;
 import be.mathiasbosman.cv.entity.User;
 import java.time.LocalDate;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class PostRepositoryTest extends RepositoryTest {
+public class PostRepositoryTest extends AbstractIntegrationTest {
   @Autowired
   private PostRepository repository;
 
