@@ -53,8 +53,4 @@ public class ServiceController {
     return postService.post(contentDto);
   }
 
-  @GetMapping(value = "/config")
-  public List<String> config() {
-    return Stream.of("Mathias", "Bosman").collect(Collectors.toList());
-  }
 }

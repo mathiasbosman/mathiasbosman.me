@@ -41,16 +41,20 @@ public class PostServiceImpl implements PostService {
   }
 
   @Override
-  @Transactional(readOnly = true)
   public List<PostDto> getPosts(int posterId) {
-    return postRepository.findAllByPosterId(posterId).stream().map(this::getPostDto).collect(
-        Collectors.toList());
+    return getPosts(posterId, false);
+  }
+
+  @Override
+  @Transactional(readOnly = true)
+  public List<PostDto> getPosts(int posterId, boolean deleted) {
+    return postRepository.findAllByPosterIdAndDeleted(posterId, deleted).stream()
+        .map(this::getPostDto).collect(Collectors.toList());
   }
 
   @Override
   public PostDto post(PostContentDto contentDto) {
     throw new UnsupportedOperationException("not yet implemented");
-    //return getPostDto(post);
   }
 
   @Override
