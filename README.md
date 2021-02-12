@@ -61,21 +61,5 @@ Because the sitemap contains a "latest update" date it is generated automaticall
 do this we use the Github action [generate-sitemap](https://github.com/cicirello/generate-sitemap).
 Check the repo for more information about the setup.
 
-### FTP credentials
-
-The credentials used for the FTP upload are stored in Github secrets:
-
-```yaml
-with:
-    server: ${{ secrets.FTP_HOST }}
-    username: ${{ secrets.FTP_USERNAME }}
-    password: ${{ secrets.FTP_PASSWORD }}
-    protocol: ${{ secrets.FTP_PROTOCOL }}
-    server-dir: ${{ secrets.FTP_SERVER_DIR }}
-```
-
-The workflow uses the Github
-action [FTP-Deploy-Action](https://github.com/SamKirkland/FTP-Deploy-Action). Check the repo for
-more information on how to set it up.
 
 [publish_workflow]:.github/workflows/publish.yml
