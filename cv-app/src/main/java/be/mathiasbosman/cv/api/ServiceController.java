@@ -4,6 +4,8 @@ import be.mathiasbosman.cv.dto.PostContentDto;
 import be.mathiasbosman.cv.dto.PostDto;
 import be.mathiasbosman.cv.service.PostService;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -49,5 +51,10 @@ public class ServiceController {
   public @ResponseBody
   PostDto post(@RequestBody PostContentDto contentDto) {
     return postService.post(contentDto);
+  }
+
+  @GetMapping(value = "/config")
+  public List<String> config() {
+    return Stream.of("Mathias", "Bosman").collect(Collectors.toList());
   }
 }

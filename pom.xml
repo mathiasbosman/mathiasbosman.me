@@ -23,9 +23,8 @@
   </modules>
   <properties>
     <!-- backend -->
-    <application.class>be.mathiasbosman.cv.CvApplication</application.class>
+    <start-class>be.mathiasbosman.cv.CvApplication</start-class>
     <java.version>11</java.version>
-    <spring.cloud.version>2.2.5.RELEASE</spring.cloud.version>
 
     <!-- frontend -->
     <node.version>v14.15.1</node.version>
@@ -38,6 +37,19 @@
     <docker.mavenPlugin.version>4.0.0</docker.mavenPlugin.version>
     <docker-compose.file>docker/cv-docker-test.yml</docker-compose.file>
     <docker-project>cv-ut</docker-project>
+
+    <!-- deployment -->
+    <maven.resourcesPlugin.version>3.2.0</maven.resourcesPlugin.version>
+
+    <!-- cloud -->
+    <spring-cloud-gcp.version>2.0.0</spring-cloud-gcp.version>
+    <spring-cloud.version>2020.0.1</spring-cloud.version>
+
+    <!-- flags -->
+    <skipTests>false</skipTests>
+    <skipDocker>${skipTests}</skipDocker>
+    <skipFrontend>false</skipFrontend>
+    <skipFrontendTests>false</skipFrontendTests>
   </properties>
 
   <build>
@@ -52,6 +64,11 @@
           <groupId>com.dkanejs.maven.plugins</groupId>
           <artifactId>docker-compose-maven-plugin</artifactId>
           <version>${docker.mavenPlugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>${maven.resourcesPlugin.version}</version>
         </plugin>
       </plugins>
     </pluginManagement>

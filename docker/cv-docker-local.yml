@@ -7,4 +7,4 @@ services:
     environment:
       - POSTGRES_DB=cv_db
       - POSTGRES_USER=cv
-      - POSTGRES_PASSWORD=admin
+      - POSTGRES_PASSWORD=cv

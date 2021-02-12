@@ -8,12 +8,12 @@ import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.SerializationConfig;
 import com.fasterxml.jackson.databind.json.JsonMapper;
 import java.time.LocalDate;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class PostDtoTest {
+class PostDtoTest {
 
   @Test
-  public void serializeDeserializeTest() throws JsonProcessingException {
+  void serializeDeserializeTest() throws JsonProcessingException {
     ControllerConfig controllerConfig = new ControllerConfig();
     JsonMapper jsonMapper = controllerConfig.jsonMapper();
     final SerializationConfig serializationConfig = jsonMapper.getSerializationConfig().with(

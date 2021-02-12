@@ -8,16 +8,16 @@ import be.mathiasbosman.cv.entity.Post;
 import be.mathiasbosman.cv.entity.User;
 import be.mathiasbosman.cv.fixtures.PostFixture;
 import be.mathiasbosman.cv.fixtures.UserFixture;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class PostServiceImplTest extends AbstractIntegrationTest {
+class PostServiceImplTest extends AbstractIntegrationTest {
 
   @Autowired
   private PostService postService;
 
   @Test
-  public void delete() {
+  void delete() {
     User u = create(UserFixture.newUser("john"));
     Post p = create(PostFixture.newPost(u));
     assertThat(p.isDeleted()).isFalse();
@@ -26,7 +26,7 @@ public class PostServiceImplTest extends AbstractIntegrationTest {
   }
 
   @Test
-  public void validate() {
+  void validate() {
     assertThat(postService.validate(new PostContentDto("subject", "body"))).isTrue();
     assertThat(postService.validate(new PostContentDto("", "body"))).isFalse();
     assertThat(postService.validate(new PostContentDto("subject", ""))).isFalse();

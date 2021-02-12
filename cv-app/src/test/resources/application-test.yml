@@ -1,9 +1,4 @@
-logging:
-  file:
-    path: "@project.basedir@/target"
 spring:
-  main:
-    banner-mode: off
   datasource:
     url: jdbc:postgresql://localhost:7654/cv_db_ut
     username: cv

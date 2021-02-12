@@ -6,15 +6,15 @@ import be.mathiasbosman.cv.AbstractIntegrationTest;
 import be.mathiasbosman.cv.entity.Post;
 import be.mathiasbosman.cv.entity.User;
 import java.time.LocalDate;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class PostRepositoryTest extends AbstractIntegrationTest {
+class PostRepositoryTest extends AbstractIntegrationTest {
   @Autowired
   private PostRepository repository;
 
   @Test
-  public void findAllDefault() {
+  void findAllDefault() {
     assertThat(repository.findAll(false)).isEmpty();
     User user = create(new User("bosmanme", "Mathias", "Bosman"));
     LocalDate date1 = LocalDate.now();
