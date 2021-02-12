@@ -30,8 +30,8 @@
     <node.version>v14.15.1</node.version>
     <npm.version>6.14.8</npm.version>
     <frontend.mavenPlugin.version>1.11.0</frontend.mavenPlugin.version>
-    <frontend.directory>${project.basedir}/src/main/frontend</frontend.directory>
-    <frontend.directory.build>${project.basedir}/src/main/frontend/build</frontend.directory.build>
+    <frontend.directory>${project.basedir}/src/main/webapp</frontend.directory>
+    <frontend.directory.build>${frontend.directory}/build</frontend.directory.build>
 
     <!-- docker (for testing) -->
     <docker.mavenPlugin.version>4.0.0</docker.mavenPlugin.version>
