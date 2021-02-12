@@ -21,7 +21,7 @@ npm run build
 ```
 
 If you want to compile the SCSS or minify the JS manually you can check out the individual scripts
-that are run by the build script in the [package.json](package.json) file.
+that are run by the build script in the [package.json](cv-app/src/main/frontend/package.json) file.
 
 ## Publishing
 
