@@ -1,7 +1,7 @@
 import avatar from '../../images/avatar.webp';
 import ScrollToLink from "../../components/ScrollToLink";
-import SocialIcons from "../SocialIcons";
 import Age from "../../components/Age";
+import SocialIcons from "../../components/SocialIcons";
 
 export default function Bio() {
   return (
@@ -31,9 +31,13 @@ export default function Bio() {
                 If you would like to hire me for the latter you can&nbsp;
                 <ScrollToLink className="linkButton" targetAnchor="contact"
                               behavior="smooth">contact me</ScrollToLink>.
+                <br/>
+                If you want to read some of my banter (just kidding) you can always
+                read <a href="/blog">my blog</a>.
               </span><br/>
               I am also the proud "hooman" of a <Age
-                birthdate="2020-08-28"/> old Beagle called Luna.
+                birthdate="2020-08-28"/> old Beagle called Luna.<br/>
+
             </p>
           </div>
         </div>

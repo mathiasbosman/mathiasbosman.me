@@ -1,4 +1,3 @@
-import Sticker from "./containers/Sticker";
 import Bio from "./containers/cv/Bio";
 import Experience from "./containers/cv/Experience";
 import Jobs from "./containers/cv/Jobs";
@@ -6,8 +5,9 @@ import Education from "./containers/cv/Education";
 import Awards from "./containers/cv/Awards";
 import Contact from "./containers/cv/Contact";
 import Copyright from "./components/Copyright";
+import Sticker from "./components/Sticker";
 
-function Cv() {
+export default function Cv() {
   return (
       <>
         <Sticker/>
@@ -25,5 +25,3 @@ function Cv() {
       </>
   );
 }
-
-export default Cv;
