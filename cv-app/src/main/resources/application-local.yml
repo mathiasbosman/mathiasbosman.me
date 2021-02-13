@@ -1,4 +1,11 @@
 spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: someTestClientId
+            client-secret: someTestClientSecret
   datasource:
     url: jdbc:postgresql://localhost:7432/cv_db
     username: cv
