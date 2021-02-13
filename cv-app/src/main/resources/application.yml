@@ -1,4 +1,11 @@
 spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: clientId
+            client-secret: clientSecret
   main:
     banner-mode: off
   application:

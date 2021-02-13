@@ -18,13 +18,15 @@ public class User extends Entity<Integer> {
   private String firstName;
   @Column(name = "last_name")
   private String lastName;
+  private String email;
 
   protected User() {}
 
-  public User(String username, String firstName, String lastName) {
+  public User(String username, String firstName, String lastName, String email) {
     this.username = username;
     this.firstName = firstName;
     this.lastName = lastName;
+    this.email = email;
   }
 
   @Override
@@ -42,5 +44,9 @@ public class User extends Entity<Integer> {
 
   public String getLastName() {
     return lastName;
+  }
+
+  public String getEmail() {
+    return email;
   }
 }

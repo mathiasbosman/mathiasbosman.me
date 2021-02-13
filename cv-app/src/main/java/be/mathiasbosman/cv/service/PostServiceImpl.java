@@ -53,7 +53,7 @@ public class PostServiceImpl implements PostService {
   }
 
   @Override
-  public PostDto post(PostContentDto contentDto) {
+  public PostDto post(PostContentDto contentDto, int userId) {
     throw new UnsupportedOperationException("not yet implemented");
   }
 

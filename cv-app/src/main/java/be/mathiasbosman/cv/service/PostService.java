@@ -14,7 +14,7 @@ public interface PostService {
 
   List<PostDto> getPosts(int posterId, boolean deleted);
 
-  PostDto post(PostContentDto contentDto);
+  PostDto post(PostContentDto contentDto, int posterId);
 
   boolean validate(PostContentDto contentDto);
 }
