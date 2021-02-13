@@ -39,7 +39,6 @@ public class ServiceController {
   }
 
   @GetMapping(value = "/posts/{userId}")
-  //TODO: also returns deleted ones at the moment
   public List<PostDto> postsByUsername(@PathVariable("userId") int userId) {
     return postService.getPosts(userId);
   }
