@@ -2,22 +2,28 @@ import React from "react";
 import {BrowserRouter as Router, NavLink, Route, Switch} from 'react-router-dom'
 import Cv from "./Cv";
 import Blog from "./Blog";
+import Copyright from "./components/Copyright";
+import Sticker from "./components/Sticker";
+
+import "./styles/web.scss";
 
 export default function App() {
+  const navActiveClassName = "selected";
   return (
       <>
+        <Sticker/>
         <Router>
-          <nav>
+          <nav role="navigation">
             <ul>
               <li>
                 <NavLink exact to="/"
-                         activeClassName="selected">
+                         activeClassName={navActiveClassName}>
                   CV
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/blog"
-                         activeClassName="selected">
+                         activeClassName={navActiveClassName}>
                   Blog
                 </NavLink>
               </li>
@@ -33,6 +39,9 @@ export default function App() {
             </Route>
           </Switch>
         </Router>
+        <footer className="hideOnPrint">
+          <Copyright name="Mathias Bosman"/>
+        </footer>
       </>
   );
 }

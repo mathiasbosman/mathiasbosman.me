@@ -1,9 +1,6 @@
-$screen-break-point: 820px;
-$wrapping-width: 700px;
-$font-color: #444;
-$font-size: 13px;
-$link-color: #444;
+@import "vars";
 
+// Main styles
 * {
   margin: 0;
   padding: 0;
@@ -54,7 +51,7 @@ a {
   text-decoration: none;
 
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 
@@ -68,14 +65,45 @@ h3 {
 }
 
 h1.sectionHead, h2.sectionHead {
-  &:before {
-    content: "";
-    position: absolute;
-    width: 45px;
-    height: 45px;
-    left: -105px;
-    top: -15px;
-    background-image: url(../images/icons.webp);
+  &.icon {
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 45px;
+      height: 45px;
+      left: -105px;
+      top: -15px;
+      background-image: url(../images/icons.webp);
+    }
+
+    &.ribbon:before {
+      background-position: left -45px;
+    }
+
+    &.tools:before {
+      background-position: left top;
+    }
+
+    &.learn:before {
+      background-position: right top;
+    }
+
+    &.eye:before {
+      background-position: -90x top;
+    }
+
+    &.clock:before {
+      background-position: -45px top;
+    }
+
+    &.chat:before {
+      background-position: -45px bottom;
+    }
+
+    &.envelope:before {
+      background-position: right bottom;
+    }
   }
 
   clear: both;
@@ -94,34 +122,6 @@ h1.sectionHead, h2.sectionHead {
     &:before {
       background-position: -90px bottom;
     }
-  }
-
-  &.ribbon:before {
-    background-position: left -45px;
-  }
-
-  &.tools:before {
-    background-position: left top;
-  }
-
-  &.learn:before {
-    background-position: right top;
-  }
-
-  &.eye:before {
-    background-position: -90x top;
-  }
-
-  &.clock:before {
-    background-position: -45px top;
-  }
-
-  &.chat:before {
-    background-position: -45px bottom;
-  }
-
-  &.envelope:before {
-    background-position: right bottom;
   }
 }
 
@@ -248,32 +248,9 @@ button.linkButton {
   }
 }
 
-#bio {
-  position: relative;
-
-  h2 {
-    font-size: 15px;
-  }
-
-  p {
-    @extend .card;
-  }
-}
-
 p.warning {
   @extend .card;
   background: #fdf5ef;
-}
-
-#avatar {
-  margin-right: 20px;
-  width: 100px;
-
-  img {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: scale-down
-  }
 }
 
 main {
@@ -293,13 +270,28 @@ nav {
     margin: 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     list-style: none;
+
     li {
       text-align: center;
+
+      &:not(:last-child):after {
+        content: "/";
+        margin: 0 1.5em;
+      }
+
+      a:hover {
+        @extend a.selected;
+      }
     }
   }
 }
+
+a.selected {
+  border-bottom: 2px solid $accent-color;
+}
+
 
 footer {
   max-width: $wrapping-width;
@@ -307,6 +299,101 @@ footer {
   text-align: center;
   color: #999;
   font-size: .8em;
+}
+
+// responsive layout
+@media (max-width: $screen-break-point) {
+  body {
+    background: #fff;
+
+    #sticker {
+      display: none;
+    }
+
+    main {
+      margin: 0 auto;
+      padding: 0 60px 30px 30px;
+      background: #fff;
+      box-shadow: none;
+    }
+
+    footer {
+      margin: 0 auto;
+    }
+
+    h1, h2 {
+      &.sectionHead {
+        font-size: 15px;
+        letter-spacing: -1px;
+        margin: 3em 0 1em -60px;
+        padding-left: 8px;
+      }
+
+      &.titleName {
+        margin: 20px 0 10px -6Opx;
+      }
+    }
+
+    p {
+      text-align: left;
+    }
+
+    .platformIcons {
+      height: 30px;
+      margin-top: 20px;
+      position: relative;
+      right: auto;
+      text-align: left;
+      top: auto;
+      width: 100%;
+    }
+
+    .warning {
+      border-radius: 0;
+      padding: .5em;
+      margin: 1em auto;
+      max-width: 100%;
+    }
+  }
+}
+
+// CV styles
+#bio {
+  position: relative;
+
+  h2 {
+    font-size: 15px;
+  }
+
+  p {
+    @extend .card;
+  }
+}
+
+@media (max-width: $screen-break-point) {
+  #bio {
+    h1, h2 {
+      font-size: 12px;
+    }
+
+    p {
+      padding: 0;
+      background: #fff;
+      max-width: 100%;
+      border: none;
+    }
+  }
+}
+
+#avatar {
+  margin-right: 20px;
+  width: 100px;
+
+  img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: scale-down
+  }
 }
 
 ul.skills {
@@ -366,71 +453,13 @@ ul#jobs, ul.schools {
   }
 }
 
-// responsive layout
-@media (max-width: $screen-break-point) {
-  body {
-    background: #fff;
-
-    #sticker {
-      display: none;
-    }
-
-    main {
-      margin: 0 auto;
-      padding: 0 60px 30px 30px;
-      background: #fff;
-      box-shadow: none;
-    }
-
-    footer {
-      margin: 0 auto;
-    }
-
-    h1, h2 {
-      &.sectionHead {
-        font-size: 15px;
-        letter-spacing: -1px;
-        margin: 3em 0 1em -60px;
-        padding-left: 8px;
-      }
-
-      &.titleName {
-        margin: 20px 0 10px -6Opx;
-      }
-    }
-
-    p {
-      text-align: left;
-    }
-
-    .platformIcons {
-      height: 30px;
-      margin-top: 20px;
-      position: relative;
-      right: auto;
-      text-align: left;
-      top: auto;
-      width: 100%;
-    }
-
-    #bio {
-      h1, h2 {
-        font-size: 12px;
-      }
-
-      p {
-        padding: 0;
-        background: #fff;
-        max-width: 100%;
-        border: none;
-      }
-    }
-
-    .warning {
-      border-radius: 0;
-      padding: .5em;
-      margin: 1em auto;
-      max-width: 100%;
-    }
+// Blog styles
+#blog {
+  h1 {
+    background: $accent-color;
+    color: #fff;
+    text-align: center;
+    display: block;
+    padding: 1em;
   }
 }

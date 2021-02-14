@@ -6,7 +6,7 @@ import SocialIcons from "../../components/SocialIcons";
 export default function Bio() {
   return (
       <section itemScope itemType="http://schema.org/Person">
-        <h1 className="titleName sectionHead" itemProp="name">
+        <h1 className="titleName sectionHead icon" itemProp="name">
           <span itemProp="givenName">Mathias</span>
           <span itemProp="familyName">Bosman</span>
         </h1>

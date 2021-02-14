@@ -15,7 +15,7 @@ export default class Sticker extends React.Component{
   render() {
     return (
         <div id="sticker">
-          <h2 className="sectionHead titleName" itemProp="name">
+          <h2 className="sectionHead icon titleName" itemProp="name">
             <span itemProp="givenName">Mathias</span>
             <span itemProp="familyName">Bosman</span>
           </h2>

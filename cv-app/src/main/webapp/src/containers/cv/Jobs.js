@@ -4,17 +4,19 @@ import Timeline from "../../components/timeline/Timeline";
 export default function Jobs() {
   return (
       <section>
-        <h2 className="sectionHead clock">Experience</h2>
+        <h2 className="sectionHead icon clock">Experience</h2>
         <Timeline id="jobs">
-            <TimeLineItem organisation="Flemish Government" title="Java Programmer"
-                          from="2018">
-              Currently I'm employed as a Java programmer for the department of
-              Environment
-              where I work on in-house applications. Mostly using frameworks
-              such as Spring.
-            </TimeLineItem>
-            <TimeLineItem organisation="Flemish Government" title="Application manager"
-                          from="2016" to="2018">
+          <TimeLineItem organisation="Flemish Government"
+                        title="Java Programmer"
+                        from="2018">
+            Currently I'm employed as a Java programmer for the department of
+            Environment
+            where I work on in-house applications. Mostly using frameworks
+            such as Spring.
+          </TimeLineItem>
+          <TimeLineItem organisation="Flemish Government"
+                        title="Application manager"
+                        from="2016" to="2018">
               Responsible for handling tickets and user feedback for an in-house
               application that
               handled cases for an environment license.
