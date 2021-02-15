@@ -1,35 +1,43 @@
 # Mathias Bosman - CV
-![Build](https://github.com/mathiasbosman/cv/workflows/Build%20NPM/badge.svg)
+![Maven build](https://github.com/mathiasbosman/cv/workflows/Maven%20build/badge.svg)
 
 Simple HTML website with a bit of Github automatisation magic containing my personal resume
 on [mathiasbosman.be](http://mathiasbosman.be).
 
 ## Building
 
-The website uses some packages to build the css and js files after which minimising them.
+The website uses some a Spring Boot backend and React.js frontend.
 
 To install just run
 
 ```bash
-npm install
+mvn clean install
 ```
 
-To run the build simply run:
+This will build both back- and frontend after which you can start the application and visit the
+website at http://localhost:8081 (mind the port here)
+
+## Local development
+
+### Spring Boot
+
+For local development it is required to adjust the [local properties file][application_local] for
+Spring Boot. The application uses OAuth2 for authorization which (sadly) cannot be disabled via a
+simple property.
+
+### React.js
+
+Developping the frontend is as simple as running
 
 ```bash
-npm run build
+npm start
 ```
 
-If you want to compile the SCSS or minify the JS manually you can check out the individual scripts
-that are run by the build script in the [package.json](cv-app/src/main/frontend/package.json) file.
+in the "webapp" folder while the backend application is running.
 
 ## Publishing
 
-Whenever a release is published on [Github](https://github.com/mathiasbosman/cv) the code will be
-placed on the FTP server via a [Github workflow][publish_workflow].
-
-The code gets compiled and minified after which the development modules are cleaned up to avoid
-unnecessary FTP uploads. Technical files such as the git files and npm files are also ignored.
+//todo: finishe this
 
 The workflow also takes care of creating the sitemap and adding a verification file for Google.
 
@@ -63,3 +71,5 @@ Check the repo for more information about the setup.
 
 
 [publish_workflow]:.github/workflows/publish.yml
+
+[application_local]:cv-app/src/main/resources/application-local.yml

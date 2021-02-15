@@ -19,4 +19,6 @@ logging:
     ROOT: ERROR
     be: INFO
 #  file:
+server:
+  port: 8081
 #    path: /var/log/${spring.application.name}
