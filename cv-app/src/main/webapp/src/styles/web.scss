@@ -456,10 +456,20 @@ ul#jobs, ul.schools {
 // Blog styles
 #blog {
   h1 {
-    background: $accent-color;
-    color: #fff;
+    color: $accent-color;
     text-align: center;
     display: block;
-    padding: 1em;
+    font-weight: 700;
   }
+
+  h2 aside {
+    font-weight: 200;
+    padding-top: .5em;
+    font-size: .9em;
+    text-transform: none;
+  }
+}
+
+#blog .post {
+  margin-bottom: 1em;
 }

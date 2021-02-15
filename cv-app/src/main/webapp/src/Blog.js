@@ -1,19 +1,26 @@
-export default function Blog() {
-  return (
-      <>
-        <main id="blog">
-          <h1>Mathias Bosman's blog</h1>
+import React from "react";
+import BLOGRest from "./scripts/blog-rest";
+import BlogPost from "./components/blog/Blogpost";
 
-          <section className="post">
-            <h2 className="sectionHead">
-              Post title goes here
-            </h2>
-            <aside>14 feb. 2021</aside>
-            <p>
-              Lorem ipsum dolor sit amet
-            </p>
-          </section>
+export default class Blog extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {blogPosts: []}
+  }
+
+  componentDidMount() {
+    BLOGRest.fetchPosts().then((posts) => {
+      this.setState({blogPosts: posts})
+    });
+  }
+
+  render() {
+    return (
+        <main id="blog">
+          <h1>Blog</h1>
+          {this.state.blogPosts.map(p => <BlogPost key={p.id} post={p}/>)}
         </main>
-      </>
-  );
+    );
+  }
 }

@@ -11,8 +11,9 @@ public class UserDtoTest extends AbstractJsonMapperTest{
   @Test
   @Override
   void serializeDeserializeTest() throws JsonProcessingException {
-    UserDto user = new UserDto(1, "john@web.com");
+    UserDto user = new UserDto(1, "john@web.com", "John", "Doe", "JohnD");
     String json = jsonMapper().writeValueAsString(user);
-    assertThat(json).isEqualTo("{\"email\":\"john@web.com\",\"userId\":1}");
+    assertThat(json).isEqualTo(
+        "{\"email\":\"john@web.com\",\"firstName\":\"John\",\"lastName\":\"Doe\",\"userId\":1,\"username\":\"JohnD\"}");
   }
 }

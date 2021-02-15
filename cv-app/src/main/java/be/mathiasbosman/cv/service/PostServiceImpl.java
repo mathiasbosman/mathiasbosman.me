@@ -2,6 +2,7 @@ package be.mathiasbosman.cv.service;
 
 import be.mathiasbosman.cv.dto.PostContentDto;
 import be.mathiasbosman.cv.dto.PostDto;
+import be.mathiasbosman.cv.dto.UserDto;
 import be.mathiasbosman.cv.entity.Post;
 import be.mathiasbosman.cv.repo.PostRepository;
 import java.util.List;
@@ -19,9 +20,11 @@ public class PostServiceImpl implements PostService {
 
   private static final Logger log = LoggerFactory.getLogger(PostServiceImpl.class);
   private final PostRepository postRepository;
+  private final UserService userService;
 
-  public PostServiceImpl(PostRepository postRepository) {
+  public PostServiceImpl(PostRepository postRepository, UserService userService) {
     this.postRepository = postRepository;
+    this.userService = userService;
   }
 
   @Override
@@ -66,7 +69,8 @@ public class PostServiceImpl implements PostService {
 
 
   private PostDto getPostDto(Post p) {
-    return new PostDto(p.getId(), p.getSubject(), p.getBody(), p.getCreated(), p.getUpdated());
+    UserDto u = userService.getUser(p.getPosterId());
+    return new PostDto(p.getId(), p.getSubject(), p.getBody(), u, p.getCreated(), p.getUpdated());
   }
 
   private Post getPost(int id) {

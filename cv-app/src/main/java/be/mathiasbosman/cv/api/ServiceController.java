@@ -33,12 +33,12 @@ public class ServiceController {
     this.userService = userService;
   }
 
-  @GetMapping(value = "/posts")
+  @GetMapping(value = "/public/posts")
   public List<PostDto> posts() {
     return postService.getPosts();
   }
 
-  @GetMapping(value = "/posts/{userId}")
+  @GetMapping(value = "/public/posts/{userId}")
   public List<PostDto> postsByUsername(@PathVariable("userId") int userId) {
     return postService.getPosts(userId);
   }

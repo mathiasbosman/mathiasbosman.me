@@ -12,11 +12,11 @@ class BLOGRest {
   }
 
   fetchPosts() {
-    return this._get('/rest/posts');
+    return this._get('/rest/public/posts');
   }
 
   fetchUserPosts(userId) {
-    return this._get(`/rest/posts/${userId}`)
+    return this._get(`/rest/public/posts/${userId}`)
   }
 
   _post(url, data) {

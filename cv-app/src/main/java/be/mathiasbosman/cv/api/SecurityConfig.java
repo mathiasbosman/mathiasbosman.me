@@ -14,6 +14,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
       HttpSecurity http) throws Exception {
     http.csrf().disable()
         .authorizeRequests()
+        .antMatchers("/rest/public/*").permitAll()
         .antMatchers("/admin/*", "/rest/*").authenticated()
         .anyRequest().permitAll()
         .and()

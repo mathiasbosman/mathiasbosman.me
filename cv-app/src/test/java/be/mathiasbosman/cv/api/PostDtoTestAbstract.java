@@ -4,9 +4,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import be.mathiasbosman.cv.dto.PostDto;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.MapperFeature;
-import com.fasterxml.jackson.databind.SerializationConfig;
-import com.fasterxml.jackson.databind.json.JsonMapper;
 import java.time.LocalDate;
 import org.junit.jupiter.api.Test;
 
@@ -18,6 +15,7 @@ class PostDtoTestAbstract extends AbstractJsonMapperTest {
     PostDto post = new PostDto(0,
         "subject",
         "body",
+        null,
         LocalDate.parse("2000-02-03"),
         LocalDate.parse("2000-05-04"));
     String json = jsonMapper().writeValueAsString(post);
