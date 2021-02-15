@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <artifactId>cv-app</artifactId>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <configuration>
+          <filesets>
+            <!-- Delete generated folders in frontend folder-->
+            <fileset>
+              <directory>${frontend.directory}/node_modules</directory>
+            </fileset>
+            <fileset>
+              <directory>${frontend.directory}/node</directory>
+            </fileset>
+            <fileset>
+              <directory>${frontend.directory.build}</directory>
+            </fileset>
+          </filesets>
+          <followSymLinks>false</followSymLinks>
+        </configuration>
+        <groupId>org.apache.maven.plugins</groupId>
+      </plugin>
+      <plugin>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <executable>true</executable>
+          <mainClass>${start-class}</mainClass>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>build-info</goal>
+            </goals>
+            <id>provide build information</id>
+          </execution>
+          <execution>
+            <goals>
+              <goal>repackage</goal>
+            </goals>
+            <id>repackage as executable jar</id>
+          </execution>
+        </executions>
+        <groupId>org.springframework.boot</groupId>
+      </plugin>
+      <plugin>
+        <artifactId>frontend-maven-plugin</artifactId>
+        <configuration>
+          <nodeVersion>${node.version}</nodeVersion>
+          <npmVersion>${npm.version}</npmVersion>
+          <skip>${skipFrontend}</skip>
+          <workingDirectory>${frontend.directory}</workingDirectory>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>install-node-and-npm</goal>
+            </goals>
+            <id>install node and npm</id>
+            <phase>generate-resources</phase>
+          </execution>
+          <execution>
+            <configuration>
+              <arguments>install</arguments>
+            </configuration>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <id>npm install</id>
+            <phase>generate-resources</phase>
+          </execution>
+          <execution>
+            <configuration>
+              <arguments>run test</arguments>
+              <skip>${skipFrontendTests}</skip>
+            </configuration>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <id>frontend unit tests</id>
+            <phase>test</phase>
+          </execution>
+          <execution>
+            <configuration>
+              <arguments>run build</arguments>
+            </configuration>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <id>react build</id>
+            <phase>compile</phase>
+          </execution>
+        </executions>
+        <groupId>com.github.eirslett</groupId>
+      </plugin>
+      <plugin>
+        <artifactId>docker-compose-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <configuration>
+              <awaitTimeout>10</awaitTimeout>
+              <composeFile>${docker-compose.file}</composeFile>
+              <detachedMode>true</detachedMode>
+              <projectName>${docker-project}</projectName>
+              <skip>${skipDocker}</skip>
+            </configuration>
+            <goals>
+              <goal>up</goal>
+            </goals>
+            <id>bring-docker-containers-up</id>
+            <phase>validate</phase>
+          </execution>
+          <execution>
+            <configuration>
+              <composeFile>${docker-compose.file}</composeFile>
+              <projectName>${docker-project}</projectName>
+              <removeVolumes>true</removeVolumes>
+            </configuration>
+            <goals>
+              <goal>down</goal>
+            </goals>
+            <id>bring-docker-containers-down</id>
+            <phase>post-integration-test</phase>
+          </execution>
+        </executions>
+        <groupId>com.dkanejs.maven.plugins</groupId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <executions>
+          <execution>
+            <configuration>
+              <outputDirectory>${project.build.outputDirectory}/static</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${frontend.directory.build}</directory>
+                  <filtering>false</filtering>
+                </resource>
+              </resources>
+            </configuration>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <id>position-react-build</id>
+            <phase>prepare-package</phase>
+          </execution>
+        </executions>
+        <groupId>org.apache.maven.plugins</groupId>
+      </plugin>
+    </plugins>
+
+  </build>
+
+  <dependencies>
+    <!-- Spring -->
+    <dependency>
+      <artifactId>spring-boot-starter</artifactId>
+      <groupId>org.springframework.boot</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <groupId>org.springframework.boot</groupId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-oauth2-client</artifactId>
+    </dependency>
+    <dependency>
+      <artifactId>spring-boot-configuration-processor</artifactId>
+      <groupId>org.springframework.boot</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+      <groupId>org.springframework.boot</groupId>
+    </dependency>
+
+    <!-- testing -->
+    <dependency>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>junit-vintage-engine</artifactId>
+          <groupId>org.junit.vintage</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-test</artifactId>
+    </dependency>
+
+    <!-- persistency -->
+    <dependency>
+      <artifactId>flyway-core</artifactId>
+      <groupId>org.flywaydb</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>postgresql</artifactId>
+      <groupId>org.postgresql</groupId>
+    </dependency>
+  </dependencies>
+  <modelVersion>4.0.0</modelVersion>
+
+  <packaging>jar</packaging>
+
+  <parent>
+    <artifactId>cv</artifactId>
+    <groupId>be.mathiasbosman</groupId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+</project>

@@ -1,0 +1,18 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: someTestClientId
+            client-secret: someTestClientSecret
+  datasource:
+    url: jdbc:postgresql://localhost:7432/cv_db
+    username: cv
+    password: cv
+    driver-class-name: org.postgresql.Driver
+logging:
+  level:
+    be: TRACE
+  file:
+    path: "@project.basedir@/target"
