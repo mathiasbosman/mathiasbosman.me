@@ -30,6 +30,8 @@ public class UserServiceImpl implements UserService {
   }
 
   private UserDto getUserDto(User u) {
-    return new UserDto(u.getId(), u.getEmail(), u.getFirstName(), u.getLastName(), u.getUsername());
+    return u != null ?
+        new UserDto(u.getId(), u.getEmail(), u.getFirstName(), u.getLastName(), u.getUsername())
+        : null;
   }
 }

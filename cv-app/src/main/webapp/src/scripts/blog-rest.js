@@ -19,6 +19,19 @@ class BLOGRest {
     return this._get(`/rest/public/posts/${userId}`)
   }
 
+  fetchOAuth2Providers() {
+    return this._get('/oauth2/providers');
+  }
+
+  fetchUser() {
+    return this._get('/oauth2/user');
+  }
+
+  logout() {
+    //TODO
+    return this._get('/api/oauth2/logout');
+  }
+
   _post(url, data) {
     const config = {
       method: 'POST',
@@ -46,21 +59,12 @@ class BLOGRest {
   _fetch({url, config}) {
     return fetch(url, config).then((response) => {
       if (!response.ok) {
-        switch (response.status) {
-          case 401:
-          case 403:
-          case 404:
-          case 500:
-            window.location.href = `/${response.status}.html`;
-            break;
-          default:
-            window.location.href = '/500.html';
-            break;
-        }
+        console.error("Response error, status: " + response.status);
+        window.location.href = `/error`;
       } else {
-        return response.json().catch(() => true);
+        return response.json().catch(() => false);
       }
-    }).catch(() => window.location.href = '/500.html');
+    }).catch(() => window.location.href = '/error');
   }
 }
 

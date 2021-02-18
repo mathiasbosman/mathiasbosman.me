@@ -20,6 +20,6 @@ class PostDtoTestAbstract extends AbstractJsonMapperTest {
         LocalDate.parse("2000-05-04"));
     String json = jsonMapper().writeValueAsString(post);
     assertThat(json).isEqualTo(
-        "{\"content\":{\"body\":\"body\",\"subject\":\"subject\"},\"created\":\"03/02/2000\",\"id\":0,\"updated\":\"04/05/2000\"}");
+        "{\"content\":{\"body\":\"body\",\"subject\":\"subject\"},\"created\":\"03/02/2000\",\"id\":0,\"poster\":null,\"updated\":\"04/05/2000\"}");
   }
 }

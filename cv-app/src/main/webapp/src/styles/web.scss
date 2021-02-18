@@ -146,8 +146,10 @@ h1.sectionHead, h2.sectionHead {
   border: none;
   background: $font-color;
   color: #fff;
-  padding: 0 5px;
+  padding: 3px 5px;
   margin: -3px 0 0 0;
+  line-height: inherit;
+  display: inline-block;
 }
 
 button.linkButton {
@@ -249,6 +251,11 @@ button.linkButton {
 }
 
 p.warning {
+  @extend .card;
+  background: #fdf5ef;
+}
+
+.flash {
   @extend .card;
   background: #fdf5ef;
 }

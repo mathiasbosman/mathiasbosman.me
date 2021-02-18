@@ -1,0 +1,22 @@
+@import "vars";
+
+.form-control {
+  border: $form-control-border;
+  border-radius: $form-control-br;
+  padding: $form-control-padding;
+  font-size: $form-control-font-size;
+  color: $font-color;
+}
+
+form, .form {
+  button, .linkButton {
+    @extend .form-control;
+    cursor: pointer;
+    background: $button-bg;
+
+    &:hover {
+      background: $button-bg-hover;
+      color: inherit;
+    }
+  }
+}
