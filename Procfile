@@ -1,1 +1,1 @@
-web: java -jar cv-app/target/cv-app-0.0.1-SNAPSHOT.jar
+web: java $JAVA_OPTS -jar cv-app/target/cv-app-0.0.1-SNAPSHOT.jar -Dserver.port=$PORT $JAR_OPTS
