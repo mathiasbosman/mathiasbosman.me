@@ -118,6 +118,7 @@
               <composeFile>${docker-compose.file}</composeFile>
               <projectName>${docker-project}</projectName>
               <removeVolumes>true</removeVolumes>
+              <skip>${skipDocker}</skip>
             </configuration>
             <goals>
               <goal>down</goal>
