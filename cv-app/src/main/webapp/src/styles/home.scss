@@ -1,0 +1,50 @@
+@import "vars";
+
+body {
+  font-size: 13px;
+  background-color: $bg-accent-color;
+
+  &.bg-white {
+    background-color: white;
+  }
+}
+
+main {
+  background-color: white;
+}
+
+ul {
+  margin: 0;
+}
+
+.avatarContainer {
+  border-radius: 50% !important;
+  background: white;
+  z-index: 4;
+
+  .avatar {
+    width: 175px;
+    height: 175px;
+  }
+}
+
+@media (max-width: $screen-break-point) {
+
+  main {
+    margin: 0 !important;
+  }
+
+  .avatar {
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  h1 {
+    font-size: 1.5em !important;
+    border: none !important;
+  }
+
+  .flexWrapper {
+    flex-wrap: wrap !important;
+  }
+}

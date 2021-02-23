@@ -1,15 +1,23 @@
 import React from "react";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Redirect} from "react-router-dom";
 import BLOGRest from "./scripts/blog-rest";
-
-import "./styles/admin.scss";
 import {
   OAUTH2_AUTHORIZE_URL,
   OAUTH2_PROVIDERS,
   OAUTH2_REDIRECT_URL
 } from "./Constants";
 import Error from "./components/Error";
+import {
+  BorderBox,
+  Box,
+  Button,
+  ButtonPrimary,
+  FormGroup,
+  Heading,
+  StyledOcticon,
+  TextInput
+} from "@primer/components";
+import "./styles/authForm.scss";
 
 export default class LoginForm extends React.Component {
 
@@ -50,14 +58,20 @@ export default class LoginForm extends React.Component {
     const href = OAUTH2_AUTHORIZE_URL + provider.toLowerCase()
         + "?redirect_uri=" + OAUTH2_REDIRECT_URL + provider.toLowerCase();
     const providerClass = OAUTH2_PROVIDERS[provider];
-    return <a className="linkButton" href={href}>
-      <FontAwesomeIcon icon={providerClass.icon}/> Login
-      with {providerClass.name}
-    </a>
-        ;
+    if (providerClass) {
+      return <Button key={provider} display="block" variant="small" mt={1}
+                     as="a" href={href}>
+        <StyledOcticon icon={providerClass.icon} mr={1}/>
+        Login with {providerClass.name}
+      </Button>;
+    } else {
+      console.debug(
+          "No provider configured in the frontend for id= " + provider);
+    }
   }
 
   render() {
+    document.body.classList.add("bg-white");
     if (this.props.authenticated) {
       return <Redirect to={{
         pathname: "/",
@@ -65,14 +79,34 @@ export default class LoginForm extends React.Component {
       }}/>;
     }
     return (
-        <main id="login" className="card form">
-          <h1>Login</h1>
+        <Box mx="auto" mt={3} p={3} className="auth-form">
+          <Heading fontWeight="normal" as="h1">Sign in</Heading>
           {this._renderError()}
-          <ul className="socialProviders">
+          <BorderBox px={3} pb={3} backgroundColor="gray.1">
+            <FormGroup>
+              <FormGroup.Label htmlFor="txtUsername">Username or email
+                address</FormGroup.Label>
+              <TextInput block backgroundColor="white" variant="small"
+                         id="txtUsername"/>
+            </FormGroup>
+
+            <FormGroup>
+              <FormGroup.Label htmlFor="txtPassword">Password</FormGroup.Label>
+              <TextInput block backgroundColor="white" variant="small"
+                         id="txtPassword" type="password"/>
+            </FormGroup>
+
+            <ButtonPrimary mb={1} display="block" width="100%">Sign
+              in</ButtonPrimary>
             {this.state.providers.map(
-                p => <li key={p}>{this._renderProvider(p)}</li>)}
-          </ul>
-        </main>
+                p => {
+                  return this._renderProvider(p)
+                }
+            )
+            }
+          </BorderBox>
+
+        </Box>
     );
   }
 }

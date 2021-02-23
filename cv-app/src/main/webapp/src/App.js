@@ -1,17 +1,14 @@
 import React from "react";
-import {BrowserRouter as Router, NavLink, Route, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 import BLOGRest from "./scripts/blog-rest";
-import Cv from "./Cv";
 import Blog from "./Blog";
-import Copyright from "./components/Copyright";
-import Sticker from "./components/Sticker";
-
-import "./styles/web.scss";
 import LoginForm from "./Login";
 import Dashboard from "./containers/admin/Dashboard";
 import OAuth2CallbackHandler from "./components/OAuth2CallbackHandler";
 import PrivateRoute from "./components/PrivateRoute";
+import Home from "./pages/Home";
+import {BaseStyles} from "@primer/components";
 
 export default class App extends React.Component {
 
@@ -53,48 +50,28 @@ export default class App extends React.Component {
   }
 
   render() {
-
-    const navActiveClassName = "selected";
     return (
         <>
-          <Sticker/>
-          <Router>
-            <nav role="navigation">
-              <ul>
-                <li>
-                  <NavLink exact to="/"
-                           activeClassName={navActiveClassName}>
-                    CV
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/blog"
-                           activeClassName={navActiveClassName}>
-                    Blog
-                  </NavLink>
-                </li>
-                {this._renderUserInfo()}
-              </ul>
-            </nav>
-
-            <Switch>
-              <Route path="/blog">
-                <Blog/>
-              </Route>
-              <Route path="/login" render={(props) => <LoginForm {...props}/>}/>
-              <PrivateRoute path="/admin"
-                            user={this.state.currentUser}
-                            authenticated={this.state.authenticated}
-                            component={Dashboard}/>
-              <Route path="/oauth2/callback" component={OAuth2CallbackHandler}/>
-              <Route path="/">
-                <Cv/>
-              </Route>
-            </Switch>
-          </Router>
-          <footer className="hideOnPrint">
-            <Copyright name="Mathias Bosman"/>
-          </footer>
+          <BaseStyles>
+            <Router>
+              <Switch>
+                <Route path="/blog">
+                  <Blog/>
+                </Route>
+                <Route path="/login"
+                       render={(props) => <LoginForm {...props}/>}/>
+                <PrivateRoute path="/admin"
+                              user={this.state.currentUser}
+                              authenticated={this.state.authenticated}
+                              component={Dashboard}/>
+                <Route path="/oauth2/callback"
+                       component={OAuth2CallbackHandler}/>
+                <Route path="/">
+                  <Home/>
+                </Route>
+              </Switch>
+            </Router>
+          </BaseStyles>
         </>
     );
   }

@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {Button, StyledOcticon} from "@primer/components";
+import {PaperAirplaneIcon} from "@primer/octicons-react";
 
 export default class MailToLink extends React.Component {
 
@@ -17,9 +19,9 @@ export default class MailToLink extends React.Component {
 
   render() {
     return (
-        <button onClick={this._sendMail} {...this.props}>
-          {this.props.children}
-        </button>
+        <Button onClick={this._sendMail} {...this.props}>
+          <StyledOcticon icon={PaperAirplaneIcon}/> {this.props.children}
+        </Button>
     )
   };
 }
