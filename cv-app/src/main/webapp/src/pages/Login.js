@@ -1,12 +1,12 @@
 import React from "react";
 import {Redirect} from "react-router-dom";
-import BLOGRest from "./scripts/blog-rest";
+import BLOGRest from "../scripts/blog-rest";
 import {
   OAUTH2_AUTHORIZE_URL,
   OAUTH2_PROVIDERS,
   OAUTH2_REDIRECT_URL
-} from "./Constants";
-import Error from "./components/Error";
+} from "../Constants";
+import Error from "../components/Error";
 import {
   BorderBox,
   Box,
@@ -17,7 +17,7 @@ import {
   StyledOcticon,
   TextInput
 } from "@primer/components";
-import "./styles/authForm.scss";
+import "../styles/authForm.scss";
 
 export default class LoginForm extends React.Component {
 

@@ -3,22 +3,23 @@ spring:
     oauth2:
       client:
         registration:
-          google:
-            client-id: clientId
-            client-secret: clientSecret
+          github:
+            client-id: ${OAUTH2_GITHUB_CLIENT_ID}
+            client-secret: ${OAUTH2_GITHUB_CLIENT_SECRET}
+            redirectUri: "{baseUrl}/oauth2/callback/{registrationId}"
   main:
     banner-mode: off
   application:
     name: cv
   datasource:
-    url:
-    username:
-    password:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
 logging:
   level:
     ROOT: ERROR
     be: INFO
 #  file:
 server:
-  port: 8081
+  port: ${PORT:8081}
 #    path: /var/log/${spring.application.name}

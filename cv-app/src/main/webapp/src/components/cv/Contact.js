@@ -12,14 +12,15 @@ export default class Contact extends React.Component {
         message.
       </Text>
 
-      <Flash mt={3} variant="warning">Be advised that I will only be able to
+      <Flash my={3} variant="warning">Be advised that I will only be able to
         setup
         a network during weekends or official holidays as this is my secondary
         occupation.
-        <br/>Still interested?
+      </Flash>
+      <Text>Still interested?
         <MailToLink variant="small" mx={1} mail="bosmanmathias@gmail.com">
           Send me an email
-        </MailToLink>to get in touch! </Flash>
+        </MailToLink>to get in touch! </Text>
     </>;
   }
 }

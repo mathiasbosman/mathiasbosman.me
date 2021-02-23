@@ -35,7 +35,7 @@
 
     <!-- docker (for testing) -->
     <docker.mavenPlugin.version>4.0.0</docker.mavenPlugin.version>
-    <docker-compose.file>docker/cv-docker-test.yml</docker-compose.file>
+    <docker-compose.file>${project.basedir}/docker-compose-test.yml</docker-compose.file>
     <docker-project>cv-ut</docker-project>
 
     <!-- deployment -->

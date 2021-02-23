@@ -3,12 +3,13 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 import BLOGRest from "./scripts/blog-rest";
 import Blog from "./Blog";
-import LoginForm from "./Login";
+import LoginForm from "./pages/Login";
 import Dashboard from "./containers/admin/Dashboard";
 import OAuth2CallbackHandler from "./components/OAuth2CallbackHandler";
 import PrivateRoute from "./components/PrivateRoute";
 import Home from "./pages/Home";
 import {BaseStyles} from "@primer/components";
+import NotFound from "./NotFound";
 
 export default class App extends React.Component {
 
@@ -46,7 +47,8 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    this._getLoggedInUser();
+    //todo
+    // this._getLoggedInUser();
   }
 
   render() {
@@ -66,9 +68,10 @@ export default class App extends React.Component {
                               component={Dashboard}/>
                 <Route path="/oauth2/callback"
                        component={OAuth2CallbackHandler}/>
-                <Route path="/">
+                <Route exact path="/">
                   <Home/>
                 </Route>
+                <Route component={NotFound}/>
               </Switch>
             </Router>
           </BaseStyles>

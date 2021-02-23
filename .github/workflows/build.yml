@@ -1,5 +1,5 @@
 name: Maven build
-on: [push, pull_request]
+on: push
 jobs:
   Compile:
     name: Maven build

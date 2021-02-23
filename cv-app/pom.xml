@@ -118,6 +118,7 @@
               <composeFile>${docker-compose.file}</composeFile>
               <projectName>${docker-project}</projectName>
               <removeVolumes>true</removeVolumes>
+              <skip>${skipDocker}</skip>
             </configuration>
             <goals>
               <goal>down</goal>
@@ -211,6 +212,11 @@
     <dependency>
       <artifactId>postgresql</artifactId>
       <groupId>org.postgresql</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>h2</artifactId>
+      <groupId>com.h2database</groupId>
+      <scope>runtime</scope>
     </dependency>
   </dependencies>
   <modelVersion>4.0.0</modelVersion>
