@@ -6,6 +6,7 @@ import be.mathiasbosman.cv.dto.UserDto;
 import be.mathiasbosman.cv.entity.Post;
 import be.mathiasbosman.cv.repo.PostRepository;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,7 +30,7 @@ public class PostServiceImpl implements PostService {
 
   @Override
   @Transactional
-  public PostDto delete(int postId) {
+  public PostDto delete(UUID postId) {
     log.info("Deleting post [{}]", postId);
     Post p = getPost(postId);
     p.setDeleted(true);
@@ -44,19 +45,19 @@ public class PostServiceImpl implements PostService {
   }
 
   @Override
-  public List<PostDto> getPosts(int posterId) {
+  public List<PostDto> getPosts(UUID posterId) {
     return getPosts(posterId, false);
   }
 
   @Override
   @Transactional(readOnly = true)
-  public List<PostDto> getPosts(int posterId, boolean deleted) {
+  public List<PostDto> getPosts(UUID posterId, boolean deleted) {
     return postRepository.findAllByPosterIdAndDeleted(posterId, deleted).stream()
         .map(this::getPostDto).collect(Collectors.toList());
   }
 
   @Override
-  public PostDto post(PostContentDto contentDto, int userId) {
+  public PostDto post(PostContentDto contentDto, UUID userId) {
     throw new UnsupportedOperationException("not yet implemented");
   }
 
@@ -73,7 +74,7 @@ public class PostServiceImpl implements PostService {
     return new PostDto(p.getId(), p.getSubject(), p.getBody(), u, p.getCreated(), p.getUpdated());
   }
 
-  private Post getPost(int id) {
+  private Post getPost(UUID id) {
     return postRepository.getOne(id);
   }
 }

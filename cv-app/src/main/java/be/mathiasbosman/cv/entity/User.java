@@ -1,18 +1,19 @@
 package be.mathiasbosman.cv.entity;
 
+import java.util.UUID;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-@javax.persistence.Entity
+@Entity
 @Table(name = "users")
-public class User extends Entity<Integer> {
+public class User extends IdentifiableEntity<UUID> {
+
   @Id
-  @SequenceGenerator(name = "user_gen", sequenceName = "users_seq", allocationSize = 1)
-  @GeneratedValue(generator = "user_gen")
-  private Integer id;
+  @GeneratedValue
+  private UUID id;
   private String username;
   @Column(name = "first_name")
   private String firstName;
@@ -30,7 +31,7 @@ public class User extends Entity<Integer> {
   }
 
   @Override
-  public Integer getId() {
+  public UUID getId() {
     return id;
   }
 

@@ -1,14 +1,16 @@
 package be.mathiasbosman.cv.dto;
 
+import java.util.UUID;
+
 public class UserDto {
 
-  private final int userId;
+  private final UUID userId;
   private final String email;
   private final String firstName;
   private final String lastName;
   private final String username;
 
-  public UserDto(int userId, String email, String firstName, String lastName, String username) {
+  public UserDto(UUID userId, String email, String firstName, String lastName, String username) {
     this.userId = userId;
     this.email = email;
     this.firstName = firstName;
@@ -16,7 +18,7 @@ public class UserDto {
     this.username = username;
   }
 
-  public int getUserId() {
+  public UUID getUserId() {
     return userId;
   }
 

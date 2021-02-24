@@ -1,6 +1,6 @@
 create table users
 (
-    id         int
+    id uuid
         constraint pk_user primary key,
     username   varchar(50)  not null
         constraint users_username_u unique,
@@ -11,5 +11,3 @@ create table users
     created    timestamptz  not null,
     updated    timestamptz  not null
 );
-
-create sequence users_seq;

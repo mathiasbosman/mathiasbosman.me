@@ -3,6 +3,7 @@ package be.mathiasbosman.cv.service;
 import be.mathiasbosman.cv.dto.UserDto;
 import be.mathiasbosman.cv.entity.User;
 import be.mathiasbosman.cv.repo.UserRepository;
+import java.util.UUID;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,7 +20,7 @@ public class UserServiceImpl implements UserService {
 
   @Override
   @Transactional(readOnly = true)
-  public UserDto getUser(int posterId) {
+  public UserDto getUser(UUID posterId) {
     return getUserDto(userRepository.getOne(posterId));
   }
 

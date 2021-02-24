@@ -1,6 +1,6 @@
 create table roles
 (
-    id          int
+    id          uuid
         constraint pk_role primary key,
     code        varchar(50)  not null
         constraint role_code_u unique,
@@ -10,15 +10,15 @@ create table roles
     updated     timestamptz  not null
 );
 
-create sequence roles_seq;
-
 insert into roles
-values (nextval('roles_seq'), 'ADMIN', 'Administrator', 99, current_timestamp, current_timestamp);
+values (md5(random()::text || clock_timestamp()::text)::uuid, 'ADMIN', 'Administrator', 99,
+        current_timestamp, current_timestamp);
 insert into roles
-values (nextval('roles_seq'), 'USER', 'User', 0, current_timestamp, current_timestamp);
+values (md5(random()::text || clock_timestamp()::text)::uuid, 'USER', 'User', 0, current_timestamp,
+        current_timestamp);
 
 alter table users
-    add role int;
+    add role uuid;
 
 alter table users
     add constraint users_role_fk

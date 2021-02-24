@@ -1,22 +1,22 @@
 package be.mathiasbosman.cv.entity;
 
 import java.time.LocalDate;
+import java.util.UUID;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-@javax.persistence.Entity
+@Entity
 @Table(name = "posts")
-public class Post extends Entity<Integer> {
+public class Post extends IdentifiableEntity<UUID> {
 
   @Id
-  @SequenceGenerator(name = "post_gen", sequenceName = "posts_seq", allocationSize = 1)
-  @GeneratedValue(generator = "post_gen")
-  private Integer id;
+  @GeneratedValue
+  private UUID id;
   @Column(name = "poster_id")
-  private int posterId;
+  private UUID posterId;
   @Column(name = "is_deleted")
   private boolean deleted;
   private LocalDate postdate;
@@ -35,11 +35,11 @@ public class Post extends Entity<Integer> {
   }
 
   @Override
-  public Integer getId() {
+  public UUID getId() {
     return id;
   }
 
-  public int getPosterId() {
+  public UUID getPosterId() {
     return posterId;
   }
 

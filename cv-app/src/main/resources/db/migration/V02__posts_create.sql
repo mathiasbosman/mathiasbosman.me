@@ -1,8 +1,8 @@
 create table posts
 (
-    id         int
+    id        uuid
         constraint pk_posts primary key,
-    poster_id  int          not null
+    poster_id uuid not null
         constraint posts_poster_fk references users,
     is_deleted boolean      not null,
     subject    varchar(254) not null,
@@ -11,5 +11,3 @@ create table posts
     created    timestamptz  not null,
     updated    timestamptz  not null
 );
-
-create sequence posts_seq;

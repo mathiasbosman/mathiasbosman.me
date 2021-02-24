@@ -7,7 +7,8 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 
 @MappedSuperclass
-public abstract class Entity<K> implements Identifiable<K>{
+public abstract class IdentifiableEntity<K> implements Identifiable<K> {
+
   @Column(name = "created")
   private LocalDate created;
   @Column(name = "updated")
