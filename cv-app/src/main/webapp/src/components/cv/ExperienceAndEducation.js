@@ -99,8 +99,8 @@ export default class ExperienceAndEducation extends React.Component {
             <StyledOcticon icon={MortarBoardIcon}/>
           </Timeline.Badge>
           <Timeline.Body>
-            <Text fontWeight="bold" mr={1}><Tooltip
-                aria-label="Bachelor of Applied Science">B.A.Sc.</Tooltip>
+            <Text fontWeight="bold" mr={1}><Tooltip as="abbr"
+                                                    aria-label="Bachelor of Applied Science">B.A.Sc.</Tooltip>
               &nbsp;Multimedia &amp; Programming</Text>
             at the <Link href="https://www.ugent.be/en" target="_blank"
                          fontWeight="bold" color="gray.8" muted>

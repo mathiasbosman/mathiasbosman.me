@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
 import {Box, Grid, ProgressBar, Text} from "@primer/components";
 
-export function SkillsElement({skill, percentage}) {
+export function SkillsElement({skill, percentage, color, className}) {
   return (
       <>
-        <Text>{skill}</Text>
+        <Text className={className}>{skill}</Text>
         <Box pr={3}>
-          <ProgressBar progress={percentage}/>
+          <ProgressBar bg={color} progress={percentage}/>
         </Box>
       </>);
 }

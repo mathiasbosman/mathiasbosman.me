@@ -6,7 +6,6 @@ import {HashRouter, Route, Switch} from "react-router-dom";
 import Blog from "./Blog";
 import LoginForm from "./pages/Login";
 import PrivateRoute from "./components/PrivateRoute";
-import Dashboard from "./containers/admin/Dashboard";
 import OAuth2CallbackHandler from "./components/OAuth2CallbackHandler";
 import Home from "./pages/Home";
 import NotFound from "./NotFound";
@@ -65,7 +64,7 @@ export default class App extends React.Component {
                   <PrivateRoute path="/admin"
                                 user={this.state.currentUser}
                                 authenticated={this.state.authenticated}
-                                component={Dashboard}/>
+                                component={NotFound}/>
                   <Route path="/oauth2/callback"
                          component={OAuth2CallbackHandler}/>
                   <Route exact path="/" component={Home}/>
