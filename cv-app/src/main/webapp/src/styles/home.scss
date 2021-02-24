@@ -13,6 +13,15 @@ ul {
   margin: 0;
 }
 
+abbr {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+.strikeThrough {
+  text-decoration: line-through;
+}
+
 .avatarContainer {
   border-radius: 50% !important;
   background: white;
