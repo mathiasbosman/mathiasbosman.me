@@ -7,7 +7,6 @@ import {
   Link,
   Pagehead
 } from "@primer/components";
-import avatar from "../../images/avatar.webp";
 import Age from "../Age";
 import {URL_FLANDERS} from "../../Constants";
 import React from "react";
@@ -19,7 +18,7 @@ export default class Bio extends React.Component {
         <BorderBox className="avatarContainer" mr={0}>
           <Avatar className="avatar" itemProp="image"
                   alt="Mathias Bosman"
-                  src={avatar}/>
+                  src="/assets/images//avatar.webp"/>
         </BorderBox>
       </Box>
       <Box flexGrow={1}>
