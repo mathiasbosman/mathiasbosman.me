@@ -3,9 +3,9 @@ import "../styles/home.scss";
 import {
   BorderBox,
   Box,
-  ButtonInvisible,
   Flash,
   Flex,
+  Link,
   StyledOcticon
 } from "@primer/components";
 import ExperienceAndEducation from "../components/cv/ExperienceAndEducation";
@@ -25,9 +25,8 @@ export default class Home extends React.Component {
     console.log(logoutMethod);
     return <Flash full mb={3}>
       <StyledOcticon icon={ShieldCheckIcon}/>
-      Logged in as {user.name} ({user.login} - {user.id})
-      <ButtonInvisible variant="small"
-                       onClick={logoutMethod}>Logout</ButtonInvisible>
+      Logged in as {user.name} (<Link href="#" variant="small"
+                                      onClick={logoutMethod}>Logout</Link>)
     </Flash>;
   }
 

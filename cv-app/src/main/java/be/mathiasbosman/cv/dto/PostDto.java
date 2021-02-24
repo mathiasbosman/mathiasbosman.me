@@ -1,18 +1,18 @@
 package be.mathiasbosman.cv.dto;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class PostDto {
 
   private final UUID id;
   private final UserDto poster;
-  private final LocalDate created;
-  private final LocalDate updated;
+  private final LocalDateTime created;
+  private final LocalDateTime updated;
   private final PostContentDto content;
 
-  public PostDto(UUID id, String subject, String body, UserDto poster, LocalDate created,
-      LocalDate updated) {
+  public PostDto(UUID id, String subject, String body, UserDto poster, LocalDateTime created,
+      LocalDateTime updated) {
     this.id = id;
     this.content = new PostContentDto(subject, body);
     this.poster = poster;
@@ -28,11 +28,11 @@ public class PostDto {
     return content;
   }
 
-  public LocalDate getCreated() {
+  public LocalDateTime getCreated() {
     return created;
   }
 
-  public LocalDate getUpdated() {
+  public LocalDateTime getUpdated() {
     return updated;
   }
 

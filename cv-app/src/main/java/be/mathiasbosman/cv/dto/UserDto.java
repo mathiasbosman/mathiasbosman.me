@@ -6,15 +6,13 @@ public class UserDto {
 
   private final UUID userId;
   private final String email;
-  private final String firstName;
-  private final String lastName;
+  private final String name;
   private final String username;
 
-  public UserDto(UUID userId, String email, String firstName, String lastName, String username) {
+  public UserDto(UUID userId, String email, String name, String username) {
     this.userId = userId;
     this.email = email;
-    this.firstName = firstName;
-    this.lastName = lastName;
+    this.name = name;
     this.username = username;
   }
 
@@ -26,12 +24,8 @@ public class UserDto {
     return email;
   }
 
-  public String getFirstName() {
-    return firstName;
-  }
-
-  public String getLastName() {
-    return lastName;
+  public String getName() {
+    return name;
   }
 
   public String getUsername() {

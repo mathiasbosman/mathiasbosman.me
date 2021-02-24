@@ -24,7 +24,6 @@ export default class App extends React.Component {
 
     this._getLoggedInUser = this._getLoggedInUser.bind(this);
     this._handleLogout = this._handleLogout.bind(this);
-    this._renderUserInfo = this._renderUserInfo.bind(this);
   }
 
   _getLoggedInUser() {
@@ -43,12 +42,6 @@ export default class App extends React.Component {
         authenticated: false
       });
     });
-  }
-
-  _renderUserInfo() {
-    if (this.state.currentUser) {
-      return <li>{this.state.currentUser.name}</li>
-    }
   }
 
   componentDidMount() {

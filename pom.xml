@@ -49,7 +49,7 @@
     <skipTests>false</skipTests>
     <skipDocker>${skipTests}</skipDocker>
     <skipFrontend>false</skipFrontend>
-    <skipFrontendTests>false</skipFrontendTests>
+    <skipFrontendTests>${skipFrontend}</skipFrontendTests>
   </properties>
 
   <build>

@@ -1,5 +1,6 @@
 package be.mathiasbosman.cv.entity;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,18 +16,18 @@ public class User extends IdentifiableEntity<UUID> {
   @GeneratedValue
   private UUID id;
   private String username;
-  @Column(name = "first_name")
-  private String firstName;
-  @Column(name = "last_name")
-  private String lastName;
+  @Column(name = "display_name")
+  private String name;
   private String email;
+  private LocalDateTime lastLogin;
+  private UUID roleId;
 
-  protected User() {}
+  protected User() {
+  }
 
-  public User(String username, String firstName, String lastName, String email) {
+  public User(String username, String name, String email) {
     this.username = username;
-    this.firstName = firstName;
-    this.lastName = lastName;
+    this.name = name;
     this.email = email;
   }
 
@@ -39,15 +40,24 @@ public class User extends IdentifiableEntity<UUID> {
     return username;
   }
 
-  public String getFirstName() {
-    return firstName;
-  }
-
-  public String getLastName() {
-    return lastName;
+  public String getName() {
+    return name;
   }
 
   public String getEmail() {
     return email;
   }
+
+  public LocalDateTime getLastLogin() {
+    return lastLogin;
+  }
+
+  public void setLastLogin(LocalDateTime lastLogin) {
+    this.lastLogin = lastLogin;
+  }
+
+  public UUID getRoleId() {
+    return roleId;
+  }
+
 }
