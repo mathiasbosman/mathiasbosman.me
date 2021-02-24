@@ -28,8 +28,7 @@ class BLOGRest {
   }
 
   logout() {
-    //TODO
-    return this._get('/api/oauth2/logout');
+    return this._post('/oauth2/logout');
   }
 
   _post(url, data) {

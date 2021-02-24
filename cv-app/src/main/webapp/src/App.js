@@ -11,6 +11,8 @@ import OAuth2CallbackHandler from "./components/OAuth2CallbackHandler";
 import Home from "./pages/Home";
 import NotFound from "./NotFound";
 
+import {userContext} from "./Contexts";
+
 export default class App extends React.Component {
 
   constructor(props) {
@@ -35,8 +37,11 @@ export default class App extends React.Component {
   }
 
   _handleLogout() {
-    this.setState({
-      currentUser: null
+    BLOGRest.logout().then(() => {
+      this.setState({
+        currentUser: null,
+        authenticated: false
+      });
     });
   }
 
@@ -47,30 +52,35 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    //todo
-    // this._getLoggedInUser();
+    this._getLoggedInUser();
   }
 
   render() {
+    const userProviderObject = {
+      user: this.state.currentUser,
+      logoutMethod: this._handleLogout
+    }
     return (
         <>
-          <BaseStyles>
-            <HashRouter>
-              <Switch>
-                <Route path="/blog" component={Blog}/>
-                <Route path={["/login", "/signin"]}
-                       render={(props) => <LoginForm {...props}/>}/>
-                <PrivateRoute path="/admin"
-                              user={this.state.currentUser}
-                              authenticated={this.state.authenticated}
-                              component={Dashboard}/>
-                <Route path="/oauth2/callback"
-                       component={OAuth2CallbackHandler}/>
-                <Route exact path="/" component={Home}/>
-                <Route component={NotFound}/>
-              </Switch>
-            </HashRouter>
-          </BaseStyles>
+          <userContext.Provider value={userProviderObject}>
+            <BaseStyles>
+              <HashRouter>
+                <Switch>
+                  <Route path="/blog" component={Blog}/>
+                  <Route path={["/login", "/signin"]}
+                         render={(props) => <LoginForm {...props}/>}/>
+                  <PrivateRoute path="/admin"
+                                user={this.state.currentUser}
+                                authenticated={this.state.authenticated}
+                                component={Dashboard}/>
+                  <Route path="/oauth2/callback"
+                         component={OAuth2CallbackHandler}/>
+                  <Route exact path="/" component={Home}/>
+                  <Route component={NotFound}/>
+                </Switch>
+              </HashRouter>
+            </BaseStyles>
+          </userContext.Provider>
         </>
     );
   }
