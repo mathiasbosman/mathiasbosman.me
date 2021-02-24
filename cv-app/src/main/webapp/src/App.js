@@ -1,14 +1,14 @@
 import React from "react";
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 import BLOGRest from "./scripts/blog-rest";
+import {BaseStyles} from "@primer/components";
+import {HashRouter, Route, Switch} from "react-router-dom";
 import Blog from "./Blog";
 import LoginForm from "./pages/Login";
+import PrivateRoute from "./components/PrivateRoute";
 import Dashboard from "./containers/admin/Dashboard";
 import OAuth2CallbackHandler from "./components/OAuth2CallbackHandler";
-import PrivateRoute from "./components/PrivateRoute";
 import Home from "./pages/Home";
-import {BaseStyles} from "@primer/components";
 import NotFound from "./NotFound";
 
 export default class App extends React.Component {
@@ -55,12 +55,10 @@ export default class App extends React.Component {
     return (
         <>
           <BaseStyles>
-            <Router>
+            <HashRouter>
               <Switch>
-                <Route path="/blog">
-                  <Blog/>
-                </Route>
-                <Route path="/login"
+                <Route path="/blog" component={Blog}/>
+                <Route path={["/login", "/signin"]}
                        render={(props) => <LoginForm {...props}/>}/>
                 <PrivateRoute path="/admin"
                               user={this.state.currentUser}
@@ -68,12 +66,10 @@ export default class App extends React.Component {
                               component={Dashboard}/>
                 <Route path="/oauth2/callback"
                        component={OAuth2CallbackHandler}/>
-                <Route exact path="/">
-                  <Home/>
-                </Route>
+                <Route exact path="/" component={Home}/>
                 <Route component={NotFound}/>
               </Switch>
-            </Router>
+            </HashRouter>
           </BaseStyles>
         </>
     );

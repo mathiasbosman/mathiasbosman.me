@@ -6,7 +6,7 @@ import SkillsSection from "../components/cv/SkillsSection";
 import Bio from "../components/cv/Bio";
 import Contact from "../components/cv/Contact";
 import Awards from "../components/cv/Awards";
-import {LAYOUT_WIDTH} from "../Constants";
+import {LAYOUT_WIDTH,} from "../Constants";
 import Footer from "../components/Footer";
 import {theme} from "@primer/components/lib/theme-preval";
 

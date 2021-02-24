@@ -1,12 +1,16 @@
 import OAuth2Provider from "./objects/OAuth2Provider";
 import {MarkGithubIcon} from "@primer/octicons-react";
+import {getServerPort} from "./scripts/util";
 
 // Some global constants
 export const URL_FLANDERS = "https://www.vlaanderen.be/en";
 
 // OAuth2
-export const OAUTH2_AUTHORIZE_URL = "http://localhost:8081/oauth2/authorize/";
-export const OAUTH2_REDIRECT_URL = "http://localhost:3000/oauth2/callback/";
+export const HOST = window.location.protocol + "//" + window.location.hostname;
+export const OAUTH2_AUTHORIZE_URL = HOST + ":" + getServerPort(8081)
+    + "/oauth2/authorize/";
+export const OAUTH2_REDIRECT_URL = HOST + ":" + window.location.port
+    + "/#/oauth2/callback/";
 export const OAUTH2_PROVIDERS = {
   "GITHUB": new OAuth2Provider("GitHub", MarkGithubIcon)
 }
