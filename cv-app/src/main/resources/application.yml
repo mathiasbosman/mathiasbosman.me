@@ -32,7 +32,7 @@ oauth2:
       picture: "picture"
     github:
       uid: "id"
-      name: "name",
+      name: "name"
       email: "email"
       username: "login"
       picture: "avatar_url"
