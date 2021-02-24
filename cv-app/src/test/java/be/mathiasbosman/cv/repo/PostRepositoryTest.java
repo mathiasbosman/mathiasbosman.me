@@ -26,6 +26,6 @@ class PostRepositoryTest extends AbstractIntegrationTest {
     Post post2 = new Post(user, false, date1.plusDays(1), "subject2", "body2");
     repository.save(post2);
     repository.save(new Post(user, true, date1, "subject1", "body1"));
-    assertThat(repository.findAll(false)).containsExactly(post1, post2);
+    assertThat(repository.findAll(false)).containsExactly(post2, post1);
   }
 }

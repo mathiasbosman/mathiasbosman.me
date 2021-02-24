@@ -1,34 +1,35 @@
 package be.mathiasbosman.cv.entity;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 
 @MappedSuperclass
-public abstract class Entity<K> implements Identifiable<K>{
+public abstract class IdentifiableEntity<K> implements Identifiable<K> {
+
   @Column(name = "created")
-  private LocalDate created;
+  private LocalDateTime created;
   @Column(name = "updated")
-  private LocalDate updated;
+  private LocalDateTime updated;
 
   @PrePersist
   void prePersist() {
-    created = LocalDate.now();
+    created = LocalDateTime.now();
     updated = created;
   }
 
   @PreUpdate
   void preUpdate() {
-    updated = LocalDate.now();
+    updated = LocalDateTime.now();
   }
 
-  public LocalDate getCreated() {
+  public LocalDateTime getCreated() {
     return created;
   }
 
-  public LocalDate getUpdated() {
+  public LocalDateTime getUpdated() {
     return updated;
   }
 }

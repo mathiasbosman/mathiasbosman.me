@@ -22,7 +22,7 @@ export default class OAuth2CallbackHandler extends React.Component {
       }}/>;
     } else {
       return <Redirect to={{
-        pathname: "/login",
+        pathname: "/signin",
         state: {
           from: this.props.location,
           error: error

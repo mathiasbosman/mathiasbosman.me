@@ -1,6 +1,10 @@
 package be.mathiasbosman.cv.oauth2;
 
-import be.mathiasbosman.cv.util.WebUtils;
+import be.mathiasbosman.cv.dto.UserDto;
+import be.mathiasbosman.cv.entity.OAuth2Identifier;
+import be.mathiasbosman.cv.entity.User;
+import be.mathiasbosman.cv.repo.OAuth2IdRepository;
+import be.mathiasbosman.cv.service.UserService;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -8,27 +12,41 @@ import org.springframework.security.oauth2.client.authentication.OAuth2Authentic
 import org.springframework.security.oauth2.client.registration.ClientRegistration;
 import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 @Service
 public class OAuth2ServiceImpl implements OAuth2Service {
 
   private final ClientRegistrationRepository clientRegistrationRepository;
+  private final OAuth2IdRepository oAuth2IdRepository;
+  private final UserService userService;
+  private final OAuth2Config oAuth2Config;
 
-  public OAuth2ServiceImpl(ClientRegistrationRepository clientRegistrationRepository) {
+  public OAuth2ServiceImpl(ClientRegistrationRepository clientRegistrationRepository,
+      OAuth2IdRepository oAuth2IdRepository, OAuth2Config oAuth2Config,
+      UserService userService) {
     this.clientRegistrationRepository = clientRegistrationRepository;
+    this.oAuth2IdRepository = oAuth2IdRepository;
+    this.oAuth2Config = oAuth2Config;
+    this.userService = userService;
   }
 
   @Override
   public String getStringAttribute(OAuth2AuthenticationToken token, OAuth2Attribute attribute) {
-    return (String) getAttribute(WebUtils.token(), attribute);
+    return (String) getAttribute(token, attribute);
+  }
+
+  @Override
+  public OAuth2Provider getProvider(OAuth2AuthenticationToken token) {
+    return OAuth2Provider.forRegistrationId(token.getAuthorizedClientRegistrationId());
   }
 
   @Override
   public Object getAttribute(OAuth2AuthenticationToken token, OAuth2Attribute attribute) {
-    String clientRegistrationId = token.getAuthorizedClientRegistrationId();
-    OAuth2Provider oAuth2Provider = OAuth2Provider.forRegistrationId(clientRegistrationId);
-    if (oAuth2Provider.getAttributeList().contains(attribute)) {
-      return token.getPrincipal().getAttributes().get(attribute.name().toLowerCase());
+    String attributeKey = oAuth2Config.getAttributes(getProvider(token)).get(attribute);
+    if (StringUtils.hasLength(attributeKey)) {
+      return token.getPrincipal().getAttributes().get(attributeKey);
     }
     return null;
   }
@@ -49,5 +67,18 @@ public class OAuth2ServiceImpl implements OAuth2Service {
       }
     }
     return providers;
+  }
+
+  @Override
+  @Transactional(readOnly = true)
+  public OAuth2Identifier findIdentifier(OAuth2AuthenticationToken token, String uid) {
+    return oAuth2IdRepository.getByUidAndProvider(uid, getProvider(token));
+  }
+
+  @Override
+  @Transactional
+  public OAuth2Identifier createIdentifier(User user, String uid, OAuth2Provider provider) {
+    UserDto userDto = userService.save(user);
+    return oAuth2IdRepository.save(new OAuth2Identifier(provider, uid, userDto.getUserId()));
   }
 }

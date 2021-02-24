@@ -1,15 +1,17 @@
 import React from "react";
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 import BLOGRest from "./scripts/blog-rest";
+import {BaseStyles} from "@primer/components";
+import {HashRouter, Route, Switch} from "react-router-dom";
 import Blog from "./Blog";
 import LoginForm from "./pages/Login";
+import PrivateRoute from "./components/PrivateRoute";
 import Dashboard from "./containers/admin/Dashboard";
 import OAuth2CallbackHandler from "./components/OAuth2CallbackHandler";
-import PrivateRoute from "./components/PrivateRoute";
 import Home from "./pages/Home";
-import {BaseStyles} from "@primer/components";
 import NotFound from "./NotFound";
+
+import {userContext} from "./Contexts";
 
 export default class App extends React.Component {
 
@@ -22,7 +24,6 @@ export default class App extends React.Component {
 
     this._getLoggedInUser = this._getLoggedInUser.bind(this);
     this._handleLogout = this._handleLogout.bind(this);
-    this._renderUserInfo = this._renderUserInfo.bind(this);
   }
 
   _getLoggedInUser() {
@@ -35,46 +36,44 @@ export default class App extends React.Component {
   }
 
   _handleLogout() {
-    this.setState({
-      currentUser: null
+    BLOGRest.logout().then(() => {
+      this.setState({
+        currentUser: null,
+        authenticated: false
+      });
     });
   }
 
-  _renderUserInfo() {
-    if (this.state.currentUser) {
-      return <li>{this.state.currentUser.name}</li>
-    }
-  }
-
   componentDidMount() {
-    //todo
-    // this._getLoggedInUser();
+    this._getLoggedInUser();
   }
 
   render() {
+    const userProviderObject = {
+      user: this.state.currentUser,
+      logoutMethod: this._handleLogout
+    }
     return (
         <>
-          <BaseStyles>
-            <Router>
-              <Switch>
-                <Route path="/blog">
-                  <Blog/>
-                </Route>
-                <Route path="/login"
-                       render={(props) => <LoginForm {...props}/>}/>
-                <PrivateRoute path="/admin"
-                              user={this.state.currentUser}
-                              authenticated={this.state.authenticated}
-                              component={Dashboard}/>
-                <Route path="/oauth2/callback"
-                       component={OAuth2CallbackHandler}/>
-                <Route exact path="/">
-                  <Home/>
-                </Route>
-                <Route component={NotFound}/>
-              </Switch>
-            </Router>
-          </BaseStyles>
+          <userContext.Provider value={userProviderObject}>
+            <BaseStyles>
+              <HashRouter>
+                <Switch>
+                  <Route path="/blog" component={Blog}/>
+                  <Route path={["/login", "/signin"]}
+                         render={(props) => <LoginForm {...props}/>}/>
+                  <PrivateRoute path="/admin"
+                                user={this.state.currentUser}
+                                authenticated={this.state.authenticated}
+                                component={Dashboard}/>
+                  <Route path="/oauth2/callback"
+                         component={OAuth2CallbackHandler}/>
+                  <Route exact path="/" component={Home}/>
+                  <Route component={NotFound}/>
+                </Switch>
+              </HashRouter>
+            </BaseStyles>
+          </userContext.Provider>
         </>
     );
   }

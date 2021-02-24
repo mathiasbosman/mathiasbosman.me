@@ -1,36 +1,38 @@
 package be.mathiasbosman.cv.entity;
 
+import java.time.LocalDateTime;
+import java.util.UUID;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-@javax.persistence.Entity
+@Entity
 @Table(name = "users")
-public class User extends Entity<Integer> {
+public class User extends IdentifiableEntity<UUID> {
+
   @Id
-  @SequenceGenerator(name = "user_gen", sequenceName = "users_seq", allocationSize = 1)
-  @GeneratedValue(generator = "user_gen")
-  private Integer id;
+  @GeneratedValue
+  private UUID id;
   private String username;
-  @Column(name = "first_name")
-  private String firstName;
-  @Column(name = "last_name")
-  private String lastName;
+  @Column(name = "display_name")
+  private String name;
   private String email;
+  private LocalDateTime lastLogin;
+  private UUID roleId;
 
-  protected User() {}
+  protected User() {
+  }
 
-  public User(String username, String firstName, String lastName, String email) {
+  public User(String username, String name, String email) {
     this.username = username;
-    this.firstName = firstName;
-    this.lastName = lastName;
+    this.name = name;
     this.email = email;
   }
 
   @Override
-  public Integer getId() {
+  public UUID getId() {
     return id;
   }
 
@@ -38,15 +40,24 @@ public class User extends Entity<Integer> {
     return username;
   }
 
-  public String getFirstName() {
-    return firstName;
-  }
-
-  public String getLastName() {
-    return lastName;
+  public String getName() {
+    return name;
   }
 
   public String getEmail() {
     return email;
   }
+
+  public LocalDateTime getLastLogin() {
+    return lastLogin;
+  }
+
+  public void setLastLogin(LocalDateTime lastLogin) {
+    this.lastLogin = lastLogin;
+  }
+
+  public UUID getRoleId() {
+    return roleId;
+  }
+
 }

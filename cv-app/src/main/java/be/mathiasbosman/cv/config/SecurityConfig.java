@@ -31,8 +31,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .httpBasic().disable()
         .authorizeRequests()
         .antMatchers("/**/*.{ico,png,gif,svg,jpg,js,html,css}").permitAll()
-        .antMatchers("/", "/error", "/rest/public/**").permitAll()
-        .antMatchers("/", "/auth/**", "/oauth2/**").permitAll()
+        .antMatchers("/", "/rest/public/**").permitAll()
+        .antMatchers("/auth/**", "/oauth2/**").permitAll()
         .anyRequest().authenticated()
         .and()
         .oauth2Login()
@@ -42,7 +42,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .redirectionEndpoint().baseUri("/oauth2/callback/*")
         .and()
         .successHandler(oAuth2AuthenticationSuccessHandler)
-        .failureHandler(oAuth2AuthenticationFailureHandler);
+        .failureHandler(oAuth2AuthenticationFailureHandler)
+        .and()
+        .logout().logoutUrl("/oauth2/logout");
   }
 
 }

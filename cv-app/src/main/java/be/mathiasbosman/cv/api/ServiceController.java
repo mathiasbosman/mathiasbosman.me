@@ -9,6 +9,7 @@ import be.mathiasbosman.cv.service.PostService;
 import be.mathiasbosman.cv.service.UserService;
 import be.mathiasbosman.cv.util.WebUtils;
 import java.util.List;
+import java.util.UUID;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -39,13 +40,13 @@ public class ServiceController {
   }
 
   @GetMapping(value = "/public/posts/{userId}")
-  public List<PostDto> postsByUsername(@PathVariable("userId") int userId) {
+  public List<PostDto> postsByUsername(@PathVariable("userId") UUID userId) {
     return postService.getPosts(userId);
   }
 
   @DeleteMapping(value = "/post/{id}")
   public @ResponseBody
-  PostDto deletePost(@PathVariable int id) {
+  PostDto deletePost(@PathVariable UUID id) {
     return postService.delete(id);
   }
 

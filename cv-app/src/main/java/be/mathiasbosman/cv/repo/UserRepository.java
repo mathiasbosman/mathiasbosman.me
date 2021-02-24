@@ -5,7 +5,9 @@ import java.util.List;
 
 public interface UserRepository extends EntityRepository<User> {
 
-  User findByEmail(String email);
+  User getByEmail(String email);
 
   List<User> findAllByUsernameLike(String username);
+
+  boolean existsByEmail(String email);
 }
