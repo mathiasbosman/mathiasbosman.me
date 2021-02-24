@@ -10,6 +10,7 @@ public class OAuth2AttributeTest {
   void checkUIDAttributePresence() {
     for (OAuth2Provider value : OAuth2Provider.values()) {
       assertThat(value.getAttributesMap()).containsKey(OAuth2Attribute.UID);
+      assertThat(value.getAttributesMap().get(OAuth2Attribute.UID)).isNotEmpty();
     }
   }
 }
