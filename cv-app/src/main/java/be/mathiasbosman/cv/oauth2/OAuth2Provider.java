@@ -1,26 +1,9 @@
 package be.mathiasbosman.cv.oauth2;
 
-import be.mathiasbosman.cv.util.WebUtils;
-import java.util.Map;
-
 public enum OAuth2Provider {
 
-  GOOGLE("google", WebUtils.openIdAttributesMap),
-  GITHUB("github", Map.of(
-      OAuth2Attribute.EMAIL, "email",
-      OAuth2Attribute.USERNAME, "login",
-      OAuth2Attribute.PICTURE, "avatar_url",
-      OAuth2Attribute.NAME, "name",
-      OAuth2Attribute.UID, "id"
-  ));
-
-  private final String registrationId;
-  private final Map<OAuth2Attribute, String> attributesMap;
-
-  OAuth2Provider(String registrationId, Map<OAuth2Attribute, String> attributesMap) {
-    this.registrationId = registrationId;
-    this.attributesMap = attributesMap;
-  }
+  GOOGLE,
+  GITHUB;
 
   public static OAuth2Provider forRegistrationId(String registrationId) {
     for (OAuth2Provider provider : values()) {
@@ -33,11 +16,7 @@ public enum OAuth2Provider {
   }
 
   public String getRegistrationId() {
-    return registrationId;
-  }
-
-  public Map<OAuth2Attribute, String> getAttributesMap() {
-    return attributesMap;
+    return name().toLowerCase();
   }
 
   @Override

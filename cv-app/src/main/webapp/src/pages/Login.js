@@ -98,12 +98,10 @@ export default class LoginForm extends React.Component {
 
             <ButtonPrimary mb={1} display="block" width="100%">Sign
               in</ButtonPrimary>
-            {this.state.providers.map(
-                p => {
+            {this.state.providers.map(p => {
                   return this._renderProvider(p)
                 }
-            )
-            }
+            )}
           </BorderBox>
 
         </Box>

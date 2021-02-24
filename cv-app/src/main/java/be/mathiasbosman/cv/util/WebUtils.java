@@ -1,8 +1,6 @@
 package be.mathiasbosman.cv.util;
 
-import be.mathiasbosman.cv.oauth2.OAuth2Attribute;
 import java.util.Base64;
-import java.util.Map;
 import java.util.Optional;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -18,14 +16,6 @@ public abstract class WebUtils {
   static Authentication authentication() {
     return SecurityContextHolder.getContext().getAuthentication();
   }
-
-  public static final Map<OAuth2Attribute, String> openIdAttributesMap = Map.of(
-      OAuth2Attribute.UID, "email",
-      OAuth2Attribute.EMAIL, "email",
-      OAuth2Attribute.USERNAME, "email",
-      OAuth2Attribute.PICTURE, "picture",
-      OAuth2Attribute.NAME, "name"
-  );
 
   static boolean isAnonymous(Authentication authentication) {
     return authentication instanceof AnonymousAuthenticationToken;

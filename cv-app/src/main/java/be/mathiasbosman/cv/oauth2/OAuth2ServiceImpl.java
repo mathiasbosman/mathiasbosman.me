@@ -21,12 +21,14 @@ public class OAuth2ServiceImpl implements OAuth2Service {
   private final ClientRegistrationRepository clientRegistrationRepository;
   private final OAuth2IdRepository oAuth2IdRepository;
   private final UserService userService;
+  private final OAuth2Config oAuth2Config;
 
   public OAuth2ServiceImpl(ClientRegistrationRepository clientRegistrationRepository,
-      OAuth2IdRepository oAuth2IdRepository,
+      OAuth2IdRepository oAuth2IdRepository, OAuth2Config oAuth2Config,
       UserService userService) {
     this.clientRegistrationRepository = clientRegistrationRepository;
     this.oAuth2IdRepository = oAuth2IdRepository;
+    this.oAuth2Config = oAuth2Config;
     this.userService = userService;
   }
 
@@ -42,7 +44,7 @@ public class OAuth2ServiceImpl implements OAuth2Service {
 
   @Override
   public Object getAttribute(OAuth2AuthenticationToken token, OAuth2Attribute attribute) {
-    String attributeKey = getProvider(token).getAttributesMap().get(attribute);
+    String attributeKey = oAuth2Config.getAttributes(getProvider(token)).get(attribute);
     if (StringUtils.hasLength(attributeKey)) {
       return token.getPrincipal().getAttributes().get(attributeKey);
     }
