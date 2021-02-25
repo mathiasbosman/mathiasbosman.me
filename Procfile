@@ -1,1 +1,0 @@
-web: java -jar cv-app/target/cv-app-0.0.1-SNAPSHOT.jar
