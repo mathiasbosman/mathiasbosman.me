@@ -277,5 +277,5 @@
     <promoteOnDeploy>false</promoteOnDeploy>
   </properties>
 
-  <version>alpha</version>
+  <version>v2</version>
 </project>
