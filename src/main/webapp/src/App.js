@@ -3,7 +3,6 @@ import React from "react";
 import BLOGRest from "./scripts/blog-rest";
 import {BaseStyles} from "@primer/components";
 import {HashRouter, Route, Switch} from "react-router-dom";
-import Blog from "./Blog";
 import LoginForm from "./pages/Login";
 import PrivateRoute from "./components/PrivateRoute";
 import OAuth2CallbackHandler from "./components/OAuth2CallbackHandler";
@@ -11,6 +10,7 @@ import Home from "./pages/Home";
 import NotFound from "./NotFound";
 
 import {userContext} from "./Contexts";
+import Blog from "./components/blog/Blog";
 
 export default class App extends React.Component {
 
