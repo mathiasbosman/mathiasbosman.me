@@ -1,12 +1,15 @@
 spring:
-  cloud:
-    gcp:
-      sql:
-        database-name: ${sm://sql-database-name}
-        instance-connection-name: ${sm://sql-instance-connection-name}
   datasource:
     username: ${sm://sql-username}
     password: ${sm://sql-password}
+  cloud:
+    gcp:
+      secretmanager:
+        enabled: true
+      sql:
+        database-name: ${sm://sql-database-name}
+        instance-connection-name: ${sm://sql-instance-connection-name}
+        enabled: true
   security:
     oauth2:
       client:
