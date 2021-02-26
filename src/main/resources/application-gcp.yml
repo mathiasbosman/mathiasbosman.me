@@ -18,3 +18,5 @@ spring:
             client-id: ${sm://oauth2-github-client-id}
             secret-id: ${sm://oauth2-github-secret-id}
             redirect-uri: "{baseUrl}/oauth2/callback/{registrationId}"
+  main:
+    lazy-initialization: true
