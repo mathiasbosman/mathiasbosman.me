@@ -274,8 +274,8 @@
     <!-- flags -->
     <skipTests>false</skipTests>
     <start-class>be.mathiasbosman.cv.CvApplication</start-class>
-    <promoteOnDeploy>true</promoteOnDeploy>
+    <promoteOnDeploy>false</promoteOnDeploy>
   </properties>
 
-  <version>v1</version>
+  <version>alpha</version>
 </project>

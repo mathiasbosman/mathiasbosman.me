@@ -25,4 +25,5 @@ jobs:
         env:
           GITHUB_USERNAME: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: mvn -DskipTests clean package appengine:deploy
+          TAG_NAME: ${{ github.event.release.tag_name }}
+        run: mvn -DskipTests clean package appengine:deploy --version $TAG_NAME
