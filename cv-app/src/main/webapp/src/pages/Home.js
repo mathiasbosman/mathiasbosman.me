@@ -39,7 +39,8 @@ export default class Home extends React.Component {
             )}
           </userContext.Consumer>
           <BorderBox boxShadow={theme.shadows.medium} backgroundColor="white"
-                     maxWidth={LAYOUT_WIDTH} mx="auto" my={3} p={3}>
+                     maxWidth={LAYOUT_WIDTH} mx="auto" my={3} p={3}
+                     as="main">
 
             <section>
               <Bio/>

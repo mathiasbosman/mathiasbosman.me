@@ -30,7 +30,7 @@ export default class ExperienceAndEducation extends React.Component {
             <Heading as="h3" fontSize={1} fontWeight="normal">
               <Text fontWeight="bold" mr={1}>Java programmer</Text>
               at <Link href={URL_FLANDERS} target="_blank"
-                       fontWeight="bold" color="gray.8" muted>the
+                       fontWeight="bold">the
               Flemish Government</Link>
             </Heading>
             <Text as="i">2018 - present</Text>
@@ -47,10 +47,9 @@ export default class ExperienceAndEducation extends React.Component {
             <StyledOcticon icon={CodeReviewIcon}/>
           </Timeline.Badge>
           <Timeline.Body>
-            <Text fontWeight="bold" mr={1}>Application
+            <Text mr={1}>Application
               manager</Text>
-            at <Link href={URL_FLANDERS} target="_blank"
-                     fontWeight="bold" color="gray.8" muted>the
+            at <Link href={URL_FLANDERS} target="_blank">the
             Flemish Government</Link>
             <br/>2016 - 2018
           </Timeline.Body>
@@ -60,10 +59,9 @@ export default class ExperienceAndEducation extends React.Component {
             <StyledOcticon icon={OrganizationIcon}/>
           </Timeline.Badge>
           <Timeline.Body>
-            <Text fontWeight="bold" mr={1}>Expert employee system /
+            <Text mr={1}>Expert employee system /
               IT-support</Text>
-            at <Link href={URL_FLANDERS} target="_blank"
-                     fontWeight="bold" color="gray.8" muted>the
+            at <Link href={URL_FLANDERS} target="_blank">the
             Flemish Government</Link>
             <br/>2013 - 2016
           </Timeline.Body>
@@ -74,10 +72,8 @@ export default class ExperienceAndEducation extends React.Component {
             <StyledOcticon icon={CodeIcon}/>
           </Timeline.Badge>
           <Timeline.Body>
-            <Text fontWeight="bold" mr={1}>PHP Web developer</Text>
-            at <Link href="http://www.echoweb.be" target="_blank"
-                     fontWeight="bold" color="gray.8"
-                     muted>Echoweb</Link>
+            <Text mr={1}>PHP Web developer</Text>
+            at <Link href="http://www.echoweb.be" target="_blank">Echoweb</Link>
             <br/>2013
           </Timeline.Body>
         </Timeline.Item>
@@ -86,9 +82,8 @@ export default class ExperienceAndEducation extends React.Component {
             <StyledOcticon icon={CodeIcon}/>
           </Timeline.Badge>
           <Timeline.Body>
-            <Text fontWeight="bold" mr={1}>Web developer</Text>
-            at <Link href="https://www.procius.com/" target="_blank"
-                     fontWeight="bold" color="gray.8" muted>Procius
+            <Text mr={1}>Web developer</Text>
+            at <Link href="https://www.procius.com/" target="_blank">Procius
             Limited</Link>
             <br/>2012 (internship)
           </Timeline.Body>
@@ -99,11 +94,10 @@ export default class ExperienceAndEducation extends React.Component {
             <StyledOcticon icon={MortarBoardIcon}/>
           </Timeline.Badge>
           <Timeline.Body>
-            <Text fontWeight="bold" mr={1}><Tooltip as="abbr"
-                                                    aria-label="Bachelor of Applied Science">B.A.Sc.</Tooltip>
+            <Text mr={1}><Tooltip as="abbr"
+                                  aria-label="Bachelor of Applied Science">B.A.Sc.</Tooltip>
               &nbsp;Multimedia &amp; Programming</Text>
-            at the <Link href="https://www.ugent.be/en" target="_blank"
-                         fontWeight="bold" color="gray.8" muted>
+            at the <Link href="https://www.ugent.be/en" target="_blank">
             University of Ghent
           </Link>
             <br/>2009 - 2012
@@ -114,9 +108,8 @@ export default class ExperienceAndEducation extends React.Component {
             <StyledOcticon icon={MortarBoardIcon}/>
           </Timeline.Badge>
           <Timeline.Body>
-            <Text fontWeight="bold" mr={1}>Stage lighting</Text>
-            at <Link href="https://gsauk.org//en" target="_blank"
-                     fontWeight="bold" color="gray.8" muted>
+            <Text mr={1}>Stage lighting</Text>
+            at <Link href="https://gsauk.org//en" target="_blank">
             GSA
           </Link>
             <br/>2014 - 2017
@@ -127,9 +120,8 @@ export default class ExperienceAndEducation extends React.Component {
             <StyledOcticon icon={MortarBoardIcon}/>
           </Timeline.Badge>
           <Timeline.Body>
-            <Text fontWeight="bold" mr={1}>Applied Computer Science</Text>
-            at <Link href="https://www.ktad.be/" target="_blank"
-                     fontWeight="bold" color="gray.8" muted>
+            <Text mr={1}>Applied Computer Science</Text>
+            at <Link href="https://www.ktad.be/" target="_blank">
             KT@ Dendermonde
           </Link>
             <br/>2014 - 2017
