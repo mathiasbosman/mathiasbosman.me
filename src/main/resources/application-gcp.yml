@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    username: ${sm://sql-username}
+    password: ${sm://sql-password}
+  cloud:
+    gcp:
+      secretmanager:
+        enabled: true
+      sql:
+        database-name: ${sm://sql-database-name}
+        instance-connection-name: ${sm://sql-instance-connection-name}
+        enabled: true
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: ${sm://oauth2-github-client-id}
+            secret-id: ${sm://oauth2-github-secret-id}
+            redirect-uri: "{baseUrl}/oauth2/callback/{registrationId}"

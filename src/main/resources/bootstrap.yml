@@ -1,0 +1,24 @@
+spring:
+  main:
+    banner-mode: off
+  application:
+    name: cv
+logging:
+  level:
+    ROOT: ERROR
+    be: INFO
+server:
+  port: ${PORT:8081}
+
+---
+# dev and test
+spring:
+  cloud:
+    gcp:
+      secretmanager:
+        enabled: false
+      sql:
+        enabled: false
+  config:
+    activate:
+      on-profile: dev, test
