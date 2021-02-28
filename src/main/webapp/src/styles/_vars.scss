@@ -2,19 +2,12 @@
 $screen-break-point: 768px;
 
 // colors
-$accent-color: #444;
+$bg-color-light: white;
+$bg-color-dark: #0d1117;
+$border-color-dark: #30363d;
 $bg-accent-color: #f6f8fa;
-$link-color: $accent-color;
 
 // font
-$font-color: $accent-color;
+$font-color-dark: #c9d1d9;
+$font-color-light: #586069;
 $font-size: 13px;
-
-// form controls
-$form-control-border: 1px solid #bfb8b1;
-$form-control-br: 3px;
-$form-control-font-size: .9em;
-$form-control-padding: .4em;
-
-$button-bg: linear-gradient(to bottom, #f5f4f3 0%, #eae8e6 100%);
-$button-bg-hover: #f5f4f3;

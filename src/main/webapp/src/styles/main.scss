@@ -2,11 +2,12 @@
 
 body {
   font-size: 13px;
+  color: $font-color-light;
   background-color: $bg-accent-color;
+}
 
-  &.bg-white {
-    background-color: white;
-  }
+main {
+  background-color: $bg-color-light;
 }
 
 ul {
@@ -25,12 +26,11 @@ abbr {
 
 .avatarContainer {
   border-radius: 50% !important;
-  background: white;
   z-index: 4;
 
   .avatar {
-    width: 175px;
-    height: 175px;
+    width: 150px;
+    height: 150px;
   }
 }
 
@@ -39,16 +39,33 @@ abbr {
   main {
     margin: 0 !important;
     border: none !important;
+    background-color: $bg-color-dark;
+    color: $font-color-dark;
+  }
+
+  @media (prefers-color-scheme: light) {
+    main {
+      background-color: $bg-color-dark;
+    }
+
+    .avatarContainer {
+      border-color: $border-color-dark !important;
+    }
+
+    footer {
+      border-color: $border-color-dark !important;
+    }
   }
 
   .avatar {
-    width: 100px !important;
-    height: 100px !important;
+    width: 100px;
+    height: 100px;
   }
 
   h1 {
-    font-size: 1.5em !important;
-    border: none !important;
+    padding-bottom: 0 !important;
+    margin: 0;
+    border-color: $border-color-dark !important;
   }
 
   .flexWrapper {

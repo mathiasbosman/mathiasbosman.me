@@ -34,7 +34,7 @@ export default class Home extends React.Component {
     return (
         <>
           <Banner/>
-          <BorderBox boxShadow={theme.shadows.medium} backgroundColor="white"
+          <BorderBox boxShadow={theme.shadows.medium}
                      maxWidth={LAYOUT_WIDTH} mx="auto" my={3} p={3}
                      as="main">
 

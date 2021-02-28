@@ -4,6 +4,7 @@ import {
   Box,
   Flex,
   Heading,
+    Text,
   Link,
   Pagehead
 } from "@primer/components";
@@ -22,17 +23,16 @@ export default class Bio extends React.Component {
         </BorderBox>
       </Box>
       <Box flexGrow={1}>
-        <Pagehead flexGrow={1} px={3}>
-          <Heading as="h1">
+        <Pagehead fontSize={3} as="h1" flexGrow={1} px={3}>
             <span itemProp="givenName">Mathias</span>&nbsp;
-            <span itemProp="familyName">Bosman</span></Heading>
+            <span itemProp="familyName">Bosman</span>
 
         </Pagehead>
-        <Heading as="aside" fontSize={3} mb={2} px={3}>Web designer,
+        <Heading as="aside" fontSize={2} mb={2} px={3}>Web designer,
           Java
           developer &amp; network engineer</Heading>
         <Box px={3}>
-          <p itemProp="description">
+          <Text fontSize={1} as="p" itemProp="description">
             Known as "The little one", I'm a web designer and Java
             developer
             living in the outskirts of <Link target="_blank"
@@ -51,7 +51,7 @@ export default class Bio extends React.Component {
             expensive
             Decathlon race bike or setting up some small network
             somewhere.
-          </p>
+          </Text>
         </Box>
       </Box>
     </Flex>;
