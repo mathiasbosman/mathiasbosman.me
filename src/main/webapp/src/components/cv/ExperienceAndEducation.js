@@ -26,7 +26,7 @@ export default class ExperienceAndEducation extends React.Component {
           <Timeline.Badge bg="yellow.4">
             <StyledOcticon icon={CodeIcon}/>
           </Timeline.Badge>
-          <Timeline.Body>
+          <Timeline.Body color="inherit">
             <Heading as="h3" fontSize={1} fontWeight="normal">
               <Text fontWeight="bold" mr={1}>Java programmer</Text>
               at <Link href={URL_FLANDERS} target="_blank"

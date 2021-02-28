@@ -39,22 +39,38 @@ abbr {
   main {
     margin: 0 !important;
     border: none !important;
-    background-color: $bg-color-dark;
-    color: $font-color-dark;
   }
 
-  @media (prefers-color-scheme: light) {
-    main {
-      background-color: $bg-color-dark;
+  @media (prefers-color-scheme: dark) { //todo: remove this when dark theme is ready
+    main, body {
+      background-color: $bg-color-dark !important;
     }
 
-    .avatarContainer {
-      border-color: $border-color-dark !important;
+    *[class*="Timeline__TimelineBody"] {
+      color: inherit !important;
     }
 
-    footer {
+    h1, *[class*="BorderBox"],*[class*="TimelineItem-Badge"],
+    *[class*="Timeline__TimelineBreak"],
+    .avatarContainer{
       border-color: $border-color-dark !important;
     }
+    *[class*="Timeline__TimelineBreak"] {
+      background: $bg-color-dark !important;
+    }
+    *[class*="Timeline-Item"]::before,*[class*="ProgressBar__ProgressContainer"] {
+      background: $border-color-dark !important;
+    }
+
+    .warning {
+      background-color: #1e1c15 !important;
+      color: #e3b341 !important;
+      border-color: #5d4410 !important;
+    }
+
+    //Flash error //  bg: #24171b  // color: #ff7b72  // border: #792e2d
+    //Flash info  //  bg: #111d2e  // color: #79c0ff  // border: #204881
+    //Flash warn  //  bg: #1e1c15  // color: #e3b341  // border: #5d4410
   }
 
   .avatar {
@@ -65,7 +81,6 @@ abbr {
   h1 {
     padding-bottom: 0 !important;
     margin: 0;
-    border-color: $border-color-dark !important;
   }
 
   .flexWrapper {
