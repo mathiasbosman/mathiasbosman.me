@@ -16,9 +16,11 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.util.UriComponentsBuilder;
 
-@Component
+@Service
 public class OAuth2AuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 
   private static final Logger logger = LoggerFactory
@@ -36,6 +38,7 @@ public class OAuth2AuthenticationSuccessHandler extends SimpleUrlAuthenticationS
   }
 
   @Override
+  @Transactional
   public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
       Authentication authentication) throws IOException {
     String targetUrl = determineTargetUrl(request, response, authentication);
@@ -44,23 +47,22 @@ public class OAuth2AuthenticationSuccessHandler extends SimpleUrlAuthenticationS
       return;
     }
     OAuth2AuthenticationToken token = WebUtils.token();
-    final String uid = oAuth2Service.getAttribute(token, OAuth2Attribute.UID).toString();
-    if (uid == null) {
-      throw new IllegalStateException("A unique identifier has to be provided.");
+    if (token == null) {
+      throw new IllegalStateException("A token has to be provided");
     }
-    OAuth2Identifier identifier = oAuth2Service.findIdentifier(token, uid);
+    OAuth2Identifier identifier = oAuth2Service.findIdentifier(token);
     UUID userId;
     if (identifier != null) {
       userId = identifier.getUserId();
     } else {
       // create user & identifier
       User user = new User(
-          oAuth2Service.getStringAttribute(token, OAuth2Attribute.USERNAME),
-          oAuth2Service.getStringAttribute(token, OAuth2Attribute.NAME),
-          oAuth2Service.getStringAttribute(token, OAuth2Attribute.EMAIL)
+          oAuth2Service.getAttribute(token, OAuth2Attribute.USERNAME),
+          oAuth2Service.getAttribute(token, OAuth2Attribute.NAME),
+          oAuth2Service.getAttribute(token, OAuth2Attribute.EMAIL)
       );
-      OAuth2Identifier newIdentifier = oAuth2Service
-          .createIdentifier(user, uid, oAuth2Service.getProvider(token));
+      userService.save(user);
+      OAuth2Identifier newIdentifier = oAuth2Service.createIdentifier(token, user.getId());
       userId = newIdentifier.getUserId();
     }
     userService.login(userId);

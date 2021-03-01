@@ -2,12 +2,8 @@ package be.mathiasbosman.cv.api;
 
 import be.mathiasbosman.cv.dto.PostContentDto;
 import be.mathiasbosman.cv.dto.PostDto;
-import be.mathiasbosman.cv.dto.UserDto;
-import be.mathiasbosman.cv.oauth2.OAuth2Attribute;
-import be.mathiasbosman.cv.oauth2.OAuth2Service;
 import be.mathiasbosman.cv.service.PostService;
 import be.mathiasbosman.cv.service.UserService;
-import be.mathiasbosman.cv.util.WebUtils;
 import java.util.List;
 import java.util.UUID;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,17 +17,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/rest")
-public class ServiceController {
+public class ServiceController extends UserAwareController {
 
   private final PostService postService;
-  private final UserService userService;
-  private final OAuth2Service oAuth2Service;
 
-  public ServiceController(PostService postService, OAuth2Service oAuth2Service,
-      UserService userService) {
+  public ServiceController(PostService postService, UserService userService) {
+    super(userService);
     this.postService = postService;
-    this.oAuth2Service = oAuth2Service;
-    this.userService = userService;
   }
 
   @GetMapping(value = "/public/posts")
@@ -59,8 +51,6 @@ public class ServiceController {
   @PostMapping(value = "/post")
   public @ResponseBody
   PostDto post(@RequestBody PostContentDto contentDto) {
-    String email = oAuth2Service.getStringAttribute(WebUtils.token(), OAuth2Attribute.EMAIL);
-    UserDto userDto = userService.getUserByEmail(email);
-    return postService.post(contentDto, userDto.getUserId());
+    return postService.post(contentDto, getUser().getUserId());
   }
 }
