@@ -1,7 +1,7 @@
 # Mathias Bosman - CV
 ![Maven build](https://github.com/mathiasbosman/cv/workflows/Maven%20build/badge.svg)
 
-Simple HTML website with a bit of Github automatisation magic containing my personal resume
+A simple website with a bit of Github automatisation magic containing my personal resume
 on [mathiasbosman.be](http://mathiasbosman.be).
 
 ## Building
@@ -21,9 +21,21 @@ website at http://localhost:8081 (mind the port here)
 
 ### Spring Boot
 
-For local development it is required to adjust the [local properties file][application_local] for
-Spring Boot. The application uses OAuth2 for authorization which (sadly) cannot be disabled via a
-simple property.
+For local development it is required to copy and adjust the [properties file][application_props] for
+Spring Boot in a seperate profile. The application uses OAuth2 for authorization which (sadly) cannot be disabled via a
+simple property. So make sure you edit properties as below:
+
+```yaml
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: someClientId
+            clientSecret: someClientSecret
+            redirectUri: "{baseUrl}/oauth2/callback/{registrationId}"
+```
 
 ### React.js
 
@@ -33,43 +45,13 @@ Developping the frontend is as simple as running
 npm start
 ```
 
-in the "webapp" folder while the backend application is running.
+in the "webapp" folder while the backend application is running. By default the requests will be proxied to the backend.
+See the [package.json][package_json] file for the proxy setting.
 
 ## Publishing
-
-//todo: finishe this
-
-The workflow also takes care of creating the sitemap and adding a verification file for Google.
-
-### Google site verification
-
-One of the methods to verify your website with Google is the presence of a certain html file in the
-root folder of the website. The name of the file is the actual verification
-code. For example: `someCool404Code.html`. The content should reference this file:
-
-```text
-google-site-verification: someCool404Code.html
-```
-
-The only requirement for this to work is for the actual code (without the `html` extension) to be
-present in a Github secret named `GOOGLE_VERIFICATION_CODE`.
-The [publish workflow][publish_workflow] will take care of creating and populating the file.
-
-```yaml
-name: Create google verification
-env:
-    GOOGLE_CODE: ${{ secrets.GOOGLE_VERIFICATION_CODE }}
-run: |
-    echo "google-site-verification: $GOOGLE_CODE.html" > "$GOOGLE_CODE".html
-```
-
-### Sitemap generation
-
-Because the sitemap contains a "latest update" date it is generated automatically when published. To
-do this we use the Github action [generate-sitemap](https://github.com/cicirello/generate-sitemap).
-Check the repo for more information about the setup.
-
+The application is published to Google Cloud Platform via the maven command when a new release is published on GitHub.
+See [the GitHub workflow][publish_workflow].
 
 [publish_workflow]:.github/workflows/publish.yml
-
-[application_local]:cv-app/src/main/resources/application-local.yml
+[package_json]:src/main/webapp/package.json
+[application_props]:src/main/resources/application.yml
