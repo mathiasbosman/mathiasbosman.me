@@ -41,38 +41,6 @@ abbr {
     border: none !important;
   }
 
-  @media (prefers-color-scheme: dark) { //todo: remove this when dark theme is ready
-    main, body {
-      background-color: $bg-color-dark !important;
-    }
-
-    *[class*="Timeline__TimelineBody"] {
-      color: inherit !important;
-    }
-
-    h1, *[class*="BorderBox"],*[class*="TimelineItem-Badge"],
-    *[class*="Timeline__TimelineBreak"],
-    .avatarContainer{
-      border-color: $border-color-dark !important;
-    }
-    *[class*="Timeline__TimelineBreak"] {
-      background: $bg-color-dark !important;
-    }
-    *[class*="Timeline-Item"]::before,*[class*="ProgressBar__ProgressContainer"] {
-      background: $border-color-dark !important;
-    }
-
-    .warning {
-      background-color: #1e1c15 !important;
-      color: #e3b341 !important;
-      border-color: #5d4410 !important;
-    }
-
-    //Flash error //  bg: #24171b  // color: #ff7b72  // border: #792e2d
-    //Flash info  //  bg: #111d2e  // color: #79c0ff  // border: #204881
-    //Flash warn  //  bg: #1e1c15  // color: #e3b341  // border: #5d4410
-  }
-
   .avatar {
     width: 100px;
     height: 100px;
@@ -85,5 +53,53 @@ abbr {
 
   .flexWrapper {
     flex-wrap: wrap !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  //todo: remove this when dark theme is ready see #19
+  main, body {
+    background-color: $bg-color-dark !important;
+    color: $font-color-dark;
+  }
+
+  *[class*="Timeline__TimelineBody"] {
+    color: inherit !important;
+  }
+
+  h1, *[class*="BorderBox"], *[class*="TimelineItem-Badge"], *[class*="Timeline__TimelineBreak"],
+  .avatarContainer {
+    border-color: $border-color-dark !important;
+  }
+  *[class*="Timeline__TimelineBreak"] {
+    background: $bg-color-dark !important;
+  }
+  *[class*="Timeline-Item"]::before, *[class*="ProgressBar__ProgressContainer"] {
+    background: $border-color-dark !important;
+  }
+
+  // flashes
+
+  .warning {
+    background-color: #1e1c15 !important;
+    color: #e3b341 !important;
+    border-color: #5d4410 !important;
+  }
+
+  //Flash error //  bg: #24171b  // color: #ff7b72  // border: #792e2d
+  //Flash info  //  bg: #111d2e  // color: #79c0ff  // border: #204881
+  //Flash warn  //  bg: #1e1c15  // color: #e3b341  // border: #5d4410
+
+  // buttons
+  *[class*="ButtonBase"] {
+    border-color: #8b949e !important;
+    background-color: #21262d !important;
+    box-shadow: none !important;
+    color: #bec6ce !important;
+
+    &:hover {
+      border-color: #8b949e !important;
+      background-color: #30363d !important;
+    }
   }
 }
