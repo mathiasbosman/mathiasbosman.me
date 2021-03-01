@@ -1,5 +1,5 @@
 # Mathias Bosman - CV
-![Maven build](https://github.com/mathiasbosman/cv/workflows/Maven%20build/badge.svg)
+![CI](https://github.com/mathiasbosman/cv/workflows/CI/badge.svg)
 
 A simple website with a bit of Github automatisation magic containing my personal resume
 on [mathiasbosman.be](http://mathiasbosman.be).
