@@ -1,8 +1,6 @@
 package be.mathiasbosman.cv.oauth2;
 
 import be.mathiasbosman.cv.entity.OAuth2Identifier;
-import be.mathiasbosman.cv.entity.User;
-import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;

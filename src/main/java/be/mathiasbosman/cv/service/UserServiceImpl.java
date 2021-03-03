@@ -67,6 +67,31 @@ public class UserServiceImpl implements UserService {
     return getUserDto(userRepository.save(user));
   }
 
+  @Override
+  @Transactional
+  public OAuth2Identifier linkOrCreateUser(OAuth2AuthenticationToken token, boolean shouldExist,
+      boolean link) {
+    UserDto user = getUser(token);
+    if (user.getUserId() == null) {
+      // no user found
+      if (shouldExist) {
+        return null;
+      }
+
+      // create new user;
+      UserDto newUser = save(new User(
+          oAuth2Service.getAttribute(token, OAuth2Attribute.USERNAME),
+          oAuth2Service.getAttribute(token, OAuth2Attribute.NAME),
+          oAuth2Service.getAttribute(token, OAuth2Attribute.EMAIL)
+      ));
+      return oAuth2Service.createIdentifier(token, newUser.getUserId());
+    }
+
+    OAuth2Identifier identifier = oAuth2Service.findIdentifier(token);
+    return identifier != null ? identifier :
+        link ? oAuth2Service.createIdentifier(token, user.getUserId()) : null;
+  }
+
   private UserDto getUserDto(User u) {
     return u != null ? new UserDto(u.getId(), u.getEmail(), u.getName(), u.getUsername())
         : null;

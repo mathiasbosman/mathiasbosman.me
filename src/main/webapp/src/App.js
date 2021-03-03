@@ -9,8 +9,9 @@ import OAuth2CallbackHandler from "./components/OAuth2CallbackHandler";
 import Home from "./pages/Home";
 import NotFound from "./NotFound";
 
-import {userContext} from "./Contexts";
+import {appContext} from "./Contexts";
 import Blog from "./components/blog/Blog";
+import ErrorPage from "./pages/Error";
 
 export default class App extends React.Component {
 
@@ -29,7 +30,7 @@ export default class App extends React.Component {
     BLOGRest.fetchUser().then((user) => {
       this.setState({
         currentUser: user,
-        authenticated: true,
+        authenticated: user != null,
       });
     });
   }
@@ -48,13 +49,13 @@ export default class App extends React.Component {
   }
 
   render() {
-    const userProviderObject = {
+    const appProviderObject = {
       user: this.state.currentUser,
       logoutMethod: this._handleLogout
     }
     return (
         <>
-          <userContext.Provider value={userProviderObject}>
+          <appContext.Provider value={appProviderObject}>
             <BaseStyles>
               <HashRouter>
                 <Switch>
@@ -68,11 +69,12 @@ export default class App extends React.Component {
                   <Route path="/oauth2/callback"
                          component={OAuth2CallbackHandler}/>
                   <Route exact path="/" component={Home}/>
+                  <Route path={["/400", "/500"]} component={ErrorPage}/>
                   <Route component={NotFound}/>
                 </Switch>
               </HashRouter>
             </BaseStyles>
-          </userContext.Provider>
+          </appContext.Provider>
         </>
     );
   }

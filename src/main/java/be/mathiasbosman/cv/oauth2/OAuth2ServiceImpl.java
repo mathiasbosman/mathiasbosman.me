@@ -1,10 +1,7 @@
 package be.mathiasbosman.cv.oauth2;
 
-import be.mathiasbosman.cv.dto.UserDto;
 import be.mathiasbosman.cv.entity.OAuth2Identifier;
-import be.mathiasbosman.cv.entity.User;
 import be.mathiasbosman.cv.repo.OAuth2IdRepository;
-import be.mathiasbosman.cv.service.UserService;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -78,6 +75,7 @@ public class OAuth2ServiceImpl implements OAuth2Service {
   @Override
   @Transactional
   public OAuth2Identifier createIdentifier(OAuth2AuthenticationToken token, UUID userId) {
-    return oAuth2IdRepository.save(new OAuth2Identifier(getProvider(token), getAttribute(token, OAuth2Attribute.UID), userId));
+    return oAuth2IdRepository.save(
+        new OAuth2Identifier(getProvider(token), getAttribute(token, OAuth2Attribute.UID), userId));
   }
 }

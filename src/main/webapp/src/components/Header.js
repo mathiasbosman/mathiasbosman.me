@@ -1,12 +1,12 @@
 import React from "react";
-import {userContext} from "../Contexts";
+import {appContext} from "../Contexts";
 
 export default class Banner extends React.Component{
   render() {
-    return <userContext.Consumer>
+    return <appContext.Consumer>
       {({user, logoutMethod}) => (
           user ? this._renderUserinfo(user, logoutMethod) : null
       )}
-    </userContext.Consumer>
+    </appContext.Consumer>
   }
 }

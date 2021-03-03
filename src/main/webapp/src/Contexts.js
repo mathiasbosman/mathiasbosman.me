@@ -1,3 +1,3 @@
 import React from "react";
 
-export const userContext = React.createContext({user: {}})
+export const appContext = React.createContext({user: {}})
