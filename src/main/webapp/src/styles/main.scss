@@ -1,12 +1,8 @@
 @import "vars";
 
-body {
-  font-size: 13px;
-  background-color: $bg-accent-color;
-
-  &.bg-white {
-    background-color: white;
-  }
+html, body {
+  font-size: $font-size;
+  height: 100%;
 }
 
 ul {
@@ -25,12 +21,11 @@ abbr {
 
 .avatarContainer {
   border-radius: 50% !important;
-  background: white;
   z-index: 4;
 
   .avatar {
-    width: 175px;
-    height: 175px;
+    width: 150px;
+    height: 150px;
   }
 }
 
@@ -47,13 +42,13 @@ img.emoji {
   }
 
   .avatar {
-    width: 100px !important;
-    height: 100px !important;
+    width: 100px;
+    height: 100px;
   }
 
   h1 {
-    font-size: 1.5em !important;
-    border: none !important;
+    padding-bottom: 0 !important;
+    margin: 0;
   }
 
   .flexWrapper {

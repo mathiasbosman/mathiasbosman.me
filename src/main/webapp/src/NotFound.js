@@ -7,7 +7,7 @@ import "@primer/css/blankslate/index.scss";
 export default class NotFound extends React.Component {
   render() {
     return <BorderBox boxShadow={theme.shadows.medium} as="main"
-                      backgroundColor="white" maxWidth={LAYOUT_WIDTH} mx="auto"
+                      maxWidth={LAYOUT_WIDTH} mx="auto"
                       my={3} p={3}>
       <div className="blankslate">
         <img src="/assets/images/all_for_one.webp" alt="All for one!"/>

@@ -2,7 +2,7 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="http://maven.apache.org/POM/4.0.0"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <artifactId>cv</artifactId>
+  <artifactId>mathiasbosman-app</artifactId>
   <build>
     <plugins>
       <plugin>
@@ -238,7 +238,7 @@
   <groupId>be.mathiasbosman</groupId>
   <modelVersion>4.0.0</modelVersion>
 
-  <name>cv</name>
+  <name>mathiasbosman-app</name>
 
   <parent>
     <artifactId>spring-boot-starter-parent</artifactId>
@@ -250,7 +250,7 @@
   <properties>
     <!-- backend -->
     <docker-compose.file>${project.basedir}/docker-compose-test.yml</docker-compose.file>
-    <docker-project>cv-ut</docker-project>
+    <docker-project>ut</docker-project>
 
     <!-- frontend -->
     <docker.mavenPlugin.version>4.0.0</docker.mavenPlugin.version>
@@ -266,6 +266,7 @@
 
     <!-- deployment -->
     <skipDocker>${skipTests}</skipDocker>
+    <promoteOnDeploy>false</promoteOnDeploy>
 
     <!-- cloud -->
     <skipFrontend>false</skipFrontend>
@@ -274,8 +275,6 @@
     <!-- flags -->
     <skipTests>false</skipTests>
     <start-class>be.mathiasbosman.cv.CvApplication</start-class>
-    <promoteOnDeploy>false</promoteOnDeploy>
   </properties>
-
-  <version>v2</version>
+  <version>v2-SNAPSHOT</version>
 </project>
