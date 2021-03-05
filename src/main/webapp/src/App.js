@@ -10,7 +10,7 @@ import Home from "./pages/Home";
 import NotFound from "./NotFound";
 
 import {appContext} from "./Contexts";
-import Blog from "./components/blog/Blog";
+import Blog from "./pages/Blog";
 import ErrorPage from "./pages/Error";
 
 export default class App extends React.Component {
