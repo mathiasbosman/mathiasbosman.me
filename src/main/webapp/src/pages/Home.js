@@ -22,10 +22,6 @@ import DocTitle from "../components/DocTitle";
 
 export default class Home extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   _renderUserinfo(user, logoutMethod) {
     console.log(logoutMethod);
     return <Flash full mb={3}>
