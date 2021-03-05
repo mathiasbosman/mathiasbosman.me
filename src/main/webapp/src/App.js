@@ -21,8 +21,8 @@ export default class App extends React.Component {
     this.state = {
       authenticated: false,
       currentUser: null,
-      theme: window.matchMedia("(prefers-color-scheme: dark)").matches ?
-          darkTheme : theme,
+      prefersDarkTheme: window.matchMedia(
+          "(prefers-color-scheme: dark)").matches
     }
 
     this._getLoggedInUser = this._getLoggedInUser.bind(this);
@@ -59,9 +59,10 @@ export default class App extends React.Component {
     return (
         <>
           <userContext.Provider value={userProviderObject}>
-            <ThemeProvider theme={this.state.theme}>
+            <ThemeProvider
+                theme={this.state.prefersDarkTheme ? darkTheme : theme}>
               <BaseStyles>
-                <Box bg="gray.1" p="1">
+                <Box bg={this.state.prefersDarkTheme ? "" : "gray.1"} p="1">
                   <HashRouter>
                     <Switch>
                       <Route path="/blog" component={Blog}/>
