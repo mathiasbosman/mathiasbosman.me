@@ -4,9 +4,9 @@ import {
   Box,
   Flex,
   Heading,
-    Text,
   Link,
-  Pagehead
+  Pagehead,
+  Text
 } from "@primer/components";
 import Age from "../Age";
 import {URL_FLANDERS} from "../../Constants";
@@ -55,7 +55,7 @@ export default class Bio extends React.Component {
                          href="https://www.instagram.com/luna.the.tricolor.beagle/">Luna</Link>
             <img alt="paw prints emoji" className="emoji"
                  src="/assets/images/emoji_paw_prints.png"/>.
-          </p>
+          </Text>
         </Box>
       </Box>
     </Flex>;
