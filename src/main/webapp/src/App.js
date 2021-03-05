@@ -1,7 +1,7 @@
 import React from "react";
 
 import BLOGRest from "./scripts/blog-rest";
-import {BaseStyles} from "@primer/components";
+import {BaseStyles, Box, theme} from "@primer/components";
 import {HashRouter, Route, Switch} from "react-router-dom";
 import LoginForm from "./pages/Login";
 import PrivateRoute from "./components/PrivateRoute";
@@ -11,6 +11,8 @@ import NotFound from "./NotFound";
 
 import {userContext} from "./Contexts";
 import Blog from "./components/blog/Blog";
+import {ThemeProvider} from "styled-components";
+import {theme as darkTheme} from "@primer/components/lib/theme-dark-preval";
 
 export default class App extends React.Component {
 
@@ -19,6 +21,8 @@ export default class App extends React.Component {
     this.state = {
       authenticated: false,
       currentUser: null,
+      theme: window.matchMedia("(prefers-color-scheme: dark)").matches ?
+          darkTheme : theme,
     }
 
     this._getLoggedInUser = this._getLoggedInUser.bind(this);
@@ -55,23 +59,27 @@ export default class App extends React.Component {
     return (
         <>
           <userContext.Provider value={userProviderObject}>
-            <BaseStyles>
-              <HashRouter>
-                <Switch>
-                  <Route path="/blog" component={Blog}/>
-                  <Route path={["/login", "/signin"]}
-                         render={(props) => <LoginForm {...props}/>}/>
-                  <PrivateRoute path="/admin"
-                                user={this.state.currentUser}
-                                authenticated={this.state.authenticated}
-                                component={NotFound}/>
-                  <Route path="/oauth2/callback"
-                         component={OAuth2CallbackHandler}/>
-                  <Route exact path="/" component={Home}/>
-                  <Route component={NotFound}/>
-                </Switch>
-              </HashRouter>
-            </BaseStyles>
+            <ThemeProvider theme={this.state.theme}>
+              <BaseStyles>
+                <Box bg="gray.1" p="1">
+                  <HashRouter>
+                    <Switch>
+                      <Route path="/blog" component={Blog}/>
+                      <Route path={["/login", "/signin"]}
+                             render={(props) => <LoginForm {...props}/>}/>
+                      <PrivateRoute path="/admin"
+                                    user={this.state.currentUser}
+                                    authenticated={this.state.authenticated}
+                                    component={NotFound}/>
+                      <Route path="/oauth2/callback"
+                             component={OAuth2CallbackHandler}/>
+                      <Route exact path="/" component={Home}/>
+                      <Route component={NotFound}/>
+                    </Switch>
+                  </HashRouter>
+                </Box>
+              </BaseStyles>
+            </ThemeProvider>
           </userContext.Provider>
         </>
     );
