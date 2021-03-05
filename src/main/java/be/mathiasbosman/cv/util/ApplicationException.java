@@ -2,15 +2,18 @@ package be.mathiasbosman.cv.util;
 
 public class ApplicationException extends RuntimeException {
 
-  public ApplicationException(String s) {
-    super(s);
-  }
+  private final ApplicationError error;
 
-  public ApplicationException(String message, Throwable cause) {
-    super(message, cause);
-  }
-
-  public ApplicationException(Throwable cause) {
+  public ApplicationException(ApplicationError e, Throwable cause) {
     super(cause);
+    this.error = e;
+  }
+
+  public ApplicationException(ApplicationError e) {
+    this(e, null);
+  }
+
+  public ApplicationError getError() {
+    return error;
   }
 }

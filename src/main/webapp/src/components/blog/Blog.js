@@ -7,11 +7,11 @@ import {
   Avatar,
   BorderBox,
   Box,
-    Text,
   Flex,
   Heading,
   Link,
-  Pagehead
+  Pagehead,
+  Text
 } from "@primer/components";
 import {theme} from "@primer/components/lib/theme-preval";
 import {LAYOUT_WIDTH} from "../../Constants";
@@ -22,12 +22,20 @@ export default class Blog extends React.Component {
   constructor(props) {
     super(props);
     this.state = {blogPosts: []}
+    this._renderPosts = this._renderPosts.bind(this);
   }
 
   componentDidMount() {
     BLOGRest.fetchPosts().then((posts) => {
       this.setState({blogPosts: posts})
     });
+  }
+
+  _renderPosts() {
+    if (this.state.blogPosts) {
+      return this.state.blogPosts.map(p => <BlogPost key={p.id} post={p}/>)
+    }
+    return null;
   }
 
   render() {
@@ -70,7 +78,7 @@ export default class Blog extends React.Component {
             </section>
 
             <section>
-              {this.state.blogPosts.map(p => <BlogPost key={p.id} post={p}/>)}
+              {this._renderPosts()}
             </section>
           </BorderBox>
         </>

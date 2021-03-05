@@ -65,12 +65,12 @@ export default class App extends React.Component {
                   <PrivateRoute path="/admin"
                                 user={this.state.currentUser}
                                 authenticated={this.state.authenticated}
-                                component={NotFound}/>
+                                component={ErrorPage}/>
                   <Route path="/oauth2/callback"
                          component={OAuth2CallbackHandler}/>
                   <Route exact path="/" component={Home}/>
-                  <Route path={["/400", "/500"]} component={ErrorPage}/>
-                  <Route component={NotFound}/>
+                  <Route path="/404" component={NotFound}/>
+                  <Route component={ErrorPage}/>
                 </Switch>
               </HashRouter>
             </BaseStyles>

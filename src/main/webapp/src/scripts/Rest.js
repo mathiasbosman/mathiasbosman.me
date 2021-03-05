@@ -26,20 +26,26 @@ class Rest {
 
   _fetch({url, config}) {
     return fetch(url, config)
-    .then(this._handleFetchError)
+    .then(this._handleErrors)
     .then((response) => {
-      return response.json().catch(() => false);
-    }).catch(error => {
-      console.error(error);
-      return false;
+      response.json().then(r => {
+        return r;
+      }).catch(() => {
+        return false
+      });
+    }).catch(() => {
+      return false
     });
   }
 
-  _handleFetchError(response) {
-    if (!response.ok) {
-      window.location.href = URL_BASE + "/" + response.status;
+  _handleErrors(response) {
+    if (response.ok) {
+      return response;
     }
-    return response;
+    response.json().then(r => {
+      window.location.href = URL_BASE + "/error/" + response.status + "/"
+          + r.code;
+    })
   }
 }
 

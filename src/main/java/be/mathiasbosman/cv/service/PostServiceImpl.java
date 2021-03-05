@@ -5,6 +5,8 @@ import be.mathiasbosman.cv.dto.PostDto;
 import be.mathiasbosman.cv.dto.UserDto;
 import be.mathiasbosman.cv.entity.Post;
 import be.mathiasbosman.cv.repo.PostRepository;
+import be.mathiasbosman.cv.util.ApplicationError;
+import be.mathiasbosman.cv.util.ApplicationException;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -40,8 +42,8 @@ public class PostServiceImpl implements PostService {
   @Override
   @Transactional(readOnly = true)
   public List<PostDto> getPosts() {
-    return postRepository.findAll(false).stream().map(this::getPostDto)
-        .collect(Collectors.toList());
+    throw new ApplicationException(ApplicationError.AUTH_USER_NOT_REGISTERED);
+    // return postRepository.findAll(false).stream().map(this::getPostDto).collect(Collectors.toList());
   }
 
   @Override

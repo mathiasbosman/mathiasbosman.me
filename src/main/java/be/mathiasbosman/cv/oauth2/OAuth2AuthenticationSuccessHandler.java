@@ -2,6 +2,7 @@ package be.mathiasbosman.cv.oauth2;
 
 import be.mathiasbosman.cv.entity.OAuth2Identifier;
 import be.mathiasbosman.cv.service.UserService;
+import be.mathiasbosman.cv.util.ApplicationError;
 import be.mathiasbosman.cv.util.ApplicationException;
 import be.mathiasbosman.cv.util.WebUtils;
 import java.io.IOException;
@@ -53,7 +54,7 @@ public class OAuth2AuthenticationSuccessHandler extends SimpleUrlAuthenticationS
     if (identifier == null) {
       logger.debug("No OAuth2Identifier was created for " + token.getPrincipal());
       if (oAuth2Config.isUsersShouldBeKnown()) {
-        throw new ApplicationException("User is not registered");
+        throw new ApplicationException(ApplicationError.AUTH_USER_NOT_REGISTERED);
       }
       throw new IllegalStateException("OAuth2Identifier was not created.");
     }
