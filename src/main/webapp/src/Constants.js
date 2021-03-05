@@ -5,6 +5,8 @@ import {getServerPort} from "./scripts/util";
 // Some global constants
 export const URL_BASE = "/#";
 export const URL_FLANDERS = "https://www.vlaanderen.be/en";
+export const TITLE_BASE = "Mathias Bosman";
+export const TITLE_SEPERATOR = "-";
 
 // OAuth2
 export const HOST = window.location.protocol + "//" + window.location.hostname;

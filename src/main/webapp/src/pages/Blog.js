@@ -17,6 +17,7 @@ import {theme} from "@primer/components/lib/theme-preval";
 import {LAYOUT_WIDTH} from "../Constants";
 import "@primer/css/utilities/index.scss";
 import Footer from "../components/Footer";
+import DocTitle from "../components/DocTitle";
 
 export default class Blog extends React.Component {
 
@@ -42,13 +43,14 @@ export default class Blog extends React.Component {
   render() {
     return (
         <>
+          <DocTitle subTitle="Blog"/>
           <Banner/>
           <BorderBox boxShadow={theme.shadows.medium} backgroundColor="canvas"
                      maxWidth={LAYOUT_WIDTH} mx="auto" my={3} p={3}
                      as="main">
             <Pagehead flexGrow={1}>
-              <Heading as="h1">
-                Mathias Bosman // Blog
+              <Heading fontSize={3} className="text-mono" as="h1">
+                Mathias' Blog
               </Heading>
             </Pagehead>
 
