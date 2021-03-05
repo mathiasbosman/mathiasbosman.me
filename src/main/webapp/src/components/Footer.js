@@ -7,7 +7,7 @@ export default class Footer extends React.Component {
   render() {
     return <BorderBox as="footer" borderWidth={0} borderTopWidth={1} mt={5}
                       pt={5}>
-      <Flex justifyContent="space-between" color="gray.7">
+      <Flex justifyContent="space-between">
         <Flex justifyContent="center">
           <Link mr={3} href="https://github.com/mathiasbosman">GitHub</Link>
           <Link mx={3}
