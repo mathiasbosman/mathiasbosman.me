@@ -11,10 +11,11 @@ public class PostDto {
   private final LocalDateTime updated;
   private final PostContentDto content;
 
-  public PostDto(UUID id, String subject, String body, UserDto poster, LocalDateTime created,
+  public PostDto(UUID id, String subject, String excerpt, String body, UserDto poster,
+      LocalDateTime created,
       LocalDateTime updated) {
     this.id = id;
-    this.content = new PostContentDto(subject, body);
+    this.content = new PostContentDto(subject, excerpt, body);
     this.poster = poster;
     this.created = created;
     this.updated = updated;

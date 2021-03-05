@@ -19,13 +19,13 @@ class PostRepositoryTest extends AbstractIntegrationTest {
     assertThat(repository.findAll(false)).isEmpty();
     User user = create(UserFixture.newUser("johnDoe"));
     LocalDate date1 = LocalDate.now();
-    Post post1 = new Post(user, false, date1, "subject1", "body1");
+    Post post1 = new Post(user, false, date1, "subject1", "excerpt1", "body1");
     repository.save(post1);
     assertThat(repository.findAll(false)).containsExactly(post1);
     assertThat(repository.findAll(true)).isEmpty();
-    Post post2 = new Post(user, false, date1.plusDays(1), "subject2", "body2");
+    Post post2 = new Post(user, false, date1.plusDays(1), "subject2", "excerpt2", "body2");
     repository.save(post2);
-    repository.save(new Post(user, true, date1, "subject1", "body1"));
+    repository.save(new Post(user, true, date1, "subject1", "excerpt1", "body1"));
     assertThat(repository.findAll(false)).containsExactly(post2, post1);
   }
 }

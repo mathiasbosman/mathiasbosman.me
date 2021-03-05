@@ -7,7 +7,7 @@ import java.time.LocalDate;
 public abstract class PostFixture {
 
   public static Post newPost(User poster) {
-    return new Post(poster, false, LocalDate.now(), "subject", "body");
+    return new Post(poster, false, LocalDate.now(), "subject", "excerpt", "body");
   }
 
 }

@@ -21,16 +21,19 @@ public class Post extends IdentifiableEntity<UUID> {
   private boolean deleted;
   private LocalDate postdate;
   private String subject;
+  private String excerpt;
   private String body;
 
   protected Post() {
   }
 
-  public Post(User poster, boolean deleted, LocalDate postdate, String subject, String body) {
+  public Post(User poster, boolean deleted, LocalDate postdate, String subject, String excerpt,
+      String body) {
     this.posterId = poster.getId();
     this.deleted = deleted;
     this.postdate = postdate;
     this.subject = subject;
+    this.excerpt = excerpt;
     this.body = body;
   }
 
@@ -49,6 +52,10 @@ public class Post extends IdentifiableEntity<UUID> {
 
   public String getSubject() {
     return subject;
+  }
+
+  public String getExcerpt() {
+    return excerpt;
   }
 
   public String getBody() {
