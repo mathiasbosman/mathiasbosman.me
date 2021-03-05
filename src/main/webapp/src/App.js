@@ -61,8 +61,10 @@ export default class App extends React.Component {
           <userContext.Provider value={userProviderObject}>
             <ThemeProvider
                 theme={this.state.prefersDarkTheme ? darkTheme : theme}>
-              <BaseStyles>
-                <Box bg={this.state.prefersDarkTheme ? "" : "gray.1"} p="1">
+
+              <Box height="100%"
+                   bg={this.state.prefersDarkTheme ? "" : "gray.1"} p="1">
+                <BaseStyles>
                   <HashRouter>
                     <Switch>
                       <Route path="/blog" component={Blog}/>
@@ -78,8 +80,8 @@ export default class App extends React.Component {
                       <Route component={NotFound}/>
                     </Switch>
                   </HashRouter>
-                </Box>
-              </BaseStyles>
+                </BaseStyles>
+              </Box>
             </ThemeProvider>
           </userContext.Provider>
         </>

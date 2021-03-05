@@ -1,7 +1,8 @@
 @import "vars";
 
-body {
+html, body {
   font-size: $font-size;
+  height: 100%;
 }
 
 ul {
