@@ -1,5 +1,6 @@
 import React from "react";
 import {Avatar, Box, Flex, Heading, Link, Text} from "@primer/components";
+import AbbrName from "../AbbrName";
 
 export default class BlogPostExcerpt extends React.Component {
   constructor(props) {
@@ -26,7 +27,9 @@ export default class BlogPostExcerpt extends React.Component {
           <Link href="#" className="author" fontSize={1} color="gray.6">
             <Flex as="aside" alignItems="center">
               <Avatar src="/assets/images/avatar.webp" size={35} mr={3}/>
-              <Text>todo</Text>
+              <Text>
+                <AbbrName firstName={post.poster.firstName} lastName={post.poster.lastName} />
+              </Text>
             </Flex>
           </Link>
         </Box>

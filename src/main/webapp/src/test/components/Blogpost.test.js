@@ -11,6 +11,6 @@ describe("Blogpost component", () => {
       }
     }
     render(<BlogPostExcerpt post={postObject}/>);
-    expect(screen.getByText("by John D.")).toBeInTheDocument();
+    expect(screen.getByText("John D.")).toBeInTheDocument();
   });
 });
