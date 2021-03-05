@@ -12,3 +12,4 @@ oauth2:
       email: "email"
       username: "login"
       picture: "avatar_url"
+  users-should-be-known: true

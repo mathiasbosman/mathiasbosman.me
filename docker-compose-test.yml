@@ -1,6 +1,6 @@
 version: "3"
 services:
-  cv-local-db-ut:
+  blog-local-db-ut:
     image: postgres:11-alpine
     ports:
       - 7654:5432

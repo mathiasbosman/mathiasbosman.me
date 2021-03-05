@@ -18,6 +18,7 @@ import Footer from "../components/Footer";
 import {theme} from "@primer/components/lib/theme-preval";
 import {ShieldCheckIcon} from "@primer/octicons-react";
 import Banner from "../components/Header";
+import DocTitle from "../components/DocTitle";
 
 export default class Home extends React.Component {
 
@@ -33,6 +34,7 @@ export default class Home extends React.Component {
   render() {
     return (
         <>
+          <DocTitle subTitle={""}/>
           <Banner/>
           <BorderBox boxShadow={theme.shadows.medium}
                      bg="canvas"

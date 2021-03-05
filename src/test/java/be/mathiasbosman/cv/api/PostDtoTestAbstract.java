@@ -14,12 +14,13 @@ class PostDtoTestAbstract extends AbstractJsonMapperTest {
   void serializeDeserializeTest() throws JsonProcessingException {
     PostDto post = new PostDto(null,
         "subject",
+        "excerpt",
         "body",
         null,
         LocalDateTime.of(2000, 2, 3, 10, 20, 30),
         LocalDateTime.of(2000, 5, 4, 10, 0, 0));
     String json = jsonMapper().writeValueAsString(post);
     assertThat(json).isEqualTo(
-        "{\"content\":{\"body\":\"body\",\"subject\":\"subject\"},\"created\":[2000,2,3,10,20,30],\"id\":null,\"poster\":null,\"updated\":[2000,5,4,10,0]}");
+        "{\"content\":{\"body\":\"body\",\"excerpt\":\"excerpt\",\"subject\":\"subject\"},\"created\":[2000,2,3,10,20,30],\"id\":null,\"poster\":null,\"updated\":[2000,5,4,10,0]}");
   }
 }

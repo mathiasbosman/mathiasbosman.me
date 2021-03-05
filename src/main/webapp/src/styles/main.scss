@@ -29,6 +29,11 @@ abbr {
   }
 }
 
+img.emoji {
+  height: 1em;
+  width: auto;
+}
+
 @media (max-width: $screen-break-point) {
 
   main {

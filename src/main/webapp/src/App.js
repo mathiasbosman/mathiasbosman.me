@@ -9,8 +9,9 @@ import OAuth2CallbackHandler from "./components/OAuth2CallbackHandler";
 import Home from "./pages/Home";
 import NotFound from "./NotFound";
 
-import {userContext} from "./Contexts";
-import Blog from "./components/blog/Blog";
+import {appContext} from "./Contexts";
+import Blog from "./pages/Blog";
+import ErrorPage from "./pages/Error";
 import {ThemeProvider} from "styled-components";
 import {theme as darkTheme} from "@primer/components/lib/theme-dark-preval";
 
@@ -33,7 +34,7 @@ export default class App extends React.Component {
     BLOGRest.fetchUser().then((user) => {
       this.setState({
         currentUser: user,
-        authenticated: true,
+        authenticated: user != null,
       });
     });
   }
@@ -52,13 +53,13 @@ export default class App extends React.Component {
   }
 
   render() {
-    const userProviderObject = {
+    const appProviderObject = {
       user: this.state.currentUser,
       logoutMethod: this._handleLogout
     }
     return (
         <>
-          <userContext.Provider value={userProviderObject}>
+          <appContext.Provider value={appProviderObject}>
             <ThemeProvider
                 theme={this.state.prefersDarkTheme ? darkTheme : theme}>
 
@@ -73,17 +74,19 @@ export default class App extends React.Component {
                       <PrivateRoute path="/admin"
                                     user={this.state.currentUser}
                                     authenticated={this.state.authenticated}
-                                    component={NotFound}/>
+                                    component={ErrorPage}/>
                       <Route path="/oauth2/callback"
                              component={OAuth2CallbackHandler}/>
                       <Route exact path="/" component={Home}/>
-                      <Route component={NotFound}/>
+                      <Route path="/404" component={NotFound}/>
+                      <Route component={ErrorPage}/>
                     </Switch>
                   </HashRouter>
                 </BaseStyles>
               </Box>
+
             </ThemeProvider>
-          </userContext.Provider>
+          </appContext.Provider>
         </>
     );
   }

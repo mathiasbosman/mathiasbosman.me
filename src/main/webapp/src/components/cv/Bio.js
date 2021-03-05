@@ -4,9 +4,9 @@ import {
   Box,
   Flex,
   Heading,
-    Text,
   Link,
-  Pagehead
+  Pagehead,
+  Text
 } from "@primer/components";
 import Age from "../Age";
 import {URL_FLANDERS} from "../../Constants";
@@ -41,16 +41,20 @@ export default class Bio extends React.Component {
             Belgium</Link> and
             currently <Age birthdate="1990-12-05"/> of age. Welcome
             to my
-            online personal resume!<br/>
+            online personal resume! <img alt="Wave emoji" className="emoji"
+                                         src="/assets/images/emoji_wave.png"/><br/>
             At the moment I'm full-time employed at the Department
             of
             Environment of the <Link target="_blank"
                                      href={URL_FLANDERS}>Flemish
             Government</Link>.
             In my spare time you will find me on my (not so) super
-            expensive
-            Decathlon race bike or setting up some small network
-            somewhere.
+            expensive Decathlon race bike, setting up some small network
+            somewhere or enjoying some quality time with a lovely Beagle
+            called <Link target="_blank"
+                         href="https://www.instagram.com/luna.the.tricolor.beagle/">Luna</Link>
+            <img alt="paw prints emoji" className="emoji"
+                 src="/assets/images/emoji_paw_prints.png"/>.
           </Text>
         </Box>
       </Box>

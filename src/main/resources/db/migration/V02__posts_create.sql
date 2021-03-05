@@ -6,6 +6,7 @@ create table posts
         constraint posts_poster_fk references users,
     is_deleted boolean      not null,
     subject    varchar(254) not null,
+    excerpt    text,
     body       text         not null,
     postdate   timestamptz,
     created    timestamptz  not null,

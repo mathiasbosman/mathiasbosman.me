@@ -1,5 +1,5 @@
 import {render, screen} from "@testing-library/react";
-import BlogPost from "../../components/blog/Blogpost";
+import BlogPostExcerpt from "../../components/blog/BlogPostExcerpt";
 
 describe("Blogpost component", () => {
   test("renders shortname correctly", () => {
@@ -10,7 +10,7 @@ describe("Blogpost component", () => {
         lastName: "Doe"
       }
     }
-    render(<BlogPost post={postObject}/>);
-    expect(screen.getByText("by John D.")).toBeInTheDocument();
+    render(<BlogPostExcerpt post={postObject}/>);
+    expect(screen.getByText("John D.")).toBeInTheDocument();
   });
 });

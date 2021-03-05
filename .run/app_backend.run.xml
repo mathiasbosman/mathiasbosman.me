@@ -1,0 +1,23 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" factoryName="Spring Boot" name="Spring app"
+      type="SpringBootApplicationConfigurationType">
+    <extension name="net.ashald.envfile">
+      <ENTRIES>
+        <ENTRY IS_ENABLED="true" PARSER="runconfig"/>
+      </ENTRIES>
+      <option name="IS_SUBST" value="false"/>
+      <option name="IS_PATH_MACRO_SUPPORTED" value="false"/>
+      <option name="IS_IGNORE_MISSING_FILES" value="false"/>
+      <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false"/>
+      <option name="IS_ENABLED" value="false"/>
+    </extension>
+    <method v="2">
+      <option enabled="true" name="Make"/>
+    </method>
+    <module name="cv"/>
+    <option name="ACTIVE_PROFILES" value="dev"/>
+    <option name="VM_PARAMETERS" value="-Xmx512M"/>
+    <option name="ALTERNATIVE_JRE_PATH"/>
+    <option name="SPRING_BOOT_MAIN_CLASS" value="be.mathiasbosman.cv.CvApplication"/>
+  </configuration>
+</component>
