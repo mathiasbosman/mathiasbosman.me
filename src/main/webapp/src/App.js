@@ -14,6 +14,7 @@ import Blog from "./pages/Blog";
 import ErrorPage from "./pages/Error";
 import {ThemeProvider} from "styled-components";
 import {theme as darkTheme} from "@primer/components/lib/theme-dark-preval";
+import {prefersDarkScheme} from "./scripts/util";
 
 export default class App extends React.Component {
 
@@ -22,8 +23,7 @@ export default class App extends React.Component {
     this.state = {
       authenticated: false,
       currentUser: null,
-      prefersDarkTheme: window.matchMedia(
-          "(prefers-color-scheme: dark)").matches
+      prefersDarkTheme: prefersDarkScheme()
     }
 
     this._getLoggedInUser = this._getLoggedInUser.bind(this);
