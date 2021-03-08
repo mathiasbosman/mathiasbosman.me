@@ -1,6 +1,6 @@
 @import "vars";
 
-html, body {
+html, body, #root {
   font-size: $font-size;
   height: 100%;
 }
@@ -43,7 +43,6 @@ img.emoji {
 @media (max-width: $screen-break-point) {
 
   main {
-    margin: 0 !important;
     border: none !important;
   }
 

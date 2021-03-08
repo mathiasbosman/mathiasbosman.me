@@ -4,7 +4,8 @@ import BLOGRest from "../scripts/blog-rest";
 import {
   OAUTH2_AUTHORIZE_URL,
   OAUTH2_PROVIDERS,
-  OAUTH2_REDIRECT_URL
+  OAUTH2_REDIRECT_URL,
+  PREFERED_THEME
 } from "../Constants";
 import Error from "../components/Error";
 import {
@@ -27,6 +28,7 @@ export default class LoginForm extends React.Component {
       providers: []
     }
     this._renderError = this._renderError.bind(this);
+    this._renderProviders = this._renderProviders.bind(this);
   }
 
   componentDidMount() {
@@ -54,6 +56,12 @@ export default class LoginForm extends React.Component {
     }
   }
 
+  _renderProviders() {
+    if (this.state.providers) {
+      return this.state.providers.map(p => this._renderProvider(p));
+    }
+  }
+
   _renderProvider(provider) {
     const href = OAUTH2_AUTHORIZE_URL + provider.toLowerCase()
         + "?redirect_uri=" + OAUTH2_REDIRECT_URL + provider.toLowerCase();
@@ -71,7 +79,6 @@ export default class LoginForm extends React.Component {
   }
 
   render() {
-    document.body.classList.add("bg-white");
     if (this.props.authenticated) {
       return <Redirect to={{
         pathname: "/",
@@ -82,7 +89,9 @@ export default class LoginForm extends React.Component {
         <Box mx="auto" mt={3} p={3} className="auth-form">
           <Heading fontWeight="normal" as="h1">Sign in</Heading>
           {this._renderError()}
-          <BorderBox px={3} pb={3} backgroundColor="gray.1">
+          <BorderBox px={3} py={1} as="main"
+                     bg="canvas"
+                     boxShadow={PREFERED_THEME.shadows.medium}>
             <FormGroup>
               <FormGroup.Label htmlFor="txtUsername">Username or email
                 address</FormGroup.Label>
@@ -98,12 +107,8 @@ export default class LoginForm extends React.Component {
 
             <ButtonPrimary mb={1} display="block" width="100%">Sign
               in</ButtonPrimary>
-            {this.state.providers.map(p => {
-                  return this._renderProvider(p)
-                }
-            )}
+            {this._renderProviders()}
           </BorderBox>
-
         </Box>
     );
   }

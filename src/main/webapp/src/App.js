@@ -1,7 +1,7 @@
 import React from "react";
 
 import BLOGRest from "./scripts/blog-rest";
-import {BaseStyles, Box, theme} from "@primer/components";
+import {BaseStyles} from "@primer/components";
 import {HashRouter, Route, Switch} from "react-router-dom";
 import LoginForm from "./pages/Login";
 import PrivateRoute from "./components/PrivateRoute";
@@ -13,8 +13,8 @@ import {appContext} from "./Contexts";
 import Blog from "./pages/Blog";
 import ErrorPage from "./pages/Error";
 import {ThemeProvider} from "styled-components";
-import {theme as darkTheme} from "@primer/components/lib/theme-dark-preval";
 import {prefersDarkScheme} from "./scripts/util";
+import {PREFERED_THEME} from "./Constants";
 
 export default class App extends React.Component {
 
@@ -61,20 +61,17 @@ export default class App extends React.Component {
         <>
           <appContext.Provider value={appProviderObject}>
             <ThemeProvider
-                theme={this.state.prefersDarkTheme ? darkTheme : theme}>
-
-              <Box height="100%"
-                   bg={this.state.prefersDarkTheme ? "" : "gray.1"} p="1">
-                <BaseStyles>
-                  <HashRouter>
-                    <Switch>
-                      <Route path="/blog" component={Blog}/>
-                      <Route path={["/login", "/signin"]}
-                             render={(props) => <LoginForm {...props}/>}/>
-                      <PrivateRoute path="/admin"
-                                    user={this.state.currentUser}
-                                    authenticated={this.state.authenticated}
-                                    component={ErrorPage}/>
+                theme={PREFERED_THEME}>
+              <BaseStyles>
+                <HashRouter>
+                  <Switch>
+                    <Route path="/blog" component={Blog}/>
+                    <Route path={["/login", "/signin"]}
+                           render={(props) => <LoginForm {...props}/>}/>
+                    <PrivateRoute path="/admin"
+                                  user={this.state.currentUser}
+                                  authenticated={this.state.authenticated}
+                                  component={ErrorPage}/>
                       <Route path="/oauth2/callback"
                              component={OAuth2CallbackHandler}/>
                       <Route exact path="/" component={Home}/>
@@ -83,8 +80,6 @@ export default class App extends React.Component {
                     </Switch>
                   </HashRouter>
                 </BaseStyles>
-              </Box>
-
             </ThemeProvider>
           </appContext.Provider>
         </>
