@@ -71,7 +71,7 @@ public class PostServiceImpl implements PostService {
 
   private PostDto getPostDto(Post p) {
     UserDto u = userService.getUser(p.getPosterId());
-    return new PostDto(p.getId(), p.getSubject(), p.getExcerpt(), p.getBody(), u, p.getCreated(),
+    return new PostDto(p.getId(), p.getSubject(), p.getExcerpt(), p.getBody(), u, p.getPostdate(),
         p.getUpdated());
   }
 

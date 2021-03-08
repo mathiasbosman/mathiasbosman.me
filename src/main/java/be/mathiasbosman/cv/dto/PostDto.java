@@ -7,17 +7,17 @@ public class PostDto {
 
   private final UUID id;
   private final UserDto poster;
-  private final LocalDateTime created;
+  private final LocalDateTime postDate;
   private final LocalDateTime updated;
   private final PostContentDto content;
 
   public PostDto(UUID id, String subject, String excerpt, String body, UserDto poster,
-      LocalDateTime created,
+      LocalDateTime postDate,
       LocalDateTime updated) {
     this.id = id;
     this.content = new PostContentDto(subject, excerpt, body);
     this.poster = poster;
-    this.created = created;
+    this.postDate = postDate;
     this.updated = updated;
   }
 
@@ -29,8 +29,8 @@ public class PostDto {
     return content;
   }
 
-  public LocalDateTime getCreated() {
-    return created;
+  public LocalDateTime getPostDate() {
+    return postDate;
   }
 
   public LocalDateTime getUpdated() {

@@ -28,11 +28,7 @@ class Rest {
     return fetch(url, config)
     .then(this._handleErrors)
     .then((response) => {
-      response.json().then(r => {
-        return r;
-      }).catch(() => {
-        return false
-      });
+      return response.json();
     }).catch(() => {
       return false
     });

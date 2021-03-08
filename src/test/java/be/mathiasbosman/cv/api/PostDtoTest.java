@@ -7,7 +7,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import java.time.LocalDateTime;
 import org.junit.jupiter.api.Test;
 
-class PostDtoTestAbstract extends AbstractJsonMapperTest {
+class PostDtoTest extends AbstractJsonMapperTest {
 
   @Test
   @Override
@@ -21,6 +21,6 @@ class PostDtoTestAbstract extends AbstractJsonMapperTest {
         LocalDateTime.of(2000, 5, 4, 10, 0, 0));
     String json = jsonMapper().writeValueAsString(post);
     assertThat(json).isEqualTo(
-        "{\"content\":{\"body\":\"body\",\"excerpt\":\"excerpt\",\"subject\":\"subject\"},\"created\":[2000,2,3,10,20,30],\"id\":null,\"poster\":null,\"updated\":[2000,5,4,10,0]}");
+        "{\"content\":{\"body\":\"body\",\"excerpt\":\"excerpt\",\"subject\":\"subject\"},\"id\":null,\"postDate\":\"2000-02-03T10:20:30\",\"poster\":null,\"updated\":\"2000-05-04T10:00:00\"}");
   }
 }

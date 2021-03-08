@@ -1,6 +1,6 @@
 package be.mathiasbosman.cv.entity;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,7 +19,7 @@ public class Post extends IdentifiableEntity<UUID> {
   private UUID posterId;
   @Column(name = "is_deleted")
   private boolean deleted;
-  private LocalDate postdate;
+  private LocalDateTime postdate;
   private String subject;
   private String excerpt;
   private String body;
@@ -27,7 +27,7 @@ public class Post extends IdentifiableEntity<UUID> {
   protected Post() {
   }
 
-  public Post(User poster, boolean deleted, LocalDate postdate, String subject, String excerpt,
+  public Post(User poster, boolean deleted, LocalDateTime postdate, String subject, String excerpt,
       String body) {
     this.posterId = poster.getId();
     this.deleted = deleted;
@@ -62,7 +62,7 @@ public class Post extends IdentifiableEntity<UUID> {
     return body;
   }
 
-  public LocalDate getPostdate() {
+  public LocalDateTime getPostdate() {
     return postdate;
   }
 

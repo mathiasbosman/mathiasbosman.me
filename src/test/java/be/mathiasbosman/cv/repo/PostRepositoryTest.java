@@ -6,7 +6,7 @@ import be.mathiasbosman.cv.AbstractIntegrationTest;
 import be.mathiasbosman.cv.entity.Post;
 import be.mathiasbosman.cv.entity.User;
 import be.mathiasbosman.cv.fixtures.UserFixture;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -18,7 +18,7 @@ class PostRepositoryTest extends AbstractIntegrationTest {
   void findAllDefault() {
     assertThat(repository.findAll(false)).isEmpty();
     User user = create(UserFixture.newUser("johnDoe"));
-    LocalDate date1 = LocalDate.now();
+    LocalDateTime date1 = LocalDateTime.now();
     Post post1 = new Post(user, false, date1, "subject1", "excerpt1", "body1");
     repository.save(post1);
     assertThat(repository.findAll(false)).containsExactly(post1);
