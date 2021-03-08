@@ -1,7 +1,7 @@
 import React from "react";
 
 import BLOGRest from "./scripts/blog-rest";
-import {BaseStyles} from "@primer/components";
+import {BaseStyles, Box} from "@primer/components";
 import {HashRouter, Route, Switch} from "react-router-dom";
 import LoginForm from "./pages/Login";
 import PrivateRoute from "./components/PrivateRoute";
@@ -62,16 +62,19 @@ export default class App extends React.Component {
           <appContext.Provider value={appProviderObject}>
             <ThemeProvider
                 theme={PREFERED_THEME}>
-              <BaseStyles>
-                <HashRouter>
-                  <Switch>
-                    <Route path="/blog" component={Blog}/>
-                    <Route path={["/login", "/signin"]}
-                           render={(props) => <LoginForm {...props}/>}/>
-                    <PrivateRoute path="/admin"
-                                  user={this.state.currentUser}
-                                  authenticated={this.state.authenticated}
-                                  component={ErrorPage}/>
+
+              <Box className="wrapper"
+                   bg={prefersDarkScheme() ? "grayDark" : "gray.1"} p={3}>
+                <BaseStyles>
+                  <HashRouter>
+                    <Switch>
+                      <Route path="/blog" component={Blog}/>
+                      <Route path={["/login", "/signin"]}
+                             render={(props) => <LoginForm {...props}/>}/>
+                      <PrivateRoute path="/admin"
+                                    user={this.state.currentUser}
+                                    authenticated={this.state.authenticated}
+                                    component={ErrorPage}/>
                       <Route path="/oauth2/callback"
                              component={OAuth2CallbackHandler}/>
                       <Route exact path="/" component={Home}/>
@@ -80,6 +83,8 @@ export default class App extends React.Component {
                     </Switch>
                   </HashRouter>
                 </BaseStyles>
+              </Box>
+
             </ThemeProvider>
           </appContext.Provider>
         </>

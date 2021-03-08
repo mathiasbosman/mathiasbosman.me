@@ -4,8 +4,7 @@ import BLOGRest from "../scripts/blog-rest";
 import BlogPostExcerpt from "../components/blog/BlogPostExcerpt";
 import Banner from "../components/Header";
 import {BorderBox, Heading, Pagehead} from "@primer/components";
-import {theme} from "@primer/components/lib/theme-preval";
-import {LAYOUT_WIDTH} from "../Constants";
+import {LAYOUT_WIDTH, PREFERED_THEME} from "../Constants";
 import "@primer/css/utilities/index.scss";
 import Footer from "../components/Footer";
 import DocTitle from "../components/DocTitle";
@@ -37,7 +36,8 @@ export default class Blog extends React.Component {
         <>
           <DocTitle subTitle="Blog"/>
           <Banner/>
-          <BorderBox boxShadow={theme.shadows.medium} backgroundColor="canvas"
+          <BorderBox boxShadow={PREFERED_THEME.shadows.medium}
+                     backgroundColor="canvas"
                      maxWidth={LAYOUT_WIDTH} mx="auto" my={3} p={3}
                      as="main">
             <Pagehead flexGrow={1}>
