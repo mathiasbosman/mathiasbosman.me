@@ -2,7 +2,7 @@
 
 html, body, #root, .wrapper {
   font-size: $font-size;
-  height: 100%;
+  min-height: 100%;
 }
 
 ul {
