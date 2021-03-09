@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" factoryName="Spring Boot" name="Spring app"
+  <configuration default="false" factoryName="Spring Boot" name="Spring backend"
       type="SpringBootApplicationConfigurationType">
     <extension name="net.ashald.envfile">
       <ENTRIES>
@@ -14,9 +14,10 @@
     <method v="2">
       <option enabled="true" name="Make"/>
     </method>
-    <module name="cv"/>
+    <module name="mathiasbosman-app"/>
+    <option name="ENABLE_LAUNCH_OPTIMIZATION" value="false"/>
     <option name="ACTIVE_PROFILES" value="dev"/>
-    <option name="VM_PARAMETERS" value="-Xmx512M"/>
+    <option name="VM_PARAMETERS" value="-Xmx512M -XX:TieredStopAtLevel=1 -noverify"/>
     <option name="ALTERNATIVE_JRE_PATH"/>
     <option name="SPRING_BOOT_MAIN_CLASS" value="be.mathiasbosman.cv.CvApplication"/>
   </configuration>
