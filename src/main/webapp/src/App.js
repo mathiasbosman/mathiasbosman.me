@@ -2,7 +2,7 @@ import React from "react";
 
 import BLOGRest from "./scripts/blog-rest";
 import {BaseStyles, Box} from "@primer/components";
-import {HashRouter, Route, Switch} from "react-router-dom";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 import LoginForm from "./pages/Login";
 import PrivateRoute from "./components/PrivateRoute";
 import OAuth2CallbackHandler from "./components/OAuth2CallbackHandler";
@@ -66,7 +66,7 @@ export default class App extends React.Component {
               <Box className="wrapper"
                    bg={prefersDarkScheme() ? "grayDark" : "gray.1"} p={3}>
                 <BaseStyles>
-                  <HashRouter>
+                  <BrowserRouter>
                     <Switch>
                       <Route path="/blog" component={Blog}/>
                       <Route path={["/login", "/signin"]}
@@ -81,7 +81,7 @@ export default class App extends React.Component {
                       <Route path="/404" component={NotFound}/>
                       <Route component={ErrorPage}/>
                     </Switch>
-                  </HashRouter>
+                  </BrowserRouter>
                 </BaseStyles>
               </Box>
 
