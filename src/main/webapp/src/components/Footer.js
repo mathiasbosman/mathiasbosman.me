@@ -6,8 +6,8 @@ import {HeartFillIcon} from "@primer/octicons-react";
 export default class Footer extends React.Component {
   render() {
     return <BorderBox as="footer" borderWidth={0} borderTopWidth={1} mt={5}
-                      pt={5} borderRadius={0}>
-      <Flex justifyContent="space-between">
+                      pt={5} borderRadius={0} color="gray.6">
+      <Flex justifyContent="space-between" alignItems="center">
         <Flex justifyContent="center">
           <Link mr={3} href="https://github.com/mathiasbosman">GitHub</Link>
           <Link mx={3}
