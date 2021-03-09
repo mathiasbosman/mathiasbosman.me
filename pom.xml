@@ -276,5 +276,5 @@
     <skipTests>false</skipTests>
     <start-class>be.mathiasbosman.cv.CvApplication</start-class>
   </properties>
-  <version>v4-snapshot</version>
+  <version>snapshot</version>
 </project>
