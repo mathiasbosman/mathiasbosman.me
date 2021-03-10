@@ -7,7 +7,7 @@
     "url": "git://github.com:mathiasbosman/cv.git"
   },
   "scripts": {
-    "build": "react-scripts build",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "clean": "rm -rf node_modules",
     "start": "react-scripts start",
     "test": "react-scripts test --watchAll=false",
