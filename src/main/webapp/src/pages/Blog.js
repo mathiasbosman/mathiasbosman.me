@@ -34,7 +34,7 @@ export default class Blog extends React.Component {
         <>
           <DocTitle subTitle="Blog"/>
           <Banner/>
-          <BorderBox bg="canvas">
+          <BorderBox bg="bg.canvas">
             <Box maxWidth={LAYOUT_WIDTH_LARGER} mx="auto" my={3} p={3}
                  as="main">
               <Pagehead flexGrow={1}>

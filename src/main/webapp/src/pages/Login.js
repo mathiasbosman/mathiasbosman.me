@@ -90,7 +90,7 @@ export default class LoginForm extends React.Component {
           <Heading fontWeight="normal" as="h1">Sign in</Heading>
           {this._renderError()}
           <BorderBox px={3} py={3} as="main"
-                     bg="canvas"
+                     bg="bg.canvas"
                      boxShadow="shadows.medium">
 
             {this._renderProviders()}

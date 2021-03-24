@@ -36,7 +36,7 @@ export default class Home extends React.Component {
           <DocTitle subTitle={""}/>
           <Banner/>
           <BorderBox boxShadow="shadows.medium"
-                     bg="canvas" as="main" mx="auto" p={3}
+                     bg="bg.canvas" as="main" mx="auto" p={3}
                      maxWidth={LAYOUT_WIDTH}>
             <section>
               <Bio/>

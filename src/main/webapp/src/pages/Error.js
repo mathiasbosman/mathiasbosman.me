@@ -6,7 +6,7 @@ import "@primer/css/blankslate/index.scss";
 export default class ErrorPage extends React.Component {
   render() {
     return <BorderBox boxShadow="shadows.medium" as="main"
-                      bg="canvas" maxWidth={LAYOUT_WIDTH} mx="auto"
+                      bg="bg.canvas" maxWidth={LAYOUT_WIDTH} mx="auto"
                       my={3} p={3}>
       <div className="blankslate">
         <img src="/assets/images/code_nav.webp" alt="Error"/>
