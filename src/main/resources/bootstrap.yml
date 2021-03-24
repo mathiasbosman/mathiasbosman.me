@@ -1,4 +1,10 @@
 spring:
+  datasource:
+    hikari:
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      maximum-pool-size: 10
   main:
     banner-mode: off
   application:
