@@ -1,8 +1,6 @@
 import OAuth2Provider from "./objects/OAuth2Provider";
 import {MarkGithubIcon} from "@primer/octicons-react";
-import {getServerPort, prefersDarkScheme} from "./scripts/util";
-import {theme as darkTheme} from "@primer/components/lib/theme-dark-preval";
-import {theme as lightTheme} from "@primer/components";
+import {getServerPort} from "./scripts/util";
 
 // Some global constants
 export const URL_BASE = "/";
@@ -31,4 +29,3 @@ export const OAUTH2_PROVIDERS = {
 // Layout
 export const LAYOUT_WIDTH = "large";
 export const LAYOUT_WIDTH_LARGER = "xlarge"
-export const PREFERED_THEME = prefersDarkScheme() ? darkTheme : lightTheme;

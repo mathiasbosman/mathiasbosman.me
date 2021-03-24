@@ -3,10 +3,6 @@ export function getServerPort(defaultPort) {
   return envPort ? envPort : defaultPort;
 }
 
-export function prefersDarkScheme() {
-  return window.matchMedia("(prefers-color-scheme: dark)").matches;
-}
-
 /*
 shorthand date formatter
  */

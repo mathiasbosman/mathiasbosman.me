@@ -1,11 +1,11 @@
 import React from "react";
-import {LAYOUT_WIDTH, PREFERED_THEME} from "../Constants";
+import {LAYOUT_WIDTH} from "../Constants";
 import {BorderBox, Box, Heading, Link, Text} from "@primer/components";
 import "@primer/css/blankslate/index.scss";
 
 export default class ErrorPage extends React.Component {
   render() {
-    return <BorderBox boxShadow={PREFERED_THEME.shadows.medium} as="main"
+    return <BorderBox boxShadow="shadows.medium" as="main"
                       bg="canvas" maxWidth={LAYOUT_WIDTH} mx="auto"
                       my={3} p={3}>
       <div className="blankslate">

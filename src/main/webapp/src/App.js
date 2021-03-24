@@ -1,7 +1,7 @@
 import React from "react";
 
 import BLOGRest from "./scripts/blog-rest";
-import {BaseStyles, Box} from "@primer/components";
+import {BaseStyles, Box, ThemeProvider} from "@primer/components";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import LoginForm from "./pages/Login";
 import PrivateRoute from "./components/PrivateRoute";
@@ -12,9 +12,6 @@ import NotFound from "./NotFound";
 import {appContext} from "./Contexts";
 import Blog from "./pages/Blog";
 import ErrorPage from "./pages/Error";
-import {ThemeProvider} from "styled-components";
-import {prefersDarkScheme} from "./scripts/util";
-import {PREFERED_THEME} from "./Constants";
 
 export default class App extends React.Component {
 
@@ -22,8 +19,7 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       authenticated: false,
-      currentUser: null,
-      prefersDarkTheme: prefersDarkScheme()
+      currentUser: null
     }
 
     this._getLoggedInUser = this._getLoggedInUser.bind(this);
@@ -60,11 +56,9 @@ export default class App extends React.Component {
     return (
         <>
           <appContext.Provider value={appProviderObject}>
-            <ThemeProvider
-                theme={PREFERED_THEME}>
-
+            <ThemeProvider colorMode="auto">
               <Box className="wrapper"
-                   bg={prefersDarkScheme() ? "grayDark" : "gray.1"} p={3}>
+                   bg="gray.1" p={3}>
                 <BaseStyles>
                   <BrowserRouter>
                     <Switch>
@@ -75,7 +69,7 @@ export default class App extends React.Component {
                                     user={this.state.currentUser}
                                     authenticated={this.state.authenticated}
                                     component={ErrorPage}/>
-                      <Route path="/oauth2/callback"
+                      <Route path="/oauth2/redirect"
                              component={OAuth2CallbackHandler}/>
                       <Route exact path="/" component={Home}/>
                       <Route path="/404" component={NotFound}/>
@@ -84,7 +78,6 @@ export default class App extends React.Component {
                   </BrowserRouter>
                 </BaseStyles>
               </Box>
-
             </ThemeProvider>
           </appContext.Provider>
         </>

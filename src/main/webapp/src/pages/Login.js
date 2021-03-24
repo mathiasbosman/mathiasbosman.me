@@ -4,21 +4,18 @@ import BLOGRest from "../scripts/blog-rest";
 import {
   OAUTH2_AUTHORIZE_URL,
   OAUTH2_PROVIDERS,
-  OAUTH2_REDIRECT_URL,
-  PREFERED_THEME
+  OAUTH2_REDIRECT_URL
 } from "../Constants";
-import Error from "../components/Error";
 import {
   BorderBox,
   Box,
   Button,
-  ButtonPrimary,
-  FormGroup,
+  Flash,
   Heading,
-  StyledOcticon,
-  TextInput
+  StyledOcticon
 } from "@primer/components";
 import "../styles/authForm.scss";
+import {AlertIcon} from "@primer/octicons-react";
 
 export default class LoginForm extends React.Component {
 
@@ -52,7 +49,10 @@ export default class LoginForm extends React.Component {
 
   _renderError() {
     if (this.props.location.state && this.props.location.state.error) {
-      return <Error message={this.props.location.state.error} level="error"/>
+      return <Flash mb={3} variant="warning">
+        <StyledOcticon icon={AlertIcon}/>
+        {this.props.location.state.error}
+      </Flash>
     }
   }
 
@@ -89,24 +89,10 @@ export default class LoginForm extends React.Component {
         <Box mx="auto" mt={3} p={3} className="auth-form">
           <Heading fontWeight="normal" as="h1">Sign in</Heading>
           {this._renderError()}
-          <BorderBox px={3} py={1} as="main"
+          <BorderBox px={3} py={3} as="main"
                      bg="canvas"
-                     boxShadow={PREFERED_THEME.shadows.medium}>
-            <FormGroup>
-              <FormGroup.Label htmlFor="txtUsername">Username or email
-                address</FormGroup.Label>
-              <TextInput block backgroundColor="white" variant="small"
-                         id="txtUsername"/>
-            </FormGroup>
+                     boxShadow="shadows.medium">
 
-            <FormGroup>
-              <FormGroup.Label htmlFor="txtPassword">Password</FormGroup.Label>
-              <TextInput block backgroundColor="white" variant="small"
-                         id="txtPassword" type="password"/>
-            </FormGroup>
-
-            <ButtonPrimary mb={1} display="block" width="100%">Sign
-              in</ButtonPrimary>
             {this._renderProviders()}
           </BorderBox>
         </Box>

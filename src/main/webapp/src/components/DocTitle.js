@@ -12,9 +12,9 @@ export default class DocTitle extends React.Component {
     let subTitle = props.subTitle;
 
     if (Array.isArray(props.subTitle)) {
-      subTitle = props.subTitle.join(" " + seperator + " ");
+      subTitle = props.subTitle.join(seperator);
     }
-    document.title = title + (subTitle ? " " + seperator + " " + subTitle : "");
+    document.title = title + (subTitle ? seperator + subTitle : "");
   }
 
   render() {

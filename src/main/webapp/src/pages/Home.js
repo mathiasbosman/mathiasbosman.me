@@ -13,7 +13,7 @@ import SkillsSection from "../components/cv/SkillsSection";
 import Bio from "../components/cv/Bio";
 import Contact from "../components/cv/Contact";
 import Awards from "../components/cv/Awards";
-import {LAYOUT_WIDTH, PREFERED_THEME} from "../Constants";
+import {LAYOUT_WIDTH} from "../Constants";
 import Footer from "../components/Footer";
 import {ShieldCheckIcon} from "@primer/octicons-react";
 import Banner from "../components/Header";
@@ -35,7 +35,7 @@ export default class Home extends React.Component {
         <>
           <DocTitle subTitle={""}/>
           <Banner/>
-          <BorderBox boxShadow={PREFERED_THEME.shadows.medium}
+          <BorderBox boxShadow="shadows.medium"
                      bg="canvas" as="main" mx="auto" p={3}
                      maxWidth={LAYOUT_WIDTH}>
             <section>

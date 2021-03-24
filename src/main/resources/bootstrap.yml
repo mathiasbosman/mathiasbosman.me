@@ -22,3 +22,8 @@ spring:
   config:
     activate:
       on-profile: dev, test
+logging:
+  level:
+    ROOT: ERROR
+    org.springframework.web: debug
+    be: DEBUG
