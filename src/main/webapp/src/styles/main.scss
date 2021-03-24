@@ -34,12 +34,6 @@ img.emoji {
   width: auto;
 }
 
-@media (prefers-color-scheme: dark) {
-  body, main {
-    background-color: #0d1117 !important; //todo "canvas" doesn't seem to work on mobile? (or it's cached)
-  }
-}
-
 @media (max-width: $screen-break-point) {
 
   .wrapper {
