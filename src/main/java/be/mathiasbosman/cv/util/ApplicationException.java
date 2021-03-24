@@ -5,7 +5,7 @@ public class ApplicationException extends RuntimeException {
   private final ApplicationError error;
 
   public ApplicationException(ApplicationError e, Throwable cause) {
-    super(cause);
+    super(e.getCode(), cause);
     this.error = e;
   }
 

@@ -34,7 +34,7 @@ public class HttpCookieOAuth2AuthorizationRequestRepository implements
 
     WebUtils.addCookie(response, OAUTH2_AUTHORIZATION_REQUEST_COOKIE_NAME,
         WebUtils.serialize(authorizationRequest), cookieExpireSeconds);
-    String redirectUriAfterLogin = request.getParameter(REDIRECT_URI_PARAM_COOKIE_NAME);
+    String redirectUriAfterLogin = authorizationRequest.getRedirectUri();
     if (StringUtils.isNotBlank(redirectUriAfterLogin)) {
       WebUtils.addCookie(response, REDIRECT_URI_PARAM_COOKIE_NAME, redirectUriAfterLogin,
           cookieExpireSeconds);

@@ -9,8 +9,8 @@
         <artifactId>appengine-maven-plugin</artifactId>
         <configuration>
           <projectId>GCLOUD_CONFIG</projectId>
-          <version>${project.version}</version>
           <promote>${promoteOnDeploy}</promote>
+          <version>${project.version}</version>
         </configuration>
         <groupId>com.google.cloud.tools</groupId>
         <version>2.2.0</version>
@@ -36,11 +36,20 @@
       </plugin>
       <plugin>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <addResources>true</addResources>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>repackage</goal>
+            </goals>
+          </execution>
+        </executions>
         <groupId>org.springframework.boot</groupId>
       </plugin>
       <plugin>
         <artifactId>frontend-maven-plugin</artifactId>
-        <version>${frontend.mavenPlugin.version}</version>
         <configuration>
           <nodeVersion>${node.version}</nodeVersion>
           <npmVersion>${npm.version}</npmVersion>
@@ -88,11 +97,11 @@
           </execution>
         </executions>
         <groupId>com.github.eirslett</groupId>
+        <version>${frontend.mavenPlugin.version}</version>
       </plugin>
 
       <plugin>
         <artifactId>docker-compose-maven-plugin</artifactId>
-        <version>${docker.mavenPlugin.version}</version>
         <executions>
           <execution>
             <configuration>
@@ -123,6 +132,7 @@
           </execution>
         </executions>
         <groupId>com.dkanejs.maven.plugins</groupId>
+        <version>${docker.mavenPlugin.version}</version>
       </plugin>
       <plugin>
         <artifactId>maven-resources-plugin</artifactId>
@@ -148,18 +158,6 @@
       </plugin>
     </plugins>
   </build>
-
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>spring-cloud-gcp-dependencies</artifactId>
-        <version>2.0.1</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
 
   <dependencies>
     <!-- Spring -->
@@ -187,7 +185,6 @@
       <artifactId>spring-boot-starter-data-jpa</artifactId>
       <groupId>org.springframework.boot</groupId>
     </dependency>
-
     <!-- testing -->
     <dependency>
       <artifactId>spring-boot-starter-test</artifactId>
@@ -222,18 +219,30 @@
 
     <!-- cloud -->
     <dependency>
-      <groupId>com.google.cloud</groupId>
       <artifactId>spring-cloud-gcp-starter</artifactId>
+      <groupId>com.google.cloud</groupId>
     </dependency>
     <dependency>
-      <groupId>com.google.cloud</groupId>
       <artifactId>spring-cloud-gcp-starter-sql-postgresql</artifactId>
+      <groupId>com.google.cloud</groupId>
     </dependency>
     <dependency>
-      <groupId>com.google.cloud</groupId>
       <artifactId>spring-cloud-gcp-starter-secretmanager</artifactId>
+      <groupId>com.google.cloud</groupId>
     </dependency>
   </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <artifactId>spring-cloud-gcp-dependencies</artifactId>
+        <groupId>com.google.cloud</groupId>
+        <scope>import</scope>
+        <type>pom</type>
+        <version>2.0.1</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   <description>Personal CV and blog</description>
   <groupId>be.mathiasbosman</groupId>
   <modelVersion>4.0.0</modelVersion>
@@ -244,7 +253,7 @@
     <artifactId>spring-boot-starter-parent</artifactId>
     <groupId>org.springframework.boot</groupId>
     <relativePath/>
-    <version>2.4.2</version> <!-- lookup parent from repository -->
+    <version>2.4.3</version> <!-- lookup parent from repository -->
   </parent>
 
   <properties>
@@ -265,8 +274,8 @@
     <npm.version>6.14.8</npm.version>
 
     <!-- deployment -->
-    <skipDocker>${skipTests}</skipDocker>
     <promoteOnDeploy>false</promoteOnDeploy>
+    <skipDocker>${skipTests}</skipDocker>
 
     <!-- cloud -->
     <skipFrontend>false</skipFrontend>
@@ -276,5 +285,5 @@
     <skipTests>false</skipTests>
     <start-class>be.mathiasbosman.cv.CvApplication</start-class>
   </properties>
-  <version>snapshot</version>
+  <version>snapshot</version> <!-- Gets changed when published by GitHub -->
 </project>

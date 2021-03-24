@@ -72,7 +72,7 @@ public class UserServiceImpl implements UserService {
   public OAuth2Identifier linkOrCreateUser(OAuth2AuthenticationToken token, boolean shouldExist,
       boolean link) {
     UserDto user = getUser(token);
-    if (user.getUserId() == null) {
+    if (user == null) {
       // no user found
       if (shouldExist) {
         return null;

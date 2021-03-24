@@ -15,5 +15,4 @@ public class ConfigController {
     log.info("Warmup called.");
     return true;
   }
-
 }

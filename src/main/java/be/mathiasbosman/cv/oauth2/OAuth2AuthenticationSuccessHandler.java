@@ -2,8 +2,6 @@ package be.mathiasbosman.cv.oauth2;
 
 import be.mathiasbosman.cv.entity.OAuth2Identifier;
 import be.mathiasbosman.cv.service.UserService;
-import be.mathiasbosman.cv.util.ApplicationError;
-import be.mathiasbosman.cv.util.ApplicationException;
 import be.mathiasbosman.cv.util.WebUtils;
 import java.io.IOException;
 import java.util.Optional;
@@ -40,9 +38,9 @@ public class OAuth2AuthenticationSuccessHandler extends SimpleUrlAuthenticationS
   @Transactional
   public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
       Authentication authentication) throws IOException {
-    String targetUrl = determineTargetUrl(request, response, authentication);
+    String targetUrl = determineTargetUrl(request);
     if (response.isCommitted()) {
-      logger.debug("Response has already been committed. Unable to redirect to {}", targetUrl);
+      logger.debug("Response has already been committed. Unable to redirect");
       return;
     }
     OAuth2AuthenticationToken token = WebUtils.token();
@@ -52,19 +50,18 @@ public class OAuth2AuthenticationSuccessHandler extends SimpleUrlAuthenticationS
     OAuth2Identifier identifier = userService
         .linkOrCreateUser(token, oAuth2Config.isUsersShouldBeKnown(), true);
     if (identifier == null) {
-      logger.debug("No OAuth2Identifier was created for " + token.getPrincipal());
+      logger.debug("No OAuth2Identifier was created for {}", token.getPrincipal());
       if (oAuth2Config.isUsersShouldBeKnown()) {
-        throw new ApplicationException(ApplicationError.AUTH_USER_NOT_REGISTERED);
+        logger.warn("No login allowed for unknown users (token name: {})", token.getName());
       }
-      throw new IllegalStateException("OAuth2Identifier was not created.");
+    } else {
+      userService.login(identifier.getUserId());
     }
-    userService.login(identifier.getUserId());
     clearAuthenticationAttributes(request, response);
     getRedirectStrategy().sendRedirect(request, response, targetUrl);
   }
 
-  protected String determineTargetUrl(HttpServletRequest request, HttpServletResponse response,
-      Authentication authentication) {
+  protected String determineTargetUrl(HttpServletRequest request) {
     Optional<String> redirectUri = WebUtils.getCookie(request,
         HttpCookieOAuth2AuthorizationRequestRepository.REDIRECT_URI_PARAM_COOKIE_NAME)
         .map(Cookie::getValue);

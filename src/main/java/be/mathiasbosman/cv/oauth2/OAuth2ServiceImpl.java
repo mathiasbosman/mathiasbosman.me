@@ -38,7 +38,12 @@ public class OAuth2ServiceImpl implements OAuth2Service {
     String attributeKey = getAttributeKey(getProvider(token), attribute);
     if (StringUtils.hasLength(attributeKey)) {
       Map<String, Object> attributes = token.getPrincipal().getAttributes();
-      return CollectionUtils.isEmpty(attributes) ? null : (String) attributes.get(attributeKey);
+      if (CollectionUtils.isEmpty(attributes)) {
+        return null;
+      } else {
+        Object attributeValue = attributes.get(attributeKey);
+        return attributeValue != null ? attributeValue.toString() : null;
+      }
     }
     return null;
   }

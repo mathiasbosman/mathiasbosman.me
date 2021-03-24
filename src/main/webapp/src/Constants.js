@@ -5,10 +5,10 @@ import {theme as darkTheme} from "@primer/components/lib/theme-dark-preval";
 import {theme as lightTheme} from "@primer/components";
 
 // Some global constants
-export const URL_BASE = "/#";
+export const URL_BASE = "/";
 export const URL_FLANDERS = "https://www.vlaanderen.be/en";
 export const TITLE_BASE = "Mathias Bosman";
-export const TITLE_SEPERATOR = "-";
+export const TITLE_SEPERATOR = " - ";
 
 // Locale
 export const LOCALE = "en-US";
@@ -23,7 +23,7 @@ export const HOST = window.location.protocol + "//" + window.location.hostname;
 export const OAUTH2_AUTHORIZE_URL = HOST + ":" + getServerPort(8081)
     + "/oauth2/authorize/";
 export const OAUTH2_REDIRECT_URL = HOST + ":" + window.location.port
-    + URL_BASE + "/oauth2/callback/";
+    + "/oauth2/redirect/";
 export const OAUTH2_PROVIDERS = {
   "GITHUB": new OAuth2Provider("GitHub", MarkGithubIcon)
 }

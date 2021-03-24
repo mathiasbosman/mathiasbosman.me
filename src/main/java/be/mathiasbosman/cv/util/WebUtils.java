@@ -43,12 +43,20 @@ public abstract class WebUtils {
     return Optional.empty();
   }
 
-  public static void addCookie(HttpServletResponse response, String name, String value,
-      int maxAge) {
-    Cookie cookie = new Cookie(name, value);
+  private static void provisionCookie(Cookie cookie, int maxAge, boolean emptyValue) {
     cookie.setPath("/");
     cookie.setHttpOnly(true);
     cookie.setMaxAge(maxAge);
+    cookie.setSecure(true);
+    if (emptyValue) {
+      cookie.setValue("");
+    }
+  }
+
+  public static void addCookie(HttpServletResponse response, String name, String value,
+      int maxAge) {
+    Cookie cookie = new Cookie(name, value);
+    provisionCookie(cookie, maxAge, false);
     response.addCookie(cookie);
   }
 
@@ -58,9 +66,7 @@ public abstract class WebUtils {
     if (cookies != null && cookies.length > 0) {
       for (Cookie cookie : cookies) {
         if (cookie.getName().equals(name)) {
-          cookie.setValue("");
-          cookie.setPath("/");
-          cookie.setMaxAge(0);
+          provisionCookie(cookie, 0, true);
           response.addCookie(cookie);
         }
       }
