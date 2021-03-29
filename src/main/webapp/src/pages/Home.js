@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Suspense} from "react";
 import "../styles/main.scss";
 import {
   BorderBox,
@@ -8,16 +8,20 @@ import {
   Link,
   StyledOcticon
 } from "@primer/components";
-import ExperienceAndEducation from "../components/cv/ExperienceAndEducation";
-import SkillsSection from "../components/cv/SkillsSection";
-import Bio from "../components/cv/Bio";
-import Contact from "../components/cv/Contact";
-import Awards from "../components/cv/Awards";
 import {LAYOUT_WIDTH} from "../Constants";
 import Footer from "../components/Footer";
 import {ShieldCheckIcon} from "@primer/octicons-react";
 import Banner from "../components/Header";
 import DocTitle from "../components/DocTitle";
+import PreLoader from "../components/PreLoader";
+
+const Bio = React.lazy(() => import("../components/cv/Bio"));
+const ExperienceAndEducation = React.lazy(
+    () => import("../components/cv/ExperienceAndEducation"));
+const SkillsSection = React.lazy(
+    () => import("../components/cv/SkillsSection"));
+const Contact = React.lazy(() => import("../components/cv/Contact"));
+const Awards = React.lazy(() => import("../components/cv/Awards"));
 
 export default class Home extends React.Component {
 
@@ -39,23 +43,31 @@ export default class Home extends React.Component {
                      bg="bg.canvas" as="main" mx="auto" p={3}
                      maxWidth={LAYOUT_WIDTH}>
             <section>
-              <Bio/>
+              <Suspense fallback={<PreLoader/>}>
+                <Bio/>
+              </Suspense>
             </section>
 
             <section>
               <Flex className="flexWrapper" justifyItems="space-between">
                 <Box flexBasis="100%" as="section" px={3}>
-                  <ExperienceAndEducation/>
+                  <Suspense fallback={<PreLoader/>}>
+                    <ExperienceAndEducation/>
+                  </Suspense>
                 </Box>
 
                 <Box flexBasis="100%" as="section" px={3}>
-                  <SkillsSection/>
-                  <Awards/>
+                  <Suspense fallback={<PreLoader/>}>
+                    <SkillsSection/>
+                    <Awards/>
+                  </Suspense>
                 </Box>
               </Flex>
             </section>
             <Box px={3}>
-              <Contact/>
+              <Suspense fallback={<PreLoader/>}>
+                <Contact/>
+              </Suspense>
             </Box>
             <Footer/>
           </BorderBox>
