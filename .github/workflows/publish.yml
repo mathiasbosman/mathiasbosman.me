@@ -20,13 +20,9 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
 
-      - name: Update version
+      - name: Update version and deploy with Maven
         env:
           NEW_VERSION: ${{ github.event.release.tag_name }}
-        run: mvn versions:set -DnewVersion=$NEW_VERSION
-
-      - name: Build and deploy with Maven
-        env:
           GITHUB_USERNAME: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: mvn -DskipTests clean package appengine:deploy
+        run: mvn versions:set -DnewVersion=$NEW_VERSION -DskipTests clean package appengine:deploy
