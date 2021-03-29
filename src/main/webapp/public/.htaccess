@@ -28,6 +28,7 @@ ExpiresByType image/jpg "access 1 year"
 ExpiresByType image/jpeg "access 1 year"
 ExpiresByType image/gif "access 1 year"
 ExpiresByType image/png "access 1 year"
+ExpiresByType image/webp "access 1 year"
 ExpiresByType text/css "access 1 month"
 ExpiresByType text/html "access 1 month"
 ExpiresByType application/pdf "access 1 month"
@@ -43,7 +44,7 @@ ExpiresDefault "access 1 month"
     <filesmatch "\.(ico|flv|gif|swf|eot|woff|otf|ttf|svg)$">
         Header set Cache-Control "max-age=2592000, public"
     </filesmatch>
-    <filesmatch "\.(jpg|jpeg|png)$">
+    <filesmatch "\.(jpg|jpeg|png|webp)$">
         Header set Cache-Control "max-age=1209600, public"
     </filesmatch>
     # css and js should use private for proxy caching https://developers.google.com/speed/docs/best-practices/caching#LeverageProxyCaching
