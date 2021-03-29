@@ -25,4 +25,4 @@ jobs:
           NEW_VERSION: ${{ github.event.release.tag_name }}
           GITHUB_USERNAME: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: mvn versions:set -DnewVersion=$NEW_VERSION -DskipTests clean package appengine:deploy
+        run: mvn versions:set -DnewVersion=$NEW_VERSION -DskipTests -B clean package appengine:deploy
