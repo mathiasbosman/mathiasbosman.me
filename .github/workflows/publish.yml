@@ -1,5 +1,7 @@
 name: GCP Deploy
-on: push
+on:
+  release:
+    types: [ published ]
 jobs:
   Deploy:
     name: Deployment to GCP
