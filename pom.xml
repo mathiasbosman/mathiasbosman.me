@@ -219,6 +219,10 @@
 
     <!-- cloud -->
     <dependency>
+      <artifactId>google-cloud-logging-logback</artifactId>
+      <groupId>com.google.cloud</groupId>
+    </dependency>
+    <dependency>
       <artifactId>spring-cloud-gcp-starter</artifactId>
       <groupId>com.google.cloud</groupId>
     </dependency>
