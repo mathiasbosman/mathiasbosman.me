@@ -20,7 +20,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 @Service
 public class OAuth2AuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 
-  private static final Logger logger = LoggerFactory
+  private static final Logger log = LoggerFactory
       .getLogger(OAuth2AuthenticationSuccessHandler.class);
 
   private final UserService userService;
@@ -40,7 +40,7 @@ public class OAuth2AuthenticationSuccessHandler extends SimpleUrlAuthenticationS
       Authentication authentication) throws IOException {
     String targetUrl = determineTargetUrl(request);
     if (response.isCommitted()) {
-      logger.debug("Response has already been committed. Unable to redirect");
+      log.debug("Response has already been committed. Unable to redirect");
       return;
     }
     OAuth2AuthenticationToken token = WebUtils.token();
@@ -50,9 +50,9 @@ public class OAuth2AuthenticationSuccessHandler extends SimpleUrlAuthenticationS
     OAuth2Identifier identifier = userService
         .linkOrCreateUser(token, oAuth2Config.isUsersShouldBeKnown(), true);
     if (identifier == null) {
-      logger.debug("No OAuth2Identifier was created for {}", token.getPrincipal());
+      log.debug("No OAuth2Identifier was created for {}", token.getPrincipal());
       if (oAuth2Config.isUsersShouldBeKnown()) {
-        logger.warn("No login allowed for unknown users (token name: {})", token.getName());
+        log.warn("No login allowed for unknown users (token name: {})", token.getName());
       }
     } else {
       userService.login(identifier.getUserId());

@@ -31,5 +31,4 @@ spring:
 logging:
   level:
     ROOT: ERROR
-    org.springframework.web: debug
     be: DEBUG

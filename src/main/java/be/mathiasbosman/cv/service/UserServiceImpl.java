@@ -6,8 +6,12 @@ import be.mathiasbosman.cv.entity.User;
 import be.mathiasbosman.cv.oauth2.OAuth2Attribute;
 import be.mathiasbosman.cv.oauth2.OAuth2Service;
 import be.mathiasbosman.cv.repo.UserRepository;
+import be.mathiasbosman.cv.util.ApplicationError;
+import be.mathiasbosman.cv.util.ApplicationException;
 import java.time.LocalDateTime;
 import java.util.UUID;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -17,6 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(propagation = Propagation.NEVER)
 public class UserServiceImpl implements UserService {
 
+  private static final Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
   private final UserRepository userRepository;
   private final OAuth2Service oAuth2Service;
 
@@ -54,6 +59,10 @@ public class UserServiceImpl implements UserService {
     return userRepository.existsByEmail(email);
   }
 
+  private boolean existsWithUsername(String username) {
+    return userRepository.existsByUsername(username);
+  }
+
   @Override
   @Transactional
   public void login(UUID id) {
@@ -73,16 +82,29 @@ public class UserServiceImpl implements UserService {
       boolean link) {
     UserDto user = getUser(token);
     if (user == null) {
-      // no user found
       if (shouldExist) {
+        log.warn("OAuth2 token [{}] has no user and should exist due to configuration",
+            token.getName());
         return null;
       }
-
-      // create new user;
+      log.debug("Creating new user from OAuth2 token [{}]", token.getName());
+      String validUsername;
+      String usernameFromToken = oAuth2Service.getAttribute(token, OAuth2Attribute.USERNAME);
+      String emailFromToken = oAuth2Service.getAttribute(token, OAuth2Attribute.EMAIL);
+      if (existsWithEmail(emailFromToken)) {
+        throw new ApplicationException(ApplicationError.AUTH_USER_MAIL_KNOWN);
+      }
+      if (existsWithUsername(usernameFromToken)) {
+        log.debug("Username [{}] already exists, creating new one", usernameFromToken);
+        validUsername = usernameFromToken + "_" +
+            oAuth2Service.getAttribute(token, OAuth2Attribute.UID).substring(0, 5);
+      } else {
+        validUsername = usernameFromToken;
+      }
       UserDto newUser = save(new User(
-          oAuth2Service.getAttribute(token, OAuth2Attribute.USERNAME),
+          validUsername,
           oAuth2Service.getAttribute(token, OAuth2Attribute.NAME),
-          oAuth2Service.getAttribute(token, OAuth2Attribute.EMAIL)
+          emailFromToken
       ));
       return oAuth2Service.createIdentifier(token, newUser.getUserId());
     }

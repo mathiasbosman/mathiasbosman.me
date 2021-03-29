@@ -3,7 +3,8 @@ package be.mathiasbosman.cv.util;
 import org.springframework.http.HttpStatus;
 
 public enum ApplicationError {
-  AUTH_USER_NOT_REGISTERED("auth-001", HttpStatus.FORBIDDEN);
+  AUTH_USER_NOT_REGISTERED("auth-001"),
+  AUTH_USER_MAIL_KNOWN("auth-002");
 
   private final String code;
   private final HttpStatus httpStatus;
@@ -14,7 +15,7 @@ public enum ApplicationError {
   }
 
   ApplicationError(String code) {
-    this(code, HttpStatus.NOT_FOUND);
+    this(code, HttpStatus.FORBIDDEN);
   }
 
   public String getCode() {

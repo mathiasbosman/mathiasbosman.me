@@ -31,7 +31,7 @@ public class PostServiceImpl implements PostService {
   @Override
   @Transactional
   public PostDto delete(UUID postId) {
-    log.info("Deleting post [{}]", postId);
+    log.debug("Deleting post [{}]", postId);
     Post p = getPost(postId);
     p.setDeleted(true);
     return getPostDto(p);
@@ -58,6 +58,7 @@ public class PostServiceImpl implements PostService {
 
   @Override
   public PostDto post(PostContentDto contentDto, UUID userId) {
+    log.debug("Saving post with title [{}] from user [{}]", contentDto.getSubject(), userId);
     throw new UnsupportedOperationException("not yet implemented");
   }
 
