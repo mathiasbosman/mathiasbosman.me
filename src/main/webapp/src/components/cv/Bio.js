@@ -42,6 +42,7 @@ export default class Bio extends React.Component {
             currently <Age birthdate="1990-12-05"/> of age. Welcome
             to my
             online personal resume! <img alt="Wave emoji" className="emoji"
+                                         height="1" width="1"
                                          src="/assets/images/emoji_wave.png"/><br/>
             At the moment I'm full-time employed at the Department
             of
@@ -54,6 +55,7 @@ export default class Bio extends React.Component {
             called <Link target="_blank"
                          href="https://www.instagram.com/luna.the.tricolor.beagle/">Luna</Link>
             <img alt="paw prints emoji" className="emoji"
+                 height="1" width="1"
                  src="/assets/images/emoji_paw_prints.png"/>.
           </Text>
         </Box>
