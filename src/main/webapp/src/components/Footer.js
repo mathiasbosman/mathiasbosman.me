@@ -6,7 +6,7 @@ import {HeartFillIcon} from "@primer/octicons-react";
 export default class Footer extends React.Component {
   render() {
     return <BorderBox as="footer" borderWidth={0} borderTopWidth={1} mt={5}
-                      pt={5} borderRadius={0} color="gray.6">
+                      pt={5} borderRadius={0} color="text.secondary">
       <Flex justifyContent="space-between" alignItems="center">
         <Flex justifyContent="center">
           <Link mr={3} href="https://github.com/mathiasbosman">GitHub</Link>
@@ -17,7 +17,8 @@ export default class Footer extends React.Component {
           <Copyright name="Mathias Bosman"/>
         </Box>
         <Box>
-          Made with<StyledOcticon ml={1} color="red.4" icon={HeartFillIcon}/>,
+          Made with<StyledOcticon ml={1} color="text.danger"
+                                  icon={HeartFillIcon}/>,
           <Link mx={1} href="https://reactjs.org/" target="_blank">React</Link>
           and <Link href="https://primer.style/"
                     target="_blank">Primer.style</Link>

@@ -15,7 +15,7 @@ export default class BlogPostExcerpt extends React.Component {
     return <section>
       <Flex as="article" className="flexWrapper" my={4}>
         <Box flexGrow={1}>
-          <Link href="#" className="text-mono" color="gray.5" muted>
+          <Link href="#" className="text-mono" color="text.tertiary" muted>
             <time dateTime={post.postDate}>{formatDate(date, LOCALE,
                 DATE_FORMAT_OPTIONS)}</time>
           </Link>
@@ -27,7 +27,7 @@ export default class BlogPostExcerpt extends React.Component {
           </Flex>
           <Heading as="h4" fontSize={3} mb={3}>{post.content.subject}</Heading>
           <Box><p>{post.content.excerpt}</p></Box>
-          <Link href="#" className="author" fontSize={1} color="gray.6">
+          <Link href="#" className="author" fontSize={1} color="text.secondary">
             <Flex as="aside" alignItems="center">
               <Avatar src="/assets/images/avatar.webp" size={35} mr={3}/>
               <Text>{post.poster.name}</Text>

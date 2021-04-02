@@ -21,7 +21,8 @@ export default class SkillsSection extends React.Component {
                        skill="Databases (MySql, PostgreSql, Oracle)"/>
         <SkillsElement percentage={60} skill="SEO"/>
         <SkillsElement percentage={60} skill="Photoshop"/>
-        <SkillsElement className="strikeThrough" percentage={20} color="gray.4"
+        <SkillsElement className="strikeThrough" percentage={20}
+                       color="text.disabled"
                        skill="Nitting &amp; sewing"/>
       </Skills>
     </>

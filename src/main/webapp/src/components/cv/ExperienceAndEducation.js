@@ -23,7 +23,7 @@ export default class ExperienceAndEducation extends React.Component {
       <Heading mt={5}>Experience &amp; education</Heading>
       <Timeline clipSidebar>
         <Timeline.Item>
-          <Timeline.Badge bg="yellow.4">
+          <Timeline.Badge>
             <StyledOcticon icon={CodeIcon}/>
           </Timeline.Badge>
           <Timeline.Body color="inherit">
@@ -43,7 +43,7 @@ export default class ExperienceAndEducation extends React.Component {
           </Timeline.Body>
         </Timeline.Item>
         <Timeline.Item>
-          <Timeline.Badge bg="yellow.4">
+          <Timeline.Badge>
             <StyledOcticon icon={CodeReviewIcon}/>
           </Timeline.Badge>
           <Timeline.Body>
@@ -55,7 +55,7 @@ export default class ExperienceAndEducation extends React.Component {
           </Timeline.Body>
         </Timeline.Item>
         <Timeline.Item>
-          <Timeline.Badge bg="yellow.4">
+          <Timeline.Badge>
             <StyledOcticon icon={OrganizationIcon}/>
           </Timeline.Badge>
           <Timeline.Body>
@@ -68,7 +68,7 @@ export default class ExperienceAndEducation extends React.Component {
         </Timeline.Item>
         <Timeline.Break/>
         <Timeline.Item>
-          <Timeline.Badge bg="green.3">
+          <Timeline.Badge>
             <StyledOcticon icon={CodeIcon}/>
           </Timeline.Badge>
           <Timeline.Body>
@@ -78,7 +78,7 @@ export default class ExperienceAndEducation extends React.Component {
           </Timeline.Body>
         </Timeline.Item>
         <Timeline.Item>
-          <Timeline.Badge bg="blue.3">
+          <Timeline.Badge>
             <StyledOcticon icon={CodeIcon}/>
           </Timeline.Badge>
           <Timeline.Body>

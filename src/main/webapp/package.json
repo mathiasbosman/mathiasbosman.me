@@ -14,8 +14,8 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "@primer/components": "^25.0.0",
-    "@primer/css": "^15.2.0",
+    "@primer/components": "^26.0.0",
+    "@primer/css": "^16.1.2",
     "@primer/octicons-react": "^12.1.0",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",

@@ -58,7 +58,7 @@ export default class App extends React.Component {
           <appContext.Provider value={appProviderObject}>
             <ThemeProvider colorMode="auto">
               <Box className="wrapper"
-                   bg="gray.1" p={3}>
+                   bg="bg.tertiary" p={3}>
                 <BaseStyles>
                   <BrowserRouter>
                     <Switch>
