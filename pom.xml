@@ -261,33 +261,27 @@
   </parent>
 
   <properties>
-    <!-- backend -->
     <docker-compose.file>${project.basedir}/docker-compose-test.yml</docker-compose.file>
     <docker-project>ut</docker-project>
+    <java.version>11</java.version>
 
-    <!-- frontend -->
     <docker.mavenPlugin.version>4.0.0</docker.mavenPlugin.version>
     <frontend.directory>${project.basedir}/src/main/webapp</frontend.directory>
     <frontend.directory.build>${frontend.directory}/build</frontend.directory.build>
     <frontend.mavenPlugin.version>1.11.0</frontend.mavenPlugin.version>
-    <java.version>11</java.version>
 
-    <!-- docker (for testing) -->
     <maven.resourcesPlugin.version>3.2.0</maven.resourcesPlugin.version>
     <node.version>v14.15.1</node.version>
     <npm.version>6.14.8</npm.version>
 
-    <!-- deployment -->
     <promoteOnDeploy>false</promoteOnDeploy>
     <skipDocker>${skipTests}</skipDocker>
 
-    <!-- cloud -->
     <skipFrontend>false</skipFrontend>
     <skipFrontendTests>${skipFrontend}</skipFrontendTests>
 
-    <!-- flags -->
     <skipTests>false</skipTests>
     <start-class>be.mathiasbosman.cv.CvApplication</start-class>
   </properties>
-  <version>snapshot</version> <!-- Changed when published by GitHub only dashes and lowercase -->
+  <version>v3-alpha</version> <!-- Changed when published by GitHub only dashes and lowercase -->
 </project>
