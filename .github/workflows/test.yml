@@ -7,6 +7,4 @@ jobs:
     steps:
       - name: Update sitemap
         # echo $(date +'%Y-%m-%d')T00:00:00+00:00
-        env:
-          TIMESTAMP: $(date +'%Y-%m-%d')T00:00:00+00:00
-        run: echo $TIMESTAMP
+        run: echo $(date +'%Y-%m-%d')T00:00:00+00:00
