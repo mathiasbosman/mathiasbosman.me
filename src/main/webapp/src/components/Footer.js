@@ -18,7 +18,7 @@ export default class Footer extends React.Component {
         </Text>
         <Text textAlign="right">
           Made with<StyledOcticon ml={1} color="text.danger"
-                                  icon={HeartFillIcon}/>,
+                                  icon={HeartFillIcon}/>
           <Link mx={1} href="https://reactjs.org/"
                 target="_blank">React</Link>
           and <Link href="https://primer.style/"
