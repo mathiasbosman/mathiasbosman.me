@@ -6,12 +6,12 @@ class Copyright extends React.Component {
     super(props);
     this.state = {
       year: new Date().getFullYear(),
-      name: props.name
+      name: props.name,
     };
   }
 
   render() {
-    return <span>&copy; {this.state.year} {this.state.name}</span>
+    return <>&copy; {this.state.year} {this.state.name}</>
   }
 }
 
