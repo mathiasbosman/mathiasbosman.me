@@ -14,7 +14,7 @@ export default class Footer extends React.Component {
                 href="https://www.linkedin.com/in/mathiasbosman">LinkedIn</Link>
         </Flex>
         <Flex flex={1} justifyContent="center">
-          <Text><Copyright name="Mathias Bosman"/></Text>
+          <Text textAlign="center"><Copyright name="Mathias Bosman"/></Text>
         </Flex>
         <Flex flex={1} justifyContent="right">
           <Text textAlign="right">
