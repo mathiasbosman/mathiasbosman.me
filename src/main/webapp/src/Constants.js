@@ -6,7 +6,7 @@ import {getServerPort} from "./scripts/util";
 export const URL_BASE = "/";
 export const URL_FLANDERS = "https://www.vlaanderen.be/en";
 export const TITLE_BASE = "Mathias Bosman";
-export const TITLE_SEPERATOR = " - ";
+export const TITLE_SEPERATOR = " • ";
 
 // Locale
 export const LOCALE = "en-US";

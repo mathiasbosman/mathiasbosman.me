@@ -37,7 +37,7 @@ export default class Home extends React.Component {
   render() {
     return (
         <>
-          <DocTitle subTitle={""}/>
+          <DocTitle subTitle="Online resume"/>
           <Banner/>
           <BorderBox boxShadow="shadows.medium"
                      bg="bg.canvas" as="main" mx="auto" p={3}
