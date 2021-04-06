@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -37,20 +36,17 @@ public class ServiceController extends UserAwareController {
   }
 
   @DeleteMapping(value = "/post/{id}")
-  public @ResponseBody
-  PostDto deletePost(@PathVariable UUID id) {
+  public PostDto deletePost(@PathVariable UUID id) {
     return postService.delete(id);
   }
 
   @PostMapping(value = "/validate")
-  public @ResponseBody
-  boolean validate(@RequestBody PostContentDto contentDto) {
+  public boolean validate(@RequestBody PostContentDto contentDto) {
     return postService.validate(contentDto);
   }
 
   @PostMapping(value = "/post")
-  public @ResponseBody
-  PostDto post(@RequestBody PostContentDto contentDto) {
+  public PostDto post(@RequestBody PostContentDto contentDto) {
     return postService.post(contentDto, getUser().getUserId());
   }
 }
