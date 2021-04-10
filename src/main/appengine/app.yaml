@@ -7,3 +7,4 @@ env_variables:
   JAVA_USER_OPTS: -XX:TieredStopAtLevel=1 -noverify
 automatic_scaling:
   max_instances: 2
+  min_idle_instances: 1
