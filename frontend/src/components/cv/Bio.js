@@ -40,22 +40,16 @@ export default class Bio extends React.Component {
                                              itemProp="homeLocation"
                                              href="https://www.google.com/maps/place/9200+Dendermonde/">Dendermonde,
             Belgium</Link> and currently <Age birthdate="1990-12-05"/> of age.
-            Welcome to my online personal resume! <img alt="Wave emoji"
-                                                       className="emoji"
-                                                       height="1" width="1"
-                                                       src="/assets/images/emoji_wave.png"/><br/>
+            Welcome to my online personal resume!<br/>
             At the moment I'm full-time employed at the Department of
             Environment of the <Link target="_blank"
                                      href={URL_FLANDERS}>Flemish
-            Government</Link>.
+            Government</Link>.<br/>
             In my spare time you will find me on my (not so) super
             expensive Decathlon race bike, setting up some small network
             somewhere or enjoying some quality time with a lovely Beagle
             called <Link target="_blank"
                          href="https://www.instagram.com/luna.the.tricolor.beagle/">Luna</Link>
-            <img alt="paw prints emoji" className="emoji"
-                 height="1" width="1"
-                 src="/assets/images/emoji_paw_prints.png"/>.
           </Text>
         </Box>
       </Box>

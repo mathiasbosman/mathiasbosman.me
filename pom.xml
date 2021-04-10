@@ -284,5 +284,5 @@
     <skipTests>false</skipTests>
     <start-class>be.mathiasbosman.cv.CvApplication</start-class>
   </properties>
-  <version>snapshot</version> <!-- Changed when published by GitHub only dashes and lowercase -->
+  <version>v3-alpha</version> <!-- Changed when published by GitHub only dashes and lowercase -->
 </project>
