@@ -12,6 +12,7 @@ import DocTitle from "../components/DocTitle";
 export default class Blog extends React.Component {
 
   constructor(props) {
+    console.log("Blog constructor");
     super(props);
     this.state = {blogPosts: []}
     this._renderPosts = this._renderPosts.bind(this);

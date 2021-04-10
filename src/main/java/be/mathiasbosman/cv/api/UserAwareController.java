@@ -4,7 +4,7 @@ import be.mathiasbosman.cv.dto.UserDto;
 import be.mathiasbosman.cv.service.UserService;
 import be.mathiasbosman.cv.util.WebUtils;
 
-public abstract class UserAwareController extends AbstractAppControler {
+public abstract class UserAwareController extends AbstractAppController {
 
   private final UserService userService;
 

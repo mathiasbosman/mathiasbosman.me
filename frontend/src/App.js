@@ -2,7 +2,7 @@ import React from "react";
 
 import BLOGRest from "./scripts/blog-rest";
 import {BaseStyles, Box, ThemeProvider} from "@primer/components";
-import {BrowserRouter, Route, Switch} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 import LoginForm from "./pages/Login";
 import PrivateRoute from "./components/PrivateRoute";
 import OAuth2CallbackHandler from "./components/OAuth2CallbackHandler";
@@ -60,22 +60,22 @@ export default class App extends React.Component {
               <Box className="wrapper"
                    bg="bg.tertiary" p={3}>
                 <BaseStyles>
-                  <BrowserRouter>
-                    <Switch>
-                      <Route path="/blog" component={Blog}/>
-                      <Route path={["/login", "/signin"]}
-                             render={(props) => <LoginForm {...props}/>}/>
-                      <PrivateRoute path="/admin"
-                                    user={this.state.currentUser}
-                                    authenticated={this.state.authenticated}
-                                    component={ErrorPage}/>
-                      <Route path="/oauth2/redirect"
-                             component={OAuth2CallbackHandler}/>
-                      <Route exact path="/" component={Home}/>
-                      <Route path="/404" component={NotFound}/>
-                      <Route component={ErrorPage}/>
-                    </Switch>
-                  </BrowserRouter>
+                  <Switch>
+                    <Route path="/oauth2/callback/"
+                           component={OAuth2CallbackHandler}/>
+                    <Route path="/blog" component={Blog}/>
+                    <Route path="/blog/:postId" component={Blog}/>
+                    <Route path={["/login", "/signin"]}
+                           render={(props) => <LoginForm {...props}/>}/>
+                    <PrivateRoute path="/admin"
+                                  user={this.state.currentUser}
+                                  authenticated={this.state.authenticated}
+                                  component={ErrorPage}/>
+
+                    <Route path="/404" component={NotFound}/>
+                    <Route exact path="/" component={Home}/>
+                    <Route component={ErrorPage}/>
+                  </Switch>
                 </BaseStyles>
               </Box>
             </ThemeProvider>

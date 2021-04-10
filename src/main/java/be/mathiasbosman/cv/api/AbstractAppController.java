@@ -7,7 +7,11 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
-public abstract class AbstractAppControler {
+public abstract class AbstractAppController {
+
+  public static final String INDEX = "index.html";
+  public static final String PATH_ERROR = "/error";
+
 
   @ExceptionHandler(ApplicationException.class)
   public ResponseEntity<ApplicationExceptionDto> handleApplicationException(

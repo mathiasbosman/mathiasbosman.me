@@ -34,20 +34,7 @@
         </configuration>
         <groupId>org.apache.maven.plugins</groupId>
       </plugin>
-      <plugin>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-        <configuration>
-          <addResources>true</addResources>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>repackage</goal>
-            </goals>
-          </execution>
-        </executions>
-        <groupId>org.springframework.boot</groupId>
-      </plugin>
+
       <plugin>
         <artifactId>frontend-maven-plugin</artifactId>
         <configuration>
@@ -266,7 +253,7 @@
     <java.version>11</java.version>
 
     <docker.mavenPlugin.version>4.0.0</docker.mavenPlugin.version>
-    <frontend.directory>${project.basedir}/src/main/webapp</frontend.directory>
+    <frontend.directory>${project.basedir}/frontend</frontend.directory>
     <frontend.directory.build>${frontend.directory}/build</frontend.directory.build>
     <frontend.mavenPlugin.version>1.11.0</frontend.mavenPlugin.version>
 

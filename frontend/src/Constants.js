@@ -21,7 +21,7 @@ export const HOST = window.location.protocol + "//" + window.location.hostname;
 export const OAUTH2_AUTHORIZE_URL = HOST + ":" + getServerPort(8081)
     + "/oauth2/authorize/";
 export const OAUTH2_REDIRECT_URL = HOST + ":" + window.location.port
-    + "/oauth2/redirect/";
+    + "/oauth2/callback/";
 export const OAUTH2_PROVIDERS = {
   "GITHUB": new OAuth2Provider("GitHub", MarkGithubIcon)
 }

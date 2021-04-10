@@ -39,6 +39,9 @@ public class UserServiceImpl implements UserService {
   @Override
   @Transactional(readOnly = true)
   public UserDto getUser(OAuth2AuthenticationToken token) {
+    if (token == null) {
+      return null;
+    }
     OAuth2Identifier identifier = oAuth2Service.findIdentifier(token);
     if (identifier != null) {
       return getUser(identifier.getUserId());
