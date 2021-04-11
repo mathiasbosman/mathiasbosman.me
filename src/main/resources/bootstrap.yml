@@ -31,4 +31,4 @@ spring:
 logging:
   level:
     ROOT: ERROR
-    be: DEBUG
+    be: TRACE

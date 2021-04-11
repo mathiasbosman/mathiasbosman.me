@@ -1,19 +1,22 @@
 package be.mathiasbosman.cv.api;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class WebMainController extends AbstractAppController implements ErrorController {
 
+  private static final Logger log = LoggerFactory.getLogger(WebMainController.class);
   private static final String PATH_BASE = "/";
 
-  // first level paths, the server will in all other cases fallback to the error path
-  // we define every "correct" path here for clarity
-  @RequestMapping({PATH_BASE, "/404", "/signin", "/blog", PATH_ERROR})
-  public String main() {
-    return INDEX;
+  @RequestMapping(value = "/{path:[^.]+}")
+  public String index(@PathVariable("path") String path) {
+    log.trace("Resolving path [{}]", path);
+    return "forward:" + PATH_BASE;
   }
 
   // deeper paths neet to be declared serpately because of circular view issues
