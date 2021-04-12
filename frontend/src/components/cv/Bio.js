@@ -49,7 +49,7 @@ export default class Bio extends React.Component {
             expensive Decathlon race bike, setting up some small network
             somewhere or enjoying some quality time with a lovely Beagle
             called <Link target="_blank"
-                         href="https://www.instagram.com/luna.the.tricolor.beagle/">Luna</Link>
+                         href="https://www.instagram.com/luna.the.tricolor.beagle/">Luna</Link>.
           </Text>
         </Box>
       </Box>
