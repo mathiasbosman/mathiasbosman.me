@@ -9,9 +9,14 @@ export default class Footer extends React.Component {
                       pt={5} borderRadius={0} color="text.secondary">
       <Flex justifyContent="space-between" alignItems="center">
         <Flex justifyContent="left" flex={1}>
-          <Link mr={3} href="https://github.com/mathiasbosman">GitHub</Link>
-          <Link mx={3}
-                href="https://www.linkedin.com/in/mathiasbosman">LinkedIn</Link>
+          <Link mr={3} href="https://github.com/mathiasbosman"
+                target="_blank">GitHub</Link>
+          <Link mr={3}
+                href="https://www.linkedin.com/in/mathiasbosman"
+                target="_blank">LinkedIn</Link>
+          <Link mr={3}
+                href="https://twitter.com/MathiasBosman"
+                target="_blank">Twitter</Link>
         </Flex>
         <Flex flex={1} justifyContent="center">
           <Text textAlign="center"><Copyright name="Mathias Bosman"/></Text>

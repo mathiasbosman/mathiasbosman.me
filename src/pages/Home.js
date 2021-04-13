@@ -20,38 +20,40 @@ export default class Home extends React.Component {
     return (
         <>
           <DocTitle subTitle="Online resume"/>
-          <BorderBox boxShadow="shadows.medium"
-                     bg="bg.canvas" as="main" mx="auto" p={3}
-                     maxWidth={LAYOUT_WIDTH}>
-            <section>
-              <Suspense fallback={<PreLoader/>}>
-                <Bio/>
-              </Suspense>
-            </section>
+          <main itemScope itemType="https://schema.org/Person">
+            <BorderBox boxShadow="shadows.medium"
+                       bg="bg.canvas" mx="auto" p={3}
+                       maxWidth={LAYOUT_WIDTH}>
+              <section>
+                <Suspense fallback={<PreLoader/>}>
+                  <Bio/>
+                </Suspense>
+              </section>
 
-            <section>
-              <Flex className="flexWrapper" justifyItems="space-between">
-                <Box flexBasis="100%" as="section" px={3}>
-                  <Suspense fallback={<PreLoader/>}>
-                    <ExperienceAndEducation/>
-                  </Suspense>
-                </Box>
+              <section>
+                <Flex className="flexWrapper" justifyItems="space-between">
+                  <Box flexBasis="100%" as="section" px={3}>
+                    <Suspense fallback={<PreLoader/>}>
+                      <ExperienceAndEducation/>
+                    </Suspense>
+                  </Box>
 
-                <Box flexBasis="100%" as="section" px={3}>
-                  <Suspense fallback={<PreLoader/>}>
-                    <SkillsSection/>
-                    <Awards/>
-                  </Suspense>
-                </Box>
-              </Flex>
-            </section>
-            <Box px={3}>
-              <Suspense fallback={<PreLoader/>}>
-                <Contact/>
-              </Suspense>
-            </Box>
-            <Footer/>
-          </BorderBox>
+                  <Box flexBasis="100%" as="section" px={3}>
+                    <Suspense fallback={<PreLoader/>}>
+                      <SkillsSection/>
+                      <Awards/>
+                    </Suspense>
+                  </Box>
+                </Flex>
+              </section>
+              <Box px={3}>
+                <Suspense fallback={<PreLoader/>}>
+                  <Contact/>
+                </Suspense>
+              </Box>
+              <Footer/>
+            </BorderBox>
+          </main>
         </>
     );
   }
