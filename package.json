@@ -4,11 +4,11 @@
   "description": "Personal resume",
   "repository": {
     "type": "git",
-    "url": "git://github.com:mathiasbosman/cv.git"
+    "url": "git://github.com/mathiasbosman/mathiasbosman.github.io.git"
   },
   "scripts": {
     "build": "GENERATE_SOURCEMAP=false react-scripts build",
-    "clean": "rm -rf node_modules",
+    "clean": "rm -rf node_modules build",
     "start": "react-scripts start",
     "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject"
@@ -28,7 +28,6 @@
     "styled-components": "^5.2.1",
     "web-vitals": "^0.2.4"
   },
-  "proxy": "http://localhost:8081",
   "eslintConfig": {
     "extends": [
       "react-app",

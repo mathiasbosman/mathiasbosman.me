@@ -1,9 +1,0 @@
-## Frontend ####
-/node_modules/
-/node/
-
-# Styles and minified javascript
-*.css
-*.min.*
-.eslintcache
-/build/

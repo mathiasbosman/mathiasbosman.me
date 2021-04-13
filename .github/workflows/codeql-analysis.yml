@@ -14,7 +14,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'java', 'javascript' ]
+        language: [ 'javascript' ]
 
     steps:
       - name: Checkout repository
@@ -26,20 +26,14 @@ jobs:
         with:
           languages: ${{ matrix.language }}
 
-      # Build steps
-      - name: Cache Maven dependencies
-        uses: actions/cache@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
         with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
+          node-version: 14.x
 
+      # Build steps
       - name: Build
-        env:
-          GITHUB_USERNAME: ${{ github.actor }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: mvn -B clean install -DskipTests -DskipFrontend --file pom.xml
+        run: npm build
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v1

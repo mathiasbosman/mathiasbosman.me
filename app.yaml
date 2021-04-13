@@ -1,0 +1,13 @@
+env: standard
+runtime: nodejs14
+
+handlers:
+  - url: /
+    static_files: build/index.html
+    upload: build/index.html
+  - url: /
+    static_dir: build
+  - url: /static
+    static_dir: build/static
+  - url: /asset
+    static_dir: build/asset
