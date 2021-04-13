@@ -27,7 +27,6 @@ jobs:
         env:
           NEW_VERSION: ${{ github.event.release.tag_name }}
         run: |
-          rm -rf node_modules build
           npm install
           npm run build
           gcloud app deploy --quiet --no-promote --version=$NEW_VERSION
