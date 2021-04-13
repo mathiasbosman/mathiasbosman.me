@@ -1,5 +1,5 @@
 # Mathias Bosman - CV
-![CI](https://github.com/mathiasbosman/cv/workflows/CI/badge.svg)
+[![CodeQL](https://github.com/mathiasbosman/mathiasbosman.github.io/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/mathiasbosman/mathiasbosman.github.io/actions/workflows/codeql-analysis.yml)
 
 A simple website with a bit of Github automatisation magic containing my personal resume
 on [mathiasbosman.be](http://mathiasbosman.be).
