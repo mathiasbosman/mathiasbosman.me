@@ -12,6 +12,7 @@ import NotFound from "./NotFound";
 import {appContext} from "./Contexts";
 import Blog from "./pages/Blog";
 import ErrorPage from "./pages/Error";
+import Banner from "./components/Header";
 
 export default class App extends React.Component {
 
@@ -60,6 +61,7 @@ export default class App extends React.Component {
               <Box className="wrapper"
                    bg="bg.tertiary" p={3}>
                 <BaseStyles>
+                  <Banner/>
                   <Switch>
                     <Route path="/oauth2/callback/"
                            component={OAuth2CallbackHandler}/>

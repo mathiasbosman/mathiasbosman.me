@@ -1,17 +1,8 @@
 import React, {Suspense} from "react";
 import "../styles/main.scss";
-import {
-  BorderBox,
-  Box,
-  Flash,
-  Flex,
-  Link,
-  StyledOcticon
-} from "@primer/components";
+import {BorderBox, Box, Flex} from "@primer/components";
 import {LAYOUT_WIDTH} from "../Constants";
 import Footer from "../components/Footer";
-import {ShieldCheckIcon} from "@primer/octicons-react";
-import Banner from "../components/Header";
 import DocTitle from "../components/DocTitle";
 import PreLoader from "../components/PreLoader";
 
@@ -25,20 +16,10 @@ const Awards = React.lazy(() => import("../components/cv/Awards"));
 
 export default class Home extends React.Component {
 
-  _renderUserinfo(user, logoutMethod) {
-    console.log(logoutMethod);
-    return <Flash full mb={3}>
-      <StyledOcticon icon={ShieldCheckIcon}/>
-      Logged in as {user.name} (<Link href="#" variant="small"
-                                      onClick={logoutMethod}>Logout</Link>)
-    </Flash>;
-  }
-
   render() {
     return (
         <>
           <DocTitle subTitle="Online resume"/>
-          <Banner/>
           <BorderBox boxShadow="shadows.medium"
                      bg="bg.canvas" as="main" mx="auto" p={3}
                      maxWidth={LAYOUT_WIDTH}>

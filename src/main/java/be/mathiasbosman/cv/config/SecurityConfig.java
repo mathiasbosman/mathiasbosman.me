@@ -36,7 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .authorizationEndpoint().baseUri("/oauth2/authorize")
         .authorizationRequestRepository(httpCookieOAuth2AuthorizationRequestRepository)
         .and()
-        .redirectionEndpoint().baseUri("/oauth2/callback/**")
+        .redirectionEndpoint().baseUri("/oauth2/callback/*")
         .and()
         .successHandler(oAuth2AuthenticationSuccessHandler)
         .failureHandler(oAuth2AuthenticationFailureHandler)

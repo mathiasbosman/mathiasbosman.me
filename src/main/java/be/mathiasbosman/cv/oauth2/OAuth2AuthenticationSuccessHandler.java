@@ -58,7 +58,6 @@ public class OAuth2AuthenticationSuccessHandler extends SimpleUrlAuthenticationS
       userService.login(identifier.getUserId());
     }
     clearAuthenticationAttributes(request, response);
-    getRedirectStrategy().sendRedirect(request, response, targetUrl);
   }
 
   protected String determineTargetUrl(HttpServletRequest request) {
