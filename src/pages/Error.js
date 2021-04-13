@@ -9,7 +9,7 @@ export default class ErrorPage extends React.Component {
                       bg="bg.canvas" maxWidth={LAYOUT_WIDTH} mx="auto"
                       my={3} p={3}>
       <div className="blankslate">
-        <img src="/assets/images/code_nav.webp" alt="Error"/>
+        <img src="/assets/images/bug_hunter.svg" alt="Error"/>
         <Heading as="h1" my={1} fontSize={3}>Beep Boop #!@£%</Heading>
         <Box mb={3}>
           <Text>

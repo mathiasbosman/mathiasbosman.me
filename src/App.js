@@ -2,8 +2,8 @@ import React from "react";
 import {BaseStyles, Box, ThemeProvider} from "@primer/components";
 import {Route, Switch} from "react-router-dom";
 import Home from "./pages/Home";
-import NotFound from "./NotFound";
 import ErrorPage from "./pages/Error";
+import NotFound from "./pages/NotFound";
 
 export default class App extends React.Component {
 

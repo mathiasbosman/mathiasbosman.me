@@ -20,7 +20,7 @@ export default class Bio extends React.Component {
           <Suspense fallback={<div>&nbsp;</div>}>
             <Avatar className="avatar" itemProp="image"
                     alt="Mathias Bosman"
-                    src="/assets/images/avatar.webp"/>
+                    src="/assets/images/avatar.svg"/>
           </Suspense>
         </BorderBox>
       </Box>
