@@ -22,11 +22,14 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
 
+      - name: NPM build
+        run: |
+          npm install
+          npm run build
+
       - name: Deploy with Google Cloud SDK
         if: ${{ github.event.release.tag_name }}
         env:
           NEW_VERSION: ${{ github.event.release.tag_name }}
         run: |
-          npm install
-          npm run build
           gcloud app deploy --quiet --no-promote --version=$NEW_VERSION
