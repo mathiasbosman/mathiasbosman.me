@@ -33,7 +33,10 @@ jobs:
 
       # Build steps
       - name: Build
-        run: npm build
+        run: npm run build
+
+      - name: Test
+        run: npm run test
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v1
