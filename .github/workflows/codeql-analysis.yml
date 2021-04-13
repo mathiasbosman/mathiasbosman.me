@@ -8,7 +8,7 @@ on:
 
 jobs:
   analyze:
-    name: Analyze
+    name: Code QL
     runs-on: ubuntu-latest
 
     strategy:
@@ -31,7 +31,18 @@ jobs:
         with:
           node-version: 14.x
 
+      - name: Cache Node modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       # Build steps
+      - name: Install
+        run: npm install
+
       - name: Build
         run: npm run build
 
