@@ -4,10 +4,19 @@ runtime: nodejs14
 handlers:
   - url: /
     static_files: build/index.html
+    require_matching_file: false
     upload: build/index.html
-  - url: /
-    static_dir: build
-  - url: /static
-    static_dir: build/static
-  - url: /asset
-    static_dir: build/asset
+  - url: /static/(.*)
+    static_files: build/static/\1
+    require_matching_file: false
+    upload: build/static/.*
+  - url: /assets/(.*)
+    static_files: build/assets/\1
+    require_matching_file: false
+    upload: build/assets/.*
+  - url: /(.*)
+    static_files: build/index.html
+    upload: build/index.html
+  - url: .*
+    static_files: build/index.html
+    upload: build/index.html

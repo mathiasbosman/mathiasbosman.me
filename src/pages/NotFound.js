@@ -2,6 +2,7 @@ import React from "react";
 import {LAYOUT_WIDTH} from "../Constants";
 import {BorderBox, Box, Heading, Link, Text} from "@primer/components";
 import "@primer/css/blankslate/index.scss";
+import SecurityResearcherImage from "../assets/security_researcher.svg";
 
 export default class NotFound extends React.Component {
   render() {
@@ -10,7 +11,7 @@ export default class NotFound extends React.Component {
                       bg="bg.canvas"
                       my={3} p={3}>
       <div className="blankslate">
-        <img src="/assets/images/security_researcher.svg" alt="All for one!"/>
+        <img src={SecurityResearcherImage} alt="All for one!"/>
         <Heading as="h1" my={1} fontSize={3}>This page was not found!</Heading>
         <Box mb={3}>
           <Text>
