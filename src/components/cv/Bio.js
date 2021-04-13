@@ -25,10 +25,9 @@ export default class Bio extends React.Component {
         </BorderBox>
       </Box>
       <Box flexGrow={1}>
-        <Pagehead fontSize={3} as="h1" flexGrow={1} px={3}>
-          <span itemProp="givenName">Mathias</span>&nbsp;
-          <span itemProp="familyName">Bosman</span>
-
+        <Pagehead as="h1" flexGrow={1} px={3} py={1}>
+          <Text fontSize={5} itemProp="givenName">Mathias</Text>&nbsp;
+          <Text fontSize={5} itemProp="familyName">Bosman</Text>
         </Pagehead>
         <Heading as="aside" fontSize={2} mb={2} px={3}>Web designer,
           Java developer &amp; network engineer</Heading>
