@@ -6,8 +6,8 @@ on [mathiasbosman.be](http://mathiasbosman.be).
 
 
 ## Publishing
-The application is published to Google Cloud Platform via the maven command when a new release is published on GitHub.
-See [the GitHub workflow][publish_workflow].
+The application is published to Google Cloud Platform via a workflow when a new release is published
+on GitHub. See [the GitHub workflow][publish_workflow].
 
 [publish_workflow]:.github/workflows/publish.yml
 
