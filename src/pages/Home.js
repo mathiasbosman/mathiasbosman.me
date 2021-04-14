@@ -1,9 +1,8 @@
 import React, {Suspense} from "react";
 import "../styles/main.scss";
 import {BorderBox, Box, Flex} from "@primer/components";
-import {LAYOUT_WIDTH, TITLE_BASE, TITLE_SEPERATOR} from "../Constants";
+import {LAYOUT_WIDTH} from "../Constants";
 import Footer from "../components/Footer";
-import DocTitle from "../components/DocTitle";
 import PreLoader from "../components/PreLoader";
 
 const Bio = React.lazy(() => import("../components/cv/Bio"));
