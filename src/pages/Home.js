@@ -1,7 +1,7 @@
 import React, {Suspense} from "react";
 import "../styles/main.scss";
 import {BorderBox, Box, Flex} from "@primer/components";
-import {LAYOUT_WIDTH} from "../Constants";
+import {LAYOUT_WIDTH, TITLE_BASE, TITLE_SEPERATOR} from "../Constants";
 import Footer from "../components/Footer";
 import DocTitle from "../components/DocTitle";
 import PreLoader from "../components/PreLoader";
@@ -19,7 +19,6 @@ export default class Home extends React.Component {
   render() {
     return (
         <>
-          <DocTitle subTitle="Online resume"/>
           <main itemScope itemType="https://schema.org/Person">
             <BorderBox boxShadow="shadows.medium"
                        bg="bg.canvas" mx="auto" p={3}
