@@ -36,8 +36,7 @@ export default class ExperienceAndEducation extends React.Component {
             <Text as="i">2018 - present</Text>
             <BorderBox as="aside" p={3} mt={2}>
               <Text>Currently I'm employed as a Java programmer for the
-                department
-                of Environment where I work on in-house applications.
+                department of Environment where I work on in-house applications.
                 Mostly using frameworks such as Spring.</Text>
             </BorderBox>
           </Timeline.Body>
@@ -47,10 +46,10 @@ export default class ExperienceAndEducation extends React.Component {
             <StyledOcticon icon={CodeReviewIcon}/>
           </Timeline.Badge>
           <Timeline.Body>
-            <Text mr={1}>Application
-              manager</Text>
-            at <Link href={URL_FLANDERS} target="_blank">the
-            Flemish Government</Link>
+            <Text mr={1}>Application manager</Text>
+            at <Link href={URL_FLANDERS} target="_blank">
+              the Flemish Government
+            </Link>
             <br/>2016 - 2018
           </Timeline.Body>
         </Timeline.Item>
@@ -59,10 +58,10 @@ export default class ExperienceAndEducation extends React.Component {
             <StyledOcticon icon={OrganizationIcon}/>
           </Timeline.Badge>
           <Timeline.Body>
-            <Text mr={1}>Expert employee system /
-              IT-support</Text>
-            at <Link href={URL_FLANDERS} target="_blank">the
-            Flemish Government</Link>
+            <Text mr={1}>Expert employee system / IT-support</Text>
+            at <Link href={URL_FLANDERS} target="_blank">
+              the Flemish Government
+            </Link>
             <br/>2013 - 2016
           </Timeline.Body>
         </Timeline.Item>
@@ -83,8 +82,8 @@ export default class ExperienceAndEducation extends React.Component {
           </Timeline.Badge>
           <Timeline.Body>
             <Text mr={1}>Web developer</Text>
-            at <Link href="https://www.procius.com/" target="_blank">Procius
-            Limited</Link>
+            at <Link href="https://www.procius.com/" target="_blank">
+            Procius Limited</Link>
             <br/>2012 (internship)
           </Timeline.Body>
         </Timeline.Item>

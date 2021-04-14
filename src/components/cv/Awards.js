@@ -13,7 +13,7 @@ export default class Awards extends React.Component {
               fontWeight="bold">CERA Award</Link>
         <Box>
           <Text>
-            During my highschool education our team won the CERA Award for
+            During my high school education our project team won the CERA Award for
             creating a PHP web portal for evaluating employees.
           </Text>
         </Box>
