@@ -8,13 +8,19 @@ export default class MailToLink extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mail: props.mail
+      mail: props.mail,
+      safe: props.safe
     }
     this._sendMail = this._sendMail.bind(this);
   }
 
   _sendMail() {
-    window.open("mailto:" + this.state.mail, '_blank');
+    let email = this.state.mail;
+    if (this.state.safe) {
+      // remove brackets
+      email = email.replace(/[{}]+/g, "");
+    }
+    window.open("mailto:" + email, '_blank');
   }
 
   render() {
@@ -28,4 +34,5 @@ export default class MailToLink extends React.Component {
 
 MailToLink.propTypes = {
   mail: PropTypes.string.isRequired,
+  safe: PropTypes.bool
 }
