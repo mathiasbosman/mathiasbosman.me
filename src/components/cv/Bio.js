@@ -10,18 +10,16 @@ import {
 } from "@primer/components";
 import Age from "../Age";
 import {URL_FLANDERS} from "../../Constants";
-import React, {Suspense} from "react";
+import React from "react";
 
 export default class Bio extends React.Component {
   render() {
     return <Flex mx={3} className="flexWrapper">
       <Box>
         <BorderBox className="avatarContainer" mr={0}>
-          <Suspense fallback={<div>&nbsp;</div>}>
-            <Avatar className="avatar" itemProp="image"
-                    alt="Mathias Bosman"
-                    src="/assets/images/avatar.webp"/>
-          </Suspense>
+          <Avatar className="avatar" itemProp="image"
+                  alt="Mathias Bosman"
+                  src="/assets/images/avatar.webp"/>
         </BorderBox>
       </Box>
       <Box flexGrow={1}>

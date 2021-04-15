@@ -1,17 +1,13 @@
-import React, {Suspense} from "react";
+import React from "react";
 import "../styles/main.scss";
 import {BorderBox, Box, Flex} from "@primer/components";
 import {LAYOUT_WIDTH} from "../Constants";
 import Footer from "../components/Footer";
-import PreLoader from "../components/PreLoader";
-
-const Bio = React.lazy(() => import("../components/cv/Bio"));
-const ExperienceAndEducation = React.lazy(
-    () => import("../components/cv/ExperienceAndEducation"));
-const SkillsSection = React.lazy(
-    () => import("../components/cv/SkillsSection"));
-const Contact = React.lazy(() => import("../components/cv/Contact"));
-const Awards = React.lazy(() => import("../components/cv/Awards"));
+import Bio from "../components/cv/Bio";
+import ExperienceAndEducation from "../components/cv/ExperienceAndEducation";
+import SkillsSection from "../components/cv/SkillsSection";
+import Awards from "../components/cv/Awards";
+import Contact from "../components/cv/Contact";
 
 export default class Home extends React.Component {
 
@@ -23,31 +19,21 @@ export default class Home extends React.Component {
                        bg="bg.canvas" mx="auto" p={3}
                        maxWidth={LAYOUT_WIDTH}>
               <section>
-                <Suspense fallback={<PreLoader/>}>
-                  <Bio/>
-                </Suspense>
+                <Bio/>
               </section>
-
               <section>
                 <Flex className="flexWrapper" justifyItems="space-between">
                   <Box flexBasis="100%" as="section" px={3}>
-                    <Suspense fallback={<PreLoader/>}>
-                      <ExperienceAndEducation/>
-                    </Suspense>
+                    <ExperienceAndEducation/>
                   </Box>
-
                   <Box flexBasis="100%" as="section" px={3}>
-                    <Suspense fallback={<PreLoader/>}>
-                      <SkillsSection/>
-                      <Awards/>
-                    </Suspense>
+                    <SkillsSection/>
+                    <Awards/>
                   </Box>
                 </Flex>
               </section>
               <Box px={3}>
-                <Suspense fallback={<PreLoader/>}>
-                  <Contact/>
-                </Suspense>
+                <Contact/>
               </Box>
               <Footer/>
             </BorderBox>
