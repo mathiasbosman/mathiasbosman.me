@@ -1,5 +1,12 @@
 @import "vars";
 
+@media (prefers-color-scheme: dark) {
+  // lazy fix for #28
+  body {
+    background: #161b22;
+  }
+}
+
 html, body, #root, .wrapper {
   font-size: $font-size;
 }
