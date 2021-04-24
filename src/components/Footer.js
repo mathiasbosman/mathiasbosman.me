@@ -1,7 +1,6 @@
-import {BorderBox, Flex, Link, StyledOcticon, Text} from "@primer/components";
+import {BorderBox, Flex, Link, Text} from "@primer/components";
 import React from "react";
 import Copyright from "./Copyright";
-import {HeartFillIcon} from "@primer/octicons-react";
 
 export default class Footer extends React.Component {
   render() {
@@ -11,21 +10,11 @@ export default class Footer extends React.Component {
         <Flex flex={1}>
           <Text><Copyright name="Mathias Bosman"/></Text>
         </Flex>
-        <Flex flex={1} justifyContent="center">
-          <Link href="https://github.com/mathiasbosman"
-                target="_blank" mr={2}>GitHub</Link>
+        <Flex flex={1} justifyContent="right">
           <Link href="https://www.linkedin.com/in/mathiasbosman"
-                target="_blank" ml={2}>LinkedIn</Link>
-        </Flex>
-        <Flex flex={1} justifyContent="flex-end">
-          <Text textAlign="right">
-            Made with<StyledOcticon ml={1} color="text.danger"
-                                    icon={HeartFillIcon}/>
-            <Link mx={1} href="https://reactjs.org/"
-                  target="_blank">React</Link>
-            and <Link href="https://primer.style/"
-                      target="_blank">Primer.style</Link>
-          </Text>
+                target="_blank" mr={2}>LinkedIn</Link>
+          <Link href="https://github.com/mathiasbosman"
+                target="_blank" ml={2}>GitHub</Link>
         </Flex>
       </Flex>
     </BorderBox>;

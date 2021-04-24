@@ -8,6 +8,7 @@ import ExperienceAndEducation from "../components/cv/ExperienceAndEducation";
 import SkillsSection from "../components/cv/SkillsSection";
 import Awards from "../components/cv/Awards";
 import Contact from "../components/cv/Contact";
+import Credit from "../components/cv/Credit";
 
 export default class Home extends React.Component {
 
@@ -34,6 +35,9 @@ export default class Home extends React.Component {
               </section>
               <Box px={3}>
                 <Contact/>
+              </Box>
+              <Box px={3}>
+                <Credit/>
               </Box>
               <Footer/>
             </BorderBox>
