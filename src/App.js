@@ -2,7 +2,6 @@ import React from "react";
 import {BaseStyles, Box, ThemeProvider} from "@primer/components";
 import {Route, Switch} from "react-router-dom";
 import Home from "./pages/Home";
-import ErrorPage from "./pages/Error";
 import NotFound from "./pages/NotFound";
 
 export default class App extends React.Component {
@@ -17,7 +16,7 @@ export default class App extends React.Component {
                   <Switch>
                     <Route path="/404" component={NotFound}/>
                     <Route exact path="/" component={Home}/>
-                    <Route component={ErrorPage}/>
+                    <Route component={NotFound}/>
                   </Switch>
                 </BaseStyles>
               </Box>

@@ -3,7 +3,7 @@ import {LAYOUT_WIDTH} from "../Constants";
 import {BorderBox, Box, Heading, Link, Text} from "@primer/components";
 import "@primer/css/blankslate/index.scss";
 import BugHunterImage from "../assets/bug_hunter.svg";
-
+/* @deprecated */
 export default class ErrorPage extends React.Component {
   render() {
     return <BorderBox boxShadow="shadows.medium" as="main"
