@@ -9,6 +9,7 @@
 
 html, body, #root, .wrapper {
   font-size: $font-size;
+  min-height: 100vh;
 }
 
 ul {
