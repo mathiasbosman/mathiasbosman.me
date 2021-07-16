@@ -43,10 +43,8 @@ export default class Bio extends React.Component {
                                      href={URL_FLANDERS}>Flemish
             Government</Link>.<br/>
             In my spare time you will find me on my (not so) super
-            expensive Decathlon race bike, setting up some small network
-            somewhere or enjoying some quality time with a lovely Beagle
-            called <Link target="_blank"
-                         href="https://www.instagram.com/luna.the.tricolor.beagle/">Luna</Link>.
+            expensive Decathlon race bike or setting up some small network
+            somewhere.
           </Text>
         </Box>
       </Box>
