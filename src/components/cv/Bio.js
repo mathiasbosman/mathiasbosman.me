@@ -1,5 +1,4 @@
 import {
-  Avatar,
   BorderBox,
   Box,
   Flex,
@@ -11,15 +10,17 @@ import {
 import Age from "../Age";
 import {URL_FLANDERS} from "../../Constants";
 import React from "react";
+import HoverAvatar from "../HoverAvatar";
 
 export default class Bio extends React.Component {
   render() {
     return <Flex mx={3} className="flexWrapper">
       <Box>
         <BorderBox className="avatarContainer" mr={0}>
-          <Avatar className="avatar" itemProp="image"
-                  alt="Mathias Bosman"
-                  src="/assets/images/avatar.webp"/>
+          <HoverAvatar className="avatar" itemProp="image"
+                       alt="Mathias Bosman"
+                       src="/assets/images/avatar.webp"
+                       altSrc="/assets/images/avatar_real.jpeg"/>
         </BorderBox>
       </Box>
       <Box flexGrow={1}>
