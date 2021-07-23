@@ -1,7 +1,7 @@
 # Mathias Bosman - online resume
 [![CodeQL][link_ci_badge]][link_ci_flow]
 
-A simple website with a bit of Github automatisation magic containing my personal resume
+A simple website with a bit of Github magic containing my personal resume
 on [mathiasbosman.be][link_mathiasbosman_be].
 
 
@@ -14,7 +14,7 @@ on GitHub. See [the GitHub workflow][link_publish_workflow].
 This website was created using [React.js][link_react_js] and Github's [Primer.style][link_primer_style] React components.
 
 ### Avatar
-The avatar was designed using the [Avataaars Generator][link_avataaars_generator] developed by 
+The avatar was designed using the [Avataaars Generator][link_avataaars_generator] developed by
 [Fang-Pen Lin][link_fangPen_lin], based on the Sketch library [Avataaars][link_avataaars] designed by [Pablo Stanley][link_pablo_stanley].
 
 [link_mathiasbosman_be]:http://mathiasbosman.be

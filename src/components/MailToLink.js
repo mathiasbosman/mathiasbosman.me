@@ -24,11 +24,9 @@ export default class MailToLink extends React.Component {
   }
 
   render() {
-    return (
-        <Button onClick={this._sendMail} {...this.props}>
-          <StyledOcticon icon={PaperAirplaneIcon}/> {this.props.children}
-        </Button>
-    )
+    return (<Button onClick={this._sendMail} {...this.props}>
+      <StyledOcticon icon={PaperAirplaneIcon}/> {this.props.children}
+    </Button>)
   };
 }
 

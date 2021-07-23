@@ -1,5 +1,4 @@
 @import "vars";
-
 @media (prefers-color-scheme: dark) {
   // lazy fix for #28
   body {
@@ -7,7 +6,10 @@
   }
 }
 
-html, body, #root, .wrapper {
+#root,
+.wrapper,
+body,
+html {
   font-size: $font-size;
   min-height: 100vh;
 }
@@ -35,9 +37,7 @@ abbr {
     height: 150px;
   }
 }
-
 @media (max-width: $screen-break-point) {
-
   .wrapper {
     margin: 0 !important;
     padding: 0 !important;
