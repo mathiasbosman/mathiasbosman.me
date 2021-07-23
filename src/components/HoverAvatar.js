@@ -6,8 +6,8 @@ class HoverAvatar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      src: props.src,
-      mainSrc: props.src,
+      src: props.mainSrc,
+      mainSrc: props.mainSrc,
       altSrc: props.altSrc
     }
     this._replaceImage = this._replaceImage.bind(this);
@@ -23,16 +23,16 @@ class HoverAvatar extends React.Component {
   }
 
   render() {
-    return <Avatar className="avatar" itemProp="image"
-                   onMouseOver={this._replaceImage}
+    return <Avatar onMouseOver={this._replaceImage}
                    onMouseLeave={this._resetImage}
-                   alt="Mathias Bosman"
-                   src={this.state.src}/>
+                   src={this.state.src}
+                   {...this.props}
+                   />
   }
 }
 
 HoverAvatar.propTypes = {
-  src: PropTypes.string.isRequired,
+  mainSrc: PropTypes.string.isRequired,
   altSrc: PropTypes.string.isRequired
 }
 

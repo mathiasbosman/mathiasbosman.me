@@ -19,7 +19,7 @@ export default class Bio extends React.Component {
         <BorderBox className="avatarContainer" mr={0}>
           <HoverAvatar className="avatar" itemProp="image"
                        alt="Mathias Bosman"
-                       src="/assets/images/avatar.webp"
+                       mainSrc="/assets/images/avatar.webp"
                        altSrc="/assets/images/avatar_real.jpeg"/>
         </BorderBox>
       </Box>
