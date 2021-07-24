@@ -22,9 +22,9 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
 
-      - name: Set last modified in sitemap
+      - name: Run scripts
         run: |
-          sh etc/scripts/updateLastMod.sh
+          for f in ./etc/scripts/*.sh; do bash "$f" done
 
       - name: NPM build
         run: |
