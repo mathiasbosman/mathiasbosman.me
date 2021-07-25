@@ -24,7 +24,7 @@ jobs:
 
       - name: Run scripts
         run: |
-          sh for f in ./etc/scripts/*.sh do bash "$f" done
+          sh ./etc/scripts/001-updateLastMod.sh
 
       - name: NPM build
         run: |

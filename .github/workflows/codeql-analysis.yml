@@ -27,10 +27,9 @@ jobs:
         with:
           node-version: 14.x
 
-      # Run scripts (just to check for errors)
       - name: Run scripts
         run: |
-          sh for f in ./etc/scripts/*.sh do bash "$f" done
+          sh ./etc/scripts/001-updateLastMod.sh
 
       - name: Cache Node modules
         uses: actions/cache@v2
