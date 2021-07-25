@@ -30,7 +30,7 @@ jobs:
       # Run scripts (just to check for errors)
       - name: Run scripts
         run: |
-          for f in ./etc/scripts/*.sh do bash "$f" done
+          sh for f in ./etc/scripts/*.sh do bash "$f" done
 
       - name: Cache Node modules
         uses: actions/cache@v2
