@@ -24,7 +24,7 @@ jobs:
 
       - name: Run scripts
         run: |
-          for f in ./etc/scripts/*.sh; do bash "$f" done
+          for f in ./etc/scripts/*.sh do bash "$f" done
 
       - name: NPM build
         run: |
