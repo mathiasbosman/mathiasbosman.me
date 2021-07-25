@@ -31,6 +31,7 @@ jobs:
         shell: bash
         run: |
           for f in ./etc/scripts/*.sh; do
+            echo running $f
             bash $f
           done
 

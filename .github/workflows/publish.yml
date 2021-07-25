@@ -23,8 +23,13 @@ jobs:
           export_default_credentials: true
 
       - name: Run scripts
+        shell: bash
         run: |
-          sh ./etc/scripts/001-updateLastMod.sh
+          for f in ./etc/scripts/*.sh; do
+            echo running $f
+            bash $f
+          done
+
 
       - name: NPM build
         run: |
