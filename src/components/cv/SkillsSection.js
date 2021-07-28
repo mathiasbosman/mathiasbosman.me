@@ -1,10 +1,10 @@
-import {Heading} from "@primer/components";
+import {Box, Heading} from "@primer/components";
 import Skills, {SkillsElement} from "./SkillsElement";
 import React from "react";
 
 export default class SkillsSection extends React.Component {
   render() {
-    return <>
+    return <Box>
       <Heading mt={5}>Skills</Heading>
       <Skills>
         <SkillsElement percentage={100}
@@ -25,6 +25,6 @@ export default class SkillsSection extends React.Component {
                        color="text.disabled"
                        skill="Nitting &amp; sewing"/>
       </Skills>
-    </>
+    </Box>
   }
 }

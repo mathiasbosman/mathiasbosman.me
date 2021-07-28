@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {Text} from "@primer/components";
 
 class Copyright extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class Copyright extends React.Component {
   }
 
   render() {
-    return <>&copy; {this.state.year} {this.state.name}</>
+    return <Text>&copy; {this.state.year} {this.state.name}</Text>
   }
 }
 

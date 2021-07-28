@@ -1,11 +1,11 @@
 import React from "react";
-import {Flash, Heading, Text} from "@primer/components";
+import {Box, Flash, Heading, Text} from "@primer/components";
 import MailToLink from "../MailToLink";
 
 export default class Contact extends React.Component {
 
   render() {
-    return <>
+    return <Box>
       <Heading mt={5}>Contact</Heading>
       <Text>If you would like to ask for my phone number or setup a small
         to medium sized network at your home or office you can send me a
@@ -20,6 +20,6 @@ export default class Contact extends React.Component {
         <MailToLink variant="small" mx={1} mail="bosmanmathias{@}gmail{.}com">
           Send me an email
         </MailToLink>to get in touch! </Text>
-    </>;
+    </Box>;
   }
 }

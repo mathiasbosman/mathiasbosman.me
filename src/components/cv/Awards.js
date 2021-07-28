@@ -4,7 +4,7 @@ import {BorderBox, Box, Heading, Link, Text} from "@primer/components";
 export default class Awards extends React.Component {
 
   render() {
-    return <>
+    return <Box>
       <Heading mt={5}>Awards</Heading>
 
       <BorderBox p={3}>
@@ -18,6 +18,6 @@ export default class Awards extends React.Component {
           </Text>
         </Box>
       </BorderBox>
-    </>;
+    </Box>;
   }
 }

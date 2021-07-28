@@ -1,5 +1,5 @@
 import {
-  BorderBox,
+  BorderBox, Box,
   Heading,
   Link,
   StyledOcticon,
@@ -18,7 +18,7 @@ import {URL_FLANDERS} from "../../Constants";
 export default class ExperienceAndEducation extends React.Component {
 
   render() {
-    return <>
+    return <Box>
       <Heading mt={5}>Experience &amp; education</Heading>
       <Timeline clipSidebar>
         <Timeline.Item>
@@ -127,6 +127,6 @@ export default class ExperienceAndEducation extends React.Component {
         </Timeline.Item>
         <Timeline.Break/>
       </Timeline>
-    </>
+    </Box>
   };
 }
