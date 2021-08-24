@@ -9,39 +9,21 @@ on:
     types: [ published ]
 
 jobs:
-  test:
-    name: Test
+  build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
+      - name: Checkout 🛎️
         uses: actions/checkout@v2
 
-      - name: User Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 14.x
-
-      - name: NPM tests
+      - name: Install 🔧
         run: |
           npm install
+
+      - name: Test 🧪
+        run: |
           npm test
 
-  build:
-    name: Build
-    needs: test
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 14.x
-
-      - name: Run scripts
+      - name: Run scripts ⚙️
         shell: bash
         run: |
           for f in ./etc/scripts/*.sh; do
@@ -49,14 +31,12 @@ jobs:
             bash $f
           done
 
-      - name: Setup git credentials
-        env:
-          USER_EMAIL: ${{ secrets.GIT_USER_EMAIL }}
+      - name: Build 🛠️
         run: |
-          git config user.email "$USER_EMAIL"
-          git config user.name "Action deployer"
+          npm run build
 
-      - name: NPM deploy
-        run: |
-          npm install
-          npm run deploy
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: build
