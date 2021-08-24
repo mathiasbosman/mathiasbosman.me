@@ -22,11 +22,6 @@ jobs:
         with:
           languages: ${{ matrix.language }}
 
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 14.x
-
       - name: Run scripts
         shell: bash
         run: |

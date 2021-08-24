@@ -9,21 +9,19 @@ on:
     types: [ published ]
 
 jobs:
-  build-and-deploy:
+  Deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Install 🔧
-        run: |
-          npm install
+      - name: Install
+        run: npm install
 
-      - name: Test 🧪
-        run: |
-          npm test
+      - name: Test
+        run: npm test
 
-      - name: Run scripts ⚙️
+      - name: Run scripts
         shell: bash
         run: |
           for f in ./etc/scripts/*.sh; do
@@ -31,11 +29,10 @@ jobs:
             bash $f
           done
 
-      - name: Build 🛠️
-        run: |
-          npm run build
+      - name: Build
+        run: npm run build
 
-      - name: Deploy 🚀
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages
