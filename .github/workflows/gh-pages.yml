@@ -9,8 +9,27 @@ on:
     types: [ published ]
 
 jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: User Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+
+      - name: NPM tests
+        run: |
+          npm install
+          npm test
+
   build:
     name: Build
+    needs: test
     runs-on: ubuntu-latest
 
     steps:
@@ -32,11 +51,10 @@ jobs:
 
       - name: Setup git credentials
         env:
-          USER_EMAIL: ${{ secrets.USER_EMAIL }}
-          USER_NAME: ${{ secrets.GIT_USER_NAME }}
+          USER_EMAIL: ${{ secrets.GIT_USER_EMAIL }}
         run: |
           git config user.email "$USER_EMAIL"
-          git config user.name "action deployer"
+          git config user.name "Action deployer"
 
       - name: NPM deploy
         run: |
