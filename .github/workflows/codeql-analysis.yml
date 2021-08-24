@@ -45,8 +45,5 @@ jobs:
       - name: Test
         run: npm run test
 
-      - name: Update version
-        run: npm version patch -m "Upgrade to %s"
-
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v1
