@@ -19,8 +19,8 @@ export default class Bio extends React.Component {
         <BorderBox className="avatarContainer" mr={0}>
           <HoverAvatar className="avatar" itemProp="image"
                        alt="Mathias Bosman"
-                       mainSrc="/assets/images/avatar_real.jpeg"
-                       altSrc="/assets/images/memoji.png"/>
+                       altSrc="/assets/images/avatar_real.jpeg"
+                       mainSrc="/assets/images/memoji.png"/>
         </BorderBox>
       </Box>
       <Box flexGrow={1}>
