@@ -2,11 +2,9 @@ name: Build & deploy
 
 on:
   push:
-    branches:
-      - main
+    branches: [ master ]
   pull_request:
-    branches:
-      - main
+    branches: [ master ]
 
 jobs:
   build:
@@ -17,19 +15,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install Node.js
+      - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
-          node-version: 13.x
+          node-version: 14.x
 
-      - name: Install NPM packages
-        run: npm ci
+      - name: Run scripts
+        shell: bash
+        run: |
+          for f in ./etc/scripts/*.sh; do
+            echo running $f
+            bash $f
+          done
 
-      - name: Build project
-        run: npm run build
-
-      - name: Run tests
-        run: npm run test
+      - name: NPM build
+        run: |
+          npm install
+          npm run build
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
