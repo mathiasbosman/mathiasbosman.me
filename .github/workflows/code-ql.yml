@@ -4,7 +4,6 @@ on:
   push:
     branches-ignore:
       - gh-pages # no need
-      - master # gets done in other workflow
 
 jobs:
   analyze:
