@@ -33,16 +33,15 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Upgrade version
-        run: npm version minor -m "Upgrade to %s"
-
-      - name: Commit version
         env:
           GIT_DEPLOYER_EMAIL: ${{ secrets.GIT_DEPLOYER_EMAIL }}
         run: |
           git config --global user.name 'Workflow deployer'
           git config --global user.email '$GIT_DEPLOYER_EMAIL'
-          git commit -am "Upgrade version"
-          git push
+          npm version minor -m "Upgrade to %S"
+
+      - name: Push version
+        run: git push
 
   deploy:
     needs: upgrade

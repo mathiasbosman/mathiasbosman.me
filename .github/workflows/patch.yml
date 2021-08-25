@@ -42,9 +42,8 @@ jobs:
           git config --global user.email '$GIT_DEPLOYER_EMAIL'
           npm version patch -m "Patch to %s"
 
-      - name: Commit version
-        run: |
-          git push
+      - name: Push version
+        run: git push
 
   build:
     name: Code QL and build
