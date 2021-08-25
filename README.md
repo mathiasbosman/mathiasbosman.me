@@ -19,6 +19,7 @@ GitHub. See [the GitHub workflow][link_publish_workflow].
 
 Using [React.js][link_react_js] and GitHub's [Primer.style][link_primer_style] React components.
 
+### GitHub actions
 A huge shout-out to [JamesIves][link_james_ives] for [his GitHub action][link_github_action] to
 deploy GitHub pages.
 
