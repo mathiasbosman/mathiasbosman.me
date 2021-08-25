@@ -1,12 +1,15 @@
 # Mathias Bosman - online resume
-[![CodeQL][link_ci_badge]][link_ci_flow]
+[![Build](https://github.com/mathiasbosman/mathiasbosman.github.io/actions/workflows/build.yml/badge.svg)](https://github.com/mathiasbosman/mathiasbosman.github.io/actions/workflows/build.yml)
+[![Patch](https://github.com/mathiasbosman/mathiasbosman.github.io/actions/workflows/patch.yml/badge.svg)](https://github.com/mathiasbosman/mathiasbosman.github.io/actions/workflows/patch.yml)
+[![Deploy](https://github.com/mathiasbosman/mathiasbosman.github.io/actions/workflows/deploy.yml/badge.svg?branch=master)](https://github.com/mathiasbosman/mathiasbosman.github.io/actions/workflows/deploy.yml)
+
 
 A simple website with a bit of Github magic containing my personal resume
 on [mathiasbosman.be][link_mathiasbosman_be].
 
 
 ## Publishing
-The application is published to Google Cloud Platform via a workflow when a new release is published
+The application is published to Github pages via a workflow when a new release is published
 on GitHub. See [the GitHub workflow][link_publish_workflow].
 
 ## Credits
@@ -15,8 +18,6 @@ This website was created using [React.js][link_react_js] and Github's [Primer.st
 
 
 [link_mathiasbosman_be]:http://mathiasbosman.be
-[link_ci_flow]:https://github.com/mathiasbosman/mathiasbosman.github.io/actions/workflows/codeql-analysis.yml
-[link_ci_badge]:https://github.com/mathiasbosman/mathiasbosman.github.io/actions/workflows/codeql-analysis.yml/badge.svg
-[link_publish_workflow]:.github/workflows/publish.yml
+[link_publish_workflow]:.github/workflows/deploy.yml
 [link_react_js]:https://reactjs.org/
 [link_primer_style]:https://primer.style/
