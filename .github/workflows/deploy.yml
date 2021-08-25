@@ -25,27 +25,9 @@ jobs:
       - name: Test
         run: npm test
 
-  upgrade:
-    name: Upgrade version ⚙️
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Upgrade version
-        env:
-          GIT_DEPLOYER_EMAIL: ${{ secrets.GIT_DEPLOYER_EMAIL }}
-        run: |
-          git config --global user.name 'Workflow deployer'
-          git config --global user.email '$GIT_DEPLOYER_EMAIL'
-          npm version minor -m "Upgrade to %S"
-
-      - name: Push version
-        run: git push
-
   deploy:
     name: Deploy 🚀
-    needs: upgrade
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
