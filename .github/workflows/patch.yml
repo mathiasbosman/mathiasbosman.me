@@ -11,8 +11,7 @@ jobs:
     name: Test run
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
       - name: Run scripts
         shell: bash
@@ -33,8 +32,7 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
       - name: Upgrade version
         env:
@@ -46,7 +44,6 @@ jobs:
 
       - name: Commit version
         run: |
-          git commit -am "Upgrade version"
           git push
 
   build:
@@ -55,8 +52,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
       # Initializes the CodeQL tools for scanning.
       - name: Initialize CodeQL

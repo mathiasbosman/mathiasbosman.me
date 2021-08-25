@@ -9,8 +9,7 @@ jobs:
     name: Test run
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
       - name: Run scripts
         shell: bash
@@ -31,8 +30,7 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
       - name: Upgrade version
         run: npm version minor -m "Upgrade to %s"
