@@ -1,0 +1,74 @@
+name: Deploy
+
+on:
+  release:
+    types: [ published ]
+
+jobs:
+  test:
+    name: Test run
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Run scripts
+        shell: bash
+        run: |
+          for f in ./etc/scripts/*.sh; do
+            echo running $f
+            bash $f
+          done
+
+      - name: Install
+        run: npm install
+
+      - name: Test
+        run: npm test
+
+  upgrade:
+    name: Upgrade version
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Upgrade version
+        run: npm version minor -m "Upgrade to %s"
+
+      - name: Commit version
+        env:
+          GIT_DEPLOYER_EMAIL: ${{ secrets.GIT_DEPLOYER_EMAIL }}
+        run: |
+          git config --global user.name 'Workflow deployer'
+          git config --global user.email '$GIT_DEPLOYER_EMAIL'
+          git commit -am "Upgrade version"
+          git push
+
+  deploy:
+    needs: upgrade
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Run scripts
+        shell: bash
+        run: |
+          for f in ./etc/scripts/*.sh; do
+            echo running $f
+            bash $f
+          done
+
+      - name: Install
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: build

@@ -1,10 +1,10 @@
-name: Patch
+name: Build
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches-ignore:
+      - gh-pages # no need
+      - master # gets done in other workflow
 
 jobs:
   cache-npm:
@@ -29,51 +29,9 @@ jobs:
       - name: Build
         run: npm build
 
-  test:
-    name: Test run
+  analyze:
+    name: Code QL
     needs: cache-npm
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Run scripts
-        shell: bash
-        run: |
-          for f in ./etc/scripts/*.sh; do
-            echo running $f
-            bash $f
-          done
-
-      - name: Install
-        run: npm install
-
-      - name: Test
-        run: npm test
-
-  patch:
-    name: Patch version
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Upgrade version
-        run: npm version patch -m "Patch to %s"
-
-      - name: Commit version
-        env:
-          GIT_DEPLOYER_EMAIL: ${{ secrets.GIT_DEPLOYER_EMAIL }}
-        run: |
-          git config --global user.name 'Workflow deployer'
-          git config --global user.email '$GIT_DEPLOYER_EMAIL'
-          git commit -am "Upgrade version"
-          git push
-
-  build:
-    name: Code QL and build
-    needs: patch
     runs-on: ubuntu-latest
 
     steps:
@@ -93,6 +51,13 @@ jobs:
             echo running $f
             bash $f
           done
+
+      # Build steps
+      - name: Install
+        run: npm install
+
+      - name: Test
+        run: npm run test
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v1
