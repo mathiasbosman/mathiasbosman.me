@@ -37,6 +37,11 @@ abbr {
     height: 150px;
   }
 }
+
+.flexGrid {
+  grid-template-columns: 50% 50%;
+}
+
 @media (max-width: $screen-break-point) {
   .wrapper {
     margin: 0 !important;
@@ -59,5 +64,9 @@ abbr {
 
   .flexWrapper {
     flex-wrap: wrap !important;
+  }
+
+  .flexGrid {
+    grid-template-columns: none;
   }
 }
