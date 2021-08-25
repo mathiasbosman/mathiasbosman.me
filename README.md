@@ -4,17 +4,17 @@
 [![Deploy](https://github.com/mathiasbosman/mathiasbosman.github.io/actions/workflows/deploy.yml/badge.svg?branch=master)](https://github.com/mathiasbosman/mathiasbosman.github.io/actions/workflows/deploy.yml)
 
 
-A simple website with a bit of Github magic containing my personal resume
+A simple website with a bit of GitHub magic containing my personal resume
 on [mathiasbosman.be][link_mathiasbosman_be].
 
 
 ## Publishing
-The application is published to Github pages via a workflow when a new release is published
+The application gets published to GitHub pages via a workflow when a new release gets published
 on GitHub. See [the GitHub workflow][link_publish_workflow].
 
 ## Credits
 ### Frameworks and libraries
-This website was created using [React.js][link_react_js] and Github's [Primer.style][link_primer_style] React components.
+Using [React.js][link_react_js] and GitHub's [Primer.style][link_primer_style] React components.
 
 
 [link_mathiasbosman_be]:http://mathiasbosman.be
