@@ -1,4 +1,4 @@
-name: Build
+name: Test build
 
 on:
   push:
@@ -8,16 +8,11 @@ on:
 
 jobs:
   analyze:
-    name: Code QL and build 🏗️
+    name: Test run 🧪
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
-
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v1
-        with:
-          languages: ${{ matrix.language }}
 
       - name: Run scripts
         shell: bash
@@ -45,5 +40,5 @@ jobs:
       - name: Test
         run: npm run test
 
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v1
+      - name: Build
+        run: npm runbuild
