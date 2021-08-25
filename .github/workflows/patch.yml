@@ -51,7 +51,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # Initializes the CodeQL tools for scanning.
+      # Initializes the CodeQL tools for scanning. Just in case someone did commit on master
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v1
         with:
