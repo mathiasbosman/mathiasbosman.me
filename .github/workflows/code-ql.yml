@@ -1,0 +1,23 @@
+name: Code QL
+
+on:
+  push:
+    branches-ignore:
+      - gh-pages # no need
+      - master # gets done in other workflow
+
+jobs:
+  analyze:
+    name: Code QL ⚙️
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v1
+        with:
+          languages: ${{ matrix.language }}
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v1

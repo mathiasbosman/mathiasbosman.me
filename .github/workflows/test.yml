@@ -1,26 +1,18 @@
-name: Build
+name: Test build
 
 on:
   push:
     branches-ignore:
       - gh-pages # no need
       - master # gets done in other workflow
-  schedule:
-    - cron: '0 14 * * 1'
 
 jobs:
   analyze:
-    name: Code QL and build 🏗️
+    name: Test run 🧪
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
-
-      # Initializes the CodeQL tools for scanning.
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v1
-        with:
-          languages: ${{ matrix.language }}
 
       - name: Run scripts
         shell: bash
@@ -42,12 +34,11 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      # Build steps
       - name: Install
         run: npm install
 
       - name: Test
         run: npm run test
 
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v1
+      - name: Build
+        run: npm run build
