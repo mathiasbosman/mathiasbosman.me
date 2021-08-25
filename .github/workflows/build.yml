@@ -10,7 +10,7 @@ on:
 
 jobs:
   analyze:
-    name: Code QL
+    name: Code QL and build 🏗️
     runs-on: ubuntu-latest
 
     steps:

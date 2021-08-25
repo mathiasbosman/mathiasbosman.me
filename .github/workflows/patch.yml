@@ -8,7 +8,7 @@ on:
 
 jobs:
   test:
-    name: Test run
+    name: Test run 🧪
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -28,7 +28,7 @@ jobs:
         run: npm test
 
   patch:
-    name: Patch version
+    name: Patch version 🩹️
     needs: test
     runs-on: ubuntu-latest
     steps:
@@ -46,7 +46,7 @@ jobs:
         run: git push
 
   build:
-    name: Code QL and build
+    name: Code QL and build 🏗️
     needs: patch
     runs-on: ubuntu-latest
 
