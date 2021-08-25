@@ -2,8 +2,7 @@
 
 [![Test build](https://github.com/mathiasbosman/mathiasbosman.github.io/actions/workflows/test.yml/badge.svg)](https://github.com/mathiasbosman/mathiasbosman.github.io/actions/workflows/test.yml)
 [![Code QL](https://github.com/mathiasbosman/mathiasbosman.github.io/actions/workflows/code-ql.yml/badge.svg)](https://github.com/mathiasbosman/mathiasbosman.github.io/actions/workflows/code-ql.yml)
-[![Deploy](https://github.com/mathiasbosman/mathiasbosman.github.io/actions/workflows/deploy.yml/badge.svg?branch=master)](https://github.com/mathiasbosman/mathiasbosman.github.io/actions/workflows/deploy.yml)
-
+[![Deploy](https://github.com/mathiasbosman/mathiasbosman.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/mathiasbosman/mathiasbosman.github.io/actions/workflows/deploy.yml)
 ## About
 
 A simple website with a bit of GitHub magic containing my personal resume

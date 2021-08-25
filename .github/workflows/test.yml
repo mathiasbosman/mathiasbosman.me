@@ -33,11 +33,11 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Install
+      - name: NPM install
         run: npm install
 
-      - name: Test
+      - name: NPM test
         run: npm run test
 
-      - name: Build
+      - name: NPM build
         run: npm run build
