@@ -3,7 +3,11 @@ name: Code QL
 on:
   push:
     branches-ignore:
-      - gh-pages # no need
+      - 'dependabot/**'
+      - 'gh-pages' # no need
+  pull_request:
+    branches:
+      - 'dependabot/**'
 
 jobs:
   analyze:
