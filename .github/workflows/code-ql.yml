@@ -2,25 +2,44 @@ name: Code QL
 
 on:
   push:
-    branches-ignore:
-      - 'dependabot/**'
-      - 'gh-pages' # no need
+    branches:
+      - master
   pull_request:
     branches:
-      - 'dependabot/**'
+      - master
+  schedule:
+    - cron: '0 1 * * 6'
+
 
 jobs:
   analyze:
     name: Code QL ⚙️
     runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
 
     steps:
       - uses: actions/checkout@v2
 
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: NPM install
+        run: npm install
+
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v1
-        with:
-          languages: ${{ matrix.language }}
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v1
