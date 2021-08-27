@@ -17,7 +17,7 @@ export default class Contact extends React.Component {
         or official holidays as this is my secondary occupation.
       </Flash>
       <Text>Still interested?
-        <MailToLink variant="small" mx={1} mail="bosmanmathias{@}gmail{.}com">
+        <MailToLink safe={true} variant="small" mx={1} mail="bosmanmathias{@}gmail{.}com">
           Send me an email
         </MailToLink>to get in touch! </Text>
     </Box>;

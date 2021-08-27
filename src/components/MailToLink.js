@@ -20,7 +20,7 @@ export default class MailToLink extends React.Component {
       // remove brackets
       email = email.replace(/[{}]+/g, "");
     }
-    window.open("mailto:" + email, '_blank');
+    window.location = "mailto:" + email;
   }
 
   render() {
