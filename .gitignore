@@ -11,3 +11,7 @@
 #ide's
 .idea
 *.iml
+
+
+# Mac shenanigens
+.DS_Store
