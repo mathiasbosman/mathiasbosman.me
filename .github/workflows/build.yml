@@ -1,18 +1,21 @@
-name: Test build
-
+name: Build and analyze
 on:
   push:
-    branches-ignore:
-      - gh-pages # no need
+    branches:
+      - master
+    paths-ignore:
+      - '**.md'
+  pull_request:
+    types: [ opened, synchronize, reopened ]
+  schedule:
+    - cron: '0 1 * * 6'
 
 jobs:
   analyze:
-    name: Test run 🧪
+    name: Build and analyze 🧪
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
-
       - name: Run scripts
         shell: bash
         run: |
@@ -20,7 +23,6 @@ jobs:
             echo running $f
             bash $f
           done
-
       - name: Cache node modules
         uses: actions/cache@v2
         env:
@@ -32,12 +34,11 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v1
       - name: NPM install
         run: npm install
-
-      - name: NPM test
-        run: npm run test
-
       - name: NPM build
         run: npm run build
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v1

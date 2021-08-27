@@ -1,0 +1,79 @@
+name: Publish to GitHub pages
+
+on:
+  release:
+    types: [ published ]
+
+jobs:
+  test:
+    name: Test run 🧪
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: NPM install & test
+        run: |
+          npm install
+          npm test
+
+  deploy:
+    name: Deploy 🚀
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run scripts
+        shell: bash
+        run: |
+          for f in ./etc/scripts/*.sh; do
+            echo running $f
+            bash $f
+          done
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: NPM install
+        run: npm install
+
+      - name: NPM build
+        run: npm run build
+
+      - name: GitHub Pages Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: build
+
+  post-deploy:
+    name: Prepare next development iteration 🌱
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Prepare git
+        run: |
+          git config user.name 'githubaction[bot]'
+          git config user.email '$ACTION_ACTOR_EMAIL'
+      - name: Set new minor version
+        run: npm version minor -m "Prepare next development iteration %s"
+      - name: Commit new version
+        run: git push origin HEAD:master
