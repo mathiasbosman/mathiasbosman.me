@@ -19,7 +19,7 @@ export default class Contact extends React.Component {
       <Text>Still interested?
         <MailToLink safe={true} variant="small" mx={1} mail="bosmanmathias{@}gmail{.}com">
           Send me an email
-        </MailToLink>to get in touch! </Text>
+        </MailToLink>to get in touch!</Text>
     </Box>;
   }
 }
