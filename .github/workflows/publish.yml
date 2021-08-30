@@ -27,6 +27,7 @@ jobs:
           npm test
   deploy:
     name: Deploy 🚀
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -61,6 +62,7 @@ jobs:
           folder: build
   post-deploy:
     name: Prepare next development iteration 🌱
+    needs: deploy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
