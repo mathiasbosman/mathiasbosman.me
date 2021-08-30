@@ -32,6 +32,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run scripts
         shell: bash
+        env:
+          SECRET_CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
         run: |
           for f in ./etc/scripts/*.sh; do
             echo running $f
