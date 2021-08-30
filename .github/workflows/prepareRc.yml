@@ -28,10 +28,11 @@ jobs:
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Set new version
-        run: npm version prerelease --preid="rc" -m "Preparing next release candidate %s"
-      - name: Push new version
+      - name: Prepare git
         run: |
           git config user.name 'githubaction[bot]'
           git config user.email '$ACTION_ACTOR_EMAIL'
-          git push origin HEAD:master
+      - name: Set new version
+        run: npm version prerelease --preid="rc" -m "Preparing next release candidate %s"
+      - name: Push new version
+        run: git push origin HEAD:master
