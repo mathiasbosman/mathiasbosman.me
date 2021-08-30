@@ -27,6 +27,6 @@ jobs:
           git config user.name 'githubaction[bot]'
           git config user.email '$ACTION_ACTOR_EMAIL'
       - name: Set new version
-        run: npm version prerelease -m "Preparing next release candidate %s"
+        run: npm version prerelease --preid="rc" -m "Preparing next release candidate %s"
       - name: Push new version
         run: git push origin HEAD:master
