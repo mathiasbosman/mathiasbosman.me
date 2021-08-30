@@ -7,6 +7,9 @@ on:
       #- ".github/**"
       - "**/*.md"
 
+permissions:
+  contents: write
+
 jobs:
   test:
     name: Test 🧪
@@ -25,13 +28,10 @@ jobs:
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Prepare git
-        run: |
-          git config user.name 'githubaction[bot]'
-          git config user.email '$ACTION_ACTOR_EMAIL'
       - name: Set new version
         run: npm version prerelease --preid="rc" -m "Preparing next release candidate %s"
       - name: Push new version
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-        run: git push origin HEAD:master
+        run: |
+          git config user.name 'githubaction[bot]'
+          git config user.email '$ACTION_ACTOR_EMAIL'
+          git push origin HEAD:master
