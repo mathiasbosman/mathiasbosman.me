@@ -70,7 +70,7 @@ jobs:
         run: |
           git config user.name 'githubaction[bot]'
           git config user.email '$ACTION_ACTOR_EMAIL'
-      - name: Set new minor version
-        run: npm version minor -m "Prepare next development iteration %s"
+      - name: Set new version
+        run: npm version patch -m "Prepare next development iteration %s"
       - name: Commit new version
         run: git push origin HEAD:master
