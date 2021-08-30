@@ -2,7 +2,7 @@
   "homepage": ".",
   "license": "MIT",
   "description": "Personal resume",
-  "version": "3.2.2-rc.11",
+  "version": "3.2.2-rc.12",
   "repository": {
     "type": "git",
     "url": "git://github.com/mathiasbosman/mathiasbosman.github.io.git"
