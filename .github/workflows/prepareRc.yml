@@ -1,0 +1,32 @@
+name: Prepare release candidate
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    name: Test 🧪
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: NPM build
+        run: |
+          npm install
+          npm run test
+  prep-rc:
+    name: Prepare release candidate 🌱
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.ACTION_PAT }}
+      - name: Prepare git
+        run: |
+          git config user.name 'githubaction[bot]'
+          git config user.email '$ACTION_ACTOR_EMAIL'
+      - name: Set new version
+        run: npm version prerelease -m "Preparing next release candidate %s"
+      - name: Push new version
+        run: git push origin HEAD:master

@@ -7,16 +7,6 @@ on:
     - cron: '0 1 * * *'
 
 jobs:
-  test:
-    name: Test 🧪
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: NPM build
-        run: |
-          npm install
-          npm run test
-
   analyze:
     name: CodeQL ⚙️
     runs-on: ubuntu-latest
