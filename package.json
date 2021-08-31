@@ -12,7 +12,8 @@
     "clean": "rm -rf node_modules build",
     "start": "react-scripts start",
     "test": "react-scripts test --watchAll=false",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prerelease": "npm version prerelease --preid='rc' -m 'Prepare next development iteration %s'"
   },
   "dependencies": {
     "@primer/components": "^28.0.3",
