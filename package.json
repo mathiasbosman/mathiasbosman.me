@@ -13,8 +13,8 @@
     "start": "react-scripts start",
     "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
-    "prerelease": "npm version prerelease --preid='rc' -m 'Prepare next development iteration %s'",
-    "minorrelease": "npm version minor -m 'Prepare minior release %s'"
+    "preRelease": "npm version prerelease --preid='rc' -m 'Prepare next development iteration %s'",
+    "minorRelease": "npm version minor -m 'Prepare minior release %s'"
   },
   "dependencies": {
     "@primer/components": "^28.0.3",
