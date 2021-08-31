@@ -14,7 +14,8 @@
     "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "preRelease": "npm version prerelease --preid='rc' -m 'Prepare next development iteration %s'",
-    "minorRelease": "npm version minor -m 'Prepare minior release %s'"
+    "minorRelease": "npm version minor -m 'Prepare minior release %s'",
+    "prePatch": "npm version patch --preid='rc' -m 'Prepare patch release %s'"
   },
   "dependencies": {
     "@primer/components": "^28.0.3",
