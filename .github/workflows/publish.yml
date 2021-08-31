@@ -25,25 +25,9 @@ jobs:
         run: |
           npm install
           npm test
-  pre-deploy:
-    name: Set version 🧬
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.ACTION_PAT }}
-      - name: Prepare git
-        run: |
-          git config user.name 'githubaction[bot]'
-          git config user.email '$ACTION_ACTOR_EMAIL'
-      - name: Set new version
-        run: npm version minor -m "Prepare version %s"
-      - name: Commit new version
-        run: git push origin HEAD:master
   deploy:
     name: Deploy 🚀
-    needs: pre-deploy
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -76,19 +60,3 @@ jobs:
         with:
           branch: gh-pages
           folder: build
-  post-deploy:
-    name: Prepare next development iteration 🌱
-    needs: deploy
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.ACTION_PAT }}
-      - name: Prepare git
-        run: |
-          git config user.name 'githubaction[bot]'
-          git config user.email '$ACTION_ACTOR_EMAIL'
-      - name: Set new version
-        run: npm version prerelease -m "Prepare next development iteration %s"
-      - name: Commit new version
-        run: git push origin HEAD:master
