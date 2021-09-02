@@ -31,9 +31,7 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
       - name: NPM install
-        run: npm install
-      - name: NPM test
-        run: npm test
+        run: npm ci
       - name: NPM build
         run: npm run build
       - name: GitHub Pages Deploy
