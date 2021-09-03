@@ -1,5 +1,5 @@
 import React from "react";
-import {BorderBox, Box, Heading, Link, Text} from "@primer/components";
+import {Box, Heading, Link, Text} from "@primer/components";
 
 export default class Awards extends React.Component {
 
@@ -7,7 +7,9 @@ export default class Awards extends React.Component {
     return <Box>
       <Heading mt={5}>Awards</Heading>
 
-      <BorderBox p={3}>
+      <Box
+          borderWidth="1px" borderStyle="solid" borderColor="border.primary" borderRadius={2}
+          p={3}>
         <Text>2011 ·</Text>
         <Link mx={1} href="https://cera-award.be/" target="_blank"
               fontWeight="bold">CERA Award</Link>
@@ -17,7 +19,7 @@ export default class Awards extends React.Component {
             creating a PHP web portal for evaluating employees.
           </Text>
         </Box>
-      </BorderBox>
+      </Box>
     </Box>;
   }
 }
