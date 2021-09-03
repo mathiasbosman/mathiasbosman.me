@@ -26,14 +26,14 @@ export default class Bio extends React.Component {
           Java developer &amp; network engineer</Heading>
         <Box px={3}>
           <Text fontSize={1} as="p" itemProp="description">
-            Known as "The little one", I'm a web designer and Java
+            Known as &quot;The little one&quot;, I&apos;m a web designer and Java
             developer
             living in the outskirts of <Link target="_blank"
                                              itemProp="homeLocation"
                                              href="https://www.google.com/maps/place/9200+Dendermonde/">Dendermonde,
             Belgium</Link> and currently <Age birthdate="1990-12-05"/> of age.
             Welcome to my online personal resume!<br/>
-            At the moment I'm full-time employed at the Department of
+            At the moment I&apos;m full-time employed at the Department of
             Environment of the <Link target="_blank"
                                      href={URL_FLANDERS}>Flemish
             Government</Link>.<br/>

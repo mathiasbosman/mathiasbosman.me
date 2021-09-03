@@ -32,9 +32,11 @@ export default class MailToLink extends React.Component {
     return (<Button onClick={this._sendMail} {...this.props}>
       <StyledOcticon icon={PaperAirplaneIcon}/> {this.props.children}
     </Button>)
-  };
+  }
 }
 
 MailToLink.propTypes = {
+  safe: PropTypes.bool,
+  children: PropTypes.any,
   mail: PropTypes.string.isRequired
 }
