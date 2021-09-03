@@ -1,6 +1,7 @@
 {
     "env": {
-        "node": true
+        "node": true,
+        "jest": true
     },
     "extends": [
         "plugin:jest/recommended"
@@ -8,6 +9,7 @@
     "parserOptions": {
         "project": "../../tsconfig.json"
     },
+    "plugins": ["jest"],
     "rules": {
     }
 }
