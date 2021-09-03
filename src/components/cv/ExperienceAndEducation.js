@@ -1,10 +1,11 @@
 import {
-  BorderBox, Box,
+  Box,
   Heading,
   Link,
   StyledOcticon,
   Text,
-  Timeline, Tooltip
+  Timeline,
+  Tooltip
 } from "@primer/components";
 import {
   CodeIcon,
@@ -21,7 +22,7 @@ export default class ExperienceAndEducation extends React.Component {
     return <Box>
       <Heading mt={5}>Experience &amp; education</Heading>
       <Timeline clipSidebar>
-        <Timeline.Item>
+        <Timeline.Item display="flex">
           <Timeline.Badge>
             <StyledOcticon icon={CodeIcon}/>
           </Timeline.Badge>
@@ -33,14 +34,16 @@ export default class ExperienceAndEducation extends React.Component {
               Flemish Government</Link>
             </Heading>
             <Text as="i">2018 - present</Text>
-            <BorderBox as="aside" p={3} mt={2}>
+            <Box
+                borderWidth="1px" borderStyle="solid" borderColor="border.primary" borderRadius={2}
+                as="aside" p={3} mt={2}>
               <Text>Currently I&apos;m employed as a Java programmer for the
                 department of Environment where I work on in-house and external applications.
                 Mostly using frameworks such as Spring Boot.</Text>
-            </BorderBox>
+            </Box>
           </Timeline.Body>
         </Timeline.Item>
-        <Timeline.Item>
+        <Timeline.Item display="flex">
           <Timeline.Badge>
             <StyledOcticon icon={CodeReviewIcon}/>
           </Timeline.Badge>
@@ -52,7 +55,7 @@ export default class ExperienceAndEducation extends React.Component {
             <br/>2016 - 2018
           </Timeline.Body>
         </Timeline.Item>
-        <Timeline.Item>
+        <Timeline.Item display="flex">
           <Timeline.Badge>
             <StyledOcticon icon={OrganizationIcon}/>
           </Timeline.Badge>
@@ -65,7 +68,7 @@ export default class ExperienceAndEducation extends React.Component {
           </Timeline.Body>
         </Timeline.Item>
         <Timeline.Break/>
-        <Timeline.Item>
+        <Timeline.Item display="flex">
           <Timeline.Badge>
             <StyledOcticon icon={CodeIcon}/>
           </Timeline.Badge>
@@ -75,7 +78,7 @@ export default class ExperienceAndEducation extends React.Component {
             <br/>2013
           </Timeline.Body>
         </Timeline.Item>
-        <Timeline.Item>
+        <Timeline.Item display="flex">
           <Timeline.Badge>
             <StyledOcticon icon={CodeIcon}/>
           </Timeline.Badge>
@@ -87,7 +90,7 @@ export default class ExperienceAndEducation extends React.Component {
           </Timeline.Body>
         </Timeline.Item>
         <Timeline.Break/>
-        <Timeline.Item>
+        <Timeline.Item display="flex">
           <Timeline.Badge>
             <StyledOcticon icon={MortarBoardIcon}/>
           </Timeline.Badge>
@@ -101,7 +104,7 @@ export default class ExperienceAndEducation extends React.Component {
             <br/>2009 - 2012
           </Timeline.Body>
         </Timeline.Item>
-        <Timeline.Item>
+        <Timeline.Item display="flex">
           <Timeline.Badge>
             <StyledOcticon icon={MortarBoardIcon}/>
           </Timeline.Badge>
@@ -113,7 +116,7 @@ export default class ExperienceAndEducation extends React.Component {
             <br/>2014 - 2017
           </Timeline.Body>
         </Timeline.Item>
-        <Timeline.Item>
+        <Timeline.Item display="flex">
           <Timeline.Badge>
             <StyledOcticon icon={MortarBoardIcon}/>
           </Timeline.Badge>

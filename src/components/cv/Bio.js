@@ -1,12 +1,4 @@
-import {
-  BorderBox,
-  Box,
-  Flex,
-  Heading,
-  Link,
-  Pagehead,
-  Text
-} from "@primer/components";
+import {Box, Heading, Link, Pagehead, Text} from "@primer/components";
 import Age from "../Age";
 import {URL_FLANDERS} from "../../Constants";
 import React from "react";
@@ -14,14 +6,16 @@ import HoverAvatar from "../HoverAvatar";
 
 export default class Bio extends React.Component {
   render() {
-    return <Flex mx={3} className="flexWrapper">
+    return <Box display="flex" flexWrap="wrap" mx={3}>
       <Box>
-        <BorderBox className="avatarContainer" mr={0}>
+        <Box
+            borderWidth="1px" borderStyle="solid" borderColor="border.primary" borderRadius={2}
+            className="avatarContainer" mr={0}>
           <HoverAvatar className="avatar" itemProp="image"
                        alt="Mathias Bosman"
                        altSrc="/assets/images/avatar_real.jpeg"
                        mainSrc="/assets/images/memoji.png"/>
-        </BorderBox>
+        </Box>
       </Box>
       <Box flexGrow={1}>
         <Pagehead as="h1" flexGrow={1} px={3} py={1}>
@@ -49,6 +43,6 @@ export default class Bio extends React.Component {
           </Text>
         </Box>
       </Box>
-    </Flex>;
+    </Box>;
   }
 }

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import {Box, Grid, ProgressBar, Text} from "@primer/components";
+import {Box, ProgressBar, Text} from "@primer/components";
 import React from "react";
 
 export function SkillsElement({skill, percentage, color, className}) {
@@ -21,9 +21,9 @@ SkillsElement.propTypes = {
 
 export default function Skills({children}) {
   return (
-      <Grid className="flexGrid" alignItems="center" gridGap={2}>
+      <Box display="grid" className="flexGrid" alignItems="center" gridGap={2}>
         {children}
-      </Grid>);
+      </Box>);
 }
 Skills.propTypes = {
   children: PropTypes.any
