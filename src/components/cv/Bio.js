@@ -6,7 +6,7 @@ import HoverAvatar from "../HoverAvatar";
 
 export default class Bio extends React.Component {
   render() {
-    return <Box display="flex" mx={3}>
+    return <Box display="flex" flexWrap="wrap" mx={3}>
       <Box>
         <Box
             borderWidth="1px" borderStyle="solid" borderColor="border.primary" borderRadius={2}

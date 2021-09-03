@@ -20,7 +20,7 @@ export default class Home extends React.Component {
           <Bio/>
         </section>
         <section>
-          <Box display="flex"  justifyItems="space-between">
+          <Box display="flex" flexWrap="wrap" justifyItems="space-between">
             <Box flexBasis="100%" as="section" px={3}>
               <ExperienceAndEducation/>
             </Box>
