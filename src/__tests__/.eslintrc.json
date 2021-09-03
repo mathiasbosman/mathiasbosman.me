@@ -1,0 +1,13 @@
+{
+    "env": {
+        "node": true
+    },
+    "extends": [
+        "plugin:jest/recommended"
+    ],
+    "parserOptions": {
+        "project": "../../tsconfig.json"
+    },
+    "rules": {
+    }
+}

@@ -13,6 +13,8 @@ export function SkillsElement({skill, percentage, color, className}) {
 }
 
 SkillsElement.propTypes = {
+  color: PropTypes.any,
+  className: PropTypes.any,
   skill: PropTypes.string.isRequired,
   percentage: PropTypes.number.isRequired
 }
@@ -22,4 +24,7 @@ export default function Skills({children}) {
       <Grid className="flexGrid" alignItems="center" gridGap={2}>
         {children}
       </Grid>);
+}
+Skills.propTypes = {
+  children: PropTypes.any
 }

@@ -34,7 +34,7 @@ export default class ExperienceAndEducation extends React.Component {
             </Heading>
             <Text as="i">2018 - present</Text>
             <BorderBox as="aside" p={3} mt={2}>
-              <Text>Currently I'm employed as a Java programmer for the
+              <Text>Currently I&apos;m employed as a Java programmer for the
                 department of Environment where I work on in-house and external applications.
                 Mostly using frameworks such as Spring Boot.</Text>
             </BorderBox>
@@ -128,5 +128,5 @@ export default class ExperienceAndEducation extends React.Component {
         <Timeline.Break/>
       </Timeline>
     </Box>
-  };
+  }
 }
