@@ -17,7 +17,6 @@ describe("Google Maps location component", () => {
 
   test("Renders with extra property", () => {
     render(<GoogleMapsLocation locationName="town" itemProp="homeLocation"/>);
-    screen.debug();
     expect(screen.getByRole("link")).toHaveAttribute("itemprop",
         "homeLocation");
   });
