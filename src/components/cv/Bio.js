@@ -3,13 +3,15 @@ import Age from "../Age";
 import {URL_FLANDERS} from "../../Constants";
 import React from "react";
 import HoverAvatar from "../HoverAvatar";
+import GoogleMapsLocation from "../GoogleMapsLocation";
 
 export default class Bio extends React.Component {
   render() {
     return <Box display="flex" mx={3} className="responsiveWrap">
       <Box>
         <Box
-            borderWidth="1px" borderStyle="solid" borderColor="border.primary" borderRadius={2}
+            borderWidth="1px" borderStyle="solid" borderColor="border.primary"
+            borderRadius={2}
             className="avatarContainer" mr={0}>
           <HoverAvatar className="avatar" itemProp="image"
                        alt="Mathias Bosman"
@@ -26,12 +28,15 @@ export default class Bio extends React.Component {
           Java developer &amp; network engineer</Heading>
         <Box px={3}>
           <Text fontSize={1} as="p" itemProp="description">
-            Known as &quot;The little one&quot;, I&apos;m a web designer and Java
+            Known as &quot;The little one&quot;, I&apos;m a web designer and
+            Java
             developer
-            living in the outskirts of <Link target="_blank"
-                                             itemProp="homeLocation"
-                                             href="https://www.google.com/maps/place/9200+Dendermonde/">Dendermonde,
-            Belgium</Link> and currently <Age birthdate="1990-12-05"/> of age.
+            living in <GoogleMapsLocation itemProp="homeLocation"
+                                          target="_blank"
+                                          locationName="Lebbeke"
+                                          country="Belgium"
+                                          postalCode="9280"/> and currently <Age
+              birthdate="1990-12-05"/> of age.
             Welcome to my online personal resume!<br/>
             At the moment I&apos;m full-time employed at the Department of
             Environment of the <Link target="_blank"
