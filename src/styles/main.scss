@@ -65,4 +65,8 @@ abbr {
   .flexGrid {
     grid-template-columns: none;
   }
+
+  .responsiveWrap {
+    flex-wrap: wrap;
+  }
 }
