@@ -21,7 +21,7 @@ SkillsElement.propTypes = {
 
 export default function Skills({children}) {
   return (
-      <Box display="grid" className="flexGrid" alignItems="center" gridGap={2}>
+      <Box display="grid" className="flexGrid" alignItems="end" gridGap={3}>
         {children}
       </Box>);
 }
