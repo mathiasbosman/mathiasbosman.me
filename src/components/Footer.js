@@ -1,7 +1,6 @@
 import {Box, Link, Text} from "@primer/components";
 import React from "react";
 import Copyright from "./Copyright";
-import packageJson from '../../package.json';
 
 export default class Footer extends React.Component {
   render() {
@@ -10,7 +9,7 @@ export default class Footer extends React.Component {
         as="footer" borderWidth={0} borderTopWidth={1} mt={5} pt={5} color="text.secondary">
       <Box display="flex" flexWrap="wrap" justifyContent="space-between" alignItems="center">
         <Box display="flex" flexWrap="wrap" flex={1}>
-          <Text><Copyright name="Mathias Bosman"/> (v.&nbsp;{packageJson.version})</Text>
+          <Text><Copyright name="Mathias Bosman"/></Text>
         </Box>
         <Box display="flex" flexwrap="wrap" flex={1} justifyContent="flex-end">
           <Link href="https://www.linkedin.com/in/mathiasbosman" target="_blank" mr={2}>LinkedIn</Link>
