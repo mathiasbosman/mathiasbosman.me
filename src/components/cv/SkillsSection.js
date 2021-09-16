@@ -14,9 +14,9 @@ export default class SkillsSection extends React.Component {
                        skill="Version control (Git,&nbsp;SVN)"/>
         <SkillsElement percentage={70} skill="PHP"/>
         <SkillsElement percentage={70}
-                       skill="Java (Spring,&nbsp;Hibernate,&nbsp;...)"/>
-        <SkillsElement percentage={70}
                        skill="Frontend tools (React,&nbsp;Thymeleaf,&nbsp;Wicket,&nbsp;...)"/>
+        <SkillsElement percentage={70}
+                       skill="Java (Spring,&nbsp;Hibernate,&nbsp;...)"/>
         <SkillsElement percentage={70}
                        skill="Databases (MySql,&nbsp;PostgreSql,&nbsp;Oracle)"/>
         <SkillsElement percentage={60} skill="SEO"/>
