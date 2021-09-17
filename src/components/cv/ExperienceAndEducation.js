@@ -22,7 +22,7 @@ export default class ExperienceAndEducation extends React.Component {
     return <Box>
       <Heading mt={5}>Experience &amp; education</Heading>
       <Timeline clipSidebar>
-        <Timeline.Item display="flex">
+        <Timeline.Item>
           <Timeline.Badge>
             <StyledOcticon icon={CodeIcon}/>
           </Timeline.Badge>
@@ -43,7 +43,7 @@ export default class ExperienceAndEducation extends React.Component {
             </Box>
           </Timeline.Body>
         </Timeline.Item>
-        <Timeline.Item display="flex">
+        <Timeline.Item>
           <Timeline.Badge>
             <StyledOcticon icon={CodeReviewIcon}/>
           </Timeline.Badge>
@@ -55,7 +55,7 @@ export default class ExperienceAndEducation extends React.Component {
             <br/>2016 - 2018
           </Timeline.Body>
         </Timeline.Item>
-        <Timeline.Item display="flex">
+        <Timeline.Item>
           <Timeline.Badge>
             <StyledOcticon icon={OrganizationIcon}/>
           </Timeline.Badge>
@@ -68,7 +68,7 @@ export default class ExperienceAndEducation extends React.Component {
           </Timeline.Body>
         </Timeline.Item>
         <Timeline.Break/>
-        <Timeline.Item display="flex">
+        <Timeline.Item>
           <Timeline.Badge>
             <StyledOcticon icon={CodeIcon}/>
           </Timeline.Badge>
@@ -78,7 +78,7 @@ export default class ExperienceAndEducation extends React.Component {
             <br/>2013
           </Timeline.Body>
         </Timeline.Item>
-        <Timeline.Item display="flex">
+        <Timeline.Item>
           <Timeline.Badge>
             <StyledOcticon icon={CodeIcon}/>
           </Timeline.Badge>
@@ -90,7 +90,7 @@ export default class ExperienceAndEducation extends React.Component {
           </Timeline.Body>
         </Timeline.Item>
         <Timeline.Break/>
-        <Timeline.Item display="flex">
+        <Timeline.Item>
           <Timeline.Badge>
             <StyledOcticon icon={MortarBoardIcon}/>
           </Timeline.Badge>
@@ -104,7 +104,7 @@ export default class ExperienceAndEducation extends React.Component {
             <br/>2009 - 2012
           </Timeline.Body>
         </Timeline.Item>
-        <Timeline.Item display="flex">
+        <Timeline.Item>
           <Timeline.Badge>
             <StyledOcticon icon={MortarBoardIcon}/>
           </Timeline.Badge>
@@ -116,7 +116,7 @@ export default class ExperienceAndEducation extends React.Component {
             <br/>2014 - 2017
           </Timeline.Body>
         </Timeline.Item>
-        <Timeline.Item display="flex">
+        <Timeline.Item>
           <Timeline.Badge>
             <StyledOcticon icon={MortarBoardIcon}/>
           </Timeline.Badge>
