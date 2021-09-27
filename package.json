@@ -15,7 +15,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint '**/*.{js,ts}'",
     "preRelease": "npm version prerelease --preid='rc' -m 'Prepare next development iteration %s'",
-    "minorRelease": "npm version minor -m 'Prepare minior release %s'",
+    "minorRelease": "npm version minor -m 'Prepare minor release %s'",
     "prePatch": "npm version patch --preid='rc' -m 'Prepare patch release %s'"
   },
   "dependencies": {
@@ -54,6 +54,7 @@
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
     "eslint": "^7.32.0",
+    "eslint-plugin-primer-react": "^0.5.0",
     "eslint-plugin-react": "^7.25.1",
     "node-sass": "^6.0.0",
     "prop-types": "^15.7.2"
