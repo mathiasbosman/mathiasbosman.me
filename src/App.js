@@ -8,7 +8,7 @@ export default class App extends React.Component {
 
   render() {
     return <ThemeProvider colorMode="auto">
-      <Box className="wrapper" bg="bg.tertiary" p={3}>
+      <Box className="wrapper" bg="canvas.subtle" p={3}>
         <BaseStyles>
           <Switch>
             <Route path="/404" component={NotFound}/>

@@ -14,8 +14,8 @@ export default class Home extends React.Component {
   render() {
     return <main itemScope="itemScope" itemType="https://schema.org/Person">
       <Box
-          borderWidth="1px" borderStyle="solid" borderColor="border.primary" borderRadius={2}
-          boxShadow="shadows.medium" bg="bg.canvas" mx="auto" p={3} maxWidth={LAYOUT_WIDTH}>
+          borderWidth="1px" borderStyle="solid" borderColor="border.default" borderRadius={2}
+          boxShadow="shadows.medium" bg="canvas.default" mx="auto" p={3} maxWidth={LAYOUT_WIDTH}>
         <section>
           <Bio/>
         </section>

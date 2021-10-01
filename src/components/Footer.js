@@ -5,8 +5,8 @@ import Copyright from "./Copyright";
 export default class Footer extends React.Component {
   render() {
     return <Box
-        borderStyle="solid" borderColor="border.primary"
-        as="footer" borderWidth={0} borderTopWidth={1} mt={5} pt={5} color="text.secondary">
+        borderStyle="solid" borderColor="border.default"
+        as="footer" borderWidth={0} borderTopWidth={1} mt={5} pt={5} color="fg.muted">
       <Box display="flex" flexWrap="wrap" justifyContent="space-between" alignItems="center">
         <Box display="flex" flexWrap="wrap" flex={1}>
           <Text><Copyright name="Mathias Bosman"/></Text>
