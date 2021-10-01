@@ -7,8 +7,8 @@ import SecurityResearcherImage from "../assets/security_researcher.svg";
 export default class NotFound extends React.Component {
   render() {
     return <Box
-        borderWidth="1px" borderStyle="solid" borderColor="border.primary" borderRadius={2}
-        boxShadow="shadows.medium" as="main" maxWidth={LAYOUT_WIDTH} mx="auto" bg="bg.canvas" my={3} p={3}>
+        borderWidth="1px" borderStyle="solid" borderColor="border.default" borderRadius={2}
+        boxShadow="shadows.medium" as="main" maxWidth={LAYOUT_WIDTH} mx="auto" bg="canvas.default" my={3} p={3}>
       <div className="blankslate">
         <img src={SecurityResearcherImage} alt="All for one!"/>
         <Heading as="h1" my={1} fontSize={3}>This page was not found!</Heading>

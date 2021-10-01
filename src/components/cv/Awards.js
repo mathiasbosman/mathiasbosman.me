@@ -8,7 +8,7 @@ export default class Awards extends React.Component {
       <Heading mt={5}>Awards</Heading>
 
       <Box
-          borderWidth="1px" borderStyle="solid" borderColor="border.primary" borderRadius={2}
+          borderWidth="1px" borderStyle="solid" borderColor="border.default" borderRadius={2}
           p={3}>
         <Text>2011 ·</Text>
         <Link mx={1} href="https://cera-award.be/" target="_blank"

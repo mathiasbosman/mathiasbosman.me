@@ -10,7 +10,7 @@ export default class Bio extends React.Component {
     return <Box display="flex" mx={3} className="responsiveWrap">
       <Box>
         <Box
-            borderWidth="1px" borderStyle="solid" borderColor="border.primary"
+            borderWidth="1px" borderStyle="solid" borderColor="border.default"
             borderRadius={2}
             className="avatarContainer" mr={0}>
           <HoverAvatar className="avatar" itemProp="image"
