@@ -20,17 +20,17 @@ export default class ExperienceAndEducation extends React.Component {
 
   render() {
     return <Box>
-      <Heading mt={5}>Experience &amp; education</Heading>
+      <Heading sx={{mt: 5}}>Experience &amp; education</Heading>
       <Timeline clipSidebar>
         <Timeline.Item>
           <Timeline.Badge>
             <StyledOcticon icon={CodeIcon}/>
           </Timeline.Badge>
           <Timeline.Body>
-            <Heading as="h3" fontSize={1} fontWeight="normal">
+            <Heading as="h3" sx={{fontSize: 1, fontWeight: "normal"}}>
               <Text fontWeight="bold" mr={1}>Java programmer</Text>
               at <Link href={URL_FLANDERS} target="_blank"
-                       fontWeight="bold">the
+                       sx={{fontWeight: "bold"}}>the
               Flemish Government</Link>
             </Heading>
             <Text as="i">2018 - present</Text>

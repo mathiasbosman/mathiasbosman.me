@@ -6,14 +6,14 @@ import {CONTACT_EMAIL} from "../../Constants";
 export default class Contact extends React.Component {
 
   render() {
-    return <Box>
-      <Heading mt={5}>Contact</Heading>
+    return <Box mt={5}>
+      <Heading>Contact</Heading>
       <Text>If you would like to ask for my phone number or setup a small
         to medium sized network at your home or office you can send me a
         message.
       </Text>
 
-      <Flash my={3} className="warning" variant="warning">
+      <Flash sx={{my: 3}} className="warning" variant="warning">
         Be advised that I will only be able to setup a network during weekends
         or official holidays as this is my secondary occupation.
       </Flash>
