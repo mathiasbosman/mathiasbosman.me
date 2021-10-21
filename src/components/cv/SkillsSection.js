@@ -4,8 +4,8 @@ import React from "react";
 
 export default class SkillsSection extends React.Component {
   render() {
-    return <Box>
-      <Heading mt={5}>Skills</Heading>
+    return <Box mt={5}>
+      <Heading>Skills</Heading>
       <Skills>
         <SkillsElement percentage={100}
                        skill="Drenched in awesomesauce"/>

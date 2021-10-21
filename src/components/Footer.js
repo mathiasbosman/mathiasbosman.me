@@ -12,8 +12,8 @@ export default class Footer extends React.Component {
           <Text><Copyright name="Mathias Bosman"/></Text>
         </Box>
         <Box display="flex" flexwrap="wrap" flex={1} justifyContent="flex-end">
-          <Link href="https://www.linkedin.com/in/mathiasbosman" target="_blank" mr={2}>LinkedIn</Link>
-          <Link href="https://github.com/mathiasbosman" target="_blank" ml={2}>GitHub</Link>
+          <Link href="https://www.linkedin.com/in/mathiasbosman" target="_blank" sx={{mr: 2}}>LinkedIn</Link>
+          <Link href="https://github.com/mathiasbosman" target="_blank" sx={{ml: 2}}>GitHub</Link>
         </Box>
       </Box>
     </Box>;
