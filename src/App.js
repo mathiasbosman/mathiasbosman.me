@@ -8,15 +8,15 @@ export default class App extends React.Component {
 
   render() {
     return <ThemeProvider colorMode="auto">
-      <Box className="wrapper" bg="canvas.subtle" p={3}>
-        <BaseStyles>
+      <BaseStyles>
+      <Box className="wrapper" bg="canvas.subtle" p={3} fontSize={1}>
           <Switch>
             <Route path="/404" component={NotFound}/>
             <Route exact="exact" path="/" component={Home}/>
             <Route component={NotFound}/>
           </Switch>
-        </BaseStyles>
       </Box>
+      </BaseStyles>
     </ThemeProvider>;
   }
 }

@@ -21,12 +21,12 @@ export default class ExperienceAndEducation extends React.Component {
   render() {
     return <Box>
       <Heading sx={{mt: 5}}>Experience &amp; education</Heading>
-      <Timeline clipSidebar>
+      <Timeline clipSidebar >
         <Timeline.Item>
           <Timeline.Badge>
             <StyledOcticon icon={CodeIcon}/>
           </Timeline.Badge>
-          <Timeline.Body>
+          <Timeline.Body sx={{color: "fg.default"}}>
             <Heading as="h3" sx={{fontSize: 1, fontWeight: "normal"}}>
               <Text fontWeight="bold" mr={1}>Java programmer</Text>
               at <Link href={URL_FLANDERS} target="_blank"
@@ -47,7 +47,7 @@ export default class ExperienceAndEducation extends React.Component {
           <Timeline.Badge>
             <StyledOcticon icon={CodeReviewIcon}/>
           </Timeline.Badge>
-          <Timeline.Body>
+          <Timeline.Body sx={{color: "fg.default"}}>
             <Text mr={1}>Application manager</Text>
             at <Link href={URL_FLANDERS} target="_blank">
               the Flemish Government
@@ -59,7 +59,7 @@ export default class ExperienceAndEducation extends React.Component {
           <Timeline.Badge>
             <StyledOcticon icon={OrganizationIcon}/>
           </Timeline.Badge>
-          <Timeline.Body>
+          <Timeline.Body sx={{color: "fg.default"}}>
             <Text mr={1}>Expert employee system / IT-support</Text>
             at <Link href={URL_FLANDERS} target="_blank">
               the Flemish Government
@@ -72,7 +72,7 @@ export default class ExperienceAndEducation extends React.Component {
           <Timeline.Badge>
             <StyledOcticon icon={CodeIcon}/>
           </Timeline.Badge>
-          <Timeline.Body>
+          <Timeline.Body sx={{color: "fg.default"}}>
             <Text mr={1}>PHP Web developer</Text>
             at <Link href="http://www.echoweb.be" target="_blank">Echoweb</Link>
             <br/>2013
@@ -82,7 +82,7 @@ export default class ExperienceAndEducation extends React.Component {
           <Timeline.Badge>
             <StyledOcticon icon={CodeIcon}/>
           </Timeline.Badge>
-          <Timeline.Body>
+          <Timeline.Body sx={{color: "fg.default"}}>
             <Text mr={1}>Web developer</Text>
             at <Link href="https://www.procius.com/" target="_blank">
             Procius Limited</Link>
@@ -94,7 +94,7 @@ export default class ExperienceAndEducation extends React.Component {
           <Timeline.Badge>
             <StyledOcticon icon={MortarBoardIcon}/>
           </Timeline.Badge>
-          <Timeline.Body>
+          <Timeline.Body sx={{color: "fg.default"}}>
             <Text mr={1}><Tooltip as="abbr"
                                   aria-label="Bachelor of Applied Science">B.A.Sc.</Tooltip>
               &nbsp;Multimedia &amp; Programming</Text>
@@ -108,7 +108,7 @@ export default class ExperienceAndEducation extends React.Component {
           <Timeline.Badge>
             <StyledOcticon icon={MortarBoardIcon}/>
           </Timeline.Badge>
-          <Timeline.Body>
+          <Timeline.Body sx={{color: "fg.default"}}>
             <Text mr={1}>Stage lighting</Text>
             at <Link href="https://gsauk.org//en" target="_blank">
             GSA
@@ -120,7 +120,7 @@ export default class ExperienceAndEducation extends React.Component {
           <Timeline.Badge>
             <StyledOcticon icon={MortarBoardIcon}/>
           </Timeline.Badge>
-          <Timeline.Body>
+          <Timeline.Body sx={{color: "fg.default"}}>
             <Text mr={1}>Applied Computer Science</Text>
             at <Link href="https://www.ktad.be/" target="_blank">
             KT@ Dendermonde
