@@ -13,7 +13,7 @@ export default class Contact extends React.Component {
         message.
       </Text>
 
-      <Flash sx={{my: 3}} className="warning" variant="warning">
+      <Flash sx={{my: 3}} variant="warning">
         Be advised that I will only be able to setup a network during weekends
         or official holidays as this is my secondary occupation.
       </Flash>

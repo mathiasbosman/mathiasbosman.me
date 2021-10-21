@@ -8,9 +8,9 @@ import ExperienceAndEducation from "../components/cv/ExperienceAndEducation";
 import SkillsSection from "../components/cv/SkillsSection";
 import Awards from "../components/cv/Awards";
 import Contact from "../components/cv/Contact";
+import ProjectsSection from "../components/cv/Projects";
 
 export default class Home extends React.Component {
-
   render() {
     return <main itemScope="itemScope" itemType="https://schema.org/Person">
       <Box
@@ -31,6 +31,7 @@ export default class Home extends React.Component {
           </Box>
         </section>
         <Box px={3}>
+          <ProjectsSection/>
           <Contact/>
         </Box>
         <Footer/>
