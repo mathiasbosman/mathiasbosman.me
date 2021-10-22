@@ -1,6 +1,5 @@
-import {Box, Link, StyledOcticon, Text} from "@primer/components";
+import {Box, Link, StyledOcticon} from "@primer/components";
 import React from "react";
-import Copyright from "./Copyright";
 import {MarkGithubIcon} from "@primer/octicons-react";
 
 export default class Footer extends React.Component {
@@ -8,19 +7,11 @@ export default class Footer extends React.Component {
     return <Box
         borderStyle="solid" borderColor="border.default"
         as="footer" borderWidth={0} borderTopWidth={1} mt={5} pt={5} color="fg.muted">
-      <Box display="flex" flexWrap="wrap" justifyContent="space-between" alignItems="center">
-        <Box flex={1}>
-          <Text><Copyright name="Mathias Bosman"/></Text>
-        </Box>
         <Box flex={1} display="flex" justifyContent="center">
           <Link sx={{color: "fg.subtle"}} hoverColor="fg.muted" href="https://github.com/mathiasbosman" target="_blank">
             <StyledOcticon size={24} icon={MarkGithubIcon} />
           </Link>
         </Box>
-        <Box flex={1} display="flex" justifyContent="flex-end">
-          <Text>Test</Text>
-        </Box>
-      </Box>
     </Box>;
   }
 }

@@ -67,7 +67,7 @@ export default function Projects({children}) {
 
   return (<Box display="grid"
                className="noColumnsOnBreak"
-               gridTemplateColumns="repeat(2, 1fr)"
+               gridTemplateColumns="1fr 1fr"
                gridGap={3}>{children}</Box>);
 }
 
