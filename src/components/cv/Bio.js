@@ -3,7 +3,6 @@ import Age from "../Age";
 import {URL_FLANDERS} from "../../Constants";
 import React from "react";
 import HoverAvatar from "../HoverAvatar";
-import GoogleMapsLocation from "../GoogleMapsLocation";
 
 export default class Bio extends React.Component {
   render() {
@@ -33,12 +32,8 @@ export default class Bio extends React.Component {
             Known as &quot;The little one&quot;, I&apos;m a web designer and
             Java
             developer
-            living in <GoogleMapsLocation itemProp="homeLocation"
-                                          target="_blank"
-                                          locationName="Lebbeke"
-                                          country="Belgium"
-                                          postalCode="9280"/> and currently <Age
-              birthdate="1990-12-05"/> of age.
+            living in <span itemProp="homeLocation">Lebbeke, Belgium</span> and
+            currently <Age birthdate="1990-12-05"/> of age.
             Welcome to my online personal resume!<br/>
             At the moment I&apos;m full-time employed at the Department of
             Environment of the <Link target="_blank"

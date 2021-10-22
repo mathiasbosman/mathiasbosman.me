@@ -1,5 +1,5 @@
 import React from "react";
-import {AlertIcon, RepoIcon} from "@primer/octicons-react";
+import {AlertIcon, RepoIcon, TelescopeIcon} from "@primer/octicons-react";
 import Projects, {ProjectElement} from "./ProjectElement";
 import {Box, Heading, Link, StyledOcticon, Text} from "@primer/components";
 
@@ -44,6 +44,10 @@ export default class ProjectsSection extends React.Component {
                            icon={AlertIcon}/>
             Very much work in progress
           </Text>
+        </ProjectElement>
+        <ProjectElement name="Coming soon..."
+                        icon={TelescopeIcon}>
+          <Text>Creating some simple re-usable React components.</Text>
         </ProjectElement>
       </Projects>
     </Box>
