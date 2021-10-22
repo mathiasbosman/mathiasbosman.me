@@ -15,8 +15,8 @@ export default class Bio extends React.Component {
             className="avatarContainer" mr={0}>
           <HoverAvatar className="avatar" itemProp="image"
                        alt="Mathias Bosman"
-                       altSrc="/assets/images/avatar_real.jpeg"
-                       mainSrc="/assets/images/memoji.png"/>
+                       mainSrc="/assets/images/mathias.png"
+                       altSrc="/assets/images/memoji.png"/>
         </Box>
       </Box>
       <Box flexGrow={1}>
