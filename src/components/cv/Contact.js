@@ -7,7 +7,7 @@ export default class Contact extends React.Component {
 
   render() {
     return <Box mt={5}>
-      <Heading>Contact</Heading>
+      <Heading as="h2">Contact</Heading>
       <Text>If you would like to ask for my phone number or setup a small
         to medium sized network at your home or office you can send me a
         message.

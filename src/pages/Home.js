@@ -8,7 +8,7 @@ import ExperienceAndEducation from "../components/cv/ExperienceAndEducation";
 import SkillsSection from "../components/cv/SkillsSection";
 import Awards from "../components/cv/Awards";
 import Contact from "../components/cv/Contact";
-import ProjectsSection from "../components/cv/Projects";
+import ProjectsSection from "../components/cv/ProjectsSection";
 
 export default class Home extends React.Component {
   render() {
