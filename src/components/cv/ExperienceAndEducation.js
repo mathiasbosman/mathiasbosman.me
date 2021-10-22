@@ -19,8 +19,8 @@ import {URL_FLANDERS} from "../../Constants";
 export default class ExperienceAndEducation extends React.Component {
 
   render() {
-    return <Box>
-      <Heading sx={{mt: 5}}>Experience &amp; education</Heading>
+    return <Box as="section">
+      <Heading as="h2" sx={{mt: 5}}>Experience &amp; education</Heading>
       <Timeline clipSidebar >
         <Timeline.Item>
           <Timeline.Badge>
@@ -37,8 +37,8 @@ export default class ExperienceAndEducation extends React.Component {
             <Box
                 borderWidth="1px" borderStyle="solid" borderColor="border.default" borderRadius={2}
                 as="aside" p={3} mt={2}>
-              <Text>Currently I&apos;m employed as a Java programmer for the
-                department of Environment where I work on in-house and external applications.
+              <Text>Currently I&apos;m employed as a Java programmer
+                for the <Text fontWeight="bold"> department of Environment</Text> where I work on in-house and external applications.
                 Mostly using frameworks such as Spring Boot.</Text>
             </Box>
           </Timeline.Body>

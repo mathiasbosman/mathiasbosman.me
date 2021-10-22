@@ -20,11 +20,13 @@ export default class Bio extends React.Component {
         </Box>
       </Box>
       <Box flexGrow={1}>
-        <Pagehead as="h1" sx={{flexGrow: 1, px: 3, py: 1}}>
-          <Text fontSize={5} itemProp="givenName">Mathias</Text>&nbsp;
-          <Text fontSize={5} itemProp="familyName">Bosman</Text>
+        <Pagehead as="header" sx={{flexGrow: 1, p: 3}}>
+          <Text fontSize={5} fontWeight="bold"
+                itemProp="givenName">Mathias</Text>&nbsp;
+          <Text fontSize={5} fontWeight="bold"
+                itemProp="familyName">Bosman</Text>
         </Pagehead>
-        <Heading as="aside" sx={{fontSize: 2, mb: 2, px: 3}}>Web designer,
+        <Heading sx={{fontSize: 2, mb: 2, px: 3}}>Web designer,
           Java developer &amp; network engineer</Heading>
         <Box px={3}>
           <Text fontSize={1} as="p" itemProp="description">
