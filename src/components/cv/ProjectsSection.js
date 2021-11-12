@@ -2,6 +2,7 @@ import React from "react";
 import {AlertIcon, RepoIcon, TelescopeIcon} from "@primer/octicons-react";
 import Projects, {ProjectElement} from "./ProjectElement";
 import {Box, Heading, Link, StyledOcticon, Text} from "@primer/components";
+import {URL_GITHUB_PROFILE} from "../../Constants";
 
 export default class ProjectsSection extends React.Component {
 
@@ -11,9 +12,9 @@ export default class ProjectsSection extends React.Component {
       <Projects>
         <ProjectElement
             name="File Services"
-            labels="Java"
-            link="https://github.com/mathiasbosman/file-services"
-            statusBadge="https://github.com/mathiasbosman/file-services/actions/workflows/build.yml/badge.svg"
+            footer="Java"
+            link={URL_GITHUB_PROFILE + "/file-services"}
+            statusBadge={URL_GITHUB_PROFILE + "/file-services/actions/workflows/build.yml/badge.svg"}
             icon={RepoIcon}>
           <Text>Simple and lightweight library for open source file services
             such as S3 and Java NIO.</Text>
@@ -21,8 +22,8 @@ export default class ProjectsSection extends React.Component {
         <ProjectElement
             name="mathiasbosman.be"
             footer="Html, CSS, Javascript, React"
-            link="https://github.com/mathiasbosman/mathiasbosman.github.io"
-            statusBadge="https://github.com/mathiasbosman/mathiasbosman.github.io/actions/workflows/ci.yml/badge.svg"
+            link={URL_GITHUB_PROFILE + "/mathiasbosman.github.io"}
+            statusBadge={URL_GITHUB_PROFILE + "/mathiasbosman.github.io/actions/workflows/ci.yml/badge.svg"}
             icon={RepoIcon}>
           <Text>This very website!<br/>
             Created using Facebook&apos;s <Link href="https://reactjs.org"
@@ -32,7 +33,7 @@ export default class ProjectsSection extends React.Component {
         </ProjectElement>
         <ProjectElement name="Cryptobot"
                         footer="Java"
-                        link="https://github.com/mathiasbosman/cryptobot"
+                        link={URL_GITHUB_PROFILE + "/cryptobot"}
                         icon={RepoIcon}>
           <Box mb={2}><Text>A trial crypto currency bot integration for the <Link
               href="https://bitvavo.com/" target="_blank">Bitvavo</Link> API.
@@ -47,7 +48,9 @@ export default class ProjectsSection extends React.Component {
         </ProjectElement>
         <ProjectElement name="Coming soon..."
                         icon={TelescopeIcon}>
-          <Text>Creating some simple re-usable React components.</Text>
+          <Text>Creating some simple re-usable React components.<br/>
+            For more projects you can visit <Link href={URL_GITHUB_PROFILE}
+            target="_blank">my GitHub profile</Link>.</Text>
         </ProjectElement>
       </Projects>
     </Box>
