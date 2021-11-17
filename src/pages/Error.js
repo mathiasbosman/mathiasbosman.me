@@ -7,7 +7,7 @@ import BugHunterImage from "../assets/bug_hunter.svg";
 export default class ErrorPage extends React.Component {
   render() {
     return <Box
-        borderWidth="1px" borderStyle="solid" borderColor="border.default" borderRadius={2}
+        borderWidth={[0, 0, 1]} borderStyle="solid" borderColor="border.default" borderRadius={2}
         boxShadow="shadows.medium" as="main" bg="canvas.default" maxWidth={LAYOUT_WIDTH} mx="auto" my={3} p={3}>
       <div className="blankslate">
         <img src={BugHunterImage} alt="Error"/>
