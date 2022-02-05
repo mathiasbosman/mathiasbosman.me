@@ -1,4 +1,4 @@
-import {Box, Heading} from "@primer/components";
+import {Box, Heading} from "@primer/react";
 import Skills, {SkillsElement} from "./SkillsElement";
 import React from "react";
 

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import {Box, ProgressBar, Text} from "@primer/components";
+import {Box, ProgressBar, Text} from "@primer/react";
 import React from "react";
 
 export function SkillsElement({skill, percentage, color, className}) {

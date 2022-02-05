@@ -1,5 +1,5 @@
 import React from "react";
-import {BaseStyles, Box, ThemeProvider} from "@primer/components";
+import {BaseStyles, Box, ThemeProvider} from "@primer/react";
 import {Route, Routes, BrowserRouter} from "react-router-dom";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";

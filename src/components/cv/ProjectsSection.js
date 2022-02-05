@@ -1,7 +1,7 @@
 import React from "react";
 import {AlertIcon, RepoIcon, TelescopeIcon} from "@primer/octicons-react";
 import Projects, {ProjectElement} from "./ProjectElement";
-import {Box, Heading, Link, StyledOcticon, Text} from "@primer/components";
+import {Box, Heading, Link, StyledOcticon, Text} from "@primer/react";
 import {URL_GITHUB_PROFILE} from "../../Constants";
 
 export default class ProjectsSection extends React.Component {

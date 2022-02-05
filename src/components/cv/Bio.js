@@ -1,4 +1,4 @@
-import {Avatar, Box, Heading, Link, Pagehead, Text} from "@primer/components";
+import {Avatar, Box, Heading, Link, Pagehead, Text} from "@primer/react";
 import Age from "../Age";
 import {URL_FLANDERS} from "../../Constants";
 import React from "react";
