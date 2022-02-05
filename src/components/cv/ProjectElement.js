@@ -6,7 +6,7 @@ import {
   Link,
   StyledOcticon,
   Text
-} from "@primer/components";
+} from "@primer/react";
 
 export function ProjectElement({
   icon,

@@ -1,4 +1,4 @@
-import {Box, Link, StyledOcticon} from "@primer/components";
+import {Box, Link, StyledOcticon} from "@primer/react";
 import React from "react";
 import {MarkGithubIcon} from "@primer/octicons-react";
 import {URL_GITHUB_PROFILE} from "../Constants";

@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/main.scss";
-import {Box} from "@primer/components";
+import {Box} from "@primer/react";
 import {LAYOUT_WIDTH} from "../Constants";
 import Footer from "../components/Footer";
 import Bio from "../components/cv/Bio";

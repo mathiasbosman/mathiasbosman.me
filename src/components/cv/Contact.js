@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Flash, Heading, Text} from "@primer/components";
+import {Box, Flash, Heading, Text} from "@primer/react";
 import MailToLink from "../MailToLink";
 import {CONTACT_EMAIL} from "../../Constants";
 
@@ -18,7 +18,7 @@ export default class Contact extends React.Component {
         or official holidays as this is my secondary occupation.
       </Flash>
       <Text>Still interested?
-        <MailToLink safe={true} variant="small" mx={1} mail={CONTACT_EMAIL}>
+        <MailToLink safe={true} variant="small" sx={{mx: 1}} mail={CONTACT_EMAIL}>
           Send me an email
         </MailToLink>to get in touch!</Text>
     </Box>;

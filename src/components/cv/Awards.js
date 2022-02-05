@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Heading, Link, Text} from "@primer/components";
+import {Box, Heading, Link, Text} from "@primer/react";
 
 export default class Awards extends React.Component {
 

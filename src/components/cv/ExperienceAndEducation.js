@@ -6,7 +6,7 @@ import {
   Text,
   Timeline,
   Tooltip
-} from "@primer/components";
+} from "@primer/react";
 import {
   CodeIcon,
   CodeReviewIcon,

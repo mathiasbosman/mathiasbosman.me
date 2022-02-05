@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Button, StyledOcticon} from "@primer/components";
+import {Button, StyledOcticon} from "@primer/react";
 import {PaperAirplaneIcon} from "@primer/octicons-react";
 import {decrypt} from "../Utils";
 

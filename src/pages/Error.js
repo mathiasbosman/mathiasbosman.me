@@ -1,6 +1,6 @@
 import React from "react";
 import {LAYOUT_WIDTH} from "../Constants";
-import {Box, Heading, Link, Text} from "@primer/components";
+import {Box, Heading, Link, Text} from "@primer/react";
 import "@primer/css/blankslate/index.scss";
 import BugHunterImage from "../assets/bug_hunter.svg";
 /* @deprecated */
