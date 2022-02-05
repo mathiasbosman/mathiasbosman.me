@@ -9,13 +9,14 @@ import SkillsSection from "../components/cv/SkillsSection";
 import Awards from "../components/cv/Awards";
 import Contact from "../components/cv/Contact";
 import ProjectsSection from "../components/cv/ProjectsSection";
+import Disclaimer from "../components/Disclaimer";
 
 export default class Home extends React.Component {
   render() {
     return <main itemScope="itemScope" itemType="https://schema.org/Person">
       <Box
           borderWidth={[0, 0, 1]}
-          borderStyle="solid" borderColor="border.default" borderRadius={2}
+          borderStyle="solid" borderColor="border.default" borderRadius={[0,0,2]}
           boxShadow="shadows.medium" bg="canvas.default" mx="auto" p={3} maxWidth={LAYOUT_WIDTH}>
         <section>
           <Bio/>
@@ -37,6 +38,7 @@ export default class Home extends React.Component {
         </Box>
         <Footer/>
       </Box>
+      <Disclaimer/>
     </main>;
   }
 }

@@ -3,6 +3,7 @@
   "license": "MIT",
   "description": "Personal resume",
   "version": "3.7.0",
+  "author": "Mathias Bosman",
   "repository": {
     "type": "git",
     "url": "git://github.com/mathiasbosman/mathiasbosman.github.io.git"
