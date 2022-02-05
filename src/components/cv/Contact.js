@@ -1,7 +1,8 @@
 import React from "react";
-import {Box, Flash, Heading, Text} from "@primer/react";
+import {Box, Flash, Heading, StyledOcticon, Text} from "@primer/react";
 import MailToLink from "../MailToLink";
 import {CONTACT_EMAIL} from "../../Constants";
+import {PaperAirplaneIcon} from "@primer/octicons-react";
 
 export default class Contact extends React.Component {
 
@@ -19,7 +20,7 @@ export default class Contact extends React.Component {
       </Flash>
       <Text>Still interested?
         <MailToLink safe={true} variant="small" sx={{mx: 1}} mail={CONTACT_EMAIL}>
-          Send me an email
+          <StyledOcticon icon={PaperAirplaneIcon}/> Send me an email
         </MailToLink>to get in touch!</Text>
     </Box>;
   }

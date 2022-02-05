@@ -3,6 +3,6 @@
  * @param {string} inputString
  * @returns {string}
  */
-export function decrypt(inputString) {
+export const decrypt = (inputString) => {
   return inputString.split("").reverse().join("");
 }

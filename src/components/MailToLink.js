@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Button, StyledOcticon} from "@primer/react";
-import {PaperAirplaneIcon} from "@primer/octicons-react";
+import {Button} from "@primer/react";
 import {decrypt} from "../Utils";
 
 /**
@@ -22,7 +21,6 @@ export default class MailToLink extends React.Component {
   _sendMail() {
     let email = this.state.mail;
     if (this.state.safe) {
-      // remove brackets
       email = decrypt(email);
     }
     window.location = "mailto:" + email;
@@ -30,7 +28,7 @@ export default class MailToLink extends React.Component {
 
   render() {
     return (<Button onClick={this._sendMail} {...this.props}>
-      <StyledOcticon icon={PaperAirplaneIcon}/> {this.props.children}
+      {this.props.children}
     </Button>)
   }
 }
