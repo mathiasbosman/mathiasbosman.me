@@ -32,7 +32,7 @@ class Age extends React.Component {
   }
 
   render() {
-    return this._calculateAge();
+    return <span>{this._calculateAge()}</span>;
   }
 }
 
