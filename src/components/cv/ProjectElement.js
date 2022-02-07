@@ -66,8 +66,7 @@ ProjectElement.propTypes = {
 export default function Projects({children}) {
 
   return (<Box display="grid"
-               className="noColumnsOnBreak"
-               gridTemplateColumns="1fr 1fr"
+               gridTemplateColumns={["none", "none", "1fr 1fr"]}
                gridGap={3}>{children}</Box>);
 }
 
