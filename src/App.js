@@ -9,7 +9,7 @@ export default class App extends React.Component {
   render() {
     return <ThemeProvider colorMode="auto">
       <BaseStyles>
-      <Box className="wrapper" bg="canvas.subtle" p={3} fontSize={1}>
+      <Box className="wrapper" bg="canvas.subtle" p={[0,0,3]} fontSize={1}>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home/>}/>
