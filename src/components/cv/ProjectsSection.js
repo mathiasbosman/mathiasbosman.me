@@ -38,7 +38,7 @@ export default class ProjectsSection extends React.Component {
           <Box mb={2}><Text>A trial crypto currency bot integration for the <Link
               href="https://bitvavo.com/" target="_blank">Bitvavo</Link> API.
             <br/>
-            Purely for academic purposes.. truly.
+            Purely for academic purposes... truly.
           </Text></Box>
           <Text>
             <StyledOcticon sx={{color: "attention.emphasis", mr: 1}}
@@ -48,7 +48,11 @@ export default class ProjectsSection extends React.Component {
         </ProjectElement>
         <ProjectElement name="Coming soon..."
                         icon={TelescopeIcon}>
-          <Text>Creating some simple re-usable React components.<br/>
+          <Text>Meanwhile working on some other projects on the side:
+            <ul>
+              <li>Some simple re-usable React components.</li>
+              <li>A virtual inventory management system</li>
+            </ul>
             For more projects you can visit <Link href={URL_GITHUB_PROFILE}
             target="_blank">my GitHub profile</Link>.</Text>
         </ProjectElement>
