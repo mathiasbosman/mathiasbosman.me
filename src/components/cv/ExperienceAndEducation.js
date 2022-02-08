@@ -110,7 +110,7 @@ export default class ExperienceAndEducation extends React.Component {
           </Timeline.Badge>
           <Timeline.Body sx={{color: "fg.default"}}>
             <Text mr={1}>Stage lighting</Text>
-            at <Link href="https://gsauk.org//en" target="_blank">
+            at <Link href="https://gsauk.org/" target="_blank">
             GSA
           </Link>
             <br/>2014 - 2017
