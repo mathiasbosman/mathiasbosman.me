@@ -5,7 +5,7 @@
 A simple website with a bit of GitHub magic containing my personal resume
 on [mathiasbosman.be][link_mathiasbosman_be].
 
-## Credits 🔔
+## Credits
 
 ### Frameworks and libraries
 
