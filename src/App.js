@@ -13,6 +13,7 @@ export default class App extends React.Component {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home/>}/>
+            <Route path="/404" element={<NotFound/>}/>
             <Route path="*" element={<NotFound/>}/>
           </Routes>
         </BrowserRouter>
