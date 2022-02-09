@@ -17,7 +17,7 @@ export default class Home extends React.Component {
       <Box
           borderWidth={[0, 0, 1]}
           borderStyle="solid" borderColor="border.default" borderRadius={[0,0,2]}
-          boxShadow="shadows.medium" bg="canvas.default" mx="auto" p={3} maxWidth={LAYOUT_WIDTH}>
+          boxShadow="shadows.medium" bg="canvas.default" mx="auto" p={[0,0,3]} maxWidth={LAYOUT_WIDTH}>
         <section>
           <Bio/>
         </section>
