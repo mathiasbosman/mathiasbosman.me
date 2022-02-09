@@ -6,7 +6,7 @@ import React from "react";
 export default class Bio extends React.Component {
   render() {
     return <Box display="flex" mx={3} flexWrap={["wrap", "wrap", "nowrap"]}>
-      <Box mx={[0, "auto", "auto"]}>
+      <Box mx={"auto"} py={2}>
         <Box
             borderWidth="1px" borderStyle="solid" borderColor="border.default"
             borderRadius="50%" >
