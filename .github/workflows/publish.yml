@@ -23,8 +23,12 @@ jobs:
         run: npm ci
       - name: NPM build
         run: npm run build
-      - name: GitHub Pages Deploy
-        uses: JamesIves/github-pages-deploy-action@v4.2.3
+      - name: Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0
         with:
-          branch: gh-pages
-          folder: build
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./build/
+          server-dir: /domains/mathiasbosman.be/public_html

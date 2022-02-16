@@ -13,8 +13,8 @@ Using [React.js][link_react_js] and GitHub's [Primer.style][link_primer_style] R
 
 ### GitHub actions
 
-A huge shout-out to [JamesIves][link_james_ives] for [his GitHub action][link_github_action] to
-deploy GitHub pages.
+A huge shout-out to [SamKirkland][link_sam_kirkland] for [his GitHub action][link_github_action] to
+transfer files using FTP(S).
 
 
 [link_mathiasbosman_be]:http://mathiasbosman.be
@@ -23,6 +23,6 @@ deploy GitHub pages.
 
 [link_primer_style]:https://primer.style/
 
-[link_james_ives]:https://github.com/JamesIves
+[link_sam_kirkland]:https://github.com/SamKirkland
 
-[link_github_action]:https://github.com/JamesIves/github-pages-deploy-action
+[link_github_action]:hhttps://github.com/SamKirkland/FTP-Deploy-Action
