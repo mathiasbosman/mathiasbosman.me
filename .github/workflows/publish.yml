@@ -31,4 +31,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           local-dir: ./build/
-          server-dir: /domains/mathiasbosman.be/public_html
+          server-dir: /domains/mathiasbosman.be/public_html/
