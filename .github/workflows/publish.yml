@@ -15,10 +15,8 @@ jobs:
         env:
           SECRET_CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
         run: |
-          for f in ./etc/scripts/*.sh; do
-            echo running $f
-            bash $f
-          done
+          echo running pre-install script
+          bash ./scripts/preInstall.sh
       - name: NPM install
         run: npm ci
       - name: NPM build
