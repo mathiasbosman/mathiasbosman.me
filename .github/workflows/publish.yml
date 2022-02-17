@@ -14,7 +14,8 @@ jobs:
         shell: bash
         env:
           SECRET_CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
-          SECRET_HEADER_SCRIPTS: ${{ secrets.HEADER_SCRIPTS }}
+          SECRET_MATOMO_BASE_URL: ${{ secrets.MATOMO_BASE_URL }}
+          SECRET_MATOMO_SITE_ID: ${{ secrets.MATOMO_SITE_ID }}
         run: |
           for f in ./etc/scripts/*.sh; do
             echo running $f
