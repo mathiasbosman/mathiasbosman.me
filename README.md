@@ -9,7 +9,8 @@ on [mathiasbosman.be][link_mathiasbosman_be].
 
 ### Frameworks and libraries
 
-Using [React.js][link_react_js] and GitHub's [Primer.style][link_primer_style] React components.
+- [React.js][link_react_js]
+- GitHub's [Primer.style][link_primer_style] React components.
 
 ### GitHub actions
 
