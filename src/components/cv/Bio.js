@@ -24,7 +24,7 @@ export default class Bio extends React.Component {
                                                                fontWeight="bold"
                                                                itemProp="familyName">Bosman</Text>
         </Pagehead>
-        <Heading sx={{fontSize: 2, mb: 2, px: [0, 0, 3]}}>Web&nbsp;designer,
+        <Heading as="h3" sx={{fontSize: 2, mb: 2, px: [0, 0, 3]}}>Web&nbsp;designer,
           Java&nbsp;developer &amp; network&nbsp;engineer</Heading>
         <Box px={[0, 0, 3]}>
           <Text as="p" itemProp="description">
