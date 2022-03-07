@@ -7,8 +7,8 @@ import {URL_GITHUB_PROFILE} from "../../Constants";
 export default class ProjectsSection extends React.Component {
 
   render() {
-    return <Box mt={5}>
-      <Heading as="h2">Projects</Heading>
+    return <Box as="section" mt={5}>
+      <Heading as="h2" sx={{textAlign: ["center", "center", "left"]}}>Projects</Heading>
       <Projects>
         <ProjectElement
             name="File Services"

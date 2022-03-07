@@ -16,22 +16,21 @@ export default class Home extends React.Component {
     return <main itemScope="itemScope" itemType="https://schema.org/Person">
       <Box
           borderWidth={[0, 0, 1]}
-          borderStyle="solid" borderColor="border.default" borderRadius={[0,0,2]}
-          boxShadow="shadows.medium" bg="canvas.default" mx="auto" p={[0,0,3]} maxWidth={LAYOUT_WIDTH}>
-        <section>
-          <Bio/>
-        </section>
-        <section>
-          <Box display="flex" flexWrap={["wrap", "wrap", "nowrap"]} justifyItems="space-between">
-            <Box flexBasis="100%" as="section" px={3}>
-              <ExperienceAndEducation/>
-            </Box>
-            <Box flexBasis="100%" as="section" px={3}>
-              <SkillsSection/>
-              <Awards/>
-            </Box>
+          borderStyle="solid" borderColor="border.default"
+          borderRadius={[0, 0, 2]}
+          boxShadow="shadows.medium" bg="canvas.default" mx="auto" p={[0, 0, 3]}
+          maxWidth={LAYOUT_WIDTH}>
+        <Bio/>
+        <Box display="flex" flexWrap={["wrap", "wrap", "nowrap"]}
+             justifyItems="space-between">
+          <Box flexBasis="100%" as="section" px={3}>
+            <ExperienceAndEducation/>
           </Box>
-        </section>
+          <Box flexBasis="100%" as="section" px={3}>
+            <SkillsSection/>
+            <Awards/>
+          </Box>
+        </Box>
         <Box px={3}>
           <ProjectsSection/>
           <Contact/>

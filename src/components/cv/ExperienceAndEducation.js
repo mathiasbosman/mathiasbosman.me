@@ -19,8 +19,8 @@ import {URL_FLANDERS} from "../../Constants";
 export default class ExperienceAndEducation extends React.Component {
 
   render() {
-    return <Box as="section">
-      <Heading as="h2" sx={{mt: 5}}>Experience &amp; education</Heading>
+    return <Box as="section" mt={5}>
+      <Heading as="h2" sx={{textAlign: ["center", "center", "left"]}}>Experience &amp; education</Heading>
       <Timeline clipSidebar >
         <Timeline.Item>
           <Timeline.Badge>
