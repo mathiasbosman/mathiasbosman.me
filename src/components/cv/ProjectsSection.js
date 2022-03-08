@@ -46,6 +46,15 @@ export default class ProjectsSection extends React.Component {
             Very much work in progress
           </Text>
         </ProjectElement>
+        <ProjectElement name="Blog api"
+                        footer="Java"
+                        link={URL_GITHUB_PROFILE + "/blog-api"}
+                        icon={RepoIcon}>
+          <Box mb={2}>
+            <Text>A simple one-user (for now) blog api.<br/>To be used
+            with this website in the future.</Text>
+          </Box>
+        </ProjectElement>
         <ProjectElement name="Coming soon..."
                         icon={TelescopeIcon}>
           <Text>Meanwhile working on some other projects on the side:
