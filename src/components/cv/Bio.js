@@ -27,7 +27,7 @@ export default class Bio extends React.Component {
         <Heading as="h3" sx={{fontSize: 2, mb: 2, px: [0, 0, 3]}}>Web&nbsp;designer,
           Java&nbsp;developer &amp; network&nbsp;engineer</Heading>
         <Box px={[0, 0, 3]}>
-          <Text as="p" itemProp="description">
+          <Text as="p">
             Known as &quot;The little one&quot;, I&apos;m a web designer and
             Java developer living in <span itemProp="homeLocation">Lebbeke, Belgium</span> and
             currently <Age birthdate="1990-12-05"/> of age.
