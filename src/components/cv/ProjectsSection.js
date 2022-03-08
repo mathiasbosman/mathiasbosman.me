@@ -14,7 +14,8 @@ export default class ProjectsSection extends React.Component {
             name="File Services"
             footer="Java"
             link={URL_GITHUB_PROFILE + "/file-services"}
-            statusBadge={URL_GITHUB_PROFILE + "/file-services/actions/workflows/build.yml/badge.svg"}
+            statusBadge={URL_GITHUB_PROFILE
+            + "/file-services/actions/workflows/build.yml/badge.svg"}
             icon={RepoIcon}>
           <Text>Simple and lightweight library for open source file services
             such as S3 and Java NIO.</Text>
@@ -23,7 +24,8 @@ export default class ProjectsSection extends React.Component {
             name="mathiasbosman.be"
             footer="Html, CSS, Javascript, React"
             link={URL_GITHUB_PROFILE + "/mathiasbosman.github.io"}
-            statusBadge={URL_GITHUB_PROFILE + "/mathiasbosman.github.io/actions/workflows/ci.yml/badge.svg"}
+            statusBadge={URL_GITHUB_PROFILE
+            + "/mathiasbosman.github.io/actions/workflows/ci.yml/badge.svg"}
             icon={RepoIcon}>
           <Text>This very website!<br/>
             Created using Facebook&apos;s <Link href="https://reactjs.org"
@@ -35,8 +37,9 @@ export default class ProjectsSection extends React.Component {
                         footer="Java"
                         link={URL_GITHUB_PROFILE + "/cryptobot"}
                         icon={RepoIcon}>
-          <Box mb={2}><Text>A trial crypto currency bot integration for the <Link
-              href="https://bitvavo.com/" target="_blank">Bitvavo</Link> API.
+          <Box mb={2}><Text>A trial crypto currency bot integration for
+            the <Link
+                href="https://bitvavo.com/" target="_blank">Bitvavo</Link> API.
             <br/>
             Purely for academic purposes... truly.
           </Text></Box>
@@ -46,6 +49,20 @@ export default class ProjectsSection extends React.Component {
             Very much work in progress
           </Text>
         </ProjectElement>
+        <ProjectElement name="Blog api"
+                        footer="Java, Keycloak"
+                        link={URL_GITHUB_PROFILE + "/blog-api"}
+                        statusBadge={URL_GITHUB_PROFILE
+                        + "/blog-api/actions/workflows/build.yml/badge.svg"}
+                        icon={RepoIcon}>
+          <Box mb={2}>
+            <Text>A simple one-user (for now) blog api.<br/>To be used
+              with this website in the future.
+              <br/>Integrates with <Link href="https://keycloak.org"
+                                         target="_blank">Keycloak</Link> to
+              handle security.</Text>
+          </Box>
+        </ProjectElement>
         <ProjectElement name="Coming soon..."
                         icon={TelescopeIcon}>
           <Text>Meanwhile working on some other projects on the side:
@@ -54,7 +71,8 @@ export default class ProjectsSection extends React.Component {
               <li>A virtual inventory management system</li>
             </ul>
             For more projects you can visit <Link href={URL_GITHUB_PROFILE}
-            target="_blank">my GitHub profile</Link>.</Text>
+                                                  target="_blank">my GitHub
+              profile</Link>.</Text>
         </ProjectElement>
       </Projects>
     </Box>
