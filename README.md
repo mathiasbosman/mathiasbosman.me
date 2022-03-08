@@ -25,6 +25,7 @@ server.
 - GitHub's [Primer.style][link_primer_style] React components.
 
 ### GitHub actions
+[<img alt="Deployed with FTP Deploy Action" src="https://img.shields.io/badge/Deployed With-FTP DEPLOY ACTION-%3CCOLOR%3E?style=for-the-badge&color=0077b6">](https://github.com/SamKirkland/FTP-Deploy-Action)
 
 A huge shout-out to [SamKirkland][link_sam_kirkland] for [his GitHub action][link_github_action] to
 transfer files using FTP(S).
