@@ -47,7 +47,7 @@ export function ProjectElement({
             <Box
                 as="aside"
                 borderTopStyle="solid" borderTopColor="border.default"
-                borderTopWidth={1}
+                borderTopWidth={1} maxHeight=""
                 p={3}>
               <Text fontSize={0} color="fg.muted">{footer}</Text>
             </Box> : null}
