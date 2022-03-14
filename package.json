@@ -54,7 +54,7 @@
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "eslint-plugin-primer-react": "^0.7.4",
-    "eslint-plugin-react": "^7.29.3",
+    "eslint-plugin-react": "^7.29.4",
     "node-sass": "^7.0.1",
     "prop-types": "^15.7.2"
   }
