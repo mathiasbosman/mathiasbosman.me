@@ -63,15 +63,16 @@ export default class ProjectsSection extends React.Component {
               handle security.</Text>
           </Box>
         </ProjectElement>
-        <ProjectElement name="AlphaESS - EnergyID proxy"
+        <ProjectElement name="Inverter data export"
                         footer="Java"
-                        link={URL_GITHUB_PROFILE + "/alphaess-energyid-proxy"}
+                        link={URL_GITHUB_PROFILE + "/inverter-data-export"}
                         statusBadge={URL_GITHUB_PROFILE
-                        + "/alphaess-energyid-proxy/actions/workflows/build.yml/badge.svg"}
+                        + "/inverter-data-export/actions/workflows/build.yml/badge.svg"}
                         icon={RepoIcon}>
           <Box mb={2}>
-            <Text>A proxy application that exports data from an <Link href="https://www.alpha-ess.com" target="_blank">AlphaESS</Link> battery / inverter
-              to <Link href="https://www.energyid.eu" target="_blank">the EnergyID platform</Link>.</Text>
+            <Text>An application that enables the export of data from converter to external systems.<br/>
+            Currently supports the <Link href="https://www.alpha-ess.com" target="_blank">AlphaESS</Link> battery / inverter
+              and <Link href="https://www.energyid.eu" target="_blank">the EnergyID platform</Link>.</Text>
           </Box>
           <Text>
             <StyledOcticon sx={{color: "attention.emphasis", mr: 1}}
