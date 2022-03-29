@@ -70,6 +70,19 @@ export default class ExperienceAndEducation extends React.Component {
         <Timeline.Break/>
         <Timeline.Item>
           <Timeline.Badge>
+            <StyledOcticon icon={MortarBoardIcon}/>
+          </Timeline.Badge>
+          <Timeline.Body sx={{color: "fg.default"}}>
+            <Text mr={1}>Stage lighting</Text>
+            at <Link href="https://gsauk.org/" target="_blank">
+            GSA
+          </Link>
+            <br/>2017
+          </Timeline.Body>
+        </Timeline.Item>
+        <Timeline.Break/>
+        <Timeline.Item>
+          <Timeline.Badge>
             <StyledOcticon icon={CodeIcon}/>
           </Timeline.Badge>
           <Timeline.Body sx={{color: "fg.default"}}>
@@ -109,23 +122,11 @@ export default class ExperienceAndEducation extends React.Component {
             <StyledOcticon icon={MortarBoardIcon}/>
           </Timeline.Badge>
           <Timeline.Body sx={{color: "fg.default"}}>
-            <Text mr={1}>Stage lighting</Text>
-            at <Link href="https://gsauk.org/" target="_blank">
-            GSA
-          </Link>
-            <br/>2014 - 2017
-          </Timeline.Body>
-        </Timeline.Item>
-        <Timeline.Item>
-          <Timeline.Badge>
-            <StyledOcticon icon={MortarBoardIcon}/>
-          </Timeline.Badge>
-          <Timeline.Body sx={{color: "fg.default"}}>
             <Text mr={1}>Applied Computer Science</Text>
             at <Link href="https://www.ktad.be/" target="_blank">
             KT@ Dendermonde
           </Link>
-            <br/>2014 - 2017
+            <br/>2007 - 2009
           </Timeline.Body>
         </Timeline.Item>
         <Timeline.Break/>
