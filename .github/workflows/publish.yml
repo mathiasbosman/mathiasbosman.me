@@ -30,3 +30,8 @@ jobs:
           protocol: ftps
           local-dir: ./build/
           server-dir: /domains/mathiasbosman.be/public_html/
+      - name: GitHub Pages Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.2.3
+        with:
+          branch: gh-pages
+          folder: build
