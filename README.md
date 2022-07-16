@@ -32,13 +32,8 @@ transfer files using FTP(S).
 
 
 [link_mathiasbosman_be]:http://mathiasbosman.be
-
 [link_react_js]:https://reactjs.org/
-
 [link_primer_style]:https://primer.style/
-
 [link_sam_kirkland]:https://github.com/SamKirkland
-
 [link_github_action]:hhttps://github.com/SamKirkland/FTP-Deploy-Action
-
 [link_github_new_release]:https://github.com/mathiasbosman/mathiasbosman.github.io/releases/new
