@@ -32,26 +32,17 @@
   <meta content="https://mathiasbosman.be/assets/images/mathias.png" name="twitter:image">
   <meta content="mathias bosman, web designer, java, developer, network engineer, resume"
         name="keywords"/>
-  <!-- Matomo -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9939SXVZHW"></script>
   <script>
-    const _paq = window._paq = window._paq || [];
-    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function () {
-      const u = "//matomo.mathiasbosman.be/";
-      _paq.push(['setTrackerUrl', u + 'matomo.php']);
-      _paq.push(['setSiteId', '1']);
-      const d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
-      g.async = true;
-      g.src = u + 'matomo.js';
-      s.parentNode.insertBefore(g, s);
-    })();
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-9939SXVZHW');
   </script>
   <!-- End Matomo Code -->
 </head>
 <body>
-<noscript>You need to enable JavaScript to visit this website.</noscript>
 <div id="root"></div>
 </body>
 
