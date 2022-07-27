@@ -1,5 +1,4 @@
 import {Avatar, Box, Heading, Link, Pagehead, Text} from "@primer/react";
-import Age from "../Age";
 import {URL_FLANDERS} from "../../Constants";
 import React from "react";
 
@@ -20,25 +19,33 @@ export default class Bio extends React.Component {
           textAlign: ["center", "center", "left"]
         }}>
           <Text fontSize={5} fontWeight="bold"
-                itemProp="givenName">Mathias</Text>&nbsp;<Text fontSize={5}
-                                                               fontWeight="bold"
-                                                               itemProp="familyName">Bosman</Text>
+                itemProp="givenName">Mathias</Text>
+          &nbsp;
+          <Text fontSize={5}
+                fontWeight="bold"
+                itemProp="familyName">Bosman</Text>
         </Pagehead>
-        <Heading as="h3" sx={{fontSize: 2, mb: 2, px: [0, 0, 3], textAlign: ["center", "center", "left"]}}>Web&nbsp;designer,
+        <Heading as="h3" sx={{
+          fontSize: 2,
+          mb: 2,
+          px: [0, 0, 3],
+          textAlign: ["center", "center", "left"]
+        }}>Web&nbsp;designer,
           Java&nbsp;developer &amp; network&nbsp;engineer</Heading>
         <Box px={[0, 0, 3]}>
           <Text as="p">
             Known as &quot;The little one&quot;, I&apos;m a web designer and
-            Java developer living in <span itemProp="homeLocation">Lebbeke, Belgium</span> and
-            currently <Age birthdate="1990-12-05"/> of age.
-            Welcome to my online personal resume!<br/>
+            Java developer living in <span itemProp="homeLocation">Lebbeke, Belgium</span>.<br/>
+            Welcome to my online personal resume!
+          </Text>
+          <Text as="p">
             At the moment I&apos;m full-time employed at the Department of
-            Environment of the <Link target="_blank"
-                                     href={URL_FLANDERS}>Flemish
-            Government</Link>.<br/>
+            Environment of the <Link target="_blank" href={URL_FLANDERS}>
+              Flemish Government
+            </Link>.<br/>
             In my spare time you will find me on my (not so) super
             expensive Decathlon race bike or setting up some small network
-            somewhere.
+            somewhere or share it with a lovely beagle called Luna.
           </Text>
         </Box>
       </Box>
