@@ -4,7 +4,6 @@
   "description": "Personal resume",
   "version": "3.11.0",
   "author": "Mathias Bosman",
-  "organisationNumber": "0737.612.645",
   "repository": {
     "type": "git",
     "url": "git://github.com/mathiasbosman/mathiasbosman.github.io.git"

@@ -11,8 +11,8 @@ export default class Disclaimer extends React.Component {
         borderTopWidth={[1, 1, 0]}
         borderStyle="solid" borderColor="border.default"
         flex={1} display="flex" justifyContent="center" mx="auto" p={3} maxWidth={LAYOUT_WIDTH}>
-      <Text fontSize={0} color={"fg.muted"}>
-        <Copyright name={packageJson.author}/> - rev {packageJson.version} {packageJson.organisationNumber ? ' - ' + packageJson.organisationNumber : ''}
+      <Text fontSize={0} color={"fg.muted"} textAlign={"center"}>
+        <Copyright name={packageJson.author}/>
       </Text>
     </Box>;
   }
