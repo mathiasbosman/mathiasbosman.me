@@ -1,4 +1,4 @@
-const {readFile, writeFile, promises: fsPromises} = require('fs');
+const {readFile, writeFile} = require('fs');
 const file = "./public/sitemap.xml";
 readFile(file, 'utf-8', function (err, contents) {
   if (err) {

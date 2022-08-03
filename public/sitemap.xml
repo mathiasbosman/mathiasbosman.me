@@ -3,6 +3,6 @@
   <url>
     <loc>https://mathiasbosman.be/</loc>
     <!-- Gets updated via the preInstall script -->
-    <lastmod>{{LAST_MOD}}</lastmod>
+    <lastmod>__LAST_MOD__</lastmod>
   </url>
 </urlset>
