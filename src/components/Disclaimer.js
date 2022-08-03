@@ -12,7 +12,7 @@ export default class Disclaimer extends React.Component {
         borderStyle="solid" borderColor="border.default"
         flex={1} display="flex" justifyContent="center" mx="auto" p={3} maxWidth={LAYOUT_WIDTH}>
       <Text fontSize={0} color={"fg.muted"} textAlign={"center"}>
-        <Copyright name={packageJson.author}/>
+        <Copyright name={packageJson.author} version={packageJson.version}/>
       </Text>
     </Box>;
   }
