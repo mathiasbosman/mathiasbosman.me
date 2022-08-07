@@ -6,14 +6,14 @@ readFile(file, 'utf-8', function (err, contents) {
     return;
   }
 
-  const currentDate = new Date().toISOString();
-  const replaced = contents.replace(/__LAST_MOD__/g, currentDate);
+  const currentDate = "<lastmod>" + new Date().toISOString() + "</lastmod>";
+  const replaced = contents.replace(/<lastmod>.+<\/lastmod>/g, currentDate);
 
   writeFile(file, replaced, 'utf-8', function (err) {
     if (err) {
       console.log(err);
     } else {
-      console.log("<lastMod> set to " + currentDate);
+      console.log(file + " now contains " + currentDate);
     }
   });
 });
