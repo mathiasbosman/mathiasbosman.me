@@ -14,7 +14,7 @@ Steps to deploy:
 3. create a new release [via GitHub][link_github_new_release].  
 This will trigger [the GitHub workflow](.github/workflows/publish.yml) that builds the project and publishes it to the **staging** area of Heroku.  
 A copy of the build will also be deployed to GitHub pages.
-4. Deploy the production app on Heroku
+4. Deploy the production app manually on Heroku from the master branch
 
 ## Credits
 
