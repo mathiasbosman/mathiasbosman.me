@@ -1,3 +1,4 @@
+# this file probably has 0 effect on Heroku
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteCond %{HTTPS} off [OR]
