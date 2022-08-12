@@ -1,7 +1,7 @@
 const path = require(`path`);
 const express = require(`express`);
 const port = process.env.PORT || 3000;
-const node = process.env.NODE_ENV === `production`;
+const node = process.env.NODE_ENV;
 const app = express();
 const rateLimit = {windowMs: 60 * 1000, max: 100}
 
