@@ -22,7 +22,7 @@
     "prePatch": "npm version patch --preid='rc' -m 'Prepare patch release %s'"
   },
   "dependencies": {
-    "@primer/octicons-react": "^17.4.0",
+    "@primer/octicons-react": "^17.4.1",
     "@primer/react": "^35.5.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^12.1.5",
