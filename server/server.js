@@ -1,4 +1,3 @@
-
 const path = require('path');
 const express = require('express');
 const port = process.env.PORT || 3000;
@@ -19,8 +18,8 @@ const publicPath = path.join(__dirname, '..', 'build');
 app.use(express.static(publicPath));
 
 // set up rate limiter: maximum of five requests per minute
-const RateLimit = require('express-rate-limit');
-const limiter = new RateLimit({
+const rateLimit = require('express-rate-limit');
+const limiter = rateLimit({
   windowMs: 60 * 1000, // 1 minute
   max: 100
 });
