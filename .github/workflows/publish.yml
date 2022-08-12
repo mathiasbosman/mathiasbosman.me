@@ -10,26 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Run scripts
-        shell: bash
-        env:
-          SECRET_CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
-        run: |
-          echo running pre-install script
-          bash ./scripts/preInstall.sh
       - name: NPM install
         run: npm ci
       - name: NPM build
         run: npm run build
-      - name: Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          local-dir: ./build/
-          server-dir: /domains/mathiasbosman.be/public_html/
       - name: GitHub Pages Deploy
         uses: JamesIves/github-pages-deploy-action@v4.4.0
         with:

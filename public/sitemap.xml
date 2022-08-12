@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mathiasbosman.be/</loc>
-    <!-- Gets updated via the script 001-updateLastMod.sh -->
-    <lastmod>{{LAST_MOD}}</lastmod>
+    <!-- Gets updated via the preInstall script -->
+    <lastmod>__LAST_MOD__</lastmod>
   </url>
 </urlset>
