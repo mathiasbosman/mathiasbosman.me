@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@primer/octicons-react": "^17.4.0",
-    "@primer/react": "^35.5.0",
+    "@primer/react": "^35.6.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^12.1.5",
     "@testing-library/user-event": "^14.4.3",
