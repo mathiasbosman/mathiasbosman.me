@@ -3,12 +3,11 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
-      day: "friday"
-      time: "16:30"
+      interval: "monthly"
   - package-ecosystem: "npm"
     directory: "/"
+    ignore:
+      - dependency-name: "*"
+        update-types: [ "version-update:semver-patch" ]
     schedule:
-      interval: "weekly"
-      day: "friday"
-      time: "16:30"
+      interval: "monthly"
