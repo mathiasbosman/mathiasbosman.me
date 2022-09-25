@@ -27,7 +27,7 @@ app.use(express.static(publicPath))
 // setup rate limiter
 const rateLimiter = require(`express-rate-limit`)
 const limiter = rateLimiter(rateLimit)
-console.log(`App setup with rate limiter`)
+console.log(`App setup with rate limit ${rateLimit}`)
 app.use(limiter)
 
 // make sure everything is routed to index.html

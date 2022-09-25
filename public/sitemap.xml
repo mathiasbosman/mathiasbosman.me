@@ -2,7 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mathiasbosman.be/</loc>
-    <!-- Gets updated via the preInstall script -->
-    <lastmod>__LAST_MOD__</lastmod>
+    <lastmod>{gets updated via preInstall script}</lastmod>
   </url>
 </urlset>
