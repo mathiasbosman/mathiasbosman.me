@@ -13,6 +13,7 @@ export default class Disclaimer extends React.Component {
         flex={1} display="flex" justifyContent="center" mx="auto" p={3} maxWidth={LAYOUT_WIDTH}>
       <Text fontSize={0} color={"fg.muted"} textAlign={"center"}>
         <Copyright name={packageJson.author} version={packageJson.version}/>
+        &nbsp; BTW BE 0737.612.645
       </Text>
     </Box>;
   }
