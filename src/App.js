@@ -3,6 +3,7 @@ import {BaseStyles, Box, ThemeProvider} from "@primer/react";
 import {Route, Routes, BrowserRouter} from "react-router-dom";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
+import Terms from "./pages/Terms";
 
 export default class App extends React.Component {
 
@@ -13,6 +14,7 @@ export default class App extends React.Component {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home/>}/>
+            <Route path="/terms" element={<Terms/>}/>
             <Route path="/404" element={<NotFound/>}/>
             <Route path="*" element={<NotFound/>}/>
           </Routes>
