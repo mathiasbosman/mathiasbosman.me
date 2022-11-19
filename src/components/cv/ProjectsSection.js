@@ -34,7 +34,7 @@ export default class ProjectsSection extends React.Component {
                                                      target="_blank">Primer.Style</Link>.</Text>
         </ProjectElement>
         <ProjectElement name="Cryptobot"
-                        footer="Java"
+                        footer="Java, Spring"
                         link={URL_GITHUB_PROFILE + "/cryptobot"}
                         icon={RepoIcon}>
           <Box mb={2}><Text>A trial crypto currency bot integration for
@@ -49,22 +49,19 @@ export default class ProjectsSection extends React.Component {
             Very much work in progress
           </Text>
         </ProjectElement>
-        <ProjectElement name="Blog api"
-                        footer="Java, Keycloak"
-                        link={URL_GITHUB_PROFILE + "/blog-api"}
+        <ProjectElement name="MQTT Stresstest"
+                        footer="Java, Mqtt, Spring"
+                        link={URL_GITHUB_PROFILE + "/mqtt-stresstest"}
                         statusBadge={URL_GITHUB_PROFILE
-                        + "/blog-api/actions/workflows/build.yml/badge.svg"}
+                        + "/mqtt-stresstest/actions/workflows/codeql-analysis.yml/badge.svg"}
                         icon={RepoIcon}>
           <Box mb={2}>
-            <Text>A simple one-user (for now) blog api.<br/>To be used
-              with this website in the future.
-              <br/>Integrates with <Link href="https://keycloak.org"
-                                         target="_blank">Keycloak</Link> to
-              handle security.</Text>
+            <Text>A Spring Boot application to stresstest a MQTT service.<br/>
+            Originally used to stresstest ThingsBoard.</Text>
           </Box>
         </ProjectElement>
         <ProjectElement name="Inverter data export"
-                        footer="Java"
+                        footer="Java, REST, Spring"
                         link={URL_GITHUB_PROFILE + "/inverter-data-export"}
                         statusBadge={URL_GITHUB_PROFILE
                         + "/inverter-data-export/actions/workflows/build.yml/badge.svg"}
