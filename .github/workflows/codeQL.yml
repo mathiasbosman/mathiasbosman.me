@@ -9,7 +9,7 @@ on:
 
 jobs:
   analyze:
-    name: CodeQL ⚙️
+    name: 🔍 CodeQLl️
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

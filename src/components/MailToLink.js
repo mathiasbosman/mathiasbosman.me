@@ -23,7 +23,7 @@ export default class MailToLink extends React.Component {
     if (this.state.safe) {
       email = decrypt(email);
     }
-    window.location = "mailto:" + email;
+    window.open("mailto:" + email, '_blank');
   }
 
   render() {
