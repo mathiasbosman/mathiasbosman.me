@@ -23,7 +23,7 @@ jobs:
       - name: 🤘Checkout
         uses: actions/checkout@v3
         with:
-          ref: master
+          ref: ${{ github.ref }}
       - name: ⚙ Setup node
         uses: actions/setup-node@v3
         with:
