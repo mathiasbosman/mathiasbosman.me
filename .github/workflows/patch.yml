@@ -18,7 +18,7 @@ jobs:
       - name: 🔍 GH_TOKEN
         if: env.GH_TOKEN == ''
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: echo "GH_TOKEN=${GITHUB_TOKEN}" >> $GITHUB_ENV
       - name: 🤘Checkout
         uses: actions/checkout@v3
@@ -30,7 +30,7 @@ jobs:
           cache: 'npm'
       - name: 📦Patch
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "actions@github.com"
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "actions@github.com"
           npm run prepPatch
           git push
