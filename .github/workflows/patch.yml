@@ -1,14 +1,17 @@
-name: Release
+name: Patch version
 on:
   push:
     branches:
-      - master
+      - dev
 
 jobs:
   test:
     name: Test 🧪
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@v3
+        with:
+          cache: 'npm'
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Install dependencies
@@ -20,7 +23,7 @@ jobs:
       - name: Test
         run: npm run test
 
-  release:
+  patch:
     name: Patch 📦
     needs: test
     runs-on: ubuntu-latest
@@ -28,6 +31,9 @@ jobs:
       contents: write
       repository-projects: write
     steps:
+      - uses: actions/setup-node@v3
+        with:
+          cache: 'npm'
       - uses: actions/checkout@v3
         with:
           ref: master
