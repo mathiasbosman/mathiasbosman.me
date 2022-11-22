@@ -4,6 +4,9 @@ on:
     branches:
       - dev
 
+env:
+  GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
 jobs:
   test:
     name: Test 🧪
@@ -24,22 +27,26 @@ jobs:
         run: npm run test
 
   patch:
-    name: Patch 📦
     needs: test
     runs-on: ubuntu-latest
     permissions:
       contents: write
       repository-projects: write
     steps:
-      - uses: actions/setup-node@v3
-        with:
-          cache: 'npm'
-      - uses: actions/checkout@v3
-        with:
-          ref: master
-      - name: Patch
+      - name: 🔍 GH_TOKEN
+        if: env.GH_TOKEN == ''
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: echo "GH_TOKEN=${GITHUB_TOKEN}" >> $GITHUB_ENV
+      - name: ⚙ setup node
+        uses: actions/setup-node@v3
+        with:
+          cache: 'npm'
+      - name: 🤘 checkout
+        uses: actions/checkout@v3
+        with:
+          ref: master
+      - name: 📦 Patch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "actions@github.com"
