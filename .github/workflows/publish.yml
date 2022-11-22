@@ -9,6 +9,9 @@ jobs:
     name: Deploy to GitHub pages 🚀
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@v3
+        with:
+          cache: 'npm'
       - uses: actions/checkout@v3
       - name: NPM install
         run: npm ci
