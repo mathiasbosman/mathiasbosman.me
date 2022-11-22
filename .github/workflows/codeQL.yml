@@ -9,12 +9,9 @@ on:
 
 jobs:
   analyze:
-    name: CodeQL ⚙️
+    name: 🔍 CodeQLl️
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v3
-        with:
-          cache: 'npm'
       - uses: actions/checkout@v3
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2
