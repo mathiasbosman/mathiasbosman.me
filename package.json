@@ -17,9 +17,9 @@
     "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "lint": "eslint '**/*.{js,ts}'",
-    "preRelease": "npm version prerelease --preid='rc' -m 'Prepare next development iteration %s'",
+    "prepRelease": "npm version prerelease --preid='rc' -m 'Prepare next development iteration %s'",
     "minorRelease": "npm version minor -m 'Prepare minor release %s'",
-    "prePatch": "npm version patch --preid='rc' -m 'Prepare patch release %s'"
+    "prepPatch": "npm version patch --preid='rc' -m 'Prepare patch release %s'"
   },
   "dependencies": {
     "@primer/octicons-react": "^17.5.0",
