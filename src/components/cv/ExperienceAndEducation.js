@@ -36,7 +36,7 @@ export default class ExperienceAndEducation extends React.Component {
             <Text as="i">2018 - present</Text>
             <Box
                 borderWidth="1px" borderStyle="solid" borderColor="border.default" borderRadius={2}
-                as="aside" p={3} mt={2}>
+                as="aside" aria-label="employment details" p={3} mt={2}>
               <Text>Currently I&apos;m employed as a Java programmer
                 for the <Text fontWeight="bold"> department of Environment</Text> where I work on in-house and external applications.
                 Mostly using frameworks such as Spring Boot.</Text>

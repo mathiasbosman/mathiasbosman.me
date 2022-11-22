@@ -45,7 +45,7 @@ export function ProjectElement({
         </Box>
         {footer ?
             <Box
-                as="aside"
+                as="aside" aria-label={"used technologies in " + name}
                 borderTopStyle="solid" borderTopColor="border.default"
                 borderTopWidth={1} maxHeight=""
                 p={3}>
