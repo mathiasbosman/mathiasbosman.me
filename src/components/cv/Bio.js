@@ -57,7 +57,7 @@ export default class Bio extends React.Component {
                 fill="#EBA352"></path>
           </svg>
         </Pagehead>
-        <Heading as="h3" sx={{
+        <Heading as="h2" sx={{
           fontSize: 2,
           mb: 2,
           px: [0, 0, 3],
