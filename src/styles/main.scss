@@ -20,3 +20,7 @@ abbr {
 .strikeThrough {
   text-decoration: line-through;
 }
+
+.rainbowBorder:hover {
+  background: linear-gradient(to bottom right, #b827fc 20%, #2c90fc 40%, #b8fd33 60%, #fec837 75%, #fd1892 90%);
+}
