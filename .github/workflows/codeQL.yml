@@ -3,13 +3,13 @@ on:
   push:
     branches: [ master ]
   pull_request:
-    branches: [ master ]
   schedule:
     - cron: '43 9 * * 3'
+  worfklow_call:
 
 jobs:
   analyze:
-    name: CodeQL ⚙️
+    name: Code QL
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

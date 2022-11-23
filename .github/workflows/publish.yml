@@ -1,24 +1,35 @@
 name: Publish
 
 on:
-  push:
-    branches:
-      - master
+  release:
+    types: [ published ]
 
 jobs:
   deploy:
-    name: 🚀 Deploy to GitHub pages
+    name: Deploy to GitHub pages
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: "☁️ checkout repository"
+        uses: actions/checkout@v3
+        with:
+          ref: master
+          token: ${{ secrets.RELEASE_TOKEN }}
+
+      - name: "🔧 setup node"
+        uses: actions/setup-node@v3
         with:
           cache: 'npm'
-      - name: NPM install
-        run: npm ci
-      - name: NPM build
-        run: npm run build
-      - name: GitHub Pages Deploy
+
+      - name: "📦 Release and build"
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "actions@github.com"
+          npm run minorRelease
+          git push
+          npm ci
+          npm build
+
+      - name: "🚀 GitHub Pages Deploy"
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           branch: gh-pages
