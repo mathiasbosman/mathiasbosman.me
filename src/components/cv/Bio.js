@@ -7,7 +7,7 @@ export default class Bio extends React.Component {
     return <Box display="flex" mx={3} flexWrap={["wrap", "wrap", "nowrap"]}>
       <Box mx={"auto"} py={2}>
         <Box
-            borderWidth="1px" borderStyle="solid" borderColor="border.default"
+            p="3px" backgroundColor="border.default" className="rainbowBorder"
             borderRadius="50%">
           <Avatar size="150" src="/assets/images/mathias.png"/>
         </Box>
