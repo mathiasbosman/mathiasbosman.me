@@ -5,7 +5,6 @@ on:
   pull_request:
   schedule:
     - cron: '43 9 * * 3'
-  worfklow_call:
 
 jobs:
   analyze:
