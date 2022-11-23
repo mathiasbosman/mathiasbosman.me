@@ -4,33 +4,27 @@ on:
     branches:
       - dev
 
-env:
-  GH_TOKEN: ${{ secrets.GH_TOKEN }}
-
 jobs:
   patch:
-    name: 📦 Patch
     runs-on: ubuntu-latest
     permissions:
       contents: write
       repository-projects: write
     steps:
-      - name: 🔍 GH_TOKEN
-        if: env.GH_TOKEN == ''
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: echo "GH_TOKEN=${GITHUB_TOKEN}" >> $GITHUB_ENV
-      - name: 🤘Checkout
+      - name: "☁️ checkout repository"
         uses: actions/checkout@v3
         with:
-          ref: ${{ github.ref }}
-      - name: ⚙ Setup node
+          ref: master
+          token: ${{ secrets.RELEASE_TOKEN }}
+
+      - name: "🔧 setup node"
         uses: actions/setup-node@v3
         with:
           cache: 'npm'
-      - name: 📦Patch
+
+      - name: "📦 patch"
         run: |
-          git config --local user.name "github-actions[bot]"
-          git config --local user.email "actions@github.com"
-          npm run prepPatch
+          git config user.name "github-actions[bot]"
+          git config user.email "actions@github.com"
+          npm run patch
           git push

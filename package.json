@@ -19,7 +19,7 @@
     "lint": "eslint '**/*.{js,ts}'",
     "prepRelease": "npm version prerelease --preid='rc' -m 'Prepare next development iteration %s'",
     "minorRelease": "npm version minor -m 'Prepare minor release %s'",
-    "prepPatch": "npm version patch --preid='rc' -m 'Prepare patch release %s'"
+    "patch": "npm version patch --preid='rc' -m 'Prepare patch release %s'"
   },
   "dependencies": {
     "@primer/octicons-react": "^17.5.0",

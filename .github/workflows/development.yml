@@ -1,0 +1,46 @@
+name: Development
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+      - reopened
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: "☁️ checkout repository"
+        uses: actions/checkout@v3
+
+      - name: "🔧 setup node"
+        uses: actions/setup-node@v3
+        with:
+          cache: 'npm'
+
+      - name: "📦 install dependencies"
+        run: npm ci
+
+      - name: "🧪 run tests"
+        run: npm run test
+
+  lint:
+    name: Code standards
+    runs-on: ubuntu-latest
+    steps:
+      - name: "☁️ checkout repository"
+        uses: actions/checkout@v3
+
+      - name: "🔧 setup node"
+        uses: actions/setup-node@v3
+        with:
+          cache: 'npm'
+
+      - name: "📦 install dependencies"
+        run: npm ci
+
+      - name: "🔍 lint code"
+        run: npm run lint
