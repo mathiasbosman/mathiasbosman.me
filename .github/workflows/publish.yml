@@ -15,6 +15,7 @@ jobs:
       - name: "☁️ checkout repository"
         uses: actions/checkout@v3
         with:
+          ref: master
           token: ${{ secrets.RELEASE_TOKEN }}
 
       - name: "🔧 setup node"
