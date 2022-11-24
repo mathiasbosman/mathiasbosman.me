@@ -24,8 +24,6 @@ export default class ProjectsSection extends React.Component {
             name="mathiasbosman.be"
             footer="Html, CSS, Javascript, React"
             link={URL_GITHUB_PROFILE + "/mathiasbosman.github.io"}
-            statusBadge={URL_GITHUB_PROFILE
-            + "/mathiasbosman.github.io/actions/workflows/ci.yml/badge.svg"}
             icon={RepoIcon}>
           <Text>This very website!<br/>
             Created using Facebook&apos;s <Link href="https://reactjs.org"
