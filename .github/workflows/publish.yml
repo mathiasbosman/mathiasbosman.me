@@ -32,7 +32,7 @@ jobs:
           npm version $GITHUB_REF_NAME
           git push
           npm ci
-          npm build
+          npm run build
 
       - name: "🚀 deploy to GitHub Pages"
         uses: JamesIves/github-pages-deploy-action@v4.4.1
