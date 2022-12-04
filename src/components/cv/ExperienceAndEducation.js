@@ -11,7 +11,8 @@ import {
   CodeIcon,
   CodeReviewIcon,
   MortarBoardIcon,
-  OrganizationIcon
+  OrganizationIcon,
+  RocketIcon
 } from "@primer/octicons-react";
 import React from "react";
 import {URL_FLANDERS} from "../../Constants";
@@ -21,7 +22,31 @@ export default class ExperienceAndEducation extends React.Component {
   render() {
     return <Box as="section" mt={5}>
       <Heading as="h2" sx={{textAlign: ["center", "center", "left"]}}>Experience &amp; education</Heading>
-      <Timeline clipSidebar >
+      <Timeline clipSidebar>
+
+        <Timeline.Item>
+          <Timeline.Badge>
+            <StyledOcticon icon={RocketIcon}/>
+          </Timeline.Badge>
+          <Timeline.Body sx={{color: "fg.default"}}>
+            <Heading as="h3" sx={{fontSize: 1, fontWeight: "normal"}}>
+              <Text fontWeight="bold" mr={1}>Project manager</Text>
+              at <Link href={URL_FLANDERS} target="_blank"
+                       sx={{fontWeight: "bold"}}>the
+              Flemish Government</Link>
+            </Heading>
+            <Text as="i">2023 - present</Text>
+            <Box
+                borderWidth="1px" borderStyle="solid" borderColor="border.default" borderRadius={2}
+                as="aside" aria-label="employment details" p={3} mt={2}>
+              <Text>After a couple of years as a developer I transitioned to the role of
+                project manager for a development team that develops and maintains applications
+                for the <strong>department of Environment</strong>.</Text>
+            </Box>
+          </Timeline.Body>
+        </Timeline.Item>
+
+
         <Timeline.Item>
           <Timeline.Badge>
             <StyledOcticon icon={CodeIcon}/>
@@ -33,14 +58,7 @@ export default class ExperienceAndEducation extends React.Component {
                        sx={{fontWeight: "bold"}}>the
               Flemish Government</Link>
             </Heading>
-            <Text as="i">2018 - present</Text>
-            <Box
-                borderWidth="1px" borderStyle="solid" borderColor="border.default" borderRadius={2}
-                as="aside" aria-label="employment details" p={3} mt={2}>
-              <Text>Currently I&apos;m employed as a Java programmer
-                for the <Text fontWeight="bold"> department of Environment</Text> where I work on in-house and external applications.
-                Mostly using frameworks such as Spring Boot.</Text>
-            </Box>
+            <Text as="i">2018 - 2022</Text>
           </Timeline.Body>
         </Timeline.Item>
         <Timeline.Item>
