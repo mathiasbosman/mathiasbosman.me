@@ -10,9 +10,9 @@ import {
 import {
   CodeIcon,
   CodeReviewIcon,
+  GoalIcon,
   MortarBoardIcon,
-  OrganizationIcon,
-  RocketIcon
+  OrganizationIcon
 } from "@primer/octicons-react";
 import React from "react";
 import {URL_FLANDERS} from "../../Constants";
@@ -26,7 +26,7 @@ export default class ExperienceAndEducation extends React.Component {
 
         <Timeline.Item>
           <Timeline.Badge>
-            <StyledOcticon icon={RocketIcon}/>
+            <StyledOcticon icon={GoalIcon}/>
           </Timeline.Badge>
           <Timeline.Body sx={{color: "fg.default"}}>
             <Heading as="h3" sx={{fontSize: 1, fontWeight: "normal"}}>
