@@ -1,5 +1,5 @@
 import React from "react";
-import {AlertIcon, RepoIcon, TelescopeIcon} from "@primer/octicons-react";
+import {AlertIcon, RepoIcon} from "@primer/octicons-react";
 import Projects, {ProjectElement} from "./ProjectElement";
 import {Box, Heading, Link, StyledOcticon, Text} from "@primer/react";
 import {URL_GITHUB_PROFILE} from "../../Constants";
@@ -75,16 +75,16 @@ export default class ProjectsSection extends React.Component {
             Improvements possible
           </Text>
         </ProjectElement>
-        <ProjectElement name="Coming soon..."
-                        icon={TelescopeIcon}>
-          <Text>Meanwhile working on some other projects on the side:
-            <ul>
-              <li>Some simple re-usable React components.</li>
-              <li>A virtual inventory management system</li>
-            </ul>
-            For more projects you can visit <Link href={URL_GITHUB_PROFILE}
-                                                  target="_blank">my GitHub
-              profile</Link>.</Text>
+        <ProjectElement name="Blog API"
+                        footer="Java, REST, Spring"
+                        link={URL_GITHUB_PROFILE + "/blog-api"}
+                        statusBadge={URL_GITHUB_PROFILE
+                        + "/blog-api/actions/workflows/build.yml/badge.svg"}
+                        icon={RepoIcon}>
+          <Box mb={2}>
+            <Text>Very simplistic Blog API.<br/>
+            The intended use was to be an integration with this website.</Text>
+          </Box>
         </ProjectElement>
       </Projects>
     </Box>

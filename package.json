@@ -18,7 +18,7 @@
     "lint": "eslint '**/*.{js,ts}'"
   },
   "dependencies": {
-    "@primer/octicons-react": "^17.5.0",
+    "@primer/octicons-react": "^17.10.0",
     "@primer/react": "^35.5.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^12.1.5",
