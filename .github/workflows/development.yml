@@ -1,4 +1,4 @@
-name: Development
+name: Build and quality check
 
 on:
   pull_request:
