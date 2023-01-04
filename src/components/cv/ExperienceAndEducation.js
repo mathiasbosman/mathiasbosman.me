@@ -39,7 +39,7 @@ export default class ExperienceAndEducation extends React.Component {
             <Box
                 borderWidth="1px" borderStyle="solid" borderColor="border.default" borderRadius={2}
                 as="aside" aria-label="employment details" p={3} mt={2}>
-              <Text>After a couple of years as a developer I transitioned to the role of
+              <Text>After a couple of years as a Java developer I am currently transitioning to the role of
                 project manager for a development team that develops and maintains applications
                 for the <strong>department of Environment</strong>.</Text>
             </Box>
@@ -53,9 +53,8 @@ export default class ExperienceAndEducation extends React.Component {
           </Timeline.Badge>
           <Timeline.Body sx={{color: "fg.default"}}>
             <Heading as="h3" sx={{fontSize: 1, fontWeight: "normal"}}>
-              <Text fontWeight="bold" mr={1}>Java programmer</Text>
-              at <Link href={URL_FLANDERS} target="_blank"
-                       sx={{fontWeight: "bold"}}>the
+              <Text mr={1}>Java programmer</Text>
+              at <Link href={URL_FLANDERS} target="_blank">the
               Flemish Government</Link>
             </Heading>
             <Text as="i">2018 - 2022</Text>
