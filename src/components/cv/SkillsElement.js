@@ -23,7 +23,8 @@ export default function Skills({children}) {
   return (
       <Box display="grid"
            gridTemplateColumns="1fr"
-           alignItems="end" gridGap={3}>
+           sx={{gap: 3}}
+           alignItems="end">
         {children}
       </Box>);
 }

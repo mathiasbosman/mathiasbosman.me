@@ -1,4 +1,4 @@
-name: Development
+name: Build and quality check
 
 on:
   pull_request:
@@ -10,7 +10,7 @@ on:
 
 jobs:
   test:
-    name: Test
+    name: Unit and component tests
     runs-on: ubuntu-latest
     steps:
       - name: "☁️ checkout repository"
@@ -24,8 +24,11 @@ jobs:
       - name: "📦 install dependencies"
         run: npm ci
 
-      - name: "🧪 run tests"
-        run: npm run test
+      - name: "🧪 run unit tests"
+        run: npm run test:unit
+
+      - name: "🧪 run component tests"
+        run: npm run cy:run:component
 
   lint:
     name: Code standards

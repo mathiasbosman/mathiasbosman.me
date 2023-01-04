@@ -19,6 +19,7 @@ export function ProjectElement({
   return (
       <Box borderWidth={1} borderStyle="solid" borderColor="border.default"
            borderRadius={2} backgroundColor="canvas.default"
+           display="flex" flexDirection="column"
            as="article">
         <Box borderBottomWidth={1} borderBottomStyle="solid"
              borderBottomColor="border.default"
@@ -40,7 +41,7 @@ export function ProjectElement({
                 : null}
           </Box>
         </Box>
-        <Box p={3} as="section">
+        <Box p={3} as="section" flexGrow="1">
           {children}
         </Box>
         {footer ?
@@ -67,7 +68,7 @@ export default function Projects({children}) {
 
   return (<Box display="grid"
                gridTemplateColumns={["none", "none", "1fr 1fr"]}
-               gridGap={3}>{children}</Box>);
+               sx={{gap: 3}}>{children}</Box>);
 }
 
 Projects.propTypes = {

@@ -10,6 +10,23 @@ on [mathiasbosman.be][link_mathiasbosman_be].
 2. create a feature branch from the dev branch
 3. make your changes and create a pull request into the dev branch
 
+### Testing
+Testing is split up in:
+1. Unit tests
+2. Component tests
+3. End-2-end tests
+
+Unit tests can be run by calling `npm run test:unit`.
+
+Component and end-2-end tests are run with [Cypress][link_cypress].  
+Component tests can be run by calling `npm run cy:run:component`.
+
+For end-2-end tests the application should be running:
+```shell
+npm run local
+npm run cy:run:component
+```
+
 ## Deployment
 Steps to deploy:
 
@@ -27,8 +44,10 @@ The config can be found in [server.js](server/server.js)
 ### Frameworks and libraries
 - [React.js][link_react_js]
 - GitHub's [Primer.style][link_primer_style] React components.
+- [Cypress][link_cypress] for testing components and simple e2e.
 
 [link_mathiasbosman_be]:http://mathiasbosman.be
 [link_react_js]:https://reactjs.org/
 [link_primer_style]:https://primer.style/
 [link_github_new_release]:https://github.com/mathiasbosman/mathiasbosman.github.io/releases/new
+[link_cypress]:https://cypress.io

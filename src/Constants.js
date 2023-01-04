@@ -4,4 +4,4 @@ export const URL_GITHUB_PROFILE = "https://github.com/mathiasbosman";
 export const CONTACT_EMAIL= "eb.namsobsaihtam@saihtam";
 
 // Layout
-export const LAYOUT_WIDTH = "large";
+export const LAYOUT_WIDTH = "1400px";
