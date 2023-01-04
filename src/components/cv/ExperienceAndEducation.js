@@ -53,9 +53,8 @@ export default class ExperienceAndEducation extends React.Component {
           </Timeline.Badge>
           <Timeline.Body sx={{color: "fg.default"}}>
             <Heading as="h3" sx={{fontSize: 1, fontWeight: "normal"}}>
-              <Text fontWeight="bold" mr={1}>Java programmer</Text>
-              at <Link href={URL_FLANDERS} target="_blank"
-                       sx={{fontWeight: "bold"}}>the
+              <Text mr={1}>Java programmer</Text>
+              at <Link href={URL_FLANDERS} target="_blank">the
               Flemish Government</Link>
             </Heading>
             <Text as="i">2018 - 2022</Text>
