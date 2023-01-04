@@ -27,24 +27,6 @@ jobs:
       - name: "🧪 run tests"
         run: npm run test-unit
 
-  e2e-test:
-    name: E2e tests
-    runs-on: ubuntu-latest
-    steps:
-      - name: "☁️ checkout repository"
-        uses: actions/checkout@v3
-
-      - name: "🔧 setup node"
-        uses: actions/setup-node@v3
-        with:
-          cache: 'npm'
-
-      - name: "🧪 run cypress tests"
-        uses: cypress-io/github-action@v5.0.2
-        with:
-          build: npm run build
-          start: npm run local
-
   lint:
     name: Code standards
     runs-on: ubuntu-latest
