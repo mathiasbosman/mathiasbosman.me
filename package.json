@@ -10,7 +10,7 @@
   },
   "scripts": {
     "prebuild": "node ./scripts/preInstall.js",
-    "build": "npm run prebuild && GENERATE_SOURCEMAP=false react-scripts build",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "start": "node server/server.js",
     "local": "react-scripts start",
     "test:unit": "react-scripts test --watchAll=false",
