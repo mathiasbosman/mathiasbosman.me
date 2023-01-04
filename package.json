@@ -13,7 +13,7 @@
     "build": "npm run prebuild && GENERATE_SOURCEMAP=false react-scripts build",
     "start": "node server/server.js",
     "local": "react-scripts start",
-    "test-unit": "react-scripts test --watchAll=false",
+    "test:unit": "react-scripts test --watchAll=false",
     "cy:run:e2e": "cypress run --e2e",
     "cy:run:component": "cypress run --component",
     "cy:run": "npm run cy:run:component && npm run cy:run:e2e",
