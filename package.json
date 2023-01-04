@@ -13,7 +13,10 @@
     "build": "npm run prebuild && GENERATE_SOURCEMAP=false react-scripts build",
     "start": "node server/server.js",
     "local": "react-scripts start",
-    "test": "react-scripts test --watchAll=false",
+    "test:unit": "react-scripts test --watchAll=false",
+    "cy:run:e2e": "cypress run --e2e",
+    "cy:run:component": "cypress run --component",
+    "cy:run": "npm run cy:run:component && npm run cy:run:e2e",
     "eject": "react-scripts eject",
     "lint": "eslint '**/*.{js,ts}'"
   },
@@ -53,6 +56,8 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
+    "cypress": "^12.2.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-primer-react": "^0.7.4",
     "eslint-plugin-react": "^7.31.1",
     "prop-types": "^15.7.2",
