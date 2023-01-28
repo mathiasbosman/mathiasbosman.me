@@ -4,13 +4,10 @@ describe(`Homepage tests`, () => {
     cy.visit(`/`);
   });
 
-  it(`Main and footer section are visible on the page`, () => {
+  it(`Required elements are present`, () => {
+    cy.screenshot();
     cy.get(`main`).should(`be.visible`);
     cy.get(`footer`).should(`be.visible`);
-    cy.screenshot();
-  });
-
-  it(`Version and copyright are present on the homepage`, () => {
     cy.get(`[data-version]`).should(`be.visible`)
     .should(`include.text`, new Date().getFullYear())
     .should(`include.text`, `Mathias Bosman`);
