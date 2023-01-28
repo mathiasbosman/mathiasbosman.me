@@ -10,7 +10,7 @@ jobs:
   install:
     runs-on: ubuntu-latest
     container:
-      image: cypress/browsers:node16.13.0-chrome95-ff94
+      image: cypress/browsers:node16.16.0-chrome107-ff107
     steps:
       - name: "☁️ checkout repository"
         uses: actions/checkout@v3
@@ -35,6 +35,11 @@ jobs:
       - name: "☁️ checkout repository"
         uses: actions/checkout@v3
 
+      - name: "🔧 setup node"
+        uses: actions/setup-node@v3
+        with:
+          cache: 'npm'
+
       - name: "🔧 Cypress install"
         uses: cypress-io/github-action@v4
         with:
@@ -54,7 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: install
     container:
-      image: cypress/browsers:node16.13.0-chrome95-ff94
+      image: cypress/browsers:node16.16.0-chrome107-ff107
     strategy:
       fail-fast: false
       matrix:
@@ -89,7 +94,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: install
     container:
-      image: cypress/browsers:node16.13.0-chrome95-ff94
+      image: cypress/browsers:node16.16.0-chrome107-ff107
     strategy:
       fail-fast: false
       matrix:
@@ -125,7 +130,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: install
     container:
-      image: cypress/browsers:node16.13.0-chrome95-ff94
+      image: cypress/browsers:node16.16.0-chrome107-ff107
     strategy:
       fail-fast: false
       matrix:
@@ -160,7 +165,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: install
     container:
-      image: cypress/browsers:node16.13.0-chrome95-ff94
+      image: cypress/browsers:node16.16.0-chrome107-ff107
     strategy:
       fail-fast: false
       matrix:
