@@ -1,7 +1,6 @@
 name: End2End
 
 on:
-  push:
   pull_request:
   schedule:
     - cron: '43 9 * * 3'
@@ -39,8 +38,6 @@ jobs:
       options: --user 1001
     strategy:
       fail-fast: false
-      matrix:
-        containers: [1, 2, 3, 4, 5]
     steps:
       - name: "☁️ checkout repository"
         uses: actions/checkout@v3
@@ -63,7 +60,6 @@ jobs:
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
           record: true
-          parallel: true
           group: "E2E - Chrome"
 
   e2e-chrome-mobile-tests:
@@ -75,8 +71,6 @@ jobs:
       options: --user 1001
     strategy:
       fail-fast: false
-      matrix:
-        containers: [1, 2, 3, 4, 5]
     steps:
       - name: "☁️ checkout repository"
         uses: actions/checkout@v3
@@ -100,7 +94,6 @@ jobs:
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
           record: true
-          parallel: true
           group: "E2E - Chrome - mobile"
 
   e2e-firefox-tests:
@@ -112,8 +105,6 @@ jobs:
       options: --user 1001
     strategy:
       fail-fast: false
-      matrix:
-        containers: [1, 2, 3, 4, 5]
     steps:
       - name: "☁️ checkout repository"
         uses: actions/checkout@v3
@@ -136,7 +127,6 @@ jobs:
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
           record: true
-          parallel: true
           group: "E2E - Firefox"
 
   e2e-firefox-mobile-tests:
@@ -148,8 +138,6 @@ jobs:
       options: --user 1001
     strategy:
       fail-fast: false
-      matrix:
-        containers: [1, 2, 3, 4, 5]
     steps:
       - name: "☁️ checkout repository"
         uses: actions/checkout@v3
@@ -173,7 +161,6 @@ jobs:
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
           record: true
-          parallel: true
           group: "E2E - Firefox - mobile"
 
   e2e-electron-tests:
@@ -182,8 +169,6 @@ jobs:
     needs: install
     strategy:
       fail-fast: false
-      matrix:
-        containers: [1, 2, 3, 4, 5]
     steps:
       - name: "☁️ checkout repository"
         uses: actions/checkout@v3
@@ -205,5 +190,4 @@ jobs:
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
           record: true
-          parallel: true
           group: "E2E - Electron"
