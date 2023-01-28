@@ -9,6 +9,10 @@ jobs:
   e2e-test:
     name: E2e tests
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1, 2]
     steps:
       - name: "☁️ checkout repository"
         uses: actions/checkout@v3
@@ -20,6 +24,12 @@ jobs:
 
       - name: "🧪 run cypress tests"
         uses: cypress-io/github-action@v5.0.2
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           build: npm run build
           start: npm run local
+          wait-on: 'http://localhost:3000'
+          record: true
+          parallel: true
