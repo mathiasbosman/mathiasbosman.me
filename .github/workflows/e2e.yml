@@ -11,36 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: cypress/browsers:node16.16.0-chrome107-ff107
+      options: --user 1001
     steps:
       - name: "☁️ checkout repository"
         uses: actions/checkout@v3
 
       - name:  "🔧 Cypress install"
-        uses: cypress-io/github-action@v4
-        with:
-          runTests: false
-
-      - run: npm run build
-
-      - name: "🪁 Save build folder"
-        uses: actions/upload-artifact@v3
-        with:
-          name: build
-          if-no-files-found: error
-          path: build
-
-  install-windows:
-    runs-on: windows-2019
-    steps:
-      - name: "☁️ checkout repository"
-        uses: actions/checkout@v3
-
-      - name: "🔧 setup node"
-        uses: actions/setup-node@v3
-        with:
-          cache: 'npm'
-
-      - name: "🔧 Cypress install"
         uses: cypress-io/github-action@v4
         with:
           runTests: false
@@ -60,6 +36,7 @@ jobs:
     needs: install
     container:
       image: cypress/browsers:node16.16.0-chrome107-ff107
+      options: --user 1001
     strategy:
       fail-fast: false
       matrix:
@@ -95,6 +72,7 @@ jobs:
     needs: install
     container:
       image: cypress/browsers:node16.16.0-chrome107-ff107
+      options: --user 1001
     strategy:
       fail-fast: false
       matrix:
@@ -131,6 +109,7 @@ jobs:
     needs: install
     container:
       image: cypress/browsers:node16.16.0-chrome107-ff107
+      options: --user 1001
     strategy:
       fail-fast: false
       matrix:
@@ -166,6 +145,7 @@ jobs:
     needs: install
     container:
       image: cypress/browsers:node16.16.0-chrome107-ff107
+      options: --user 1001
     strategy:
       fail-fast: false
       matrix:
@@ -196,10 +176,10 @@ jobs:
           parallel: true
           group: "E2E - Firefox - mobile"
 
-  e2e-windows-tests:
-    timeout-minutes: 40
-    runs-on: windows-2019
-    needs: install-windows
+  e2e-electron-tests:
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    needs: install
     strategy:
       fail-fast: false
       matrix:
@@ -214,7 +194,7 @@ jobs:
           name: build
           path: build
 
-      - name: "🧪 E2E - Electron - Windows"
+      - name: "🧪 E2E - Electron"
         uses: cypress-io/github-action@v4
         env:
           CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
@@ -226,4 +206,4 @@ jobs:
           wait-on-timeout: 120
           record: true
           parallel: true
-          group: "E2E - Electron - Windows"
+          group: "E2E - Electron"
