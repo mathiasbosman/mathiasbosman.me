@@ -37,7 +37,7 @@ export function ProjectElement({
             </Heading>
 
             {statusBadge
-                ? <img alt={"Status badge for " + name} src={statusBadge} />
+                ? <img alt={`Status badge for ${name}`} src={statusBadge} />
                 : null}
           </Box>
         </Box>
@@ -46,7 +46,7 @@ export function ProjectElement({
         </Box>
         {footer ?
             <Box
-                as="aside" aria-label={"used technologies in " + name}
+                as="aside" aria-label={`used technologies in ${name}`}
                 borderTopStyle="solid" borderTopColor="border.default"
                 borderTopWidth={1} maxHeight=""
                 p={3}>
