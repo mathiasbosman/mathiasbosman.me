@@ -7,30 +7,218 @@ on:
     - cron: '43 9 * * 3'
 
 jobs:
-  e2e-test:
-    name: E2e tests
+  install:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        containers: [1, 2]
+    container:
+      image: cypress/browsers:node16.13.0-chrome95-ff94
     steps:
       - name: "☁️ checkout repository"
         uses: actions/checkout@v3
 
-      - name: "🔧 setup node"
-        uses: actions/setup-node@v3
+      - name:  "🔧 Cypress install"
+        uses: cypress-io/github-actions@v4
         with:
-          cache: 'npm'
+          runTests: false
 
-      - name: "🧪 run cypress tests"
-        uses: cypress-io/github-action@v5.0.2
+      - run: npm run build
+
+      - name: "🪁 Save build folder"
+        uses: actions/upload-artifact@v3
+        with:
+          name: build
+          if-no-files-found: error
+          path: build
+
+  install-windows:
+    runs-on: windows-2019
+    steps:
+      - name: "☁️ checkout repository"
+        uses: actions/checkout@v3
+
+      - name: "🔧 Cypress install"
+        uses: cypress-io/github-action@v4
+        with:
+          runTests: false
+
+      - run: npm run build
+
+      - name: "🪁 Save build folder"
+        uses: actions/upload-artifact@v3
+        with:
+          name: build
+          if-no-files-found: error
+          path: build
+
+  e2e-chrome-tests:
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    needs: install
+    container:
+      image: cypress/browsers:node16.13.0-chrome95-ff94
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1, 2, 3, 4, 5]
+    steps:
+      - name: "☁️ checkout repository"
+        uses: actions/checkout@v3
+
+      - name: "⏳ download build folders"
+        uses: actions/download-artifact@v3
+        with:
+          name: build
+          path: build
+
+      - name: "🧪 E2E - Chrome"
+        uses: cypress-io/github-action@v4
         env:
+          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          build: npm run build
+          browser: chrome
           start: npm run local
           wait-on: 'http://localhost:3000'
+          wait-on-timeout: 120
           record: true
           parallel: true
+          group: "E2E - Chrome"
+
+  e2e-chrome-mobile-tests:
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    needs: install
+    container:
+      image: cypress/browsers:node16.13.0-chrome95-ff94
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1, 2, 3, 4, 5]
+    steps:
+      - name: "☁️ checkout repository"
+        uses: actions/checkout@v3
+
+      - name: "⏳ download build folders"
+        uses: actions/download-artifact@v3
+        with:
+          name: build
+          path: build
+
+      - name: "🧪 E2E - Chrome - mobile"
+        uses: cypress-io/github-action@v4
+        env:
+          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          browser: chrome
+          config: "viewportWidth=375,viewportHeight=667"
+          start: npm run local
+          wait-on: 'http://localhost:3000'
+          wait-on-timeout: 120
+          record: true
+          parallel: true
+          group: "E2E - Chrome - mobile"
+
+  e2e-firefox-tests:
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    needs: install
+    container:
+      image: cypress/browsers:node16.13.0-chrome95-ff94
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1, 2, 3, 4, 5]
+    steps:
+      - name: "☁️ checkout repository"
+        uses: actions/checkout@v3
+
+      - name: "⏳ download build folders"
+        uses: actions/download-artifact@v3
+        with:
+          name: build
+          path: build
+
+      - name: "🧪 E2E - Firefox"
+        uses: cypress-io/github-action@v4
+        env:
+          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          browser: firefox
+          start: npm run local
+          wait-on: 'http://localhost:3000'
+          wait-on-timeout: 120
+          record: true
+          parallel: true
+          group: "E2E - Firefox"
+
+  e2e-firefox-mobile-tests:
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    needs: install
+    container:
+      image: cypress/browsers:node16.13.0-chrome95-ff94
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1, 2, 3, 4, 5]
+    steps:
+      - name: "☁️ checkout repository"
+        uses: actions/checkout@v3
+
+      - name: "⏳ download build folders"
+        uses: actions/download-artifact@v3
+        with:
+          name: build
+          path: build
+
+      - name: "🧪 E2E - Firefox - mobile"
+        uses: cypress-io/github-action@v4
+        env:
+          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          browser: firefox
+          config: "viewportWidth=375,viewportHeight=667"
+          start: npm run local
+          wait-on: 'http://localhost:3000'
+          wait-on-timeout: 120
+          record: true
+          parallel: true
+          group: "E2E - Firefox - mobile"
+
+  e2e-windows-tests:
+    timeout-minutes: 40
+    runs-on: windows-2019
+    needs: install-windows
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1, 2, 3, 4, 5]
+    steps:
+      - name: "☁️ checkout repository"
+        uses: actions/checkout@v3
+
+      - name: "⏳ download build folders"
+        uses: actions/download-artifact@v3
+        with:
+          name: build
+          path: build
+
+      - name: "🧪 E2E - Electron - Windows"
+        uses: cypress-io/github-action@v4
+        env:
+          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          start: npm run local
+          wait-on: 'http://localhost:3000'
+          wait-on-timeout: 120
+          record: true
+          parallel: true
+          group: "E2E - Electron - Windows"

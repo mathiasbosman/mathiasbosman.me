@@ -1,8 +1,12 @@
 describe(`Not found page tests`, () => {
 
-  const notFoundPages = [`/404`, `/foo`];
+  it(`404 page should be available`, () => {
+    cy.visit(`/404`);
+    cy.get(`main`).should(`be.visible`)
+    cy.screenshot();
+  });
 
-  notFoundPages.forEach(uri => {
+  [`/404`, `/foo`].forEach(uri => {
     it (`${uri} uri returns 404 page`, () => {
       cy.visit(uri);
       cy.get(`main`).should(`be.visible`)

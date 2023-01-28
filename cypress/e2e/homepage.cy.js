@@ -7,6 +7,7 @@ describe(`Homepage tests`, () => {
   it(`Main and footer section are visible on the page`, () => {
     cy.get(`main`).should(`be.visible`);
     cy.get(`footer`).should(`be.visible`);
+    cy.screenshot();
   });
 
   it(`Version and copyright are present on the homepage`, () => {
