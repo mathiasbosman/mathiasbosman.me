@@ -9,35 +9,36 @@ import SkillsSection from "../components/cv/SkillsSection";
 import Awards from "../components/cv/Awards";
 import Contact from "../components/cv/Contact";
 import ProjectsSection from "../components/cv/ProjectsSection";
-import Disclaimer from "../components/Disclaimer";
 
 export default class Home extends React.Component {
   render() {
     return <main itemScope="itemScope" itemType="https://schema.org/Person">
-      <Box
-          borderWidth={[0, 0, 1]}
-          borderStyle="solid" borderColor="border.default"
-          borderRadius={[0, 0, 2]}
-          boxShadow="shadows.medium" bg="canvas.default" mx="auto" p={[0, 0, 3]}
-          maxWidth={LAYOUT_WIDTH}>
-        <Bio/>
-        <Box display="flex" flexWrap={["wrap", "wrap", "nowrap"]}
-             justifyItems="space-between">
-          <Box flexBasis="100%" as="section" px={3}>
-            <ExperienceAndEducation/>
+      <Box maxWidth={LAYOUT_WIDTH} mx="auto">
+        <Box
+            borderWidth={[0, 0, 1]}
+            borderStyle="solid" borderColor="border.default"
+            borderRadius={[0, 0, 2]}
+            boxShadow="shadows.medium" bg="canvas.default" mx="auto"
+            p={[0, 0, 3]}
+        >
+          <Bio/>
+          <Box display="flex" flexWrap={["wrap", "wrap", "nowrap"]}
+               justifyItems="space-between">
+            <Box flexBasis="100%" as="section" px={3}>
+              <ExperienceAndEducation/>
+            </Box>
+            <Box flexBasis="100%" as="section" px={3}>
+              <SkillsSection/>
+              <Awards/>
+            </Box>
           </Box>
-          <Box flexBasis="100%" as="section" px={3}>
-            <SkillsSection/>
-            <Awards/>
+          <Box px={3}>
+            <ProjectsSection/>
+            <Contact/>
           </Box>
-        </Box>
-        <Box px={3}>
-          <ProjectsSection/>
-          <Contact/>
         </Box>
         <Footer/>
       </Box>
-      <Disclaimer/>
     </main>;
   }
 }

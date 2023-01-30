@@ -2,7 +2,6 @@ import React from "react";
 import "../styles/main.scss";
 import {Box, Heading, Text} from "@primer/react";
 import {LAYOUT_WIDTH} from "../Constants";
-import Disclaimer from "../components/Disclaimer";
 
 export default class Terms extends React.Component {
 
@@ -250,9 +249,7 @@ export default class Terms extends React.Component {
           toepassing. Bevoegd tot het kennisnemen van geschillen zijn
           uitsluitend de rechtbanken en hoven van het arrondissement
           Oost-Vlaanderen, afdeling Dendermonde.</Text>
-
       </Box>
-      <Disclaimer/>
     </main>;
   }
 }

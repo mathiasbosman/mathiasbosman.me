@@ -26,7 +26,7 @@ export default class Contact extends React.Component {
       </MailToLink>
       <Box borderWidth={1} borderStyle="dotted" borderColor="border.default"
            borderRadius={2} as="code" sx={{display: "inline-block"}}
-           bg={"canvas.subtle"} p={3} my={3}>
+           bg={"canvas.subtle"} p={3} my={3} fontSize={1}>
         <Text color={"fg.subtle"}>&#47;&#47; or you can parse the following
           line</Text><br/>
         <Text color={"done.fg"}>const</Text>
