@@ -1,18 +1,31 @@
-import {Box, Link, StyledOcticon} from "@primer/react";
+import {Box, Link, Text} from "@primer/react";
 import React from "react";
-import {MarkGithubIcon} from "@primer/octicons-react";
-import {URL_GITHUB_PROFILE} from "../Constants";
+import Copyright from "./Copyright";
+import packageJson from "../../package.json";
+import {URL_GITHUB_PROFILE, URL_LINKED_PROFILE} from "../Constants";
 
 export default class Footer extends React.Component {
   render() {
-    return <Box
-        borderStyle="solid" borderColor="border.default"
-        as="footer" borderWidth={0} borderTopWidth={1} mt={5} pt={3} pb={[3, 3, 0]} color="fg.muted">
-        <Box flex={1} display="flex" justifyContent="center">
-          <Link sx={{color: "fg.subtle"}} aria-label="Link to GitHub profile" hoverColor="fg.muted" href={URL_GITHUB_PROFILE} target="_blank">
-            <StyledOcticon size={24} icon={MarkGithubIcon} />
-          </Link>
-        </Box>
+    return <Box fontSize={0}
+        display="flex" justifyContent="space-between" alignItems="center"
+        as="footer" mt={1} pt={3}
+        px={[3, 3, 0]}
+        pb={[3, 3, 0]} color="fg.muted">
+
+      <Box display="flex" alignItems="center">
+          <Copyright name={packageJson.author} version={packageJson.version}/>
+      </Box>
+
+      <Box display="flex" flexWrap="wrap">
+        <Text mr={3}><Link muted aria-label="Link to GitHub profile"
+              href={URL_GITHUB_PROFILE} target="_blank">
+          GitHub
+        </Link></Text>
+        <Text><Link muted aria-label="Link to LinkedIn profile" href={URL_LINKED_PROFILE}
+              target="_blank">
+          LinkedIn
+        </Link></Text>
+      </Box>
     </Box>;
   }
 }
