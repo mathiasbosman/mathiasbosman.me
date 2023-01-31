@@ -1,15 +1,14 @@
 import {Avatar, Box, Heading, Link, Pagehead, Text} from "@primer/react";
-import {URL_FLANDERS} from "../../Constants";
 import React from "react";
+import {Constants} from "../../Constants";
 
-export default class Bio extends React.Component {
-  render() {
-    return <Box display="flex" mx={3} flexWrap={["wrap", "wrap", "nowrap"]}>
+const Bio = () => (
+    <Box display="flex" mx={3} flexWrap={["wrap", "wrap", "nowrap"]}>
       <Box mx={"auto"} py={2}>
         <Box
             p="3px" backgroundColor="border.default" className="rainbowBorder"
             borderRadius="50%">
-          <Avatar size="150" src="/assets/images/mathias.png"/>
+          <Avatar size={150} src="/assets/images/mathias.png"/>
         </Box>
       </Box>
       <Box flexGrow={1}>
@@ -72,7 +71,7 @@ export default class Bio extends React.Component {
           </Text>
           <Text as="p">
             At the moment I&apos;m full-time employed at the Department of
-            Environment of the <Link target="_blank" href={URL_FLANDERS}>
+            Environment of the <Link target="_blank" href={Constants.URL_FLANDERS}>
               Flemish Government
             </Link>.<br/>
             In my spare time you will find me on my (not so) super
@@ -81,6 +80,7 @@ export default class Bio extends React.Component {
           </Text>
         </Box>
       </Box>
-    </Box>;
-  }
-}
+    </Box>
+)
+
+export default Bio
