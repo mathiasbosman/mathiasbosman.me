@@ -50,17 +50,11 @@ jobs:
 
       - name: E2E - Chrome
         uses: cypress-io/github-action@v4
-        env:
-          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           browser: chrome
           start: npm run local
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
-          record: true
-          group: "E2E - Chrome"
 
   e2e-chrome-mobile-tests:
     timeout-minutes: 15
@@ -83,18 +77,12 @@ jobs:
 
       - name: E2E - Chrome - mobile
         uses: cypress-io/github-action@v4
-        env:
-          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           browser: chrome
           config: "viewportWidth=375,viewportHeight=667"
           start: npm run local
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
-          record: true
-          group: "E2E - Chrome - mobile"
 
   e2e-firefox-tests:
     timeout-minutes: 15
@@ -117,17 +105,11 @@ jobs:
 
       - name: E2E - Firefox
         uses: cypress-io/github-action@v4
-        env:
-          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           browser: firefox
           start: npm run local
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
-          record: true
-          group: "E2E - Firefox"
 
   e2e-firefox-mobile-tests:
     timeout-minutes: 15
@@ -150,18 +132,12 @@ jobs:
 
       - name: E2E - Firefox - mobile
         uses: cypress-io/github-action@v4
-        env:
-          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           browser: firefox
           config: "viewportWidth=375,viewportHeight=667"
           start: npm run local
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
-          record: true
-          group: "E2E - Firefox - mobile"
 
   e2e-electron-tests:
     timeout-minutes: 15
@@ -181,13 +157,7 @@ jobs:
 
       - name: E2E - Electron
         uses: cypress-io/github-action@v4
-        env:
-          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           start: npm run local
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
-          record: true
-          group: "E2E - Electron"
