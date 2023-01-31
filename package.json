@@ -9,7 +9,7 @@
     "url": "git://github.com/mathiasbosman/mathiasbosman.github.io.git"
   },
   "scripts": {
-    "prebuild": "node ./scripts/preInstall.js",
+    "postbuild": "node ./scripts/postBuild.js",
     "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "start": "node server/server.js",
     "local": "react-scripts start",
