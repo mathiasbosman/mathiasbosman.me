@@ -57,6 +57,12 @@ jobs:
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
 
+      - uses: actions/upload-artifact@v3
+        name: upload screenshots
+        with:
+          name: cypress-chrome-screenshots
+          path: cypress/screenshots
+
   e2e-chrome-mobile-tests:
     timeout-minutes: 15
     runs-on: ubuntu-latest
@@ -86,6 +92,12 @@ jobs:
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
 
+      - uses: actions/upload-artifact@v3
+        name: upload screenshots
+        with:
+          name: cypress-chrome-mobile-screenshots
+          path: cypress/screenshots
+
   e2e-firefox-tests:
     timeout-minutes: 15
     runs-on: ubuntu-latest
@@ -113,6 +125,12 @@ jobs:
           start: npm run local
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
+
+      - uses: actions/upload-artifact@v3
+        name: upload screenshots
+        with:
+          name: cypress-firefox-screenshots
+          path: cypress/screenshots
 
   e2e-firefox-mobile-tests:
     timeout-minutes: 15
@@ -143,6 +161,12 @@ jobs:
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
 
+      - uses: actions/upload-artifact@v3
+        name: upload screenshots
+        with:
+          name: cypress-firefox-mobile-screenshots
+          path: cypress/screenshots
+
   e2e-electron-tests:
     timeout-minutes: 15
     runs-on: ubuntu-latest
@@ -166,3 +190,9 @@ jobs:
           start: npm run local
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
+
+      - uses: actions/upload-artifact@v3
+        name: upload screenshots
+        with:
+          name: cypress-electron-screenshots
+          path: cypress/screenshots
