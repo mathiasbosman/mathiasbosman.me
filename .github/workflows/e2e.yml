@@ -28,6 +28,7 @@ jobs:
           name: build
           if-no-files-found: error
           path: build
+          retention-days: 7
 
   e2e-chrome-tests:
     timeout-minutes: 15
