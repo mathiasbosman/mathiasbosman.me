@@ -1,13 +1,7 @@
-describe(`Homepage tests`, () => {
+describe(`Homepage link tests`, () => {
 
   beforeEach(() => {
     cy.visit(`/`);
-  });
-
-  it(`Required elements are present`, () => {
-    cy.screenshot();
-    cy.get(`main`).should(`be.visible`);
-    cy.get(`footer`).should(`be.visible`);
   });
 
   it(`Outgoing links do not return a 404 status`,() => {
