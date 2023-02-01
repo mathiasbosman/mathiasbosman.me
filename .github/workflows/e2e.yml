@@ -64,7 +64,7 @@ jobs:
         name: Upload screenshots
         with:
           name: cypress-screenshots
-          path: cypress/chrome/
+          path: cypress/
 
   e2e-chrome-mobile-tests:
     timeout-minutes: 15
@@ -101,7 +101,7 @@ jobs:
         name: Upload screenshots
         with:
           name: cypress-screenshots
-          path: cypress/chrome-mobile/
+          path: cypress/
 
   e2e-firefox-tests:
     timeout-minutes: 15
@@ -137,7 +137,7 @@ jobs:
         name: Upload screenshots
         with:
           name: cypress-screenshots
-          path: cypress/firefox/
+          path: cypress/
 
   e2e-firefox-mobile-tests:
     timeout-minutes: 15
@@ -174,7 +174,7 @@ jobs:
         name: Upload screenshots
         with:
           name: cypress-screenshots
-          path: cypress/firefox-mobile/
+          path: cypress/
 
   e2e-electron-tests:
     timeout-minutes: 15
@@ -206,4 +206,4 @@ jobs:
         name: Upload screenshots
         with:
           name: cypress-screenshots
-          path: cypress/electron/
+          path: cypress/
