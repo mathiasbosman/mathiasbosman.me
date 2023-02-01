@@ -25,7 +25,6 @@ jobs:
       - name: Save build folder
         uses: actions/upload-artifact@v3
         with:
-          specs: cypress/e2e/app/**/*
           name: build
           if-no-files-found: error
           path: build
@@ -52,7 +51,7 @@ jobs:
       - name: E2E - Chrome
         uses: cypress-io/github-action@v4
         with:
-          specs: cypress/e2e/app/**/*
+          spec: cypress/e2e/app/**/*
           browser: chrome
           start: npm run local
           wait-on: 'http://localhost:3000'
@@ -80,7 +79,7 @@ jobs:
       - name: E2E - Chrome - mobile
         uses: cypress-io/github-action@v4
         with:
-          specs: cypress/e2e/app/**/*
+          spec: cypress/e2e/app/**/*
           browser: chrome
           config: "viewportWidth=375,viewportHeight=667"
           start: npm run local
@@ -109,7 +108,7 @@ jobs:
       - name: E2E - Firefox
         uses: cypress-io/github-action@v4
         with:
-          specs: cypress/e2e/app/**/*
+          spec: cypress/e2e/app/**/*
           browser: firefox
           start: npm run local
           wait-on: 'http://localhost:3000'
@@ -137,7 +136,7 @@ jobs:
       - name: E2E - Firefox - mobile
         uses: cypress-io/github-action@v4
         with:
-          specs: cypress/e2e/app/**/*
+          spec: cypress/e2e/app/**/*
           browser: firefox
           config: "viewportWidth=375,viewportHeight=667"
           start: npm run local
@@ -163,7 +162,7 @@ jobs:
       - name: E2E - Electron
         uses: cypress-io/github-action@v4
         with:
-          specs: cypress/e2e/**/*
+          spec: cypress/e2e/**/*
           start: npm run local
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
