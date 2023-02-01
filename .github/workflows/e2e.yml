@@ -61,7 +61,7 @@ jobs:
       - run: mv cypress/screenshots cypress/chrome
 
       - uses: actions/upload-artifact@v3
-        name: upload screenshots
+        name: Upload screenshots
         with:
           name: cypress-screenshots
           path: cypress/
@@ -98,7 +98,7 @@ jobs:
       - run: mv cypress/screenshots cypress/chrome-mobile
 
       - uses: actions/upload-artifact@v3
-        name: upload screenshots
+        name: Upload screenshots
         with:
           name: cypress-screenshots
           path: cypress/
@@ -134,7 +134,7 @@ jobs:
       - run: mv cypress/screenshots cypress/firefox
 
       - uses: actions/upload-artifact@v3
-        name: upload screenshots
+        name: Upload screenshots
         with:
           name: cypress-screenshots
           path: cypress/
@@ -171,7 +171,7 @@ jobs:
       - run: mv cypress/screenshots cypress/firefox-mobile
 
       - uses: actions/upload-artifact@v3
-        name: upload screenshots
+        name: Upload screenshots
         with:
           name: cypress-screenshots
           path: cypress/
@@ -203,7 +203,7 @@ jobs:
       - run: mv cypress/screenshots cypress/electron
 
       - uses: actions/upload-artifact@v3
-        name: upload screenshots
+        name: Upload screenshots
         with:
           name: cypress-screenshots
           path: cypress/
