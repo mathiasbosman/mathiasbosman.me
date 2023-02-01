@@ -2,19 +2,17 @@ import React from "react";
 import {AlertIcon, RepoIcon} from "@primer/octicons-react";
 import Projects, {ProjectElement} from "./ProjectElement";
 import {Box, Heading, Link, StyledOcticon, Text} from "@primer/react";
-import {URL_GITHUB_PROFILE} from "../../Constants";
+import {Constants} from "../../Constants";
 
-export default class ProjectsSection extends React.Component {
-
-  render() {
-    return <Box as="section" mt={5}>
+const ProjectsSection = () => (
+    <Box as="section" mt={5}>
       <Heading as="h2" sx={{textAlign: ["center", "center", "left"]}}>Projects</Heading>
       <Projects>
         <ProjectElement
             name="File Services"
             footer="Java"
-            link={URL_GITHUB_PROFILE + "/file-services"}
-            statusBadge={URL_GITHUB_PROFILE
+            link={Constants.URL_GITHUB_PROFILE + "/file-services"}
+            statusBadge={Constants.URL_GITHUB_PROFILE
             + "/file-services/actions/workflows/build.yml/badge.svg"}
             icon={RepoIcon}>
           <Text>Simple and lightweight library for open source file services
@@ -23,7 +21,7 @@ export default class ProjectsSection extends React.Component {
         <ProjectElement
             name="mathiasbosman.be"
             footer="Html, CSS, Javascript, React"
-            link={URL_GITHUB_PROFILE + "/mathiasbosman.github.io"}
+            link={Constants.URL_GITHUB_PROFILE + "/mathiasbosman.github.io"}
             icon={RepoIcon}>
           <Text>This very website!<br/>
             Created using Facebook&apos;s <Link href="https://reactjs.org"
@@ -33,7 +31,7 @@ export default class ProjectsSection extends React.Component {
         </ProjectElement>
         <ProjectElement name="Cryptobot"
                         footer="Java, Spring"
-                        link={URL_GITHUB_PROFILE + "/cryptobot"}
+                        link={Constants.URL_GITHUB_PROFILE + "/cryptobot"}
                         icon={RepoIcon}>
           <Box mb={2}><Text>A trial crypto currency bot integration for
             the <Link
@@ -49,8 +47,8 @@ export default class ProjectsSection extends React.Component {
         </ProjectElement>
         <ProjectElement name="MQTT Stresstest"
                         footer="Java, Mqtt, Spring"
-                        link={URL_GITHUB_PROFILE + "/mqtt-stresstest"}
-                        statusBadge={URL_GITHUB_PROFILE
+                        link={Constants.URL_GITHUB_PROFILE + "/mqtt-stresstest"}
+                        statusBadge={Constants.URL_GITHUB_PROFILE
                         + "/mqtt-stresstest/actions/workflows/codeql-analysis.yml/badge.svg"}
                         icon={RepoIcon}>
           <Box mb={2}>
@@ -60,8 +58,8 @@ export default class ProjectsSection extends React.Component {
         </ProjectElement>
         <ProjectElement name="Inverter data export"
                         footer="Java, REST, Spring"
-                        link={URL_GITHUB_PROFILE + "/inverter-data-export"}
-                        statusBadge={URL_GITHUB_PROFILE
+                        link={Constants.URL_GITHUB_PROFILE + "/inverter-data-export"}
+                        statusBadge={Constants.URL_GITHUB_PROFILE
                         + "/inverter-data-export/actions/workflows/build.yml/badge.svg"}
                         icon={RepoIcon}>
           <Box mb={2}>
@@ -77,8 +75,8 @@ export default class ProjectsSection extends React.Component {
         </ProjectElement>
         <ProjectElement name="Blog API"
                         footer="Java, REST, Spring"
-                        link={URL_GITHUB_PROFILE + "/blog-api"}
-                        statusBadge={URL_GITHUB_PROFILE
+                        link={Constants.URL_GITHUB_PROFILE + "/blog-api"}
+                        statusBadge={Constants.URL_GITHUB_PROFILE
                         + "/blog-api/actions/workflows/build.yml/badge.svg"}
                         icon={RepoIcon}>
           <Box mb={2}>
@@ -88,5 +86,6 @@ export default class ProjectsSection extends React.Component {
         </ProjectElement>
       </Projects>
     </Box>
-  }
-}
+)
+
+export default ProjectsSection

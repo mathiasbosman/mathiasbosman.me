@@ -1,10 +1,8 @@
 import React from "react";
 import {Box, Heading, Link, Text} from "@primer/react";
 
-export default class Awards extends React.Component {
-
-  render() {
-    return <Box as="section" mt={5}>
+const Awards = () => (
+    <Box as="section" mt={5}>
       <Heading as="h2" sx={{textAlign: ["center", "center", "left"]}}>Awards</Heading>
       <Box
           borderWidth="1px" borderStyle="solid" borderColor="border.default" borderRadius={2}
@@ -18,6 +16,7 @@ export default class Awards extends React.Component {
           </Text>
         </Box>
       </Box>
-    </Box>;
-  }
-}
+    </Box>
+)
+
+export default Awards

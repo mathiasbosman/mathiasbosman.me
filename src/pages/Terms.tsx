@@ -1,19 +1,16 @@
 import React from "react";
 import "../styles/main.scss";
 import {Box, Heading, Text} from "@primer/react";
-import {LAYOUT_WIDTH} from "../Constants";
-import Disclaimer from "../components/Disclaimer";
+import {Constants} from "../Constants";
 
-export default class Terms extends React.Component {
-
-  render() {
-    return <main>
+const Terms = () => (
+    <main>
       <Box
           borderWidth={[0, 0, 1]}
           borderStyle="solid" borderColor="border.default"
           borderRadius={[0, 0, 2]}
           boxShadow="shadows.medium" bg="canvas.default" mx="auto" p={[0, 0, 3]}
-          maxWidth={LAYOUT_WIDTH}>
+          maxWidth={Constants.LAYOUT_WIDTH}>
         <Heading as="h1">Algemene verkoopsvoorwaarden</Heading>
         <Text as="p">Onderhavige voorwaarden maken integraal deel uit van de
           overeenkomst
@@ -250,9 +247,8 @@ export default class Terms extends React.Component {
           toepassing. Bevoegd tot het kennisnemen van geschillen zijn
           uitsluitend de rechtbanken en hoven van het arrondissement
           Oost-Vlaanderen, afdeling Dendermonde.</Text>
-
       </Box>
-      <Disclaimer/>
-    </main>;
-  }
-}
+    </main>
+)
+
+export default Terms

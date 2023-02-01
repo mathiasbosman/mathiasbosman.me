@@ -19,7 +19,8 @@ Testing is split up in:
 Unit tests can be run by calling `npm run test:unit`.
 
 Component and end-2-end tests are run with [Cypress][link_cypress].  
-Component tests can be run by calling `npm run cy:run:component`.
+Component tests can be run by calling `npm run cy:run:component`.  
+Make sure that the app is running by either serving the build app or running it locally.
 
 For end-2-end tests the application should be running:
 ```shell
