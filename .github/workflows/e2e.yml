@@ -58,11 +58,13 @@ jobs:
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
 
+      - run: mv cypress/screenshots cypress/chrome
+
       - uses: actions/upload-artifact@v3
         name: upload screenshots
         with:
-          name: cypress-chrome-screenshots
-          path: cypress/screenshots
+          name: cypress-screenshots
+          path: cypress/
 
   e2e-chrome-mobile-tests:
     timeout-minutes: 15
@@ -93,11 +95,13 @@ jobs:
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
 
+      - run: mv cypress/screenshots cypress/chrome-mobile
+
       - uses: actions/upload-artifact@v3
         name: upload screenshots
         with:
-          name: cypress-chrome-mobile-screenshots
-          path: cypress/screenshots
+          name: cypress-screenshots
+          path: cypress/
 
   e2e-firefox-tests:
     timeout-minutes: 15
@@ -127,11 +131,13 @@ jobs:
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
 
+      - run: mv cypress/screenshots cypress/firefox
+
       - uses: actions/upload-artifact@v3
         name: upload screenshots
         with:
-          name: cypress-firefox-screenshots
-          path: cypress/screenshots
+          name: cypress-screenshots
+          path: cypress/
 
   e2e-firefox-mobile-tests:
     timeout-minutes: 15
@@ -162,11 +168,13 @@ jobs:
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
 
+      - run: mv cypress/screenshots cypress/firefox-mobile
+
       - uses: actions/upload-artifact@v3
         name: upload screenshots
         with:
-          name: cypress-firefox-mobile-screenshots
-          path: cypress/screenshots
+          name: cypress-screenshots
+          path: cypress/
 
   e2e-electron-tests:
     timeout-minutes: 15
@@ -192,8 +200,10 @@ jobs:
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
 
+      - run: mv cypress/screenshots cypress/electron
+
       - uses: actions/upload-artifact@v3
         name: upload screenshots
         with:
-          name: cypress-electron-screenshots
-          path: cypress/screenshots
+          name: cypress-screenshots
+          path: cypress/
