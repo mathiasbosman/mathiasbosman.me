@@ -28,6 +28,7 @@ jobs:
           name: build
           if-no-files-found: error
           path: build
+          retention-days: 7
 
   e2e-chrome-tests:
     timeout-minutes: 15
@@ -50,17 +51,18 @@ jobs:
 
       - name: E2E - Chrome
         uses: cypress-io/github-action@v4
-        env:
-          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          spec: cypress/e2e/app/**/*
           browser: chrome
           start: npm run local
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
-          record: true
-          group: "E2E - Chrome"
+
+      - uses: actions/upload-artifact@v3
+        name: Upload screenshots
+        with:
+          name: cypress-chrome-screenshots
+          path: cypress/screenshots/
 
   e2e-chrome-mobile-tests:
     timeout-minutes: 15
@@ -83,18 +85,19 @@ jobs:
 
       - name: E2E - Chrome - mobile
         uses: cypress-io/github-action@v4
-        env:
-          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          spec: cypress/e2e/app/**/*
           browser: chrome
           config: "viewportWidth=375,viewportHeight=667"
           start: npm run local
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
-          record: true
-          group: "E2E - Chrome - mobile"
+
+      - uses: actions/upload-artifact@v3
+        name: Upload screenshots
+        with:
+          name: cypress-chrome-mobile-screenshots
+          path: cypress/screenshots/
 
   e2e-firefox-tests:
     timeout-minutes: 15
@@ -117,17 +120,18 @@ jobs:
 
       - name: E2E - Firefox
         uses: cypress-io/github-action@v4
-        env:
-          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          spec: cypress/e2e/app/**/*
           browser: firefox
           start: npm run local
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
-          record: true
-          group: "E2E - Firefox"
+
+      - uses: actions/upload-artifact@v3
+        name: Upload screenshots
+        with:
+          name: cypress-firefox-screenshots
+          path: cypress/screenshots/
 
   e2e-firefox-mobile-tests:
     timeout-minutes: 15
@@ -150,18 +154,19 @@ jobs:
 
       - name: E2E - Firefox - mobile
         uses: cypress-io/github-action@v4
-        env:
-          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          spec: cypress/e2e/app/**/*
           browser: firefox
           config: "viewportWidth=375,viewportHeight=667"
           start: npm run local
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
-          record: true
-          group: "E2E - Firefox - mobile"
+
+      - uses: actions/upload-artifact@v3
+        name: Upload screenshots
+        with:
+          name: cypress-firefox-mobile-screenshots
+          path: cypress/screenshots/
 
   e2e-electron-tests:
     timeout-minutes: 15
@@ -181,13 +186,14 @@ jobs:
 
       - name: E2E - Electron
         uses: cypress-io/github-action@v4
-        env:
-          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          spec: cypress/e2e/**/*
           start: npm run local
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
-          record: true
-          group: "E2E - Electron"
+
+      - uses: actions/upload-artifact@v3
+        name: Upload screenshots
+        with:
+          name: cypress-electron-screenshots
+          path: cypress/screenshots/

@@ -15,12 +15,10 @@ import {
   OrganizationIcon
 } from "@primer/octicons-react";
 import React from "react";
-import {URL_FLANDERS} from "../../Constants";
+import {Constants} from "../../Constants";
 
-export default class ExperienceAndEducation extends React.Component {
-
-  render() {
-    return <Box as="section" mt={5}>
+const ExperienceAndEducation = () => (
+    <Box as="section" mt={5}>
       <Heading as="h2" sx={{textAlign: ["center", "center", "left"]}}>Experience &amp; education</Heading>
       <Timeline clipSidebar>
 
@@ -31,7 +29,7 @@ export default class ExperienceAndEducation extends React.Component {
           <Timeline.Body sx={{color: "fg.default"}}>
             <Heading as="h3" sx={{fontSize: 1, fontWeight: "normal"}}>
               <Text fontWeight="bold" mr={1}>Project manager</Text>
-              at <Link href={URL_FLANDERS} target="_blank"
+              at <Link href={Constants.URL_FLANDERS} target="_blank"
                        sx={{fontWeight: "bold"}}>the
               Flemish Government</Link>
             </Heading>
@@ -54,7 +52,7 @@ export default class ExperienceAndEducation extends React.Component {
           <Timeline.Body sx={{color: "fg.default"}}>
             <Heading as="h3" sx={{fontSize: 1, fontWeight: "normal"}}>
               <Text mr={1}>Java programmer</Text>
-              at <Link href={URL_FLANDERS} target="_blank">the
+              at <Link href={Constants.URL_FLANDERS} target="_blank">the
               Flemish Government</Link>
             </Heading>
             <Text as="i">2018 - 2022</Text>
@@ -66,7 +64,7 @@ export default class ExperienceAndEducation extends React.Component {
           </Timeline.Badge>
           <Timeline.Body sx={{color: "fg.default"}}>
             <Text mr={1}>Application manager</Text>
-            at <Link href={URL_FLANDERS} target="_blank">
+            at <Link href={Constants.URL_FLANDERS} target="_blank">
               the Flemish Government
             </Link>
             <br/>2016 - 2018
@@ -78,7 +76,7 @@ export default class ExperienceAndEducation extends React.Component {
           </Timeline.Badge>
           <Timeline.Body sx={{color: "fg.default"}}>
             <Text mr={1}>Expert employee system / IT-support</Text>
-            at <Link href={URL_FLANDERS} target="_blank">
+            at <Link href={Constants.URL_FLANDERS} target="_blank">
               the Flemish Government
             </Link>
             <br/>2013 - 2016
@@ -125,8 +123,7 @@ export default class ExperienceAndEducation extends React.Component {
             <StyledOcticon icon={MortarBoardIcon}/>
           </Timeline.Badge>
           <Timeline.Body sx={{color: "fg.default"}}>
-            <Text mr={1}><Tooltip as="abbr"
-                                  aria-label="Bachelor of Applied Science">B.A.Sc.</Tooltip>
+            <Text mr={1}><Tooltip aria-label="Bachelor of Applied Science">B.A.Sc.</Tooltip>
               &nbsp;Multimedia &amp; Programming</Text>
             at the <Link href="https://www.ugent.be/en" target="_blank">
             University of Ghent
@@ -149,5 +146,6 @@ export default class ExperienceAndEducation extends React.Component {
         <Timeline.Break/>
       </Timeline>
     </Box>
-  }
-}
+)
+
+export default ExperienceAndEducation

@@ -1,16 +1,7 @@
-describe(`Homepage tests`, () => {
+describe(`Homepage link tests`, () => {
 
   beforeEach(() => {
     cy.visit(`/`);
-  });
-
-  it(`Required elements are present`, () => {
-    cy.screenshot();
-    cy.get(`main`).should(`be.visible`);
-    cy.get(`footer`).should(`be.visible`);
-    cy.get(`[data-version]`).should(`be.visible`)
-    .should(`include.text`, new Date().getFullYear())
-    .should(`include.text`, `Mathias Bosman`);
   });
 
   it(`Outgoing links do not return a 404 status`,() => {
@@ -18,7 +9,6 @@ describe(`Homepage tests`, () => {
     cy.get(`a`).each(link => {
       const href = link.prop(`href`);
       if (!checkedLinks.includes(href)) {
-
         cy.request({
           failOnStatusCode: false,
           url: href

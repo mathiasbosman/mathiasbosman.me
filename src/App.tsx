@@ -5,10 +5,8 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Terms from "./pages/Terms";
 
-export default class App extends React.Component {
-
-  render() {
-    return <ThemeProvider colorMode="auto">
+const App = () => (
+    <ThemeProvider colorMode="auto">
       <BaseStyles>
       <Box className="wrapper" bg="canvas.subtle" p={[0,0,3]} fontSize={1}>
         <BrowserRouter>
@@ -21,6 +19,7 @@ export default class App extends React.Component {
         </BrowserRouter>
       </Box>
       </BaseStyles>
-    </ThemeProvider>;
-  }
-}
+    </ThemeProvider>
+)
+
+export default App
