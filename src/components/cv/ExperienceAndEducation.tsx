@@ -1,12 +1,4 @@
-import {
-  Box,
-  Heading,
-  Link,
-  StyledOcticon,
-  Text,
-  Timeline,
-  Tooltip
-} from "@primer/react";
+import {Box, Heading, Link, Text, Timeline, Tooltip} from "@primer/react";
 import {
   CodeIcon,
   CodeReviewIcon,
@@ -19,12 +11,13 @@ import {Constants} from "../../Constants";
 
 const ExperienceAndEducation = () => (
     <Box as="section" mt={5}>
-      <Heading as="h2" sx={{textAlign: ["center", "center", "left"]}}>Experience &amp; education</Heading>
+      <Heading as="h2"
+               sx={{textAlign: ["center", "center", "left"]}}>Experience &amp; education</Heading>
       <Timeline clipSidebar>
 
         <Timeline.Item>
           <Timeline.Badge>
-            <StyledOcticon icon={GoalIcon}/>
+            <GoalIcon/>
           </Timeline.Badge>
           <Timeline.Body sx={{color: "fg.default"}}>
             <Heading as="h3" sx={{fontSize: 1, fontWeight: "normal"}}>
@@ -37,7 +30,8 @@ const ExperienceAndEducation = () => (
             <Box
                 borderWidth="1px" borderStyle="solid" borderColor="border.default" borderRadius={2}
                 as="aside" aria-label="employment details" p={3} mt={2}>
-              <Text>After a couple of years as a Java developer I am currently transitioning to the role of
+              <Text>After a couple of years as a Java developer I am currently transitioning to the
+                role of
                 project manager for a development team that develops and maintains applications
                 for the <strong>department of Environment</strong>.</Text>
             </Box>
@@ -47,7 +41,7 @@ const ExperienceAndEducation = () => (
 
         <Timeline.Item>
           <Timeline.Badge>
-            <StyledOcticon icon={CodeIcon}/>
+            <CodeIcon/>
           </Timeline.Badge>
           <Timeline.Body sx={{color: "fg.default"}}>
             <Heading as="h3" sx={{fontSize: 1, fontWeight: "normal"}}>
@@ -60,32 +54,32 @@ const ExperienceAndEducation = () => (
         </Timeline.Item>
         <Timeline.Item>
           <Timeline.Badge>
-            <StyledOcticon icon={CodeReviewIcon}/>
+            <CodeReviewIcon/>
           </Timeline.Badge>
           <Timeline.Body sx={{color: "fg.default"}}>
             <Text mr={1}>Application manager</Text>
             at <Link href={Constants.URL_FLANDERS} target="_blank">
-              the Flemish Government
-            </Link>
+            the Flemish Government
+          </Link>
             <br/>2016 - 2018
           </Timeline.Body>
         </Timeline.Item>
         <Timeline.Item>
           <Timeline.Badge>
-            <StyledOcticon icon={OrganizationIcon}/>
+            <OrganizationIcon/>
           </Timeline.Badge>
           <Timeline.Body sx={{color: "fg.default"}}>
             <Text mr={1}>Expert employee system / IT-support</Text>
             at <Link href={Constants.URL_FLANDERS} target="_blank">
-              the Flemish Government
-            </Link>
+            the Flemish Government
+          </Link>
             <br/>2013 - 2016
           </Timeline.Body>
         </Timeline.Item>
         <Timeline.Break/>
         <Timeline.Item>
           <Timeline.Badge>
-            <StyledOcticon icon={MortarBoardIcon}/>
+            <MortarBoardIcon/>
           </Timeline.Badge>
           <Timeline.Body sx={{color: "fg.default"}}>
             <Text mr={1}>Stage lighting</Text>
@@ -98,7 +92,7 @@ const ExperienceAndEducation = () => (
         <Timeline.Break/>
         <Timeline.Item>
           <Timeline.Badge>
-            <StyledOcticon icon={CodeIcon}/>
+            <CodeIcon/>
           </Timeline.Badge>
           <Timeline.Body sx={{color: "fg.default"}}>
             <Text mr={1}>PHP Web developer</Text>
@@ -108,7 +102,7 @@ const ExperienceAndEducation = () => (
         </Timeline.Item>
         <Timeline.Item>
           <Timeline.Badge>
-            <StyledOcticon icon={CodeIcon}/>
+            <CodeIcon/>
           </Timeline.Badge>
           <Timeline.Body sx={{color: "fg.default"}}>
             <Text mr={1}>Web developer</Text>
@@ -120,7 +114,7 @@ const ExperienceAndEducation = () => (
         <Timeline.Break/>
         <Timeline.Item>
           <Timeline.Badge>
-            <StyledOcticon icon={MortarBoardIcon}/>
+            <MortarBoardIcon/>
           </Timeline.Badge>
           <Timeline.Body sx={{color: "fg.default"}}>
             <Text mr={1}><Tooltip aria-label="Bachelor of Applied Science">B.A.Sc.</Tooltip>
@@ -133,7 +127,7 @@ const ExperienceAndEducation = () => (
         </Timeline.Item>
         <Timeline.Item>
           <Timeline.Badge>
-            <StyledOcticon icon={MortarBoardIcon}/>
+            <MortarBoardIcon/>
           </Timeline.Badge>
           <Timeline.Body sx={{color: "fg.default"}}>
             <Text mr={1}>Applied Computer Science</Text>

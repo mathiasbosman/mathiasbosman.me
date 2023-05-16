@@ -1,13 +1,6 @@
 name: Build and quality check
 
-on:
-  push:
-  pull_request:
-    types:
-      - opened
-      - edited
-      - synchronize
-      - reopened
+on: push
 
 jobs:
   test:
