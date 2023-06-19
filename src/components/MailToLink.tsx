@@ -15,7 +15,6 @@ type LinkProps = {
 }
 
 const MailToLink = (properties:LinkProps) => {
-  console.log(process.env);
 
   function _sendMail(email:string, safe:boolean) {
     if (safe) {

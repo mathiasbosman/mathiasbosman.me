@@ -7,6 +7,7 @@
 *.min.*
 /.eslintcache
 /build/
+/dist/
 
 #ide's
 .idea

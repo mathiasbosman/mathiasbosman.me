@@ -1,5 +1,6 @@
-import React from 'react'
+import React from "react";
 import Copyright from "../../src/components/Copyright";
+
 
 describe('<Copyright />', () => {
   it('renders without version', () => {
