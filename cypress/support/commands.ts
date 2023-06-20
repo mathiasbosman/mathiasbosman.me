@@ -35,16 +35,21 @@
 //     }
 //   }
 // }
+import { mount } from 'cypress/react'
 
-Cypress.Commands.add('check404Page', () => {
-  cy.get(`main`).should(`be.visible`)
-  .within((() => {
-        cy.get(`h1`)
-        .should(`contain.text`, `This page was not found!`);
-        cy.get(`a`)
-        .should(`be.visible`)
-        .should(`contain.text`, `Return to the homepage`)
-        .should(`have.attr`, `href`, `/`);
-      })
-  );
-});
+// Augment the Cypress namespace to include type definitions for
+// your custom command.
+// Alternatively, can be defined in cypress/support/component.d.ts
+// with a <reference path="./component" /> at the top of your spec.
+declare global {
+  namespace Cypress {
+    interface Chainable {
+      mount: typeof mount
+    }
+  }
+}
+
+Cypress.Commands.add('mount', mount)
+
+// Example use:
+// cy.mount(<MyComponent />)

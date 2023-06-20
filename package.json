@@ -17,7 +17,7 @@
     "cy:run:e2e": "cypress run --e2e",
     "cy:run:component": "cypress run --component",
     "cy:run": "npm run cy:run:component && npm run cy:run:e2e",
-    "lint": "eslint '**/*.{js,ts}'"
+    "lint": "eslint '**/*.{js,ts,tsx}'"
   },
   "dependencies": {
     "@primer/octicons-react": "^17.10.0",
