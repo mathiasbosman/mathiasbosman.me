@@ -5,12 +5,12 @@
   <title>Mathias Bosman • online resume</title>
   <meta name="viewport" content="initial-scale=1.0,width=device-width"/>
   <meta name="description" content="Java developer and network engineer. Currently employed at the Environment Department of the Flemish Government."/>
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-  <link rel="shortcut icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-  <link rel="shortcut icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-  <link rel="manifest" href="./site.webmanifest">
-  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="shortcut icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="shortcut icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="canonical" href="https://mathiasbosman.be">
   <meta content="dark light" name="color-scheme"/>
   <meta name="msapplication-TileColor" content="#da532c">
@@ -34,15 +34,15 @@
         name="keywords"/>
   <!-- Matomo -->
   <script>
-    var _paq = window._paq = window._paq || [];
+    let _paq = window._paq = window._paq || [];
     /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
     _paq.push(['trackPageView']);
     _paq.push(['enableLinkTracking']);
     (function() {
-      var u="//stats.beanleaf.be/";
+      let u = "//stats.beanleaf.be/";
       _paq.push(['setTrackerUrl', u+'matomo.php']);
       _paq.push(['setSiteId', '1']);
-      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      let d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
       g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
     })();
   </script>
@@ -51,6 +51,7 @@
 </head>
 <body>
 <div id="root"></div>
+<script type="module" src="./src/index.tsx"></script>
 </body>
 
 </html>

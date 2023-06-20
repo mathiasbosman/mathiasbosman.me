@@ -27,9 +27,9 @@ jobs:
       - name: Save build folder
         uses: actions/upload-artifact@v3
         with:
-          name: build
+          name: dist
           if-no-files-found: error
-          path: build
+          path: dist
           retention-days: 7
 
   e2e-chrome-tests:
@@ -48,8 +48,8 @@ jobs:
       - name: Download build folders
         uses: actions/download-artifact@v3
         with:
-          name: build
-          path: build
+          name: dist
+          path: dist
 
       - name: E2E - Chrome
         uses: cypress-io/github-action@v5
@@ -82,8 +82,8 @@ jobs:
       - name: Download build folders
         uses: actions/download-artifact@v3
         with:
-          name: build
-          path: build
+          name: dist
+          path: dist
 
       - name: E2E - Chrome - mobile
         uses: cypress-io/github-action@v5
@@ -117,8 +117,8 @@ jobs:
       - name: Download build folders
         uses: actions/download-artifact@v3
         with:
-          name: build
-          path: build
+          name: dist
+          path: dist
 
       - name: E2E - Firefox
         uses: cypress-io/github-action@v5
@@ -151,8 +151,8 @@ jobs:
       - name: Download build folders
         uses: actions/download-artifact@v3
         with:
-          name: build
-          path: build
+          name: dist
+          path: dist
 
       - name: E2E - Firefox - mobile
         uses: cypress-io/github-action@v5
@@ -183,8 +183,8 @@ jobs:
       - name: Download build folders
         uses: actions/download-artifact@v3
         with:
-          name: build
-          path: build
+          name: dist
+          path: dist
 
       - name: E2E - Electron
         uses: cypress-io/github-action@v5

@@ -1,5 +1,5 @@
 const {readFile, writeFile} = require(`fs`);
-const file = `./build/sitemap.xml`;
+const file = `./dist/sitemap.xml`;
 const encoding = `utf-8`;
 
 readFile(file, encoding, function (err, contents) {

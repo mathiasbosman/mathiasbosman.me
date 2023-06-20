@@ -5,7 +5,7 @@ describe(`Homepage link tests`, () => {
   });
 
   it(`Outgoing links do not return a 404 status`,() => {
-    let checkedLinks = [];
+    const checkedLinks: string[] = [];
     cy.get(`a`).each(link => {
       const href = link.prop(`href`);
       if (!checkedLinks.includes(href)) {
