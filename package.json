@@ -4,6 +4,7 @@
   "description": "Personal resume",
   "version": "3.17.0",
   "author": "Mathias Bosman",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git://github.com/mathiasbosman/mathiasbosman.github.io.git"
@@ -13,6 +14,7 @@
     "build": "vite build",
     "start": "node server/server.js",
     "local": "vite --port 3000 --host",
+    "preview": "vite preview",
     "test:unit": "vitest",
     "cy:run:e2e": "cypress run --e2e",
     "cy:run:component": "cypress run --component",
