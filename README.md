@@ -37,7 +37,7 @@ This will trigger [the GitHub workflow](.github/workflows/publish.yml) that buil
 The version of the GitHub release will be used.
 3. Heroku will automatically stage the master branch
 4. Heroku will run `npm start` and start an express server.  
-The config can be found in [server.js](server/server.js)
+The config can be found in [server.cjs](server/server.js)
 5. Check the deployed staging site and deploy the production app manually on Heroku from the master branch
 
 ## Credits
