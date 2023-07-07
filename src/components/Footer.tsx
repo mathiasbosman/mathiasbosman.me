@@ -2,7 +2,6 @@ import {Box, Link, Text} from "@primer/react";
 import React from "react";
 import Copyright from "./Copyright";
 import {Constants} from "../Constants";
-import {version} from "../../package.json";
 
 const Footer = () => (
   <Box fontSize={0}
@@ -12,7 +11,7 @@ const Footer = () => (
        pb={[3, 3, 0]} color="fg.muted">
 
     <Box display="flex" alignItems="center">
-      <Copyright name="Mathias Bosman" version={version}/>
+      <Copyright name="Mathias Bosman" version={APP_VERSION}/>
     </Box>
 
     <Box display="flex" flexWrap="wrap">
