@@ -11,7 +11,7 @@ const Footer = () => (
        pb={[3, 3, 0]} color="fg.muted">
 
     <Box display="flex" alignItems="center">
-      <Copyright name="Mathias Bosman"/>
+      <Copyright name="Mathias Bosman" version={APP_VERSION}/>
     </Box>
 
     <Box display="flex" flexWrap="wrap">
