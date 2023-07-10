@@ -23,7 +23,7 @@
         "cypress",
         "@typescript-eslint"
     ],
-    "ignorePatterns": ["dist", "node_modules", "scripts", "server", "cypress/support"] ,
+    "ignorePatterns": ["dist", "node_modules", "scripts", "cypress/support"] ,
     "rules": {
         "react/react-in-jsx-scope": 0
     },
