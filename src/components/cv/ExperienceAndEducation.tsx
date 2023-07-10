@@ -30,9 +30,7 @@ const ExperienceAndEducation = () => (
             <Box
                 borderWidth="1px" borderStyle="solid" borderColor="border.default" borderRadius={2}
                 as="aside" aria-label="Employment details" p={3} mt={2}>
-              <Text>After a couple of years as a Java developer I am currently transitioning to the
-                role of
-                project manager for a development team that develops and maintains applications
+              <Text>Project manager for a development team that develops and maintains applications
                 for the <strong>department of Environment</strong>.</Text>
             </Box>
           </Timeline.Body>
@@ -139,6 +137,8 @@ const ExperienceAndEducation = () => (
         </Timeline.Item>
         <Timeline.Break/>
       </Timeline>
+
+      <Text sx={{fontStyle: 'italic', color: 'fg.muted'}}>For more information check out <Link href={Constants.URL_LINKEDIN_PROFILE} target="_blank">my LinkedIn profile</Link>.</Text>
     </Box>
 )
 

@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Heading, Link, StyledOcticon, Text} from "@primer/react";
+import {Box, Heading, Label, Link, StyledOcticon, Text} from "@primer/react";
 import {Icon} from "@primer/octicons-react";
 
 type ElementProps = {
@@ -7,7 +7,7 @@ type ElementProps = {
   icon?: Icon,
   statusBadge?: string,
   link?: string,
-  footer?: string,
+  footer?: string[],
   children?: React.ReactNode
 }
 
@@ -47,13 +47,15 @@ export const ProjectElement = ({
       <Box p={3} as="section" flexGrow="1">
         {children}
       </Box>
-      {footer ?
+      {footer && footer.length > 0 ?
           <Box
               as="aside" aria-label={`used technologies in ${name}`}
               borderTopStyle="solid" borderTopColor="border.default"
               borderTopWidth={1} maxHeight=""
-              p={3}>
-            <Text fontSize={0} color="fg.muted">{footer}</Text>
+              p={2}>
+            {footer.map(
+                l => <Label sx={{m: 1}}>{l}</Label>
+            )}
           </Box> : null}
     </Box>
 )

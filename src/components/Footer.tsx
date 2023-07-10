@@ -20,7 +20,7 @@ const Footer = () => (
         GitHub
       </Link></Text>
       <Text><Link muted aria-label="Link to LinkedIn profile"
-                  href={Constants.URL_LINKED_PROFILE}
+                  href={Constants.URL_LINKEDIN_PROFILE}
                   target="_blank">
         LinkedIn
       </Link></Text>
