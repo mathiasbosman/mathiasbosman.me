@@ -54,7 +54,7 @@ export const ProjectElement = ({
               borderTopWidth={1} maxHeight=""
               p={2}>
             {footer.map(
-                l => <Label sx={{m: 1}}>{l}</Label>
+                l => <Label key={l} sx={{m: 1}}>{l}</Label>
             )}
           </Box> : null}
     </Box>
