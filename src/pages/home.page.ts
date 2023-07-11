@@ -37,11 +37,15 @@ export class HomePage extends TailwindElement {
         </div>
         <div class="relative">
           <main>
-            <div class="sm:px-8 mt-9">
-              <sandbox-content>
+            <sandbox-content>
+            <header class="mt-6 relative px-4 sm:px-8 lg:px-12">
+              <sandbox-avatar alt="Avatar"
+                              src="${avatar}"></sandbox-avatar>
+            </header>
+            </sandbox-content>
+                  
+            <sandbox-content>
                 <div class="relative px-4 sm:px-8 lg:px-12">
-                  <sandbox-avatar alt="Avatar"
-                                  src="${avatar}"></sandbox-avatar>
                   <sandbox-page-title
                       title="Software designer, network engineer, and lightning tech.">
                     I’m Mathias, a software designer and network engineer based in
@@ -145,10 +149,7 @@ export class HomePage extends TailwindElement {
               </sandbox-content>
             </div>
           </main>
-          <sandbox-footer .links="${[
-            { href: 'https://github.com/mathiasbosman', text: 'GitHub' },
-            { href: 'https://linkedin.com/in/mathiasbosman', text: 'LinkedIn' }
-          ]}"></sandbox-footer>
+          <sandbox-footer></sandbox-footer>
         </div>
       </div>
     `

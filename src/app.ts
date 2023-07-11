@@ -1,6 +1,7 @@
 import { html, type TemplateResult } from 'lit'
 import { customElement } from 'lit/decorators.js'
 import './pages/home.page'
+import './pages/error.page'
 import { TailwindElement } from './shared/tailwind.element'
 
 /**

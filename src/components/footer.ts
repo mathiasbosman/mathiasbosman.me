@@ -7,7 +7,14 @@ import './contentwrapper'
 
 @customElement('sandbox-footer')
 export class SandboxFooter extends TailwindElement {
-  @property() links: HTMLSimpleLink[] = []
+  @property() links: HTMLSimpleLink[] = [{
+    href: 'https://github.com/mathiasbosman',
+    text: 'GitHub'
+  },
+  {
+    href: 'https://linkedin.com/in/mathiasbosman',
+    text: 'LinkedIn'
+  }]
 
   private renderLink (link: HTMLSimpleLink): TemplateResult {
     return html`

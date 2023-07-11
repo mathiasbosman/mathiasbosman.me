@@ -1,35 +1,49 @@
-import { html, LitElement, type TemplateResult } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { TailwindElement } from '../shared/tailwind.element'
+import { customElement } from 'lit/decorators.js'
+import { html, type TemplateResult } from 'lit'
 
-@customElement('sandbox-error')
-export class SandboxError extends LitElement {
-  /**
-   * The HTML error code
-   */
-  @property({ type: Number })
-    errorCode = 500
+import '../components/contentwrapper'
+import '../components/footer'
+import avatar from '../assets/mathias.webp'
 
-  @property({ type: String })
-    errorText = 'An error occurred'
 
+@customElement('sandbox-error-page')
+export class ErrorPage extends TailwindElement {
   protected override render (): TemplateResult {
     return html`
-      <section class="grid min-h-full place-items-center bg-white px-6 py-24
-sm:py-32 lg:px-8">
-        <div class="text-center">
-          <p class="text-base font-semibold text-emerald-600">${this.errorCode}</p>
-          <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            ${this.errorText}
-          </h1>
-          <slot></slot>
+      <div id="mainBody">
+        <div class="fixed inset-0 flex justify-center sm:px-8">
+          <div class="flex w-full max-w-7xl lg:px-8">
+            <div
+                class="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20"></div>
+          </div>
         </div>
-      </section>
+        <div class="relative">
+          <main>
+            <sandbox-content>
+              <header class="mt-6 relative px-4 sm:px-8 lg:px-12">
+                <sandbox-avatar alt="Avatar"
+                                src="${avatar}"></sandbox-avatar>
+              </header>
+            </sandbox-content>
+            <div class="sm:px-8 mt-9">
+            <sandbox-content>
+              <sandbox-page-title
+                  title="404 - not found">
+                This is not the page you are looking for!
+              </sandbox-page-title>
+            </sandbox-content>
+            </div>
+          </main>
+          <sandbox-footer></sandbox-footer>
+        </div>
+      </div>
     `
   }
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sandbox-error': SandboxError
+    'sandbox-error-page': ErrorPage
   }
 }
