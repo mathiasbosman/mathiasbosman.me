@@ -1,32 +1,35 @@
 module.exports = {
-    "root": true,
-    "ignorePatterns": [
+    root: true,
+    ignorePatterns: [
         'node_modules/**/*',
-        'dist/**/*',
-        'coverage/**/*'],
-    "env": {
-        "browser": true,
-        "es2021": true
-    },
-    "extends": ["standard-with-typescript","plugin:lit/recommended"],
-    "overrides": [
-        {
-            "env": {
-                "node": true
-            },
-            "files": [
-                ".eslintrc.{js,cjs}"
-            ],
-            "parserOptions": {
-                "sourceType": "script"
-            }
-        }
+        'dist/**/*'
     ],
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module",
-        "project": "./tsconfig.json"
+    parser: '@typescript-eslint/parser',
+    plugins: [
+        '@typescript-eslint',
+        'import',
+        'simple-import-sort',
+        'eslint-plugin-eslint-comments',
+        'eslint-plugin-deprecation'
+    ],
+    env: {
+        es6: true,
+        browser: true,
+        node: true
     },
-    "rules": {
-    }
+    parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        project: './tsconfig.json'
+    },
+    rules: {},
+    extends: [
+        'plugin:@typescript-eslint/eslint-recommended',
+        'plugin:@typescript-eslint/recommended'
+    ],
+    overrides: [
+        {
+            'files': ['test/**/*.ts'],
+        }
+    ]
 }

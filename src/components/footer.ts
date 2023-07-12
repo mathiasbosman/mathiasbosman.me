@@ -18,7 +18,7 @@ export class SandboxFooter extends TailwindElement {
 
   private renderLink (link: HTMLSimpleLink): TemplateResult {
     return html`
-      <a class="transition hover:text-teal-500 dark:hover:text-teal-400"
+      <a class="transition hover:text-blue-500 dark:hover:text-blue-400"
          href="${link.href}">${link.text}</a>
     `
   }

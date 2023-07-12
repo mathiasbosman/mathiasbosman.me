@@ -52,6 +52,10 @@ export class HomePage extends TailwindElement {
         <!-- most prominent pics should be on positions 2, 3 and 4 -->
         <sandbox-image-carousel .images="${[
           {
+            alt: 'Phantasialand. Theme parks are just a hobby, I promise',
+            src: roll_3
+          },
+          {
             alt: 'Enjoying a sail trip in Curacao',
             src: roll_5
           },
@@ -62,10 +66,6 @@ export class HomePage extends TailwindElement {
           {
             alt: 'Me, somewhere on a hill in France',
             src: roll_2
-          },
-          {
-            alt: 'Phantasialand. Theme parks are just a hobby, I promise',
-            src: roll_3
           },
           {
             alt: 'Me on a stage during Pride week',

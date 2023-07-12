@@ -8,24 +8,26 @@
     "build": "tsc && vite build",
     "postbuild": "node ./scripts/postBuild.cjs",
     "preview": "vite preview",
-    "test:ui": "vitest --ui",
+    "test:unit": "vitest run --config ./test/driver/vitest/vitest.config.ts",
     "lint": "eslint src/**/*.ts",
-    "lint:fix": "eslint src/**/*.ts --fix"
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "test:e2e": "cypress run --config-file ./test/driver/cypress/cypress.config.js",
+    "test:e2e:ui": "cypress open --config-file test/driver/cypress/cypress.config.js"
   },
   "dependencies": {
     "lit": "^2.7.2"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
     "@vaadin/router": "^1.7.5",
-    "@vitest/ui": "^0.33.0",
     "autoprefixer": "^10.4.14",
+    "cypress": "^12.17.1",
     "eslint": "^8.44.0",
-    "eslint-config-standard-with-typescript": "^36.0.0",
+    "eslint-plugin-deprecation": "^1.4.1",
+    "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-lit": "^1.8.3",
-    "eslint-plugin-n": "^15.7.0",
-    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
     "jsdom": "^22.1.0",
     "postcss": "^8.4.25",
     "sass": "^1.63.6",

@@ -5,8 +5,8 @@ import { type HTMLImage } from './utils.layout.ts'
 @customElement('sandbox-employment')
 export class SandboxEmployment extends TailwindElement {
   @property() logo: HTMLImage | null = null
-  @property() company: string = ''
-  @property() role: string = ''
+  @property() company = ''
+  @property() role = ''
   @property() since: number = new Date().getFullYear()
   @property() until?: number
 

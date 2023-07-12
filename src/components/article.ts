@@ -5,9 +5,9 @@ import { html, type TemplateResult } from 'lit'
 @customElement('sandbox-article')
 export class SandboxArticle extends TailwindElement {
   @property() date: Date = new Date()
-  @property() title: string = ''
-  @property() permalink: string = ''
-  @property() body: string = ''
+  @property() title = ''
+  @property() permalink = ''
+  @property() body = ''
 
   protected override render (): TemplateResult {
     return html`
@@ -27,12 +27,12 @@ export class SandboxArticle extends TailwindElement {
             <span
                 class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
           </span>
-          ${this.date.toLocaleString('en-US', {year: 'numeric', month: 'long', day: 'numeric' })}
+          ${this.date.toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
         </time>
         <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
           ${this.body}</p>
         <div aria-hidden="true"
-             class="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500">
+             class="relative z-10 mt-4 flex items-center text-sm font-medium text-blue-500">
           Read article
           <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"
                class="ml-1 h-4 w-4 stroke-current">

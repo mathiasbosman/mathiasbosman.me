@@ -5,8 +5,8 @@ import { ImageDecoding } from './utils.layout'
 
 @customElement('sandbox-avatar')
 export class SandboxAvatar extends TailwindElement {
-  @property() alt: string = ''
-  @property() src: string = ''
+  @property() alt = ''
+  @property() src = ''
   @property() decoding: ImageDecoding = ImageDecoding.Async
 
   protected override render (): TemplateResult {

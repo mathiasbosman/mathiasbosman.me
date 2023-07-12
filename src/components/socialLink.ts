@@ -12,8 +12,8 @@ export const LinkedInIcon: SocialIcon = { name: 'LinkedIn', svgPath: 'M18.335 18
 
 @customElement('sandbox-social-icon-link')
 export class SandboxSocialIconLink extends TailwindElement {
-  @property() href: string = '#'
-  @property() target: string = '_blank'
+  @property() href = '#'
+  @property() target = '_blank'
   @property({ attribute: false }) config: SocialIcon = { name: 'test', svgPath: '' }
 
   protected override render (): TemplateResult {

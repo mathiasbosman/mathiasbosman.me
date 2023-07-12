@@ -1,4 +1,5 @@
 # REWORK THIS Mathias Bosman - online resume
+Inspiration: https://spotlight.tailwindui.com/projects
 
 ## About
 
