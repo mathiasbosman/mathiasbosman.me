@@ -17,7 +17,6 @@ export class SandboxSocialIconLink extends TailwindElement {
   @property({ attribute: false }) config: SocialIcon = { name: 'test', svgPath: '' }
 
   protected override render (): TemplateResult {
-    console.log(this.config)
     return html`
       <a class="group -m-1 p-1" aria-label="Follow on ${this.config.name}" href="${this.href}">
         <svg viewbox="0 0 24 24" aria-hidden="true"
