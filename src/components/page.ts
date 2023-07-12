@@ -9,7 +9,7 @@ import { customElement } from 'lit/decorators.js'
 export class SandboxPage extends TailwindElement {
   protected override render (): TemplateResult {
     return html`
-      <div id="mainBody">
+      <div id="mainBody" class="flex flex-col bg-zinc-50 dark:bg-black antialiased">
         <div class="fixed inset-0 flex justify-center sm:px-8">
           <div class="flex w-full max-w-7xl lg:px-8">
             <div class="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20"></div>

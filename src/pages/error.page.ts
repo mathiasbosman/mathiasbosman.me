@@ -4,6 +4,7 @@ import { html, type TemplateResult } from 'lit'
 
 import '../components/contentwrapper'
 import '../components/footer'
+import '../components/typography/pagetitle.typography'
 
 import '../components/page'
 
@@ -12,14 +13,14 @@ export class ErrorPage extends TailwindElement {
   protected override render (): TemplateResult {
     return html`
       <sandbox-page>
-        <div class="sm:px-8 mt-9">
           <sandbox-content>
+            <div class="relative px-4 sm:px-8 lg:px-12">
             <sandbox-page-title
                 title="404 - not found">
               This is not the page you are looking for!
             </sandbox-page-title>
+            </div>
           </sandbox-content>
-        </div>
       </sandbox-page>
     `
   }
