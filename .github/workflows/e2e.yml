@@ -15,6 +15,9 @@ jobs:
   e2e:
     timeout-minutes: 15
     runs-on: ubuntu-latest
+    container:
+      image: cypress/browsers:node16.16.0-chrome107-ff107
+      options: --user 1001
     strategy:
       matrix:
         browser: ['firefox', 'chrome', 'electron']
