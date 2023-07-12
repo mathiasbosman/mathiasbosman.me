@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "local": "vite --host",
     "build": "tsc && vite build",
     "postbuild": "node ./scripts/postBuild.cjs",
     "preview": "vite preview",
