@@ -4,6 +4,7 @@ import { html, type TemplateResult } from 'lit'
 import './avatar'
 import avatar from '../assets/mathias.webp'
 import { customElement } from 'lit/decorators.js'
+import { LINK_GITHUB, LINK_LINKEDIN } from '../constants.ts'
 
 @customElement('sandbox-page')
 export class SandboxPage extends TailwindElement {
@@ -25,7 +26,7 @@ export class SandboxPage extends TailwindElement {
             </sandbox-content>
             <slot></slot>
           </main>
-          <sandbox-footer></sandbox-footer>
+          <sandbox-footer .links="${[LINK_GITHUB, LINK_LINKEDIN]}"></sandbox-footer>
         </div>
       </div>
     `

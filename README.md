@@ -1,5 +1,10 @@
 # REWORK THIS Mathias Bosman - online resume
 Inspiration: https://spotlight.tailwindui.com/projects
+# TO DO
+- fix download button
+- fix projects
+- fix email
+- fix images loading
 
 ## About
 

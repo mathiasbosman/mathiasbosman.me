@@ -22,7 +22,9 @@ module.exports = {
         sourceType: 'module',
         project: './tsconfig.json'
     },
-    rules: {},
+    rules: {
+        "@typescript-eslint/consistent-type-imports": "error"
+    },
     extends: [
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended'

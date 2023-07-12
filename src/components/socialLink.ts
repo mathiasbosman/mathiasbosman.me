@@ -1,6 +1,7 @@
 import { customElement, property } from 'lit/decorators.js'
 import { TailwindElement } from '../shared/tailwind.element'
 import { html, type TemplateResult } from 'lit'
+import { type HTMLSimpleLink } from './utils.layout.ts'
 
 interface SocialIcon {
   name: string
@@ -12,16 +13,15 @@ export const LinkedInIcon: SocialIcon = { name: 'LinkedIn', svgPath: 'M18.335 18
 
 @customElement('sandbox-social-icon-link')
 export class SandboxSocialIconLink extends TailwindElement {
-  @property() href = '#'
-  @property() target = '_blank'
-  @property({ attribute: false }) config: SocialIcon = { name: 'test', svgPath: '' }
+  @property() link: HTMLSimpleLink | null = null
+  @property({ attribute: false }) icon: SocialIcon = { name: 'test', svgPath: '' }
 
   protected override render (): TemplateResult {
     return html`
-      <a class="group -m-1 p-1" aria-label="Follow on ${this.config.name}" href="${this.href}">
+      <a class="group -m-1 p-1" aria-label="Follow on ${this.icon.name}" href="${this.link?.href}">
         <svg viewbox="0 0 24 24" aria-hidden="true"
              class="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="${this.config.svgPath}"></path>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="${this.icon.svgPath}"></path>
         </svg>
       </a>
     `

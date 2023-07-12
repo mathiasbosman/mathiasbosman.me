@@ -11,5 +11,5 @@ export interface HTMLImage {
 
 export interface HTMLSimpleLink {
   href: string
-  text: string
+  text?: string
 }
