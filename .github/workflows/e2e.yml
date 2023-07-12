@@ -49,12 +49,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Download build folders
-        uses: actions/download-artifact@v3
-        with:
-          name: dist
-          path: dist
-
       - name: E2E - Chrome
         uses: cypress-io/github-action@v5
         with:
