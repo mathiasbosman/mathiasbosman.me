@@ -7,6 +7,10 @@ on:
   schedule:
     - cron: '43 9 * * 3'
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   install:
     runs-on: ubuntu-latest
@@ -64,7 +68,7 @@ jobs:
         name: Upload screenshots
         with:
           name: cypress-chrome-screenshots
-          path: cypress/screenshots/
+          path: ./test/driver/cypress/screenshots/
 
   e2e-chrome-mobile-tests:
     timeout-minutes: 15
@@ -99,7 +103,7 @@ jobs:
         name: Upload screenshots
         with:
           name: cypress-chrome-mobile-screenshots
-          path: cypress/screenshots/
+          path: ./test/driver/cypress/screenshots/
 
   e2e-firefox-tests:
     timeout-minutes: 15
@@ -133,7 +137,7 @@ jobs:
         name: Upload screenshots
         with:
           name: cypress-firefox-screenshots
-          path: cypress/screenshots/
+          path: ./test/driver/cypress/screenshots/
 
   e2e-firefox-mobile-tests:
     timeout-minutes: 15
@@ -168,7 +172,7 @@ jobs:
         name: Upload screenshots
         with:
           name: cypress-firefox-mobile-screenshots
-          path: cypress/screenshots/
+          path: ./test/driver/cypress/screenshots/
 
   e2e-electron-tests:
     timeout-minutes: 15
@@ -198,4 +202,4 @@ jobs:
         name: Upload screenshots
         with:
           name: cypress-electron-screenshots
-          path: cypress/screenshots/
+          path: ./test/driver/cypress/screenshots/
