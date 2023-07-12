@@ -1,10 +1,4 @@
-# REWORK THIS Mathias Bosman - online resume
-Inspiration: https://spotlight.tailwindui.com/projects
-# TO DO
-- fix download button
-- fix projects
-- fix email
-- fix images loading
+# Mathias Bosman - online resume
 
 ## About
 
@@ -16,7 +10,7 @@ on [mathiasbosman.be][link_mathiasbosman_be].
 2. create a feature branch from the dev branch
 3. make your changes and create a pull request into the dev branch
 
-### Testing
+### Testing - out of date
 Testing is split up in:
 1. Unit tests
 2. Component tests
@@ -30,8 +24,8 @@ Make sure that the app is running by either serving the build app or running it 
 
 For end-2-end tests the application should be running:
 ```shell
-npm run local
-npm run cy:run:e2e
+npm run dev
+npm run test:e2e
 ```
 
 ## Deployment
@@ -46,14 +40,14 @@ By building it the postBuild script will also update the sitemap.xml file with t
 ## Credits
 
 ### Frameworks and libraries
-- [React.js][link_react_js]
+- [Lit][link_lit]
+- [Tailwindcss][link_tailwind]
 - [Vite][link_vite]
-- GitHub's [Primer.style][link_primer_style] React components.
 - [Cypress][link_cypress] for testing components and simple e2e.
 
 [link_mathiasbosman_be]:http://mathiasbosman.be
-[link_react_js]:https://reactjs.org/
-[link_primer_style]:https://primer.style/
+[link_lit]:https://lit.dev/
+[link_tailwind]:https://tailwindcss.com/
 [link_github_new_release]:https://github.com/mathiasbosman/mathiasbosman.github.io/releases/new
 [link_cypress]:https://cypress.io
 [link_vite]:http://vitejs.dev

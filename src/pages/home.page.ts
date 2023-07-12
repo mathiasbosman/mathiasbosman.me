@@ -87,7 +87,7 @@ export class HomePage extends TailwindElement {
                     <sandbox-projects-item .logo="${{ alt: 'lit logo', src: logo_lit }}" 
                                            title="Lit sandbox" 
                                            .link="${{href:'https://github.com/mathiasbosman/lit-sandbox', text:'GitHub repo'}}">
-                      <p>Sandbox project I used to learn some <b>lit</b>.<br/>
+                      <p>Sandbox project I used to learn some <b>Lit</b>.<br/>
                         Uses Vite and Vitest.</p>
                       <p>It also served as the base for this very website.</p>
                     </sandbox-projects-item>
@@ -107,7 +107,7 @@ export class HomePage extends TailwindElement {
                                          title="mathiasbosman.be" 
                                          .link="${{href:'#', text:'mathiasbosman.be'}}">
                     <p>This very website!<br/>
-                    Created using lit web components, Vite and Tailwind</p>
+                    Created using Lit web components, Vite and Tailwind</p>
                   </sandbox-projects-item>
                 </sandbox-projects>
                 <div class="space-y-10 lg:pl-16 xl:pl-24">
