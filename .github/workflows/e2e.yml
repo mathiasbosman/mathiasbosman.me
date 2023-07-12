@@ -54,10 +54,10 @@ jobs:
       - name: E2E - Chrome
         uses: cypress-io/github-action@v5
         with:
-          spec: cypress/e2e/app/**/*
+          project: './test/driver/cypress'
           browser: chrome
           start: npm run local
-          wait-on: 'http://localhost:3000'
+          wait-on: 'http://localhost:5173'
           wait-on-timeout: 120
 
       - uses: actions/upload-artifact@v3
@@ -88,12 +88,12 @@ jobs:
       - name: E2E - Chrome - mobile
         uses: cypress-io/github-action@v5
         with:
-          spec: cypress/e2e/app/**/*
+          project: './test/driver/cypress'
+          start: npm run local
+          wait-on: 'http://localhost:5173'
+          wait-on-timeout: 120
           browser: chrome
           config: "viewportWidth=375,viewportHeight=667"
-          start: npm run local
-          wait-on: 'http://localhost:3000'
-          wait-on-timeout: 120
 
       - uses: actions/upload-artifact@v3
         name: Upload screenshots
@@ -123,11 +123,11 @@ jobs:
       - name: E2E - Firefox
         uses: cypress-io/github-action@v5
         with:
-          spec: cypress/e2e/app/**/*
-          browser: firefox
+          project: './test/driver/cypress'
           start: npm run local
-          wait-on: 'http://localhost:3000'
+          wait-on: 'http://localhost:5173'
           wait-on-timeout: 120
+          browser: firefox
 
       - uses: actions/upload-artifact@v3
         name: Upload screenshots
@@ -157,12 +157,12 @@ jobs:
       - name: E2E - Firefox - mobile
         uses: cypress-io/github-action@v5
         with:
-          spec: cypress/e2e/app/**/*
+          project: './test/driver/cypress'
+          start: npm run local
+          wait-on: 'http://localhost:5173'
+          wait-on-timeout: 120
           browser: firefox
           config: "viewportWidth=375,viewportHeight=667"
-          start: npm run local
-          wait-on: 'http://localhost:3000'
-          wait-on-timeout: 120
 
       - uses: actions/upload-artifact@v3
         name: Upload screenshots
@@ -189,9 +189,9 @@ jobs:
       - name: E2E - Electron
         uses: cypress-io/github-action@v5
         with:
-          spec: cypress/e2e/**/*
+          project: './test/driver/cypress'
           start: npm run local
-          wait-on: 'http://localhost:3000'
+          wait-on: 'http://localhost:5173'
           wait-on-timeout: 120
 
       - uses: actions/upload-artifact@v3

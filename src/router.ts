@@ -15,5 +15,5 @@ const routes = [
 ]
 
 const container = document.getElementById('app')
-export const router = new Router(container)
-await router.setRoutes(routes)
+const router = new Router(container)
+router.setRoutes(routes).then()

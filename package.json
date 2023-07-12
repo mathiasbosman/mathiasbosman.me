@@ -11,8 +11,8 @@
     "test:unit": "vitest run --config ./test/driver/vitest/vitest.config.ts",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
-    "test:e2e": "cypress run --config-file ./test/driver/cypress/cypress.config.js",
-    "test:e2e:ui": "cypress open --config-file test/driver/cypress/cypress.config.js"
+    "test:e2e": "cypress run --project test/driver/cypress",
+    "test:e2e:ui": "cypress open --project test/driver/cypress"
   },
   "dependencies": {
     "lit": "^2.7.2"
