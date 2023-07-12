@@ -20,8 +20,7 @@ export class SandboxPage extends TailwindElement {
           <main>
             <sandbox-content>
               <header class="mt-6 relative px-4 sm:px-8 lg:px-12">
-                <sandbox-avatar alt="Avatar"
-                                src="${avatar}"></sandbox-avatar>
+                <sandbox-avatar .image="${{alt: 'Avatar', src: avatar}}" ></sandbox-avatar>
               </header>
             </sandbox-content>
             <slot></slot>
