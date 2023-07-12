@@ -5,8 +5,8 @@ describe('Homepage tests', () => {
   });
 
   it('Required elements are present', () => {
-    cy.screenshot();
     cy.get('sandbox-home-page').should('be.visible')
+    cy.screenshot();
   });
 
 })
