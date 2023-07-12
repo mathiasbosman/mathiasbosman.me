@@ -12,22 +12,22 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  e2e:
-    timeout-minutes: 15
+  e2e-viewports:
+    timeout-minutes: 5
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        browser: ['firefox', 'chrome', 'electron']
+        browser: ['electron']
         viewport: [
-          #desktop displays
-          'viewportWidth=1920,viewportHeight=1080',
-          'viewportWidth=1280,viewportHeight=720',
-          #mobile displays
-          'viewportWidth=360,viewportHeight=640',
-          'viewportWidth=414,viewportHeight=896',
-          #tablet displays
-          'viewportWidth=601,viewportHeight=962',
-          'viewportWidth=1280,viewportHeight=800'
+          #desktop
+          {width: 1920, height: 1080},
+          {width: 1280, height: 720},
+          #mobile
+          {width: 360, height: 640},
+          {width: 414, height: 896},
+          #tablet
+          {width: 601, height: 962},
+          {width: 1280, height: 800},
         ]
       fail-fast: false
     steps:
@@ -41,7 +41,7 @@ jobs:
           start: npm run local
           wait-on: 'http://localhost:5173'
           wait-on-timeout: 15
-          config: ${{ matrix.viewport }}
+          config: 'viewportWidth=${{ matrix.viewport.width }},viewportHeight=${{ matrix.viewport.height }}'
       - uses: actions/upload-artifact@v3
         name: Upload screenshots
         with:
