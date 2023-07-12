@@ -12,7 +12,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  e2e-chrome-tests:
+  e2e:
     timeout-minutes: 15
     runs-on: ubuntu-latest
     strategy:
@@ -33,7 +33,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: E2E - ${{ matrix.browser }}
+      - name: E2E - ${{ matrix.browser }} - ${{ matrix.viewport }}
         uses: cypress-io/github-action@v5
         with:
           project: './test/driver/cypress'
