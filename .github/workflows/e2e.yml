@@ -15,9 +15,6 @@ jobs:
   e2e:
     timeout-minutes: 15
     runs-on: ubuntu-latest
-    container:
-      image: cypress/browsers:node16.16.0-chrome107-ff107
-      options: --user 1001
     strategy:
       matrix:
         browser: ['firefox', 'chrome', 'electron']
@@ -41,9 +38,9 @@ jobs:
         with:
           project: './test/driver/cypress'
           browser: ${{ matrix.browser }}
-          start: npm run preview
+          start: npm run local
           wait-on: 'http://localhost:5173'
-          wait-on-timeout: 120
+          wait-on-timeout: 15
           config: ${{ matrix.viewport }}
       - uses: actions/upload-artifact@v3
         name: Upload screenshots
