@@ -3,27 +3,6 @@ name: Build and quality check
 on: push
 
 jobs:
-  test:
-    name: Unit and component tests
-    runs-on: ubuntu-latest
-    steps:
-      - name: "☁️ checkout repository"
-        uses: actions/checkout@v3
-
-      - name: "🔧 setup node"
-        uses: actions/setup-node@v3
-        with:
-          cache: 'npm'
-
-      - name: "📦 install dependencies"
-        run: npm ci
-
-      - name: "🧪 run unit tests"
-        run: npm run test:unit
-
-      - name: "🧪 run component tests"
-        run: npm run cy:run:component
-
   lint:
     name: Code standards
     runs-on: ubuntu-latest

@@ -7,195 +7,65 @@ on:
   schedule:
     - cron: '43 9 * * 3'
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  install:
+  e2e-browsers:
+    timeout-minutes: 5
     runs-on: ubuntu-latest
-    container:
-      image: cypress/browsers:node16.16.0-chrome107-ff107
-      options: --user 1001
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Cypress install
-        uses: cypress-io/github-action@v5
-        with:
-          runTests: false
-
-      - run: npm run build
-
-      - name: Save build folder
-        uses: actions/upload-artifact@v3
-        with:
-          name: dist
-          if-no-files-found: error
-          path: dist
-          retention-days: 7
-
-  e2e-chrome-tests:
-    timeout-minutes: 15
-    runs-on: ubuntu-latest
-    needs: install
-    container:
-      image: cypress/browsers:node16.16.0-chrome107-ff107
-      options: --user 1001
     strategy:
-      fail-fast: false
+      matrix:
+        browser: [ 'firefox', 'chrome' ]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: Download build folders
-        uses: actions/download-artifact@v3
-        with:
-          name: dist
-          path: dist
-
-      - name: E2E - Chrome
+      - name: E2E - ${{ matrix.browser }}
         uses: cypress-io/github-action@v5
         with:
-          spec: cypress/e2e/app/**/*
-          browser: chrome
+          project: './test/driver/cypress'
+          browser: ${{ matrix.browser }}
           start: npm run local
-          wait-on: 'http://localhost:3000'
-          wait-on-timeout: 120
-
+          wait-on: 'http://localhost:5173'
+          wait-on-timeout: 15
+          config: 'viewportWidth=1920,viewportHeight=1080'
       - uses: actions/upload-artifact@v3
         name: Upload screenshots
         with:
-          name: cypress-chrome-screenshots
-          path: cypress/screenshots/
-
-  e2e-chrome-mobile-tests:
-    timeout-minutes: 15
+          name: cypress-${{matrix.browser}}-screenshots
+          path: ./test/driver/cypress/screenshots/
+  e2e-viewports:
+    timeout-minutes: 5
     runs-on: ubuntu-latest
-    needs: install
-    container:
-      image: cypress/browsers:node16.16.0-chrome107-ff107
-      options: --user 1001
     strategy:
-      fail-fast: false
+      matrix:
+        browser: ['electron']
+        viewport: [
+          #desktop
+          {width: 1920, height: 1080},
+          {width: 1280, height: 720},
+          #mobile
+          {width: 360, height: 640},
+          {width: 414, height: 896},
+          #tablet
+          {width: 601, height: 962},
+          {width: 1280, height: 800},
+        ]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: Download build folders
-        uses: actions/download-artifact@v3
-        with:
-          name: dist
-          path: dist
-
-      - name: E2E - Chrome - mobile
+      - name: E2E - ${{ matrix.browser }}x ${{ matrix.viewport }}
         uses: cypress-io/github-action@v5
         with:
-          spec: cypress/e2e/app/**/*
-          browser: chrome
-          config: "viewportWidth=375,viewportHeight=667"
+          project: './test/driver/cypress'
+          browser: ${{ matrix.browser }}
           start: npm run local
-          wait-on: 'http://localhost:3000'
-          wait-on-timeout: 120
-
+          wait-on: 'http://localhost:5173'
+          wait-on-timeout: 15
+          config: 'viewportWidth=${{ matrix.viewport.width }},viewportHeight=${{ matrix.viewport.height }}'
       - uses: actions/upload-artifact@v3
         name: Upload screenshots
         with:
-          name: cypress-chrome-mobile-screenshots
-          path: cypress/screenshots/
-
-  e2e-firefox-tests:
-    timeout-minutes: 15
-    runs-on: ubuntu-latest
-    needs: install
-    container:
-      image: cypress/browsers:node16.16.0-chrome107-ff107
-      options: --user 1001
-    strategy:
-      fail-fast: false
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Download build folders
-        uses: actions/download-artifact@v3
-        with:
-          name: dist
-          path: dist
-
-      - name: E2E - Firefox
-        uses: cypress-io/github-action@v5
-        with:
-          spec: cypress/e2e/app/**/*
-          browser: firefox
-          start: npm run local
-          wait-on: 'http://localhost:3000'
-          wait-on-timeout: 120
-
-      - uses: actions/upload-artifact@v3
-        name: Upload screenshots
-        with:
-          name: cypress-firefox-screenshots
-          path: cypress/screenshots/
-
-  e2e-firefox-mobile-tests:
-    timeout-minutes: 15
-    runs-on: ubuntu-latest
-    needs: install
-    container:
-      image: cypress/browsers:node16.16.0-chrome107-ff107
-      options: --user 1001
-    strategy:
-      fail-fast: false
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Download build folders
-        uses: actions/download-artifact@v3
-        with:
-          name: dist
-          path: dist
-
-      - name: E2E - Firefox - mobile
-        uses: cypress-io/github-action@v5
-        with:
-          spec: cypress/e2e/app/**/*
-          browser: firefox
-          config: "viewportWidth=375,viewportHeight=667"
-          start: npm run local
-          wait-on: 'http://localhost:3000'
-          wait-on-timeout: 120
-
-      - uses: actions/upload-artifact@v3
-        name: Upload screenshots
-        with:
-          name: cypress-firefox-mobile-screenshots
-          path: cypress/screenshots/
-
-  e2e-electron-tests:
-    timeout-minutes: 15
-    runs-on: ubuntu-latest
-    needs: install
-    strategy:
-      fail-fast: false
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Download build folders
-        uses: actions/download-artifact@v3
-        with:
-          name: dist
-          path: dist
-
-      - name: E2E - Electron
-        uses: cypress-io/github-action@v5
-        with:
-          spec: cypress/e2e/**/*
-          start: npm run local
-          wait-on: 'http://localhost:3000'
-          wait-on-timeout: 120
-
-      - uses: actions/upload-artifact@v3
-        name: Upload screenshots
-        with:
-          name: cypress-electron-screenshots
-          path: cypress/screenshots/
+          name: cypress-${{matrix.browser}}-${{matrix.viewport.width}}x${{matrix.viewport.height}}-screenshots
+          path: ./test/driver/cypress/screenshots/

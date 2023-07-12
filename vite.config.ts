@@ -1,9 +1,9 @@
-// vite.config.js
-import react from "@vitejs/plugin-react"
+import { defineConfig } from 'vite'
 
-export default {
-  plugins: [react()],
-  define: {
-    APP_VERSION: JSON.stringify(process.env.npm_package_version)
+export const SERVER_PORT = 5173
+export default defineConfig({
+  // ...
+  server: {
+    port: SERVER_PORT
   }
-}
+})

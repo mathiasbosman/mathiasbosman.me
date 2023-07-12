@@ -1,18 +1,27 @@
-## Frontend ####
-/node_modules/
-/node/
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Styles and minified javascript
-*.css
-*.min.*
-/.eslintcache
-/build/
-/dist/
+node_modules
+dist
+dist-ssr
+*.local
+coverage
+.vite
 
-#ide's
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
 .idea
-*.iml
-
-
-# Mac shenanigens
 .DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.iml
