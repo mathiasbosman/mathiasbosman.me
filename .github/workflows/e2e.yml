@@ -12,34 +12,9 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  install:
-    runs-on: ubuntu-latest
-    container:
-      image: cypress/browsers:node16.16.0-chrome107-ff107
-      options: --user 1001
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Cypress install
-        uses: cypress-io/github-action@v5
-        with:
-          runTests: false
-
-      - run: npm run build
-
-      - name: Save build folder
-        uses: actions/upload-artifact@v3
-        with:
-          name: dist
-          if-no-files-found: error
-          path: dist
-          retention-days: 7
-
   e2e-chrome-tests:
     timeout-minutes: 15
     runs-on: ubuntu-latest
-    needs: install
     container:
       image: cypress/browsers:node16.16.0-chrome107-ff107
       options: --user 1001
@@ -54,7 +29,7 @@ jobs:
         with:
           project: './test/driver/cypress'
           browser: chrome
-          start: npm run local
+          start: npm run preview
           wait-on: 'http://localhost:5173'
           wait-on-timeout: 120
 
@@ -67,7 +42,6 @@ jobs:
   e2e-chrome-mobile-tests:
     timeout-minutes: 15
     runs-on: ubuntu-latest
-    needs: install
     container:
       image: cypress/browsers:node16.16.0-chrome107-ff107
       options: --user 1001
@@ -77,17 +51,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Download build folders
-        uses: actions/download-artifact@v3
-        with:
-          name: dist
-          path: dist
-
       - name: E2E - Chrome - mobile
         uses: cypress-io/github-action@v5
         with:
           project: './test/driver/cypress'
-          start: npm run local
+          start: npm run preview
           wait-on: 'http://localhost:5173'
           wait-on-timeout: 120
           browser: chrome
@@ -102,7 +70,6 @@ jobs:
   e2e-firefox-tests:
     timeout-minutes: 15
     runs-on: ubuntu-latest
-    needs: install
     container:
       image: cypress/browsers:node16.16.0-chrome107-ff107
       options: --user 1001
@@ -112,17 +79,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Download build folders
-        uses: actions/download-artifact@v3
-        with:
-          name: dist
-          path: dist
-
       - name: E2E - Firefox
         uses: cypress-io/github-action@v5
         with:
           project: './test/driver/cypress'
-          start: npm run local
+          start: npm run preview
           wait-on: 'http://localhost:5173'
           wait-on-timeout: 120
           browser: firefox
@@ -136,7 +97,6 @@ jobs:
   e2e-firefox-mobile-tests:
     timeout-minutes: 15
     runs-on: ubuntu-latest
-    needs: install
     container:
       image: cypress/browsers:node16.16.0-chrome107-ff107
       options: --user 1001
@@ -146,17 +106,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Download build folders
-        uses: actions/download-artifact@v3
-        with:
-          name: dist
-          path: dist
-
       - name: E2E - Firefox - mobile
         uses: cypress-io/github-action@v5
         with:
           project: './test/driver/cypress'
-          start: npm run local
+          start: npm run preview
           wait-on: 'http://localhost:5173'
           wait-on-timeout: 120
           browser: firefox
@@ -171,24 +125,17 @@ jobs:
   e2e-electron-tests:
     timeout-minutes: 15
     runs-on: ubuntu-latest
-    needs: install
     strategy:
       fail-fast: false
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Download build folders
-        uses: actions/download-artifact@v3
-        with:
-          name: dist
-          path: dist
-
       - name: E2E - Electron
         uses: cypress-io/github-action@v5
         with:
           project: './test/driver/cypress'
-          start: npm run local
+          start: npm run preview
           wait-on: 'http://localhost:5173'
           wait-on-timeout: 120
 

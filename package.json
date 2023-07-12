@@ -5,10 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "local": "vite --host",
     "build": "tsc && vite build",
     "postbuild": "node ./scripts/postBuild.cjs",
-    "preview": "vite preview",
+    "preview": "vite preview --host --port 5173",
     "test:unit": "vitest run --config ./test/driver/vitest/vitest.config.ts",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
