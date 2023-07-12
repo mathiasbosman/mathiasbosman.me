@@ -19,9 +19,13 @@ import roll_2 from '../assets/carousel/roll_2.webp'
 import roll_3 from '../assets/carousel/roll_3.webp'
 import roll_4 from '../assets/carousel/roll_4.webp'
 import roll_5 from '../assets/carousel/roll_5.webp'
+import avatar from '../assets/mathias.webp'
 import logo_flemish_gov from '../assets/logos/flemishGov.webp'
 import logo_echoweb from '../assets/logos/echoweb.webp'
 import logo_procius from '../assets/logos/procius.webp'
+import logo_bitvavo from '../assets/logos/bitvavo.webp'
+import logo_lit from '../assets/logos/lit.webp'
+import logo_mqtt from '../assets/logos/mqtt.webp'
 import { LINK_GITHUB, LINK_LINKEDIN } from '../constants.ts'
 
 @customElement('sandbox-home-page')
@@ -80,17 +84,30 @@ export class HomePage extends TailwindElement {
               <div
                   class="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
                 <sandbox-projects>
-                    <sandbox-projects-item .logo="${{
-                      alt: 'Flemish Government logo',
-                      src: logo_flemish_gov
-                    }}" title="test" .link="${{href:'#', text:'test'}}">
-                      Kgauk ik hier wa meer info geveh
+                    <sandbox-projects-item .logo="${{ alt: 'lit logo', src: logo_lit }}" 
+                                           title="Lit sandbox" 
+                                           .link="${{href:'https://github.com/mathiasbosman/lit-sandbox', text:'GitHub repo'}}">
+                      <p>Sandbox project I used to learn some <b>lit</b>.<br/>
+                        Uses Vite and Vitest.</p>
+                      <p>It also served as the base for this very website.</p>
                     </sandbox-projects-item>
-                  <sandbox-projects-item .logo="${{
-                    alt: 'Flemish Government logo',
-                    src: logo_flemish_gov
-                  }}" title="test" .link="${{href:'#', text:'test'}}">
-                    Kgauk ik hier wa meer info geveh
+                  <sandbox-projects-item .logo="${{ alt: 'MQTT logo', src: logo_mqtt }}"
+                                         title="MQTT stress test"
+                                         .link="${{href:'https://github.com/mathiasbosman/mqtt-stresstest', text:'GitHub repo'}}">
+                    <p>A Spring Boot application to stresstest a MQTT service.
+                      Originally used to stresstest ThingsBoard.</p>
+                  </sandbox-projects-item>
+                  <sandbox-projects-item .logo="${{ src: logo_bitvavo }}"
+                                         title="Cryptobot"
+                                         .link="${{href:'https://github.com/mathiasbosman/cryptobot', text:'GitHub repo'}}">
+                    A trial crypto-currency bot integration for the Bitvavo API.
+                    Purely for academic purposes... truly. Written in <b>Java.</b>
+                  </sandbox-projects-item>
+                  <sandbox-projects-item .logo="${{ src: avatar }}" 
+                                         title="mathiasbosman.be" 
+                                         .link="${{href:'#', text:'mathiasbosman.be'}}">
+                    <p>This very website!<br/>
+                    Created using lit web components, Vite and Tailwind</p>
                   </sandbox-projects-item>
                 </sandbox-projects>
                 <div class="space-y-10 lg:pl-16 xl:pl-24">
@@ -106,7 +123,6 @@ export class HomePage extends TailwindElement {
                             company="Flemish Government"
                             role="Project manager"
                             since="2022"></sandbox-employment-item>
-
                         <sandbox-employment-item
                             .logo="${{
                               alt: 'Flemish Government logo',
@@ -115,7 +131,6 @@ export class HomePage extends TailwindElement {
                             company="Flemish Government"
                             role="Java developer"
                             since="2018" until="2022"></sandbox-employment-item>
-
                         <sandbox-employment-item
                             .logo="${{
                               alt: 'Echoweb logo',

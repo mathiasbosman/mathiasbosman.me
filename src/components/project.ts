@@ -28,7 +28,7 @@ export class SandboxProjectItem extends TailwindElement {
           <img alt="${this.logo?.alt}" loading="lazy" 
                width="32" height="32" 
                decoding="async"
-               data-nimg="1" class="h-8 w-8"
+               data-nimg="1" class="h-8 w-8 rounded-full"
                src="${this.logo?.src}"
                style="color: transparent;"></div>
         <h2 class="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">

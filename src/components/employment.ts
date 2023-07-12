@@ -3,6 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { html, type TemplateResult } from 'lit'
 import { type HTMLImage } from './utils.layout.ts'
 import '../components/downloadbutton'
+import { CV_DOWNLOAD_URL } from '../constants.ts'
 
 @customElement('sandbox-employment')
 export class SandboxEmployment extends TailwindElement {
@@ -24,10 +25,10 @@ export class SandboxEmployment extends TailwindElement {
       <div class="mt-6">
         <slot></slot>
       </div>
-        <sandbox-download-button .link="${{
+        <sandbox-download-button .link="${CV_DOWNLOAD_URL ? {
           href: '#',
           text: 'Download CV'
-        }}"></sandbox-download-button>
+        } : {}}"></sandbox-download-button>
     `
   }
 }

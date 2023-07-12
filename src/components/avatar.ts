@@ -11,11 +11,11 @@ export class SandboxAvatar extends TailwindElement {
 
   protected override render (): TemplateResult {
     return html`
-      <div class="h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur
+      <div class="h-16 w-16 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur
 dark:bg-zinc-800/90 dark:ring-white/10">
-        <a aria-label="Home" class="pointer-events-auto" href="/">
+        <a aria-label="Home" class="pointer-events-auto h-16 w-16 block" href="/">
       <img alt="${this.alt}" decoding="${this.decoding}"
-           class="rounded-full bg-zinc-100 object-cover dark:bg-zinc-800 h-9 w-9"
+           class="rounded-full bg-zinc-100 object-cover dark:bg-zinc-800 h-16 w-16"
            src="${this.src}"/>
         </a>
       </div>
