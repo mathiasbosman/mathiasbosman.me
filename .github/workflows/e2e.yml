@@ -12,7 +12,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  e2e-chrome-ff:
+  e2e-browsers:
     timeout-minutes: 5
     runs-on: ubuntu-latest
     strategy:
