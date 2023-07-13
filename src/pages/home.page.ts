@@ -36,13 +36,13 @@ export class HomePage extends TailwindElement {
         <sandbox-content>
           <div class="relative px-4 sm:px-8 lg:px-12">
             <sandbox-page-title
-                title="Software designer, network engineer, and lightning tech.">
+                title="Software designer, network engineer, and lighting tech.">
               I’m Mathias, a software designer and network engineer based in
               Lebbeke, Belgium.<br/>In my spare time I like to fiddle with
               stage lights.<br/>
               Currently full-time employed at the Department of
               Environment of the Flemish Government.<br/>
-              Yes, the dog is mine; her name is Luna.
+              Yes, the cute Beagle is mine; her name is Luna.
             </sandbox-page-title>
             <div class="flex gap-6">
               <!-- socials -->
