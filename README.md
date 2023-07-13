@@ -21,8 +21,8 @@ Testing is split up in:
 
 Unit tests can be run by calling `npm run test:unit`.
 
-Component and end-2-end tests are run with [Cypress][link_cypress].  
-Component tests can be run by calling `npm run cy:run:component`.  
+Component and end-2-end tests are run with [Cypress][link_cypress].
+Component tests can be run by calling `npm run cy:run:component`.
 Make sure that the app is running by either serving the build app or running it locally.
 
 For end-2-end tests the application should be running:
@@ -38,18 +38,18 @@ Steps to deploy:
 
 1. once you want to publish merge the dev branch into the master branch
 2. create a new release [via GitHub][link_github_new_release]
-   This will trigger [the GitHub workflow](.github/workflows/publish.yml) that builds the project and publishes it to the GitHub pages.  
-   The version of the GitHub release will be used.  
+   This will trigger [the GitHub workflow](.github/workflows/publish.yml) that builds the project and publishes it to the GitHub pages.
+   The version of the GitHub release will be used.
    By building it the postBuild script will also update the sitemap.xml file with the latest update time.
 
 ## Credits
 
 ### Frameworks and libraries
 
-- [Lit][link_lit]
-- [Tailwindcss][link_tailwind]
-- [Vite][link_vite]
-- [Cypress][link_cypress] for testing components and simple e2e.
+-   [Lit][link_lit]
+-   [Tailwindcss][link_tailwind]
+-   [Vite][link_vite]
+-   [Cypress][link_cypress] for testing components and simple e2e.
 
 [link_mathiasbosman_be]: http://mathiasbosman.be
 [link_lit]: https://lit.dev/

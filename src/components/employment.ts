@@ -1,9 +1,9 @@
 import { TailwindElement } from "../shared/tailwind.element.ts";
 import { customElement, property } from "lit/decorators.js";
 import { html, type TemplateResult } from "lit";
-import { type HTMLImage } from "./utils.layout.ts";
 import "../components/downloadbutton";
 import { CV_DOWNLOAD_URL } from "../constants.ts";
+import { type HTMLImage } from "../utils.ts";
 
 @customElement("sandbox-employment")
 export class SandboxEmployment extends TailwindElement {

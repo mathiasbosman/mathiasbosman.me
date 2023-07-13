@@ -7,7 +7,7 @@ import { CONTACT_ACTIVE, LINK_LINKEDIN } from "../constants.ts";
 export class SandboxContactSection extends TailwindElement {
   private renderInfo(): TemplateResult | void {
     if (CONTACT_ACTIVE) {
-      return html` <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+      return html`<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
           Fill in your email address and I will get in touch.
         </p>
         <div class="mt-6 flex">
@@ -31,7 +31,8 @@ export class SandboxContactSection extends TailwindElement {
     }
 
     return html`<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-      Feel free to contact me via <a class="text-blue-500" href="${LINK_LINKEDIN.href}">LinkedIn</a>.
+      Feel free to contact me via
+      <a class="text-blue-500" href="${LINK_LINKEDIN.href}">LinkedIn</a>.
     </p> `;
   }
 

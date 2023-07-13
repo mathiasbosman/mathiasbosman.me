@@ -124,7 +124,7 @@ export class HomePage extends TailwindElement {
                       text: "GitHub repo",
                     }}"
                   >
-                    A trial crypto-currency bot integration for the Bitvavo API.
+                    A trial cryptocurrency bot integration for the Bitvavo API.
                     Purely for academic purposes... truly. Written in
                     <b>Java.</b>
                   </sandbox-projects-item>

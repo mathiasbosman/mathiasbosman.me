@@ -1,7 +1,7 @@
 import { customElement, property } from "lit/decorators.js";
 import { TailwindElement } from "../shared/tailwind.element";
 import { html, type TemplateResult } from "lit";
-import { type HTMLSimpleLink } from "./utils.layout.ts";
+import type { HTMLSimpleLink } from "../utils.ts";
 
 interface SocialIcon {
   name: string;

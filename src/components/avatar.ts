@@ -1,7 +1,7 @@
 import { customElement, property } from "lit/decorators.js";
 import { TailwindElement } from "../shared/tailwind.element";
 import { html, type TemplateResult } from "lit";
-import { type HTMLImage, ImageDecoding } from "./utils.layout";
+import { type HTMLImage, ImageDecoding } from "../utils.ts";
 
 @customElement("sandbox-avatar")
 export class SandboxAvatar extends TailwindElement {

@@ -1,7 +1,7 @@
 import { TailwindElement } from "../shared/tailwind.element.ts";
 import { customElement, property } from "lit/decorators.js";
 import { html, type TemplateResult } from "lit";
-import { type HTMLSimpleLink } from "./utils.layout.ts";
+import type { HTMLSimpleLink } from "../utils.ts";
 
 @customElement("sandbox-download-button")
 export class SandboxDownloadButton extends TailwindElement {
