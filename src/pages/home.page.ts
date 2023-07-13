@@ -26,7 +26,7 @@ import logo_procius from '../assets/logos/procius.webp'
 import logo_bitvavo from '../assets/logos/bitvavo.webp'
 import logo_lit from '../assets/logos/lit.webp'
 import logo_mqtt from '../assets/logos/mqtt.webp'
-import { LINK_GITHUB, LINK_LINKEDIN } from '../constants.ts'
+import { LINK_GITHUB, LINK_LINKEDIN } from '../constants'
 
 @customElement('sandbox-home-page')
 export class HomePage extends TailwindElement {
