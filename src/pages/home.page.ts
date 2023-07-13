@@ -78,7 +78,7 @@ export class HomePage extends TailwindElement {
           }
         ]}"></sandbox-image-carousel>
 
-        <div class="sm:px-8 mt-24 md:mt-28">
+        <div class="sm:px-8 mt-8 md:mt-28">
           <sandbox-content>
             <section class="mx-auto max-w-2xl lg:max-w-5xl mt-6">
               <div
