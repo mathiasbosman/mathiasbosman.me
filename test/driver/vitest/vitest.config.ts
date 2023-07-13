@@ -1,6 +1,6 @@
 // test/driver/vitest/vitest.config.ts
-import { defineConfig } from 'vitest/config'
-import viteConfig from '../../../vite.config'
+import { defineConfig } from "vitest/config";
+import viteConfig from "../../../vite.config";
 export default defineConfig({
   ...viteConfig,
   test: {
@@ -10,4 +10,4 @@ export default defineConfig({
       reportsDirectory: `./tests/driver/vitest/coverage`,
     },
   },
-})
+});
