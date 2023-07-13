@@ -31,7 +31,7 @@ export class SandboxContactSection extends TailwindElement {
     }
 
     return html`<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-      Feel free to contact me via <a href="${LINK_LINKEDIN.href}">LinkedIn</a>.
+      Feel free to contact me via <a class="text-blue-500" href="${LINK_LINKEDIN.href}">LinkedIn</a>.
     </p> `;
   }
 
