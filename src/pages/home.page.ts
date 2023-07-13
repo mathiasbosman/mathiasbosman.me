@@ -1,16 +1,15 @@
-import { TailwindElement } from "../shared/tailwind.element";
+import { TailwindElement } from "../shared/tailwind.element.ts";
 import { customElement } from "lit/decorators.js";
 import { html, type TemplateResult } from "lit";
 
-import "../components/typography/pagetitle.typography";
+import "../components/typography/pagetitle";
 import "../components/avatar";
-import { GitHubIcon, LinkedInIcon } from "../components/socialLink";
 import "../components/imagecarousel";
-import "../components/contentwrapper";
+import "../components/common/contentwrapper";
 import "../components/employment";
 import "../components/contact";
-import "../components/footer";
 import "../components/project";
+
 import roll_1 from "../assets/carousel/roll_1.webp";
 import roll_2 from "../assets/carousel/roll_2.webp";
 import roll_3 from "../assets/carousel/roll_3.webp";
@@ -24,6 +23,7 @@ import logo_bitvavo from "../assets/logos/bitvavo.webp";
 import logo_lit from "../assets/logos/lit.webp";
 import logo_mqtt from "../assets/logos/mqtt.webp";
 import { LINK_GITHUB, LINK_LINKEDIN } from "../constants";
+import { GitHubIcon, LinkedInIcon } from "../components/socialLink";
 
 @customElement("sandbox-home-page")
 export class HomePage extends TailwindElement {

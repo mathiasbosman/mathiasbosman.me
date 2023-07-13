@@ -1,5 +1,6 @@
 import { Router } from "@vaadin/router";
-import "./components/page";
+
+import "./components/common/page";
 
 const routes = [
   {

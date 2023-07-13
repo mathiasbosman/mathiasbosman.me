@@ -1,12 +1,9 @@
-import { TailwindElement } from "../shared/tailwind.element";
+import { TailwindElement } from "../shared/tailwind.element.ts";
 import { customElement } from "lit/decorators.js";
 import { html, type TemplateResult } from "lit";
 
-import "../components/contentwrapper";
-import "../components/footer";
-import "../components/typography/pagetitle.typography";
-
-import "../components/page";
+import "../components/common/contentwrapper";
+import "../components/typography/pagetitle";
 
 @customElement("sandbox-error-page")
 export class ErrorPage extends TailwindElement {

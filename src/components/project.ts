@@ -1,6 +1,6 @@
 import { customElement, property } from "lit/decorators.js";
 import { TailwindElement } from "../shared/tailwind.element.ts";
-import { type HTMLImage, type HTMLSimpleLink } from "../utils.ts";
+import { type HTMLImage, type HTMLSimpleLink } from "../shared/utils.ts";
 import { html, type TemplateResult } from "lit";
 
 @customElement("sandbox-projects")

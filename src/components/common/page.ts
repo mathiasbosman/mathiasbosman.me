@@ -1,10 +1,11 @@
-import { TailwindElement } from "../shared/tailwind.element.ts";
+import { TailwindElement } from "../../shared/tailwind.element";
 import { html, type TemplateResult } from "lit";
-
-import "./avatar";
-import avatar from "../assets/mathias.webp";
 import { customElement } from "lit/decorators.js";
-import { LINK_GITHUB, LINK_LINKEDIN } from "../constants.ts";
+import { LINK_GITHUB, LINK_LINKEDIN } from "../../constants.ts";
+
+import "../avatar";
+import "./footer";
+import avatar from "../../assets/mathias.webp";
 
 @customElement("sandbox-page")
 export class SandboxPage extends TailwindElement {

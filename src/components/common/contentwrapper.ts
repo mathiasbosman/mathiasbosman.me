@@ -1,5 +1,5 @@
 import { customElement } from "lit/decorators.js";
-import { TailwindElement } from "../shared/tailwind.element.ts";
+import { TailwindElement } from "../../shared/tailwind.element.ts";
 import { html, type TemplateResult } from "lit";
 
 @customElement("sandbox-content")
