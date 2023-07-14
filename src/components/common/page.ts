@@ -4,7 +4,7 @@ import { customElement } from "lit/decorators.js";
 import { LINK_GITHUB, LINK_LINKEDIN } from "../../constants.ts";
 
 import "../avatar";
-import "./footer";
+import "./footer/footer";
 import avatar from "../../assets/mathias.webp";
 
 @customElement("sandbox-page")

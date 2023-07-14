@@ -12,9 +12,9 @@ export class SandboxProjects extends TailwindElement {
 
 @customElement("sandbox-projects-item")
 export class SandboxProjectItem extends TailwindElement {
-  @property() logo: HTMLImage | null = null;
-  @property() title = "";
-  @property() link: HTMLSimpleLink | null = null;
+  @property() link!: HTMLSimpleLink;
+  @property() title!: string;
+  @property() logo?: HTMLImage;
 
   protected override render(): TemplateResult {
     return html`
@@ -24,17 +24,19 @@ export class SandboxProjectItem extends TailwindElement {
             rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5
             dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0"
         >
-          <img
-            alt="${this.logo?.alt}"
-            loading="lazy"
-            width="32"
-            height="32"
-            decoding="async"
-            data-nimg="1"
-            class="h-8 w-8 rounded-full"
-            src="${this.logo?.src}"
-            style="color: transparent;"
-          />
+          ${this.logo !== null
+            ? html` <img
+                alt="${this.logo?.alt}"
+                loading="lazy"
+                width="32"
+                height="32"
+                decoding="async"
+                data-nimg="1"
+                class="h-8 w-8 rounded-full"
+                src="${this.logo?.src}"
+                style="color: transparent;"
+              />`
+            : html``}
         </div>
         <h2
           class="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100"

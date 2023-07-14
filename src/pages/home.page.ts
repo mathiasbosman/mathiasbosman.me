@@ -23,7 +23,7 @@ import logo_bitvavo from "../assets/logos/bitvavo.webp";
 import logo_lit from "../assets/logos/lit.webp";
 import logo_mqtt from "../assets/logos/mqtt.webp";
 import { LINK_GITHUB, LINK_LINKEDIN } from "../constants";
-import { GitHubIcon, LinkedInIcon } from "../components/socialLink";
+import { GitHubIcon, LinkedInIcon } from "../components/iconlink";
 
 @customElement("sandbox-home-page")
 export class HomePage extends TailwindElement {
@@ -44,14 +44,14 @@ export class HomePage extends TailwindElement {
             </sandbox-page-title>
             <div class="flex gap-6">
               <!-- socials -->
-              <sandbox-social-icon-link
+              <sandbox-icon-link
                 .link="${LINK_GITHUB}"
                 .icon="${GitHubIcon}"
-              ></sandbox-social-icon-link>
-              <sandbox-social-icon-link
+              ></sandbox-icon-link>
+              <sandbox-icon-link
                 .link="${LINK_LINKEDIN}"
                 .icon="${LinkedInIcon}"
-              ></sandbox-social-icon-link>
+              ></sandbox-icon-link>
             </div>
           </div>
         </sandbox-content>

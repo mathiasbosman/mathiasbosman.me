@@ -5,7 +5,7 @@ import { TailwindElement } from "../shared/tailwind.element.ts";
 
 @customElement("sandbox-avatar")
 export class SandboxAvatar extends TailwindElement {
-  @property() image: HTMLImage | null = null;
+  @property() image!: HTMLImage;
   @property() decoding: ImageDecoding = ImageDecoding.Async;
 
   protected override render(): TemplateResult {
@@ -20,10 +20,10 @@ dark:bg-zinc-800/90 dark:ring-white/10"
           href="/"
         >
           <img
-            alt="${this.image?.alt}"
+            alt="${this.image.alt}"
             decoding="${this.decoding}"
             class="rounded-full bg-zinc-100 object-cover dark:bg-zinc-800 h-16 w-16"
-            src="${this.image?.src}"
+            src="${this.image.src}"
           />
         </a>
       </div>

@@ -1,23 +1,14 @@
-import { TailwindElement } from "../../shared/tailwind.element.ts";
+import { TailwindElement } from "../../../shared/tailwind.element.ts";
 import { customElement, property } from "lit/decorators.js";
 import { html, type TemplateResult } from "lit";
-import { type HTMLSimpleLink } from "../../shared/utils.ts";
+import { type HTMLSimpleLink } from "../../../shared/utils.ts";
 
-import "./contentwrapper";
+import "../contentwrapper";
+import "./footer-link";
 
 @customElement("sandbox-footer")
 export class SandboxFooter extends TailwindElement {
-  @property() links: HTMLSimpleLink[] = [];
-
-  private renderLink(link: HTMLSimpleLink): TemplateResult {
-    return html`
-      <a
-        class="transition hover:text-blue-500 dark:hover:text-blue-400"
-        href="${link.href}"
-        >${link.text}</a
-      >
-    `;
-  }
+  @property() links?: HTMLSimpleLink[];
 
   protected override render(): TemplateResult {
     return html`
@@ -34,9 +25,13 @@ export class SandboxFooter extends TailwindElement {
                   <div
                     class="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200"
                   >
-                    ${this.links.map((link) => {
-                      return this.renderLink(link);
-                    })}
+                    ${Array.isArray(this.links)
+                      ? this.links.map((link) => {
+                          return html`<sandbox-footer-link
+                            .link="${link}"
+                          ></sandbox-footer-link>`;
+                        })
+                      : html``}
                   </div>
                   <p class="text-sm text-zinc-400 dark:text-zinc-500">
                     © ${new Date().getFullYear()} Mathias Bosman. All rights

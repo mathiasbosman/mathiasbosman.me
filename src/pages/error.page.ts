@@ -5,6 +5,7 @@ import { html, type TemplateResult } from "lit";
 import "../components/common/contentwrapper";
 import "../components/typography/pagetitle";
 
+//todo: could have the codes passed as prop
 @customElement("sandbox-error-page")
 export class ErrorPage extends TailwindElement {
   protected override render(): TemplateResult {

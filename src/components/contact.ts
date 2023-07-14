@@ -3,6 +3,7 @@ import { customElement } from "lit/decorators.js";
 import { html, type TemplateResult } from "lit";
 import { CONTACT_ACTIVE, LINK_LINKEDIN } from "../constants.ts";
 
+//todo: #302 - rework
 @customElement("sandbox-contact-section")
 export class SandboxContactSection extends TailwindElement {
   private renderInfo(): TemplateResult | void {
@@ -32,7 +33,9 @@ export class SandboxContactSection extends TailwindElement {
 
     return html`<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
       Feel free to contact me via
-      <a class="text-blue-500" href="${LINK_LINKEDIN.href}">LinkedIn</a>.
+      <a class="text-blue-500 hover:underline" href="${LINK_LINKEDIN.href}"
+        >LinkedIn</a
+      >.
     </p> `;
   }
 

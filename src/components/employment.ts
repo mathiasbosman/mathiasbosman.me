@@ -1,10 +1,7 @@
 import { TailwindElement } from "../shared/tailwind.element.ts";
 import { customElement, property } from "lit/decorators.js";
 import { html, type TemplateResult } from "lit";
-import { CV_DOWNLOAD_URL } from "../constants.ts";
 import { type HTMLImage } from "../shared/utils.ts";
-
-import "../components/downloadbutton";
 
 @customElement("sandbox-employment")
 export class SandboxEmployment extends TailwindElement {
@@ -34,22 +31,15 @@ export class SandboxEmployment extends TailwindElement {
       <div class="mt-6">
         <slot></slot>
       </div>
-      <sandbox-download-button
-        .link="${CV_DOWNLOAD_URL
-          ? {
-              href: "#",
-              text: "Download CV",
-            }
-          : {}}"
-      ></sandbox-download-button>
+      <!-- todo: #301 - download-button -->
     `;
   }
 }
 
 @customElement("sandbox-employment-item")
 export class SandboxEmploymentItem extends TailwindElement {
-  @property() logo: HTMLImage | null = null;
-  @property() company = "";
+  @property() logo!: HTMLImage;
+  @property() company!: string;
   @property() role = "";
   @property() since: number = new Date().getFullYear();
   @property() until?: number;
@@ -60,7 +50,7 @@ export class SandboxEmploymentItem extends TailwindElement {
         class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0"
       >
         <img
-          alt="${this.logo?.alt}"
+          alt="${this.logo.alt}"
           loading="lazy"
           width="32"
           height="32"
@@ -68,7 +58,7 @@ export class SandboxEmploymentItem extends TailwindElement {
           data-nimg="1"
           class="h-7 w-7"
           style="color:transparent"
-          src="${this.logo?.src}"
+          src="${this.logo.src}"
         />
       </div>`;
     }

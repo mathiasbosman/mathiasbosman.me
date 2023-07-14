@@ -4,7 +4,7 @@ import { customElement, property } from "lit/decorators.js";
 
 @customElement("sandbox-page-title")
 export class SandboxPageTitle extends TailwindElement {
-  @property() title = "";
+  @property() title!: string;
 
   protected override render(): TemplateResult {
     return html`

@@ -9,4 +9,3 @@ export const LINK_LINKEDIN: HTMLSimpleLink = {
   text: "LinkedIn",
 };
 export const CONTACT_ACTIVE = false;
-export const CV_DOWNLOAD_URL = null;

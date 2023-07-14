@@ -5,7 +5,7 @@ import { type HTMLImage } from "../shared/utils.ts";
 
 @customElement("sandbox-image-carousel")
 export class SandboxImageCarousel extends TailwindElement {
-  @property({ attribute: false }) images: HTMLImage[] = [];
+  @property({ attribute: false }) images!: HTMLImage[];
 
   private renderImage(source: HTMLImage, index: number): TemplateResult {
     const cssRotateClass = index % 2 === 0 ? "-rotate-2" : "rotate-2";
