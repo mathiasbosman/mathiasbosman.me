@@ -7,16 +7,19 @@ jobs:
     name: Code standards
     runs-on: ubuntu-latest
     steps:
-      - name: "☁️ checkout repository"
+      - name: "checkout repository"
         uses: actions/checkout@v3
 
-      - name: "🔧 setup node"
+      - name: "setup node"
         uses: actions/setup-node@v3
         with:
-          cache: 'npm'
+          cache: "npm"
 
-      - name: "📦 install dependencies"
+      - name: "install dependencies"
         run: npm ci
 
-      - name: "🔍 lint code"
+      - name: "check code style"
+        run: npm run prettier:check
+
+      - name: "lint code"
         run: npm run lint

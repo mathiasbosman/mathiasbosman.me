@@ -1,0 +1,9 @@
+node_modules
+dist
+coverage
+.vite
+
+# Editor directories and files
+.idea
+.DS_Store
+*.iml

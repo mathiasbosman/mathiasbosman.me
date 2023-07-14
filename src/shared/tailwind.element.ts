@@ -1,8 +1,8 @@
-import { type CSSResultGroup, LitElement, unsafeCSS } from 'lit'
-import style from './tailwind.global.css?inline'
+import { type CSSResultGroup, LitElement, unsafeCSS } from "lit";
+import style from "./tailwind.global.css?inline";
 
-const tailwindElement = unsafeCSS(style)
+const tailwindElement = unsafeCSS(style);
 
 export class TailwindElement extends LitElement {
-  static styles = [tailwindElement] as CSSResultGroup
+  static styles = [tailwindElement] as CSSResultGroup;
 }

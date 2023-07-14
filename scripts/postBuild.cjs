@@ -1,4 +1,4 @@
-const {readFile, writeFile} = require(`fs`);
+const { readFile, writeFile } = require(`fs`);
 const file = `./dist/sitemap.xml`;
 const encoding = `utf-8`;
 

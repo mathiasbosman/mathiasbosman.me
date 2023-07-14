@@ -5,25 +5,25 @@ name: Publish
 on:
   push:
     tags:
-      - '*'
+      - "*"
 
 jobs:
   set-version:
     name: Update version and deploy
     runs-on: ubuntu-latest
     steps:
-      - name: "☁️ checkout repository"
+      - name: "checkout repository"
         uses: actions/checkout@v3
         with:
           ref: master
           token: ${{ secrets.RELEASE_TOKEN }}
 
-      - name: "🔧 setup node"
+      - name: "setup node"
         uses: actions/setup-node@v3
         with:
-          cache: 'npm'
+          cache: "npm"
 
-      - name: "📦 update version"
+      - name: "update version"
         env:
           GITHUB_REF_NAME: ${{ github.ref_name }}
         run: |
@@ -35,7 +35,7 @@ jobs:
           npm ci
           npm run build
 
-      - name: "🚀 deploy to GitHub Pages"
+      - name: "deploy to GitHub Pages"
         uses: JamesIves/github-pages-deploy-action@v4.4.2
         with:
           branch: gh-pages
