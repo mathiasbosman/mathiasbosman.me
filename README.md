@@ -11,19 +11,12 @@ on [mathiasbosman.be][link_mathiasbosman_be].
 2. create a feature branch from the dev branch
 3. make your changes and create a pull request into the dev branch
 
-### Testing - out of date
+### Testing
 
-Testing is split up in:
+At the moment only end-to-end tests exsist.
 
-1. Unit tests
-2. Component tests
-3. End-2-end tests
-
-Unit tests can be run by calling `npm run test:unit`.
-
-Component and end-2-end tests are run with [Cypress][link_cypress].
-Component tests can be run by calling `npm run cy:run:component`.
-Make sure that the app is running by either serving the build app or running it locally.
+These can be run by calling `npm run test:e2e`.
+and are run with [Cypress][link_cypress].
 
 For end-2-end tests the application should be running:
 
