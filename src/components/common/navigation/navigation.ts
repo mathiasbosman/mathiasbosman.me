@@ -8,6 +8,7 @@ import "../../avatar.ts";
 import "./hamburger.navigation.ts";
 import avatar from "../../../assets/mathias.webp";
 import { router } from "../../../router.ts";
+import { AvatarSize } from "../../avatar.ts";
 
 @customElement("sandbox-navigation")
 export class SandboxNavigation extends TailwindElement {
@@ -72,7 +73,7 @@ export class SandboxNavigation extends TailwindElement {
       return html`
         <sandbox-avatar
           .image="${{ src: avatar, alt: "Home" }}"
-          size="9"
+          .size="${AvatarSize.xs}"
         ></sandbox-avatar>
       `;
     }
