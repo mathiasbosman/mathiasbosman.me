@@ -22,7 +22,7 @@ export class SandboxNavigation extends TailwindElement {
         class="flex justify-between md:justify-center flex-row mt-8 px-4 md:px-2 items-center"
       >
         <div class="md:basis-1/3">${this._renderAvatar()}</div>
-        <div class="md:basis-1/3">
+        <div class="md:basis-1/3 flex md:justify-center">
           <nav class="pointer-events-auto hidden md:inline-block">
             <ul
               class="flex rounded-full bg-white/90
