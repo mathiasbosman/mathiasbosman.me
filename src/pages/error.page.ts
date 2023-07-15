@@ -16,10 +16,10 @@ export class ErrorPage extends TailwindElement {
         <sandbox-content>
           <div class="relative px-2 sm:px-8 lg:px-12 mt-32">
             <div class="mx-auto max-w-2xl lg:max-w-5xl">
-            <sandbox-page-title title="404 - not found">
-              This is not the page you are looking for!
-            </sandbox-page-title>
-              </div>
+              <sandbox-page-title title="404 - not found">
+                This is not the page you are looking for!
+              </sandbox-page-title>
+            </div>
           </div>
         </sandbox-content>
       </sandbox-page>

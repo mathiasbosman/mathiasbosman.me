@@ -1,4 +1,4 @@
-export const testOutgoingLinks = (() => {
+export const testOutgoingLinks = () => {
   it(`Outgoing links do not return a 404 status`, () => {
     const checkedLinks: string[] = [];
     cy.get(`a`).each((link) => {
@@ -8,10 +8,10 @@ export const testOutgoingLinks = (() => {
           failOnStatusCode: false,
           url: href,
         })
-        .its(`status`)
-        .should(`not.eq`, 404);
+          .its(`status`)
+          .should(`not.eq`, 404);
         checkedLinks.push(href);
       }
     });
   });
-})
+};
