@@ -9,13 +9,13 @@ export class SandboxApp extends TailwindElement {
     await this.initRouter();
   }
 
+  protected override render(): TemplateResult {
+    return html` <div id="app-content" class="h-full"><slot></slot></div> `;
+  }
+
   private async initRouter(): Promise<void> {
     router.setOutlet(document.querySelector("sandbox-app"));
     await setRoutes();
-  }
-
-  protected override render(): TemplateResult {
-    return html` <div id="app-content" class="h-full"><slot></slot></div> `;
   }
 }
 declare global {

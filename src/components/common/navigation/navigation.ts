@@ -15,6 +15,33 @@ export class SandboxNavigation extends TailwindElement {
   @property() renderAvatar = true;
   @property({ type: Object }) location: RouterLocation = router.location;
 
+  protected override render(): TemplateResult {
+    return html`
+      <div
+        class="flex justify-between md:justify-center flex-row mt-8 px-4 md:px-2 items-center"
+      >
+        <div class="md:basis-1/3">${this._renderAvatar()}</div>
+        <div class="md:basis-1/3">
+          <nav class="pointer-events-auto hidden md:inline-block">
+            <ul
+              class="flex rounded-full bg-white/90
+            px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10"
+            >
+              ${this.links.map((link) => {
+                return this._renderLink(link);
+              })}
+            </ul>
+          </nav>
+        </div>
+        <div class="basis-1/3">
+          <sandbox-navigation-hamburger
+            .links="${this.links}"
+          ></sandbox-navigation-hamburger>
+        </div>
+      </div>
+    `;
+  }
+
   private _renderLink(link: HTMLSimpleLink): TemplateResult {
     // check if link is currently the active page
 
@@ -49,33 +76,6 @@ export class SandboxNavigation extends TailwindElement {
         ></sandbox-avatar>
       `;
     }
-  }
-
-  protected override render(): TemplateResult {
-    return html`
-      <div
-        class="flex justify-between md:justify-center flex-row mt-8 px-4 md:px-2 items-center"
-      >
-        <div class="md:basis-1/3">${this._renderAvatar()}</div>
-        <div class="md:basis-1/3">
-          <nav class="pointer-events-auto hidden md:inline-block">
-            <ul
-              class="flex rounded-full bg-white/90
-            px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10"
-            >
-              ${this.links.map((link) => {
-                return this._renderLink(link);
-              })}
-            </ul>
-          </nav>
-        </div>
-        <div class="basis-1/3">
-          <sandbox-navigation-hamburger
-            .links="${this.links}"
-          ></sandbox-navigation-hamburger>
-        </div>
-      </div>
-    `;
   }
 }
 

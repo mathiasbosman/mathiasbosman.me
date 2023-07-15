@@ -8,6 +8,20 @@ import type { HTMLImage } from "../shared/utils.ts";
 export class SandboxImageCarousel extends TailwindElement {
   @property({ attribute: false }) images!: HTMLImage[];
 
+  protected override render(): TemplateResult {
+    return html`
+      <div class="mt-8 sm:mt-16">
+        <div
+          class="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8"
+        >
+          ${this.images.map((src, key) => {
+            return this.renderImage(src, key);
+          })}
+        </div>
+      </div>
+    `;
+  }
+
   private renderImage(source: HTMLImage, index: number): TemplateResult {
     const cssRotateClass = index % 2 === 0 ? "-rotate-2" : "rotate-2";
 
@@ -22,20 +36,6 @@ export class SandboxImageCarousel extends TailwindElement {
           src="${source.src}"
           class="inset-0 h-full w-full object-cover"
         />
-      </div>
-    `;
-  }
-
-  protected override render(): TemplateResult {
-    return html`
-      <div class="mt-8 sm:mt-16">
-        <div
-          class="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8"
-        >
-          ${this.images.map((src, key) => {
-            return this.renderImage(src, key);
-          })}
-        </div>
       </div>
     `;
   }
