@@ -1,8 +1,9 @@
 import { customElement } from "lit/decorators.js";
 import { TailwindElement } from "../../shared/tailwind.element.ts";
-import { html, type TemplateResult } from "lit";
+import type { TemplateResult } from "lit";
+import { html } from "lit";
 
-@customElement("sandbox-content")
+@customElement("sandbox-content-wrapper")
 export class SandboxContentWrapper extends TailwindElement {
   protected override render(): TemplateResult {
     return html`
@@ -17,6 +18,6 @@ export class SandboxContentWrapper extends TailwindElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "sandbox-content": SandboxContentWrapper;
+    "sandbox-content-wrapper": SandboxContentWrapper;
   }
 }

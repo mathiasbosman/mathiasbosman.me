@@ -1,8 +1,4 @@
-describe(`Homepage link tests`, () => {
-  beforeEach(() => {
-    cy.visit(`/`);
-  });
-
+export const testOutgoingLinks = () => {
   it(`Outgoing links do not return a 404 status`, () => {
     const checkedLinks: string[] = [];
     cy.get(`a`).each((link) => {
@@ -18,4 +14,4 @@ describe(`Homepage link tests`, () => {
       }
     });
   });
-});
+};

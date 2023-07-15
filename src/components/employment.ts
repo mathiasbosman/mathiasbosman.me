@@ -1,7 +1,8 @@
 import { TailwindElement } from "../shared/tailwind.element.ts";
 import { customElement, property } from "lit/decorators.js";
-import { html, type TemplateResult } from "lit";
-import { type HTMLImage } from "../shared/utils.ts";
+import type { TemplateResult } from "lit";
+import { html } from "lit";
+import type { HTMLImage } from "../shared/utils.ts";
 
 @customElement("sandbox-employment")
 export class SandboxEmployment extends TailwindElement {
@@ -44,26 +45,6 @@ export class SandboxEmploymentItem extends TailwindElement {
   @property() since: number = new Date().getFullYear();
   @property() until?: number;
 
-  private renderLogo(): TemplateResult | undefined {
-    if (this.logo !== null) {
-      return html`<div
-        class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0"
-      >
-        <img
-          alt="${this.logo.alt}"
-          loading="lazy"
-          width="32"
-          height="32"
-          decoding="async"
-          data-nimg="1"
-          class="h-7 w-7"
-          style="color:transparent"
-          src="${this.logo.src}"
-        />
-      </div>`;
-    }
-  }
-
   protected override render(): TemplateResult {
     return html`
       <div class="flex gap-4 mt-5">
@@ -96,6 +77,26 @@ export class SandboxEmploymentItem extends TailwindElement {
         </dl>
       </div>
     `;
+  }
+
+  private renderLogo(): TemplateResult | undefined {
+    if (this.logo !== null) {
+      return html`<div
+        class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0"
+      >
+        <img
+          alt="${this.logo.alt}"
+          loading="lazy"
+          width="32"
+          height="32"
+          decoding="async"
+          data-nimg="1"
+          class="h-7 w-7"
+          style="color:transparent"
+          src="${this.logo.src}"
+        />
+      </div>`;
+    }
   }
 }
 

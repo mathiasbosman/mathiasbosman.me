@@ -1,14 +1,18 @@
 import { TailwindElement } from "../shared/tailwind.element.ts";
 import { customElement } from "lit/decorators.js";
-import { html, type TemplateResult } from "lit";
+import type { TemplateResult } from "lit";
+import { html } from "lit";
+import { pageTitle } from "../decorators/title.decorator.ts";
 
-import "../components/typography/pagetitle";
-import "../components/avatar";
-import "../components/imagecarousel";
-import "../components/common/contentwrapper";
-import "../components/employment";
-import "../components/contact";
-import "../components/project";
+import "../components/typography/pagetitle.ts";
+import "../components/avatar.ts";
+import "../components/imagecarousel.ts";
+import "../components/common/contentwrapper.ts";
+import "../components/common/page.ts";
+import "../components/employment.ts";
+import "../components/contact.ts";
+import "../components/project.ts";
+import "../components/iconlink.ts";
 
 import roll_1 from "../assets/carousel/roll_1.webp";
 import roll_2 from "../assets/carousel/roll_2.webp";
@@ -22,16 +26,20 @@ import logo_procius from "../assets/logos/procius.webp";
 import logo_bitvavo from "../assets/logos/bitvavo.webp";
 import logo_lit from "../assets/logos/lit.webp";
 import logo_mqtt from "../assets/logos/mqtt.webp";
-import { LINK_GITHUB, LINK_LINKEDIN } from "../constants";
-import { GitHubIcon, LinkedInIcon } from "../components/iconlink";
+import { DEFAULT_TITLE, LINK_GITHUB, LINK_LINKEDIN } from "../constants.ts";
+import { GitHubIcon, LinkedInIcon } from "../shared/icons.ts";
 
 @customElement("sandbox-home-page")
+@pageTitle(DEFAULT_TITLE)
 export class HomePage extends TailwindElement {
   protected override render(): TemplateResult {
     return html`
-      <sandbox-page>
-        <sandbox-content>
-          <div class="relative px-4 sm:px-8 lg:px-12">
+      <sandbox-page .renderAvatar="${false}">
+        <sandbox-content-wrapper>
+          <div class="relative px-2 sm:px-8 lg:px-12">
+            <sandbox-avatar
+              .image="${{ alt: "Avatar", src: avatar }}"
+            ></sandbox-avatar>
             <sandbox-page-title
               title="Software designer, network engineer, and lighting tech."
             >
@@ -40,7 +48,7 @@ export class HomePage extends TailwindElement {
               stage lights.<br />
               Currently full-time employed at the Department of Environment of
               the Flemish Government.<br />
-              Yes, the cute Beagle is mine; her name is Luna.
+              Yes, I'm the human of the cute Beagle; her name is Luna.
             </sandbox-page-title>
             <div class="flex gap-6">
               <!-- socials -->
@@ -54,7 +62,7 @@ export class HomePage extends TailwindElement {
               ></sandbox-icon-link>
             </div>
           </div>
-        </sandbox-content>
+        </sandbox-content-wrapper>
 
         <!-- most prominent pics should be on positions 2, 3 and 4 -->
         <sandbox-image-carousel
@@ -82,8 +90,8 @@ export class HomePage extends TailwindElement {
           ]}"
         ></sandbox-image-carousel>
 
-        <div class="sm:px-8 mt-8 md:mt-28">
-          <sandbox-content>
+        <div class="sm:px-8 mt-8 md:mt-28 px-2">
+          <sandbox-content-wrapper>
             <section class="mx-auto max-w-2xl lg:max-w-5xl mt-6">
               <div
                 class="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2"
@@ -189,7 +197,7 @@ export class HomePage extends TailwindElement {
                 </div>
               </div>
             </section>
-          </sandbox-content>
+          </sandbox-content-wrapper>
         </div>
       </sandbox-page>
     `;

@@ -23,3 +23,6 @@ jobs:
 
       - name: "lint code"
         run: npm run lint
+
+      - name: "run build"
+        run: npm run build
