@@ -1,4 +1,5 @@
-import { type CSSResultGroup, LitElement, unsafeCSS } from "lit";
+import type { CSSResultGroup } from "lit";
+import { LitElement, unsafeCSS } from "lit";
 import style from "./tailwind.global.css?inline";
 
 const tailwindElement = unsafeCSS(style);

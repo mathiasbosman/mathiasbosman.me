@@ -1,14 +1,17 @@
 import { TailwindElement } from "../../shared/tailwind.element";
-import { html, type TemplateResult } from "lit";
-import { customElement } from "lit/decorators.js";
+import type { TemplateResult } from "lit";
+import { html } from "lit";
+import { customElement, property } from "lit/decorators.js";
 import { LINK_GITHUB, LINK_LINKEDIN } from "../../constants.ts";
 
-import "../avatar";
-import "./footer/footer";
-import avatar from "../../assets/mathias.webp";
+import "../avatar.ts";
+import "./footer/footer.ts";
+import "./navigation/navigation.ts";
 
 @customElement("sandbox-page")
 export class SandboxPage extends TailwindElement {
+  @property() renderAvatar = true;
+
   protected override render(): TemplateResult {
     return html`
       <div
@@ -24,13 +27,12 @@ export class SandboxPage extends TailwindElement {
         </div>
         <div class="relative">
           <main>
-            <sandbox-content>
-              <header class="mt-6 relative px-4 sm:px-8 lg:px-12">
-                <sandbox-avatar
-                  .image="${{ alt: "Avatar", src: avatar }}"
-                ></sandbox-avatar>
-              </header>
-            </sandbox-content>
+            <header class="mx-auto max-w-2xl lg:max-w-5xl">
+              <sandbox-navigation
+                .renderAvatar="${this.renderAvatar}"
+                .links="${[{ href: "/about", text: "About" }]}"
+              ></sandbox-navigation>
+            </header>
             <slot></slot>
           </main>
           <sandbox-footer

@@ -1,7 +1,8 @@
-import { html, type TemplateResult } from "lit";
+import type { TemplateResult } from "lit";
+import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { TailwindElement } from "../shared/tailwind.element.ts";
-import { type HTMLImage } from "../shared/utils.ts";
+import type { HTMLImage } from "../shared/utils.ts";
 
 @customElement("sandbox-image-carousel")
 export class SandboxImageCarousel extends TailwindElement {
@@ -27,7 +28,7 @@ export class SandboxImageCarousel extends TailwindElement {
 
   protected override render(): TemplateResult {
     return html`
-      <div class="mt-8 sm:mt-20">
+      <div class="mt-8 sm:mt-16">
         <div
           class="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8"
         >

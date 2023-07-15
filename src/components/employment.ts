@@ -1,7 +1,8 @@
 import { TailwindElement } from "../shared/tailwind.element.ts";
 import { customElement, property } from "lit/decorators.js";
-import { html, type TemplateResult } from "lit";
-import { type HTMLImage } from "../shared/utils.ts";
+import type { TemplateResult } from "lit";
+import { html } from "lit";
+import type { HTMLImage } from "../shared/utils.ts";
 
 @customElement("sandbox-employment")
 export class SandboxEmployment extends TailwindElement {

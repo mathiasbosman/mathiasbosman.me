@@ -1,5 +1,6 @@
 import { TailwindElement } from "../../shared/tailwind.element";
-import { html, type TemplateResult } from "lit";
+import type { TemplateResult } from "lit";
+import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 @customElement("sandbox-page-title")

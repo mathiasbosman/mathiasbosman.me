@@ -1,6 +1,6 @@
 import { Router } from "@vaadin/router";
 
-import "./components/common/page";
+const router = new Router();
 
 const routes = [
   {
@@ -8,6 +8,13 @@ const routes = [
     component: "sandbox-home-page",
     action: async () => {
       await import("./pages/home.page");
+    },
+  },
+  {
+    path: "/about",
+    component: "sandbox-about-page",
+    action: async () => {
+      await import("./pages/about.page");
     },
   },
   {
@@ -19,6 +26,8 @@ const routes = [
   },
 ];
 
-const container = document.getElementById("app");
-const router = new Router(container);
-router.setRoutes(routes).then();
+const setRoutes = async (): Promise<void> => {
+  await router.setRoutes(routes);
+};
+
+export { router, setRoutes };

@@ -1,6 +1,7 @@
 import { TailwindElement } from "../shared/tailwind.element.ts";
 import { customElement } from "lit/decorators.js";
-import { html, type TemplateResult } from "lit";
+import type { TemplateResult } from "lit";
+import { html } from "lit";
 import { CONTACT_ACTIVE, LINK_LINKEDIN } from "../constants.ts";
 
 //todo: #302 - rework

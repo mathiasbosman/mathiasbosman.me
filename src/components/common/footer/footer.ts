@@ -1,10 +1,11 @@
 import { TailwindElement } from "../../../shared/tailwind.element.ts";
 import { customElement, property } from "lit/decorators.js";
-import { html, type TemplateResult } from "lit";
-import { type HTMLSimpleLink } from "../../../shared/utils.ts";
+import type { HTMLSimpleLink } from "../../../shared/utils.ts";
+import type { TemplateResult } from "lit";
+import { html } from "lit";
 
-import "../contentwrapper";
-import "./footer-link";
+import "../contentwrapper.ts";
+import "./footer-link.ts";
 
 @customElement("sandbox-footer")
 export class SandboxFooter extends TailwindElement {
