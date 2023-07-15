@@ -30,7 +30,10 @@ export class SandboxPage extends TailwindElement {
             <header class="mx-auto max-w-2xl lg:max-w-5xl">
               <sandbox-navigation
                 .renderAvatar="${this.renderAvatar}"
-                .links="${[{ href: "/about", text: "About" }]}"
+                .links="${[
+                  { href: "/about", text: "About" },
+                  { href: "/projects", text: "Projects" },
+                ]}"
               ></sandbox-navigation>
             </header>
             <slot></slot>

@@ -1,15 +1,14 @@
 import { testOutgoingLinks } from "../../../support/e2e.ts";
 
-describe("Homepage tests", () => {
+describe("About page tests", () => {
   beforeEach(() => {
-    cy.visit("/");
+    cy.visit("/projects");
   });
 
   it("Required elements are present", () => {
-    cy.get("sandbox-home-page").should("be.visible");
+    cy.get("sandbox-projects-page").should("be.visible");
     cy.get("sandbox-navigation").should("be.visible");
     cy.get("sandbox-footer").should("be.visible");
-    cy.get("sandbox-navigation-hamburger").should("not.be.visible");
     cy.screenshot();
   });
 

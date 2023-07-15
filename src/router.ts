@@ -18,6 +18,13 @@ const routes = [
     },
   },
   {
+    path: "/projects",
+    component: "sandbox-projects-page",
+    action: async () => {
+      await import("./pages/projects.page");
+    },
+  },
+  {
     path: "(.*)",
     component: "sandbox-error-page",
     action: async () => {
