@@ -15,7 +15,7 @@ export class SandboxFooter extends TailwindElement {
     return html`
       <footer class="mt-32">
         <div class="sm:px-8">
-          <sandbox-content>
+          <sandbox-content-wrapper>
             <div
               class="border-t border-zinc-100 pb-16 pt-10 dark:border-zinc-700/40"
             >
@@ -41,7 +41,7 @@ export class SandboxFooter extends TailwindElement {
                 </div>
               </div>
             </div>
-          </sandbox-content>
+          </sandbox-content-wrapper>
         </div>
       </footer>
     `;

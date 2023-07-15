@@ -35,7 +35,7 @@ export class HomePage extends TailwindElement {
   protected override render(): TemplateResult {
     return html`
       <sandbox-page .renderAvatar="${false}">
-        <sandbox-content>
+        <sandbox-content-wrapper>
           <div class="relative px-2 sm:px-8 lg:px-12">
             <sandbox-avatar
               .image="${{ alt: "Avatar", src: avatar }}"
@@ -62,7 +62,7 @@ export class HomePage extends TailwindElement {
               ></sandbox-icon-link>
             </div>
           </div>
-        </sandbox-content>
+        </sandbox-content-wrapper>
 
         <!-- most prominent pics should be on positions 2, 3 and 4 -->
         <sandbox-image-carousel
@@ -91,7 +91,7 @@ export class HomePage extends TailwindElement {
         ></sandbox-image-carousel>
 
         <div class="sm:px-8 mt-8 md:mt-28 px-2">
-          <sandbox-content>
+          <sandbox-content-wrapper>
             <section class="mx-auto max-w-2xl lg:max-w-5xl mt-6">
               <div
                 class="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2"
@@ -197,7 +197,7 @@ export class HomePage extends TailwindElement {
                 </div>
               </div>
             </section>
-          </sandbox-content>
+          </sandbox-content-wrapper>
         </div>
       </sandbox-page>
     `;
