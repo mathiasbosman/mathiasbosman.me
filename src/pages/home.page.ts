@@ -23,6 +23,7 @@ import avatar from "../assets/mathias.webp";
 import { DEFAULT_TITLE, LINK_GITHUB, LINK_LINKEDIN } from "../constants.ts";
 import { GitHubIcon, LinkedInIcon } from "../shared/icons.ts";
 import { config } from "../models/config/project.config.ts";
+import { experienceConfig } from "../models/config/experience.config.ts";
 
 @customElement("sandbox-home-page")
 @pageTitle(DEFAULT_TITLE)
@@ -100,47 +101,9 @@ export class HomePage extends TailwindElement {
                   <div
                     class="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
                   >
-                    <sandbox-employment>
-                      <sandbox-employment-item
-                        .logo="${{
-                          alt: "Flemish Government logo",
-                          src: "/logos/flemishGov.webp",
-                        }}"
-                        company="Flemish Government"
-                        role="Project manager"
-                        since="2022"
-                      ></sandbox-employment-item>
-                      <sandbox-employment-item
-                        .logo="${{
-                          alt: "Flemish Government logo",
-                          src: "/logos/flemishGov.webp",
-                        }}"
-                        company="Flemish Government"
-                        role="Java developer"
-                        since="2018"
-                        until="2022"
-                      ></sandbox-employment-item>
-                      <sandbox-employment-item
-                        .logo="${{
-                          alt: "Echoweb logo",
-                          src: "/logos/echoweb.webp",
-                        }}"
-                        company="Echoweb"
-                        role="PHP developer"
-                        since="2013"
-                        until="2013"
-                      ></sandbox-employment-item>
-                      <sandbox-employment-item
-                        .logo="${{
-                          alt: "Procius Ltd. logo",
-                          src: "/logos/procius.webp",
-                        }}"
-                        company="Procius Ltd."
-                        role="PHP developer (internship)"
-                        since="2012"
-                        until="2012"
-                      ></sandbox-employment-item>
-                    </sandbox-employment>
+                    <sandbox-employment
+                      .experiences="${experienceConfig.experiences}"
+                    ></sandbox-employment>
                   </div>
                 </div>
               </div>

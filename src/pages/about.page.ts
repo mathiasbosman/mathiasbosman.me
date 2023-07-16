@@ -3,7 +3,7 @@ import { TailwindElement } from "../shared/tailwind.element.ts";
 import type { TemplateResult } from "lit";
 import { html } from "lit";
 import { Buffer } from "buffer";
-import profilePicutre from "../assets/mathias_large.webp";
+import profilePicture from "../assets/mathias_large.webp";
 import { subTitle } from "../decorators/title.decorator.ts";
 import { CONTACT_EMAIL, LINK_GITHUB, LINK_LINKEDIN } from "../constants.ts";
 import type { Icon } from "../shared/icons.ts";
@@ -11,6 +11,9 @@ import { GitHubIcon, LinkedInIcon } from "../shared/icons.ts";
 import type { HTMLSimpleLink } from "../shared/utils.ts";
 
 import "../components/common/page.ts";
+import "../components/common/contentwrapper.ts";
+import "../components/common/sectionwrapper.ts";
+import "../components/typography/pagetitle.ts";
 
 @customElement("sandbox-about-page")
 @subTitle("About")
@@ -46,10 +49,10 @@ export class AboutPage extends TailwindElement {
     return html`
       <sandbox-page>
         <sandbox-content-wrapper>
-          <div class="relative px-2 sm:px-8 lg:px-12 mt-32">
+          <sandbox-section-wrapper>
             <div class="mx-auto max-w-2xl lg:max-w-5xl">
               <div
-                class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12"
+                class="-mt-6 grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12"
               >
                 <div class="lg:pl-20">
                   <div class="max-w-xs px-2.5 lg:max-w-none">
@@ -60,19 +63,18 @@ export class AboutPage extends TailwindElement {
                       height="800"
                       decoding="async"
                       class="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
-                      src="${profilePicutre}"
+                      src="${profilePicture}"
                     />
                   </div>
                 </div>
                 <div class="lg:order-first lg:row-span-2">
-                  <h1
-                    class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl"
+                  <sandbox-page-title
+                    title="I’m Mathias Bosman. I live in Lebbeke, Belgium, where I try
+                    to be the version of myself."
                   >
-                    I’m Mathias Bosman. I live in Lebbeke, Belgium, where I try
-                    to be the version of myself.
-                  </h1>
+                  </sandbox-page-title>
                   <div
-                    class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400"
+                    class="space-y-7 text-base text-zinc-600 dark:text-zinc-400"
                   >
                     <p>
                       In the late 90's I got my hands on a fairly simple Windows
@@ -137,7 +139,7 @@ export class AboutPage extends TailwindElement {
                 </div>
               </div>
             </div>
-          </div>
+          </sandbox-section-wrapper>
         </sandbox-content-wrapper>
       </sandbox-page>
     `;
