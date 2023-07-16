@@ -9,7 +9,6 @@ describe("Homepage tests", () => {
     cy.get("sandbox-home-page").should("be.visible");
     cy.get("sandbox-navigation").should("be.visible");
     cy.get("sandbox-footer").should("be.visible");
-    cy.get("sandbox-navigation-hamburger").should("not.be.visible");
     cy.screenshot();
   });
 

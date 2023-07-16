@@ -55,7 +55,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: E2E - ${{ matrix.browser }}x ${{ matrix.viewport }}
+      - name: E2E - ${{ matrix.browser }} ${{ matrix.viewport.width }}x${{ matrix.viewport.height }}
         uses: cypress-io/github-action@v5
         with:
           project: "./test/driver/cypress"
