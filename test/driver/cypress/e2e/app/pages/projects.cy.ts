@@ -8,6 +8,8 @@ describe("About page tests", () => {
   it("Required elements are present", () => {
     cy.get("sandbox-projects-page").should("be.visible");
     cy.get("sandbox-navigation").should("be.visible");
+    cy.get("sandbox-page-title").should("be.visible");
+    cy.get("sandbox-projects").should("be.visible");
     cy.get("sandbox-footer").should("be.visible");
     cy.screenshot();
   });

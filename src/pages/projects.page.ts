@@ -5,6 +5,8 @@ import { html } from "lit";
 import { subTitle } from "../decorators/title.decorator.ts";
 
 import "../components/common/page.ts";
+import "../components/common/contentwrapper.ts";
+import "../components/common/sectionwrapper.ts";
 import "../components/typography/pagetitle.ts";
 import "../components/project.ts";
 import { config } from "../models/config/project.config.ts";
@@ -16,7 +18,7 @@ export class ProjectsPage extends TailwindElement {
     return html`
       <sandbox-page>
         <sandbox-content-wrapper>
-          <div class="relative px-2 sm:px-8 lg:px-12 mt-32">
+          <sandbox-section-wrapper>
             <div class="mx-auto max-w-2xl lg:max-w-5xl">
               <sandbox-page-title
                 title="Bits and bytes I've put out in the world wide web."
@@ -30,14 +32,13 @@ export class ProjectsPage extends TailwindElement {
                 </p>
               </sandbox-page-title>
             </div>
-
             <section class="mt-32 mx-auto max-w-2xl lg:max-w-5xl">
               <sandbox-projects
                 grid="true"
                 .projects="${config.projects}"
               ></sandbox-projects>
             </section>
-          </div>
+          </sandbox-section-wrapper>
         </sandbox-content-wrapper>
       </sandbox-page>
     `;

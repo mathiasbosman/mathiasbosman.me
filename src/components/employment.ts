@@ -2,10 +2,16 @@ import { TailwindElement } from "../shared/tailwind.element.ts";
 import { customElement, property } from "lit/decorators.js";
 import type { TemplateResult } from "lit";
 import { html } from "lit";
+import type {
+  Experience,
+  ExperienceItem,
+} from "../models/config/experience.config.ts";
 import type { HTMLImage } from "../shared/utils.ts";
 
 @customElement("sandbox-employment")
 export class SandboxEmployment extends TailwindElement {
+  @property() experiences!: Experience[];
+
   protected override render(): TemplateResult {
     return html`
       <h2 class="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
@@ -30,7 +36,20 @@ export class SandboxEmployment extends TailwindElement {
         <span class="ml-3">Work</span>
       </h2>
       <div class="mt-6">
-        <slot></slot>
+        ${this.experiences.map((experience) => {
+          return experience.items
+            .filter((item) => item.pinned)
+            .map((item) => {
+              return html`
+                <sandbox-employment-item
+                  .employment="${item}"
+                  .logo="${experience.logo}"
+                  .company="${experience.place}"
+                >
+                </sandbox-employment-item>
+              `;
+            });
+        })};
       </div>
       <!-- todo: #301 - download-button -->
     `;
@@ -39,13 +58,13 @@ export class SandboxEmployment extends TailwindElement {
 
 @customElement("sandbox-employment-item")
 export class SandboxEmploymentItem extends TailwindElement {
-  @property() logo!: HTMLImage;
   @property() company!: string;
-  @property() role = "";
-  @property() since: number = new Date().getFullYear();
-  @property() until?: number;
+  @property() logo!: HTMLImage;
+  @property() employment!: ExperienceItem;
 
   protected override render(): TemplateResult {
+    const until = this.employment.period.to;
+
     return html`
       <div class="flex gap-4 mt-5">
         ${this.renderLogo()}
@@ -57,22 +76,27 @@ export class SandboxEmploymentItem extends TailwindElement {
             ${this.company}
           </dd>
           <dt class="sr-only">Role</dt>
-          <dd class="text-xs text-zinc-500 dark:text-zinc-400">${this.role}</dd>
+          <dd class="text-xs text-zinc-500 dark:text-zinc-400">
+            ${this.employment.title}
+          </dd>
           <dt class="sr-only">Date</dt>
           <dd
             class="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-            aria-label="${this.since} until ${this.until !== undefined
-              ? this.until
+            aria-label="${this.employment.period.from.getFullYear()} until ${until !==
+            undefined
+              ? until.getFullYear()
               : "present"}"
           >
-            <time datetime="${this.since}">${this.since}</time>
+            <time datetime="${this.employment.period.from.getFullYear()}"
+              >${this.employment.period.from.getFullYear()}
+            </time>
             <span aria-hidden="true">—</span>
             <time
-              datetime="${this.until !== undefined
-                ? this.until
+              datetime="${until !== undefined
+                ? until.getFullYear()
                 : new Date().getFullYear()}"
-              >${this.until !== undefined ? this.until : "present"}</time
-            >
+              >${until !== undefined ? until.getFullYear() : "present"}
+            </time>
           </dd>
         </dl>
       </div>
@@ -80,8 +104,8 @@ export class SandboxEmploymentItem extends TailwindElement {
   }
 
   private renderLogo(): TemplateResult | undefined {
-    if (this.logo !== null) {
-      return html`<div
+    if (this.logo !== undefined) {
+      return html` <div
         class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0"
       >
         <img

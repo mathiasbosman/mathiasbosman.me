@@ -13,11 +13,14 @@ export interface Project {
   description: string;
 }
 
-const jsonConfig = {
+export const config: ProjectsConfig = {
   projects: [
     {
       pinned: true,
-      logo: { alt: "lit logo", src: "/logos/lit.webp" },
+      logo: {
+        alt: "Lit logo",
+        src: "/logos/lit.webp",
+      },
       title: "Lit sandbox",
       link: {
         href: "https://github.com/mathiasbosman/lit-sandbox",
@@ -28,7 +31,10 @@ const jsonConfig = {
     },
     {
       pinned: true,
-      logo: { alt: "MQTT logo", src: "/logos/mqtt.webp" },
+      logo: {
+        alt: "MQTT logo",
+        src: "/logos/mqtt.webp",
+      },
       title: "MQTT stress test",
       link: {
         href: "https://github.com/mathiasbosman/mqtt-stresstest",
@@ -38,7 +44,10 @@ const jsonConfig = {
         "A Spring Boot application to stress test a MQTT service. Originally used to stress test ThingsBoard.",
     },
     {
-      logo: { alt: "Bitvavo logo", src: "/logos/bitvavo.webp" },
+      logo: {
+        alt: "Bitvavo logo",
+        src: "/logos/bitvavo.webp",
+      },
       title: "Cryptobot",
       link: {
         href: "https://github.com/mathiasbosman/cryptobot",
@@ -49,7 +58,10 @@ const jsonConfig = {
     },
     {
       pinned: true,
-      logo: { src: avatar },
+      logo: {
+        src: avatar,
+        alt: "Avatar",
+      },
       title: "mathiasbosman.be",
       link: {
         href: "#",
@@ -60,5 +72,3 @@ const jsonConfig = {
     },
   ],
 };
-
-export const config: ProjectsConfig = JSON.parse(JSON.stringify(jsonConfig));

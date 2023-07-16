@@ -33,6 +33,7 @@ export class SandboxPage extends TailwindElement {
                 .links="${[
                   { href: "/about", text: "About" },
                   { href: "/projects", text: "Projects" },
+                  { href: "/experience", text: "Experience" },
                 ]}"
               ></sandbox-navigation>
             </header>

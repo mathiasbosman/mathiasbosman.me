@@ -25,6 +25,13 @@ const routes = [
     },
   },
   {
+    path: "/experience",
+    component: "sandbox-experience-page",
+    action: async () => {
+      await import("./pages/experience.page");
+    },
+  },
+  {
     path: "(.*)",
     component: "sandbox-error-page",
     action: async () => {

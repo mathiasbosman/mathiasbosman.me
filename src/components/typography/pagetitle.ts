@@ -9,16 +9,14 @@ export class SandboxPageTitle extends TailwindElement {
 
   protected override render(): TemplateResult {
     return html`
-      <div class="max-w-2xl">
-        <h1
-          class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl mt-6"
-        >
-          ${this.title}
-        </h1>
-        <p class="mt-6 text-base text-zinc-500 dark:text-zinc-400">
-          <slot></slot>
-        </p>
-      </div>
+      <h1
+        class="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl"
+      >
+        ${this.title}
+      </h1>
+      <p class="mt-6 text-base text-zinc-500 dark:text-zinc-400">
+        <slot></slot>
+      </p>
     `;
   }
 }
