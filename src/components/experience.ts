@@ -23,17 +23,16 @@ export class SandboxExperiences extends TailwindElement {
   }
 
   private _renderSection(experience: Experience) {
-    const uuid = crypto.randomUUID();
     return html`
       <section
-        aria-labelledby="${uuid}"
+        aria-labelledby="ref:${experience.place}"
         class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40"
       >
         <div
           class="grid max-w-3xl grid-cols-1 items-baseline gap-y-8 md:grid-cols-4"
         >
           <h2
-            id="${uuid}"
+            id="ref:${experience.place}"
             class="text-sm font-semibold text-zinc-800 dark:text-zinc-100"
           >
             ${experience.place}
