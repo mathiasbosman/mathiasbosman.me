@@ -21,7 +21,10 @@ export class ExperiencePage extends TailwindElement {
           <sandbox-section-wrapper>
             <div class="mx-auto max-w-2xl lg:max-w-5xl">
               <sandbox-page-title title="Some title about the experience page">
-                Lorem Ipsum dolor sit amet dummy text
+                Once I graduated from the University of Ghent and gained my
+                Bachelor degree in multimedia I went out and found some amazing
+                workplaces.<br />
+                Below are some of the most note-worthy.
               </sandbox-page-title>
             </div>
 

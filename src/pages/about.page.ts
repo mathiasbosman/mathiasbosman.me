@@ -70,7 +70,7 @@ export class AboutPage extends TailwindElement {
                 <div class="lg:order-first lg:row-span-2">
                   <sandbox-page-title
                     title="I’m Mathias Bosman. I live in Lebbeke, Belgium, where I try
-                    to be the version of myself."
+                    to be the best version of myself."
                   >
                   </sandbox-page-title>
                   <div

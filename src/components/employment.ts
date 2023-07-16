@@ -49,7 +49,7 @@ export class SandboxEmployment extends TailwindElement {
                 </sandbox-employment-item>
               `;
             });
-        })};
+        })}
       </div>
       <!-- todo: #301 - download-button -->
     `;
