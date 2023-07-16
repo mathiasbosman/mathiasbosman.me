@@ -3,7 +3,7 @@ import { TailwindElement } from "../shared/tailwind.element.ts";
 import type { TemplateResult } from "lit";
 import { html } from "lit";
 import { Buffer } from "buffer";
-import profilePicutre from "../assets/mathias_large.webp";
+import profilePicture from "../assets/mathias_large.webp";
 import { subTitle } from "../decorators/title.decorator.ts";
 import { CONTACT_EMAIL, LINK_GITHUB, LINK_LINKEDIN } from "../constants.ts";
 import type { Icon } from "../shared/icons.ts";
@@ -60,7 +60,7 @@ export class AboutPage extends TailwindElement {
                       height="800"
                       decoding="async"
                       class="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
-                      src="${profilePicutre}"
+                      src="${profilePicture}"
                     />
                   </div>
                 </div>
