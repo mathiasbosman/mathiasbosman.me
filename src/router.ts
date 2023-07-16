@@ -1,10 +1,13 @@
+import type { Route } from "@vaadin/router";
 import { Router } from "@vaadin/router";
 
 const router = new Router();
+const fallback = "(.*)";
 
-const routes = [
+const routes: Route[] = [
   {
     path: "/",
+    name: "Home",
     component: "sandbox-home-page",
     action: async () => {
       await import("./pages/home.page");
@@ -12,6 +15,7 @@ const routes = [
   },
   {
     path: "/about",
+    name: "About",
     component: "sandbox-about-page",
     action: async () => {
       await import("./pages/about.page");
@@ -19,20 +23,22 @@ const routes = [
   },
   {
     path: "/projects",
+    name: "Projects",
     component: "sandbox-projects-page",
     action: async () => {
       await import("./pages/projects.page");
     },
   },
   {
-    path: "/experience",
+    path: "/experiences",
+    name: "Experiences",
     component: "sandbox-experience-page",
     action: async () => {
       await import("./pages/experience.page");
     },
   },
   {
-    path: "(.*)",
+    path: fallback,
     component: "sandbox-error-page",
     action: async () => {
       await import("./pages/error.page");
@@ -44,4 +50,4 @@ const setRoutes = async (): Promise<void> => {
   await router.setRoutes(routes);
 };
 
-export { router, setRoutes };
+export { router, setRoutes, routes, fallback };

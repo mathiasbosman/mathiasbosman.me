@@ -7,13 +7,13 @@ import type { RouterLocation } from "@vaadin/router";
 import "../../avatar.ts";
 import "./hamburger.navigation.ts";
 import avatar from "../../../assets/mathias.webp";
-import { router } from "../../../router.ts";
+import { fallback, router, routes } from "../../../router.ts";
 import { AvatarSize } from "../../avatar.ts";
 
 @customElement("sandbox-navigation")
 export class SandboxNavigation extends TailwindElement {
-  @property() links!: HTMLSimpleLink[];
   @property() renderAvatar = true;
+  @property() routes = routes;
   @property({ type: Object }) location: RouterLocation = router.location;
 
   protected override render(): TemplateResult {
@@ -28,7 +28,7 @@ export class SandboxNavigation extends TailwindElement {
               class="flex rounded-full bg-white/90
             px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10"
             >
-              ${this.links.map((link) => {
+              ${this._getLinks().map((link) => {
                 return this._renderLink(link);
               })}
             </ul>
@@ -36,11 +36,22 @@ export class SandboxNavigation extends TailwindElement {
         </div>
         <div class="basis-1/3">
           <sandbox-navigation-hamburger
-            .links="${this.links}"
+            .links="${this._getLinks()}"
           ></sandbox-navigation-hamburger>
         </div>
       </div>
     `;
+  }
+
+  private _getLinks(): HTMLSimpleLink[] {
+    return this.routes
+      .filter((route) => ![fallback, "/"].includes(route.path))
+      .map((route) => {
+        return {
+          href: route.path,
+          text: route.name,
+        };
+      });
   }
 
   private _renderLink(link: HTMLSimpleLink): TemplateResult {
@@ -72,7 +83,10 @@ export class SandboxNavigation extends TailwindElement {
     if (this.renderAvatar) {
       return html`
         <sandbox-avatar
-          .image="${{ src: avatar, alt: "Home" }}"
+          .image="${{
+            src: avatar,
+            alt: "Home",
+          }}"
           .size="${AvatarSize.xs}"
         ></sandbox-avatar>
       `;
