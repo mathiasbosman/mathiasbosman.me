@@ -92,6 +92,12 @@ export class AboutPage extends TailwindElement {
                       educational year I returned to Belgium.
                     </p>
                     <p>
+                      During my first years of employment I took a side-interest
+                      into stage lighting coming from my love for musical
+                      theatre. Sadly I could not study this in the UK and so I
+                      got my degree as stage lighting technician locally.
+                    </p>
+                    <p>
                       Today, I'm the team lead -
                       <em>(I prefer "one of the team")</em> - of a small group
                       of Java developers who develop and maintain business
