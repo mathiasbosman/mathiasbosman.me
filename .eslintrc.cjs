@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  ignorePatterns: ["node_modules/**/*", "dist/**/*"],
+  ignorePatterns: ["node_modules/**/*", "dist/**/*", "test/**/*"],
   parser: "@typescript-eslint/parser",
   plugins: [
     "@typescript-eslint",
@@ -25,10 +25,5 @@ module.exports = {
   extends: [
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-  ],
-  overrides: [
-    {
-      files: ["test/**/*.ts"],
-    },
   ],
 };
