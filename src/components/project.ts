@@ -26,7 +26,6 @@ export class SandboxProjects extends TailwindElement {
   }
 
   private _renderItems(): TemplateResult {
-    console.log(this.pinnedOnly);
     return html`
       ${this.projects
         .filter((project) => (this.pinnedOnly ? project.pinned : true))
