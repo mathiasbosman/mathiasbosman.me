@@ -1,2 +1,4 @@
 User-Agent: *
+Disallow: /*.webp$
+Disallow: /*.png$
 Sitemap: http://mathiasbosman.be/sitemap.xml
