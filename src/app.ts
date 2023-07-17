@@ -12,7 +12,7 @@ export class SandboxApp extends TailwindElement {
   }
 
   protected override render(): TemplateResult {
-    return html` <div id="app-content" class="h-full"></div> `;
+    return html` <div class="h-full"><slot></slot></div> `;
   }
 
   private async initRouter(): Promise<void> {
