@@ -7,9 +7,14 @@ on [mathiasbosman.be][link_mathiasbosman_be].
 
 ## Development
 
-1. make sure the dev branch contains the latest state
+1. make sure the development branch contains the latest state
 2. create a feature branch from the dev branch
 3. make your changes and create a pull request into the dev branch
+
+We follow the default Git workflow:
+![Git workflow](https://gist.githubusercontent.com/mathiasbosman/22d6d72b4db2c33a7b33979c4654287f/raw/98a23b57423f499a4520e164c95cc0cac17d4f62/release_branches.svg)
+
+Once you're ready make a PR into the development branch.
 
 ### Testing
 
@@ -27,7 +32,7 @@ npm run test:e2e
 
 ## Deployment
 
-The master branch will automatically be deployed via Netlify.
+The master branch will automatically be deployed via [Netlify][link_netlify].
 
 ## Credits
 
@@ -41,6 +46,6 @@ The master branch will automatically be deployed via Netlify.
 [link_mathiasbosman_be]: http://mathiasbosman.be
 [link_lit]: https://lit.dev/
 [link_tailwind]: https://tailwindcss.com/
-[link_github_new_release]: https://github.com/mathiasbosman/mathiasbosman.github.io/releases/new
 [link_cypress]: https://cypress.io
+[link_netlify]: https://netlify.com
 [link_vite]: http://vitejs.dev
