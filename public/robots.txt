@@ -1,3 +1,2 @@
 User-Agent: *
-Disallow: /assets
 Sitemap: http://mathiasbosman.be/sitemap.xml
