@@ -1,10 +1,9 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "experimentalDecorators": true,
-    "useDefineForClassFields": false,
-    "module": "ESNext",
+    "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
     "skipLibCheck": true,
 
     /* Bundler mode */
@@ -13,27 +12,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "jsx": "react-jsx",
 
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "forceConsistentCasingInFileNames": true,
-
-    "plugins": [
-      {
-        "name": "ts-lit-plugin",
-        "strict": true,
-        "rules": {
-          "no-missing-element-type-definition": "warn" // Each element MUST be defined as HTMLElementTagNameMap
-        }
-      },
-      {
-        "name": "typescript-lit-html-plugin",
-        "strict": true
-      }
-    ]
+    "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": ["src/**/*"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
