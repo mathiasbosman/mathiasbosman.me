@@ -1,5 +1,5 @@
 {
-  "homepage": "https://mathiasbosman.github.io/",
+  "homepage": "https://mathiasbosman.be/",
   "name": "lit-sandbox",
   "private": true,
   "version": "4.1.0",
@@ -27,7 +27,7 @@
     "@typescript-eslint/parser": "^5.61.0",
     "autoprefixer": "^10.4.14",
     "cypress": "^12.17.1",
-    "eslint": "^8.44.0",
+    "eslint": "^8.45.0",
     "eslint-plugin-deprecation": "^1.4.1",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-import": "^2.27.5",
