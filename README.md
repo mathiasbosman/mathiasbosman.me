@@ -26,6 +26,7 @@ npm run test:e2e
 ```
 
 ## Deployment
+
 The master branch will automatically be deployed via Netlify.
 
 ## Credits
