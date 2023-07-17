@@ -13,7 +13,7 @@ on [mathiasbosman.be][link_mathiasbosman_be].
 
 ### Testing
 
-At the moment only end-to-end tests exsist.
+At the moment only end-to-end tests exist.
 
 These can be run by calling `npm run test:e2e`.
 and are run with [Cypress][link_cypress].
@@ -26,14 +26,7 @@ npm run test:e2e
 ```
 
 ## Deployment
-
-Steps to deploy:
-
-1. once you want to publish merge the dev branch into the master branch
-2. create a new release [via GitHub][link_github_new_release]
-   This will trigger [the GitHub workflow](.github/workflows/publish.yml) that builds the project and publishes it to the GitHub pages.
-   The version of the GitHub release will be used.
-   By building it the postBuild script will also update the sitemap.xml file with the latest update time.
+The master branch will automatically be deployed via Netlify.
 
 ## Credits
 
