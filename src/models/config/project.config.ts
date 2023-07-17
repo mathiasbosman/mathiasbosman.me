@@ -68,7 +68,7 @@ export const config: ProjectsConfig = {
         text: "mathiasbosman.be",
       },
       description:
-        "A trial cryptocurrency bot integration for the Bitvavo API. Purely for academic purposes... truly. Written in Java",
+        "This very website! Using Lit web components and Tailwind CSS.",
     },
   ],
 };
