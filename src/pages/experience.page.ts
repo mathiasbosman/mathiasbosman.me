@@ -20,7 +20,9 @@ export class ExperiencePage extends TailwindElement {
         <sandbox-content-wrapper>
           <sandbox-section-wrapper>
             <div class="mx-auto max-w-2xl lg:max-w-5xl">
-              <sandbox-page-title title="Some title about the experience page">
+              <sandbox-page-title
+                title="Places where I gained experiences since graduating."
+              >
                 Once I graduated from the University of Ghent and gained my
                 Bachelor degree in multimedia I went out and found some amazing
                 workplaces.<br />
