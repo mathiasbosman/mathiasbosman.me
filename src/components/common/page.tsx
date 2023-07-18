@@ -1,6 +1,6 @@
 import { type PropsWithChildren, type ReactElement } from 'react'
 
-export const SandboxPage = (props: PropsWithChildren): ReactElement => {
+export const Page = (props: PropsWithChildren): ReactElement => {
   return (
     <>
       <div id="mainBoxy"
@@ -14,12 +14,15 @@ export const SandboxPage = (props: PropsWithChildren): ReactElement => {
         <div className="relative">
           <main>
             <header className="mx-auto max-w-2xl lg:max-w-5xl">
-
+              <span>NAVIGATION</span>
             </header>
             {props.children}
           </main>
+          <span>FOOTER</span>
         </div>
       </div>
     </>
   )
 }
+
+export default Page;

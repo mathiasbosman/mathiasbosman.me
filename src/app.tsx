@@ -1,13 +1,13 @@
-import { SandboxPage } from './components/common/page.tsx'
+import { Page } from './components/common/page.tsx'
 import './shared/index.css'
+import { ReactElement } from 'react'
 
-function App () {
-
+export const App = (): ReactElement => {
   return (
     <>
-      <SandboxPage>
+      <Page>
         <p>TEST</p>
-      </SandboxPage>
+      </Page>
     </>
   )
 }
