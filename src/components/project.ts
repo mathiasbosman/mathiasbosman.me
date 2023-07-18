@@ -1,11 +1,11 @@
 import { customElement, property } from "lit/decorators.js";
 import { TailwindElement } from "../shared/tailwind.element.ts";
-import type { HTMLImage, HTMLSimpleLink } from "../shared/utils.ts";
-import { ImageDecoding } from "../shared/utils.ts";
+import type { HTMLImage, HTMLSimpleLink } from "../shared/utils.tsx";
+import { ImageDecoding } from "../shared/utils.tsx";
 import type { TemplateResult } from "lit";
 import { html } from "lit";
-import { LinkIcon } from "../shared/icons.ts";
-import type { Project } from "../models/config/project.config.ts";
+import { LinkIcon } from "../shared/icons.tsx";
+import type { Project } from "../models/config/project.config.tsx";
 
 @customElement("sandbox-projects")
 export class SandboxProjects extends TailwindElement {

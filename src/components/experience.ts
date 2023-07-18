@@ -2,13 +2,13 @@ import { TailwindElement } from "../shared/tailwind.element.ts";
 import { customElement, property } from "lit/decorators.js";
 import type { TemplateResult } from "lit";
 import { html } from "lit";
-import { ArrowRightIcon } from "../shared/icons.ts";
+import { ArrowRightIcon } from "../shared/icons.tsx";
 import type {
   Experience,
   ExperienceConfig,
   ExperienceItem,
-} from "../models/config/experience.config.ts";
-import { renderPeriodYearString } from "../shared/utils.ts";
+} from "../models/config/experience.config.tsx";
+import { renderPeriodYearString } from "../shared/utils.tsx";
 
 @customElement("sandbox-experiences")
 export class SandboxExperiences extends TailwindElement {

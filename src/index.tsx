@@ -2,8 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './app.tsx'
 
-ReactDOM.createRoot(document.getElementById("app-root")!).render(
+
+ReactDOM.createRoot(document.getElementById('app-root')!).render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
 )

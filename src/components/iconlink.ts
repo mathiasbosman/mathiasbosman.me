@@ -1,8 +1,8 @@
 import { customElement, property } from "lit/decorators.js";
 import { TailwindElement } from "../shared/tailwind.element";
 import { html, type TemplateResult } from "lit";
-import { type HTMLSimpleLink } from "../shared/utils.ts";
-import { type Icon } from "../shared/icons.ts";
+import { type HTMLSimpleLink } from "../shared/utils.tsx";
+import { type Icon } from "../shared/icons.tsx";
 
 @customElement("sandbox-icon-link")
 export class IconLink extends TailwindElement {

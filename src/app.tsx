@@ -1,13 +1,14 @@
-import { Page } from './components/common/page.tsx'
 import './shared/index.css'
-import { ReactElement } from 'react'
+import { type ReactElement } from 'react'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { routes } from './models/config/navigation.config.tsx'
+
+const router = createBrowserRouter(routes)
 
 export const App = (): ReactElement => {
   return (
     <>
-      <Page>
-        <p>TEST</p>
-      </Page>
+      <RouterProvider router={router} />
     </>
   )
 }

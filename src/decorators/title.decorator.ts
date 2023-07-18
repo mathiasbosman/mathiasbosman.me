@@ -1,5 +1,5 @@
 import type { LitElement, PropertyValues } from "lit";
-import { APP_NAME } from "../constants.ts";
+import { APP_NAME } from "../constants.tsx";
 
 // eslint-disable-next-line  @typescript-eslint/no-explicit-any, @typescript-eslint/ban-types
 type TypedConstructor<T = {}> = new (...args: any[]) => T;

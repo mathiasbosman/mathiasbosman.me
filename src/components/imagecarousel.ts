@@ -2,7 +2,7 @@ import type { TemplateResult } from "lit";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { TailwindElement } from "../shared/tailwind.element.ts";
-import type { HTMLImage } from "../shared/utils.ts";
+import type { HTMLImage } from "../shared/utils.tsx";
 
 @customElement("sandbox-image-carousel")
 export class SandboxImageCarousel extends TailwindElement {

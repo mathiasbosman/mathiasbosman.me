@@ -5,8 +5,8 @@ import { html } from "lit";
 import type {
   Experience,
   ExperienceItem,
-} from "../models/config/experience.config.ts";
-import type { HTMLImage } from "../shared/utils.ts";
+} from "../models/config/experience.config.tsx";
+import type { HTMLImage } from "../shared/utils.tsx";
 
 @customElement("sandbox-employment")
 export class SandboxEmployment extends TailwindElement {

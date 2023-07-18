@@ -9,7 +9,7 @@ import "../components/common/contentwrapper.ts";
 import "../components/common/sectionwrapper.ts";
 import "../components/typography/pagetitle.ts";
 import "../components/project.ts";
-import { config } from "../models/config/project.config.ts";
+import { config } from "../models/config/project.config.tsx";
 
 @customElement("sandbox-projects-page")
 @subTitle("Projects")

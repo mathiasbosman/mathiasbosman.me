@@ -9,7 +9,7 @@ import "../components/common/contentwrapper.ts";
 import "../components/common/sectionwrapper.ts";
 import "../components/typography/pagetitle.ts";
 import "../components/experience.ts";
-import { experienceConfig } from "../models/config/experience.config.ts";
+import { experienceConfig } from "../models/config/experience.config.tsx";
 
 @customElement("sandbox-experience-page")
 @subTitle("Experience")

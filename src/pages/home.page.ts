@@ -20,10 +20,10 @@ import roll_3 from "../assets/carousel/roll_3.webp";
 import roll_4 from "../assets/carousel/roll_4.webp";
 import roll_5 from "../assets/carousel/roll_5.webp";
 import avatar from "../assets/mathias.webp";
-import { DEFAULT_TITLE, LINK_GITHUB, LINK_LINKEDIN } from "../constants.ts";
-import { GitHubIcon, LinkedInIcon } from "../shared/icons.ts";
-import { config } from "../models/config/project.config.ts";
-import { experienceConfig } from "../models/config/experience.config.ts";
+import { DEFAULT_TITLE, LINK_GITHUB, LINK_LINKEDIN } from "../constants.tsx";
+import { GitHubIcon, LinkedInIcon } from "../shared/icons.tsx";
+import { config } from "../models/config/project.config.tsx";
+import { experienceConfig } from "../models/config/experience.config.tsx";
 
 @customElement("sandbox-home-page")
 @pageTitle(DEFAULT_TITLE)

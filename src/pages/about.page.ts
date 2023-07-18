@@ -5,10 +5,10 @@ import { html } from "lit";
 import { Buffer } from "buffer";
 import profilePicture from "../assets/mathias_large.webp";
 import { subTitle } from "../decorators/title.decorator.ts";
-import { CONTACT_EMAIL, LINK_GITHUB, LINK_LINKEDIN } from "../constants.ts";
-import type { Icon } from "../shared/icons.ts";
-import { GitHubIcon, LinkedInIcon } from "../shared/icons.ts";
-import type { HTMLSimpleLink } from "../shared/utils.ts";
+import { CONTACT_EMAIL, LINK_GITHUB, LINK_LINKEDIN } from "../constants.tsx";
+import type { Icon } from "../shared/icons.tsx";
+import { GitHubIcon, LinkedInIcon } from "../shared/icons.tsx";
+import type { HTMLSimpleLink } from "../shared/utils.tsx";
 
 import "../components/common/page.ts";
 import "../components/common/contentwrapper.ts";
