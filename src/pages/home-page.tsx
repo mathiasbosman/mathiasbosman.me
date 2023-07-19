@@ -4,7 +4,7 @@ import ContentWrapper from '../components/common/content-wrapper.tsx'
 import Avatar, { AvatarSize } from '../components/avatar.tsx'
 
 import avatar from '../assets/mathias.webp'
-import Pagetitle from '../components/typography/pagetitle.tsx'
+import PageTitle from '../components/typography/page-title.tsx'
 import Iconlink from '../components/iconlink.tsx'
 import { LINK_GITHUB, LINK_LINKEDIN } from '../constants.tsx'
 import { GitHubIcon, LinkedInIcon } from '../shared/icons.tsx'
@@ -27,14 +27,14 @@ export const HomePage = (): ReactElement => {
     <ContentWrapper>
       <div className={'relative px-2 sm:px-8 lg:px-12'}>
         <Avatar image={{ src: avatar, alt: 'Avatar' }} size={AvatarSize.s}/>
-        <Pagetitle title={'Software designer, network engineer and lighting tech.'}>
+        <PageTitle title={'Software designer, network engineer and lighting tech.'}>
           I&apos;m Mathias, a software designer and network engineer based in
           Lebbeke, Belgium.<br/>In my spare time I like to fiddle with
           stage lights.<br/>
           Currently full-time employed at the Department of Environment of
           the Flemish Government.<br/>
           Yes, I&apos;m the human of the cute Beagle; her name is Luna.
-        </Pagetitle>
+        </PageTitle>
         <div className={'mt-6 flex gap-6'}>
           <Iconlink link={LINK_GITHUB} icon={GitHubIcon}/>
           <Iconlink link={LINK_LINKEDIN} icon={LinkedInIcon}/>

@@ -2,12 +2,12 @@ import { type ReactElement } from 'react'
 import Page from '../components/common/page.tsx'
 import ContentWrapper from '../components/common/content-wrapper.tsx'
 import SectionWrapper from '../components/common/section-wrapper.tsx'
-import Pagetitle from '../components/typography/pagetitle.tsx'
 import { type HTMLSimpleLink, sendEmail } from '../shared/utils.tsx'
 import { EmailIcon, GitHubIcon, type Icon, LinkedInIcon } from '../shared/icons.tsx'
 import { LINK_GITHUB, LINK_LINKEDIN } from '../constants.tsx'
 
 import profilePicture from '../assets/mathias_large.webp'
+import PageTitle from '../components/typography/page-title.tsx'
 
 export const AboutPage = (): ReactElement => {
   function _renderFollowLink (link: HTMLSimpleLink, icon: Icon): ReactElement {
@@ -44,7 +44,7 @@ export const AboutPage = (): ReactElement => {
               </div>
             </div>
             <div className={'lg:order-first lg:row-span-2'}>
-              <Pagetitle
+              <PageTitle
                 title={'I\'m Mathias Bosman and live in Lebbeke, Belgium where I try to be the best version of myself.'}/>
               <div className={'space-y-7 text-base text-zinc-600 dark:text-zinc-400 mt-12'}>
                 <p>

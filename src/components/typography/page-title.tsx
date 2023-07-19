@@ -3,7 +3,7 @@ import { type PropsWithChildren, type ReactElement } from 'react'
 interface Props {
   title: string
 }
-export const Pagetitle = (props: PropsWithChildren<Props>): ReactElement => {
+export const PageTitle = (props: PropsWithChildren<Props>): ReactElement => {
   return <>
     <h1
       className={'mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl'}
@@ -15,4 +15,4 @@ export const Pagetitle = (props: PropsWithChildren<Props>): ReactElement => {
   </>
 }
 
-export default Pagetitle
+export default PageTitle
