@@ -1,16 +1,56 @@
 import { type HTMLSimpleLink } from '../../shared/utils.tsx'
 import { type RouteObject } from 'react-router-dom'
+import HomePage from '../../pages/home-page.tsx'
+import AboutPage from '../../pages/about-page.tsx'
+import ErrorPage from '../../pages/error-page.tsx'
+import ExperiencePage from '../../pages/experience-page.tsx'
+import React from 'react'
+import ProjectsPage from '../../pages/projects-page.tsx'
 
-export const publicPages: HTMLSimpleLink[] = [
+interface RouteLink {
+  link: HTMLSimpleLink
+  element: React.ReactNode
+  isPublic: boolean
+  errorElement?: React.ReactElement
+}
+
+export const routeConfig: RouteLink[] = [
   {
-    href: '/',
-    text: 'Home'
+    link: { href: '/', text: 'Home' },
+    element: <HomePage/>,
+    isPublic: false,
+    errorElement: <ErrorPage/>
+  },
+  {
+    link: { href: '/about', text: 'About' },
+    isPublic: true,
+    element: <AboutPage/>
+  },
+  {
+    link: { href: '/experiences', text: 'Experiences' },
+    isPublic: true,
+    element: <ExperiencePage/>
+  },
+  {
+    link: { href: '/projects', text: 'Projects' },
+    isPublic: true,
+    element: <ProjectsPage/>
+  },
+  {
+    link: { href: '/404', text: 'Not found' },
+    isPublic: false,
+    element: <ErrorPage/>
   }
 ]
 
-export const routes: RouteObject[] = [
-  {
-    path: '/',
-    element: '<HomePage></HomePage>'
+export const publicPages: HTMLSimpleLink[] = routeConfig
+  .filter(routeLInk => routeLInk.isPublic)
+  .map(routeLink => { return routeLink.link })
+
+export const routes: RouteObject[] = routeConfig.map(routeLink => {
+  return {
+    path: routeLink.link.href,
+    element: routeLink.element,
+    errorElement: routeLink.errorElement
   }
-]
+})

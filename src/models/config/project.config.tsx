@@ -13,7 +13,7 @@ export interface Project {
   description: string
 }
 
-export const config: ProjectsConfig = {
+export const projectsConfig: ProjectsConfig = {
   projects: [
     {
       pinned: true,

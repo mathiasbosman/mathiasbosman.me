@@ -55,11 +55,9 @@ export const NavigationModal = (props: PropsWithChildren<Props>): ReactElement =
               className={'-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300'}
             >
               {props.links.map((link, i) => {
-                return <>
-                  <li key={i}>
+                return <li key={i}>
                     <a className={'block py-2'} href={link.href}>{link.text}</a>
                   </li>
-                </>
               })}
             </ul>
           </nav>
