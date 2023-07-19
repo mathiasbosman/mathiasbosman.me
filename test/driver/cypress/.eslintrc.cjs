@@ -1,11 +1,7 @@
 module.exports = {
   parser: "@typescript-eslint/parser",
   plugins: [
-    "@typescript-eslint",
-    "import",
-    "simple-import-sort",
-    "eslint-plugin-eslint-comments",
-    "eslint-plugin-deprecation",
+    "react",
   ],
   env: {
     es6: true,
@@ -26,7 +22,7 @@ module.exports = {
   ],
   overrides: [
     {
-      files: ["**/*.ts"],
+      files: ["**/*.tsx"],
     },
   ],
 };
