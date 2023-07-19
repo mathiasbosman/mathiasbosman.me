@@ -15,7 +15,7 @@ export const Page = (props: PropsWithChildren<Props>): ReactElement => {
     if (props.title != null) { document.title = props.title }
   }, [props.title])
 
-  return <div id="mainBoxy"
+  return <main id="mainBoxy"
               className={'h-full flex flex-col bg-zinc-50 dark:bg-black antialiased'}>
     <div className={'fixed inset-0 flex justify-center sm:px-8'}>
       <div className={'flex w-full max-w-7xl lg:px-8'}>
@@ -25,19 +25,19 @@ export const Page = (props: PropsWithChildren<Props>): ReactElement => {
     </div>
 
     <div className={'relative'}>
-      <main>
+      <div>
         <header className={'mx-auto max-w-2xl lg:max-w-5xl'}>
           <Navigation renderAvatar={props.renderAvatar}
                       links={publicPages}
                       location={useLocation().pathname}/>
         </header>
         {props.children}
-      </main>
+      </div>
       <Footer links={[
         LINK_GITHUB, LINK_LINKEDIN
       ]}/>
     </div>
-  </div>
+  </main>
 }
 
 export default Page

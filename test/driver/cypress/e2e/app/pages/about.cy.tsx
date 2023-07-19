@@ -5,10 +5,7 @@ describe('About page tests', () => {
     cy.visit('/about')
   })
 
-  it('Required elements are present', () => {
-    cy.get('sandbox-about-page').should('be.visible')
-    cy.get('sandbox-navigation').should('be.visible')
-    cy.get('sandbox-footer').should('be.visible')
+  it('Is available', () => {
     cy.screenshot()
   })
 

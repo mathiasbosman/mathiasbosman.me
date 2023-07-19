@@ -39,7 +39,9 @@ export const Navigation = (props: PropsWithChildren<Props>): ReactElement => {
   }
 
   return <div className={'flex justify-between md:justify-center flex-row mt-8 px-4 md:px-2 items-center'}>
-      <div className={'md:basis-1/3'}>{_renderAvatar({ src: avatar, alt: 'Home' }, AvatarSize.xs)}</div>
+      <div className={'md:basis-1/3'}>
+        {_renderAvatar({ src: avatar, alt: 'Home' }, AvatarSize.xs)}
+      </div>
       <div className={'md:basis-1/3 flex md:justify-center'}>
         {_renderLinks(props.links)}
       </div>

@@ -10,9 +10,7 @@ export default defineConfig({
     supportFile: './support/e2e.ts',
     specPattern: 'e2e/**/*.cy.tsx'
   },
-
   includeShadowDom: true,
-
   component: {
     supportFile: './support/component.ts',
     indexHtmlFile: './support/component-index.html',

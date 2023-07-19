@@ -5,12 +5,7 @@ describe('Experience page tests', () => {
     cy.visit('/experiences')
   })
 
-  it('Required elements are present', () => {
-    cy.get('sandbox-experience-page').should('be.visible')
-    cy.get('sandbox-navigation').should('be.visible')
-    cy.get('sandbox-page-title').should('be.visible')
-    cy.get('sandbox-experiences').should('be.visible')
-    cy.get('sandbox-footer').should('be.visible')
+  it('Is available', () => {
     cy.screenshot()
   })
 

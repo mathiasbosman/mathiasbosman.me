@@ -13,6 +13,7 @@
     "lint": "eslint src/**/*.tsx",
     "lint:fix": "eslint src/**/*.tsx --fix",
     "test:e2e": "cypress run --project test/driver/cypress",
+    "test:component": "cypress run --project test/driver/cypress --component",
     "test:ui": "cypress open --project test/driver/cypress"
   },
   "dependencies": {
