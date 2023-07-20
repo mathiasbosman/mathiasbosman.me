@@ -40,7 +40,7 @@ export function escapeHtml (input: string): string {
 
   let escape: string
   let html = ''
-  let index = 0
+  let index: number
   let lastIndex = 0
 
   for (index = match.index; index < str.length; index++) {
