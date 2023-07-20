@@ -31,5 +31,5 @@ export const renderPeriodYearString = (
 
 export function sendEmail (to: string, subject?: string): void {
   const buffer = Buffer.from(to, 'base64')
-  window.location.href = 'mailto:' + buffer.toString() + (subject !== undefined ? '?subject=' + subject : '')
+  window.location.href = `mailto:${buffer.toString()}` + (subject !== undefined ? `?subject=${subject}` : '')
 }
