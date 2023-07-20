@@ -11,6 +11,7 @@ export default defineConfig({
     specPattern: 'e2e/**/*.cy.tsx'
   },
   includeShadowDom: true,
+  fixturesFolder: './fixtures',
   component: {
     supportFile: './support/component.ts',
     indexHtmlFile: './support/component-index.html',
