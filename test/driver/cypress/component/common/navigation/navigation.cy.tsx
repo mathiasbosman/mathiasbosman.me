@@ -1,5 +1,5 @@
 import Navigation from '../../../../../../src/components/common/navigation/navigation.tsx'
-import { mockLinks } from '../../../fixtures/navigation.fixture.ts'
+import { mockLinks } from '../../../fixtures/navigation.fixture.tsx'
 
 describe('<Navigation/>', () => {
   beforeEach(() => {

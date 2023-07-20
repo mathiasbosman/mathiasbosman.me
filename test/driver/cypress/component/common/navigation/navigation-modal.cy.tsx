@@ -1,6 +1,6 @@
 import NavigationModal
   from '../../../../../../src/components/common/navigation/navigation-modal.tsx'
-import { mockLinks } from '../../../fixtures/navigation.fixture.ts'
+import { mockLinks } from '../../../fixtures/navigation.fixture.tsx'
 
 describe('<NavigationModal/>', () => {
   beforeEach('force smaller viewport', () => {

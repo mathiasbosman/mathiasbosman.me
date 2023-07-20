@@ -1,5 +1,5 @@
 import Avatar, { AvatarSize } from '../../../../src/components/avatar.tsx'
-import { type HTMLImage } from '../../../../src/shared/utils.tsx'
+import type { HTMLImage } from '../../../../src/shared/utils.tsx'
 
 const mockImage: HTMLImage = {
   src: 'foo.webp',

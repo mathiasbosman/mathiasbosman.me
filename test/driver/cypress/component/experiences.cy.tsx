@@ -3,9 +3,9 @@ import {
   experienceItemMock,
   experiencesWithOnePlaceAndOneItem,
   experienceWithOnePlaceAndOneItem
-} from '../fixtures/experience.fixture.ts'
+} from '../fixtures/experience.fixture.tsx'
 import { renderPeriodYearString } from '../../../../src/shared/utils.tsx'
-import { mockPageLink } from '../fixtures/navigation.fixture.ts'
+import { mockPageLink } from '../fixtures/navigation.fixture.tsx'
 
 describe('<Experiences/>', () => {
   it('Renders with one item', () => {

@@ -1,4 +1,4 @@
-import { type HTMLSimpleLink } from '../../../../../src/shared/utils.tsx'
+import type { HTMLSimpleLink } from '../../../../../src/shared/utils.tsx'
 import Footer from '../../../../../src/components/common/footer.tsx'
 
 const mockLinks: HTMLSimpleLink[] = [

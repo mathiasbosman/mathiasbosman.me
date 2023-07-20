@@ -1,5 +1,5 @@
-import { type HTMLSimpleLink } from '../../shared/utils.tsx'
-import { type RouteObject } from 'react-router-dom'
+import type { HTMLSimpleLink } from '../../shared/utils.tsx'
+import type { RouteObject } from 'react-router-dom'
 import HomePage from '../../pages/home-page.tsx'
 import AboutPage from '../../pages/about-page.tsx'
 import ErrorPage from '../../pages/error-page.tsx'

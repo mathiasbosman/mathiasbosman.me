@@ -1,5 +1,6 @@
-import { type PropsWithChildren, type ReactElement } from 'react'
-import { type HTMLSimpleLink } from '../../shared/utils.tsx'
+import type { PropsWithChildren} from 'react';
+import { type ReactElement } from 'react'
+import type { HTMLSimpleLink } from '../../shared/utils.tsx'
 import Contentwrapper from './content-wrapper.tsx'
 import Link from '../typography/link.tsx'
 

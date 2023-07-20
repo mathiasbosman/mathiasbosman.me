@@ -1,4 +1,4 @@
-import { type HTMLImage } from '../../../../src/shared/utils.tsx'
+import type { HTMLImage } from '../../../../src/shared/utils.tsx'
 import Imagecarousel from '../../../../src/components/imagecarousel.tsx'
 
 describe('<Imagecarousel/>', () => {
@@ -6,6 +6,7 @@ describe('<Imagecarousel/>', () => {
 
   before('Load mock images', () => {
     cy.fixture('images/cypress_logo.webp', 'base64').then(data => {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       mockImageData = data
     })
   })

@@ -3,7 +3,7 @@ import {
   experienceItemMock,
   experiencesWithOnePlaceAndOneItem,
   experiencesWithTwoPlaces
-} from '../fixtures/experience.fixture.ts'
+} from '../fixtures/experience.fixture.tsx'
 
 describe('<Employment/>', () => {
   it('Renders correctly with a single item', () => {

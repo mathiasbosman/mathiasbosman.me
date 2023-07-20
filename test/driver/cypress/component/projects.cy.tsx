@@ -1,15 +1,13 @@
-import { type Project } from '../../../../src/models/config/project.config.tsx'
-import { projectFixutre } from '../fixtures/project.fixture.ts'
+import type { Project } from '../../../../src/models/config/project.config.tsx'
+import { projectFixutre } from '../fixtures/project.fixture.tsx'
 import Projects from '../../../../src/components/projects.tsx'
 
 describe('<Projects/>', () => {
-  let mockImageData: string
   let mockImageSrc: string
 
   before('Load mock images', () => {
     cy.fixture('images/cypress_logo.webp', 'base64').then(data => {
-      mockImageData = data
-      mockImageSrc = `data:image/webp;base64,${mockImageData}`
+      mockImageSrc = `data:image/webp;base64,${data}`
     })
   })
 

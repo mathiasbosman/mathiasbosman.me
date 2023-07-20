@@ -1,4 +1,5 @@
-import { type PropsWithChildren, type ReactElement } from 'react'
+import type { PropsWithChildren} from 'react';
+import { type ReactElement } from 'react'
 
 export const ContentWrapper = (props: PropsWithChildren): ReactElement => {
   return <div className="mx-auto max-w-7xl lg:px-8 mt-12">
