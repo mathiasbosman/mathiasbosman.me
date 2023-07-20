@@ -18,11 +18,14 @@ jobs:
       - name: "install dependencies"
         run: npm ci
 
-      - name: "check code style"
-        run: npm run prettier:check
-
       - name: "lint code"
         run: npm run lint
+
+      - name: "run unit tests"
+        run: npm run test:unit
+
+      - name: "run component tests"
+        run: npm run test:component
 
       - name: "run build"
         run: npm run build
