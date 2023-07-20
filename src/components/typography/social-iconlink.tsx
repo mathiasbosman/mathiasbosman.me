@@ -1,13 +1,13 @@
 import { type PropsWithChildren, type ReactElement } from 'react'
-import { type HTMLSimpleLink } from '../shared/utils.tsx'
-import { type Icon } from '../shared/icons.tsx'
+import { type Icon } from '../../shared/icons.tsx'
+import { type HTMLSimpleLink } from '../../shared/utils.tsx'
 
 interface Props {
   link: HTMLSimpleLink
   icon: Icon
 }
 
-export const Iconlink = (props: PropsWithChildren<Props>): ReactElement => {
+export const SocialIconlink = (props: PropsWithChildren<Props>): ReactElement => {
   return <a className={'group -m-1 p-1'}
             aria-label={`Follow on ${props.icon.name}`}
             href={props.link.href}>
@@ -19,4 +19,4 @@ export const Iconlink = (props: PropsWithChildren<Props>): ReactElement => {
   </a>
 }
 
-export default Iconlink
+export default SocialIconlink

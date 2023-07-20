@@ -2,21 +2,24 @@ import {
   type Experience,
   type ExperienceItem
 } from '../../../../src/models/config/experience.config.tsx'
+import { mockPageLink } from './navigation.fixture.ts'
 
 export const experienceItemMock: ExperienceItem = {
   title: 'mock title',
   period: { from: new Date('2023-01-01') },
   description: 'mock description',
-  link: { href: 'https://foo.bar', text: 'foo bar' },
+  link: mockPageLink,
   pinned: true
 }
 
+export const experienceWithOnePlaceAndOneItem: Experience = {
+  place: 'mockPlace',
+  logo: { src: 'logo.webp', alt: 'logo alt' },
+  items: [experienceItemMock]
+}
+
 export const experiencesWithOnePlaceAndOneItem: Experience[] = [
-  {
-    place: 'mockPlace',
-    logo: { src: 'logo.webp', alt: 'logo alt' },
-    items: [experienceItemMock]
-  }
+  experienceWithOnePlaceAndOneItem
 ]
 
 export const experienceMockWithTwoItems: Experience = {

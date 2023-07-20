@@ -5,7 +5,7 @@ import Avatar, { AvatarSize } from '../components/avatar.tsx'
 
 import avatar from '../assets/mathias.webp'
 import PageTitle from '../components/typography/page-title.tsx'
-import Iconlink from '../components/iconlink.tsx'
+import SocialIconlink from '../components/typography/social-iconlink.tsx'
 import { LINK_GITHUB, LINK_LINKEDIN } from '../constants.tsx'
 import { GitHubIcon, LinkedInIcon } from '../shared/icons.tsx'
 import Imagecarousel from '../components/imagecarousel.tsx'
@@ -36,8 +36,8 @@ export const HomePage = (): ReactElement => {
           Yes, I&apos;m the human of the cute Beagle; her name is Luna.
         </PageTitle>
         <div className={'mt-6 flex gap-6'}>
-          <Iconlink link={LINK_GITHUB} icon={GitHubIcon}/>
-          <Iconlink link={LINK_LINKEDIN} icon={LinkedInIcon}/>
+          <SocialIconlink link={LINK_GITHUB} icon={GitHubIcon}/>
+          <SocialIconlink link={LINK_LINKEDIN} icon={LinkedInIcon}/>
         </div>
       </div>
     </ContentWrapper>
