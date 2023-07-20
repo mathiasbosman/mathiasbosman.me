@@ -1,5 +1,6 @@
-import { type Project } from '../models/config/project.config.tsx'
-import { type PropsWithChildren, type ReactElement } from 'react'
+import type { Project } from '../models/config/project.config.tsx'
+import type { PropsWithChildren} from 'react';
+import { type ReactElement } from 'react'
 import { LinkIcon } from '../shared/icons.tsx'
 
 interface Props {

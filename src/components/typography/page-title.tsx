@@ -1,4 +1,5 @@
-import { type PropsWithChildren, type ReactElement } from 'react'
+import type { PropsWithChildren} from 'react';
+import { type ReactElement } from 'react'
 
 interface Props {
   title: string

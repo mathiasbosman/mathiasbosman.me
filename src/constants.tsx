@@ -1,4 +1,4 @@
-import { type HTMLSimpleLink } from './shared/utils.tsx'
+import type { HTMLSimpleLink } from './shared/utils.tsx'
 
 export const APP_NAME = 'Mathias Bosman'
 export const DEFAULT_TITLE =

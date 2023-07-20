@@ -7,22 +7,50 @@ on [mathiasbosman.be][link_mathiasbosman_be].
 
 ## Development
 
-1. make sure the development branch contains the latest state
-2. create a feature branch from the dev branch
-3. make your changes and create a pull request into the dev branch
+### Local development
+A simple `npm install` should be enough to get started.
+Once dependencies are installed `npm run dev` will spin up the website locally.
+The terminal will tell you which local address is used.
+For example:
+```shell
+  VITE v4.4.3  ready in 126 ms
 
-We follow the default Git workflow:
-![Git workflow](https://gist.githubusercontent.com/mathiasbosman/22d6d72b4db2c33a7b33979c4654287f/raw/98a23b57423f499a4520e164c95cc0cac17d4f62/release_branches.svg)
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h to show help
+```
 
-Once you're ready make a PR into the development branch.
+Follow the default Git workflow:
+![Git workflow](https://gist.githubusercontent.com/mathiasbosman/22d6d72b4db2c33a7b33979c4654287f/raw/8924a48c17615b2d4fd1019cf630e0a174d4657a/release_branches.svg)
+
+1. make sure the `development` branch contains the latest state
+2. create a feature branch from the `development` branch
+3. make your changes and create a pull request into the `development` branch
 
 ### Testing
 
-At the moment only end-to-end tests exist.
+3 types of testing are active:
+1. Unit tests
+3. Component tests
+2. End-2-end tests
 
-These can be run by calling `npm run test:e2e`.
-and are run with [Cypress][link_cypress].
+Unit and component tests are run on each push.
+In addition, end-2-end tests are run on pull requests.
 
+#### Unit testing
+[Vitest][link_vitest] is used for unit testing and can be run by running the below npm script:
+```shell
+npm run test:unit
+```
+
+#### Component testing
+Components are tested via [Cypress][link_cypress]:
+```shell
+npm run test:component
+```
+
+#### End to end
+These are also run with [Cypress][link_cypress].
 For end-2-end tests the application should be running:
 
 ```shell
@@ -33,6 +61,8 @@ npm run test:e2e
 ## Deployment
 
 The master branch will automatically be deployed via [Netlify][link_netlify].
+Every pull request against the master branch will deploy a preview app.
+[Netlify][link_netlify] will comment on the PR with the relevant links.
 
 ## Credits
 
@@ -41,7 +71,7 @@ The master branch will automatically be deployed via [Netlify][link_netlify].
 -   [Lit][link_lit]
 -   [Tailwindcss][link_tailwind]
 -   [Vite][link_vite]
--   [Cypress][link_cypress] for testing components and simple e2e.
+-   [Cypress][link_cypress]
 
 [link_mathiasbosman_be]: http://mathiasbosman.be
 [link_lit]: https://lit.dev/
@@ -49,3 +79,4 @@ The master branch will automatically be deployed via [Netlify][link_netlify].
 [link_cypress]: https://cypress.io
 [link_netlify]: https://netlify.com
 [link_vite]: http://vitejs.dev
+[link_vitest]: http://vitest.dev

@@ -1,4 +1,4 @@
-import { type ReactElement } from 'react'
+import type { ReactElement } from 'react'
 import Page from '../components/common/page.tsx'
 import ContentWrapper from '../components/common/content-wrapper.tsx'
 import Avatar, { AvatarSize } from '../components/avatar.tsx'

@@ -1,6 +1,6 @@
 import Page from '../../../../../src/components/common/page.tsx'
 import { MemoryRouter } from 'react-router-dom'
-import { type ReactElement } from 'react'
+import type { ReactElement } from 'react'
 
 describe('<Page>', () => {
   const renderInRouterContext = (title: string): ReactElement => {

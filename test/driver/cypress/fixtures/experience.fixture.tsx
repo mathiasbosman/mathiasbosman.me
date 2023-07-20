@@ -2,7 +2,7 @@ import {
   type Experience,
   type ExperienceItem
 } from '../../../../src/models/config/experience.config.tsx'
-import { mockPageLink } from './navigation.fixture.ts'
+import { mockPageLink } from './navigation.fixture.tsx'
 
 export const experienceItemMock: ExperienceItem = {
   title: 'mock title',

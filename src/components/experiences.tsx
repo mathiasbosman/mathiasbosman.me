@@ -1,5 +1,7 @@
-import { type PropsWithChildren, type ReactElement } from 'react'
-import { type Experience, type ExperienceItem } from '../models/config/experience.config.tsx'
+import type { PropsWithChildren} from 'react';
+import { type ReactElement } from 'react'
+import type { Experience} from '../models/config/experience.config.tsx';
+import { type ExperienceItem } from '../models/config/experience.config.tsx'
 import { renderPeriodYearString } from '../shared/utils.tsx'
 import { ArrowRightIcon } from '../shared/icons.tsx'
 

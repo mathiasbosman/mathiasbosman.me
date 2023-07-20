@@ -1,4 +1,5 @@
-import { type PropsWithChildren, type ReactElement, useEffect } from 'react'
+import type { PropsWithChildren} from 'react';
+import { type ReactElement, useEffect } from 'react'
 import Footer from './footer.tsx'
 import { LINK_GITHUB, LINK_LINKEDIN } from '../../constants.tsx'
 import Navigation from './navigation/navigation.tsx'

@@ -1,5 +1,5 @@
 import SocialIconlink from '../../../../../src/components/typography/social-iconlink.tsx'
-import { mockPageLink } from '../../fixtures/navigation.fixture.ts'
+import { mockPageLink } from '../../fixtures/navigation.fixture.tsx'
 import { LinkIcon } from '../../../../../src/shared/icons.tsx'
 
 describe('<SocialIconlink/>', () => {

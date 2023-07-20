@@ -1,5 +1,6 @@
-import { type HTMLSimpleLink } from '../../../shared/utils.tsx'
-import { type PropsWithChildren, type ReactElement, useState } from 'react'
+import type { HTMLSimpleLink } from '../../../shared/utils.tsx'
+import type { PropsWithChildren} from 'react';
+import { type ReactElement, useState } from 'react'
 import { ArrowDownIcon, CloseIcon } from '../../../shared/icons.tsx'
 
 interface Props {

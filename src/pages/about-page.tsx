@@ -1,8 +1,9 @@
-import { type ReactElement } from 'react'
+import type { ReactElement } from 'react'
 import Page from '../components/common/page.tsx'
 import ContentWrapper from '../components/common/content-wrapper.tsx'
 import SectionWrapper from '../components/common/section-wrapper.tsx'
-import { type HTMLSimpleLink, sendEmail } from '../shared/utils.tsx'
+import type { HTMLSimpleLink} from '../shared/utils.tsx';
+import { sendEmail } from '../shared/utils.tsx'
 import { EmailIcon, GitHubIcon, type Icon, LinkedInIcon } from '../shared/icons.tsx'
 import { CONTACT_EMAIL, LINK_GITHUB, LINK_LINKEDIN } from '../constants.tsx'
 

@@ -1,6 +1,7 @@
-import { type PropsWithChildren, type ReactElement } from 'react'
-import { type Icon } from '../../shared/icons.tsx'
-import { type HTMLSimpleLink } from '../../shared/utils.tsx'
+import type { PropsWithChildren} from 'react';
+import { type ReactElement } from 'react'
+import type { Icon } from '../../shared/icons.tsx'
+import type { HTMLSimpleLink } from '../../shared/utils.tsx'
 
 interface Props {
   link: HTMLSimpleLink

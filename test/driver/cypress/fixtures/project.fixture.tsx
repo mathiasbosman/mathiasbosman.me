@@ -1,4 +1,4 @@
-import { type Project } from '../../../../src/models/config/project.config.tsx'
+import type { Project } from '../../../../src/models/config/project.config.tsx'
 
 export const projectFixutre = (title: string, pinned: boolean, src: string): Project => {
   return {

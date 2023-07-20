@@ -1,5 +1,6 @@
-import { type PropsWithChildren, type ReactElement } from 'react'
-import { type HTMLImage } from '../shared/utils.tsx'
+import type { PropsWithChildren} from 'react';
+import { type ReactElement } from 'react'
+import type { HTMLImage } from '../shared/utils.tsx'
 
 interface Props {
   images: HTMLImage[]
