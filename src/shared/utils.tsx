@@ -1,5 +1,4 @@
 import { Buffer } from 'buffer'
-import { CONTACT_EMAIL } from '../constants.tsx'
 
 export interface HTMLImage {
   alt: string
@@ -30,7 +29,7 @@ export const renderPeriodYearString = (
   return [period.from.getFullYear(), toYear].filter((y) => y).join(' - ')
 }
 
-export function sendEmail (subject?: string): void {
-  const buffer = Buffer.from(CONTACT_EMAIL, 'base64')
+export function sendEmail (to: string, subject?: string): void {
+  const buffer = Buffer.from(to, 'base64')
   window.location.href = 'mailto:' + buffer.toString() + (subject !== undefined ? '?subject=' + subject : '')
 }

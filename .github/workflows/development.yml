@@ -21,5 +21,8 @@ jobs:
       - name: "lint code"
         run: npm run lint
 
+      - name: "run tests"
+        run: npm run test:unit && npm run test:component
+
       - name: "run build"
         run: npm run build
