@@ -1,8 +1,15 @@
 import NavigationModal
   from '../../../../../../src/components/common/navigation/navigation-modal.tsx'
-import { mockLinks } from '../../../fixtures/navigation.fixture.tsx'
+import type { HTMLSimpleLink } from '../../../../../../src/shared/utils.tsx'
+import { htmlSimpleLinkFixture } from '../../../fixtures/utils.fixture.tsx'
 
 describe('<NavigationModal/>', () => {
+
+  const mockLinks: HTMLSimpleLink[] = [
+    htmlSimpleLinkFixture('/pageA', 'page A'),
+    htmlSimpleLinkFixture('/pageB', 'page B')
+  ]
+
   beforeEach('force smaller viewport', () => {
     cy.viewport(767, 1024)
     cy.mount(<NavigationModal links={mockLinks}/>)

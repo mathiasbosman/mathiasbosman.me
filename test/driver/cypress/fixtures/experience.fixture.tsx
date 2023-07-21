@@ -2,20 +2,20 @@ import {
   type Experience,
   type ExperienceItem
 } from '../../../../src/models/config/experience.config.tsx'
-import { mockPageLink } from './navigation.fixture.tsx'
+import { htmlImageFixture, htmlSimpleLinkFixture, periodFixture } from './utils.fixture.tsx'
 
 export const experienceItemMock: ExperienceItem = {
   title: 'mock title',
-  period: { from: new Date('2023-01-01') },
+  period: periodFixture(new Date('2023-01-01'), undefined),
   description: 'mock description',
-  link: mockPageLink,
+  link: htmlSimpleLinkFixture('/href', 'linkText'),
   pinned: true
 }
 
 export const experienceWithOnePlaceAndOneItem: Experience = {
   place: 'mockPlace',
-  logo: { src: 'logo.webp', alt: 'logo alt' },
-  items: [experienceItemMock]
+  items: [experienceItemMock],
+  logo: htmlImageFixture('logo.webp', 'logo alt')
 }
 
 export const experiencesWithOnePlaceAndOneItem: Experience[] = [
@@ -24,14 +24,14 @@ export const experiencesWithOnePlaceAndOneItem: Experience[] = [
 
 export const experienceMockWithTwoItems: Experience = {
   place: 'mockPlace',
-  logo: { src: 'logo.webp', alt: 'logo alt' },
+  logo: htmlImageFixture('logo.webp', 'logo alt'),
   items: [
     experienceItemMock,
     {
       title: 'mock title 2',
-      period: { from: new Date('2023-01-01'), to: new Date('2023-10-01') },
       description: 'mock description 2',
-      link: { href: 'https://foo2.bar', text: 'foo bar 2' },
+      link: htmlSimpleLinkFixture('https://foo2.bar', 'foo bar 2'),
+      period: periodFixture(new Date('2023-01-01'), new Date('2023-10-01')),
       pinned: true
     }
   ]
@@ -40,20 +40,20 @@ export const experiencesWithTwoPlaces: Experience[] = [
   experienceMockWithTwoItems,
   {
     place: 'mockPlace 2',
-    logo: { src: 'logo2.webp', alt: 'logo 2 alt' },
+    logo: htmlImageFixture('logo2.webp', 'logo2 alt'),
     items: [
       {
         title: 'mock title 2.1',
-        period: { from: new Date('2023-01-01') },
         description: 'mock description',
-        link: { href: 'https://foo2_1.bar', text: 'foo bar' },
+        period: periodFixture(new Date('2023-01-01'), undefined),
+        link: htmlSimpleLinkFixture('https://foo2_1.bar', 'foo bar'),
         pinned: false
       },
       {
         title: 'mock title 2.2',
-        period: { from: new Date('2023-01-01'), to: new Date('2023-10-01') },
         description: 'mock description 2.2',
-        link: { href: 'https://foo2_2.bar', text: 'foo bar 2.2' },
+        period: periodFixture(new Date('2023-01-01'), new Date('2023-10-01')),
+        link: htmlSimpleLinkFixture('https://foo2_2.bar', 'foo bar 2.2' ),
         pinned: true
       }
     ]
