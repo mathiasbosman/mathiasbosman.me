@@ -1,4 +1,4 @@
-import type { PropsWithChildren} from 'react';
+import type { PropsWithChildren } from 'react'
 import { type ReactElement, useEffect } from 'react'
 import Footer from './footer.tsx'
 import { LINK_GITHUB, LINK_LINKEDIN } from '../../constants.tsx'
@@ -25,19 +25,21 @@ export const Page = (props: PropsWithChildren<Props>): ReactElement => {
       </div>
     </div>
 
-    <div className={'relative'}>
-      <div>
+    <div className={'mx-auto w-full max-w-7xl lg:px-8'}>
+      <div className={'relative px-4 sm:px-8 lg:px-12'}>
         <header className={'mx-auto max-w-2xl lg:max-w-5xl'}>
           <Navigation renderAvatar={props.renderAvatar}
                       links={publicPages}
                       location={useLocation().pathname}/>
         </header>
-        {props.children}
       </div>
-      <Footer links={[
-        LINK_GITHUB, LINK_LINKEDIN
-      ]}/>
     </div>
+    <div className={'relative px-4 sm:px-8 lg:px-12'}>
+        {props.children}
+    </div>
+    <Footer links={[
+      LINK_GITHUB, LINK_LINKEDIN
+    ]}/>
   </main>
 }
 
