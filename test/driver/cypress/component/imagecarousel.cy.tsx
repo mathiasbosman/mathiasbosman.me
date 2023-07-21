@@ -1,5 +1,6 @@
 import type { HTMLImage } from '../../../../src/shared/utils.tsx'
 import Imagecarousel from '../../../../src/components/imagecarousel.tsx'
+import { htmlImageFixture } from '../fixtures/utils.fixture.tsx'
 
 describe('<Imagecarousel/>', () => {
   let mockImageData: string
@@ -14,14 +15,8 @@ describe('<Imagecarousel/>', () => {
   it('Renders correctly', () => {
     const mockImageSrc = `data:image/webp;base64,${mockImageData}`
     const imageSet: HTMLImage[] = [
-      {
-        src: mockImageSrc,
-        alt: 'mock image 1'
-      },
-      {
-        src: mockImageSrc,
-        alt: 'mock image 2'
-      }
+      htmlImageFixture(mockImageSrc, 'mock image 1'),
+      htmlImageFixture(mockImageSrc, 'mock image 2')
     ]
 
     cy.mount(<Imagecarousel images={imageSet} />)

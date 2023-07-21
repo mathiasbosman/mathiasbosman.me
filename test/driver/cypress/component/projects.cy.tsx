@@ -1,6 +1,6 @@
 import type { Project } from '../../../../src/models/config/project.config.tsx'
-import { projectFixutre } from '../fixtures/project.fixture.tsx'
 import Projects from '../../../../src/components/projects.tsx'
+import { projectFixture } from '../fixtures/project.fixture.tsx'
 
 describe('<Projects/>', () => {
   let mockImageSrc: string
@@ -13,9 +13,9 @@ describe('<Projects/>', () => {
 
   it('Renders all projects when pinned is false', () => {
     const mockProjectList: Project[] = [
-      projectFixutre('project A', true, mockImageSrc),
-      projectFixutre('project B', true, mockImageSrc),
-      projectFixutre('project C', false, mockImageSrc)
+      projectFixture('project A', true, mockImageSrc),
+      projectFixture('project B', true, mockImageSrc),
+      projectFixture('project C', false, mockImageSrc)
     ]
     cy.mount(<Projects projects={mockProjectList} pinned={false}/>)
     cy.get('h2').should('have.length', mockProjectList.length)
@@ -23,9 +23,9 @@ describe('<Projects/>', () => {
 
   it('Renders only pinned projects when pinned is true', () => {
     const mockProjectList: Project[] = [
-      projectFixutre('project A', true, mockImageSrc),
-      projectFixutre('project B', true, mockImageSrc),
-      projectFixutre('project C', false, mockImageSrc)
+      projectFixture('project A', true, mockImageSrc),
+      projectFixture('project B', true, mockImageSrc),
+      projectFixture('project C', false, mockImageSrc)
     ]
     cy.mount(<Projects projects={mockProjectList} pinned={true}/>)
     cy.get('h2').should('have.length', 2)
