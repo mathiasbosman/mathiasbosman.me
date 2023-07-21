@@ -9,8 +9,8 @@ describe('<Employment/>', () => {
   it('Renders correctly with a single item', () => {
     cy.mount(<Employment experiences={experiencesWithOnePlaceAndOneItem}/>)
     cy.get('dl')
-      .should('contain.text', experiencesWithOnePlaceAndOneItem[0].place)
       .should('contain.text', experienceItemMock.title)
+      .should('contain.text', experiencesWithOnePlaceAndOneItem[0].place)
   })
 
   it('Renders correctly with multiple experiences', () => {

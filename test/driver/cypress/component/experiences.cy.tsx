@@ -5,7 +5,6 @@ import {
   experienceWithOnePlaceAndOneItem
 } from '../fixtures/experience.fixture.tsx'
 import { renderPeriodYearString } from '../../../../src/shared/utils.tsx'
-import { mockPageLink } from '../fixtures/navigation.fixture.tsx'
 
 describe('<Experiences/>', () => {
   it('Renders with one item', () => {
@@ -22,11 +21,11 @@ describe('<Experiences/>', () => {
           .should('have.text', experienceWithOnePlaceAndOneItem.place)
         cy.get('article').should('be.visible').within(() => {
           // item checks
-          cy.get('a[href="' + mockPageLink.href + '"]')
+          cy.get('a[href="/href"]')
             .should('be.visible')
             .should('have.text', experienceItemMock.title)
-          cy.get('p').should('contain.text', renderPeriodYearString(experienceItemMock.period, 'present'))
           cy.get('p').should('contain.text', experienceItemMock.description)
+          cy.get('p').should('contain.text', renderPeriodYearString(experienceItemMock.period, 'present'))
         })
       })
   })
