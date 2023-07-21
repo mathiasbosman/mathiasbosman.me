@@ -17,7 +17,7 @@ export const Page = (props: PropsWithChildren<Props>): ReactElement => {
   }, [props.title])
 
   return <main id="mainBoxy"
-              className={'h-full flex flex-col bg-zinc-50 dark:bg-black antialiased'}>
+               className={'h-full flex flex-col bg-zinc-50 dark:bg-black antialiased'}>
     <div className={'fixed inset-0 flex justify-center sm:px-8'}>
       <div className={'flex w-full max-w-7xl lg:px-8'}>
         <div
@@ -34,9 +34,7 @@ export const Page = (props: PropsWithChildren<Props>): ReactElement => {
         </header>
       </div>
     </div>
-    <div className={'relative px-4 sm:px-8 lg:px-12'}>
-        {props.children}
-    </div>
+    {props.children}
     <Footer links={[
       LINK_GITHUB, LINK_LINKEDIN
     ]}/>
