@@ -1,4 +1,4 @@
-import type { PropsWithChildren} from 'react';
+import type { PropsWithChildren } from 'react'
 import { type ReactElement } from 'react'
 import type { HTMLImage } from '../shared/utils.tsx'
 
@@ -16,6 +16,7 @@ export const Avatar = (props: PropsWithChildren<Props>): ReactElement => {
   function _renderAvatarLink (css: string): ReactElement {
     return <a aria-label={'Home'} className={css + ' pointer-events-auto block'} href={'/'}>
       <img
+        loading={'lazy'}
         alt={props.image.alt}
         decoding='async'
         src={props.image.src}

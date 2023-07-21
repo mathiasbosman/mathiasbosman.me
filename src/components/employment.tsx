@@ -1,6 +1,6 @@
-import type { PropsWithChildren} from 'react';
+import type { PropsWithChildren } from 'react'
 import { type ReactElement } from 'react'
-import type { Experience} from '../models/config/experience.config.tsx';
+import type { Experience } from '../models/config/experience.config.tsx'
 import { type ExperienceItem } from '../models/config/experience.config.tsx'
 import type { HTMLImage } from '../shared/utils.tsx'
 
@@ -10,8 +10,8 @@ interface Props {
 
 export const Employment = (props: PropsWithChildren<Props>): ReactElement => {
   function _renderLogo (logo: HTMLImage): ReactElement {
-    return <div className={''}>
-      <img alt={logo.alt} loading={'lazy'} width={32} height={32}
+    return <div className={'relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0'}>
+      <img alt={logo.alt} loading={'lazy'} width={28} height={28}
            decoding={'async'} className={'h-7 w-7'} src={logo.src}/>
     </div>
   }
@@ -19,7 +19,7 @@ export const Employment = (props: PropsWithChildren<Props>): ReactElement => {
     const until = item.period.to
     const untilString = until?.getFullYear() ?? 'present'
     const from = item.period.from.getFullYear()
-    return <div key={index} className={'flex gap-4 mt-5'}>
+    return <li key={index} className={'flex gap-4'}>
       {experience.logo !== undefined && _renderLogo(experience.logo)}
       <dl className={'flex flex-auto flex-wrap gap-x-2'}>
         <dt className={'sr-only'}>Company</dt>
@@ -42,7 +42,7 @@ export const Employment = (props: PropsWithChildren<Props>): ReactElement => {
           </time>
         </dd>
       </dl>
-    </div>
+    </li>
   }
 
   return <>
@@ -60,7 +60,7 @@ export const Employment = (props: PropsWithChildren<Props>): ReactElement => {
       </svg>
       <span className={'ml-3'}>Work</span>
     </h2>
-    <div className={'mt-6'}>
+    <ol className={'mt-6 space-y-4'}>
       {props.experiences.map(experience => {
         return experience.items
           .filter(item => item.pinned)
@@ -68,6 +68,6 @@ export const Employment = (props: PropsWithChildren<Props>): ReactElement => {
             return _renderItem(item, i, experience)
           })
       })}
-    </div>
+    </ol>
   </>
 }
