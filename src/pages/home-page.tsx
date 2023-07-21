@@ -48,16 +48,16 @@ export const HomePage = (): ReactElement => {
         src: roll_3
       },
       {
+        alt: 'Me, somewhere on a hill in France',
+        src: roll_2
+      },
+      {
         alt: 'Enjoying a sail trip in Curacao',
         src: roll_5
       },
       {
         alt: 'Luna, my favourite Beagle',
         src: roll_1
-      },
-      {
-        alt: 'Me, somewhere on a hill in France',
-        src: roll_2
       },
       {
         alt: 'Me on a stage during Pride week',
