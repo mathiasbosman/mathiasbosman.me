@@ -74,25 +74,22 @@ export const AboutPage = (): ReactElement => {
                   <FollowIconLink link={LINK_LINKEDIN} icon={LinkedInIcon}/>
                 </li>
                 <li
-                  className={'mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40 flex'}
-                >
+                  className={'mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40 flex'}>
                   <button
                     className={'group flex text-sm font-medium text-zinc-800 transition hover:text-blue-500 dark:text-zinc-200 dark:hover:text-blue-500'}
-                    onClick={() => { sendEmail(CONTACT_EMAIL) }}
-                  >
-                  <svg
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                    className={'h-5 w-5 flex-none fill-zinc-500 transition group-hover:fill-blue-500'}
-                  >
-                    <path
-                      fillRule={'evenodd'}
-                      d={EmailIcon.svgPath}
-                    ></path>
-                  </svg>
-                  <span className={'ml-4'}>Send me an email</span>
-                </button>
-              </li>
+                    onClick={() => { sendEmail(CONTACT_EMAIL) }}>
+                    <svg
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                      className={'h-5 w-5 flex-none fill-zinc-500 transition group-hover:fill-blue-500'}>
+                      <path
+                        fillRule={'evenodd'}
+                        d={EmailIcon.svgPath}
+                      ></path>
+                    </svg>
+                    <span className={'ml-4'}>Send me an email</span>
+                  </button>
+                </li>
               </ul>
             </div>
           </div>
