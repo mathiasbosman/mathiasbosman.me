@@ -20,12 +20,9 @@ For example:
   ➜  press h to show help
 ```
 
-Follow the 'feature branches' Git workflow:
-![Git workflow](./readme_branch_strat.svg)
-
-1. make sure the `development` branch contains the latest state
-2. create a feature branch from the `development` branch
-3. make your changes and create a pull request into the `development` branch
+1. make sure the `master` branch contains the latest state
+2. create a feature branch from the `master` branch
+3. make your changes and create a pull request into the `master` branch
 
 ### Testing
 
