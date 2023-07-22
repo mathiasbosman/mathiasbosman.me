@@ -2,7 +2,7 @@ import type { ReactElement } from 'react'
 import Page from '../components/common/page.tsx'
 import ContentWrapper from '../components/common/content-wrapper.tsx'
 import SectionWrapper from '../components/common/section-wrapper.tsx'
-import type { HTMLSimpleLink} from '../shared/utils.tsx';
+import type { HTMLSimpleLink } from '../shared/utils.tsx'
 import { sendEmail } from '../shared/utils.tsx'
 import { EmailIcon, GitHubIcon, type Icon, LinkedInIcon } from '../shared/icons.tsx'
 import { CONTACT_EMAIL, LINK_GITHUB, LINK_LINKEDIN } from '../constants.tsx'
@@ -17,7 +17,7 @@ export const AboutPage = (): ReactElement => {
       href={link.href}>
       <svg
         viewBox={'0 0 24 24'} aria-hidden={true}
-        className={'h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-blue-500'}>
+        className={'h-5 w-5 flex-none fill-zinc-500 transition group-hover:fill-blue-500'}>
         <path fillRule={'evenodd'} clipRule={'evenodd'} d={icon.svgPath}></path>
       </svg>
       <span className={'ml-4'}>Follow me on {link.text}</span>
@@ -97,7 +97,7 @@ export const AboutPage = (): ReactElement => {
                   <svg
                     viewBox="0 0 24 24"
                     aria-hidden="true"
-                    className={'h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-blue-500'}
+                    className={'h-5 w-5 flex-none fill-zinc-500 transition group-hover:fill-blue-500'}
                   >
                     <path
                       fillRule={'evenodd'}

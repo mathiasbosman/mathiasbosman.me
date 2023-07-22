@@ -48,7 +48,7 @@ export const Employment = (props: PropsWithChildren<Props>): ReactElement => {
   return <>
     <h2 className={'flex text-sm font-semibold text-zinc-900 dark:text-zinc-100'}>
       <svg viewBox={'0 0 24 24'} fill={'none'} strokeWidth={1.5} strokeLinecap={'round'} strokeLinejoin={'round'}
-           aria-hidden={true} className={'h-6 w-6 flex-none'}>
+           aria-hidden={true} className={'h-5 w-5 flex-none'}>
         <path
           d="M2.75 9.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
           className={'fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500'}
