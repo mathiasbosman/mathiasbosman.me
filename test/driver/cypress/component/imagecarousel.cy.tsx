@@ -19,7 +19,7 @@ describe('<Imagecarousel/>', () => {
       htmlImageFixture(mockImageSrc, 'mock image 2')
     ]
 
-    cy.mount(<Imagecarousel images={imageSet} />)
+    cy.mount(<Imagecarousel images={imageSet}/>)
     cy.get('img').should('be.visible').should('have.length', imageSet.length)
     cy.get('img').eq(0).parent().should('have.class', '-rotate-2')
     cy.get('img').eq(1).parent().should('have.class', 'rotate-2')

@@ -53,7 +53,7 @@ export const experiencesWithTwoPlaces: Experience[] = [
         title: 'mock title 2.2',
         description: 'mock description 2.2',
         period: periodFixture(new Date('2023-01-01'), new Date('2023-10-01')),
-        link: htmlSimpleLinkFixture('https://foo2_2.bar', 'foo bar 2.2' ),
+        link: htmlSimpleLinkFixture('https://foo2_2.bar', 'foo bar 2.2'),
         pinned: true
       }
     ]
