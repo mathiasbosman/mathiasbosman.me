@@ -20,8 +20,8 @@ For example:
   ➜  press h to show help
 ```
 
-Follow the default Git workflow:
-![Git workflow](https://gist.githubusercontent.com/mathiasbosman/22d6d72b4db2c33a7b33979c4654287f/raw/8924a48c17615b2d4fd1019cf630e0a174d4657a/release_branches.svg)
+Follow the 'feature branches' Git workflow:
+![Git workflow](./readme_branch_strat.svg)
 
 1. make sure the `development` branch contains the latest state
 2. create a feature branch from the `development` branch
