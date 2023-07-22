@@ -67,12 +67,13 @@ export const HomePage = (): ReactElement => {
     <div className={'sm:px-8 mt-8 md:mt-28 px-2'}>
       <ContentWrapper>
         <div className={'mx-auto max-w-2xl lg:max-w-5xl mt-10 lg:mt-6'}>
-          <div className={'mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2'}>
+          <div
+            className={'mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2'}>
             <div className="grid grid-cols-1 gap-y-16">
               <Projects projects={projectsConfig.projects} pinned={true}/>
             </div>
             <div className={'space-y-10 lg:pl-16 xl:pl-24'}>
-              <Contact />
+              <Contact/>
               <div className={'rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40'}>
                 <Employment experiences={experienceConfig.experiences}/>
               </div>

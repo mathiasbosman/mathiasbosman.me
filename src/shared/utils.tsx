@@ -79,5 +79,6 @@ export function escapeHtml (input: string): string {
 
 export function sendEmail (to: string, subject?: string): void {
   const buffer = Buffer.from(to, 'base64')
-  window.location.href = `mailto:${buffer.toString()}` + (subject !== undefined ? `?subject=${escapeHtml(subject)}` : '')
+  window.location.href = `mailto:${buffer.toString()}` + (subject !== undefined
+    ? `?subject=${escapeHtml(subject)}` : '')
 }

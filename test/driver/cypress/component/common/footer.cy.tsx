@@ -11,7 +11,9 @@ describe('<Footer/>', () => {
     cy.mount(<Footer links={mockLinks}/>)
     cy.get('footer').should('be.visible')
     cy.get('a').should('have.length', 2)
-    cy.get('p').should('have.text',
+    cy.get('p')
+    .should('have.text',
       '© ' + new Date().getFullYear().toString() + ' Mathias Bosman. All rights reserved.')
+    .should('have.css', 'text-align', 'center')
   })
 })

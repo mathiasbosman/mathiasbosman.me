@@ -1,6 +1,5 @@
 import type { Project } from '../models/config/project.config.tsx'
-import type { PropsWithChildren} from 'react';
-import { type ReactElement } from 'react'
+import type { PropsWithChildren, ReactElement } from 'react'
 import { LinkIcon } from '../shared/icons.tsx'
 
 interface Props {
@@ -49,11 +48,11 @@ export const Projects = (props: PropsWithChildren<Props>): ReactElement => {
 
   return <>
     {props.projects
-      .filter(project => props.pinned ? project.pinned : true)
-      .map((project, i) => {
-        return _renderItem(project, i)
-      })}
-    </>
+    .filter(project => props.pinned ? project.pinned : true)
+    .map((project, i) => {
+      return _renderItem(project, i)
+    })}
+  </>
 }
 
 export default Projects

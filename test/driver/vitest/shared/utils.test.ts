@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import {
   escapeHtml,
   type Period,
@@ -42,7 +42,7 @@ describe('escapeHtml()', () => {
   it('String with special character gets escaped', () => {
     expect(escapeHtml('foo "bar"')).eq('foo &quot;bar&quot;')
     expect(escapeHtml('foo & bar')).eq('foo &amp; bar')
-    expect(escapeHtml("foo 'bar'")).eq('foo &#39;bar&#39;')
+    expect(escapeHtml('foo \'bar\'')).eq('foo &#39;bar&#39;')
     expect(escapeHtml('foo < bar')).eq('foo &lt; bar')
     expect(escapeHtml('foo > bar')).eq('foo &gt; bar')
   })
