@@ -60,9 +60,9 @@ npm run test:e2e
 
 ## Deployment
 
-The master branch will automatically be deployed via [Netlify][link_netlify].
+The master branch will automatically be deployed via [Vercel][link_vercel].
 Every pull request against the master branch will deploy a preview app.
-[Netlify][link_netlify] will comment on the PR with the relevant links.
+[Vercel][link_vercel] will comment on the PR with the relevant links.
 
 ## Credits
 
@@ -76,7 +76,10 @@ Every pull request against the master branch will deploy a preview app.
 [link_mathiasbosman_be]: http://mathiasbosman.be
 [link_lit]: https://lit.dev/
 [link_tailwind]: https://tailwindcss.com/
+
 [link_cypress]: https://cypress.io
-[link_netlify]: https://netlify.com
+
+[link_vercel]: https://vercel.com/
+
 [link_vite]: http://vitejs.dev
 [link_vitest]: http://vitest.dev
