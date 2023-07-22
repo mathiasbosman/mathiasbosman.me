@@ -1,10 +1,10 @@
-import type { PropsWithChildren } from 'react'
-import { type ReactElement, useEffect } from 'react'
 import Footer from './footer.tsx'
 import { LINK_GITHUB, LINK_LINKEDIN } from '../../constants.tsx'
 import Navigation from './navigation/navigation.tsx'
 import { publicPages } from '../../models/config/navigation.config.tsx'
 import { useLocation } from 'react-router-dom'
+import type { PropsWithChildren, ReactElement } from 'react'
+import { useEffect } from 'react'
 
 interface Props {
   title?: string

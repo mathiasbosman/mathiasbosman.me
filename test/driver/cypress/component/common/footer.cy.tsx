@@ -12,8 +12,9 @@ describe('<Footer/>', () => {
     cy.get('footer').should('be.visible')
     cy.get('a').should('have.length', 2)
     cy.get('p')
-    .should('have.text',
-      '© ' + new Date().getFullYear().toString() + ' Mathias Bosman. All rights reserved.')
+    .should('have.html',
+      '©&nbsp;' + new Date().getFullYear().toString()
+      + ' Mathias&nbsp;Bosman. All&nbsp;rights&nbsp;reserved.')
     .should('have.css', 'text-align', 'center')
   })
 })

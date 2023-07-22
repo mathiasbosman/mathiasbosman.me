@@ -20,8 +20,9 @@ export const Footer = (props: PropsWithChildren<Props>): ReactElement => {
                   return <Link key={i} link={link}/>
                 })}
               </div>
-              <p className={'text-sm text-center text-zinc-400 dark:text-zinc-500'}>
-                © {new Date().getFullYear()} Mathias Bosman. All rights reserved.
+              <p className={'text-sm text-center text-balance text-zinc-400 dark:text-zinc-500'}>
+                ©&nbsp;{new Date().getFullYear()} Mathias&nbsp;Bosman.
+                All&nbsp;rights&nbsp;reserved.
               </p>
             </div>
           </div>
