@@ -44,8 +44,8 @@ export const routeConfig: RouteLink[] = [
 ]
 
 export const publicPages: HTMLSimpleLink[] = routeConfig
-  .filter(routeLInk => routeLInk.isPublic)
-  .map(routeLink => { return routeLink.link })
+.filter(routeLInk => routeLInk.isPublic)
+.map(routeLink => { return routeLink.link })
 
 export const routes: RouteObject[] = routeConfig.map(routeLink => {
   return {

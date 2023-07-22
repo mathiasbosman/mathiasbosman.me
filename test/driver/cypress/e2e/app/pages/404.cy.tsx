@@ -12,7 +12,7 @@ describe('Not found page tests', () => {
   })
 
   it('None existing route gives 404', () => {
-    cy.visit('/foo-bar')
+    cy.visit('/foo')
     cy.get('h1').should('contain.text', '404')
     cy.title().should('include', '404')
   })

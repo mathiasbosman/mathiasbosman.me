@@ -6,7 +6,7 @@ const router = createBrowserRouter(routes)
 
 export const App = (): ReactElement => {
   return (
-      <RouterProvider router={router} />
+    <RouterProvider router={router}/>
   )
 }
 

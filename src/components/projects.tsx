@@ -1,6 +1,5 @@
 import type { Project } from '../models/config/project.config.tsx'
-import type { PropsWithChildren} from 'react';
-import { type ReactElement } from 'react'
+import type { PropsWithChildren, ReactElement } from 'react'
 import { LinkIcon } from '../shared/icons.tsx'
 
 interface Props {
@@ -26,11 +25,11 @@ export const Projects = (props: PropsWithChildren<Props>): ReactElement => {
         <div
           className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50
               opacity-0 transition group-hover:scale-100 group-hover:opacity-100
-              dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"
+              dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-xl"
         ></div>
         <a href={project.link.href}>
           <span
-            className={'absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl'}></span>
+            className={'absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-xl'}></span>
           <span className={'relative z-10'}>{project.title}</span>
         </a>
       </h2>
@@ -49,11 +48,11 @@ export const Projects = (props: PropsWithChildren<Props>): ReactElement => {
 
   return <>
     {props.projects
-      .filter(project => props.pinned ? project.pinned : true)
-      .map((project, i) => {
-        return _renderItem(project, i)
-      })}
-    </>
+    .filter(project => props.pinned ? project.pinned : true)
+    .map((project, i) => {
+      return _renderItem(project, i)
+    })}
+  </>
 }
 
 export default Projects

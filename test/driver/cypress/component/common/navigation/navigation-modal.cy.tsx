@@ -27,7 +27,7 @@ describe('<NavigationModal/>', () => {
     cy.get('button[aria-expanded="true"]').click()
     cy.get('nav').should('be.visible')
     cy.get('button[aria-label="Close menu"]').should('be.visible')
-      .click()
+    .click()
     cy.get('nav').should('not.be.visible')
   })
 })

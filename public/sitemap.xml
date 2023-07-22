@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <lastmod>{gets updated via preInstall script}</lastmod>
     <loc>https://mathiasbosman.be/</loc>
-    <lastmod>{gets updated via preInstall script}</lastmod>
   </url>
   <url>
+    <lastmod>{gets updated via preInstall script}</lastmod>
     <loc>https://mathiasbosman.be/about</loc>
-    <lastmod>{gets updated via preInstall script}</lastmod>
   </url>
   <url>
+    <lastmod>{gets updated via preInstall script}</lastmod>
     <loc>https://mathiasbosman.be/projects</loc>
-    <lastmod>{gets updated via preInstall script}</lastmod>
   </url>
   <url>
-    <loc>https://mathiasbosman.be/experiences</loc>
     <lastmod>{gets updated via preInstall script}</lastmod>
+    <loc>https://mathiasbosman.be/experiences</loc>
   </url>
 </urlset>
