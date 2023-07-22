@@ -2,35 +2,21 @@ import type { ReactElement } from 'react'
 import Page from '../components/common/page.tsx'
 import ContentWrapper from '../components/common/content-wrapper.tsx'
 import SectionWrapper from '../components/common/section-wrapper.tsx'
-import type { HTMLSimpleLink } from '../shared/utils.tsx'
 import { sendEmail } from '../shared/utils.tsx'
-import { EmailIcon, GitHubIcon, type Icon, LinkedInIcon } from '../shared/icons.tsx'
+import { EmailIcon, GitHubIcon, LinkedInIcon } from '../shared/icons.tsx'
 import { CONTACT_EMAIL, LINK_GITHUB, LINK_LINKEDIN } from '../constants.tsx'
 
 import profilePicture from '../assets/mathias_large.webp'
 import PageTitle from '../components/typography/page-title.tsx'
+import FollowIconLink from '../components/typography/folow-iconlink.tsx'
 
 export const AboutPage = (): ReactElement => {
-  function _renderFollowLink (link: HTMLSimpleLink, icon: Icon): ReactElement {
-    return <a
-      className={'group flex text-sm font-medium text-zinc-800 transition hover:text-blue-500 dark:text-zinc-200 dark:hover:text-blue-500'}
-      href={link.href}>
-      <svg
-        viewBox={'0 0 24 24'} aria-hidden={true}
-        className={'h-5 w-5 flex-none fill-zinc-500 transition group-hover:fill-blue-500'}>
-        <path fillRule={'evenodd'} clipRule={'evenodd'} d={icon.svgPath}></path>
-      </svg>
-      <span className={'ml-4'}>Follow me on {link.text}</span>
-    </a>
-  }
-
   return <Page title={'About - Mathias Bosman'}
                renderAvatar={true}>
     <ContentWrapper>
       <SectionWrapper>
         <div className={'mx-auto max-w-2xl lg:max-w-5xl'}>
           <div
-            // className={'mt-6 grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12'}>
             className={'-mt-6 grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12'}>
             <div className={'lg:pl-20'}>
               <div className={'max-w-xs px-2.5 lg:max-w-none'}>
@@ -82,10 +68,10 @@ export const AboutPage = (): ReactElement => {
             <div className={'lg:pl-20'}>
               <ul role={'list'}>
                 <li className={'mt-4 flex'}>
-                  {_renderFollowLink(LINK_GITHUB, GitHubIcon)}
+                  <FollowIconLink link={LINK_GITHUB} icon={GitHubIcon}/>
                 </li>
                 <li className={'mt-4 flex'}>
-                  {_renderFollowLink(LINK_LINKEDIN, LinkedInIcon)}
+                  <FollowIconLink link={LINK_LINKEDIN} icon={LinkedInIcon}/>
                 </li>
                 <li
                   className={'mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40 flex'}
