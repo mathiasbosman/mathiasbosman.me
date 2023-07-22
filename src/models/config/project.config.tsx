@@ -68,7 +68,7 @@ export const projectsConfig: ProjectsConfig = {
         text: 'mathiasbosman.be'
       },
       description:
-        'This very website! Using Lit web components and Tailwind CSS.'
+        'This very website! Using React, Tailwind CSS and Vercel for hosting'
     }
   ]
 }
