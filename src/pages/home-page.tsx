@@ -73,8 +73,10 @@ export const HomePage = (): ReactElement => {
               <Projects projects={projectsConfig.projects} pinned={true}/>
             </div>
             <div className={'space-y-10 lg:pl-16 xl:pl-24'}>
-              <Contact/>
-              <div className={'rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40'}>
+              <div className={'rounded-lg border border-zinc-100 p-6 dark:border-zinc-700/40'}>
+                <Contact/>
+              </div>
+              <div className={'rounded-lg border border-zinc-100 p-6 dark:border-zinc-700/40'}>
                 <Employment experiences={experienceConfig.experiences}/>
               </div>
             </div>
