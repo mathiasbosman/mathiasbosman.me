@@ -19,7 +19,7 @@ export const ProjectsPage = (): ReactElement => {
             contribute if you have ideas for how it can be improved.
           </PageTitle>
         </div>
-        <div className={'mt-32 mx-auto max-w-2xl lg:max-w-5xl'}>
+        <div className={'mt-16 mx-auto max-w-2xl lg:max-w-5xl'}>
           <div className={'grid md:grid-cols-2 lg:grid-cols-3 gap-16'}>
             <Projects projects={projectsConfig.projects} pinned={false}/>
           </div>

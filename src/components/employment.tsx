@@ -11,8 +11,8 @@ interface Props {
 export const Employment = (props: PropsWithChildren<Props>): ReactElement => {
   function _renderLogo (logo: HTMLImage): ReactElement {
     return <div
-      className={'relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0'}>
-      <img alt={logo.alt} loading={'lazy'} width={28} height={28}
+      className={'relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 bg-zinc-100 dark:bg-zinc-800 dark:ring-0'}>
+      <img style={{ color: 'transparent' }} alt={logo.alt} loading={'lazy'} width={28} height={28}
            decoding={'async'} className={'h-7 w-7'} src={logo.src}/>
     </div>
   }

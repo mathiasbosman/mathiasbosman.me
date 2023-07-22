@@ -23,6 +23,7 @@ export const AboutPage = (): ReactElement => {
                 <img
                   src={profilePicture}
                   alt={'Just me being black and white'}
+                  style={{ color: 'transparent' }}
                   loading={'lazy'}
                   width={800}
                   height={800}
