@@ -6,8 +6,8 @@ import Avatar, { AvatarSize } from '../components/avatar.tsx'
 import avatar from '../assets/mathias.webp'
 import PageTitle from '../components/typography/page-title.tsx'
 import SocialIconlink from '../components/typography/social-iconlink.tsx'
-import { LINK_GITHUB, LINK_LINKEDIN } from '../constants.tsx'
-import { GitHubIcon, LinkedInIcon } from '../shared/icons.tsx'
+import { LINK_GITHUB, LINK_LINKEDIN, LINK_TWITTER } from '../constants.tsx'
+import { GitHubIcon, LinkedInIcon, TwitterIcon } from '../shared/icons.tsx'
 import Imagecarousel from '../components/imagecarousel.tsx'
 
 import roll_1 from '../assets/carousel/roll_1.webp'
@@ -37,6 +37,7 @@ export const HomePage = (): ReactElement => {
         </PageTitle>
         <div className={'mt-6 flex gap-6'}>
           <SocialIconlink link={LINK_GITHUB} icon={GitHubIcon}/>
+          <SocialIconlink link={LINK_TWITTER} icon={TwitterIcon}/>
           <SocialIconlink link={LINK_LINKEDIN} icon={LinkedInIcon}/>
         </div>
       </div>

@@ -3,8 +3,8 @@ import Page from '../components/common/page.tsx'
 import ContentWrapper from '../components/common/content-wrapper.tsx'
 import SectionWrapper from '../components/common/section-wrapper.tsx'
 import { sendEmail } from '../shared/utils.tsx'
-import { EmailIcon, GitHubIcon, LinkedInIcon } from '../shared/icons.tsx'
-import { CONTACT_EMAIL, LINK_GITHUB, LINK_LINKEDIN } from '../constants.tsx'
+import { EmailIcon, GitHubIcon, LinkedInIcon, TwitterIcon } from '../shared/icons.tsx'
+import { CONTACT_EMAIL, LINK_GITHUB, LINK_LINKEDIN, LINK_TWITTER } from '../constants.tsx'
 
 import profilePicture from '../assets/mathias_large.webp'
 import PageTitle from '../components/typography/page-title.tsx'
@@ -70,6 +70,9 @@ export const AboutPage = (): ReactElement => {
               <ul role={'list'}>
                 <li className={'mt-4 flex'}>
                   <FollowIconLink link={LINK_GITHUB} icon={GitHubIcon}/>
+                </li>
+                <li className={'mt-4 flex'}>
+                  <FollowIconLink link={LINK_TWITTER} icon={TwitterIcon}/>
                 </li>
                 <li className={'mt-4 flex'}>
                   <FollowIconLink link={LINK_LINKEDIN} icon={LinkedInIcon}/>
