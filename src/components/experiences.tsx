@@ -50,7 +50,7 @@ export const Experiences = (props: PropsWithChildren<Props>): ReactElement => {
       }
       {item.link !== undefined && <
         div aria-hidden={true}
-            className={'relative z-10 mt-4 flex items-center text-sm font-medium text-blue-500'}>
+            className={'relative z-10 mt-4 flex items-center text-sm font-medium text-indigo-500'}>
         {item.link.text}
         <svg viewBox={'0 0 16 16'}
              fill={'none'}

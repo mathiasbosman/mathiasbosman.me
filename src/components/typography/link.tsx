@@ -6,7 +6,7 @@ interface Props {
 }
 
 export const Link = (props: PropsWithChildren<Props>): ReactElement => {
-  return <a className={'transition hover:text-blue-500 dark:hover:text-blue-400'}
+  return <a className={'transition hover:text-indigo-500 dark:hover:text-indigo-400'}
             href={props.link.href}>
     {props.link.text}
   </a>

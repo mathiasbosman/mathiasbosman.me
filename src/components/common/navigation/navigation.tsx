@@ -15,11 +15,11 @@ export const Navigation = (props: PropsWithChildren<Props>): ReactElement => {
   function _renderLink (link: HTMLSimpleLink): ReactElement {
     const isCurrentUrl = props.location === link.href
     return <a
-      className={'relative inline-block px-3 p-2 transition hover:text-blue-500 dark:hover:text-blue-400 '}
+      className={'relative inline-block px-3 p-2 transition hover:text-indigo-500 dark:hover:text-indigo-400 '}
       href={link.href}>
       {link.text}
       {isCurrentUrl && <span
-        className={'absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-blue-500/0 via-blue-500/40 to-blue-500/0 dark:from-blue-400/0 dark:via-blue-400/40 dark:to-blue-400/0'}
+        className={'absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-indigo-500/0 via-indigo-500/40 to-indigo-500/0 dark:from-indigo-400/0 dark:via-indigo-400/40 dark:to-indigo-400/0'}
       ></span>}
     </a>
   }

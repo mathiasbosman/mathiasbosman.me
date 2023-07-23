@@ -38,7 +38,7 @@ export const Projects = (props: PropsWithChildren<Props>): ReactElement => {
         {project.description}
       </p>
       <p
-        className={'relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-blue-500 dark:text-zinc-200'}>
+        className={'relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-indigo-500 dark:text-zinc-200'}>
         <svg viewBox={'0 0 24 24'} aria-hidden={true} className={'h-6 w-6 flex-none'}>
           <path d={LinkIcon.svgPath} fill={'currentColor'}></path>
         </svg>
