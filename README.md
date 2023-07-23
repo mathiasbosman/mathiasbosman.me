@@ -20,9 +20,9 @@ For example:
   ➜  press h to show help
 ```
 
-1. make sure the `master` branch contains the latest state
-2. create a feature branch from the `master` branch
-3. make your changes and create a pull request into the `master` branch
+1. make sure the `main` branch contains the latest state
+2. create a feature branch from the `main` branch
+3. make your changes and create a pull request into the `main` branch
 
 ### Testing
 
@@ -57,8 +57,8 @@ npm run test:e2e
 
 ## Deployment
 
-The master branch will automatically be deployed via [Vercel][link_vercel].
-Every pull request against the master branch will deploy a preview app.
+The main branch will automatically be deployed via [Vercel][link_vercel].
+Every pull request against the main branch will deploy a preview app.
 [Vercel][link_vercel] will comment on the PR with the relevant links.
 
 ## Credits
