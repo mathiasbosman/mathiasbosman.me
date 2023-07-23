@@ -12,7 +12,7 @@ export const Imagecarousel = (props: PropsWithChildren<Props>): ReactElement => 
       {props.images.map((img, i) => {
         const cssRotation = i % 2 === 0 ? '-rotate-2' : 'rotate-2'
         return <div key={i} className={cssRotation
-          + ' md:aspect-[9/10] aspect-[0.5] md:w-72 sm:w-40 w-24 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800'}>
+          + ' relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl'}>
           <img alt={img.alt}
                src={img.src}
                loading={'lazy'} decoding={'async'}
