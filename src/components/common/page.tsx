@@ -1,5 +1,4 @@
 import Footer from './footer.tsx'
-import { LINK_GITHUB, LINK_LINKEDIN } from '../../constants.tsx'
 import Navigation from './navigation/navigation.tsx'
 import { publicPages } from '../../models/config/navigation.config.tsx'
 import { useLocation } from 'react-router-dom'
@@ -35,9 +34,7 @@ export const Page = (props: PropsWithChildren<Props>): ReactElement => {
       </div>
     </div>
     {props.children}
-    <Footer links={[
-      LINK_GITHUB, LINK_LINKEDIN
-    ]}/>
+    <Footer links={publicPages}/>
   </main>
 }
 
