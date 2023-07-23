@@ -24,7 +24,7 @@ export const experienceConfig: ExperienceConfig = {
       place: 'Flemish Government',
       logo: {
         alt: 'lit logo',
-        src: '/logos/flemishGov.webp'
+        src: '/assets/logos/flemishGov.webp'
       },
       items: [
         {
@@ -65,7 +65,7 @@ export const experienceConfig: ExperienceConfig = {
       place: 'Echoweb',
       logo: {
         alt: 'Echoweb logo',
-        src: '/logos/echoweb.webp'
+        src: '/assets/logos/echoweb.webp'
       },
       items: [
         {
@@ -85,7 +85,7 @@ export const experienceConfig: ExperienceConfig = {
       place: 'Procius Ltd.',
       logo: {
         alt: 'Procius logo',
-        src: '/logos/procius.webp'
+        src: '/assets/logos/procius.webp'
       },
       items: [
         {

@@ -19,7 +19,7 @@ export const projectsConfig: ProjectsConfig = {
       pinned: true,
       logo: {
         alt: 'Lit logo',
-        src: '/logos/lit.webp'
+        src: '/assets/logos/lit.webp'
       },
       title: 'Lit sandbox',
       link: {
@@ -33,7 +33,7 @@ export const projectsConfig: ProjectsConfig = {
       pinned: true,
       logo: {
         alt: 'MQTT logo',
-        src: '/logos/mqtt.webp'
+        src: '/assets/logos/mqtt.webp'
       },
       title: 'MQTT stress test',
       link: {
@@ -46,7 +46,7 @@ export const projectsConfig: ProjectsConfig = {
     {
       logo: {
         alt: 'Bitvavo logo',
-        src: '/logos/bitvavo.webp'
+        src: '/assets/logos/bitvavo.webp'
       },
       title: 'Cryptobot',
       link: {
