@@ -1,12 +1,11 @@
-import type { PropsWithChildren } from 'react'
-import { type ReactElement } from 'react'
+import type { PropsWithChildren, ReactElement } from 'react'
 import type { HTMLImage } from '../shared/utils.tsx'
 
 interface Props {
   images: HTMLImage[]
 }
 
-export const Imagecarousel = (props: PropsWithChildren<Props>): ReactElement => {
+export const ImageCarousel = (props: PropsWithChildren<Props>): ReactElement => {
   return <div className={'mt-8 sm:mt-16'}>
     <div className={'-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8'}>
       {props.images.map((img, i) => {
@@ -24,4 +23,4 @@ export const Imagecarousel = (props: PropsWithChildren<Props>): ReactElement => 
   </div>
 }
 
-export default Imagecarousel
+export default ImageCarousel

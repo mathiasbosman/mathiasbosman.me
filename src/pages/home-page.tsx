@@ -8,7 +8,7 @@ import PageTitle from '../components/typography/page-title.tsx'
 import SocialIconlink from '../components/typography/social-iconlink.tsx'
 import { LINK_GITHUB, LINK_LINKEDIN, LINK_TWITTER } from '../constants.tsx'
 import { GitHubIcon, LinkedInIcon, TwitterIcon } from '../shared/icons.tsx'
-import Imagecarousel from '../components/imagecarousel.tsx'
+import ImageCarousel from '../components/image-carousel.tsx'
 
 import roll_1 from '../assets/carousel/roll_1.webp'
 import roll_2 from '../assets/carousel/roll_2.webp'
@@ -43,7 +43,7 @@ export const HomePage = (): ReactElement => {
       </div>
     </ContentWrapper>
 
-    <Imagecarousel images={[
+    <ImageCarousel images={[
       {
         alt: 'Phantasialand. Theme parks are just a hobby, I promise',
         src: roll_3

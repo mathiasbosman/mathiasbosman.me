@@ -1,5 +1,5 @@
 import type { HTMLImage } from '../../../../src/shared/utils.tsx'
-import Imagecarousel from '../../../../src/components/imagecarousel.tsx'
+import ImageCarousel from '../../../../src/components/image-carousel.tsx'
 import { htmlImageFixture } from '../fixtures/utils.fixture.tsx'
 
 describe('<Imagecarousel/>', () => {
@@ -19,7 +19,7 @@ describe('<Imagecarousel/>', () => {
       htmlImageFixture(mockImageSrc, 'mock image 2')
     ]
 
-    cy.mount(<Imagecarousel images={imageSet}/>)
+    cy.mount(<ImageCarousel images={imageSet}/>)
     cy.get('img').should('be.visible').should('have.length', imageSet.length)
     cy.get('img').eq(0).parent().should('have.class', '-rotate-2')
     cy.get('img').eq(1).parent().should('have.class', 'rotate-2')
