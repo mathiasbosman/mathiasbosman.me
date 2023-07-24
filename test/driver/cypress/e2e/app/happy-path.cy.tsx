@@ -13,7 +13,7 @@ describe('Happy paths', () => {
   it('All pages can be visited directly', () => {
     allPages.forEach(page => {
       cy.visit(page)
-      cy.screenshot('pages' + page)
+      cy.screenshot()
     })
   })
 
