@@ -5,8 +5,8 @@ describe('Happy paths', () => {
 
   function _navigate(path: string): void {
     cy.get('nav')
-    .filter(':visible')
     .find('a[href="'+path+'"]')
+    .first() //we have two navs but in this case we don't really care
     .click()
   }
 
@@ -27,7 +27,6 @@ describe('Happy paths', () => {
   })
 
   it('User can navigate back and forth between public pages', () => {
-    cy.viewport(800,600)
     publicTestPages.forEach(currentPath => {
       cy.visit(currentPath)
       // navigate via ui to other page
