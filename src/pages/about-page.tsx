@@ -72,10 +72,10 @@ export const AboutPage = (): ReactElement => {
                   <FollowIconLink link={LINK_GITHUB} icon={GitHubIcon}/>
                 </li>
                 <li className={'mt-4 flex'}>
-                  <FollowIconLink link={LINK_TWITTER} icon={TwitterIcon}/>
+                  <FollowIconLink link={LINK_LINKEDIN} icon={LinkedInIcon}/>
                 </li>
                 <li className={'mt-4 flex'}>
-                  <FollowIconLink link={LINK_LINKEDIN} icon={LinkedInIcon}/>
+                  <FollowIconLink link={LINK_TWITTER} icon={TwitterIcon}/>
                 </li>
                 <li
                   className={'mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40 flex'}>

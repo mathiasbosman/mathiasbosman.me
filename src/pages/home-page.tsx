@@ -37,8 +37,8 @@ export const HomePage = (): ReactElement => {
         </PageTitle>
         <div className={'mt-6 flex gap-6'}>
           <SocialIconlink link={LINK_GITHUB} icon={GitHubIcon}/>
-          <SocialIconlink link={LINK_TWITTER} icon={TwitterIcon}/>
           <SocialIconlink link={LINK_LINKEDIN} icon={LinkedInIcon}/>
+          <SocialIconlink link={LINK_TWITTER} icon={TwitterIcon}/>
         </div>
       </div>
     </ContentWrapper>
