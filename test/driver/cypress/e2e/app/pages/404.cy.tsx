@@ -9,4 +9,9 @@ describe('Not found page tests', () => {
     cy.get('h1').should('contain.text', '404')
     cy.title().should('include', '404')
   })
+
+  it('User should be able to navigate back to the root', () => {
+    cy.visit('/404')
+    cy.get('a[href="/"]').should('be.visible')
+  })
 })

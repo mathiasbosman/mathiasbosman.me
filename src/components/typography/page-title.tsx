@@ -1,18 +1,17 @@
-import type { PropsWithChildren, ReactElement } from 'react'
+import type { PropsWithChildren, ReactElement, ReactNode } from 'react'
 
 interface Props {
   title: string
+  subtitleSlot?: ReactNode
 }
 
 export const PageTitle = (props: PropsWithChildren<Props>): ReactElement => {
   return <>
     <h1
-      className={'mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl'}
-    >{props.title}</h1>
-    {props.children !== undefined &&
-      <p className={'mt-6 text-base text-zinc-500 dark:text-zinc-400'}>
-        {props.children}
-      </p>}
+      className={'mt-6 text-4xl sm:text-5xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 z-10'}
+    >{props.title}
+    {props.subtitleSlot}
+    </h1>
   </>
 }
 

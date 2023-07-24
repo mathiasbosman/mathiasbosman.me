@@ -4,6 +4,9 @@ import { publicPages } from '../../models/config/navigation.config.tsx'
 import { useLocation } from 'react-router-dom'
 import type { PropsWithChildren, ReactElement } from 'react'
 import { useEffect } from 'react'
+import Avatar, { AvatarSize } from '../avatar.tsx'
+
+import avatar from '../../assets/mathias.webp'
 
 interface Props {
   title?: string
@@ -27,9 +30,13 @@ export const Page = (props: PropsWithChildren<Props>): ReactElement => {
     <div className={'mx-auto w-full max-w-7xl lg:px-8'}>
       <div className={'relative px-4 sm:px-8 lg:px-12'}>
         <header className={'mx-auto max-w-2xl lg:max-w-5xl'}>
-          <Navigation renderAvatar={props.renderAvatar}
-                      links={publicPages}
-                      location={useLocation().pathname}/>
+          <Navigation
+            leftSlot={props.renderAvatar && <Avatar image={{
+              src: avatar,
+              alt: 'Avatar'
+            }} size={AvatarSize.xs}/>}
+            links={publicPages}
+            location={useLocation().pathname}/>
         </header>
       </div>
     </div>

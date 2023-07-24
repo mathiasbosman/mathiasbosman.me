@@ -8,7 +8,7 @@ import PageTitle from '../components/typography/page-title.tsx'
 import SocialIconlink from '../components/typography/social-iconlink.tsx'
 import { LINK_GITHUB, LINK_LINKEDIN, LINK_TWITTER } from '../constants.tsx'
 import { GitHubIcon, LinkedInIcon, TwitterIcon } from '../shared/icons.tsx'
-import Imagecarousel from '../components/imagecarousel.tsx'
+import ImageCarousel from '../components/image-carousel.tsx'
 
 import roll_1 from '../assets/carousel/roll_1.webp'
 import roll_2 from '../assets/carousel/roll_2.webp'
@@ -27,14 +27,20 @@ export const HomePage = (): ReactElement => {
     <ContentWrapper>
       <div className={'relative px-2 sm:px-8 lg:px-12'}>
         <Avatar image={{ src: avatar, alt: 'Avatar' }} size={AvatarSize.s}/>
-        <PageTitle title={'Software designer, network engineer and lighting tech.'}>
+        <PageTitle title={'Mathias Bosman'}
+                   subtitleSlot={
+                     <div
+                       className={'font-medium sm:text-4xl text-2xl mt-2'}>Software&nbsp;designer,
+                       network&nbsp;engineer &amp; lighting&nbsp;tech</div>
+                   } />
+        <p className={'mt-6 text-base text-zinc-500 dark:text-zinc-400'}>
           I&apos;m Mathias, a software designer and network engineer based in
           Lebbeke, Belgium.<br/>In my spare time I like to fiddle with
-          stage lights.<br/>
+          stage lights or ride my race bike.<br/>
           Currently full-time employed at the Department of Environment of
           the Flemish Government.<br/>
-          Yes, I&apos;m the human of the cute Beagle; her name is Luna.
-        </PageTitle>
+          Yes, I&apos;m the human of the cute little Beagle; her name is (&apos;Queen&apos;) Luna.
+        </p>
         <div className={'mt-6 flex gap-6'}>
           <SocialIconlink link={LINK_GITHUB} icon={GitHubIcon}/>
           <SocialIconlink link={LINK_TWITTER} icon={TwitterIcon}/>
@@ -43,7 +49,7 @@ export const HomePage = (): ReactElement => {
       </div>
     </ContentWrapper>
 
-    <Imagecarousel images={[
+    <ImageCarousel images={[
       {
         alt: 'Phantasialand. Theme parks are just a hobby, I promise',
         src: roll_3

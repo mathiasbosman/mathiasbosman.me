@@ -10,7 +10,7 @@ import ProjectsPage from '../../pages/projects-page.tsx'
 interface RouteLink {
   link: HTMLSimpleLink
   element: React.ReactNode
-  isPublic: boolean
+  isPublic?: boolean
   errorElement?: React.ReactElement
 }
 
@@ -18,7 +18,6 @@ export const routeConfig: RouteLink[] = [
   {
     link: { href: '/', text: 'Home' },
     element: <HomePage/>,
-    isPublic: false,
     errorElement: <ErrorPage/>
   },
   {
@@ -38,7 +37,6 @@ export const routeConfig: RouteLink[] = [
   },
   {
     link: { href: '/404', text: 'Not found' },
-    isPublic: false,
     element: <ErrorPage/>
   }
 ]
