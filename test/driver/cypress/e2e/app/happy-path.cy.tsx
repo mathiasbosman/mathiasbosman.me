@@ -3,10 +3,14 @@ describe('Happy paths', () => {
   const publicTestPages = ['/about', '/experiences', '/projects']
   const allPages = ['/', ...publicTestPages]
 
+  beforeEach('Set viewport for navigation', () => {
+    cy.viewport(850,660)
+  })
+
   function _navigate(path: string): void {
     cy.get('nav')
     .find('a[href="'+path+'"]')
-    .first() //we have two navs but in this case we don't really care
+    .filter(':visible') //we have two navs but in this case we don't really care
     .click()
   }
 
