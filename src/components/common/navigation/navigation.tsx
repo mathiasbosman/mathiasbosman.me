@@ -1,11 +1,9 @@
-import type { PropsWithChildren, ReactElement } from 'react'
-import type { HTMLImage, HTMLSimpleLink } from '../../../shared/utils.tsx'
-import Avatar, { AvatarSize } from '../../avatar.tsx'
-
-import avatar from '../../../assets/mathias.webp'
+import type { PropsWithChildren, ReactElement, ReactNode } from 'react'
+import type { HTMLSimpleLink } from '../../../shared/utils.tsx'
 import NavigationModal from './navigation-modal.tsx'
 
 interface Props {
+  avatar: ReactNode
   renderAvatar: boolean
   links: HTMLSimpleLink[]
   location: string
@@ -35,16 +33,10 @@ export const Navigation = (props: PropsWithChildren<Props>): ReactElement => {
     </nav>
   }
 
-  function _renderAvatar (image: HTMLImage, size: AvatarSize): ReactElement | undefined {
-    if (props.renderAvatar) {
-      return <Avatar image={image} size={size}/>
-    }
-  }
-
   return <div
     className={'flex justify-between md:justify-center flex-row mt-8 px-4 md:px-2 items-center'}>
     <div className={'md:basis-1/3'}>
-      {_renderAvatar({ src: avatar, alt: 'Home' }, AvatarSize.xs)}
+      {props.renderAvatar && props.avatar}
     </div>
     <div className={'md:basis-1/3 flex md:justify-center'}>
       {_renderLinks(props.links)}
