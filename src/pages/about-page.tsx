@@ -33,7 +33,7 @@ export const AboutPage = (): ReactElement => {
             </div>
             <div className={'lg:order-first lg:row-span-2'}>
               <PageTitle
-                title={'I\'m Mathias Bosman and live in Lebbeke, Belgium where I try to be the best version of myself.'}/>
+                title={'I\'m Mathias Bosman. I live in Belgium, being part of the future.'}/>
               <div className={'space-y-7 text-base text-zinc-600 dark:text-zinc-400 mt-12'}>
                 <p>
                   In the late 90&apos;s I got my hands on a fairly simple Windows
@@ -42,7 +42,7 @@ export const AboutPage = (): ReactElement => {
                 </p>
                 <p>
                   In my last teenage years I choose to study &quot;information
-                  system&quot;, which basically bottled down to learning how to
+                  technology systems&quot;, which basically bottled down to learning how to
                   type and learning the programming language Pascal.
                 </p>
                 <p>
@@ -62,7 +62,7 @@ export const AboutPage = (): ReactElement => {
                   Today, I&apos;m the team lead -
                   <em>(I prefer &quot;one of the team&quot;)</em> - of a small group
                   of Java developers who develop and maintain business
-                  applications for the department of environment.
+                  applications for the department of environment of the Flemish government.
                 </p>
               </div>
             </div>
