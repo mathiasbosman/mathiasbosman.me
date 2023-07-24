@@ -9,9 +9,10 @@ export const ErrorPage = (): ReactElement => {
     <ContentWrapper>
       <div className={'relative px-2 sm:px-8 lg:px-12 mt-32'}>
         <div className={'mx-auto max-w-2xl lg:max-w-5xl'}>
-          <PageTitle title={'404 - not found'}>
+          <PageTitle title={'404 - not found'}/>
+          <p className={'mt-6 text-base text-zinc-500 dark:text-zinc-400'}>
             This is not the page you are looking for!
-          </PageTitle>
+          </p>
         </div>
       </div>
     </ContentWrapper>

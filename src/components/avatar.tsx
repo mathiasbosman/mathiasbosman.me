@@ -3,7 +3,7 @@ import type { HTMLImage } from '../shared/utils.tsx'
 
 export enum AvatarSize {
   xs = 9,
-  s = 16,
+  s = 16
 }
 
 interface Props {
