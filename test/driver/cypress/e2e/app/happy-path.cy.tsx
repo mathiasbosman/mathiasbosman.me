@@ -10,9 +10,10 @@ describe('Happy paths', () => {
     .click()
   }
 
-  it('All pages can be visited directly', () => {
+  it('All pages can be visited directly and have an h1', () => {
     allPages.forEach(page => {
       cy.visit(page)
+      cy.get('h1').should('be.visible')
       cy.screenshot()
     })
   })
