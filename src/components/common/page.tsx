@@ -31,11 +31,10 @@ export const Page = (props: PropsWithChildren<Props>): ReactElement => {
       <div className={'relative px-4 sm:px-8 lg:px-12'}>
         <header className={'mx-auto max-w-2xl lg:max-w-5xl'}>
           <Navigation
-            avatar={<Avatar image={{
+            leftSlot={props.renderAvatar && <Avatar image={{
               src: avatar,
               alt: 'Avatar'
             }} size={AvatarSize.xs}/>}
-            renderAvatar={props.renderAvatar}
             links={publicPages}
             location={useLocation().pathname}/>
         </header>

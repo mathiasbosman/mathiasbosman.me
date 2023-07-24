@@ -11,8 +11,7 @@ describe('<Navigation/>', () => {
 
   beforeEach(() => {
     cy.mount(<Navigation
-      renderAvatar={true}
-      avatar={ <span id='mock_avatar'>avatar</span> }
+      leftSlot={ <span id='mock_slot'>avatar</span> }
       links={mockLinks}
       location={'/pageA'}/>)
   })
@@ -22,7 +21,7 @@ describe('<Navigation/>', () => {
     cy.get('nav').first().should('be.visible').within(() => {
       cy.get('a').should('have.length', 2)
     })
-    cy.get('#mock_avatar').should('be.visible')
+    cy.get('#mock_slot').should('be.visible')
   })
 
   it('active link has a span (indicator) on medium viewport', () => {

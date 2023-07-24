@@ -3,8 +3,7 @@ import type { HTMLSimpleLink } from '../../../shared/utils.tsx'
 import NavigationModal from './navigation-modal.tsx'
 
 interface Props {
-  avatar: ReactNode
-  renderAvatar: boolean
+  leftSlot: ReactNode
   links: HTMLSimpleLink[]
   location: string
 }
@@ -36,7 +35,7 @@ export const Navigation = (props: PropsWithChildren<Props>): ReactElement => {
   return <div
     className={'flex justify-between md:justify-center flex-row mt-8 px-4 md:px-2 items-center'}>
     <div className={'md:basis-1/3'}>
-      {props.renderAvatar && props.avatar}
+      {props.leftSlot}
     </div>
     <div className={'md:basis-1/3 flex md:justify-center'}>
       {_renderLinks(props.links)}
