@@ -7,8 +7,8 @@ export default defineConfig({
 
   e2e: {
     baseUrl: 'http://localhost:5173',
-    supportFile: './support/e2e.ts',
-    specPattern: 'e2e/**/*.cy.tsx'
+    specPattern: 'e2e/**/*.cy.tsx',
+    supportFile: false
   },
   includeShadowDom: true,
   fixturesFolder: './fixtures',
