@@ -20,7 +20,6 @@ import { projectsConfig } from '../models/config/project.config.tsx'
 import { Employment } from '../components/employment.tsx'
 import { experienceConfig } from '../models/config/experience.config.tsx'
 import { Contact } from '../components/contact.tsx'
-
 export const HomePage = (): ReactElement => {
   return <Page
     renderAvatar={false}>
@@ -37,7 +36,7 @@ export const HomePage = (): ReactElement => {
           I&apos;m Mathias, a software designer and network engineer based in
           Lebbeke, Belgium.<br/>In my spare time I like to fiddle with
           stage lights or ride my race bike.<br/>
-          Currently full-time employed at the Department of Environment of
+          Currently <span className={'shadow-[inset_0_-10px_0_0] shadow-indigo-500/10 dark:shadow-indigo-500/30'}>full-time employed at the Department of Environment</span> of
           the Flemish Government.<br/>
           Yes, I&apos;m the human of the cute little Beagle; her name is (&apos;Queen&apos;) Luna.
         </p>
