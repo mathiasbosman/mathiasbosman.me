@@ -17,6 +17,10 @@ changelog:
           - dependencies
           - breaking-change
           - bug
+          - chore
+    - title: 🎯 Chore
+      labels:
+        - chore
     - title: 🧙 Dependencies
       labels:
         - dependencies
