@@ -33,7 +33,7 @@ export const AboutPage = (): ReactElement => {
             </div>
             <div className={'lg:order-first lg:row-span-2'}>
               <PageTitle
-                title={'I\'m Mathias Bosman. Living in Belgium, being part of the future.'}/>
+                title={<span>I&apos;m <span className={'bg-clip-text  text-transparent bg-gradient-to-r from-violet-500 to-pink-600'}>Mathias Bosman</span>. Living in Belgium, being part of the future.</span>}/>
               <div className={'space-y-7 text-base text-zinc-600 dark:text-zinc-400 mt-12'}>
                 <p>
                   In the late 90&apos;s I got my hands on a fairly simple Windows

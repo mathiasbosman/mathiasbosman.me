@@ -1,7 +1,7 @@
 import type { PropsWithChildren, ReactElement, ReactNode } from 'react'
 
 interface Props {
-  title: string
+  title: ReactNode
   subtitleSlot?: ReactNode
 }
 
