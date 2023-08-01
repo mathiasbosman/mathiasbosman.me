@@ -33,7 +33,7 @@ export const Navigation = (props: PropsWithChildren<Props>): ReactElement => {
   }
 
   return <div
-    className={'sticky top-3 flex justify-between md:justify-center flex-row mt-8 px-4 md:px-2 items-center'}>
+    className={'flex justify-between md:justify-center flex-row mt-8 px-4 md:px-2 items-center'}>
     <div className={'md:basis-1/3'}>
       {props.leftSlot}
     </div>
