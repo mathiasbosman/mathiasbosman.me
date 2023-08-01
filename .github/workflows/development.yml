@@ -1,6 +1,10 @@
 name: Build and quality check
 
-on: push
+on:
+  push:
+    branches:
+      - '*'
+      - '!release'
 
 jobs:
   lint:
