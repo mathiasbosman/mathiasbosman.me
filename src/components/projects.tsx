@@ -38,8 +38,8 @@ export const Projects = (props: PropsWithChildren<Props>): ReactElement => {
         {project.description}
       </p>
       <p
-        className={'relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-indigo-500 dark:text-zinc-200'}>
-        <svg viewBox={'0 0 24 24'} aria-hidden={true} className={'h-6 w-6 flex-none'}>
+        className={'relative z-10 mt-6 flex text-sm font-medium text-zinc-400 group-hover:bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-violet-400 group-hover:to-pink-600'}>
+        <svg viewBox={'0 0 24 24'} aria-hidden={true} className={'h-6 w-6 flex-none group-hover:text-violet-400'}>
           <path d={LinkIcon.svgPath} fill={'currentColor'}></path>
         </svg>
         <span className={'ml-2'}>{project.link.text}</span>
