@@ -20,7 +20,7 @@ export const Page = (props: PropsWithChildren<Props>): ReactElement => {
 
   return <main id="mainBoxy"
                className={'h-full flex flex-col bg-white dark:bg-black antialiased'}>
-    <div className="sticky top-O z-40 h-1 bg-gradient-to-r from-violet-500 to-pink-700 "></div>
+    <div className="h-1 bg-gradient-to-r from-violet-500 to-pink-700 "></div>
     <div className={'mx-auto w-full max-w-7xl lg:px-8'}>
       <div className={'relative px-4 sm:px-8 lg:px-12'}>
         <header className={'mx-auto max-w-2xl lg:max-w-5xl'}>
