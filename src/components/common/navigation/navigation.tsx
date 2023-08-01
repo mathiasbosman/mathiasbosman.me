@@ -12,11 +12,11 @@ export const Navigation = (props: PropsWithChildren<Props>): ReactElement => {
   function _renderLink (link: HTMLSimpleLink): ReactElement {
     const isCurrentUrl = props.location === link.href
     return <a
-      className={'relative inline-block px-3 p-2 transition hover:text-indigo-500 dark:hover:text-indigo-400 '}
+      className={'relative inline-block px-3 p-2 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-violet-500 hover:to-pink-600'}
       href={link.href}>
       {link.text}
       {isCurrentUrl && <span
-        className={'absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-indigo-500/0 via-indigo-500/40 to-indigo-500/0 dark:from-indigo-400/0 dark:via-indigo-400/40 dark:to-indigo-400/0'}
+        className={'absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-violet-400/0 via-fuchsia-500/40 to-pink-600/0'}
       ></span>}
     </a>
   }
@@ -33,7 +33,7 @@ export const Navigation = (props: PropsWithChildren<Props>): ReactElement => {
   }
 
   return <div
-    className={'flex justify-between md:justify-center flex-row mt-8 px-4 md:px-2 items-center'}>
+    className={'sticky top-3 flex justify-between md:justify-center flex-row mt-8 px-4 md:px-2 items-center'}>
     <div className={'md:basis-1/3'}>
       {props.leftSlot}
     </div>

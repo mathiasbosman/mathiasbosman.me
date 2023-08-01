@@ -19,14 +19,8 @@ export const Page = (props: PropsWithChildren<Props>): ReactElement => {
   }, [props.title])
 
   return <main id="mainBoxy"
-               className={'h-full flex flex-col bg-zinc-50 dark:bg-black antialiased'}>
-    <div className={'fixed inset-0 flex justify-center sm:px-8'}>
-      <div className={'flex w-full max-w-7xl lg:px-8'}>
-        <div
-          className={'w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20'}></div>
-      </div>
-    </div>
-
+               className={'h-full flex flex-col bg-white dark:bg-black antialiased'}>
+    <div className="h-1 bg-gradient-to-r from-violet-500 to-pink-700 "></div>
     <div className={'mx-auto w-full max-w-7xl lg:px-8'}>
       <div className={'relative px-4 sm:px-8 lg:px-12'}>
         <header className={'mx-auto max-w-2xl lg:max-w-5xl'}>
