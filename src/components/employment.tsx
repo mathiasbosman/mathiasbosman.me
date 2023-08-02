@@ -29,11 +29,11 @@ export const Employment = (props: PropsWithChildren<Props>): ReactElement => {
           {experience.place}
         </dd>
         <dt className={'sr-only'}>Role</dt>
-        <dd className={'text-xs text-zinc-500 dark:text-zinc-400'}>
+        <dd className={'text-xs text-zinc-500'}>
           {item.title}
         </dd>
         <dt className={'sr-only'}>Date</dt>
-        <dd className={'ml-auto text-xs text-zinc-400 dark:text-zinc-500'}
+        <dd className={'ml-auto text-xs text-zinc-500'}
             aria-label={`${from} until ${untilString}`}>
           <time dateTime={from.toString()}>
             {from}
