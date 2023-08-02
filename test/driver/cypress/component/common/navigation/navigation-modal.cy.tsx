@@ -1,5 +1,5 @@
-import NavigationModal from '../../../../../../src/components/common/navigation/navigation-modal'
-import type { HTMLSimpleLink } from '../../../../../../src/shared/utils'
+import NavigationModal from '@components/common/navigation/navigation-modal'
+import type { HTMLSimpleLink } from '@shared/utils'
 import { htmlSimpleLinkFixture } from '../../../fixtures/utils.fixture'
 
 describe('<NavigationModal/>', () => {

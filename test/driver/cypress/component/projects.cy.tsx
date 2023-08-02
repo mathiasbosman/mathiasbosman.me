@@ -1,5 +1,5 @@
-import type { Project } from '../../../../src/models/config/project.config'
-import Projects from '../../../../src/components/projects'
+import type { Project } from '@models/config/project.config'
+import Projects from '@components/projects'
 import { projectFixture } from '../fixtures/project.fixture'
 
 describe('<Projects/>', () => {

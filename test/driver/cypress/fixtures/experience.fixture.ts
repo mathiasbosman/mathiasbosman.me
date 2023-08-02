@@ -1,7 +1,7 @@
 import {
   type Experience,
   type ExperienceItem
-} from '../../../../src/models/config/experience.config'
+} from '@models/config/experience.config'
 import { htmlImageFixture, htmlSimpleLinkFixture, periodFixture } from './utils.fixture'
 
 export const experienceItemMock: ExperienceItem = {

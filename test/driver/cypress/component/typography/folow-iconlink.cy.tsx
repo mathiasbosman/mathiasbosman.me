@@ -1,6 +1,6 @@
-import { LinkIcon } from '../../../../../src/shared/icons'
+import { LinkIcon } from '@shared/icons'
+import FollowIconLink from '@components/typography/folow-iconlink'
 import { htmlSimpleLinkFixture } from '../../fixtures/utils.fixture'
-import FollowIconLink from '../../../../../src/components/typography/folow-iconlink'
 
 describe('<FollowIconLink/>', () => {
   it('Renders correctly', () => {

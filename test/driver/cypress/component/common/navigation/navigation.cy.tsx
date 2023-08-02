@@ -1,5 +1,5 @@
-import Navigation from '../../../../../../src/components/common/navigation/navigation'
-import type { HTMLSimpleLink } from '../../../../../../src/shared/utils'
+import Navigation from '@components/common/navigation/navigation'
+import type { HTMLSimpleLink } from '@shared/utils'
 import { htmlSimpleLinkFixture } from '../../../fixtures/utils.fixture'
 
 describe('<Navigation/>', () => {

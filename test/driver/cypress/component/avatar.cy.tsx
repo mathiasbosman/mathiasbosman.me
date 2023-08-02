@@ -1,4 +1,4 @@
-import Avatar, { AvatarSize } from '../../../../src/components/avatar'
+import Avatar, { AvatarSize } from '@components/avatar'
 import { htmlImageFixture } from '../fixtures/utils.fixture'
 
 describe('<Avatar/>', () => {

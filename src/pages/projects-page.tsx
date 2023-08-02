@@ -1,10 +1,10 @@
 import type { ReactElement } from 'react'
-import Page from '../components/common/page'
-import ContentWrapper from '../components/common/content-wrapper'
-import SectionWrapper from '../components/common/section-wrapper'
-import PageTitle from '../components/typography/page-title'
-import Projects from '../components/projects'
-import { projectsConfig } from '../models/config/project.config'
+import Page from '@components/common/page'
+import ContentWrapper from '@components/common/content-wrapper'
+import SectionWrapper from '@components/common/section-wrapper'
+import PageTitle from '@components/typography/page-title'
+import Projects from '@components/projects'
+import { projectsConfig } from '@models/config/project.config'
 
 export const ProjectsPage = (): ReactElement => {
   return <Page title={'Projects - Mathias Bosman'} renderAvatar={true}>

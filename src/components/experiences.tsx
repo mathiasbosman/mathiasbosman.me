@@ -1,6 +1,6 @@
-import { renderPeriodYearString } from '../shared/utils'
-import { ArrowRightIcon } from '../shared/icons'
-import type { Experience, ExperienceItem } from '../models/config/experience.config'
+import { renderPeriodYearString } from '@shared/utils'
+import { ArrowRightIcon } from '@shared/icons'
+import type { Experience, ExperienceItem } from '@models/config/experience.config'
 import type { PropsWithChildren, ReactElement } from 'react'
 
 interface Props {

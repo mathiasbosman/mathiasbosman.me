@@ -1,6 +1,6 @@
-import type { Project } from '../models/config/project.config'
+import type { Project } from '@models/config/project.config'
 import type { PropsWithChildren, ReactElement } from 'react'
-import { LinkIcon } from '../shared/icons'
+import { LinkIcon } from '@shared/icons'
 
 interface Props {
   projects: Project[]

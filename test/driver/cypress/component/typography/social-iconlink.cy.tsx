@@ -1,5 +1,5 @@
-import SocialIconlink from '../../../../../src/components/typography/social-iconlink'
-import { LinkIcon } from '../../../../../src/shared/icons'
+import SocialIconlink from '@components/typography/social-iconlink'
+import { LinkIcon } from '@shared/icons'
 import { htmlSimpleLinkFixture } from '../../fixtures/utils.fixture'
 
 describe('<SocialIconlink/>', () => {

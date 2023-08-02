@@ -17,6 +17,7 @@
     "sourceType": "module"
   },
   "plugins": [
+    "@typescript-eslint",
     "react"
   ],
   "rules": {
@@ -24,6 +25,10 @@
     "@typescript-eslint/consistent-type-imports": "error"
   },
   "settings": {
+    "import/resolver": {
+      "typescript": {
+      }
+    },
     "react": {
       "version": "detect"
     }

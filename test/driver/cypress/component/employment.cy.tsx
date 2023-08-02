@@ -1,4 +1,4 @@
-import { Employment } from '../../../../src/components/employment'
+import { Employment } from '@components/employment'
 import {
   experienceItemMock,
   experiencesWithOnePlaceAndOneItem,

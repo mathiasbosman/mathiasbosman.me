@@ -1,14 +1,14 @@
 import type { ReactElement } from 'react'
-import Page from '../components/common/page'
-import ContentWrapper from '../components/common/content-wrapper'
-import SectionWrapper from '../components/common/section-wrapper'
-import { sendEmail } from '../shared/utils'
-import { EmailIcon, GitHubIcon, LinkedInIcon, TwitterIcon } from '../shared/icons'
-import PageTitle from '../components/typography/page-title'
-import { CONTACT_EMAIL, LINK_GITHUB, LINK_LINKEDIN, LINK_TWITTER } from '../constants'
-import FollowIconLink from '../components/typography/folow-iconlink'
+import Page from '@components/common/page'
+import ContentWrapper from '@components/common/content-wrapper'
+import SectionWrapper from '@components/common/section-wrapper'
+import { sendEmail } from '@shared/utils'
+import { EmailIcon, GitHubIcon, LinkedInIcon, TwitterIcon } from '@shared/icons'
+import PageTitle from '@components/typography/page-title'
+import { CONTACT_EMAIL, LINK_GITHUB, LINK_LINKEDIN, LINK_TWITTER } from '@/constants'
+import FollowIconLink from '@components/typography/folow-iconlink'
 
-import profilePicture from '../assets/mathias_large.webp'
+import profilePicture from '@assets/mathias_large.webp'
 
 export const AboutPage = (): ReactElement => {
   return <Page title={'About - Mathias Bosman'}

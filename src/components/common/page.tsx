@@ -1,12 +1,12 @@
 import Footer from './footer'
 import Navigation from './navigation/navigation'
-import { publicPages } from '../../models/config/navigation.config'
+import { publicPages } from '@/models/config/navigation.config'
 import { useLocation } from 'react-router-dom'
 import type { PropsWithChildren, ReactElement } from 'react'
 import { useEffect } from 'react'
-import Avatar, { AvatarSize } from '../avatar'
+import Avatar, { AvatarSize } from '@components/avatar'
 
-import avatar from '../../assets/mathias.webp'
+import avatar from '@assets/mathias.webp'
 
 interface Props {
   title?: string

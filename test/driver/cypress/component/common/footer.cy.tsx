@@ -1,5 +1,5 @@
-import type { HTMLSimpleLink } from '../../../../../src/shared/utils'
-import Footer from '../../../../../src/components/common/footer'
+import type { HTMLSimpleLink } from '@shared/utils'
+import Footer from '@components/common/footer'
 import { htmlSimpleLinkFixture } from '../../fixtures/utils.fixture'
 
 const mockLinks: HTMLSimpleLink[] = [

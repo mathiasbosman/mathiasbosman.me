@@ -1,5 +1,5 @@
-import type { HTMLImage } from '../../../../src/shared/utils'
-import ImageCarousel from '../../../../src/components/image-carousel'
+import type { HTMLImage } from '@shared/utils'
+import ImageCarousel from '@components/image-carousel'
 import { htmlImageFixture } from '../fixtures/utils.fixture'
 
 describe('<Imagecarousel/>', () => {
