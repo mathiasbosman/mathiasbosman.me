@@ -52,12 +52,12 @@ export const HomePage = (): ReactElement => {
 
     <ImageCarousel images={[
       {
-        alt: 'Phantasialand. Theme parks are just a hobby, I promise',
-        src: roll_3
-      },
-      {
         alt: 'Me, somewhere on a hill in France',
         src: roll_2
+      },
+      {
+        alt: 'Phantasialand. Theme parks are just a hobby, I promise',
+        src: roll_3
       },
       {
         alt: 'Enjoying a sail trip in Curacao',
