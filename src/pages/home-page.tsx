@@ -35,7 +35,7 @@ export const HomePage = (): ReactElement => {
         <p className={'mt-6 text-base text-zinc-500 dark:text-zinc-400'}>
           I&apos;m Mathias, a software designer and network engineer based in
           Lebbeke, Belgium.<br/>In my spare time I like to fiddle with
-          stage lights or ride my race bike.<br/>
+          stage lights, visit amusement parks or ride my race bike.<br/>
           Currently <span
           className={'shadow-[inset_0_-10px_0_0] shadow-indigo-500/10 dark:shadow-indigo-500/30'}>full-time employed at the Department of Environment</span> of
           the Flemish Government.<br/>
@@ -72,7 +72,7 @@ export const HomePage = (): ReactElement => {
         src: roll_4
       }
     ]}/>
-    <div className={'sm:px-8 mt-8 md:mt-28 px-2'}>
+    <div className={'sm:px-8 mt-8 px-2'}>
       <ContentWrapper>
         <div className={'mx-auto max-w-2xl lg:max-w-5xl mt-10 lg:mt-6'}>
           <div
