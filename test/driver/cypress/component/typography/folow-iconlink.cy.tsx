@@ -17,7 +17,7 @@ describe('<FollowIconLink/>', () => {
       prefix={'Join me on '}
       postfix={' for more!'}
       link={htmlSimpleLinkFixture('/href', 'foo bar')}
-      icon={LinkIcon} />)
+      icon={LinkIcon}/>)
     cy.get('span').should('have.text', 'Join me on foo bar for more!')
   })
 

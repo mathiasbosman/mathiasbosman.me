@@ -11,7 +11,7 @@ describe('<Navigation/>', () => {
 
   beforeEach(() => {
     cy.mount(<Navigation
-      leftSlot={ <span id='mock_slot'>avatar</span> }
+      leftSlot={<span id="mock_slot">avatar</span>}
       links={mockLinks}
       location={'/pageA'}/>)
   })
