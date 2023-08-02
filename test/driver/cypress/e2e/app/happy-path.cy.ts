@@ -22,11 +22,12 @@ describe('Happy paths', () => {
     })
   })
 
-  it('User can navigate back home from each public page', () => {
+  it('User can navigate to and back home from each public page', () => {
     cy.visit('/')
     publicTestPages.forEach(path => {
       _navigate(path)
       cy.get('header a[href="/"]').click()
+      cy.location().should(loc => expect(loc.pathname).to.eq('/'))
     })
   })
 
