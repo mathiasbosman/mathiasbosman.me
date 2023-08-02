@@ -1,6 +1,6 @@
-import type { HTMLImage } from '@shared/utils'
-import ImageCarousel from '@components/image-carousel'
-import { htmlImageFixture } from '../fixtures/utils.fixture'
+import type { HTMLImage } from '@shared/utils.ts'
+import ImageCarousel from '@components/image-carousel.tsx'
+import { htmlImageFixture } from '../fixtures/utils.fixture.ts'
 
 describe('<Imagecarousel/>', () => {
   let mockImageData: string

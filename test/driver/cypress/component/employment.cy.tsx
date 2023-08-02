@@ -1,4 +1,4 @@
-import { Employment } from '@components/employment'
+import { Employment } from '@components/employment.tsx'
 import {
   experienceItemMock,
   experiencesWithOnePlaceAndOneItem,

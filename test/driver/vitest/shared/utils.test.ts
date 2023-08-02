@@ -3,7 +3,7 @@ import {
   escapeHtml,
   type Period,
   renderPeriodYearString
-} from '../../../../src/shared/utils.ts'
+} from '@shared/utils.ts'
 
 describe('renderPeriodYearString()', () => {
   it('Only renders the year if same year', () => {

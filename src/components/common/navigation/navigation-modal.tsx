@@ -1,7 +1,7 @@
-import type { HTMLSimpleLink } from '@shared/utils'
-import { ArrowDownIcon, CloseIcon } from '@shared/icons'
+import { ArrowDownIcon, CloseIcon } from '@shared/icons.ts'
 import type { PropsWithChildren, ReactElement } from 'react'
 import { useState } from 'react'
+import type { HTMLSimpleLink } from '@shared/utils.ts'
 
 interface Props {
   links: HTMLSimpleLink[]

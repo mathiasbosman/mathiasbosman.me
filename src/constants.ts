@@ -1,4 +1,4 @@
-import type { HTMLSimpleLink } from '@shared/utils'
+import type { HTMLSimpleLink } from '@shared/utils.ts'
 
 export const LINK_GITHUB: HTMLSimpleLink = {
   href: 'https://github.com/mathiasbosman',

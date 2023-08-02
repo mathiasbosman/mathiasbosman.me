@@ -1,4 +1,4 @@
-import type { HTMLImage, HTMLSimpleLink } from '@shared/utils'
+import type { HTMLImage, HTMLSimpleLink } from '@shared/utils.ts'
 
 import avatar from '@assets/mathias.webp'
 

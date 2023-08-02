@@ -4,7 +4,7 @@ import { fileURLToPath, URL } from "url";
 export const SERVER_PORT = 5173;
 export default defineConfig({
   resolve: {
-    alias: [
+    alias: [ // see tsconfig.json
       {find: '@', replacement: fileURLToPath(new URL('./src', import.meta.url))},
       {find: '@assets', replacement: fileURLToPath(new URL('./src/assets', import.meta.url))},
       {find: '@components', replacement: fileURLToPath(new URL('./src/components', import.meta.url))},

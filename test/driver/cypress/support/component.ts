@@ -2,7 +2,7 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
-import './commands'
+import './commands.ts'
 import '../plugins/tailwind.ts'
 
 import { mount } from 'cypress/react18'

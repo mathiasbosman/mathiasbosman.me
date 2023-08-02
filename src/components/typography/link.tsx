@@ -1,5 +1,5 @@
 import type { PropsWithChildren, ReactElement } from 'react'
-import type { HTMLSimpleLink } from '@shared/utils'
+import type { HTMLSimpleLink } from '@shared/utils.ts'
 
 interface Props {
   link: HTMLSimpleLink
