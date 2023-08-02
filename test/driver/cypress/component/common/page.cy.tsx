@@ -1,4 +1,4 @@
-import Page from '../../../../../src/components/common/page.tsx'
+import Page from '../../../../../src/components/common/page'
 import { MemoryRouter } from 'react-router-dom'
 import type { ReactElement } from 'react'
 

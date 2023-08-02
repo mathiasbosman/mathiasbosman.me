@@ -1,6 +1,6 @@
-import Navigation from '../../../../../../src/components/common/navigation/navigation.tsx'
-import type { HTMLSimpleLink } from '../../../../../../src/shared/utils.tsx'
-import { htmlSimpleLinkFixture } from '../../../fixtures/utils.fixture.tsx'
+import Navigation from '../../../../../../src/components/common/navigation/navigation'
+import type { HTMLSimpleLink } from '../../../../../../src/shared/utils'
+import { htmlSimpleLinkFixture } from '../../../fixtures/utils.fixture'
 
 describe('<Navigation/>', () => {
 

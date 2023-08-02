@@ -1,6 +1,6 @@
-import type { HTMLSimpleLink } from '../../../../../src/shared/utils.tsx'
-import Footer from '../../../../../src/components/common/footer.tsx'
-import { htmlSimpleLinkFixture } from '../../fixtures/utils.fixture.tsx'
+import type { HTMLSimpleLink } from '../../../../../src/shared/utils'
+import Footer from '../../../../../src/components/common/footer'
+import { htmlSimpleLinkFixture } from '../../fixtures/utils.fixture'
 
 const mockLinks: HTMLSimpleLink[] = [
   htmlSimpleLinkFixture('/', 'home'),

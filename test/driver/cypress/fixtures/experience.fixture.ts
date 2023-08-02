@@ -1,8 +1,8 @@
 import {
   type Experience,
   type ExperienceItem
-} from '../../../../src/models/config/experience.config.tsx'
-import { htmlImageFixture, htmlSimpleLinkFixture, periodFixture } from './utils.fixture.tsx'
+} from '../../../../src/models/config/experience.config'
+import { htmlImageFixture, htmlSimpleLinkFixture, periodFixture } from './utils.fixture'
 
 export const experienceItemMock: ExperienceItem = {
   title: 'mock title',

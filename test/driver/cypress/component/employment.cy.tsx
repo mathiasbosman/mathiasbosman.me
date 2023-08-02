@@ -1,9 +1,9 @@
-import { Employment } from '../../../../src/components/employment.tsx'
+import { Employment } from '../../../../src/components/employment'
 import {
   experienceItemMock,
   experiencesWithOnePlaceAndOneItem,
   experiencesWithTwoPlaces
-} from '../fixtures/experience.fixture.tsx'
+} from '../fixtures/experience.fixture'
 
 describe('<Employment/>', () => {
   it('Renders correctly with a single item', () => {

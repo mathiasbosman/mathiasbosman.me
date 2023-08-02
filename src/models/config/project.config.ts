@@ -1,4 +1,5 @@
-import type { HTMLImage, HTMLSimpleLink } from '../../shared/utils.tsx'
+import type { HTMLImage, HTMLSimpleLink } from '../../shared/utils'
+
 import avatar from '../../assets/mathias.webp'
 
 export interface ProjectsConfig {

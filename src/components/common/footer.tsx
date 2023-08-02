@@ -1,6 +1,6 @@
 import type { PropsWithChildren, ReactElement } from 'react'
-import type { HTMLSimpleLink } from '../../shared/utils.tsx'
-import Link from '../typography/link.tsx'
+import type { HTMLSimpleLink } from '../../shared/utils'
+import Link from '../typography/link'
 
 interface Props {
   links: HTMLSimpleLink[]

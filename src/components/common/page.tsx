@@ -1,10 +1,10 @@
-import Footer from './footer.tsx'
-import Navigation from './navigation/navigation.tsx'
-import { publicPages } from '../../models/config/navigation.config.tsx'
+import Footer from './footer'
+import Navigation from './navigation/navigation'
+import { publicPages } from '../../models/config/navigation.config'
 import { useLocation } from 'react-router-dom'
 import type { PropsWithChildren, ReactElement } from 'react'
 import { useEffect } from 'react'
-import Avatar, { AvatarSize } from '../avatar.tsx'
+import Avatar, { AvatarSize } from '../avatar'
 
 import avatar from '../../assets/mathias.webp'
 

@@ -1,4 +1,4 @@
-import { Contact } from '../../../../src/components/contact.tsx'
+import { Contact } from '../../../../src/components/contact'
 
 describe('<Contact/>', () => {
   it('Renders correctly', () => {

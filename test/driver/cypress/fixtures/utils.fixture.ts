@@ -1,4 +1,4 @@
-import type { HTMLImage, HTMLSimpleLink, Period } from '../../../../src/shared/utils.tsx'
+import type { HTMLImage, HTMLSimpleLink, Period } from '../../../../src/shared/utils'
 
 export const htmlImageFixture = (src: string, alt: string): HTMLImage => {
   return { src, alt }

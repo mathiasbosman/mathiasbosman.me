@@ -1,6 +1,6 @@
 import type { PropsWithChildren, ReactElement, ReactNode } from 'react'
-import type { HTMLSimpleLink } from '../../../shared/utils.tsx'
-import NavigationModal from './navigation-modal.tsx'
+import type { HTMLSimpleLink } from '../../../shared/utils'
+import NavigationModal from './navigation-modal'
 
 interface Props {
   leftSlot: ReactNode

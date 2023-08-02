@@ -1,25 +1,26 @@
 import type { ReactElement } from 'react'
-import Page from '../components/common/page.tsx'
-import ContentWrapper from '../components/common/content-wrapper.tsx'
-import Avatar, { AvatarSize } from '../components/avatar.tsx'
+import { Employment } from '../components/employment'
+import { Contact } from '../components/contact'
+import Page from '../components/common/page'
+import ContentWrapper from '../components/common/content-wrapper'
+import Avatar, { AvatarSize } from '../components/avatar'
+import Projects from '../components/projects'
+import ImageCarousel from '../components/image-carousel'
+import PageTitle from '../components/typography/page-title'
+import SocialIconlink from '../components/typography/social-iconlink'
+import { projectsConfig } from '../models/config/project.config'
+import { experienceConfig } from '../models/config/experience.config'
+import { LINK_GITHUB, LINK_LINKEDIN, LINK_TWITTER } from '../constants'
+import { GitHubIcon, LinkedInIcon, TwitterIcon } from '../shared/icons'
+
 
 import avatar from '../assets/mathias.webp'
-import PageTitle from '../components/typography/page-title.tsx'
-import SocialIconlink from '../components/typography/social-iconlink.tsx'
-import { LINK_GITHUB, LINK_LINKEDIN, LINK_TWITTER } from '../constants.tsx'
-import { GitHubIcon, LinkedInIcon, TwitterIcon } from '../shared/icons.tsx'
-import ImageCarousel from '../components/image-carousel.tsx'
-
 import roll_1 from '../assets/carousel/roll_1.webp'
 import roll_2 from '../assets/carousel/roll_2.webp'
 import roll_3 from '../assets/carousel/roll_3.webp'
 import roll_4 from '../assets/carousel/roll_4.webp'
 import roll_5 from '../assets/carousel/roll_5.webp'
-import Projects from '../components/projects.tsx'
-import { projectsConfig } from '../models/config/project.config.tsx'
-import { Employment } from '../components/employment.tsx'
-import { experienceConfig } from '../models/config/experience.config.tsx'
-import { Contact } from '../components/contact.tsx'
+
 export const HomePage = (): ReactElement => {
   return <Page
     renderAvatar={false}>

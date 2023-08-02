@@ -1,5 +1,5 @@
-import type { Project } from '../../../../src/models/config/project.config.tsx'
-import { htmlImageFixture, htmlSimpleLinkFixture } from './utils.fixture.tsx'
+import type { Project } from '../../../../src/models/config/project.config'
+import { htmlImageFixture, htmlSimpleLinkFixture } from './utils.fixture'
 
 export const projectFixture = (title: string, pinned: boolean, src: string): Project => {
   return {

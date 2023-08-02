@@ -1,5 +1,5 @@
 import type { PropsWithChildren, ReactElement } from 'react'
-import type { HTMLImage } from '../shared/utils.tsx'
+import type { HTMLImage } from '../shared/utils'
 
 export enum AvatarSize {
   xs = 9,

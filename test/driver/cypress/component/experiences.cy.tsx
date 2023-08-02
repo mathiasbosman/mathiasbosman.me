@@ -1,10 +1,10 @@
-import Experiences from '../../../../src/components/experiences.tsx'
+import Experiences from '../../../../src/components/experiences'
 import {
   experienceItemMock,
   experiencesWithOnePlaceAndOneItem,
   experienceWithOnePlaceAndOneItem
-} from '../fixtures/experience.fixture.tsx'
-import { renderPeriodYearString } from '../../../../src/shared/utils.tsx'
+} from '../fixtures/experience.fixture'
+import { renderPeriodYearString } from '../../../../src/shared/utils'
 
 describe('<Experiences/>', () => {
   it('Renders with one item', () => {

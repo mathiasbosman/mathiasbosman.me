@@ -1,6 +1,6 @@
-import type { Project } from '../../../../src/models/config/project.config.tsx'
-import Projects from '../../../../src/components/projects.tsx'
-import { projectFixture } from '../fixtures/project.fixture.tsx'
+import type { Project } from '../../../../src/models/config/project.config'
+import Projects from '../../../../src/components/projects'
+import { projectFixture } from '../fixtures/project.fixture'
 
 describe('<Projects/>', () => {
   let mockImageSrc: string

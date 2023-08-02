@@ -1,10 +1,10 @@
 import type { ReactElement } from 'react'
-import Page from '../components/common/page.tsx'
-import ContentWrapper from '../components/common/content-wrapper.tsx'
-import SectionWrapper from '../components/common/section-wrapper.tsx'
-import PageTitle from '../components/typography/page-title.tsx'
-import Experiences from '../components/experiences.tsx'
-import { experienceConfig } from '../models/config/experience.config.tsx'
+import Page from '../components/common/page'
+import ContentWrapper from '../components/common/content-wrapper'
+import SectionWrapper from '../components/common/section-wrapper'
+import PageTitle from '../components/typography/page-title'
+import Experiences from '../components/experiences'
+import { experienceConfig } from '../models/config/experience.config'
 
 export const ExperiencePage = (): ReactElement => {
   return <Page

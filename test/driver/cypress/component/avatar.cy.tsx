@@ -1,5 +1,5 @@
-import Avatar, { AvatarSize } from '../../../../src/components/avatar.tsx'
-import { htmlImageFixture } from '../fixtures/utils.fixture.tsx'
+import Avatar, { AvatarSize } from '../../../../src/components/avatar'
+import { htmlImageFixture } from '../fixtures/utils.fixture'
 
 describe('<Avatar/>', () => {
   it('Renders correctly', () => {
