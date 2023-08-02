@@ -1,6 +1,6 @@
-import Navigation from '../../../../../../src/components/common/navigation/navigation.tsx'
-import type { HTMLSimpleLink } from '../../../../../../src/shared/utils.tsx'
-import { htmlSimpleLinkFixture } from '../../../fixtures/utils.fixture.tsx'
+import Navigation from '@components/common/navigation/navigation.tsx'
+import type { HTMLSimpleLink } from '@shared/utils.ts'
+import { htmlSimpleLinkFixture } from '../../../fixtures/utils.fixture.ts'
 
 describe('<Navigation/>', () => {
 
@@ -11,7 +11,7 @@ describe('<Navigation/>', () => {
 
   beforeEach(() => {
     cy.mount(<Navigation
-      leftSlot={ <span id='mock_slot'>avatar</span> }
+      leftSlot={<span id="mock_slot">avatar</span>}
       links={mockLinks}
       location={'/pageA'}/>)
   })

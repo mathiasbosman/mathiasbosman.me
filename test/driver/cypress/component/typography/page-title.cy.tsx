@@ -1,4 +1,4 @@
-import PageTitle from '../../../../../src/components/typography/page-title'
+import PageTitle from '@components/typography/page-title.tsx'
 
 describe('<PageTitle/>', () => {
   it('Renders', () => {

@@ -1,11 +1,11 @@
-import type { HTMLSimpleLink } from '../../shared/utils.tsx'
-import type { RouteObject } from 'react-router-dom'
-import HomePage from '../../pages/home-page.tsx'
-import AboutPage from '../../pages/about-page.tsx'
-import ErrorPage from '../../pages/error-page.tsx'
-import ExperiencePage from '../../pages/experience-page.tsx'
+import type { HTMLSimpleLink } from '@shared/utils.ts'
 import React from 'react'
-import ProjectsPage from '../../pages/projects-page.tsx'
+import type { RouteObject } from 'react-router-dom'
+import HomePage from '@pages/home-page.tsx'
+import AboutPage from '@pages/about-page.tsx'
+import ErrorPage from '@pages/error-page.tsx'
+import ExperiencePage from '@pages/experience-page.tsx'
+import ProjectsPage from '@pages/projects-page.tsx'
 
 interface RouteLink {
   link: HTMLSimpleLink

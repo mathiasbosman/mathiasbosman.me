@@ -1,5 +1,5 @@
 import type { PropsWithChildren, ReactElement, ReactNode } from 'react'
-import type { HTMLSimpleLink } from '../../../shared/utils.tsx'
+import type { HTMLSimpleLink } from '@shared/utils.ts'
 import NavigationModal from './navigation-modal.tsx'
 
 interface Props {

@@ -4,12 +4,12 @@ describe('Happy paths', () => {
   const allPages = ['/', ...publicTestPages]
 
   beforeEach('Set viewport for navigation', () => {
-    cy.viewport(850,660)
+    cy.viewport(850, 660)
   })
 
-  function _navigate(path: string): void {
+  function _navigate (path: string): void {
     cy.get('nav')
-    .find('a[href="'+path+'"]')
+    .find('a[href="' + path + '"]')
     .filter(':visible') //we have two navs but in this case we don't really care
     .click()
   }
@@ -35,7 +35,7 @@ describe('Happy paths', () => {
       cy.visit(currentPath)
       // navigate via ui to other page
       publicTestPages.filter(link => link !== currentPath)
-      .forEach(link  => {
+      .forEach(link => {
         cy.log('Navigation from ' + currentPath + ' to ' + link)
         _navigate(link)
         // return to starting point
@@ -50,6 +50,7 @@ describe('Happy paths', () => {
       href: string,
       page: string
     }
+
     const checkedLinks: testedLink[] = []
     allPages.forEach(page => {
       cy.visit(page)
@@ -71,7 +72,8 @@ describe('Happy paths', () => {
           .should(`not.eq`, 404)
           checkedLinks.push(testingLink)
         } else {
-          cy.log(alreadyChecked.href + ' already tested in ' + alreadyChecked.page)
+          cy.log(
+            alreadyChecked.href + ' already tested in ' + alreadyChecked.page)
         }
       })
     })

@@ -1,14 +1,14 @@
 import type { ReactElement } from 'react'
-import Page from '../components/common/page.tsx'
-import ContentWrapper from '../components/common/content-wrapper.tsx'
-import SectionWrapper from '../components/common/section-wrapper.tsx'
-import { sendEmail } from '../shared/utils.tsx'
-import { EmailIcon, GitHubIcon, LinkedInIcon, TwitterIcon } from '../shared/icons.tsx'
-import { CONTACT_EMAIL, LINK_GITHUB, LINK_LINKEDIN, LINK_TWITTER } from '../constants.tsx'
+import Page from '@components/common/page.tsx'
+import ContentWrapper from '@components/common/content-wrapper.tsx'
+import SectionWrapper from '@components/common/section-wrapper.tsx'
+import { sendEmail } from '@shared/utils.ts'
+import { EmailIcon, GitHubIcon, LinkedInIcon, TwitterIcon } from '@shared/icons.ts'
+import PageTitle from '@components/typography/page-title.tsx'
+import { CONTACT_EMAIL, LINK_GITHUB, LINK_LINKEDIN, LINK_TWITTER } from '@/constants.ts'
+import FollowIconLink from '@components/typography/folow-iconlink.tsx'
 
-import profilePicture from '../assets/mathias_large.webp'
-import PageTitle from '../components/typography/page-title.tsx'
-import FollowIconLink from '../components/typography/folow-iconlink.tsx'
+import profilePicture from '@assets/mathias_large.webp'
 
 export const AboutPage = (): ReactElement => {
   return <Page title={'About - Mathias Bosman'}
@@ -33,7 +33,8 @@ export const AboutPage = (): ReactElement => {
             </div>
             <div className={'lg:order-first lg:row-span-2'}>
               <PageTitle
-                title={<span>I&apos;m <span className={'bg-clip-text  text-transparent bg-gradient-to-r from-violet-500 to-pink-600'}>Mathias Bosman</span>. Living in Belgium, being part of the future.</span>}/>
+                title={<span>I&apos;m <span
+                  className={'bg-clip-text  text-transparent bg-gradient-to-r from-violet-500 to-pink-600'}>Mathias Bosman</span>. Living in Belgium, being part of the future.</span>}/>
               <div className={'space-y-7 text-base text-zinc-600 dark:text-zinc-400 mt-12'}>
                 <p>
                   In the late 90&apos;s I got my hands on a fairly simple Windows

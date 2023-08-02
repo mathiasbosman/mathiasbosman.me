@@ -1,8 +1,6 @@
-import type { PropsWithChildren } from 'react'
-import { type ReactElement } from 'react'
-import type { Experience } from '../models/config/experience.config.tsx'
-import { type ExperienceItem } from '../models/config/experience.config.tsx'
-import type { HTMLImage } from '../shared/utils.tsx'
+import type { PropsWithChildren, ReactElement } from 'react'
+import type { Experience, ExperienceItem } from '@models/config/experience.config.ts'
+import type { HTMLImage } from '@shared/utils.ts'
 
 interface Props {
   experiences: Experience[]

@@ -1,4 +1,4 @@
-import type { HTMLImage, HTMLSimpleLink, Period } from '../../shared/utils.tsx'
+import type { HTMLImage, HTMLSimpleLink, Period } from '@shared/utils.ts'
 
 export interface ExperienceConfig {
   experiences: Experience[]

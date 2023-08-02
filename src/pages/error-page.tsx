@@ -1,6 +1,6 @@
-import Page from '../components/common/page.tsx'
-import ContentWrapper from '../components/common/content-wrapper.tsx'
-import PageTitle from '../components/typography/page-title.tsx'
+import Page from '@components/common/page.tsx'
+import ContentWrapper from '@components/common/content-wrapper.tsx'
+import PageTitle from '@components/typography/page-title.tsx'
 import type { ReactElement } from 'react'
 
 export const ErrorPage = (): ReactElement => {

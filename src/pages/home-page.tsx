@@ -1,25 +1,25 @@
 import type { ReactElement } from 'react'
-import Page from '../components/common/page.tsx'
-import ContentWrapper from '../components/common/content-wrapper.tsx'
-import Avatar, { AvatarSize } from '../components/avatar.tsx'
+import { Employment } from '@components/employment.tsx'
+import { Contact } from '@components/contact.tsx'
+import Page from '@components/common/page.tsx'
+import ContentWrapper from '@components/common/content-wrapper.tsx'
+import Avatar, { AvatarSize } from '@components/avatar.tsx'
+import Projects from '@components/projects.tsx'
+import ImageCarousel from '@components/image-carousel.tsx'
+import PageTitle from '@components/typography/page-title.tsx'
+import SocialIconlink from '@components/typography/social-iconlink.tsx'
+import { projectsConfig } from '@models/config/project.config.ts'
+import { experienceConfig } from '@models/config/experience.config.ts'
+import { LINK_GITHUB, LINK_LINKEDIN, LINK_TWITTER } from '@/constants.ts'
+import { GitHubIcon, LinkedInIcon, TwitterIcon } from '@shared/icons.ts'
 
-import avatar from '../assets/mathias.webp'
-import PageTitle from '../components/typography/page-title.tsx'
-import SocialIconlink from '../components/typography/social-iconlink.tsx'
-import { LINK_GITHUB, LINK_LINKEDIN, LINK_TWITTER } from '../constants.tsx'
-import { GitHubIcon, LinkedInIcon, TwitterIcon } from '../shared/icons.tsx'
-import ImageCarousel from '../components/image-carousel.tsx'
+import avatar from '@assets/mathias.webp'
+import roll_1 from '@assets/carousel/roll_1.webp'
+import roll_2 from '@assets/carousel/roll_2.webp'
+import roll_3 from '@assets/carousel/roll_3.webp'
+import roll_4 from '@assets/carousel/roll_4.webp'
+import roll_5 from '@assets/carousel/roll_5.webp'
 
-import roll_1 from '../assets/carousel/roll_1.webp'
-import roll_2 from '../assets/carousel/roll_2.webp'
-import roll_3 from '../assets/carousel/roll_3.webp'
-import roll_4 from '../assets/carousel/roll_4.webp'
-import roll_5 from '../assets/carousel/roll_5.webp'
-import Projects from '../components/projects.tsx'
-import { projectsConfig } from '../models/config/project.config.tsx'
-import { Employment } from '../components/employment.tsx'
-import { experienceConfig } from '../models/config/experience.config.tsx'
-import { Contact } from '../components/contact.tsx'
 export const HomePage = (): ReactElement => {
   return <Page
     renderAvatar={false}>
@@ -31,14 +31,16 @@ export const HomePage = (): ReactElement => {
                      <div
                        className={'font-medium sm:text-4xl text-2xl mt-2'}>Software&nbsp;designer,
                        network&nbsp;engineer &amp; lighting&nbsp;tech</div>
-                   } />
+                   }/>
         <p className={'mt-6 text-base text-zinc-500 dark:text-zinc-400'}>
           I&apos;m Mathias, a software designer and network engineer based in
           Lebbeke, Belgium.<br/>In my spare time I like to fiddle with
           stage lights or ride my race bike.<br/>
-          Currently <span className={'shadow-[inset_0_-10px_0_0] shadow-indigo-500/10 dark:shadow-indigo-500/30'}>full-time employed at the Department of Environment</span> of
+          Currently <span
+          className={'shadow-[inset_0_-10px_0_0] shadow-indigo-500/10 dark:shadow-indigo-500/30'}>full-time employed at the Department of Environment</span> of
           the Flemish Government.<br/>
-          Yes, I&apos;m the human of the cute little Beagle; her name is (&apos;Queen&apos;) Luna.
+          Yes, I&apos;m the human of the cute little Beagle; her name is
+          (&apos;Queen&apos;) Luna.
         </p>
         <div className={'mt-6 flex gap-6'}>
           <SocialIconlink link={LINK_GITHUB} icon={GitHubIcon}/>
@@ -79,10 +81,12 @@ export const HomePage = (): ReactElement => {
               <Projects projects={projectsConfig.projects} pinned={true}/>
             </div>
             <div className={'space-y-10 lg:pl-16 xl:pl-24'}>
-              <div className={'rounded-lg border border-zinc-100 p-6 dark:border-zinc-700/40'}>
+              <div
+                className={'rounded-lg border border-zinc-100 p-6 dark:border-zinc-700/40'}>
                 <Contact/>
               </div>
-              <div className={'rounded-lg border border-zinc-100 p-6 dark:border-zinc-700/40'}>
+              <div
+                className={'rounded-lg border border-zinc-100 p-6 dark:border-zinc-700/40'}>
                 <Employment experiences={experienceConfig.experiences}/>
               </div>
             </div>

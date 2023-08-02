@@ -1,6 +1,6 @@
-import { LinkIcon } from '../../../../../src/shared/icons.tsx'
-import { htmlSimpleLinkFixture } from '../../fixtures/utils.fixture.tsx'
-import FollowIconLink from '../../../../../src/components/typography/folow-iconlink.tsx'
+import { LinkIcon } from '@shared/icons.ts'
+import FollowIconLink from '@components/typography/folow-iconlink.tsx'
+import { htmlSimpleLinkFixture } from '../../fixtures/utils.fixture.ts'
 
 describe('<FollowIconLink/>', () => {
   it('Renders correctly', () => {
@@ -17,7 +17,7 @@ describe('<FollowIconLink/>', () => {
       prefix={'Join me on '}
       postfix={' for more!'}
       link={htmlSimpleLinkFixture('/href', 'foo bar')}
-      icon={LinkIcon} />)
+      icon={LinkIcon}/>)
     cy.get('span').should('have.text', 'Join me on foo bar for more!')
   })
 

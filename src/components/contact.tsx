@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react'
 import { useState } from 'react'
-import { sendEmail } from '../shared/utils.tsx'
-import { CONTACT_EMAIL } from '../constants.tsx'
+import { sendEmail } from '@shared/utils.ts'
+import { CONTACT_EMAIL } from '@/constants.ts'
 
 export const Contact = (): ReactElement => {
   const [subject, setSubject] = useState('')

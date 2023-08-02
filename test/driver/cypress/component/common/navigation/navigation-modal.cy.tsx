@@ -1,7 +1,6 @@
-import NavigationModal
-  from '../../../../../../src/components/common/navigation/navigation-modal.tsx'
-import type { HTMLSimpleLink } from '../../../../../../src/shared/utils.tsx'
-import { htmlSimpleLinkFixture } from '../../../fixtures/utils.fixture.tsx'
+import NavigationModal from '@components/common/navigation/navigation-modal.tsx'
+import type { HTMLSimpleLink } from '@shared/utils.ts'
+import { htmlSimpleLinkFixture } from '../../../fixtures/utils.fixture.ts'
 
 describe('<NavigationModal/>', () => {
 
