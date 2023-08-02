@@ -1,6 +1,8 @@
 {
-  "name": "",
-  "short_name": "",
+  "name": "MathiasBosman.be",
+  "short_name": "MathiasBosman.be",
+  "description": "Mathias Bosman - Software designer, network engineer, and lighting tech",
+  "start_url": "https://mathiasbosman.be",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
