@@ -26,6 +26,3 @@ jobs:
 
       - name: "run component tests"
         run: npm run test:component
-
-      - name: "run build"
-        run: npm run build
