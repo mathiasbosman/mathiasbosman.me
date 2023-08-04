@@ -7,7 +7,23 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          cache: "npm"
+      - name: Run build
+        run: npm run build
+      - uses: actions/upload-artifact@v3
+        name: Upload build folder
+        with:
+          name: npm-build
+          path: ./dist/
+          retention-days: 1
   e2e-browsers:
+    needs: build
     timeout-minutes: 5
     runs-on: ubuntu-latest
     strategy:
@@ -16,8 +32,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Run build
-        run: npm run build
+      - name: Download build
+        uses: actions/download-artifact@v3
+        with:
+          name: npm-build
+          path: ./dist/
       - name: E2E - ${{ matrix.browser }}
         uses: cypress-io/github-action@v5
         with:
@@ -33,6 +52,7 @@ jobs:
           name: cypress-${{matrix.browser}}-screenshots
           path: ./test/driver/cypress/screenshots/
   e2e-viewports:
+    needs: build
     timeout-minutes: 5
     runs-on: ubuntu-latest
     strategy:
@@ -52,8 +72,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Run build
-        run: npm run build
+      - name: Download build
+        uses: actions/download-artifact@v3
+        with:
+          name: npm-build
+          path: ./dist/
       - name: E2E - ${{ matrix.browser }} ${{ matrix.viewport.width }}x${{ matrix.viewport.height }}
         uses: cypress-io/github-action@v5
         with:
