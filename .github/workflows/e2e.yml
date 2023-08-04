@@ -1,7 +1,5 @@
 name: End2End
-
 on: push
-
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
@@ -50,6 +48,7 @@ jobs:
           wait-on: "http://localhost:9000"
           wait-on-timeout: 15
           config: "viewportWidth=1920,viewportHeight=1080"
+          spec: '**/e2e/app/**/*'
       - uses: actions/upload-artifact@v3
         name: Upload screenshots
         with:
@@ -90,6 +89,7 @@ jobs:
           wait-on: "http://localhost:9000"
           wait-on-timeout: 15
           config: "viewportWidth=${{ matrix.viewport.width }},viewportHeight=${{ matrix.viewport.height }}"
+          spec: '**/e2e/app/**/*'
       - uses: actions/upload-artifact@v3
         name: Upload screenshots
         with:

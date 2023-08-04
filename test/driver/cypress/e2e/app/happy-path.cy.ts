@@ -1,7 +1,6 @@
-describe('Happy paths', () => {
+import { allPages, publicTestPages } from '../config.ts'
 
-  const publicTestPages = ['/about', '/experiences', '/projects']
-  const allPages = ['/', ...publicTestPages]
+describe('Happy paths', () => {
 
   beforeEach('Set viewport for navigation', () => {
     cy.viewport(850, 660)
