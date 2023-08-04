@@ -1,6 +1,7 @@
 import NavigationModal from '@components/common/navigation/navigation-modal.tsx'
 import type { HTMLSimpleLink } from '@shared/utils.ts'
 import { htmlSimpleLinkFixture } from '../../../fixtures/utils.fixture.ts'
+import { MemoryRouter } from 'react-router-dom'
 
 describe('<NavigationModal/>', () => {
 
@@ -11,7 +12,9 @@ describe('<NavigationModal/>', () => {
 
   beforeEach('force smaller viewport', () => {
     cy.viewport(767, 1024)
-    cy.mount(<NavigationModal links={mockLinks}/>)
+    cy.mount(<MemoryRouter>
+      <NavigationModal links={mockLinks}/>
+    </MemoryRouter>)
   })
 
   it('modal does not render on page load', () => {

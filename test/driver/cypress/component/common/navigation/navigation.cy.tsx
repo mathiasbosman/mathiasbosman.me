@@ -1,6 +1,7 @@
 import Navigation from '@components/common/navigation/navigation.tsx'
 import type { HTMLSimpleLink } from '@shared/utils.ts'
 import { htmlSimpleLinkFixture } from '../../../fixtures/utils.fixture.ts'
+import { MemoryRouter } from 'react-router-dom'
 
 describe('<Navigation/>', () => {
 
@@ -10,10 +11,12 @@ describe('<Navigation/>', () => {
   ]
 
   beforeEach(() => {
-    cy.mount(<Navigation
-      leftSlot={<span id="mock_slot">avatar</span>}
-      links={mockLinks}
-      location={'/pageA'}/>)
+    cy.mount(<MemoryRouter>
+      <Navigation
+        leftSlot={<span id="mock_slot">avatar</span>}
+        links={mockLinks}
+        location={'/pageA'}/>
+    </MemoryRouter>)
   })
 
   it('renders on medium viewport', () => {
