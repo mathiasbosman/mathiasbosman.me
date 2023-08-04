@@ -47,5 +47,4 @@ jobs:
           start: npm run preview:local
           wait-on: "http://localhost:9000"
           wait-on-timeout: 15
-          config: "viewportWidth=${{ matrix.viewport.width }},viewportHeight=${{ matrix.viewport.height }}"
           spec: '**/e2e/third-party/**/*'
