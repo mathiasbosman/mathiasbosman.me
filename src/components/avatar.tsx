@@ -12,29 +12,27 @@ interface Props {
 }
 
 export const Avatar = (props: PropsWithChildren<Props>): ReactElement => {
-  function _renderAvatarLink (css: string): ReactElement {
-    return <a aria-label={'Home'} className={css + ' pointer-events-auto block'} href={'/'}>
-      <img
+  function _renderImage (): ReactElement {
+    return <img
         loading={'lazy'}
         alt={props.image.alt}
         decoding={'async'}
         src={props.image.src}
         style={{ color: 'transparent' }}
-        className={css + ' rounded-full object-cover bg-zinc-100 dark:bg-zinc-800'}
+        className={'aspect-square w-full rounded-full object-cover bg-zinc-100 dark:bg-zinc-800'}
       />
-    </a>
   }
 
   switch (props.size) {
     case AvatarSize.s:
       return <div
         className={'w-16 h-16 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10'}>
-        {_renderAvatarLink('w-16 h-16')}
+        {_renderImage()}
       </div>
     case AvatarSize.xs:
       return <div
-        className={'w-9 h-9 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10'}>
-        {_renderAvatarLink('w-9 h-9')}
+        className={'w-11 h-11 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10'}>
+        {_renderImage()}
       </div>
   }
 }

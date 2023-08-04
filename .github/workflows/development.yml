@@ -1,6 +1,8 @@
 name: Build and quality check
-
 on: push
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   lint:
@@ -26,6 +28,3 @@ jobs:
 
       - name: "run component tests"
         run: npm run test:component
-
-      - name: "run build"
-        run: npm run build

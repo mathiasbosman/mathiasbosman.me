@@ -14,11 +14,11 @@ import { LINK_GITHUB, LINK_LINKEDIN, LINK_TWITTER } from '@/constants.ts'
 import { GitHubIcon, LinkedInIcon, TwitterIcon } from '@shared/icons.ts'
 
 import avatar from '@assets/mathias.webp'
-import roll_1 from '@assets/carousel/roll_1.webp'
-import roll_2 from '@assets/carousel/roll_2.webp'
-import roll_3 from '@assets/carousel/roll_3.webp'
-import roll_4 from '@assets/carousel/roll_4.webp'
-import roll_5 from '@assets/carousel/roll_5.webp'
+import img_luna from '@assets/carousel/luna.webp'
+import img_france from '@assets/carousel/mathias_france.webp'
+import img_phantasialand from '@assets/carousel/phantasialand.webp'
+import img_lights from '@assets/carousel/mathias_lights.webp'
+import img_curacao from '@assets/carousel/mathias_curacao.webp'
 
 export const HomePage = (): ReactElement => {
   return <Page
@@ -53,23 +53,23 @@ export const HomePage = (): ReactElement => {
     <ImageCarousel images={[
       {
         alt: 'Me, somewhere on a hill in France',
-        src: roll_2
+        src: img_france
       },
       {
         alt: 'Phantasialand. Theme parks are just a hobby, I promise',
-        src: roll_3
+        src: img_phantasialand
       },
       {
-        alt: 'Enjoying a sail trip in Curacao',
-        src: roll_5
+        alt: 'Enjoying a meal in Curacao',
+        src: img_curacao
       },
       {
         alt: 'Luna, my favourite Beagle',
-        src: roll_1
+        src: img_luna
       },
       {
         alt: 'Me on a stage during Pride week',
-        src: roll_4
+        src: img_lights
       }
     ]}/>
     <div className={'sm:px-8 mt-8 px-2'}>
