@@ -14,7 +14,6 @@ interface Props {
 export const Avatar = (props: PropsWithChildren<Props>): ReactElement => {
   function _renderImage (): ReactElement {
     return <img
-        loading={'lazy'}
         alt={props.image.alt}
         decoding={'async'}
         src={props.image.src}
