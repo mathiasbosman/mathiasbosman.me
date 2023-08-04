@@ -1,5 +1,6 @@
 import type { PropsWithChildren, ReactElement } from 'react'
 import type { HTMLImage } from '@shared/utils.ts'
+import { Link } from 'react-router-dom'
 
 export enum AvatarSize {
   xs = 9,
@@ -13,7 +14,7 @@ interface Props {
 
 export const Avatar = (props: PropsWithChildren<Props>): ReactElement => {
   function _renderAvatarLink (css: string): ReactElement {
-    return <a aria-label={'Home'} className={css + ' pointer-events-auto block'} href={'/'}>
+    return <Link aria-label={'Home'} className={css + ' pointer-events-auto block'} to={'/'}>
       <img
         loading={'lazy'}
         alt={props.image.alt}
@@ -22,7 +23,7 @@ export const Avatar = (props: PropsWithChildren<Props>): ReactElement => {
         style={{ color: 'transparent' }}
         className={css + ' rounded-full object-cover bg-zinc-100 dark:bg-zinc-800'}
       />
-    </a>
+    </Link>
   }
 
   switch (props.size) {

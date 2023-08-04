@@ -1,6 +1,7 @@
 import type { PropsWithChildren, ReactElement, ReactNode } from 'react'
 import type { HTMLSimpleLink } from '@shared/utils.ts'
 import NavigationModal from './navigation-modal.tsx'
+import { Link } from 'react-router-dom'
 
 interface Props {
   leftSlot: ReactNode
@@ -11,14 +12,14 @@ interface Props {
 export const Navigation = (props: PropsWithChildren<Props>): ReactElement => {
   function _renderLink (link: HTMLSimpleLink): ReactElement {
     const isCurrentUrl = props.location === link.href
-    return <a
+    return <Link
       className={'relative inline-block px-3 p-2 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-violet-500 hover:to-pink-600'}
-      href={link.href}>
+      to={link.href}>
       {link.text}
       {isCurrentUrl && <span
         className={'absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-violet-400/0 via-fuchsia-500/40 to-pink-600/0'}
       ></span>}
-    </a>
+    </Link>
   }
 
   function _renderLinks (links: HTMLSimpleLink[]): ReactElement {

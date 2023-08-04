@@ -2,6 +2,7 @@ import { ArrowDownIcon, CloseIcon } from '@shared/icons.ts'
 import type { PropsWithChildren, ReactElement } from 'react'
 import { useState } from 'react'
 import type { HTMLSimpleLink } from '@shared/utils.ts'
+import { Link } from 'react-router-dom'
 
 interface Props {
   links: HTMLSimpleLink[]
@@ -63,7 +64,7 @@ export const NavigationModal = (props: PropsWithChildren<Props>): ReactElement =
             >
               {props.links.map((link, i) => {
                 return <li key={i}>
-                  <a className={'block py-2'} href={link.href}>{link.text}</a>
+                  <Link className={'block py-2'} to={link.href}>{link.text}</Link>
                 </li>
               })}
             </ul>
