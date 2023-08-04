@@ -16,13 +16,15 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+      - name: Run build
+        run: npm run build
       - name: E2E - ${{ matrix.browser }}
         uses: cypress-io/github-action@v5
         with:
           project: "./test/driver/cypress"
           browser: ${{ matrix.browser }}
-          start: npm run local
-          wait-on: "http://localhost:5173"
+          start: npm run preview:local
+          wait-on: "http://localhost:9000"
           wait-on-timeout: 15
           config: "viewportWidth=1920,viewportHeight=1080"
       - uses: actions/upload-artifact@v3
@@ -50,13 +52,15 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+      - name: Run build
+        run: npm run build
       - name: E2E - ${{ matrix.browser }} ${{ matrix.viewport.width }}x${{ matrix.viewport.height }}
         uses: cypress-io/github-action@v5
         with:
           project: "./test/driver/cypress"
           browser: ${{ matrix.browser }}
-          start: npm run local
-          wait-on: "http://localhost:5173"
+          start: npm run preview:local
+          wait-on: "http://localhost:9000"
           wait-on-timeout: 15
           config: "viewportWidth=${{ matrix.viewport.width }},viewportHeight=${{ matrix.viewport.height }}"
       - uses: actions/upload-artifact@v3
