@@ -1,4 +1,4 @@
-name: Third party e2e
+name: End2End - third party
 on:
   pull_request:
   schedule:
