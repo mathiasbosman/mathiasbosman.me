@@ -8,7 +8,7 @@ import PageTitle from '@components/typography/page-title.tsx'
 import { CONTACT_EMAIL, LINK_GITHUB, LINK_LINKEDIN, LINK_TWITTER } from '@/constants.ts'
 import FollowIconLink from '@components/typography/folow-iconlink.tsx'
 
-import profilePicture from '@assets/mathias_large.webp'
+import profilePicture from '@assets/images/mathias_curacao.webp'
 
 export const AboutPage = (): ReactElement => {
   return <Page title={'About - Mathias Bosman'}
@@ -28,7 +28,7 @@ export const AboutPage = (): ReactElement => {
                   width={800}
                   height={800}
                   decoding={'async'}
-                  className={'aspect-square rotate-3 rounded-2xl bg-zinc-100 dark:bg-zinc-800 object-cover'}/>
+                  className={'grayscale hover:grayscale-0 aspect-square rotate-3 rounded-2xl bg-zinc-100 dark:bg-zinc-800 object-cover'}/>
               </div>
             </div>
             <div className={'lg:order-first lg:row-span-2'}>
@@ -39,24 +39,26 @@ export const AboutPage = (): ReactElement => {
                 <p>
                   In the late 90&apos;s I got my hands on a fairly simple Windows
                   desktop rocking the late <em>but great</em> Windows XP
-                  operating system to use as a tool for school.
+                  operating system to use as a tool for school.<br/>
+                  <em>However...</em> I also installed Game Maker (v.6) where a little spark of imagination and coding came to life.
                 </p>
                 <p>
-                  In my last teenage years I choose to study &quot;information
-                  technology systems&quot;, which basically bottled down to learning how to
-                  type and learning the programming language Pascal.
+                  Which, in my last teenage years, led me to study &quot;information
+                  technology systems&quot;, which started out simple by learning the programming language Pascal.
+                  <br/>
+                  Later on that transitioned to a love for PHP and web development.
                 </p>
                 <p>
-                  And that&apos;s where the IT spark inside of me became a flame.
+                  And that&apos;s when the spark became a flame.
                   I went on to study Programming and Multimedia in which I
-                  started my career by means of an internship as a PHP Web
+                  started my career by means of an internship as a PHP web
                   developer in the United Kingdom. After a short but
-                  educational year I returned to Belgium.
+                  educational year on how to work in an actual team I returned to Belgium.
                 </p>
                 <p>
-                  During my first years of employment I took a side-interest
+                  During my first years of employment I also took a side-interest
                   into stage lighting coming from my love for musical
-                  theatre. Sadly I could not study this in the UK and so I
+                  theatre. Sadly I could not study this in the UK (my &apos;second home&apos;) and so I
                   got my degree as stage lighting technician locally.
                 </p>
                 <p>
@@ -64,6 +66,9 @@ export const AboutPage = (): ReactElement => {
                   <em>(I prefer &quot;one of the team&quot;)</em> - of a small group
                   of Java developers who develop and maintain business
                   applications for the department of environment of the Flemish government.
+                </p>
+                <p>
+                  On the side you may also find me installing or giving support for home and small business network installations.
                 </p>
               </div>
             </div>

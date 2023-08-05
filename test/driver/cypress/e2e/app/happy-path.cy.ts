@@ -17,7 +17,7 @@ describe('Happy paths', () => {
     allPages.forEach(page => {
       cy.visit(page)
       cy.get('h1').should('be.visible')
-      cy.screenshot()
+      cy.screenshot('pages' + page)
     })
   })
 

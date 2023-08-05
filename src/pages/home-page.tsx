@@ -13,12 +13,12 @@ import { experienceConfig } from '@models/config/experience.config.ts'
 import { LINK_GITHUB, LINK_LINKEDIN, LINK_TWITTER } from '@/constants.ts'
 import { GitHubIcon, LinkedInIcon, TwitterIcon } from '@shared/icons.ts'
 
-import avatar from '@assets/mathias.webp'
-import img_luna from '@assets/carousel/luna.webp'
-import img_france from '@assets/carousel/mathias_france.webp'
-import img_phantasialand from '@assets/carousel/phantasialand.webp'
-import img_lights from '@assets/carousel/mathias_lights.webp'
-import img_curacao from '@assets/carousel/mathias_curacao.webp'
+import avatar from '@assets/images/mathias.webp'
+import img_luna from '@assets/images/luna.webp'
+import img_france from '@assets/images/mathias_france.webp'
+import img_phantasialand from '@assets/images/phantasialand.webp'
+import img_lights from '@assets/images/mathias_lights.webp'
+import img_sailing from '@assets/images/mathias_sailing.webp'
 
 export const HomePage = (): ReactElement => {
   return <Page
@@ -34,12 +34,12 @@ export const HomePage = (): ReactElement => {
                    }/>
         <p className={'mt-6 text-base text-zinc-500 dark:text-zinc-400'}>
           I&apos;m Mathias, a software designer and network engineer based in
-          Lebbeke, Belgium.<br/>In my spare time I like to fiddle with
-          stage lights, visit amusement parks or ride my race bike.<br/>
+          Lebbeke, Belgium.<br/>In my spare time you might find me: in a theatre (either watching whatever is on stage or fiddling with the
+          stage lights), visiting amusement parks or riding my race bike.<br/>
           Currently <span
           className={'shadow-[inset_0_-10px_0_0] shadow-indigo-500/10 dark:shadow-indigo-500/30'}>full-time employed at the Department of Environment</span> of
           the Flemish Government.<br/>
-          Yes, I&apos;m the human of the cute little Beagle; her name is
+          Yes, I&apos;m proud to be the human of a cute little Beagle; her name is
           (&apos;Queen&apos;) Luna.
         </p>
         <div className={'mt-6 flex gap-6'}>
@@ -60,8 +60,8 @@ export const HomePage = (): ReactElement => {
         src: img_phantasialand
       },
       {
-        alt: 'Enjoying a meal in Curacao',
-        src: img_curacao
+        alt: 'On a sailtrip in Curacao',
+        src: img_sailing
       },
       {
         alt: 'Luna, my favourite Beagle',

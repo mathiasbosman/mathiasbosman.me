@@ -32,7 +32,7 @@ export const experienceConfig: ExperienceConfig = {
           title: 'Project manager',
           pinned: true,
           description:
-            'Team lead of a small developer team who develop and maintain business applications for the department of environment.',
+            'Team lead and project manager of a small developer team who develop and maintain business applications for the department of environment.',
           link: {
             href: 'https://www.vlaanderen.be/en/environment',
             text: 'Department of Environment'
