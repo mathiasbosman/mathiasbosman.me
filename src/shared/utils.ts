@@ -15,10 +15,10 @@ export interface Period {
   to?: Date
 }
 
-export const renderPeriodYearString = (
+export function renderPeriodYearString (
   period: Period,
   fallback: string
-): string | number => {
+): string | number {
   const fromYear = period.from.getFullYear()
   const toYear = (period.to != null) ? period.to.getFullYear() : fallback
 

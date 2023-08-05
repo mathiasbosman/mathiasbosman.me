@@ -19,12 +19,12 @@ export const Employment = (props: PropsWithChildren<Props>): ReactElement => {
     const until = item.period.to
     const untilString = until?.getFullYear() ?? 'present'
     const from = item.period.from.getFullYear()
-    return <li key={index} className={'flex gap-4'}>
+    return <article key={index} className={'flex gap-4'}>
       {experience.logo !== undefined && _renderLogo(experience.logo)}
       <dl className={'flex flex-auto flex-wrap gap-x-2'}>
         <dt className={'sr-only'}>Company</dt>
-        <dd className={'w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100'}>
-          {experience.place}
+        <dd className={'w-full flex-none'}>
+          <h3 className={'text-sm font-medium text-zinc-900 dark:text-zinc-100'}>{experience.place}</h3>
         </dd>
         <dt className={'sr-only'}>Role</dt>
         <dd className={'text-xs text-zinc-500'}>
@@ -43,7 +43,7 @@ export const Employment = (props: PropsWithChildren<Props>): ReactElement => {
           </time>
         </dd>
       </dl>
-    </li>
+    </article>
   }
 
   return <>
@@ -62,7 +62,7 @@ export const Employment = (props: PropsWithChildren<Props>): ReactElement => {
       </svg>
       <span className={'ml-3'}>Work</span>
     </h2>
-    <ol className={'mt-6 space-y-4'}>
+    <div className={'mt-6 space-y-4'}>
       {props.experiences.map(experience => {
         return experience.items
         .filter(item => item.pinned)
@@ -70,6 +70,6 @@ export const Employment = (props: PropsWithChildren<Props>): ReactElement => {
           return _renderItem(item, i, experience)
         })
       })}
-    </ol>
+    </div>
   </>
 }

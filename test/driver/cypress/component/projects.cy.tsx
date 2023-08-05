@@ -18,7 +18,7 @@ describe('<Projects/>', () => {
       projectFixture('project C', false, mockImageSrc)
     ]
     cy.mount(<Projects projects={mockProjectList} pinned={false}/>)
-    cy.get('h2').should('have.length', mockProjectList.length)
+    cy.get('article').should('have.length', mockProjectList.length)
   })
 
   it('Renders only pinned projects when pinned is true', () => {
@@ -28,6 +28,6 @@ describe('<Projects/>', () => {
       projectFixture('project C', false, mockImageSrc)
     ]
     cy.mount(<Projects projects={mockProjectList} pinned={true}/>)
-    cy.get('h2').should('have.length', 2)
+    cy.get('article').should('have.length', 2)
   })
 })

@@ -14,7 +14,7 @@ export const ExperiencePage = (): ReactElement => {
       <SectionWrapper>
         <div className={'mx-auto max-w-2xl lg:max-w-5xl'}>
           <PageTitle title={'Places where I gained experience since graduating'}/>
-          <p className={'mt-6 text-base text-zinc-500 dark:text-zinc-400'}>
+          <p className={'mt-6 text-base text-zinc-600 dark:text-zinc-400'}>
             Once I graduated from the University of Ghent and received my
             Bachelor degree in multimedia I went out and found some amazing
             workplaces.<br/>
@@ -22,6 +22,7 @@ export const ExperiencePage = (): ReactElement => {
           </p>
         </div>
         <div className={'mt-16 sm:mt-20'}>
+          <h2 className={'sr-only'}>Experiences</h2>
           <Experiences experiences={experienceConfig.experiences}/>
         </div>
       </SectionWrapper>

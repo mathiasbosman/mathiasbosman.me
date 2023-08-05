@@ -8,7 +8,7 @@ import {
 describe('<Employment/>', () => {
   it('Renders correctly with a single item', () => {
     cy.mount(<Employment experiences={experiencesWithOnePlaceAndOneItem}/>)
-    cy.get('dl')
+    cy.get('article')
     .should('contain.text', experienceItemMock.title)
     .should('contain.text', experiencesWithOnePlaceAndOneItem[0].place)
   })
@@ -18,6 +18,6 @@ describe('<Employment/>', () => {
     let amountPinned = 0
     experiencesWithTwoPlaces.map(exp =>
       exp.items.filter(item => item.pinned).map(() => amountPinned++))
-    cy.get('dl').should('have.length', amountPinned)
+    cy.get('article').should('have.length', amountPinned)
   })
 })

@@ -35,7 +35,7 @@ export const AboutPage = (): ReactElement => {
               <PageTitle
                 title={<span>I&apos;m <span
                   className={'bg-clip-text  text-transparent bg-gradient-to-r from-violet-500 to-pink-600'}>Mathias Bosman</span>. Living in Belgium, being part of the future.</span>}/>
-              <div className={'space-y-7 text-base text-zinc-600 dark:text-zinc-400 mt-12'}>
+              <section className={'space-y-7 text-base text-zinc-600 dark:text-zinc-400 mt-12'}>
                 <p>
                   In the late 90&apos;s I got my hands on a fairly simple Windows
                   desktop rocking the late <em>but great</em> Windows XP
@@ -70,9 +70,10 @@ export const AboutPage = (): ReactElement => {
                 <p>
                   On the side you may also find me installing or giving support for home and small business network installations.
                 </p>
-              </div>
+              </section>
             </div>
-            <div className={'lg:pl-20'}>
+            <aside className={'lg:pl-20'}>
+              <h2 className={'sr-only'}>My social media</h2>
               <ul role={'list'}>
                 <li className={'mt-4 flex'}>
                   <FollowIconLink link={LINK_GITHUB} icon={GitHubIcon}/>
@@ -101,7 +102,7 @@ export const AboutPage = (): ReactElement => {
                   </button>
                 </li>
               </ul>
-            </div>
+            </aside>
           </div>
         </div>
       </SectionWrapper>
