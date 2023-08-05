@@ -82,3 +82,23 @@ export function sendEmail (to: string, subject?: string): void {
   window.location.href = `mailto:${buffer.toString()}` + (subject !== undefined
     ? `?subject=${escapeHtml(subject)}` : '')
 }
+
+export function shuffleArray<T> (original: T[]): T[] {
+  if (!Array.isArray(original) || !original.length) {
+    return []
+  }
+
+  const shuffled = original.map(value => ({ value, sort: Math.random() }))
+  .sort((a, b) => a.sort - b.sort)
+  .map(({ value }) => value)
+
+  // if one element is on different index we're good
+  let equality = true
+  for (let index = 0; index < shuffled.length; index++) {
+    if (shuffled[index] !== original[index]) {
+      equality = false
+      break
+    }
+  }
+  return equality ? shuffleArray(original) : shuffled
+}
