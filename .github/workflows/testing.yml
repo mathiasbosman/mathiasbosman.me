@@ -1,4 +1,4 @@
-name: End2End
+name: Testing
 on: pull_request
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -24,13 +24,10 @@ jobs:
           name: npm-build
           path: ./dist/
           retention-days: 1
-  e2e-browsers:
+  component-tests:
     needs: build
     timeout-minutes: 5
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        browser: ["firefox", "chrome"]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -39,7 +36,25 @@ jobs:
         with:
           name: npm-build
           path: ./dist/
-      - name: E2E - ${{ matrix.browser }}
+      - name: Run unit tests and component tests
+        run: npm run test:unit && npm run test:component
+  e2e-browsers:
+    needs: build
+    timeout-minutes: 5
+    strategy:
+      matrix:
+        os: [ "ubuntu-latest", "windows-latest", "macos-latest" ]
+        browser: [ "firefox", "chrome" ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Download build
+        uses: actions/download-artifact@v3
+        with:
+          name: npm-build
+          path: ./dist/
+      - name: E2E - ${{ matrix.os }} - ${{ matrix.browser }}
         uses: cypress-io/github-action@v5
         with:
           project: "./test/driver/cypress"
@@ -52,7 +67,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         name: Upload screenshots
         with:
-          name: cypress-${{matrix.browser}}-screenshots
+          name: e2e-${{matrix.os}}-${{matrix.browser}}-screenshots
           path: ./test/driver/cypress/screenshots/
   e2e-viewports:
     needs: build
