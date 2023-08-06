@@ -30,14 +30,14 @@ export const HomePage = (): ReactElement => {
             title={"Mathias Bosman"}
             subtitleSlot={
               <div className={"mt-2 text-2xl font-medium sm:text-4xl"}>
-                Software&nbsp;designer, network&nbsp;engineer &amp;
+                Software&nbsp;developer, network&nbsp;engineer &amp;
                 lighting&nbsp;tech
               </div>
             }
           />
           <aside className={"mt-6 text-base text-zinc-600 dark:text-zinc-400"}>
             <p>
-              I&apos;m Mathias, a software designer and network engineer based
+              I&apos;m Mathias, a software developer and network engineer based
               in Lebbeke, Belgium.
               <br />
               In my spare time you might find me: in a theatre (either watching
