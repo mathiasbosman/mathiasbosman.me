@@ -102,7 +102,6 @@ Every pull request will deploy a preview app.
 _For other dependencies used check out the [package.json](./package.json) file._
 
 [link_mathiasbosman_be]: http://mathiasbosman.be
-
 [link_react]: https://react.dev
 [link_tailwind]: https://tailwindcss.com/
 [link_cypress]: https://cypress.io
