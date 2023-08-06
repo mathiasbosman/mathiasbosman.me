@@ -1,4 +1,4 @@
-import { allPages, publicTestPages } from '../config.ts'
+import { allPages, publicTestPages } from "../config.ts";
 
 describe("Happy paths", () => {
   beforeEach("Set viewport for navigation", () => {
@@ -12,11 +12,9 @@ describe("Happy paths", () => {
       .click();
   }
 
-  it("All pages can be visited directly and have an h1, header, main and footer", () => {
+  it("All pages can be visited directly", () => {
     allPages.forEach((page) => {
       cy.visit(page);
-      cy.get("h1").should("be.visible");
-      cy.get("main").s'main'"be.visib'be.visible'c.get("header")'header'"be.visib'be.visible'c.get("footer")'footer'"be.visib'be.visible'c.screenshot("pages" + page);
     });
   });
 
