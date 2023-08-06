@@ -73,10 +73,10 @@ Every pull request against the main branch will deploy a preview app.
 
 ### Frameworks and libraries
 
--   [Lit][link_lit]
--   [Tailwindcss][link_tailwind]
--   [Vite][link_vite]
--   [Cypress][link_cypress]
+- [Lit][link_lit]
+- [Tailwindcss][link_tailwind]
+- [Vite][link_vite]
+- [Cypress][link_cypress]
 
 [link_mathiasbosman_be]: http://mathiasbosman.be
 [link_lit]: https://lit.dev/

@@ -12,11 +12,14 @@ export const ProjectsPage = (): ReactElement => {
       <ContentWrapper>
         <SectionWrapper>
           <div className={"mx-auto max-w-2xl lg:max-w-5xl"}>
-            <PageTitle title={"Bits and bytes I've put out into the world wide web."} />
+            <PageTitle
+              title={"Bits and bytes I've put out into the world wide web."}
+            />
             <p className={"mt-6 text-base text-zinc-600 dark:text-zinc-400"}>
-              I&apos;ve worked on tons of little projects over the years that led to nothing but
-              these are the ones that are worth mentioning or that are re-usable. All of them are
-              open-source, so if you see something that piques your interest, check out the code and
+              I&apos;ve worked on tons of little projects over the years that
+              led to nothing but these are the ones that are worth mentioning or
+              that are re-usable. All of them are open-source, so if you see
+              something that piques your interest, check out the code and
               contribute if you have ideas for how it can be improved.
             </p>
           </div>

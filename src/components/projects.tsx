@@ -29,7 +29,11 @@ export const Projects = (props: PropsWithChildren<Props>): ReactElement => {
             />
           }
         </div>
-        <h3 className={"mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100"}>
+        <h3
+          className={
+            "mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100"
+          }
+        >
           <div
             className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50
               opacity-0 transition group-hover:scale-100 group-hover:opacity-100
@@ -37,12 +41,18 @@ export const Projects = (props: PropsWithChildren<Props>): ReactElement => {
           ></div>
           <a href={project.link.href}>
             <span
-              className={"absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-xl"}
+              className={
+                "absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-xl"
+              }
             ></span>
             <span className={"relative z-10"}>{project.title}</span>
           </a>
         </h3>
-        <p className={"relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400"}>
+        <p
+          className={
+            "relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400"
+          }
+        >
           {project.description}
         </p>
         <p

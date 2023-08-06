@@ -4,7 +4,12 @@ import { htmlSimpleLinkFixture } from "../../fixtures/utils.fixture.ts";
 
 describe("<FollowIconLink/>", () => {
   it("Renders correctly", () => {
-    cy.mount(<FollowIconLink link={htmlSimpleLinkFixture("/href", "foo bar")} icon={LinkIcon} />);
+    cy.mount(
+      <FollowIconLink
+        link={htmlSimpleLinkFixture("/href", "foo bar")}
+        icon={LinkIcon}
+      />,
+    );
     cy.get("a")
       .should("be.visible")
       .should("have.attr", "href", "/href")
@@ -26,7 +31,12 @@ describe("<FollowIconLink/>", () => {
   });
 
   it("Line-height of text should equal height of icon", () => {
-    cy.mount(<FollowIconLink link={htmlSimpleLinkFixture("/href", "text")} icon={LinkIcon} />);
+    cy.mount(
+      <FollowIconLink
+        link={htmlSimpleLinkFixture("/href", "text")}
+        icon={LinkIcon}
+      />,
+    );
     cy.get("svg")
       .invoke("css", "height")
       .then((iconHeight) => {

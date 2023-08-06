@@ -3,9 +3,19 @@ import Page from "@components/common/page.tsx";
 import ContentWrapper from "@components/common/content-wrapper.tsx";
 import SectionWrapper from "@components/common/section-wrapper.tsx";
 import { sendEmail } from "@shared/utils.ts";
-import { EmailIcon, GitHubIcon, LinkedInIcon, TwitterIcon } from "@shared/icons.ts";
+import {
+  EmailIcon,
+  GitHubIcon,
+  LinkedInIcon,
+  TwitterIcon,
+} from "@shared/icons.ts";
 import PageTitle from "@components/typography/page-title.tsx";
-import { CONTACT_EMAIL, LINK_GITHUB, LINK_LINKEDIN, LINK_TWITTER } from "@/constants.ts";
+import {
+  CONTACT_EMAIL,
+  LINK_GITHUB,
+  LINK_LINKEDIN,
+  LINK_TWITTER,
+} from "@/constants.ts";
 import FollowIconLink from "@components/typography/folow-iconlink.tsx";
 
 import profilePicture from "@assets/images/mathias_curacao.webp";
@@ -53,42 +63,51 @@ export const AboutPage = (): ReactElement => {
                     </span>
                   }
                 />
-                <section className={"mt-12 space-y-7 text-base text-zinc-600 dark:text-zinc-400"}>
+                <section
+                  className={
+                    "mt-12 space-y-7 text-base text-zinc-600 dark:text-zinc-400"
+                  }
+                >
                   <p>
-                    In the late 90&apos;s I got my hands on a fairly simple Windows desktop rocking
-                    the late <em>but great</em> Windows XP operating system to use as a tool for
-                    school.
+                    In the late 90&apos;s I got my hands on a fairly simple
+                    Windows desktop rocking the late <em>but great</em> Windows
+                    XP operating system to use as a tool for school.
                     <br />
-                    <em>However...</em> I also installed Game Maker (v.6) where a little spark of
-                    imagination and coding came to life.
+                    <em>However...</em> I also installed Game Maker (v.6) where
+                    a little spark of imagination and coding came to life.
                   </p>
                   <p>
-                    Which, in my last teenage years, led me to study &quot;information technology
-                    systems&quot;, which started out simple by learning the programming language
-                    Pascal.
+                    Which, in my last teenage years, led me to study
+                    &quot;information technology systems&quot;, which started
+                    out simple by learning the programming language Pascal.
                     <br />
-                    Later on that transitioned to a love for PHP and web development.
+                    Later on that transitioned to a love for PHP and web
+                    development.
                   </p>
                   <p>
-                    And that&apos;s when the spark became a flame. I went on to study Programming
-                    and Multimedia in which I started my career by means of an internship as a PHP
-                    web developer in the United Kingdom. After a short but educational year on how
-                    to work in an actual team I returned to Belgium.
+                    And that&apos;s when the spark became a flame. I went on to
+                    study Programming and Multimedia in which I started my
+                    career by means of an internship as a PHP web developer in
+                    the United Kingdom. After a short but educational year on
+                    how to work in an actual team I returned to Belgium.
                   </p>
                   <p>
-                    During my first years of employment I also took a side-interest into stage
-                    lighting coming from my love for musical theatre. Sadly I could not study this
-                    in the UK (my &apos;second home&apos;) and so I got my degree as stage lighting
-                    technician locally.
+                    During my first years of employment I also took a
+                    side-interest into stage lighting coming from my love for
+                    musical theatre. Sadly I could not study this in the UK (my
+                    &apos;second home&apos;) and so I got my degree as stage
+                    lighting technician locally.
                   </p>
                   <p>
-                    Today, I&apos;m the team lead -<em>(I prefer &quot;one of the team&quot;)</em> -
-                    of a small group of Java developers who develop and maintain business
-                    applications for the department of environment of the Flemish government.
+                    Today, I&apos;m the team lead -
+                    <em>(I prefer &quot;one of the team&quot;)</em> - of a small
+                    group of Java developers who develop and maintain business
+                    applications for the department of environment of the
+                    Flemish government.
                   </p>
                   <p>
-                    On the side you may also find me installing or giving support for home and small
-                    business network installations.
+                    On the side you may also find me installing or giving
+                    support for home and small business network installations.
                   </p>
                 </section>
               </div>
@@ -104,7 +123,11 @@ export const AboutPage = (): ReactElement => {
                   <li className={"mt-4 flex"}>
                     <FollowIconLink link={LINK_TWITTER} icon={TwitterIcon} />
                   </li>
-                  <li className={"mt-8 flex border-t border-zinc-100 pt-8 dark:border-zinc-700/40"}>
+                  <li
+                    className={
+                      "mt-8 flex border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
+                    }
+                  >
                     <button
                       className={
                         "group flex text-sm font-medium text-zinc-800 transition hover:text-indigo-500 dark:text-zinc-200 dark:hover:text-indigo-500"

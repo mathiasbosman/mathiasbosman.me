@@ -29,14 +29,18 @@ describe("<Imagecarousel/>", () => {
   });
 
   it("Amount of items is respected when total is higher", () => {
-    cy.mount(<ImageCarousel amountToShow={imageSet.length - 1} images={imageSet} />);
+    cy.mount(
+      <ImageCarousel amountToShow={imageSet.length - 1} images={imageSet} />,
+    );
     cy.get("img")
       .should("be.visible")
       .should("have.length", imageSet.length - 1);
   });
 
   it("Amount of items is respected when total is lower", () => {
-    cy.mount(<ImageCarousel amountToShow={imageSet.length + 1} images={imageSet} />);
+    cy.mount(
+      <ImageCarousel amountToShow={imageSet.length + 1} images={imageSet} />,
+    );
     cy.get("img").should("be.visible").should("have.length", imageSet.length);
   });
 });

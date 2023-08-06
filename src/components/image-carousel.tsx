@@ -8,13 +8,21 @@ interface Props {
   amountToShow?: number;
 }
 
-export const ImageCarousel = (props: PropsWithChildren<Props>): ReactElement => {
+export const ImageCarousel = (
+  props: PropsWithChildren<Props>,
+): ReactElement => {
   const { random = false } = props;
   const { amountToShow = 5 } = props;
-  const imageSet: HTMLImage[] = random ? shuffleArray(props.images) : props.images;
+  const imageSet: HTMLImage[] = random
+    ? shuffleArray(props.images)
+    : props.images;
 
   return (
-    <div className={"mt-8 flex justify-center gap-4 overflow-hidden py-4 sm:mt-16 sm:gap-8"}>
+    <div
+      className={
+        "mt-8 flex justify-center gap-4 overflow-hidden py-4 sm:mt-16 sm:gap-8"
+      }
+    >
       {imageSet.slice(0, amountToShow).map((img, i) => {
         const cssRotation = i % 2 === 0 ? "-rotate-2" : "rotate-2";
         return (
@@ -30,7 +38,9 @@ export const ImageCarousel = (props: PropsWithChildren<Props>): ReactElement => 
               src={img.src}
               loading={"lazy"}
               decoding={"async"}
-              className={"inset-0 h-full w-full bg-zinc-100 object-cover dark:bg-zinc-800"}
+              className={
+                "inset-0 h-full w-full bg-zinc-100 object-cover dark:bg-zinc-800"
+              }
               style={{ color: "transparent" }}
             />
           </div>

@@ -8,7 +8,9 @@ interface Props {
   links: HTMLSimpleLink[];
 }
 
-export const NavigationModal = (props: PropsWithChildren<Props>): ReactElement => {
+export const NavigationModal = (
+  props: PropsWithChildren<Props>,
+): ReactElement => {
   const [visible, setVisible] = useState(false);
 
   return (
@@ -56,7 +58,9 @@ export const NavigationModal = (props: PropsWithChildren<Props>): ReactElement =
             }
             tabIndex={-1}
           >
-            <div className={"flex flex-row-reverse items-center justify-between"}>
+            <div
+              className={"flex flex-row-reverse items-center justify-between"}
+            >
               <button
                 aria-label={"Close menu"}
                 className={"-m-1 p-1"}
@@ -81,7 +85,13 @@ export const NavigationModal = (props: PropsWithChildren<Props>): ReactElement =
                   ></path>
                 </svg>
               </button>
-              <h2 className={"text-sm font-medium text-zinc-600 dark:text-zinc-400"}>Navigation</h2>
+              <h2
+                className={
+                  "text-sm font-medium text-zinc-600 dark:text-zinc-400"
+                }
+              >
+                Navigation
+              </h2>
             </div>
             <nav className={"mt-6"}>
               <ul
