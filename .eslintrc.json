@@ -9,25 +9,22 @@
     "plugin:@typescript-eslint/recommended-type-checked",
     "plugin:@typescript-eslint/stylistic-type-checked",
     "plugin:react/recommended",
-    "plugin:react-hooks/recommended"
+    "plugin:react-hooks/recommended",
+    "prettier"
   ],
   "parserOptions": {
     "project": "tsconfig.json",
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": [
-    "@typescript-eslint",
-    "react"
-  ],
+  "plugins": ["@typescript-eslint", "react"],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/consistent-type-imports": "error"
   },
   "settings": {
     "import/resolver": {
-      "typescript": {
-      }
+      "typescript": {}
     },
     "react": {
       "version": "detect"

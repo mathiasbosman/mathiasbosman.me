@@ -1,104 +1,104 @@
-import type { HTMLImage, HTMLSimpleLink, Period } from '@shared/utils.ts'
+import type { HTMLImage, HTMLSimpleLink, Period } from "@shared/utils.ts";
 
 export interface ExperienceConfig {
-  experiences: Experience[]
+  experiences: Experience[];
 }
 
 export interface Experience {
-  place: string
-  logo?: HTMLImage
-  items: ExperienceItem[]
+  place: string;
+  logo?: HTMLImage;
+  items: ExperienceItem[];
 }
 
 export interface ExperienceItem {
-  title: string
-  period: Period
-  description?: string
-  link?: HTMLSimpleLink
-  pinned?: boolean
+  title: string;
+  period: Period;
+  description?: string;
+  link?: HTMLSimpleLink;
+  pinned?: boolean;
 }
 
 export const experienceConfig: ExperienceConfig = {
   experiences: [
     {
-      place: 'Flemish Government',
+      place: "Flemish Government",
       logo: {
-        alt: 'lit logo',
-        src: '/assets/logos/flemishGov.webp'
+        alt: "lit logo",
+        src: "/assets/logos/flemishGov.webp",
       },
       items: [
         {
           period: { from: new Date(2022, 11) },
-          title: 'Project manager',
+          title: "Project manager",
           pinned: true,
           description:
-            'Team lead and project manager of a small developer team who develop and maintain business applications for the department of environment.',
+            "Team lead and project manager of a small developer team who develop and maintain business applications for the department of environment.",
           link: {
-            href: 'https://www.vlaanderen.be/en/environment',
-            text: 'Department of Environment'
-          }
+            href: "https://www.vlaanderen.be/en/environment",
+            text: "Department of Environment",
+          },
         },
         {
           period: { from: new Date(2018, 9), to: new Date(2022, 11) },
-          title: 'Java developer',
+          title: "Java developer",
           pinned: true,
           description:
-            'Part of a devops team at the department of environment.'
+            "Part of a devops team at the department of environment.",
         },
         {
           period: { from: new Date(2016, 10), to: new Date(2018, 9) },
-          title: 'Application manager',
+          title: "Application manager",
           description:
-            'Application manager for one of the most used applications at the department of environment.'
+            "Application manager for one of the most used applications at the department of environment.",
         },
         {
           period: { from: new Date(2016, 2), to: new Date(2016, 8) },
-          title: 'Personnel administration'
+          title: "Personnel administration",
         },
         {
           period: { from: new Date(2013, 10), to: new Date(2016, 8) },
-          title: 'Expert personnel system & IT-support'
-        }
-      ]
+          title: "Expert personnel system & IT-support",
+        },
+      ],
     },
     {
-      place: 'Echoweb',
+      place: "Echoweb",
       logo: {
-        alt: 'Echoweb logo',
-        src: '/assets/logos/echoweb.webp'
+        alt: "Echoweb logo",
+        src: "/assets/logos/echoweb.webp",
       },
       items: [
         {
           period: { from: new Date(2013, 2), to: new Date(2013, 10) },
-          title: 'PHP developer',
+          title: "PHP developer",
           pinned: true,
           description:
-            'Developed an integrable recruitment and evaluation system in PHP.',
+            "Developed an integrable recruitment and evaluation system in PHP.",
           link: {
-            href: 'https://www.echoweb.be/',
-            text: 'echoweb.be'
-          }
-        }
-      ]
+            href: "https://www.echoweb.be/",
+            text: "echoweb.be",
+          },
+        },
+      ],
     },
     {
-      place: 'Procius Ltd.',
+      place: "Procius Ltd.",
       logo: {
-        alt: 'Procius logo',
-        src: '/assets/logos/procius.webp'
+        alt: "Procius logo",
+        src: "/assets/logos/procius.webp",
       },
       items: [
         {
           period: { from: new Date(2012, 6), to: new Date(2012, 12) },
-          title: 'PHP developer',
+          title: "PHP developer",
           pinned: true,
-          description: '6-month internship as PHP developer.',
+          description: "6-month internship as PHP developer.",
           link: {
-            href: 'https://www.procius.com',
-            text: 'procius.com'
-          }
-        }
-      ]
-    }
-  ]
-}
+            href: "https://www.procius.com",
+            text: "procius.com",
+          },
+        },
+      ],
+    },
+  ],
+};

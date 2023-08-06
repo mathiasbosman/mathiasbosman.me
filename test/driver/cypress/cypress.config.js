@@ -1,24 +1,24 @@
-import { defineConfig } from 'cypress'
+import { defineConfig } from "cypress";
 
 export default defineConfig({
-  screenshotsFolder: './screenshots',
+  screenshotsFolder: "./screenshots",
   trashAssetsBeforeRuns: true,
   video: false,
 
   e2e: {
-    baseUrl: 'http://localhost:9000',
-    specPattern: 'e2e/**/*.cy.ts',
-    supportFile: false
+    baseUrl: "http://localhost:9000",
+    specPattern: "e2e/**/*.cy.ts",
+    supportFile: false,
   },
   includeShadowDom: true,
-  fixturesFolder: './fixtures',
+  fixturesFolder: "./fixtures",
   component: {
-    supportFile: './support/component.ts',
-    indexHtmlFile: './support/component-index.html',
-    specPattern: 'component/**/*.cy.tsx',
+    supportFile: "./support/component.ts",
+    indexHtmlFile: "./support/component-index.html",
+    specPattern: "component/**/*.cy.tsx",
     devServer: {
-      framework: 'react',
-      bundler: 'vite'
-    }
-  }
-})
+      framework: "react",
+      bundler: "vite",
+    },
+  },
+});

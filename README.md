@@ -31,8 +31,8 @@ For example:
 3 types of testing are active:
 
 1. Unit tests
-3. Component tests
-2. End-2-end tests
+2. Component tests
+3. End-2-end tests
 
 Unit and component tests are run on each push.
 In addition, end-2-end tests are run on pull requests.
@@ -73,21 +73,15 @@ Every pull request against the main branch will deploy a preview app.
 
 ### Frameworks and libraries
 
-- [Lit][link_lit]
-- [Tailwindcss][link_tailwind]
-- [Vite][link_vite]
-- [Cypress][link_cypress]
+-   [Lit][link_lit]
+-   [Tailwindcss][link_tailwind]
+-   [Vite][link_vite]
+-   [Cypress][link_cypress]
 
 [link_mathiasbosman_be]: http://mathiasbosman.be
-
 [link_lit]: https://lit.dev/
-
 [link_tailwind]: https://tailwindcss.com/
-
 [link_cypress]: https://cypress.io
-
 [link_vercel]: https://vercel.com/
-
 [link_vite]: http://vitejs.dev
-
 [link_vitest]: http://vitest.dev
