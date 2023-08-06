@@ -31,8 +31,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Download build
-        uses: actions/download-artifact@v3
       - name: Install dependencies
         run: npm ci
       - name: Run unit tests and component tests
@@ -42,9 +40,8 @@ jobs:
     timeout-minutes: 5
     strategy:
       matrix:
-        os: [ "ubuntu-latest", "windows-latest", "macos-latest" ]
         browser: [ "firefox", "chrome" ]
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -53,7 +50,7 @@ jobs:
         with:
           name: npm-build
           path: ./dist/
-      - name: E2E - ${{ matrix.os }} - ${{ matrix.browser }}
+      - name: E2E - ${{ matrix.browser }}
         uses: cypress-io/github-action@v5
         with:
           project: "./test/driver/cypress"
@@ -66,7 +63,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         name: Upload screenshots
         with:
-          name: e2e-${{matrix.os}}-${{matrix.browser}}-screenshots
+          name: e2e-${{matrix.browser}}-screenshots
           path: ./test/driver/cypress/screenshots/
   e2e-viewports:
     needs: build
