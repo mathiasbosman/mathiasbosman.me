@@ -10,7 +10,6 @@ describe("A11 checks", () => {
   });
 
   it("All pages have an h1, header, main nav and footer", () => {
-    cy.viewport(601, 962);
     allPages.forEach((page) => {
       cy.visit(page);
       cy.get("h1").should("be.visible");
