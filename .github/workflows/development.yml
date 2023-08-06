@@ -6,7 +6,7 @@ concurrency:
 
 jobs:
   lint:
-    name: Code standards and tests
+    name: Code standards
     runs-on: ubuntu-latest
     steps:
       - name: "checkout repository"
@@ -22,9 +22,3 @@ jobs:
 
       - name: "lint code"
         run: npm run lint
-
-      - name: "run unit tests"
-        run: npm run test:unit
-
-      - name: "run component tests"
-        run: npm run test:component
