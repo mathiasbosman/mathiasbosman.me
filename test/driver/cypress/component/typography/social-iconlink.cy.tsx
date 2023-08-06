@@ -4,7 +4,12 @@ import { htmlSimpleLinkFixture } from "../../fixtures/utils.fixture.ts";
 
 describe("<SocialIconlink/>", () => {
   it("Renders correctly", () => {
-    cy.mount(<SocialIconlink link={htmlSimpleLinkFixture("/href", "text")} icon={LinkIcon} />);
+    cy.mount(
+      <SocialIconlink
+        link={htmlSimpleLinkFixture("/href", "text")}
+        icon={LinkIcon}
+      />,
+    );
     cy.get("a")
       .should("be.visible")
       .should("have.attr", "href", "/href")

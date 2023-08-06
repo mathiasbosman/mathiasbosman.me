@@ -30,23 +30,26 @@ export const HomePage = (): ReactElement => {
             title={"Mathias Bosman"}
             subtitleSlot={
               <div className={"mt-2 text-2xl font-medium sm:text-4xl"}>
-                Software&nbsp;designer, network&nbsp;engineer &amp; lighting&nbsp;tech
+                Software&nbsp;designer, network&nbsp;engineer &amp;
+                lighting&nbsp;tech
               </div>
             }
           />
           <aside className={"mt-6 text-base text-zinc-600 dark:text-zinc-400"}>
             <p>
-              I&apos;m Mathias, a software designer and network engineer based in Lebbeke, Belgium.
+              I&apos;m Mathias, a software designer and network engineer based
+              in Lebbeke, Belgium.
               <br />
-              In my spare time you might find me: in a theatre (either watching whatever is on stage
-              or fiddling with the stage lights), visiting amusement parks or riding my race bike.
+              In my spare time you might find me: in a theatre (either watching
+              whatever is on stage or fiddling with the stage lights), visiting
+              amusement parks or riding my race bike.
             </p>
             <p>
-              Currently full-time employed at the Department of Environment of the Flemish
-              Government.
+              Currently full-time employed at the Department of Environment of
+              the Flemish Government.
               <br />
-              Yes, I&apos;m proud to be the human of a cute little Beagle; her name is
-              (&apos;Queen&apos;) Luna.
+              Yes, I&apos;m proud to be the human of a cute little Beagle; her
+              name is (&apos;Queen&apos;) Luna.
             </p>
           </aside>
 
@@ -85,17 +88,27 @@ export const HomePage = (): ReactElement => {
         <ContentWrapper>
           <div className={"mx-auto mt-10 max-w-2xl lg:mt-6 lg:max-w-5xl"}>
             <div
-              className={"mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2"}
+              className={
+                "mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2"
+              }
             >
               <section className="grid grid-cols-1 gap-y-16">
                 <h2 className={"sr-only"}>Projects</h2>
                 <Projects projects={projectsConfig.projects} pinned={true} />
               </section>
               <section className={"space-y-10 lg:pl-16 xl:pl-24"}>
-                <div className={"rounded-lg border border-zinc-100 p-6 dark:border-zinc-700/40"}>
+                <div
+                  className={
+                    "rounded-lg border border-zinc-100 p-6 dark:border-zinc-700/40"
+                  }
+                >
                   <Contact />
                 </div>
-                <div className={"rounded-lg border border-zinc-100 p-6 dark:border-zinc-700/40"}>
+                <div
+                  className={
+                    "rounded-lg border border-zinc-100 p-6 dark:border-zinc-700/40"
+                  }
+                >
                   <Employment experiences={experienceConfig.experiences} />
                 </div>
               </section>

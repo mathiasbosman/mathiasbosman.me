@@ -19,7 +19,9 @@ export const Avatar = (props: PropsWithChildren<Props>): ReactElement => {
         decoding={"async"}
         src={props.image.src}
         style={{ color: "transparent" }}
-        className={"aspect-square w-full rounded-full bg-zinc-100 object-cover dark:bg-zinc-800"}
+        className={
+          "aspect-square w-full rounded-full bg-zinc-100 object-cover dark:bg-zinc-800"
+        }
       />
     );
   }

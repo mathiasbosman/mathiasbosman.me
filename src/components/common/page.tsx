@@ -21,7 +21,10 @@ export const Page = (props: PropsWithChildren<Props>): ReactElement => {
   }, [props.title]);
 
   return (
-    <main id="mainBoxy" className={"flex h-full flex-col bg-zinc-50 antialiased dark:bg-black"}>
+    <main
+      id="mainBoxy"
+      className={"flex h-full flex-col bg-zinc-50 antialiased dark:bg-black"}
+    >
       <div className="z-20 h-1 bg-gradient-to-r from-violet-500 to-pink-700 "></div>
       <div className="fixed inset-0 z-0 flex justify-center sm:px-8">
         <div className="flex w-full max-w-7xl lg:px-8">
@@ -34,7 +37,11 @@ export const Page = (props: PropsWithChildren<Props>): ReactElement => {
             <Navigation
               leftSlot={
                 props.renderAvatar && (
-                  <Link aria-label={"Home"} className={"pointer-events-auto inline-block"} to={"/"}>
+                  <Link
+                    aria-label={"Home"}
+                    className={"pointer-events-auto inline-block"}
+                    to={"/"}
+                  >
                     <Avatar
                       image={{
                         src: avatar,

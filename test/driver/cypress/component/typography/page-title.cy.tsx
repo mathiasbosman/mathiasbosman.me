@@ -12,7 +12,12 @@ describe("<PageTitle/>", () => {
   });
 
   it("Renders subtitle slot with children", () => {
-    cy.mount(<PageTitle title={"foo"} subtitleSlot={<span id="mock_slot">subtitle</span>} />);
+    cy.mount(
+      <PageTitle
+        title={"foo"}
+        subtitleSlot={<span id="mock_slot">subtitle</span>}
+      />,
+    );
     cy.get("#mock_slot").should("have.text", "subtitle").should("be.visible");
   });
 });

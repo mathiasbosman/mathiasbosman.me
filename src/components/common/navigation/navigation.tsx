@@ -49,10 +49,14 @@ export const Navigation = (props: PropsWithChildren<Props>): ReactElement => {
 
   return (
     <div
-      className={"mt-8 flex flex-row items-center justify-between px-4 md:justify-center md:px-2"}
+      className={
+        "mt-8 flex flex-row items-center justify-between px-4 md:justify-center md:px-2"
+      }
     >
       <div className={"md:basis-1/3"}>{props.leftSlot}</div>
-      <div className={"flex md:basis-1/3 md:justify-center"}>{_renderLinks(props.links)}</div>
+      <div className={"flex md:basis-1/3 md:justify-center"}>
+        {_renderLinks(props.links)}
+      </div>
       <div className={"md:basis-1/3"}>
         <NavigationModal links={props.links} />
       </div>

@@ -12,10 +12,13 @@ export const ExperiencePage = (): ReactElement => {
       <ContentWrapper>
         <SectionWrapper>
           <div className={"mx-auto max-w-2xl lg:max-w-5xl"}>
-            <PageTitle title={"Places where I gained experience since graduating"} />
+            <PageTitle
+              title={"Places where I gained experience since graduating"}
+            />
             <p className={"mt-6 text-base text-zinc-600 dark:text-zinc-400"}>
-              Once I graduated from the University of Ghent and received my Bachelor degree in
-              multimedia I went out and found some amazing workplaces.
+              Once I graduated from the University of Ghent and received my
+              Bachelor degree in multimedia I went out and found some amazing
+              workplaces.
               <br />
               Below are some of the most note-worthy.
             </p>
