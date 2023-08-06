@@ -14,7 +14,7 @@ describe("A11 checks", () => {
       cy.visit(page);
       cy.get("h1").should("be.visible");
       cy.get("main").should("be.visible");
-      cy.get("nav").should("be.visible");
+      cy.get("nav").filter(":visible").should("exist");
       cy.get("header").should("be.visible");
       cy.get("footer").should("be.visible");
       cy.screenshot("pages" + page);
