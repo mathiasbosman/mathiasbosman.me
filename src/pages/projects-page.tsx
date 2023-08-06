@@ -25,6 +25,7 @@ export const ProjectsPage = (): ReactElement => {
           </div>
           <div className={"mx-auto mt-16 max-w-2xl lg:max-w-5xl"}>
             <div className={"grid gap-16 md:grid-cols-2 lg:grid-cols-3"}>
+              <h2 className={"sr-only"}>Projects</h2>
               <Projects projects={projectsConfig.projects} pinned={false} />
             </div>
           </div>

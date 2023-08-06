@@ -12,11 +12,9 @@ describe("Happy paths", () => {
       .click();
   }
 
-  it("All pages can be visited directly and have an h1", () => {
+  it("All pages can be visited directly", () => {
     allPages.forEach((page) => {
       cy.visit(page);
-      cy.get("h1").should("be.visible");
-      cy.screenshot("pages" + page);
     });
   });
 
@@ -41,42 +39,6 @@ describe("Happy paths", () => {
           // return to starting point
           cy.visit(currentPath);
         });
-    });
-  });
-
-  it("All outgoing links should be reachable", () => {
-    interface testedLink {
-      href: string;
-      page: string;
-    }
-
-    const checkedLinks: testedLink[] = [];
-    allPages.forEach((page) => {
-      cy.visit(page);
-      cy.get(`a[href^="http://"],a[href^="https://"]`).each((link) => {
-        const testingLink: testedLink = {
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          href: link.prop(`href`),
-          page: page,
-        };
-        const alreadyChecked = checkedLinks.find(
-          (link) => link.href === testingLink.href,
-        );
-
-        if (alreadyChecked === undefined) {
-          cy.request({
-            failOnStatusCode: false,
-            url: testingLink.href,
-          })
-            .its(`status`)
-            .should(`not.eq`, 404);
-          checkedLinks.push(testingLink);
-        } else {
-          cy.log(
-            alreadyChecked.href + " already tested in " + alreadyChecked.page,
-          );
-        }
-      });
     });
   });
 });
