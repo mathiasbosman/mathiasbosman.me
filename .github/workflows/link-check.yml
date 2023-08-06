@@ -1,4 +1,4 @@
-name: End2End - third party
+name: Outgoing links check
 on:
   pull_request:
   schedule:
