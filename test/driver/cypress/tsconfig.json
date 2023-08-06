@@ -1,9 +1,6 @@
 {
   "extends": "../../../tsconfig.json",
   "compilerOptions": {
-    "types": [
-      "cypress",
-      "cypress-axe"
-    ]
+    "types": ["cypress", "cypress-axe"]
   }
 }
