@@ -25,7 +25,6 @@ jobs:
           path: ./dist/
           retention-days: 1
   unit-tests:
-    needs: build
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
@@ -36,7 +35,6 @@ jobs:
       - name: Run unit tests
         run: npm run test:unit
   component-tests:
-    needs: build
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
