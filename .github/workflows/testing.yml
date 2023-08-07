@@ -26,7 +26,6 @@ jobs:
       - name: Run component tests
         run: npm run test:component
   e2e:
-    needs: build
     timeout-minutes: 5
     strategy:
       matrix:
