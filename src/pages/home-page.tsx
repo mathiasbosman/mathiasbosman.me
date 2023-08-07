@@ -90,8 +90,7 @@ export const HomePage = (): ReactElement => {
             <div
               className={
                 "mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2"
-              }
-            >
+              }>
               <section className="grid grid-cols-1 gap-y-16">
                 <h2 className={"sr-only"}>Projects</h2>
                 <Projects projects={projectsConfig.projects} pinned={true} />
@@ -100,15 +99,13 @@ export const HomePage = (): ReactElement => {
                 <div
                   className={
                     "rounded-lg border border-zinc-100 p-6 dark:border-zinc-700/40"
-                  }
-                >
+                  }>
                   <Contact />
                 </div>
                 <div
                   className={
                     "rounded-lg border border-zinc-100 p-6 dark:border-zinc-700/40"
-                  }
-                >
+                  }>
                   <Employment experiences={experienceConfig.experiences} />
                 </div>
               </section>

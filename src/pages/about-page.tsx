@@ -29,8 +29,7 @@ export const AboutPage = (): ReactElement => {
             <div
               className={
                 "-mt-6 grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12"
-              }
-            >
+              }>
               <div className={"lg:pl-20"}>
                 <div className={"max-w-xs px-2.5 lg:max-w-none"}>
                   <img
@@ -55,8 +54,7 @@ export const AboutPage = (): ReactElement => {
                       <span
                         className={
                           "bg-gradient-to-r  from-violet-500 to-pink-600 bg-clip-text text-transparent"
-                        }
-                      >
+                        }>
                         Mathias Bosman
                       </span>
                       . Living in Belgium, being part of the future.
@@ -66,8 +64,7 @@ export const AboutPage = (): ReactElement => {
                 <section
                   className={
                     "mt-12 space-y-7 text-base text-zinc-600 dark:text-zinc-400"
-                  }
-                >
+                  }>
                   <p>
                     In the late 90&apos;s I got my hands on a fairly simple
                     Windows desktop rocking the late <em>but great</em> Windows
@@ -126,23 +123,20 @@ export const AboutPage = (): ReactElement => {
                   <li
                     className={
                       "mt-8 flex border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
-                    }
-                  >
+                    }>
                     <button
                       className={
                         "group flex text-sm font-medium text-zinc-800 transition hover:text-indigo-500 dark:text-zinc-200 dark:hover:text-indigo-500"
                       }
                       onClick={() => {
                         sendEmail(CONTACT_EMAIL);
-                      }}
-                    >
+                      }}>
                       <svg
                         viewBox="0 0 24 24"
                         aria-hidden="true"
                         className={
                           "h-5 w-5 flex-none fill-zinc-500 transition group-hover:fill-indigo-500"
-                        }
-                      >
+                        }>
                         <path fillRule={"evenodd"} d={EmailIcon.svgPath}></path>
                       </svg>
                       <span className={"ml-4"}>Send me an email</span>
