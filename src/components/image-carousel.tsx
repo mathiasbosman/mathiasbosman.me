@@ -21,8 +21,7 @@ export const ImageCarousel = (
     <div
       className={
         "mt-8 flex justify-center gap-4 overflow-hidden py-4 sm:mt-16 sm:gap-8"
-      }
-    >
+      }>
       {imageSet.slice(0, amountToShow).map((img, i) => {
         const cssRotation = i % 2 === 0 ? "-rotate-2" : "rotate-2";
         return (
@@ -31,8 +30,7 @@ export const ImageCarousel = (
             className={
               cssRotation +
               " relative aspect-[5/10] w-24 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-36 sm:rounded-2xl lg:aspect-[9/10] lg:w-72"
-            }
-          >
+            }>
             <img
               alt={img.alt}
               src={img.src}

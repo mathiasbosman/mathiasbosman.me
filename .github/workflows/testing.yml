@@ -40,7 +40,7 @@ jobs:
     timeout-minutes: 5
     strategy:
       matrix:
-        browser: ["firefox", "chrome"]
+        browser: ["firefox", "chrome", "electron"]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -58,51 +58,9 @@ jobs:
           start: npm run preview:local
           wait-on: "http://localhost:9000"
           wait-on-timeout: 15
-          config: "viewportWidth=1920,viewportHeight=1080"
           spec: "**/e2e/app/**/*"
       - uses: actions/upload-artifact@v3
         name: Upload screenshots
         with:
           name: e2e-${{matrix.browser}}-screenshots
-          path: ./test/driver/cypress/screenshots/
-  e2e-viewports:
-    needs: build
-    timeout-minutes: 5
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        browser: ["electron"]
-        viewport: [
-            #desktop
-            { width: 1920, height: 1080 },
-            { width: 1280, height: 720 },
-            #mobile
-            { width: 360, height: 640 },
-            { width: 414, height: 896 },
-            #tablet
-            { width: 601, height: 962 },
-            { width: 1280, height: 800 },
-          ]
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Download build
-        uses: actions/download-artifact@v3
-        with:
-          name: npm-build
-          path: ./dist/
-      - name: E2E - ${{ matrix.browser }} ${{ matrix.viewport.width }}x${{ matrix.viewport.height }}
-        uses: cypress-io/github-action@v5
-        with:
-          project: "./test/driver/cypress"
-          browser: ${{ matrix.browser }}
-          start: npm run preview:local
-          wait-on: "http://localhost:9000"
-          wait-on-timeout: 15
-          config: "viewportWidth=${{ matrix.viewport.width }},viewportHeight=${{ matrix.viewport.height }}"
-          spec: "**/e2e/app/**/*"
-      - uses: actions/upload-artifact@v3
-        name: Upload screenshots
-        with:
-          name: cypress-${{matrix.browser}}-${{matrix.viewport.width}}x${{matrix.viewport.height}}-screenshots
           path: ./test/driver/cypress/screenshots/
