@@ -3,9 +3,11 @@ import { allPages, publicTestPages } from "../config.ts";
 describe("Happy paths", () => {
   function _navigate(preProcessor: () => void, path: string): void {
     preProcessor();
-    cy.get("nav").filter(":visible").within(() => {
-      cy.get(`a[href="${path}"]`).click()
-    });
+    cy.get("nav")
+      .filter(":visible")
+      .within(() => {
+        cy.get(`a[href="${path}"]`).click();
+      });
   }
 
   function _navigateTooAndBackHome(navPreProcessor: () => void): void {
@@ -70,7 +72,7 @@ describe("Happy paths", () => {
         });
       });
 
-      it("All pages can be visited directly", () => {
+      it("Should be able to visit all pages directly", () => {
         allPages.forEach((page) => {
           cy.visit(page);
         });

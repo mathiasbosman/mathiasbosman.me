@@ -2,8 +2,8 @@ import SocialIconlink from "@components/typography/social-iconlink.tsx";
 import { LinkIcon } from "@shared/icons.ts";
 import { htmlSimpleLinkFixture } from "../../fixtures/utils.fixture.ts";
 
-describe("<SocialIconlink/>", () => {
-  it("Renders correctly", () => {
+describe("<SocialIconlink/> component", () => {
+  it("Should render correctly", () => {
     cy.mount(
       <SocialIconlink
         link={htmlSimpleLinkFixture("/href", "text")}

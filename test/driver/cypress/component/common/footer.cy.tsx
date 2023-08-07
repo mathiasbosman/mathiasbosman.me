@@ -6,8 +6,8 @@ const mockLinks: HTMLSimpleLink[] = [
   htmlSimpleLinkFixture("/", "home"),
   htmlSimpleLinkFixture("/pageA", "page A"),
 ];
-describe("<Footer/>", () => {
-  it("Footer renders correctly", () => {
+describe("<Footer/> component", () => {
+  it("Should render correctly", () => {
     cy.mount(<Footer links={mockLinks} />);
     cy.get("footer").should("be.visible");
     cy.get("a").should("have.length", 2);

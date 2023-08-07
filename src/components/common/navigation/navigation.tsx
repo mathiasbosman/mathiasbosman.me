@@ -47,7 +47,7 @@ export const Navigation = (props: PropsWithChildren<Props>): ReactElement => {
   return (
     <div
       className={
-        "hidden sm:flex mt-8 flex-row items-center justify-between px-4 md:justify-center md:px-2"
+        "mt-8 hidden flex-row items-center justify-between px-4 sm:flex md:justify-center md:px-2"
       }>
       <div className={"flex md:basis-1/3"}>{props.leftSlot}</div>
       <div className={"flex md:basis-1/3 md:justify-center"}>

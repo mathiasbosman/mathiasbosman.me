@@ -5,15 +5,15 @@ import {
   experiencesWithTwoPlaces,
 } from "../fixtures/experience.fixture";
 
-describe("<Employment/>", () => {
-  it("Renders correctly with a single item", () => {
+describe("<Employment/> component", () => {
+  it("Should render correctly with a single item", () => {
     cy.mount(<Employment experiences={experiencesWithOnePlaceAndOneItem} />);
     cy.get("article")
       .should("contain.text", experienceItemMock.title)
       .should("contain.text", experiencesWithOnePlaceAndOneItem[0].place);
   });
 
-  it("Renders correctly with multiple experiences", () => {
+  it("Should render correctly with multiple experiences", () => {
     cy.mount(<Employment experiences={experiencesWithTwoPlaces} />);
     let amountPinned = 0;
     experiencesWithTwoPlaces.map((exp) =>

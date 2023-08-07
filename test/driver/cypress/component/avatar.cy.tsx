@@ -1,8 +1,8 @@
 import Avatar, { AvatarSize } from "@components/avatar.tsx";
 import { htmlImageFixture } from "../fixtures/utils.fixture.ts";
 
-describe("<Avatar/>", () => {
-  it("Renders correctly", () => {
+describe("<Avatar/> component", () => {
+  it("Should render correctly", () => {
     cy.mount(
       <Avatar
         image={htmlImageFixture("foo.webp", "img_alt")}
@@ -15,7 +15,7 @@ describe("<Avatar/>", () => {
       .should("have.attr", "src", "foo.webp");
   });
 
-  it("Sizes are applied correctly", () => {
+  it("Should have correctly applied size", () => {
     cy.mount(
       <Avatar
         image={htmlImageFixture("foo.webp", "img_alt")}

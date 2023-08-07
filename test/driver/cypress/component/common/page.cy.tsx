@@ -2,7 +2,7 @@ import Page from "@components/common/page.tsx";
 import { MemoryRouter } from "react-router-dom";
 import type { ReactElement } from "react";
 
-describe("<Page>", () => {
+describe("<Page/> component", () => {
   const renderInRouterContext = (title: string): ReactElement => {
     return (
       <MemoryRouter initialEntries={["/", "/pageA"]}>
@@ -11,12 +11,12 @@ describe("<Page>", () => {
     );
   };
 
-  it("Title manipulates the document title", () => {
+  it("Should manipulate the document title", () => {
     cy.mount(renderInRouterContext("foo bar"));
     cy.title().should("eq", "foo bar");
   });
 
-  it("Renders with all expected elements", () => {
+  it("Should render with all expected elements", () => {
     cy.mount(renderInRouterContext("foo bar"));
     cy.get("main").should("be.visible");
     cy.get("nav").should("exist");
