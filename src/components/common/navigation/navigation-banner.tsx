@@ -29,7 +29,7 @@ export const NavigationBanner = (
     <>
       <div className="supports-backdrop-blur:bg-white/60 sticky top-0 z-50 w-full flex-none border-b border-slate-900/10 bg-white/95 backdrop-blur transition-colors duration-500 dark:border-slate-50/[0.06] dark:bg-transparent sm:hidden">
         <header className="m-4 flex items-center justify-between">
-          <div className={"flex items-center"}>
+          <div className={"flex max-w-[calc(100%-3rem)] items-center"}>
             <button
               type="button"
               aria-expanded={true}
@@ -66,7 +66,9 @@ export const NavigationBanner = (
                 )}
               </li>
               {currentPageLink && (
-                <li className="truncate font-semibold text-slate-900 dark:text-slate-200">
+                <li
+                  aria-label={currentPageLink.text}
+                  className="truncate font-semibold text-slate-900 dark:text-slate-200">
                   {currentPageLink.text}
                 </li>
               )}
