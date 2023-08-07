@@ -28,7 +28,7 @@ export const NavigationBanner = (
   return (
     <>
       <div className="supports-backdrop-blur:bg-white/60 sticky top-0 z-50 w-full flex-none border-b border-slate-900/10 bg-white/95 backdrop-blur transition-colors duration-500 dark:border-slate-50/[0.06] dark:bg-transparent sm:hidden">
-        <div className="m-4 flex items-center">
+        <header className="m-4 flex items-center">
           <button
             type="button"
             aria-expanded={true}
@@ -70,7 +70,7 @@ export const NavigationBanner = (
               </li>
             )}
           </ol>
-        </div>
+        </header>
       </div>
       <div>
         <div

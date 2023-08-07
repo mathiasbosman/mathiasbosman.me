@@ -19,7 +19,8 @@ describe("<Page>", () => {
   it("Renders with all expected elements", () => {
     cy.mount(renderInRouterContext("foo bar"));
     cy.get("main").should("be.visible");
-    cy.get("header").should("be.visible").get("nav").should("exist");
+    cy.get("nav").should("exist");
+    cy.get("header").should("be.visible");
     cy.get("footer").should("be.visible");
   });
 });
