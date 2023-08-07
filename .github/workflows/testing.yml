@@ -25,11 +25,7 @@ jobs:
         run: npm ci
       - name: Run component tests
         run: npm run test:component
-  e2e:
-    timeout-minutes: 5
-    strategy:
-      matrix:
-        browser: ["firefox", "chrome", "electron"]
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -42,6 +38,27 @@ jobs:
         run: npm ci
       - name: Run build
         run: npm run build
+      - uses: actions/upload-artifact@v3
+        name: Upload build folder
+        with:
+          name: npm-build
+          path: ./dist/
+          retention-days: 1
+  e2e:
+    needs: build
+    timeout-minutes: 5
+    strategy:
+      matrix:
+        browser: ["firefox", "chrome", "electron"]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Download build
+        uses: actions/download-artifact@v3
+        with:
+          name: npm-build
+          path: ./dist/
       - name: E2E - ${{ matrix.browser }}
         uses: cypress-io/github-action@v5
         with:
