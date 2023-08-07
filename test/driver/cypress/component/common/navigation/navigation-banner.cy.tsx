@@ -13,7 +13,11 @@ describe("<NavigationBanner/> component", () => {
     cy.viewport(639, 750);
     cy.mount(
       <MemoryRouter>
-        <NavigationBanner links={mockLinks} location={"/pageA"} />
+        <NavigationBanner
+          links={mockLinks}
+          location={"/pageA"}
+          rightSlot={<span>foo bar</span>}
+        />
       </MemoryRouter>,
     );
   });
@@ -43,5 +47,9 @@ describe("<NavigationBanner/> component", () => {
     cy.get("nav").should("be.visible");
     cy.get('button[aria-label="Close menu"]').should("be.visible").click();
     cy.get("nav").should("not.be.visible");
+  });
+
+  it("Should contain right slot if given", () => {
+    cy.get("header").should("contain.html", "<span>foo bar</span>");
   });
 });

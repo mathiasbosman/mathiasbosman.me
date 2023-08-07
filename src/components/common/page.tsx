@@ -26,7 +26,21 @@ export const Page = (props: PropsWithChildren<Props>): ReactElement => {
       id="mainBoxy"
       className={"flex h-full flex-col bg-zinc-50 antialiased dark:bg-black"}>
       <div className="z-20 h-1 bg-gradient-to-r from-violet-500 to-pink-700 "></div>
-      <NavigationBanner links={publicPages} location={useLocation().pathname} />
+      <NavigationBanner
+        links={publicPages}
+        location={useLocation().pathname}
+        rightSlot={
+          props.renderAvatar && (
+            <Avatar
+              image={{
+                src: avatar,
+                alt: "Avatar",
+              }}
+              size={AvatarSize.xs}
+            />
+          )
+        }
+      />
       <div className="fixed inset-0 z-0 flex justify-center sm:px-8">
         <div className="flex w-full max-w-7xl lg:px-8">
           <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20"></div>
