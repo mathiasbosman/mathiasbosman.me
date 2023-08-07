@@ -7,7 +7,7 @@ import {
 } from "@shared/utils.ts";
 
 describe("renderPeriodYearString()", () => {
-  it("Only renders the year if same year", () => {
+  it("Should only return the year if same year", () => {
     const period: Period = {
       from: new Date("2020-01-01"),
       to: new Date("2020-12-31"),
@@ -15,7 +15,7 @@ describe("renderPeriodYearString()", () => {
     expect(renderPeriodYearString(period, "foo")).eq(2020);
   });
 
-  it("Renders correct year span", () => {
+  it("Should  correct year span", () => {
     const period: Period = {
       from: new Date("2020-01-01"),
       to: new Date("2023-12-31"),
@@ -23,7 +23,7 @@ describe("renderPeriodYearString()", () => {
     expect(renderPeriodYearString(period, "foo")).eq("2020 - 2023");
   });
 
-  it("Renders fallback if to is empty", () => {
+  it("Should fallback if 'to' is empty", () => {
     const period: Period = {
       from: new Date("2020-01-01"),
     };
@@ -32,15 +32,15 @@ describe("renderPeriodYearString()", () => {
 });
 
 describe("escapeHtml()", () => {
-  it("Empty strings returns empty", () => {
+  it("Should return empty when empty strings", () => {
     expect(escapeHtml("")).eq("");
   });
 
-  it("Normal strings returs as-is", () => {
+  it("Should return normal strings as-is", () => {
     expect(escapeHtml("foo bar")).eq("foo bar");
   });
 
-  it("String with special character gets escaped", () => {
+  it("Should return escaped string", () => {
     expect(escapeHtml('foo "bar"')).eq("foo &quot;bar&quot;");
     expect(escapeHtml("foo & bar")).eq("foo &amp; bar");
     expect(escapeHtml("foo 'bar'")).eq("foo &#39;bar&#39;");
@@ -50,12 +50,12 @@ describe("escapeHtml()", () => {
 });
 
 describe("shuffleArray()", () => {
-  it("Empty array returns empty array", () => {
+  it("Should return empty array", () => {
     const emptyArray: number[] = [];
     expect(shuffleArray(emptyArray)).to.be.an("array").that.is.empty;
   });
 
-  it("Returns shuffled array", () => {
+  it("Should always return shuffled array", () => {
     interface testObject {
       k: number;
       v: string;
@@ -72,7 +72,7 @@ describe("shuffleArray()", () => {
     expect(JSON.stringify(testArray)).not.eq(JSON.stringify(shuffled));
   });
 
-  it("Returns shuffled array even when it is short", () => {
+  it("Should return shuffled array even when it is short", () => {
     const shortArray = ["one", "two"];
     const shuffled = shuffleArray(shortArray);
     expect(JSON.stringify(shortArray)).not.eq(JSON.stringify(shuffled));

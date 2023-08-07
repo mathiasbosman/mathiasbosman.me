@@ -6,8 +6,8 @@ import {
 } from "../fixtures/experience.fixture";
 import { renderPeriodYearString } from "@shared/utils.ts";
 
-describe("<Experiences/>", () => {
-  it("Renders with one item", () => {
+describe("<Experiences/> component", () => {
+  it("Should render with one item", () => {
     cy.mount(<Experiences experiences={experiencesWithOnePlaceAndOneItem} />);
     const ref = "ref:" + experienceWithOnePlaceAndOneItem.place;
     cy.get("section")

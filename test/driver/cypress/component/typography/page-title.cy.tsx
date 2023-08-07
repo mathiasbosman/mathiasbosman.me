@@ -1,17 +1,17 @@
 import PageTitle from "@components/typography/page-title.tsx";
 
-describe("<PageTitle/>", () => {
-  it("Renders", () => {
+describe("<PageTitle/> component", () => {
+  it("Should render correctly", () => {
     cy.mount(<PageTitle title={"foo bar"} />);
     cy.get("h1").should("have.text", "foo bar");
   });
 
-  it("Renders with Reactnode as title slot", () => {
+  it("Should render with Reactnode as title slot", () => {
     cy.mount(<PageTitle title={<div id="mock_slot">Foo bar</div>} />);
     cy.get("#mock_slot").should("have.text", "Foo bar").should("be.visible");
   });
 
-  it("Renders subtitle slot with children", () => {
+  it("Should render subtitle slot with children", () => {
     cy.mount(
       <PageTitle
         title={"foo"}

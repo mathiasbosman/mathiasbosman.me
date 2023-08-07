@@ -3,7 +3,7 @@ import { htmlSimpleLinkFixture } from "../../../fixtures/utils.fixture.ts";
 import { MemoryRouter } from "react-router-dom";
 import NavigationBanner from "@components/common/navigation/navigation-banner.tsx";
 
-describe("<NavigationBanner/>", () => {
+describe("<NavigationBanner/> component", () => {
   const mockLinks: HTMLSimpleLink[] = [
     htmlSimpleLinkFixture("/pageA", "page A"),
     htmlSimpleLinkFixture("/pageB", "page B"),

@@ -2,7 +2,7 @@ import type { HTMLImage } from "@shared/utils.ts";
 import ImageCarousel from "@components/image-carousel.tsx";
 import { htmlImageFixture } from "../fixtures/utils.fixture.ts";
 
-describe("<Imagecarousel/>", () => {
+describe("<Imagecarousel/> component", () => {
   let mockImageSrc: string;
   let imageSet: HTMLImage[];
 
@@ -21,14 +21,14 @@ describe("<Imagecarousel/>", () => {
     });
   });
 
-  it("Renders default correctly", () => {
+  it("Should render default correctly", () => {
     cy.mount(<ImageCarousel images={imageSet} />);
     cy.get("img").should("be.visible").should("have.length", 5);
     cy.get("img").eq(0).parent().should("have.class", "-rotate-2");
     cy.get("img").eq(1).parent().should("have.class", "rotate-2");
   });
 
-  it("Amount of items is respected when total is higher", () => {
+  it("Should respect amount of items when total is higher", () => {
     cy.mount(
       <ImageCarousel amountToShow={imageSet.length - 1} images={imageSet} />,
     );
@@ -37,7 +37,7 @@ describe("<Imagecarousel/>", () => {
       .should("have.length", imageSet.length - 1);
   });
 
-  it("Amount of items is respected when total is lower", () => {
+  it("Should respect amount of items when total is lower", () => {
     cy.mount(
       <ImageCarousel amountToShow={imageSet.length + 1} images={imageSet} />,
     );

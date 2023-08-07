@@ -2,8 +2,8 @@ import { LinkIcon } from "@shared/icons.ts";
 import FollowIconLink from "@components/typography/folow-iconlink.tsx";
 import { htmlSimpleLinkFixture } from "../../fixtures/utils.fixture.ts";
 
-describe("<FollowIconLink/>", () => {
-  it("Renders correctly", () => {
+describe("<FollowIconLink/> component", () => {
+  it("Should render correctly", () => {
     cy.mount(
       <FollowIconLink
         link={htmlSimpleLinkFixture("/href", "foo bar")}
@@ -18,7 +18,7 @@ describe("<FollowIconLink/>", () => {
     cy.get("span").should("have.text", "Follow me on foo bar");
   });
 
-  it("Renders with given pre- and postfix", () => {
+  it("Should render with given pre- and postfix", () => {
     cy.mount(
       <FollowIconLink
         prefix={"Join me on "}
@@ -30,7 +30,7 @@ describe("<FollowIconLink/>", () => {
     cy.get("span").should("have.text", "Join me on foo bar for more!");
   });
 
-  it("Line-height of text should equal height of icon", () => {
+  it("Should have equal text line-height and icon height", () => {
     cy.mount(
       <FollowIconLink
         link={htmlSimpleLinkFixture("/href", "text")}

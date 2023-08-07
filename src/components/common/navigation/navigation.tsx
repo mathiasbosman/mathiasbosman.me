@@ -31,7 +31,7 @@ export const Navigation = (props: PropsWithChildren<Props>): ReactElement => {
 
   function _renderLinks(links: HTMLSimpleLink[]): ReactElement {
     return (
-      <nav className={"pointer-events-auto hidden sm:inline-block"}>
+      <nav className={"pointer-events-auto inline-block"}>
         <ul
           className={
             "flex rounded-lg bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10"
@@ -47,7 +47,7 @@ export const Navigation = (props: PropsWithChildren<Props>): ReactElement => {
   return (
     <div
       className={
-        "mt-8 flex flex-row items-center justify-between px-4 md:justify-center md:px-2"
+        "mt-8 hidden flex-row items-center justify-between px-4 sm:flex md:justify-center md:px-2"
       }>
       <div className={"flex md:basis-1/3"}>{props.leftSlot}</div>
       <div className={"flex md:basis-1/3 md:justify-center"}>
