@@ -71,7 +71,7 @@ export const NavigationBanner = (
               )}
             </ol>
           </div>
-          <span className={""}>divje</span>
+          <span className={""}></span>
         </header>
       </div>
       <div>
