@@ -24,6 +24,17 @@ jobs:
           name: npm-build
           path: ./dist/
           retention-days: 1
+  unit-tests:
+    needs: build
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci
+      - name: Run unit tests
+        run: npm run test:unit
   component-tests:
     needs: build
     timeout-minutes: 5
@@ -33,9 +44,9 @@ jobs:
         uses: actions/checkout@v3
       - name: Install dependencies
         run: npm ci
-      - name: Run unit tests and component tests
-        run: npm run test:unit && npm run test:component
-  e2e-browsers:
+      - name: Run component tests
+        run: npm run test:component
+  e2e:
     needs: build
     timeout-minutes: 5
     strategy:
