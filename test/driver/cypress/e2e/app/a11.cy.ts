@@ -10,7 +10,7 @@ describe("A11 checks", () => {
   }
 
   context(
-    "Medium viewport'",
+    "Medium viewport",
     {
       viewportWidth: 640,
       viewportHeight: 1250,
