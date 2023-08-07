@@ -1,6 +1,6 @@
 import type { PropsWithChildren, ReactElement } from "react";
+import { useState } from "react";
 import type { HTMLSimpleLink } from "@shared/utils.ts";
-import { Link } from "react-router-dom";
 import {
   CloseIcon,
   GitHubIcon,
@@ -8,7 +8,6 @@ import {
   LinkedInIcon,
   TwitterIcon,
 } from "@shared/icons.ts";
-import { useState } from "react";
 import FollowIconLink from "@components/typography/folow-iconlink.tsx";
 import { LINK_GITHUB, LINK_LINKEDIN, LINK_TWITTER } from "@/constants.ts";
 
@@ -28,48 +27,51 @@ export const NavigationBanner = (
   return (
     <>
       <div className="supports-backdrop-blur:bg-white/60 sticky top-0 z-50 w-full flex-none border-b border-slate-900/10 bg-white/95 backdrop-blur transition-colors duration-500 dark:border-slate-50/[0.06] dark:bg-transparent sm:hidden">
-        <header className="m-4 flex items-center">
-          <button
-            type="button"
-            aria-expanded={true}
-            onClick={() => {
-              setVisible(!visible);
-            }}
-            className="text-zinc-500 hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300">
-            <span className="sr-only">Navigation</span>
-            <svg width="24" height="24">
-              <path
-                d={HamburgerIcon.svgPath}
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"></path>
-            </svg>
-          </button>
-          <ol className="ml-4 flex min-w-0 whitespace-nowrap text-sm leading-6">
-            <li className="flex items-center">
-              <Link to={"/"}>Mathias Bosman</Link>
-              {currentPageLink && (
-                <svg
-                  width="3"
-                  height="6"
-                  aria-hidden="true"
-                  className="mx-3 overflow-visible text-slate-400">
-                  <path
-                    d="M0 0L3 3L0 6"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"></path>
-                </svg>
-              )}
-            </li>
-            {currentPageLink && (
-              <li className="truncate font-semibold text-slate-900 dark:text-slate-200">
-                {currentPageLink.text}
+        <header className="m-4 flex items-center justify-between">
+          <div id="tmpNavLeft" className={"flex items-center"}>
+            <button
+              type="button"
+              aria-expanded={true}
+              onClick={() => {
+                setVisible(!visible);
+              }}
+              className="text-zinc-500 hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300">
+              <span className="sr-only">Navigation</span>
+              <svg width="24" height="24">
+                <path
+                  d={HamburgerIcon.svgPath}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"></path>
+              </svg>
+            </button>
+            <ol className="ml-4 flex min-w-0 whitespace-nowrap text-sm leading-6">
+              <li className="flex items-center">
+                <a href={"/"}>Mathias Bosman</a>
+                {currentPageLink && (
+                  <svg
+                    width="3"
+                    height="6"
+                    aria-hidden="true"
+                    className="mx-3 overflow-visible text-slate-400">
+                    <path
+                      d="M0 0L3 3L0 6"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"></path>
+                  </svg>
+                )}
               </li>
-            )}
-          </ol>
+              {currentPageLink && (
+                <li className="truncate font-semibold text-slate-900 dark:text-slate-200">
+                  {currentPageLink.text}
+                </li>
+              )}
+            </ol>
+          </div>
+          <span className={""}>divje</span>
         </header>
       </div>
       <div>
@@ -120,21 +122,21 @@ export const NavigationBanner = (
                 return (
                   <li key={i}>
                     {currentPageLink === link ? (
-                      <Link
+                      <a
                         className={
                           "-ml-px block border-l border-current pl-4 font-bold text-indigo-500"
                         }
-                        to={link.href}>
+                        href={link.href}>
                         {link.text}
-                      </Link>
+                      </a>
                     ) : (
-                      <Link
+                      <a
                         className={
                           "-ml-px block border-l border-transparent pl-4 hover:border-current hover:text-indigo-500"
                         }
-                        to={link.href}>
+                        href={link.href}>
                         {link.text}
-                      </Link>
+                      </a>
                     )}
                   </li>
                 );
