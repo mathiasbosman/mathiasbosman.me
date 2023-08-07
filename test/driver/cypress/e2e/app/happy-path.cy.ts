@@ -3,17 +3,16 @@ import { allPages, publicTestPages } from "../config.ts";
 describe("Happy paths", () => {
   function _navigate(preProcessor: () => void, path: string): void {
     preProcessor();
-    cy.get("nav")
-      .find('a[href="' + path + '"]')
-      .filter(":visible") //we have two navs but in this case we don't really care
-      .click();
+    cy.get("nav").filter(":visible").within(() => {
+      cy.get(`a[href="${path}"]`).click()
+    });
   }
 
   function _navigateTooAndBackHome(navPreProcessor: () => void): void {
     cy.visit("/");
     publicTestPages.forEach((path) => {
       _navigate(navPreProcessor, path);
-      cy.get('header a[href="/"]').click();
+      cy.get('header a[href="/"]').filter(":visible").click();
       cy.location().should((loc) => expect(loc.pathname).to.eq("/"));
     });
   }

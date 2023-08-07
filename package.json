@@ -17,7 +17,7 @@
     "test:e2e": "cypress run --project test/driver/cypress",
     "test:e2e:app": "cypress run --project test/driver/cypress --spec '**/e2e/app/**/*'",
     "test:component": "cypress run --project test/driver/cypress --component",
-    "test:cy:ui": "cypress open --project test/driver/cypress"
+    "cy:ui": "cypress open --project test/driver/cypress"
   },
   "dependencies": {
     "react": "^18.2.0",
