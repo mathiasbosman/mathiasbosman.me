@@ -2,18 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <lastmod>{gets updated via preInstall script}</lastmod>
-    <loc>https://mathiasbosman.be/</loc>
+    <loc>https://mathiasbosman.me/</loc>
   </url>
   <url>
     <lastmod>{gets updated via preInstall script}</lastmod>
-    <loc>https://mathiasbosman.be/about</loc>
+    <loc>https://mathiasbosman.me/about</loc>
   </url>
   <url>
     <lastmod>{gets updated via preInstall script}</lastmod>
-    <loc>https://mathiasbosman.be/projects</loc>
+    <loc>https://mathiasbosman.me/projects</loc>
   </url>
   <url>
     <lastmod>{gets updated via preInstall script}</lastmod>
-    <loc>https://mathiasbosman.be/experiences</loc>
+    <loc>https://mathiasbosman.me/experiences</loc>
   </url>
 </urlset>
