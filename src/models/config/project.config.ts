@@ -63,10 +63,10 @@ export const projectsConfig: ProjectsConfig = {
         src: avatar,
         alt: "Avatar",
       },
-      title: "mathiasbosman.be",
+      title: "mathiasbosman.me",
       link: {
         href: "#",
-        text: "mathiasbosman.be",
+        text: "mathiasbosman.me",
       },
       description:
         "This very website! Using React, Tailwind CSS and Vercel for hosting",

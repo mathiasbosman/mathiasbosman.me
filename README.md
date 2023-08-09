@@ -1,9 +1,9 @@
-# [MathiasBosman.be][link_mathiasbosman_be]
+# [mathiasbosman.me][link_mathiasbosman_me]
 
 ## About
 
 A simple website that tells a bit more abou me.  
-Find it on [mathiasbosman.be][link_mathiasbosman_be].
+Find it on [mathiasbosman.me][link_mathiasbosman_me].
 
 ## Development
 
@@ -99,9 +99,9 @@ Every pull request will deploy a preview app.
 - [Vite][link_vite]
 - [Cypress][link_cypress]
 
-_For other dependencies used check out the [package.json](./package.json) file._
+_For other dependencies used check out the [package.json](package.json) file._
 
-[link_mathiasbosman_be]: http://mathiasbosman.be
+[link_mathiasbosman_me]: http://mathiasbosman.me
 [link_react]: https://react.dev
 [link_tailwind]: https://tailwindcss.com/
 [link_cypress]: https://cypress.io

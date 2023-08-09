@@ -9,4 +9,4 @@ Allow: /assets
 User-agent: facebookexternalhit
 Allow: /assets
 
-Sitemap: http://mathiasbosman.be/sitemap.xml
+Sitemap: http://mathiasbosman.me/sitemap.xml
