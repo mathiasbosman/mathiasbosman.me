@@ -1,7 +1,7 @@
 {
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/(home|about|experiences|projects)",
       "destination": "/"
     }
   ]
