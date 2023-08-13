@@ -1,9 +1,10 @@
-// update <lastMod> in the sitemap
 const { readFile, writeFile, copyFile } = require(`fs`);
-const file = `./dist/sitemap.xml`;
+const buildDir = "./dist/";
 const encoding = `utf-8`;
 
-readFile(file, encoding, function (err, contents) {
+// update <lastMod> in the sitemap
+const sitemap = buildDir + "sitemap.xml";
+readFile(sitemap, encoding, function (err, contents) {
   if (err) {
     console.log(err);
     return;
@@ -12,17 +13,17 @@ readFile(file, encoding, function (err, contents) {
   const currentDate = `<lastmod>` + new Date().toISOString() + `</lastmod>`;
   const replaced = contents.replace(/<lastmod>.+<\/lastmod>/g, currentDate);
 
-  writeFile(file, replaced, encoding, function (err) {
+  writeFile(sitemap, replaced, encoding, function (err) {
     if (err) {
       throw err;
     } else {
-      console.log(`${file} now contains ${currentDate}`);
+      console.log(`${sitemap} now contains ${currentDate}`);
     }
   });
 });
 
 // copy index.html to 404.html
-copyFile("./dist/index.html", "./dist/404.html", (err) => {
+copyFile(buildDir + "index.html", buildDir + "404.html", (err) => {
   if (err) {
     throw err;
   }
