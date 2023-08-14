@@ -7,7 +7,6 @@ import { Analytics } from "@components/analytics.tsx";
 const router = createBrowserRouter(routes);
 
 export const App = (): ReactElement => {
-
   return (
     <>
       {window.location.origin.includes(packageInfo.homepage) && (
