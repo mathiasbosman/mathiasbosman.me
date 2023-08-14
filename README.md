@@ -15,9 +15,9 @@ The terminal will tell you which local address is used.
 For example:
 
 ```shell
-  VITE v4.4.3  ready in 126 ms
+  VITE vx.x.x  ready in 126 ms
 
-  ➜  Local:   http://localhost:5173/
+  ➜  Local:   http://localhost:9000/
   ➜  Network: use --host to expose
   ➜  press h to show help
 ```
@@ -69,7 +69,7 @@ For end-2-end tests the application should be running.
 
 ```shell
 npm run dev
-npm run test:ui
+npm run cy:ui
 ```
 
 ##### Run on preview build
