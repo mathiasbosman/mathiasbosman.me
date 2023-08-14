@@ -39,4 +39,7 @@ export default defineConfig({
     port: SERVER_PORT,
   },
   plugins: [react()],
+  define: {
+    "process.env": {},
+  },
 });
