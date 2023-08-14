@@ -1,15 +1,20 @@
 import type { ReactElement } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { routes } from "@models/config/navigation.config.tsx";
+import packageJson from "../package.json";
 
 const router = createBrowserRouter(routes);
 
 export const App = (): ReactElement => {
 
-  console.log(process.env.NODE_ENV);
+  alert(window.location.origin);
+  alert(packageJson.homepage);
 
   return (
     <>
+      {window.location.origin.includes(packageJson.homepage) && (
+        <p className={"sr-only"}>test</p>
+      )}
       <RouterProvider router={router} />
     </>
   );
