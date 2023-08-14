@@ -5,6 +5,9 @@ import { routes } from "@models/config/navigation.config.tsx";
 const router = createBrowserRouter(routes);
 
 export const App = (): ReactElement => {
+
+  console.log(process.env.NODE_ENV);
+
   return (
     <>
       <RouterProvider router={router} />
