@@ -8,10 +8,10 @@ const router = createBrowserRouter(routes);
 export const App = (): ReactElement => {
   return (
     <>
-        <PlausibleAnalytics
-          domain={"mathiasbosman.me"}
-          endpoint={"https://plausible.io/js/script.js"}
-        />
+      <PlausibleAnalytics
+        domain={"mathiasbosman.me"}
+        endpoint={"https://plausible.io/js/script.js"}
+      />
       <RouterProvider router={router} />
     </>
   );
