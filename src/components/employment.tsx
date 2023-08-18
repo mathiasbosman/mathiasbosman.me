@@ -36,7 +36,7 @@ export const Employment = (props: PropsWithChildren<Props>): ReactElement => {
     experience: Experience,
   ): ReactElement {
     const until = item.period.to;
-    const untilString = until?.getFullYear() ?? "present";
+    const untilString = item.period.getUntilString();
     const from = item.period.from.getFullYear();
     return (
       <article key={index} className={"flex gap-4"}>

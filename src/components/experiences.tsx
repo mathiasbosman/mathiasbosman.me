@@ -1,4 +1,3 @@
-import { renderPeriodYearString } from "@shared/utils.ts";
 import { ArrowRightIcon } from "@shared/icons.ts";
 import type {
   Experience,
@@ -53,7 +52,7 @@ export const Experiences = (props: PropsWithChildren<Props>): ReactElement => {
             aria-hidden={true}>
             <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
           </span>
-          {renderPeriodYearString(item.period, "present")}
+          {item.period.toString()}
         </p>
         {item.description !== undefined && (
           <p

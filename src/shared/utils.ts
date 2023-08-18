@@ -3,6 +3,8 @@ import { Buffer } from "buffer";
 export interface HTMLImage {
   alt: string;
   src: string;
+  loading?: "eager" | "lazy";
+  decoding?: "async" | "auto" | "sync";
 }
 
 export interface HTMLSimpleLink {
@@ -10,23 +12,29 @@ export interface HTMLSimpleLink {
   text?: string;
 }
 
-export interface Period {
+export class Period {
   from: Date;
   to?: Date;
-}
 
-export function renderPeriodYearString(
-  period: Period,
-  fallback: string,
-): string | number {
-  const fromYear = period.from.getFullYear();
-  const toYear = period.to != null ? period.to.getFullYear() : fallback;
-
-  if (fromYear === toYear) {
-    return fromYear;
+  constructor(from: Date, to?: Date) {
+    this.from = from;
+    this.to = to;
   }
 
-  return [period.from.getFullYear(), toYear].filter((y) => y).join(" - ");
+  getUntilString(): string {
+    return this.to?.getFullYear().toString() ?? "present";
+  }
+
+  toString(): string | number {
+    const fromYear = this.from.getFullYear();
+    const toYear = this.to != null ? this.to.getFullYear() : "present";
+
+    if (fromYear === toYear) {
+      return fromYear;
+    }
+
+    return [fromYear, toYear].filter((y) => y).join(" - ");
+  }
 }
 
 export function escapeHtml(input: string): string {

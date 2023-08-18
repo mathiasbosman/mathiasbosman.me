@@ -1,33 +1,20 @@
 import { describe, expect, it } from "vitest";
-import {
-  escapeHtml,
-  type Period,
-  renderPeriodYearString,
-  shuffleArray,
-} from "@shared/utils.ts";
+import { escapeHtml, Period, shuffleArray } from "@shared/utils.ts";
 
-describe("renderPeriodYearString()", () => {
-  it("Should only return the year if same year", () => {
-    const period: Period = {
-      from: new Date("2020-01-01"),
-      to: new Date("2020-12-31"),
-    };
-    expect(renderPeriodYearString(period, "foo")).eq(2020);
+describe("Period", () => {
+  it("Should have toString() returning only the year if same year", () => {
+    const period = new Period(new Date("2020-01-01"), new Date("2020-12-31"));
+    expect(period.toString()).eq(2020);
   });
 
-  it("Should  correct year span", () => {
-    const period: Period = {
-      from: new Date("2020-01-01"),
-      to: new Date("2023-12-31"),
-    };
-    expect(renderPeriodYearString(period, "foo")).eq("2020 - 2023");
+  it("Should have toString() returning correct year span", () => {
+    const period = new Period(new Date("2020-01-01"), new Date("2023-12-31"));
+    expect(period.toString()).eq("2020 - 2023");
   });
 
   it("Should fallback if 'to' is empty", () => {
-    const period: Period = {
-      from: new Date("2020-01-01"),
-    };
-    expect(renderPeriodYearString(period, "foo")).eq("2020 - foo");
+    const period = new Period(new Date("2020-01-01"));
+    expect(period.toString()).eq("2020 - present");
   });
 });
 
