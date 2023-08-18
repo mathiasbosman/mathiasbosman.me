@@ -21,13 +21,25 @@ export class Period {
     this.to = to;
   }
 
-  getUntilString(): string {
+  /**
+   * Returns either the given endyear or "present".
+   *
+   * @return {string | number} The end year.
+   */
+  getUntilString(): string | number {
     return this.to?.getFullYear().toString() ?? "present";
   }
 
+  /**
+   * Converts the date range to a string representation.
+   * If both years are the same, the range is represented by the year.
+   * If no "to" year is given, the year is omitted and set as "present".
+   *
+   * @return {string | number} The string representation of the date range.
+   */
   toString(): string | number {
     const fromYear = this.from.getFullYear();
-    const toYear = this.to != null ? this.to.getFullYear() : "present";
+    const toYear = this.getUntilString();
 
     if (fromYear === toYear) {
       return fromYear;
@@ -37,6 +49,12 @@ export class Period {
   }
 }
 
+/**
+ * Escapes special characters in a given HTML string.
+ *
+ * @param {string} input - The HTML string to escape.
+ * @return {string} The escaped HTML string.
+ */
 export function escapeHtml(input: string): string {
   const matchHtmlRegExp = /["'&<>]/;
   const str = "" + input;
@@ -83,6 +101,13 @@ export function escapeHtml(input: string): string {
   return lastIndex !== index ? html + str.substring(lastIndex, index) : html;
 }
 
+/**
+ * Sends an email to the specified recipient with an optional subject.
+ *
+ * @param {string} to - The email address of the recipient.
+ * @param {string} [subject] - The subject of the email. Optional.
+ * @returns {void} - This function does not return anything.
+ */
 export function sendEmail(to: string, subject?: string): void {
   const buffer = Buffer.from(to, "base64");
   window.location.href =
@@ -90,6 +115,12 @@ export function sendEmail(to: string, subject?: string): void {
     (subject !== undefined ? `?subject=${escapeHtml(subject)}` : "");
 }
 
+/**
+ * Shuffles the elements of an array randomly.
+ *
+ * @param {[]} original - The original array to be shuffled.
+ * @return {[]} The shuffled array.
+ */
 export function shuffleArray<T>(original: T[]): T[] {
   if (!Array.isArray(original) || !original.length) {
     return [];
