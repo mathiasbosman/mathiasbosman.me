@@ -41,7 +41,7 @@ export class Period {
     const fromYear = this.from.getFullYear();
     const toYear = this.getUntilString();
 
-    if (fromYear === toYear) {
+    if (fromYear.toString() === toYear.toString()) {
       return fromYear;
     }
 
