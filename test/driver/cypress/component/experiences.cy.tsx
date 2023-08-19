@@ -4,7 +4,6 @@ import {
   experiencesWithOnePlaceAndOneItem,
   experienceWithOnePlaceAndOneItem,
 } from "../fixtures/experience.fixture";
-import { renderPeriodYearString } from "@shared/utils.ts";
 
 describe("<Experiences/> component", () => {
   it("Should render with one item", () => {
@@ -29,7 +28,7 @@ describe("<Experiences/> component", () => {
             cy.get("p").should("contain.text", experienceItemMock.description);
             cy.get("p").should(
               "contain.text",
-              renderPeriodYearString(experienceItemMock.period, "present"),
+              experienceItemMock.period.toString(),
             );
           });
       });

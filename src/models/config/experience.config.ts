@@ -1,4 +1,5 @@
-import type { HTMLImage, HTMLSimpleLink, Period } from "@shared/utils.ts";
+import type { HTMLImage, HTMLSimpleLink } from "@shared/utils.ts";
+import { Period } from "@shared/utils.ts";
 
 export interface ExperienceConfig {
   experiences: Experience[];
@@ -28,7 +29,7 @@ export const experienceConfig: ExperienceConfig = {
       },
       items: [
         {
-          period: { from: new Date(2022, 11) },
+          period: new Period(new Date(2022, 11)),
           title: "Project manager",
           pinned: true,
           description:
@@ -39,24 +40,24 @@ export const experienceConfig: ExperienceConfig = {
           },
         },
         {
-          period: { from: new Date(2018, 9), to: new Date(2022, 11) },
+          period: new Period(new Date(2018, 9), new Date(2022, 11)),
           title: "Java developer",
           pinned: true,
           description:
             "Part of a devops team at the department of environment.",
         },
         {
-          period: { from: new Date(2016, 10), to: new Date(2018, 9) },
+          period: new Period(new Date(2016, 10), new Date(2018, 9)),
           title: "Application manager",
           description:
             "Application manager for one of the most used applications at the department of environment.",
         },
         {
-          period: { from: new Date(2016, 2), to: new Date(2016, 8) },
+          period: new Period(new Date(2016, 2), new Date(2016, 8)),
           title: "Personnel administration",
         },
         {
-          period: { from: new Date(2013, 10), to: new Date(2016, 8) },
+          period: new Period(new Date(2013, 10), new Date(2016, 8)),
           title: "Expert personnel system & IT-support",
         },
       ],
@@ -69,7 +70,7 @@ export const experienceConfig: ExperienceConfig = {
       },
       items: [
         {
-          period: { from: new Date(2013, 2), to: new Date(2013, 10) },
+          period: new Period(new Date(2013, 2), new Date(2013, 10)),
           title: "PHP developer",
           pinned: true,
           description:
@@ -89,7 +90,7 @@ export const experienceConfig: ExperienceConfig = {
       },
       items: [
         {
-          period: { from: new Date(2012, 6), to: new Date(2012, 12) },
+          period: new Period(new Date(2012, 6), new Date(2012, 12)),
           title: "PHP developer",
           pinned: true,
           description: "6-month internship as PHP developer.",
