@@ -1,13 +1,7 @@
 import type { PropsWithChildren, ReactElement, ReactNode } from "react";
 import { useState } from "react";
 import type { HTMLSimpleLink } from "@shared/utils.ts";
-import {
-  CloseIcon,
-  GitHubIcon,
-  HamburgerIcon,
-  LinkedInIcon,
-  TwitterIcon,
-} from "@shared/icons.ts";
+import { GitHubIcon, LinkedInIcon, TwitterIcon } from "@shared/icons.ts";
 import FollowIconLink from "@components/typography/folow-iconlink.tsx";
 import { LINK_GITHUB, LINK_LINKEDIN, LINK_TWITTER } from "@/constants.ts";
 
@@ -38,13 +32,16 @@ export const NavigationBanner = (
               }}
               className="text-zinc-500 hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300">
               <span className="sr-only">Navigation</span>
-              <svg width="24" height="24">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="h-7 w-7">
                 <path
-                  d={HamburgerIcon.svgPath}
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"></path>
+                  fillRule="evenodd"
+                  d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+                  clipRule="evenodd"
+                />
               </svg>
             </button>
             <ol className="ml-4 flex min-w-0 whitespace-nowrap text-sm leading-6">
@@ -99,16 +96,15 @@ export const NavigationBanner = (
               setVisible(!visible);
             }}>
             <svg
-              viewBox={"0 0 24 24"}
-              aria-hidden={!visible}
-              className={"h-6 w-6 text-zinc-500 dark:text-zinc-400"}>
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="h-6 w-6 text-zinc-500 dark:text-zinc-400">
               <path
-                d={CloseIcon.svgPath}
-                fill={"none"}
-                stroke={"currentColor"}
-                strokeWidth={1.5}
-                strokeLinecap={"round"}
-                strokeLinejoin={"round"}></path>
+                fillRule="evenodd"
+                d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
+                clipRule="evenodd"
+              />
             </svg>
           </button>
           <h2 className={"font-bold text-zinc-600 dark:text-zinc-400"}>

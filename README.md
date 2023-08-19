@@ -96,6 +96,7 @@ Every pull request will deploy a preview app.
 
 - [React][link_react]
 - [Tailwindcss][link_tailwind]
+- [Heroicons][link_heroicons]
 - [Vite][link_vite]
 - [Cypress][link_cypress]
 
@@ -104,6 +105,8 @@ _For other dependencies used check out the [package.json](package.json) file._
 [link_mathiasbosman_me]: http://mathiasbosman.me
 [link_react]: https://react.dev
 [link_tailwind]: https://tailwindcss.com/
+
+[link_heroicons]: https://heroicons.com
 [link_cypress]: https://cypress.io
 [link_vercel]: https://vercel.com/
 [link_vite]: http://vitejs.dev
