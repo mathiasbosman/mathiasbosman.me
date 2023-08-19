@@ -3,12 +3,7 @@ import Page from "@components/common/page.tsx";
 import ContentWrapper from "@components/common/content-wrapper.tsx";
 import SectionWrapper from "@components/common/section-wrapper.tsx";
 import { sendEmail } from "@shared/utils.ts";
-import {
-  EmailIcon,
-  GitHubIcon,
-  LinkedInIcon,
-  TwitterIcon,
-} from "@shared/icons.ts";
+import { GitHubIcon, LinkedInIcon, TwitterIcon } from "@shared/icons.ts";
 import PageTitle from "@components/typography/page-title.tsx";
 import {
   CONTACT_EMAIL,
@@ -132,12 +127,12 @@ export const AboutPage = (): ReactElement => {
                         sendEmail(CONTACT_EMAIL);
                       }}>
                       <svg
+                        xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
-                        aria-hidden="true"
-                        className={
-                          "h-5 w-5 flex-none fill-zinc-500 transition group-hover:fill-indigo-500"
-                        }>
-                        <path fillRule={"evenodd"} d={EmailIcon.svgPath}></path>
+                        fill="currentColor"
+                        className="h-5 w-5 fill-zinc-500 transition group-hover:fill-indigo-500">
+                        <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
+                        <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
                       </svg>
                       <span className={"ml-4"}>Send me an email</span>
                     </button>

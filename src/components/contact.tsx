@@ -13,21 +13,17 @@ export const Contact = (): ReactElement => {
           "flex text-sm font-semibold text-zinc-900 dark:text-zinc-100"
         }>
         <svg
-          viewBox={"0 0 24 24"}
-          fill={"none"}
-          strokeWidth={1.5}
-          strokeLinecap={"round"}
-          strokeLinejoin={"round"}
-          aria-hidden={true}
-          className={"h-5 w-5 flex-none"}>
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="1.5"
+          stroke="currentColor"
+          className="h-5 w-5">
           <path
-            d="M2.75 7.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
-            className={
-              "fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
-            }></path>
-          <path
-            d="m4 6 6.024 5.479a2.915 2.915 0 0 0 3.952 0L20 6"
-            className={"stroke-zinc-400 dark:stroke-zinc-500"}></path>
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+          />
         </svg>
         <span className={"ml-3"}>Contact me</span>
       </h2>
