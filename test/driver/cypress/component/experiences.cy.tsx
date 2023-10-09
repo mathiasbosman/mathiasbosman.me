@@ -3,7 +3,7 @@ import {
   experienceItemMock,
   experiencesWithOnePlaceAndOneItem,
   experienceWithOnePlaceAndOneItem,
-} from "../fixtures/experience.fixture";
+} from "../../../fixtures/experience.fixture";
 
 describe("<Experiences/> component", () => {
   it("Should render with one item", () => {

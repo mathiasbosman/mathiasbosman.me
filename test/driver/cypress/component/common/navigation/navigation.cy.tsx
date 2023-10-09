@@ -1,6 +1,6 @@
 import Navigation from "@components/common/navigation/navigation.tsx";
 import type { HTMLSimpleLink } from "@shared/utils.ts";
-import { htmlSimpleLinkFixture } from "../../../fixtures/utils.fixture.ts";
+import { htmlSimpleLinkFixture } from "../../../../../fixtures/utils.fixture.ts";
 import { MemoryRouter } from "react-router-dom";
 
 describe("<Navigation/> component", () => {
