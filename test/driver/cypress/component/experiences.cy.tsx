@@ -2,8 +2,8 @@ import Experiences from "@components/experiences.tsx";
 import {
   experienceItemMock,
   experiencesWithOnePlaceAndOneItem,
-  experienceWithOnePlaceAndOneItem,
-} from "../fixtures/experience.fixture";
+  experienceWithOnePlaceAndOneItem
+} from "../../../fixtures/experience.fixture";
 
 describe("<Experiences/> component", () => {
   it("Should render with one item", () => {

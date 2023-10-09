@@ -1,6 +1,6 @@
 import SocialIconlink from "@components/typography/social-iconlink.tsx";
 import { LinkIcon } from "@shared/icons.ts";
-import { htmlSimpleLinkFixture } from "../../fixtures/utils.fixture.ts";
+import { htmlSimpleLinkFixture } from "../../../../fixtures/utils.fixture.ts";
 
 describe("<SocialIconlink/> component", () => {
   it("Should render correctly", () => {

@@ -1,6 +1,6 @@
 import { LinkIcon } from "@shared/icons.ts";
 import FollowIconLink from "@components/typography/folow-iconlink.tsx";
-import { htmlSimpleLinkFixture } from "../../fixtures/utils.fixture.ts";
+import { htmlSimpleLinkFixture } from "../../../../fixtures/utils.fixture.ts";
 
 describe("<FollowIconLink/> component", () => {
   it("Should render correctly", () => {

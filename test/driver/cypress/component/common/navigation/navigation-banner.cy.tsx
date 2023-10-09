@@ -1,5 +1,5 @@
 import type { HTMLSimpleLink } from "@shared/utils.ts";
-import { htmlSimpleLinkFixture } from "../../../fixtures/utils.fixture.ts";
+import { htmlSimpleLinkFixture } from "../../../../../fixtures/utils.fixture.ts";
 import { MemoryRouter } from "react-router-dom";
 import NavigationBanner from "@components/common/navigation/navigation-banner.tsx";
 
