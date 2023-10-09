@@ -28,7 +28,7 @@ export const projectsConfig: ProjectsConfig = {
         text: "GitHub repo",
       },
       description:
-        "Sandbox project I used to learn some Lit. Uses Vite and Vitest. It also served as the base for this website.",
+        "Sandbox project I used to learn some Lit. Uses Vite and Vitest.",
     },
     {
       pinned: true,
@@ -65,8 +65,8 @@ export const projectsConfig: ProjectsConfig = {
       },
       title: "mathiasbosman.me",
       link: {
-        href: "#",
-        text: "mathiasbosman.me",
+        href: "https://github.com/mathiasbosman/mathiasbosman.me",
+        text: "GitHub repo",
       },
       description:
         "This very website! Using React, Tailwind CSS and Vercel for hosting",
