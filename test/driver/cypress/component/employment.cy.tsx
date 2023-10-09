@@ -2,7 +2,7 @@ import { Employment } from "@components/employment.tsx";
 import {
   experienceItemMock,
   experiencesWithOnePlaceAndOneItem,
-  experiencesWithTwoPlaces
+  experiencesWithTwoPlaces,
 } from "../../../fixtures/experience.fixture";
 
 describe("<Employment/> component", () => {
