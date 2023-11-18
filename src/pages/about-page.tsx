@@ -17,49 +17,38 @@ import profilePicture from "@assets/images/mathias_curacao.webp";
 
 export const AboutPage = (): ReactElement => {
   return (
-    <Page title={"About - Mathias Bosman"} renderAvatar={true}>
+    <Page title="About - Mathias Bosman" renderAvatar={true}>
       <ContentWrapper>
         <SectionWrapper>
-          <div className={"mx-auto max-w-2xl lg:max-w-5xl"}>
-            <div
-              className={
-                "-mt-6 grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12"
-              }>
-              <div className={"lg:pl-20"}>
-                <div className={"max-w-xs px-2.5 lg:max-w-none"}>
+          <div className="mx-auto max-w-2xl lg:max-w-5xl">
+            <div className="-mt-6 grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
+              <div className="lg:pl-20">
+                <div className="max-w-xs px-2.5 lg:max-w-none">
                   <img
                     src={profilePicture}
-                    alt={"Just me being black and white"}
+                    alt="Just me being black and white"
                     style={{ color: "transparent" }}
-                    loading={"lazy"}
+                    loading="lazy"
                     width={800}
                     height={800}
-                    decoding={"async"}
-                    className={
-                      "aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover grayscale hover:grayscale-0 dark:bg-zinc-800"
-                    }
+                    decoding="async"
+                    className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover grayscale hover:grayscale-0 dark:bg-zinc-800"
                   />
                 </div>
               </div>
-              <div className={"lg:order-first lg:row-span-2"}>
+              <div className="lg:order-first lg:row-span-2">
                 <PageTitle
                   title={
                     <span>
-                      I&apos;m{" "}
-                      <span
-                        className={
-                          "bg-gradient-to-r  from-violet-500 to-pink-600 bg-clip-text text-transparent"
-                        }>
+                      I&apos;m&nbsp;
+                      <span className="bg-gradient-to-r  from-violet-500 to-pink-600 bg-clip-text text-transparent">
                         Mathias Bosman
                       </span>
                       . Living in Belgium, being part of the future.
                     </span>
                   }
                 />
-                <section
-                  className={
-                    "mt-12 space-y-7 text-base text-zinc-600 dark:text-zinc-400"
-                  }>
+                <section className="mt-12 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
                   <p>
                     In the late 90&apos;s I got my hands on a fairly simple
                     Windows desktop rocking the late <em>but great</em> Windows
@@ -91,7 +80,7 @@ export const AboutPage = (): ReactElement => {
                     lighting technician locally.
                   </p>
                   <p>
-                    Today, I&apos;m the team lead -
+                    Today, I&apos;m the project manager and team lead -
                     <em>(I prefer &quot;one of the team&quot;)</em> - of a small
                     group of Java developers who develop and maintain business
                     applications for the department of environment of the
@@ -103,26 +92,21 @@ export const AboutPage = (): ReactElement => {
                   </p>
                 </section>
               </div>
-              <aside className={"lg:pl-20"}>
-                <h2 className={"sr-only"}>My social media</h2>
-                <ul role={"list"}>
-                  <li className={"mt-4 flex"}>
+              <aside className="lg:pl-20">
+                <h2 className="sr-only">My social media</h2>
+                <ul role="list">
+                  <li className="mt-4 flex">
                     <FollowIconLink link={LINK_GITHUB} icon={GitHubIcon} />
                   </li>
-                  <li className={"mt-4 flex"}>
+                  <li className="mt-4 flex">
                     <FollowIconLink link={LINK_LINKEDIN} icon={LinkedInIcon} />
                   </li>
-                  <li className={"mt-4 flex"}>
+                  <li className="mt-4 flex">
                     <FollowIconLink link={LINK_TWITTER} icon={TwitterIcon} />
                   </li>
-                  <li
-                    className={
-                      "mt-8 flex border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
-                    }>
+                  <li className="mt-8 flex border-t border-zinc-100 pt-8 dark:border-zinc-700/40">
                     <button
-                      className={
-                        "group flex text-sm font-medium text-zinc-800 transition hover:text-indigo-500 dark:text-zinc-200 dark:hover:text-indigo-500"
-                      }
+                      className="group flex text-sm font-medium text-zinc-800 transition hover:text-indigo-500 dark:text-zinc-200 dark:hover:text-indigo-500"
                       onClick={() => {
                         sendEmail(CONTACT_EMAIL);
                       }}>
@@ -134,7 +118,7 @@ export const AboutPage = (): ReactElement => {
                         <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
                         <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
                       </svg>
-                      <span className={"ml-4"}>Send me an email</span>
+                      <span className="ml-4">Send me an email</span>
                     </button>
                   </li>
                 </ul>

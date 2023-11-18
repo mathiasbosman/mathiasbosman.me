@@ -24,21 +24,21 @@ export const HomePage = (): ReactElement => {
   return (
     <Page renderAvatar={false}>
       <ContentWrapper>
-        <section className={"relative px-2 sm:px-8 lg:px-12"}>
+        <section className="relative px-2 sm:px-8 lg:px-12">
           <Avatar image={{ src: avatar, alt: "Avatar" }} size={AvatarSize.s} />
           <PageTitle
-            title={"Mathias Bosman"}
+            title="Mathias Bosman"
             subtitleSlot={
-              <div className={"mt-2 text-2xl font-medium sm:text-4xl"}>
-                Software&nbsp;developer, network&nbsp;engineer &amp;
-                lighting&nbsp;tech
+              <div className="mt-2 text-2xl font-medium sm:text-4xl">
+                IT&nbsp;project&nbsp;manager, software&nbsp;developer,
+                network&nbsp;engineer &amp; lighting&nbsp;tech
               </div>
             }
           />
-          <aside className={"mt-6 text-base text-zinc-600 dark:text-zinc-400"}>
+          <aside className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I&apos;m Mathias, a software developer and network engineer based
-              in Lebbeke, Belgium.
+              I&apos;m Mathias, an IT project manager, software developer and
+              network engineer based in Lebbeke, Belgium.
               <br />
               In my spare time you might find me: in a theatre (either watching
               whatever is on stage or fiddling with the stage lights), visiting
@@ -53,7 +53,7 @@ export const HomePage = (): ReactElement => {
             </p>
           </aside>
 
-          <div className={"mt-6 flex gap-6"}>
+          <div className="mt-6 flex gap-6">
             <SocialIconlink link={LINK_GITHUB} icon={GitHubIcon} />
             <SocialIconlink link={LINK_LINKEDIN} icon={LinkedInIcon} />
             <SocialIconlink link={LINK_TWITTER} icon={TwitterIcon} />
@@ -84,28 +84,19 @@ export const HomePage = (): ReactElement => {
           },
         ]}
       />
-      <div className={"mt-8 px-2 sm:px-8"}>
+      <div className="mt-8 px-2 sm:px-8">
         <ContentWrapper>
-          <div className={"mx-auto mt-10 max-w-2xl lg:mt-6 lg:max-w-5xl"}>
-            <div
-              className={
-                "mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2"
-              }>
+          <div className="mx-auto mt-10 max-w-2xl lg:mt-6 lg:max-w-5xl">
+            <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
               <section className="grid grid-cols-1 gap-y-16">
-                <h2 className={"sr-only"}>Projects</h2>
+                <h2 className="sr-only">Projects</h2>
                 <Projects projects={projectsConfig.projects} pinned={true} />
               </section>
-              <section className={"space-y-10 lg:pl-16 xl:pl-24"}>
-                <div
-                  className={
-                    "rounded-lg border border-zinc-100 p-6 dark:border-zinc-700/40"
-                  }>
+              <section className="space-y-10 lg:pl-16 xl:pl-24">
+                <div className="rounded-lg border border-zinc-100 p-6 dark:border-zinc-700/40">
                   <Contact />
                 </div>
-                <div
-                  className={
-                    "rounded-lg border border-zinc-100 p-6 dark:border-zinc-700/40"
-                  }>
+                <div className="rounded-lg border border-zinc-100 p-6 dark:border-zinc-700/40">
                   <Employment experiences={experienceConfig.experiences} />
                 </div>
               </section>
