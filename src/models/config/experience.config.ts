@@ -30,10 +30,10 @@ export const experienceConfig: ExperienceConfig = {
       items: [
         {
           period: new Period(new Date(2022, 11)),
-          title: "Project manager",
+          title: "IT project manager",
           pinned: true,
           description:
-            "Team lead and project manager of a small developer team who develop and maintain business applications for the department of environment.",
+            "Team lead and project manager of a small software developer team who develop and maintain business applications for the department of environment.",
           link: {
             href: "https://www.vlaanderen.be/en/environment",
             text: "Department of Environment",
