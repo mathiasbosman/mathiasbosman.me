@@ -7,6 +7,7 @@ import { GitHubIcon, LinkedInIcon, TwitterIcon } from "@shared/icons.ts";
 import PageTitle from "@components/typography/page-title.tsx";
 import {
   CONTACT_EMAIL,
+  LINK_BEANLEAF,
   LINK_GITHUB,
   LINK_LINKEDIN,
   LINK_TWITTER,
@@ -14,6 +15,7 @@ import {
 import FollowIconLink from "@components/typography/folow-iconlink.tsx";
 
 import profilePicture from "@assets/images/mathias_curacao.webp";
+import Link from "@components/typography/link.tsx";
 
 export const AboutPage = (): ReactElement => {
   return (
@@ -44,7 +46,7 @@ export const AboutPage = (): ReactElement => {
                       <span className="bg-gradient-to-r  from-violet-500 to-pink-600 bg-clip-text text-transparent">
                         Mathias Bosman
                       </span>
-                      . Living in Belgium, being part of the future.
+                      . Living in Belgium and being part of the future.
                     </span>
                   }
                 />
@@ -52,7 +54,7 @@ export const AboutPage = (): ReactElement => {
                   <p>
                     In the late 90&apos;s I got my hands on a fairly simple
                     Windows desktop rocking the late <em>but great</em> Windows
-                    XP operating system to use as a tool for school.
+                    XP operating system. I used it as a tool for school.
                     <br />
                     <em>However...</em> I also installed Game Maker (v.6) where
                     a little spark of imagination and coding came to life.
@@ -62,7 +64,7 @@ export const AboutPage = (): ReactElement => {
                     &quot;information technology systems&quot;, which started
                     out simple by learning the programming language Pascal.
                     <br />
-                    Later on that transitioned to a love for PHP and web
+                    Later on, my interest transitioned to a love for PHP and web
                     development.
                   </p>
                   <p>
@@ -87,8 +89,14 @@ export const AboutPage = (): ReactElement => {
                     Flemish government.
                   </p>
                   <p>
-                    On the side you may also find me installing or giving
+                    On the side, you may also find me installing and providing
                     support for home and small business network installations.
+                    <br />
+                    For more information about the latter feel free to visit{" "}
+                    <strong>
+                      <Link link={LINK_BEANLEAF} />
+                    </strong>
+                    .
                   </p>
                 </section>
               </div>

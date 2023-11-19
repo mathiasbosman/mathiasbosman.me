@@ -17,7 +17,7 @@ export interface Project {
 export const projectsConfig: ProjectsConfig = {
   projects: [
     {
-      pinned: true,
+      pinned: false,
       logo: {
         alt: "Lit logo",
         src: "/assets/logos/lit.webp",
@@ -55,7 +55,7 @@ export const projectsConfig: ProjectsConfig = {
         text: "GitHub repo",
       },
       description:
-        "A trial cryptocurrency bot integration for the Bitvavo API. Purely for academic purposes... truly. Written in Java",
+        "A trial cryptocurrency bot integration for the Bitvavo API. Purely for academic purposes... truly. Written in Java.",
     },
     {
       pinned: true,
@@ -69,7 +69,21 @@ export const projectsConfig: ProjectsConfig = {
         text: "GitHub repo",
       },
       description:
-        "This very website! Using React, Tailwind CSS and Vercel for hosting",
+        "This very website! Using React, Tailwind CSS and Vercel for hosting.",
+    },
+    {
+      pinned: true,
+      logo: {
+        src: "/assets/logos/beanleaf.webp",
+        alt: "Beanleaf logo",
+      },
+      title: "beanleaf.be",
+      link: {
+        href: "https://beanleaf.be",
+        text: "beanleaf.be",
+      },
+      description:
+        "Small static website for my side-business allowing a simple email to be sent.",
     },
   ],
 };

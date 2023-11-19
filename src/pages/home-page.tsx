@@ -40,7 +40,7 @@ export const HomePage = (): ReactElement => {
               I&apos;m Mathias, an IT project manager, software developer and
               network engineer based in Lebbeke, Belgium.
               <br />
-              In my spare time you might find me: in a theatre (either watching
+              In my spare time, you might find me: in a theatre (either watching
               whatever is on stage or fiddling with the stage lights), visiting
               amusement parks or riding my race bike.
             </p>
