@@ -55,7 +55,7 @@ export const projectsConfig: ProjectsConfig = {
         text: "GitHub repo",
       },
       description:
-        "A trial cryptocurrency bot integration for the Bitvavo API. Purely for academic purposes... truly. Written in Java",
+        "A trial cryptocurrency bot integration for the Bitvavo API. Purely for academic purposes... truly. Written in Java.",
     },
     {
       pinned: true,
@@ -69,7 +69,7 @@ export const projectsConfig: ProjectsConfig = {
         text: "GitHub repo",
       },
       description:
-        "This very website! Using React, Tailwind CSS and Vercel for hosting",
+        "This very website! Using React, Tailwind CSS and Vercel for hosting.",
     },
     {
       pinned: true,
@@ -83,7 +83,7 @@ export const projectsConfig: ProjectsConfig = {
         text: "beanleaf.be",
       },
       description:
-        "Small static website for my side-business allowing a simple email to be sent",
+        "Small static website for my side-business allowing a simple email to be sent.",
     },
   ],
 };
