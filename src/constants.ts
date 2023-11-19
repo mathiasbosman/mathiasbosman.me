@@ -14,4 +14,9 @@ export const LINK_TWITTER: HTMLSimpleLink = {
   text: "Twitter",
 };
 
+export const LINK_BEANLEAF: HTMLSimpleLink = {
+  href: "https://beanleaf.be",
+  text: "beanleaf.be",
+};
+
 export const CONTACT_EMAIL = "bWF0aGlhc0BtYXRoaWFzYm9zbWFuLmJl";

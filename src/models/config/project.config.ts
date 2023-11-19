@@ -17,7 +17,7 @@ export interface Project {
 export const projectsConfig: ProjectsConfig = {
   projects: [
     {
-      pinned: true,
+      pinned: false,
       logo: {
         alt: "Lit logo",
         src: "/assets/logos/lit.webp",
@@ -70,6 +70,20 @@ export const projectsConfig: ProjectsConfig = {
       },
       description:
         "This very website! Using React, Tailwind CSS and Vercel for hosting",
+    },
+    {
+      pinned: true,
+      logo: {
+        src: "/assets/logos/beanleaf.webp",
+        alt: "Beanleaf logo",
+      },
+      title: "beanleaf.be",
+      link: {
+        href: "https://beanleaf.be",
+        text: "beanleaf.be",
+      },
+      description:
+        "Small static website for my side-business allowing a simple email to be sent",
     },
   ],
 };

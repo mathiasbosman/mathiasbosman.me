@@ -6,6 +6,7 @@ import PageTitle from "@components/typography/page-title.tsx";
 import Experiences from "@components/experiences.tsx";
 import { experienceConfig } from "@models/config/experience.config.ts";
 import { LINK_LINKEDIN } from "@/constants.ts";
+import Link from "@components/typography/link.tsx";
 
 export const ExperiencePage = (): ReactElement => {
   return (
@@ -20,14 +21,10 @@ export const ExperiencePage = (): ReactElement => {
               workplaces.
               <br />
               Below are some of the most note-worthy. If you want more detailed
-              information I invite you to take a look at{" "}
-              <a
-                className="font-bold hover:underline"
-                rel="noreferrer"
-                href={LINK_LINKEDIN.href}
-                target="_blank">
-                my LinkedIn page
-              </a>
+              information I invite you to take a look at my{" "}
+              <strong>
+                <Link link={LINK_LINKEDIN} />
+              </strong>
               .
             </p>
           </div>
