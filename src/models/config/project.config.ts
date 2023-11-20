@@ -74,7 +74,7 @@ export const projectsConfig: ProjectsConfig = {
     {
       pinned: true,
       logo: {
-        src: "/assets/logos/beanleaf.webp",
+        src: "/assets/logos/beanleaf.svg",
         alt: "Beanleaf logo",
       },
       title: "beanleaf.be",
