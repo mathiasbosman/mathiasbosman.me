@@ -29,7 +29,7 @@ export const ImageCarousel = (
             key={i}
             className={
               cssRotation +
-              " relative aspect-[5/10] w-24 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-36 sm:rounded-2xl lg:aspect-[9/10] lg:w-72"
+              " relative aspect-[5/10] w-24 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-36 sm:rounded-2xl lg:aspect-[9/10] lg:w-72 dark:bg-zinc-800"
             }>
             <img
               alt={img.alt}
