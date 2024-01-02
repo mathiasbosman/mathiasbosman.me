@@ -38,7 +38,7 @@ jobs:
         run: npm ci
       - name: Run build
         run: npm run build
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         name: Upload build folder
         with:
           name: npm-build
@@ -68,7 +68,7 @@ jobs:
           wait-on: "http://localhost:9000"
           wait-on-timeout: 15
           spec: "**/e2e/app/**/*"
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         name: Upload screenshots
         with:
           name: e2e-${{matrix.browser}}-screenshots
