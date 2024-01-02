@@ -116,28 +116,27 @@ export function sendEmail(to: string, subject?: string): void {
 }
 
 /**
- * Shuffles the elements of an array randomly.
+ * Shuffles the given array and returns it.
+ * The original array will not be modified.
  *
- * @param {[]} original - The original array to be shuffled.
- * @return {[]} The shuffled array.
+ * @param {T[]} original - The array to shuffle.
+ * @return {T[]} The shuffled array.
  */
 export function shuffleArray<T>(original: T[]): T[] {
   if (!Array.isArray(original) || !original.length) {
     return [];
   }
 
-  const shuffled = original
-    .map((value) => ({ value, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
-    .map(({ value }) => value);
+  let output = [...original];
+  output = output.sort(() => Math.random() - 0.5);
 
   // if one element is on different index we're good
   let equality = true;
-  for (let index = 0; index < shuffled.length; index++) {
-    if (shuffled[index] !== original[index]) {
+  for (let index = 0; index < output.length; index++) {
+    if (output[index] !== original[index]) {
       equality = false;
       break;
     }
   }
-  return equality ? shuffleArray(original) : shuffled;
+  return equality ? shuffleArray(original) : output;
 }
