@@ -140,4 +140,3 @@ export function shuffleArray<T>(original: T[]): T[] {
   }
   return equality ? shuffleArray(original) : output;
 }
-
