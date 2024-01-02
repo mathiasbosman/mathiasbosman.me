@@ -2,7 +2,7 @@
 
 ## About
 
-A simple website that tells a bit more abou me.  
+A simple website that tells a bit more about me.  
 Find it on [mathiasbosman.me][link_mathiasbosman_me].
 
 ## Development
