@@ -1,7 +1,7 @@
 {
   "rewrites": [
     {
-      "source": "/(home|about|experiences|projects)",
+      "source": "/(home|about|blog|experiences|projects)",
       "destination": "/"
     }
   ]

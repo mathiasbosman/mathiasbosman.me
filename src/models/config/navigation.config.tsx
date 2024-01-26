@@ -3,6 +3,7 @@ import React from "react";
 import type { RouteObject } from "react-router-dom";
 import HomePage from "@pages/home-page.tsx";
 import AboutPage from "@pages/about-page.tsx";
+import BlogPage from '@pages/blog-page.tsx'
 import ErrorPage from "@pages/error-page.tsx";
 import ExperiencePage from "@pages/experience-page.tsx";
 import ProjectsPage from "@pages/projects-page.tsx";
@@ -37,6 +38,11 @@ export const routeConfig: RouteLink[] = [
     link: { href: "/about", text: "About" },
     isPublic: true,
     element: <AboutPage />,
+  },
+  {
+    link: { href: "/blog", text: "Blog" },
+    isPublic: true,
+    element: <BlogPage />,
   },
   {
     link: { href: "/experiences", text: "Experiences" },
