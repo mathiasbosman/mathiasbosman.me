@@ -17,6 +17,20 @@ export interface Project {
 export const projectsConfig: ProjectsConfig = {
   projects: [
     {
+      pinned: true,
+      title: "Witsb",
+      logo: {
+        alt: "Witsb icon",
+        src: "/assets/logos/witsb.webp",
+      },
+      link: {
+        href: "https://github.com/mathiasbosman/witsb",
+        text: "GitHub repo",
+      },
+      description:
+        "Where is the save button? My take on a simple API to store files and reference them in a unique way.",
+    },
+    {
       pinned: false,
       logo: {
         alt: "Lit logo",
