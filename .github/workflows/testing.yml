@@ -49,7 +49,7 @@ jobs:
     timeout-minutes: 5
     strategy:
       matrix:
-        browser: ["firefox", "chrome", "electron"]
+        browser: ["firefox", "chrome", "electron", "edge"]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -66,7 +66,7 @@ jobs:
           browser: ${{ matrix.browser }}
           start: npm run preview:local
           wait-on: "http://localhost:9000"
-          wait-on-timeout: 15
+          wait-on-timeout: 30
           spec: "**/e2e/app/**/*"
       - uses: actions/upload-artifact@v4
         name: Upload screenshots
