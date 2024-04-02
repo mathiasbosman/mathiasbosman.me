@@ -49,7 +49,7 @@ jobs:
     timeout-minutes: 5
     strategy:
       matrix:
-        browser: ["firefox", "chrome", "electron"]
+        browser: ["firefox", "chrome", "electron","edge"]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
