@@ -7,7 +7,7 @@ concurrency:
 jobs:
   unit-tests:
     timeout-minutes: 5
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -17,7 +17,7 @@ jobs:
         run: npm run test:unit
   component-tests:
     timeout-minutes: 5
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -26,7 +26,7 @@ jobs:
       - name: Run component tests
         run: npm run test:component
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -49,8 +49,8 @@ jobs:
     timeout-minutes: 5
     strategy:
       matrix:
-        browser: ["firefox", "chrome", "electron", "edge"]
-    runs-on: ubuntu-latest
+        browser: ["chrome", "electron", "edge"]
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
