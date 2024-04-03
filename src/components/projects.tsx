@@ -52,7 +52,7 @@ export const Projects = (props: PropsWithChildren<Props>): ReactElement => {
         </p>
         <p
           className={
-            "relative z-10 mt-6 flex text-sm font-medium text-zinc-400 group-hover:bg-gradient-to-r group-hover:from-violet-400 group-hover:to-pink-600 group-hover:bg-clip-text group-hover:text-transparent contrast-more:text-zinc-500"
+            "relative z-10 mt-6 flex grow items-end text-sm font-medium text-zinc-400 group-hover:bg-gradient-to-r group-hover:from-violet-400 group-hover:to-pink-600 group-hover:bg-clip-text group-hover:text-transparent contrast-more:text-zinc-500"
           }>
           <svg
             viewBox={"0 0 24 24"}
