@@ -50,7 +50,7 @@ export const Projects = (props: PropsWithChildren<Props>): ReactElement => {
           }>
           {project.description}
         </p>
-        <div
+        <p
           className={
             "relative items-end grow z-10 mt-6 flex text-sm font-medium text-zinc-400 group-hover:bg-gradient-to-r group-hover:from-violet-400 group-hover:to-pink-600 group-hover:bg-clip-text group-hover:text-transparent contrast-more:text-zinc-500"
           }>
@@ -61,7 +61,7 @@ export const Projects = (props: PropsWithChildren<Props>): ReactElement => {
             <path d={LinkIcon.svgPath} fill={"currentColor"}></path>
           </svg>
           <span className={"ml-2"}>{project.link.text}</span>
-        </div>
+        </p>
       </article>
     );
   }
