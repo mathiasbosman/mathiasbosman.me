@@ -45,10 +45,9 @@ export const HomePage = (): ReactElement => {
               amusement parks or riding my race bike.
             </p>
             <p>
-              Currently full-time employed at the Department of Environment of
-              the Flemish Government.
+              Currently working for Déhora Belgium as a back-end developer.
               <br />
-              Yes, I&apos;m proud to be the human of a cute little Beagle; her
+              Also, I&apos;m proud to be the human of a cute little Beagle; her
               name is (&apos;Queen&apos;) Luna.
             </p>
           </aside>

@@ -22,14 +22,32 @@ export interface ExperienceItem {
 export const experienceConfig: ExperienceConfig = {
   experiences: [
     {
+      place: "Déhora Belgium",
+      logo: {
+        alt: "Déhora logo",
+        src: "/assets/logos/dehora.webp",
+      },
+      items: [
+        {
+          period: new Period(new Date(2024, 6)),
+          title: "Back-end developer",
+          pinned: true,
+          link: {
+            href: "https://dehora.be/",
+            text: "dehora.be",
+          },
+        },
+      ],
+    },
+    {
       place: "Flemish Government",
       logo: {
-        alt: "lit logo",
+        alt: "Flemish Government lion",
         src: "/assets/logos/flemishGov.webp",
       },
       items: [
         {
-          period: new Period(new Date(2022, 11)),
+          period: new Period(new Date(2022, 11), new Date(2024, 5)),
           title: "IT project manager",
           pinned: true,
           description:
@@ -72,7 +90,6 @@ export const experienceConfig: ExperienceConfig = {
         {
           period: new Period(new Date(2013, 2), new Date(2013, 10)),
           title: "PHP developer",
-          pinned: true,
           description:
             "Developed an integrable recruitment and evaluation system in PHP.",
           link: {

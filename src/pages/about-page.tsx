@@ -82,11 +82,8 @@ export const AboutPage = (): ReactElement => {
                     lighting technician locally.
                   </p>
                   <p>
-                    Today, I&apos;m the project manager and team lead -
-                    <em>(I prefer &quot;one of the team&quot;)</em> - of a small
-                    group of Java developers who develop and maintain business
-                    applications for the department of environment of the
-                    Flemish government.
+                    Currently I&apos;m working for Déhora Belgium as a backend
+                    developer.
                   </p>
                   <p>
                     On the side, you may also find me installing and providing
