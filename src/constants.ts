@@ -10,8 +10,8 @@ export const LINK_LINKEDIN: HTMLSimpleLink = {
 };
 
 export const LINK_TWITTER: HTMLSimpleLink = {
-  href: "https://twitter.com/MathiasBosman",
-  text: "Twitter",
+  href: "https://x.com/MathiasBosman",
+  text: "X",
 };
 
 export const LINK_BEANLEAF: HTMLSimpleLink = {
