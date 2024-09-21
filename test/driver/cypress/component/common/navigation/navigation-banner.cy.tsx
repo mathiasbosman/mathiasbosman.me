@@ -46,7 +46,7 @@ describe("<NavigationBanner/> component", () => {
     cy.get("nav").should("be.visible");
 
     const closeButton = cy.get('button[aria-label="Close menu"]');
-    closeButton.should("be.visible")
+    closeButton.should("be.visible");
     closeButton.click();
     cy.get("nav").should("not.be.visible");
   });

@@ -12,7 +12,7 @@ describe("<Contact/> component", () => {
     const dummyText =
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
     const input = cy.get('input[aria-label="Your subject"]');
-    input.type(dummyText)
+    input.type(dummyText);
     input.should("have.value", dummyText.substring(0, 30));
   });
 });

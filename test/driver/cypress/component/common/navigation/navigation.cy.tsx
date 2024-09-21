@@ -43,15 +43,15 @@ describe("<Navigation/> component", () => {
     () => {
       it("Should render on medium viewport", () => {
         const topNav = cy.get("nav").first();
-        topNav.should("be.visible")
+        topNav.should("be.visible");
         topNav.within(() => {
-            cy.get("a").should("have.length", 2);
-          });
+          cy.get("a").should("have.length", 2);
+        });
         cy.get("#mock_slot").should("be.visible");
       });
 
       it("Should have a span on the active link", () => {
-        cy.get("nav a[href=\"/pageA\"] span").should("exist");
+        cy.get('nav a[href="/pageA"] span').should("exist");
       });
     },
   );
