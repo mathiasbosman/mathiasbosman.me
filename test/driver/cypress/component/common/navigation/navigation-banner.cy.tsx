@@ -31,10 +31,9 @@ describe("<NavigationBanner/> component", () => {
   });
 
   it("Should show breadcrumb", () => {
-    cy.get("ol li")
-      .should("have.length", 2)
-      .last()
-      .should("have.text", "page A");
+    const listItems = cy.get("ol li");
+    listItems.should("have.length", 2);
+    listItems.last().should("have.text", "page A");
   });
 
   it("Should render all given links when state is open", () => {
@@ -45,7 +44,10 @@ describe("<NavigationBanner/> component", () => {
   it("Should change visible state when clicking button", () => {
     cy.get('button[aria-expanded="true"]').click();
     cy.get("nav").should("be.visible");
-    cy.get('button[aria-label="Close menu"]').should("be.visible").click();
+
+    const closeButton = cy.get('button[aria-label="Close menu"]');
+    closeButton.should("be.visible")
+    closeButton.click();
     cy.get("nav").should("not.be.visible");
   });
 

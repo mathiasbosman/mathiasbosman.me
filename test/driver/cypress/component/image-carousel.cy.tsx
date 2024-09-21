@@ -23,7 +23,7 @@ describe("<Imagecarousel/> component", () => {
 
   it("Should render default correctly", () => {
     cy.mount(<ImageCarousel images={imageSet} />);
-    cy.get("img").should("be.visible").should("have.length", 5);
+    cy.get("img").should("be.visible").and("have.length", 5);
     cy.get("img").eq(0).parent().should("have.class", "-rotate-2");
     cy.get("img").eq(1).parent().should("have.class", "rotate-2");
   });
@@ -34,13 +34,13 @@ describe("<Imagecarousel/> component", () => {
     );
     cy.get("img")
       .should("be.visible")
-      .should("have.length", imageSet.length - 1);
+      .and("have.length", imageSet.length - 1);
   });
 
   it("Should respect amount of items when total is lower", () => {
     cy.mount(
       <ImageCarousel amountToShow={imageSet.length + 1} images={imageSet} />,
     );
-    cy.get("img").should("be.visible").should("have.length", imageSet.length);
+    cy.get("img").should("be.visible").and("have.length", imageSet.length);
   });
 });

@@ -9,18 +9,18 @@ describe("<Experiences/> component", () => {
   it("Should render with one item", () => {
     cy.mount(<Experiences experiences={experiencesWithOnePlaceAndOneItem} />);
     const ref = "ref:" + experienceWithOnePlaceAndOneItem.place;
-    cy.get("section")
-      .should("be.visible")
-      .should("have.attr", "aria-labelledby", ref)
-      .within(() => {
+    const section = cy.get("section");
+    section.should("be.visible").and("have.attr", "aria-labelledby", ref);
+    section.within(() => {
         // experience checks
         cy.get("h2")
           .should("be.visible")
           .should("have.attr", "id", ref)
           .should("have.text", experienceWithOnePlaceAndOneItem.place);
-        cy.get("article")
-          .should("be.visible")
-          .within(() => {
+
+        const article = cy.get("article");
+        article.should("be.visible");
+        article.within(() => {
             // item checks
             cy.get('a[href="/href"]')
               .should("be.visible")
