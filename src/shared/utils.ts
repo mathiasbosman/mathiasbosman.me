@@ -1,10 +1,10 @@
-import { Buffer } from "buffer";
+import { Buffer } from 'buffer';
 
 export interface HTMLImage {
   alt: string;
   src: string;
-  loading?: "eager" | "lazy";
-  decoding?: "async" | "auto" | "sync";
+  loading?: 'eager' | 'lazy';
+  decoding?: 'async' | 'auto' | 'sync';
 }
 
 export interface HTMLSimpleLink {
@@ -27,7 +27,7 @@ export class Period {
    * @return {string | number} The end year.
    */
   getUntilString(): string | number {
-    return this.to?.getFullYear().toString() ?? "present";
+    return this.to?.getFullYear().toString() ?? 'present';
   }
 
   /**
@@ -45,7 +45,7 @@ export class Period {
       return fromYear;
     }
 
-    return [fromYear, toYear].filter((y) => y).join(" - ");
+    return [fromYear, toYear].filter((y) => y).join(' - ');
   }
 }
 
@@ -57,7 +57,7 @@ export class Period {
  */
 export function escapeHtml(input: string): string {
   const matchHtmlRegExp = /["'&<>]/;
-  const str = "" + input;
+  const str = '' + input;
   const match = matchHtmlRegExp.exec(str);
 
   if (match == null) {
@@ -65,26 +65,26 @@ export function escapeHtml(input: string): string {
   }
 
   let escape: string;
-  let html = "";
+  let html = '';
   let index: number;
   let lastIndex = 0;
 
   for (index = match.index; index < str.length; index++) {
     switch (str.charCodeAt(index)) {
       case 34: // "
-        escape = "&quot;";
+        escape = '&quot;';
         break;
       case 38: // &
-        escape = "&amp;";
+        escape = '&amp;';
         break;
       case 39: // '
-        escape = "&#39;";
+        escape = '&#39;';
         break;
       case 60: // <
-        escape = "&lt;";
+        escape = '&lt;';
         break;
       case 62: // >
-        escape = "&gt;";
+        escape = '&gt;';
         break;
       default:
         continue;
@@ -109,10 +109,9 @@ export function escapeHtml(input: string): string {
  * @returns {void} - This function does not return anything.
  */
 export function sendEmail(to: string, subject?: string): void {
-  const buffer = Buffer.from(to, "base64");
+  const buffer = Buffer.from(to, 'base64');
   window.location.href =
-    `mailto:${buffer.toString()}` +
-    (subject !== undefined ? `?subject=${escapeHtml(subject)}` : "");
+    `mailto:${buffer.toString()}` + (subject !== undefined ? `?subject=${escapeHtml(subject)}` : '');
 }
 
 /**

@@ -1,14 +1,11 @@
-import type { HTMLImage, HTMLSimpleLink } from "@shared/utils.ts";
-import { Period } from "@shared/utils.ts";
+import type { HTMLImage, HTMLSimpleLink } from '@shared/utils.ts';
+import { Period } from '@shared/utils.ts';
 
 export const htmlImageFixture = (src: string, alt: string): HTMLImage => {
   return { src, alt };
 };
 
-export const htmlSimpleLinkFixture = (
-  href: string,
-  text: string,
-): HTMLSimpleLink => {
+export const htmlSimpleLinkFixture = (href: string, text: string): HTMLSimpleLink => {
   return { href, text };
 };
 

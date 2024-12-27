@@ -1,7 +1,7 @@
-import { allPages } from "../config.ts";
+import { allPages } from '../config.ts';
 
-describe("Outgoing links", () => {
-  it("All outgoing links should be reachable", () => {
+describe('Outgoing links', () => {
+  it('All outgoing links should be reachable', () => {
     interface testedLink {
       href: string;
       page: string;
@@ -16,9 +16,7 @@ describe("Outgoing links", () => {
           href: link.prop(`href`),
           page: page,
         };
-        const alreadyChecked = checkedLinks.find(
-          (link) => link.href === testingLink.href,
-        );
+        const alreadyChecked = checkedLinks.find((link) => link.href === testingLink.href);
 
         if (alreadyChecked === undefined) {
           cy.request({
@@ -29,9 +27,7 @@ describe("Outgoing links", () => {
             .should(`not.eq`, 404);
           checkedLinks.push(testingLink);
         } else {
-          cy.log(
-            alreadyChecked.href + " already tested in " + alreadyChecked.page,
-          );
+          cy.log(alreadyChecked.href + ' already tested in ' + alreadyChecked.page);
         }
       });
     });
