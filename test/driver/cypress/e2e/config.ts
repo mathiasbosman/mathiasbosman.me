@@ -1,2 +1,2 @@
-export const publicTestPages = ["/about", "/experiences", "/projects"];
-export const allPages = ["/", ...publicTestPages];
+export const publicTestPages = ['/about', '/experiences', '/projects'];
+export const allPages = ['/', ...publicTestPages];

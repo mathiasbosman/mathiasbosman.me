@@ -11,13 +11,15 @@
     "postbuild": "node ./scripts/postBuild.cjs",
     "preview": "vite preview --port 9000",
     "preview:local": "vite preview --port 9000 --host",
-    "lint": "eslint '**/*.tsx' && prettier . --check",
+    "lint": "eslint **/*.tsx && prettier . --check",
     "lint:fix": "prettier . --write && eslint '**/*.tsx' --fix",
     "test:unit": "vitest run",
     "test:e2e": "cypress run --project test/driver/cypress",
     "test:e2e:app": "cypress run --project test/driver/cypress --spec '**/e2e/app/**/*'",
     "test:component": "cypress run --project test/driver/cypress --component",
-    "cy:ui": "cypress open --project test/driver/cypress"
+    "cy:ui": "cypress open --project test/driver/cypress",
+    "prettier:check": "prettier . --check",
+    "prettier:write": "prettier . --write"
   },
   "dependencies": {
     "react": "^18.3.1",

@@ -1,21 +1,15 @@
-import type { ReactElement } from "react";
-import Page from "@components/common/page.tsx";
-import ContentWrapper from "@components/common/content-wrapper.tsx";
-import SectionWrapper from "@components/common/section-wrapper.tsx";
-import { sendEmail } from "@shared/utils.ts";
-import { GitHubIcon, LinkedInIcon, TwitterIcon } from "@shared/icons.ts";
-import PageTitle from "@components/typography/page-title.tsx";
-import {
-  CONTACT_EMAIL,
-  LINK_BEANLEAF,
-  LINK_GITHUB,
-  LINK_LINKEDIN,
-  LINK_TWITTER,
-} from "@/constants.ts";
-import FollowIconLink from "@components/typography/folow-iconlink.tsx";
+import type { ReactElement } from 'react';
+import Page from '@components/common/page.tsx';
+import ContentWrapper from '@components/common/content-wrapper.tsx';
+import SectionWrapper from '@components/common/section-wrapper.tsx';
+import { sendEmail } from '@shared/utils.ts';
+import { GitHubIcon, LinkedInIcon, TwitterIcon } from '@shared/icons.ts';
+import PageTitle from '@components/typography/page-title.tsx';
+import { CONTACT_EMAIL, LINK_BEANLEAF, LINK_GITHUB, LINK_LINKEDIN, LINK_TWITTER } from '@/constants.ts';
+import FollowIconLink from '@components/typography/folow-iconlink.tsx';
 
-import profilePicture from "@assets/images/mathias_curacao.webp";
-import Link from "@components/typography/link.tsx";
+import profilePicture from '@assets/images/mathias_curacao.webp';
+import Link from '@components/typography/link.tsx';
 
 export const AboutPage = (): ReactElement => {
   return (
@@ -29,7 +23,7 @@ export const AboutPage = (): ReactElement => {
                   <img
                     src={profilePicture}
                     alt="Just me being black and white"
-                    style={{ color: "transparent" }}
+                    style={{ color: 'transparent' }}
                     loading="lazy"
                     width={800}
                     height={800}
@@ -52,44 +46,34 @@ export const AboutPage = (): ReactElement => {
                 />
                 <section className="mt-12 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
                   <p>
-                    In the late 90&apos;s I got my hands on a fairly simple
-                    Windows desktop rocking the late <em>but great</em> Windows
-                    XP operating system. I used it as a tool for school.
+                    In the late 90&apos;s I got my hands on a fairly simple Windows desktop rocking the late{' '}
+                    <em>but great</em> Windows XP operating system. I used it as a tool for school.
                     <br />
-                    <em>However...</em> I also installed Game Maker (v.6) where
-                    a little spark of imagination and coding came to life.
+                    <em>However...</em> I also installed Game Maker (v.6) where a little spark of imagination and coding
+                    came to life.
                   </p>
                   <p>
-                    Which, in my last teenage years, led me to study
-                    &quot;information technology systems&quot;, which started
-                    out simple by learning the programming language Pascal.
+                    Which, in my last teenage years, led me to study &quot;information technology systems&quot;, which
+                    started out simple by learning the programming language Pascal.
                     <br />
-                    Later on, my interest transitioned to a love for PHP and web
-                    development.
+                    Later on, my interest transitioned to a love for PHP and web development.
                   </p>
                   <p>
-                    And that&apos;s when the spark became a flame. I went on to
-                    study Programming and Multimedia in which I started my
-                    career by means of an internship as a PHP web developer in
-                    the United Kingdom. After a short but educational year on
-                    how to work in an actual team I returned to Belgium.
+                    And that&apos;s when the spark became a flame. I went on to study Programming and Multimedia in
+                    which I started my career by means of an internship as a PHP web developer in the United Kingdom.
+                    After a short but educational year on how to work in an actual team I returned to Belgium.
                   </p>
                   <p>
-                    During my first years of employment I also took a
-                    side-interest into stage lighting coming from my love for
-                    musical theatre. Sadly I could not study this in the UK (my
-                    &apos;second home&apos;) and so I got my degree as stage
-                    lighting technician locally.
+                    During my first years of employment I also took a side-interest into stage lighting coming from my
+                    love for musical theatre. Sadly I could not study this in the UK (my &apos;second home&apos;) and so
+                    I got my degree as stage lighting technician locally.
                   </p>
+                  <p>Currently I&apos;m working for Déhora Belgium as a backend developer.</p>
                   <p>
-                    Currently I&apos;m working for Déhora Belgium as a backend
-                    developer.
-                  </p>
-                  <p>
-                    On the side, you may also find me installing and providing
-                    support for home and small business network installations.
+                    On the side, you may also find me installing and providing support for home and small business
+                    network installations.
                     <br />
-                    For more information about the latter feel free to visit{" "}
+                    For more information about the latter feel free to visit{' '}
                     <strong>
                       <Link link={LINK_BEANLEAF} />
                     </strong>
@@ -114,12 +98,14 @@ export const AboutPage = (): ReactElement => {
                       className="group flex text-sm font-medium text-zinc-800 transition hover:text-indigo-500 dark:text-zinc-200 dark:hover:text-indigo-500"
                       onClick={() => {
                         sendEmail(CONTACT_EMAIL);
-                      }}>
+                      }}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="currentColor"
-                        className="h-5 w-5 fill-zinc-500 transition group-hover:fill-indigo-500">
+                        className="h-5 w-5 fill-zinc-500 transition group-hover:fill-indigo-500"
+                      >
                         <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
                         <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
                       </svg>

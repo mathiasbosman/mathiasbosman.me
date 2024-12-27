@@ -11,7 +11,7 @@ changelog:
         - breaking-change
     - title: 🎉 Features
       labels:
-        - "*"
+        - '*'
       exclude:
         labels:
           - dependencies

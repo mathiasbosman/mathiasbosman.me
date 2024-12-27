@@ -1,9 +1,9 @@
 const { readFile, writeFile, copyFile } = require(`fs`);
-const buildDir = "./dist/";
+const buildDir = './dist/';
 const encoding = `utf-8`;
 
 // update <lastMod> in the sitemap
-const sitemap = buildDir + "sitemap.xml";
+const sitemap = buildDir + 'sitemap.xml';
 readFile(sitemap, encoding, function (err, contents) {
   if (err) {
     console.log(err);
@@ -23,9 +23,9 @@ readFile(sitemap, encoding, function (err, contents) {
 });
 
 // copy index.html to 404.html
-copyFile(buildDir + "index.html", buildDir + "404.html", (err) => {
+copyFile(buildDir + 'index.html', buildDir + '404.html', (err) => {
   if (err) {
     throw err;
   }
-  console.log("Index file copied to 404");
+  console.log('Index file copied to 404');
 });

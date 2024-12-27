@@ -1,6 +1,6 @@
-import type { HTMLImage, HTMLSimpleLink } from "@shared/utils.ts";
+import type { HTMLImage, HTMLSimpleLink } from '@shared/utils.ts';
 
-import avatar from "@assets/images/mathias.webp";
+import avatar from '@assets/images/mathias.webp';
 
 export interface ProjectsConfig {
   projects: Project[];
@@ -18,86 +18,83 @@ export const projectsConfig: ProjectsConfig = {
   projects: [
     {
       pinned: true,
-      title: "Witsb",
+      title: 'Witsb',
       logo: {
-        alt: "Witsb icon",
-        src: "/assets/logos/witsb.webp",
+        alt: 'Witsb icon',
+        src: '/assets/logos/witsb.webp',
       },
       link: {
-        href: "https://github.com/mathiasbosman/witsb",
-        text: "GitHub repo",
+        href: 'https://github.com/mathiasbosman/witsb',
+        text: 'GitHub repo',
       },
       description:
-        "Where is the save button? My take on a simple API to store files and reference them in a unique way.",
+        'Where is the save button? My take on a simple API to store files and reference them in a unique way.',
     },
     {
       pinned: false,
       logo: {
-        alt: "Lit logo",
-        src: "/assets/logos/lit.webp",
+        alt: 'Lit logo',
+        src: '/assets/logos/lit.webp',
       },
-      title: "Lit sandbox",
+      title: 'Lit sandbox',
       link: {
-        href: "https://github.com/mathiasbosman/lit-sandbox",
-        text: "GitHub repo",
+        href: 'https://github.com/mathiasbosman/lit-sandbox',
+        text: 'GitHub repo',
       },
-      description:
-        "Sandbox project I used to learn some Lit. Uses Vite and Vitest.",
+      description: 'Sandbox project I used to learn some Lit. Uses Vite and Vitest.',
     },
     {
       pinned: true,
       logo: {
-        alt: "MQTT logo",
-        src: "/assets/logos/mqtt.webp",
+        alt: 'MQTT logo',
+        src: '/assets/logos/mqtt.webp',
       },
-      title: "MQTT stress test",
+      title: 'MQTT stress test',
       link: {
-        href: "https://github.com/mathiasbosman/mqtt-stresstest",
-        text: "GitHub repo",
+        href: 'https://github.com/mathiasbosman/mqtt-stresstest',
+        text: 'GitHub repo',
       },
       description:
-        "A Spring Boot application to stress test a MQTT service. Originally used to stress test ThingsBoard.",
+        'A Spring Boot application to stress test a MQTT service. Originally used to stress test ThingsBoard.',
     },
     {
       logo: {
-        alt: "Bitvavo logo",
-        src: "/assets/logos/bitvavo.webp",
+        alt: 'Bitvavo logo',
+        src: '/assets/logos/bitvavo.webp',
       },
-      title: "Cryptobot",
+      title: 'Cryptobot',
       link: {
-        href: "https://github.com/mathiasbosman/cryptobot",
-        text: "GitHub repo",
+        href: 'https://github.com/mathiasbosman/cryptobot',
+        text: 'GitHub repo',
       },
       description:
-        "A trial cryptocurrency bot integration for the Bitvavo API. Purely for academic purposes... truly. Written in Java.",
+        'A trial cryptocurrency bot integration for the Bitvavo API. Purely for academic purposes... truly. Written in Java.',
     },
     {
       pinned: true,
       logo: {
         src: avatar,
-        alt: "Avatar",
+        alt: 'Avatar',
       },
-      title: "mathiasbosman.me",
+      title: 'mathiasbosman.me',
       link: {
-        href: "https://github.com/mathiasbosman/mathiasbosman.me",
-        text: "GitHub repo",
+        href: 'https://github.com/mathiasbosman/mathiasbosman.me',
+        text: 'GitHub repo',
       },
-      description:
-        "This very website! Using React, Tailwind CSS and Vercel for hosting.",
+      description: 'This very website! Using React, Tailwind CSS and Vercel for hosting.',
     },
     {
       pinned: true,
       logo: {
-        src: "/assets/logos/beanleaf.svg",
-        alt: "Beanleaf logo",
+        src: '/assets/logos/beanleaf.svg',
+        alt: 'Beanleaf logo',
       },
-      title: "beanleaf.be",
+      title: 'beanleaf.be',
       link: {
-        href: "https://beanleaf.be",
-        text: "beanleaf.be",
+        href: 'https://beanleaf.be',
+        text: 'beanleaf.be',
       },
-      description:
-        "Small static website for my side-business allowing a simple email to be sent.",
+      description: 'Small static website for my side-business allowing a simple email to be sent.',
     },
   ],
 };
