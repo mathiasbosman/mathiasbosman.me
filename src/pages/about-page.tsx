@@ -5,11 +5,10 @@ import SectionWrapper from '@components/common/section-wrapper.tsx';
 import { sendEmail } from '@shared/utils.ts';
 import { GitHubIcon, LinkedInIcon, TwitterIcon } from '@shared/icons.ts';
 import PageTitle from '@components/typography/page-title.tsx';
-import { CONTACT_EMAIL, LINK_BEANLEAF, LINK_GITHUB, LINK_LINKEDIN, LINK_TWITTER } from '@/constants.ts';
+import { CONTACT_EMAIL, LINK_GITHUB, LINK_LINKEDIN, LINK_TWITTER } from '@/constants.ts';
 import FollowIconLink from '@components/typography/folow-iconlink.tsx';
 
 import profilePicture from '@assets/images/mathias_curacao.webp';
-import Link from '@components/typography/link.tsx';
 
 export const AboutPage = (): ReactElement => {
   return (
@@ -72,12 +71,6 @@ export const AboutPage = (): ReactElement => {
                   <p>
                     On the side, you may also find me installing and providing support for home and small business
                     network installations.
-                    <br />
-                    For more information about the latter feel free to visit{' '}
-                    <strong>
-                      <Link link={LINK_BEANLEAF} />
-                    </strong>
-                    .
                   </p>
                 </section>
               </div>
