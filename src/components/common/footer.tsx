@@ -19,7 +19,7 @@ export const Footer = (props: PropsWithChildren<Props>): ReactElement => {
                 ))}
               </div>
               <p className="text-balance text-center text-sm text-zinc-500">
-                ©&nbsp;{new Date().getFullYear()}&nbsp;Mathias Bosman. All&nbsp;rights&nbsp;reserved.
+                ©&nbsp;{new Date().getFullYear()} Mathias&nbsp;Bosman. All&nbsp;rights&nbsp;reserved.
               </p>
             </div>
           </div>

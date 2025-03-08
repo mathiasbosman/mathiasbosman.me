@@ -13,7 +13,8 @@ interface Props {
 
 export const NavigationBanner = (props: PropsWithChildren<Props>): ReactElement => {
   const [visible, setVisible] = useState(false);
-  const currentPageLink = props.links.find((link) => link.href === props.location);
+  const { links, location, rightSlot } = props;
+  const currentPageLink = links.find((link) => link.href === location);
 
   return (
     <>
@@ -22,7 +23,7 @@ export const NavigationBanner = (props: PropsWithChildren<Props>): ReactElement 
           <div className="flex max-w-[calc(100%-3rem)] items-center">
             <button
               type="button"
-              aria-expanded={visible}
+              aria-expanded={true}
               onClick={() => setVisible(!visible)}
               className="text-zinc-500 hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300"
             >
@@ -60,7 +61,7 @@ export const NavigationBanner = (props: PropsWithChildren<Props>): ReactElement 
               )}
             </ol>
           </div>
-          <div>{props.rightSlot}</div>
+          <div>{rightSlot}</div>
         </header>
       </div>
       <div
@@ -96,20 +97,14 @@ export const NavigationBanner = (props: PropsWithChildren<Props>): ReactElement 
         </div>
         <nav className="mt-6">
           <ul className="space-y-6 border-l border-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:border-zinc-700 dark:text-zinc-300">
-            {props.links.map((link, i) => (
+            {links.map((link, i) => (
               <li key={i}>
-                {currentPageLink === link ? (
-                  <a className="-ml-px block border-l border-current pl-4 font-bold text-indigo-500" href={link.href}>
-                    {link.text}
-                  </a>
-                ) : (
-                  <a
-                    className="-ml-px block border-l border-transparent pl-4 hover:border-current hover:text-indigo-500"
-                    href={link.href}
-                  >
-                    {link.text}
-                  </a>
-                )}
+                <a
+                  className={`-ml-px block border-l pl-4 ${currentPageLink === link ? 'border-current font-bold text-indigo-500' : 'border-transparent hover:border-current hover:text-indigo-500'}`}
+                  href={link.href}
+                >
+                  {link.text}
+                </a>
               </li>
             ))}
           </ul>
