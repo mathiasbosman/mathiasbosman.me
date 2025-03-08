@@ -12,40 +12,24 @@ interface Props {
 }
 
 export const Avatar = (props: PropsWithChildren<Props>): ReactElement => {
-  function _renderImage(): ReactElement {
-    return (
-      <img
-        alt={props.image.alt}
-        decoding={'async'}
-        src={props.image.src}
-        style={{ color: 'transparent' }}
-        className={'aspect-square w-full rounded-full bg-zinc-100 object-cover dark:bg-zinc-800'}
-      />
-    );
-  }
+  const { image, size } = props;
 
-  switch (props.size) {
-    case AvatarSize.s:
-      return (
-        <div
-          className={
-            'h-16 w-16 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10'
-          }
-        >
-          {_renderImage()}
-        </div>
-      );
-    case AvatarSize.xs:
-      return (
-        <div
-          className={
-            'h-9 w-9 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10'
-          }
-        >
-          {_renderImage()}
-        </div>
-      );
-  }
+  const className =
+    size === AvatarSize.s
+      ? 'h-16 w-16 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10'
+      : 'h-9 w-9 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10';
+
+  return (
+    <div className={className}>
+      <img
+        alt={image.alt}
+        decoding="async"
+        src={image.src}
+        style={{ color: 'transparent' }}
+        className="aspect-square w-full rounded-full bg-zinc-100 object-cover dark:bg-zinc-800"
+      />
+    </div>
+  );
 };
 
 export default Avatar;

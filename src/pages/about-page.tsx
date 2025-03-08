@@ -3,9 +3,9 @@ import Page from '@components/common/page.tsx';
 import ContentWrapper from '@components/common/content-wrapper.tsx';
 import SectionWrapper from '@components/common/section-wrapper.tsx';
 import { sendEmail } from '@shared/utils.ts';
-import { GitHubIcon, LinkedInIcon, TwitterIcon } from '@shared/icons.ts';
+import { GitHubIcon, LinkedInIcon } from '@shared/icons.ts';
 import PageTitle from '@components/typography/page-title.tsx';
-import { CONTACT_EMAIL, LINK_GITHUB, LINK_LINKEDIN, LINK_TWITTER } from '@/constants.ts';
+import { CONTACT_EMAIL, LINK_GITHUB, LINK_LINKEDIN } from '@/constants.ts';
 import FollowIconLink from '@components/typography/folow-iconlink.tsx';
 
 import profilePicture from '@assets/images/mathias_curacao.webp';
@@ -67,7 +67,13 @@ export const AboutPage = (): ReactElement => {
                     love for musical theatre. Sadly I could not study this in the UK (my &apos;second home&apos;) and so
                     I got my degree as stage lighting technician locally.
                   </p>
-                  <p>Currently I&apos;m working for Déhora Belgium as a backend developer.</p>
+                  <p>
+                    Currently I&apos;m working for Déhora Belgium as a backend developer working on{' '}
+                    <a rel="noreferrer" href="https://planpoint.eu/" target="_blank">
+                      Planpoint
+                    </a>
+                    : a software suite for workforce management, planning and time registration.
+                  </p>
                   <p>
                     On the side, you may also find me installing and providing support for home and small business
                     network installations.
@@ -82,9 +88,6 @@ export const AboutPage = (): ReactElement => {
                   </li>
                   <li className="mt-4 flex">
                     <FollowIconLink link={LINK_LINKEDIN} icon={LinkedInIcon} />
-                  </li>
-                  <li className="mt-4 flex">
-                    <FollowIconLink link={LINK_TWITTER} icon={TwitterIcon} />
                   </li>
                   <li className="mt-8 flex border-t border-zinc-100 pt-8 dark:border-zinc-700/40">
                     <button

@@ -32,6 +32,8 @@ export const experienceConfig: ExperienceConfig = {
           period: new Period(new Date(2024, 6)),
           title: 'Back-end developer',
           pinned: true,
+          description:
+            'Developing and maintaining the <b>Planpoint</b> suite. A software suite for workforce management, planning and time registration.',
           link: {
             href: 'https://dehora.be/',
             text: 'dehora.be',
