@@ -10,15 +10,15 @@ import PageTitle from '@components/typography/page-title.tsx';
 import SocialIconlink from '@components/typography/social-iconlink.tsx';
 import { projectsConfig } from '@models/config/project.config.ts';
 import { experienceConfig } from '@models/config/experience.config.ts';
-import { LINK_GITHUB, LINK_LINKEDIN } from '@/constants.ts';
+import { LINK_DEHORA, LINK_GITHUB, LINK_LINKEDIN } from '@/constants.ts';
 import { GitHubIcon, LinkedInIcon } from '@shared/icons.ts';
-
 import avatar from '@assets/images/mathias.webp';
 import img_luna from '@assets/images/luna.webp';
 import img_phantasialand from '@assets/images/phantasialand.webp';
 import img_lights from '@assets/images/mathias_lights.webp';
 import img_sailing from '@assets/images/mathias_sailing.webp';
 import img_office from '@assets/images/mathias_office.webp';
+import Link from '@components/typography/link.tsx';
 
 export const HomePage = (): ReactElement => {
   return (
@@ -40,10 +40,10 @@ export const HomePage = (): ReactElement => {
               Belgium.
               <br />
               In my spare time, you might find me: in a theatre (either watching whatever is on stage or fiddling with
-              the stage lights), visiting amusement parks or riding my race bike.
+              the stage lights), swimming, visiting amusement parks or riding my race bike.
             </p>
             <p>
-              Currently working for Déhora Belgium as a back-end developer.
+              Currently working for <Link link={LINK_DEHORA} target="_blank" /> as a back-end developer.
               <br />
               Also, I&apos;m proud to be the human of a cute little Beagle; her name is (&apos;Queen&apos;) Luna.
             </p>

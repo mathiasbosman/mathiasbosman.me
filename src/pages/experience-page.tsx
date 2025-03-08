@@ -20,11 +20,7 @@ export const ExperiencePage = (): ReactElement => {
               found some amazing workplaces.
               <br />
               Below are some of the most note-worthy. If you want more detailed information I invite you to take a look
-              at my{' '}
-              <strong>
-                <Link link={LINK_LINKEDIN} />
-              </strong>
-              .
+              at my <Link link={LINK_LINKEDIN} target="_blank" />.
             </p>
           </div>
           <div className="mt-16 sm:mt-20">
