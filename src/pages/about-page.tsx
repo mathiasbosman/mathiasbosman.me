@@ -5,10 +5,10 @@ import SectionWrapper from '@components/common/section-wrapper.tsx';
 import { sendEmail } from '@shared/utils.ts';
 import { GitHubIcon, LinkedInIcon } from '@shared/icons.ts';
 import PageTitle from '@components/typography/page-title.tsx';
-import { CONTACT_EMAIL, LINK_GITHUB, LINK_LINKEDIN } from '@/constants.ts';
+import { CONTACT_EMAIL, LINK_DEHORA, LINK_GITHUB, LINK_LINKEDIN } from '@/constants.ts';
 import FollowIconLink from '@components/typography/folow-iconlink.tsx';
-
 import profilePicture from '@assets/images/mathias_curacao.webp';
+import Link from '@components/typography/link.tsx';
 
 export const AboutPage = (): ReactElement => {
   return (
@@ -68,15 +68,24 @@ export const AboutPage = (): ReactElement => {
                     I got my degree as stage lighting technician locally.
                   </p>
                   <p>
-                    Currently I&apos;m working for Déhora Belgium as a backend developer working on{' '}
-                    <a rel="noreferrer" href="https://planpoint.eu/" target="_blank">
-                      Planpoint
-                    </a>
+                    Currently I&apos;m working for <Link link={LINK_DEHORA} /> as a backend developer working on{' '}
+                    <Link
+                      target="_blank"
+                      link={{
+                        href: 'https://planpoint.eu',
+                        text: 'PlanPoint',
+                      }}
+                    />
                     : a software suite for workforce management, planning and time registration.
                   </p>
                   <p>
                     On the side, you may also find me installing and providing support for home and small business
                     network installations.
+                  </p>
+                  <p>
+                    In my spare time, you might find me: in a theatre (either watching whatever is on stage or fiddling
+                    with the stage lights), swimming, visiting amusement parks, riding my race bike or spending quality
+                    time with my beagle Luna.
                   </p>
                 </section>
               </div>
