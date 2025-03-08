@@ -31,14 +31,7 @@ export const Page = (props: PropsWithChildren<Props>): ReactElement => {
         <NavigationBanner
           links={publicPages}
           location={location}
-          rightSlot={
-            renderAvatar && (
-              <Avatar
-                image={{ src: avatar, alt: 'Avatar' }}
-                size={AvatarSize.xs}
-              />
-            )
-          }
+          rightSlot={renderAvatar && <Avatar image={{ src: avatar, alt: 'Avatar' }} size={AvatarSize.xs} />}
         />
         <div className="fixed inset-0 z-0 flex justify-center sm:px-8">
           <div className="flex w-full max-w-7xl lg:px-8">
@@ -52,10 +45,7 @@ export const Page = (props: PropsWithChildren<Props>): ReactElement => {
                 leftSlot={
                   renderAvatar && (
                     <Link aria-label="Home" className="pointer-events-auto inline-block" to="/">
-                      <Avatar
-                        image={{ src: avatar, alt: 'Avatar' }}
-                        size={AvatarSize.xs}
-                      />
+                      <Avatar image={{ src: avatar, alt: 'Avatar' }} size={AvatarSize.xs} />
                     </Link>
                   )
                 }

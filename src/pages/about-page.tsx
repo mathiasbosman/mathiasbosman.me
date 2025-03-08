@@ -67,9 +67,13 @@ export const AboutPage = (): ReactElement => {
                     love for musical theatre. Sadly I could not study this in the UK (my &apos;second home&apos;) and so
                     I got my degree as stage lighting technician locally.
                   </p>
-                  <p>Currently I&apos;m working for Déhora Belgium as a backend developer working on <a
-                    rel="noreferrer" href="https://planpoint.eu/" target="_blank">Planpoint</a>: a software suite for workforce
-                    management, planning and time registration.</p>
+                  <p>
+                    Currently I&apos;m working for Déhora Belgium as a backend developer working on{' '}
+                    <a rel="noreferrer" href="https://planpoint.eu/" target="_blank">
+                      Planpoint
+                    </a>
+                    : a software suite for workforce management, planning and time registration.
+                  </p>
                   <p>
                     On the side, you may also find me installing and providing support for home and small business
                     network installations.
@@ -98,10 +102,8 @@ export const AboutPage = (): ReactElement => {
                         fill="currentColor"
                         className="h-5 w-5 fill-zinc-500 transition group-hover:fill-indigo-500"
                       >
-                        <path
-                          d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
-                        <path
-                          d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
+                        <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
+                        <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
                       </svg>
                       <span className="ml-4">Send me an email</span>
                     </button>

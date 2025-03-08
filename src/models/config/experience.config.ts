@@ -25,26 +25,27 @@ export const experienceConfig: ExperienceConfig = {
       place: 'Déhora Belgium',
       logo: {
         alt: 'Déhora logo',
-        src: '/assets/logos/dehora.webp'
+        src: '/assets/logos/dehora.webp',
       },
       items: [
         {
           period: new Period(new Date(2024, 6)),
           title: 'Back-end developer',
           pinned: true,
-          description: 'Developing and maintaining the <b>Planpoint</b> suite. A software suite for workforce management, planning and time registration.',
+          description:
+            'Developing and maintaining the <b>Planpoint</b> suite. A software suite for workforce management, planning and time registration.',
           link: {
             href: 'https://dehora.be/',
-            text: 'dehora.be'
-          }
-        }
-      ]
+            text: 'dehora.be',
+          },
+        },
+      ],
     },
     {
       place: 'Flemish Government',
       logo: {
         alt: 'Flemish Government lion',
-        src: '/assets/logos/flemishGov.webp'
+        src: '/assets/logos/flemishGov.webp',
       },
       items: [
         {
@@ -55,35 +56,35 @@ export const experienceConfig: ExperienceConfig = {
             'Team lead and project manager of a small software developer team who develop and maintain business applications for the department of environment.',
           link: {
             href: 'https://www.vlaanderen.be/en/environment',
-            text: 'Department of Environment'
-          }
+            text: 'Department of Environment',
+          },
         },
         {
           period: new Period(new Date(2018, 9), new Date(2022, 11)),
           title: 'Java developer',
           pinned: true,
-          description: 'Part of a devops team at the department of environment.'
+          description: 'Part of a devops team at the department of environment.',
         },
         {
           period: new Period(new Date(2016, 10), new Date(2018, 9)),
           title: 'Application manager',
-          description: 'Application manager for one of the most used applications at the department of environment.'
+          description: 'Application manager for one of the most used applications at the department of environment.',
         },
         {
           period: new Period(new Date(2016, 2), new Date(2016, 8)),
-          title: 'Personnel administration'
+          title: 'Personnel administration',
         },
         {
           period: new Period(new Date(2013, 10), new Date(2016, 8)),
-          title: 'Expert personnel system & IT-support'
-        }
-      ]
+          title: 'Expert personnel system & IT-support',
+        },
+      ],
     },
     {
       place: 'Echoweb',
       logo: {
         alt: 'Echoweb logo',
-        src: '/assets/logos/echoweb.webp'
+        src: '/assets/logos/echoweb.webp',
       },
       items: [
         {
@@ -92,16 +93,16 @@ export const experienceConfig: ExperienceConfig = {
           description: 'Developed an integrable recruitment and evaluation system in PHP.',
           link: {
             href: 'https://www.echoweb.be/',
-            text: 'echoweb.be'
-          }
-        }
-      ]
+            text: 'echoweb.be',
+          },
+        },
+      ],
     },
     {
       place: 'Procius Ltd.',
       logo: {
         alt: 'Procius logo',
-        src: '/assets/logos/procius.webp'
+        src: '/assets/logos/procius.webp',
       },
       items: [
         {
@@ -111,10 +112,10 @@ export const experienceConfig: ExperienceConfig = {
           description: '6-month internship as PHP developer.',
           link: {
             href: 'https://www.procius.com',
-            text: 'procius.com'
-          }
-        }
-      ]
-    }
-  ]
+            text: 'procius.com',
+          },
+        },
+      ],
+    },
+  ],
 };

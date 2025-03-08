@@ -17,8 +17,7 @@ export const NavigationBanner = (props: PropsWithChildren<Props>): ReactElement 
 
   return (
     <>
-      <div
-        className="supports-backdrop-blur:bg-white/60 sticky top-0 z-50 w-full flex-none border-b border-slate-900/10 bg-white/95 backdrop-blur transition-colors duration-500 sm:hidden dark:border-slate-50/[0.06] dark:bg-transparent">
+      <div className="supports-backdrop-blur:bg-white/60 sticky top-0 z-50 w-full flex-none border-b border-slate-900/10 bg-white/95 backdrop-blur transition-colors duration-500 sm:hidden dark:border-slate-50/[0.06] dark:bg-transparent">
         <header className="m-4 flex items-center justify-between">
           <div className="flex max-w-[calc(100%-3rem)] items-center">
             <button
@@ -52,8 +51,10 @@ export const NavigationBanner = (props: PropsWithChildren<Props>): ReactElement 
                 )}
               </li>
               {currentPageLink && (
-                <li aria-label={currentPageLink.text}
-                    className="truncate font-semibold text-slate-900 dark:text-slate-200">
+                <li
+                  aria-label={currentPageLink.text}
+                  className="truncate font-semibold text-slate-900 dark:text-slate-200"
+                >
                   {currentPageLink.text}
                 </li>
               )}
@@ -94,8 +95,7 @@ export const NavigationBanner = (props: PropsWithChildren<Props>): ReactElement 
           <h2 className="font-bold text-zinc-600 dark:text-zinc-400">Navigation</h2>
         </div>
         <nav className="mt-6">
-          <ul
-            className="space-y-6 border-l border-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:border-zinc-700 dark:text-zinc-300">
+          <ul className="space-y-6 border-l border-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:border-zinc-700 dark:text-zinc-300">
             {props.links.map((link, i) => (
               <li key={i}>
                 {currentPageLink === link ? (
@@ -105,7 +105,8 @@ export const NavigationBanner = (props: PropsWithChildren<Props>): ReactElement 
                 ) : (
                   <a
                     className="-ml-px block border-l border-transparent pl-4 hover:border-current hover:text-indigo-500"
-                    href={link.href}>
+                    href={link.href}
+                  >
                     {link.text}
                   </a>
                 )}
