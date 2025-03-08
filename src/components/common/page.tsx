@@ -15,61 +15,60 @@ interface Props {
 }
 
 export const Page = (props: PropsWithChildren<Props>): ReactElement => {
+  const { title, renderAvatar, children } = props;
+  const location = useLocation().pathname;
+
   useEffect(() => {
-    if (props.title != null) {
-      document.title = props.title;
+    if (title) {
+      document.title = title;
     }
-  }, [props.title]);
+  }, [title]);
 
   return (
-    <main id="mainBoxy" className={'flex h-full flex-col bg-zinc-50 antialiased dark:bg-black'}>
-      <div className="z-20 h-1 bg-gradient-to-r from-violet-500 to-pink-700 "></div>
-      <NavigationBanner
-        links={publicPages}
-        location={useLocation().pathname}
-        rightSlot={
-          props.renderAvatar && (
-            <Avatar
-              image={{
-                src: avatar,
-                alt: 'Avatar',
-              }}
-              size={AvatarSize.xs}
-            />
-          )
-        }
-      />
-      <div className="fixed inset-0 z-0 flex justify-center sm:px-8">
-        <div className="flex w-full max-w-7xl lg:px-8">
-          <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20"></div>
+    <>
+      <main id="mainBoxy" className="flex flex-col bg-zinc-50 antialiased dark:bg-black">
+        <div className="z-20 h-1 bg-gradient-to-r from-violet-500 to-pink-700"></div>
+        <NavigationBanner
+          links={publicPages}
+          location={location}
+          rightSlot={
+            renderAvatar && (
+              <Avatar
+                image={{ src: avatar, alt: 'Avatar' }}
+                size={AvatarSize.xs}
+              />
+            )
+          }
+        />
+        <div className="fixed inset-0 z-0 flex justify-center sm:px-8">
+          <div className="flex w-full max-w-7xl lg:px-8">
+            <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20"></div>
+          </div>
         </div>
-      </div>
-      <div className={'mx-auto w-full max-w-7xl lg:px-8'}>
-        <div className={'relative px-4 sm:px-8 lg:px-12'}>
-          <header className={'mx-auto max-w-2xl lg:max-w-5xl'}>
-            <Navigation
-              leftSlot={
-                props.renderAvatar && (
-                  <Link aria-label={'Home'} className={'pointer-events-auto inline-block'} to={'/'}>
-                    <Avatar
-                      image={{
-                        src: avatar,
-                        alt: 'Avatar',
-                      }}
-                      size={AvatarSize.xs}
-                    />
-                  </Link>
-                )
-              }
-              links={publicPages}
-              location={useLocation().pathname}
-            />
-          </header>
+        <div className="mx-auto w-full max-w-7xl lg:px-8">
+          <div className="relative px-4 sm:px-8 lg:px-12">
+            <header className="mx-auto max-w-2xl lg:max-w-5xl">
+              <Navigation
+                leftSlot={
+                  renderAvatar && (
+                    <Link aria-label="Home" className="pointer-events-auto inline-block" to="/">
+                      <Avatar
+                        image={{ src: avatar, alt: 'Avatar' }}
+                        size={AvatarSize.xs}
+                      />
+                    </Link>
+                  )
+                }
+                links={publicPages}
+                location={location}
+              />
+            </header>
+          </div>
         </div>
-      </div>
-      {props.children}
+        {children}
+      </main>
       <Footer links={publicPages} />
-    </main>
+    </>
   );
 };
 

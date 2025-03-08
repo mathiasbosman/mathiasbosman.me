@@ -6,14 +6,14 @@ interface Props {
 }
 
 export const Link = (props: PropsWithChildren<Props>): ReactElement => {
+  const { link, children } = props;
+
   return (
     <a
-      className={
-        'hover:bg-gradient-to-r hover:from-violet-500 hover:to-pink-600 hover:bg-clip-text hover:text-transparent'
-      }
-      href={props.link.href}
+      className="hover:bg-gradient-to-r hover:from-violet-500 hover:to-pink-600 hover:bg-clip-text hover:text-transparent"
+      href={link.href}
     >
-      {props.link.text}
+      {children ?? link.text}
     </a>
   );
 };
