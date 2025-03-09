@@ -108,8 +108,7 @@ export function escapeHtml(input: string): string {
  */
 export function sendEmail(to: string, subject?: string): void {
   const decodedEmail = atob(to);
-  window.location.href =
-    `mailto:${decodedEmail}` + (subject !== undefined ? `?subject=${escapeHtml(subject)}` : '');
+  window.location.href = `mailto:${decodedEmail}` + (subject !== undefined ? `?subject=${escapeHtml(subject)}` : '');
 }
 
 /**
