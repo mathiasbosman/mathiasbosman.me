@@ -70,6 +70,12 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Cache Cypress binary
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/Cypress
+          key: ${{ runner.os }}-cypress-${{ hashFiles('**/pnpm-lock.yaml') }}
+
       - name: Run build
         run: pnpm build
 
@@ -100,12 +106,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           cache: 'pnpm'
-
-      - name: Cache Cypress binary
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/Cypress
-          key: ${{ runner.os }}-cypress-${{ hashFiles('**/pnpm-lock.yaml') }}
 
       - name: Download build
         uses: actions/download-artifact@v4
