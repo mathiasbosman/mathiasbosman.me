@@ -1,5 +1,3 @@
-import { Buffer } from 'buffer';
-
 export interface HTMLImage {
   alt: string;
   src: string;
@@ -109,9 +107,9 @@ export function escapeHtml(input: string): string {
  * @returns {void} - This function does not return anything.
  */
 export function sendEmail(to: string, subject?: string): void {
-  const buffer = Buffer.from(to, 'base64');
+  const decodedEmail = atob(to);
   window.location.href =
-    `mailto:${buffer.toString()}` + (subject !== undefined ? `?subject=${escapeHtml(subject)}` : '');
+    `mailto:${decodedEmail}` + (subject !== undefined ? `?subject=${escapeHtml(subject)}` : '');
 }
 
 /**

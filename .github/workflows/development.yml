@@ -15,10 +15,15 @@ jobs:
       - name: 'setup node'
         uses: actions/setup-node@v4
         with:
-          cache: 'npm'
+          cache: 'pnpm'
+
+      - name: 'setup pnpm'
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10
 
       - name: 'install dependencies'
-        run: npm ci
+        run: pnpm install
 
       - name: 'lint code'
-        run: npm run lint
+        run: pnpm lint

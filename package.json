@@ -19,7 +19,8 @@
     "test:component": "cypress run --project test/driver/cypress --component",
     "cy:ui": "cypress open --project test/driver/cypress",
     "prettier:check": "prettier . --check",
-    "prettier:write": "prettier . --write"
+    "prettier:write": "prettier . --write",
+    "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
     "react": "^18.3.1",
