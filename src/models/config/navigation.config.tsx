@@ -1,11 +1,6 @@
 import type { HTMLSimpleLink } from '@shared/utils.ts';
-import React from 'react';
+import React, { lazy } from 'react';
 import type { RouteObject } from 'react-router-dom';
-import HomePage from '@pages/home-page.tsx';
-import AboutPage from '@pages/about-page.tsx';
-import ErrorPage from '@pages/error-page.tsx';
-import ExperiencePage from '@pages/experience-page.tsx';
-import ProjectsPage from '@pages/projects-page.tsx';
 
 interface RouteLink {
   link: HTMLSimpleLink;
@@ -13,6 +8,12 @@ interface RouteLink {
   isPublic?: boolean;
   errorElement?: React.ReactElement;
 }
+
+const HomePage = lazy(() => import('@pages/home-page'));
+const AboutPage = lazy(() => import('@pages/about-page'));
+const ExperiencePage = lazy(() => import('@pages/experience-page'));
+const ProjectsPage = lazy(() => import('@pages/projects-page'));
+const ErrorPage = lazy(() => import('@pages/error-page'));
 
 /**
  * Configuration for the routes in the application.
