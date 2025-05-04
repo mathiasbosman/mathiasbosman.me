@@ -1,7 +1,7 @@
 import type { PropsWithChildren, ReactElement, ReactNode } from 'react';
 import { useState } from 'react';
 import type { HTMLSimpleLink } from '@shared/utils.ts';
-import { GitHubIcon, LinkedInIcon } from '@shared/icons.ts';
+import { GitHubIcon, LinkedInIcon } from '@shared/icons.tsx';
 import FollowIconLink from '@components/typography/folow-iconlink.tsx';
 import { LINK_GITHUB, LINK_LINKEDIN } from '@/constants.ts';
 
