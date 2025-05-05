@@ -1,4 +1,4 @@
-import { LinkIcon } from '@shared/icons.ts';
+import { LinkIcon } from '@shared/icons.tsx';
 import FollowIconLink from '@components/typography/folow-iconlink.tsx';
 import { htmlSimpleLinkFixture } from '../../../../fixtures/utils.fixture.ts';
 

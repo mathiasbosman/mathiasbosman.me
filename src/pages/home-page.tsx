@@ -11,7 +11,7 @@ import SocialIconlink from '@components/typography/social-iconlink.tsx';
 import { projectsConfig } from '@models/config/project.config.ts';
 import { experienceConfig } from '@models/config/experience.config.ts';
 import { LINK_DEHORA, LINK_GITHUB, LINK_LINKEDIN } from '@/constants.ts';
-import { GitHubIcon, LinkedInIcon } from '@shared/icons.ts';
+import { GitHubIcon, LinkedInIcon } from '@shared/icons.tsx';
 import avatar from '@assets/images/mathias.webp';
 import img_luna from '@assets/images/luna.webp';
 import img_phantasialand from '@assets/images/phantasialand.webp';

@@ -3,7 +3,7 @@ import Page from '@components/common/page.tsx';
 import ContentWrapper from '@components/common/content-wrapper.tsx';
 import SectionWrapper from '@components/common/section-wrapper.tsx';
 import { sendEmail } from '@shared/utils.ts';
-import { GitHubIcon, LinkedInIcon } from '@shared/icons.ts';
+import { GitHubIcon, LinkedInIcon } from '@shared/icons.tsx';
 import PageTitle from '@components/typography/page-title.tsx';
 import { CONTACT_EMAIL, LINK_DEHORA, LINK_GITHUB, LINK_LINKEDIN } from '@/constants.ts';
 import FollowIconLink from '@components/typography/folow-iconlink.tsx';
