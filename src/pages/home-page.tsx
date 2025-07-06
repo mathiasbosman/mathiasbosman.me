@@ -80,7 +80,7 @@ export const HomePage = (): ReactElement => {
           },
           {
             alt: 'My (just) 125cc Yamaha XSR',
-            src: img_xsr
+            src: img_xsr,
           },
           {
             alt: 'On a sailing trip in Curacao',
@@ -101,7 +101,7 @@ export const HomePage = (): ReactElement => {
           {
             alt: 'At the Moulin Rouge',
             src: img_theatre,
-          }
+          },
         ]}
       />
       <div className="mt-8 px-2 sm:px-8">
