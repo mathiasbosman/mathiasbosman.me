@@ -18,6 +18,11 @@ import img_phantasialand from '@assets/images/phantasialand.webp';
 import img_lights from '@assets/images/mathias_lights.webp';
 import img_sailing from '@assets/images/mathias_sailing.webp';
 import img_office from '@assets/images/mathias_office.webp';
+import img_xsr from '@assets/images/xsr125.webp';
+import img_bike from '@assets/images/mathias_bike.webp';
+import img_desk from '@assets/images/mathias_desk.webp';
+import img_shirt from '@assets/images/mathias_shirt.webp';
+import img_theatre from '@assets/images/mathias_theatre.webp';
 import Link from '@components/typography/link.tsx';
 
 export const HomePage = (): ReactElement => {
@@ -74,8 +79,28 @@ export const HomePage = (): ReactElement => {
             src: img_luna,
           },
           {
-            alt: 'On a sailtrip in Curacao',
+            alt: 'My (just) 125cc Yamaha XSR',
+            src: img_xsr,
+          },
+          {
+            alt: 'On a sailing trip in Curacao',
             src: img_sailing,
+          },
+          {
+            alt: 'Knocked out after a bike ride',
+            src: img_bike,
+          },
+          {
+            alt: 'Trying to figure out bug 9001',
+            src: img_desk,
+          },
+          {
+            alt: 'Looking corporate',
+            src: img_shirt,
+          },
+          {
+            alt: 'At the Moulin Rouge',
+            src: img_theatre,
           },
         ]}
       />
