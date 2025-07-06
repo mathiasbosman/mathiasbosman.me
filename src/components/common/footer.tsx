@@ -1,6 +1,7 @@
 import type { PropsWithChildren, ReactElement } from 'react';
 import type { HTMLSimpleLink } from '@shared/utils.ts';
 import Link from '@components/typography/link.tsx';
+import ThemeToggle from '@components/theme-toggle.tsx';
 
 interface Props {
   links: HTMLSimpleLink[];
@@ -18,9 +19,12 @@ export const Footer = (props: PropsWithChildren<Props>): ReactElement => {
                   <Link key={i} link={link} />
                 ))}
               </div>
+              <div className="flex gap-2">
               <p className="text-balance text-center text-sm text-zinc-500">
                 ©&nbsp;{new Date().getFullYear()} Mathias&nbsp;Bosman. All&nbsp;rights&nbsp;reserved.
               </p>
+              <ThemeToggle />
+              </div>
             </div>
           </div>
         </div>
