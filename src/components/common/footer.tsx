@@ -18,13 +18,11 @@ export const Footer = (props: PropsWithChildren<Props>): ReactElement => {
                 {props.links.map((link, i) => (
                   <Link key={i} link={link} />
                 ))}
-              </div>
-              <div className="flex gap-2">
-                <p className="text-balance text-center text-sm text-zinc-500">
-                  ©&nbsp;{new Date().getFullYear()} Mathias&nbsp;Bosman. All&nbsp;rights&nbsp;reserved.
-                </p>
                 <ThemeToggle />
               </div>
+              <p className="text-balance text-center text-sm text-zinc-500">
+                ©&nbsp;{new Date().getFullYear()} Mathias&nbsp;Bosman. All&nbsp;rights&nbsp;reserved.
+              </p>
             </div>
           </div>
         </div>
