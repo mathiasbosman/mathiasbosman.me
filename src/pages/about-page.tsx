@@ -45,30 +45,28 @@ export const AboutPage = (): ReactElement => {
                 />
                 <section className="mt-12 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
                   <p>
-                    In the late 90&apos;s I got my hands on a fairly simple Windows desktop rocking the late{' '}
-                    <em>but great</em> Windows XP operating system. I used it as a tool for school.
+                    Back in the late 1990s, I first got my hands on a simple Windows desktop rocking the late{' '}
+                    <em>but great</em> Windows XP operating system. At first, I used it mainly as a school tool.
                     <br />
                     <em>However...</em> I also installed Game Maker (v.6) where a little spark of imagination and coding
                     came to life.
                   </p>
                   <p>
-                    Which, in my last teenage years, led me to study &quot;information technology systems&quot;, which
-                    started out simple by learning the programming language Pascal.
-                    <br />
-                    Later on, my interest transitioned to a love for PHP and web development.
+                    During my teenage years, that spark grew stronger and led me to study Information Technology
+                    Systems. I started with Pascal, before developing a passion for PHP and web development.
                   </p>
                   <p>
-                    And that&apos;s when the spark became a flame. I went on to study Programming and Multimedia in
-                    which I started my career by means of an internship as a PHP web developer in the United Kingdom.
-                    After a short but educational year on how to work in an actual team I returned to Belgium.
+                    That passion became a flame. I went on to study <i>Programming and Multimedia</i> and kickstarted my
+                    career with an internship as a PHP web developer in the United Kingdom. After a short but invaluable
+                    year learning how to work in a professional team, I returned home to Belgium.
                   </p>
                   <p>
-                    During my first years of employment I also took a side-interest into stage lighting coming from my
-                    love for musical theatre. Sadly I could not study this in the UK (my &apos;second home&apos;) and so
-                    I got my degree as stage lighting technician locally.
+                    Along the way, I also nurtured a side interest in stage lighting, inspired by my love of musical
+                    theatre. While I couldn’t study this field in the UK (my “second home”), I earned a degree locally
+                    as a stage lighting technician.
                   </p>
                   <p>
-                    Currently I&apos;m working for <Link link={LINK_DEHORA} /> as a backend developer working on{' '}
+                    Today, I work at <Link link={LINK_DEHORA} /> as a backend developer focussing on{' '}
                     <Link
                       target="_blank"
                       link={{
@@ -76,16 +74,20 @@ export const AboutPage = (): ReactElement => {
                         text: 'PlanPoint',
                       }}
                     />
-                    : a software suite for workforce management, planning and time registration.
+                    — a software suite for workforce management, planning and time registration.
                   </p>
                   <p>
-                    On the side, you may also find me installing and providing support for home and small business
-                    network installations.
+                    On the side, I also help install and support home and small business network infrastructures.
                   </p>
                   <p>
-                    In my spare time, you might find me: in a theatre (either watching whatever is on stage or fiddling
-                    with the stage lights), swimming, visiting amusement parks, riding my race bike or spending quality
-                    time with my beagle Luna.
+                    Outside of work, you’ll often find me:
+                    <ul className="list-disc ml-5 mt-1">
+                      <li>at the theatre (either in the audience or behind the lights),</li>
+                      <li>swimming,</li>
+                      <li>visiting amusement parks,</li>
+                      <li>riding my race- or motorbike, or</li>
+                      <li>spending quality time with my beagle, Luna.</li>
+                    </ul>
                   </p>
                 </section>
               </div>

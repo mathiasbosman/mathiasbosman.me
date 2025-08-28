@@ -41,11 +41,11 @@ export const HomePage = (): ReactElement => {
           />
           <aside className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I&apos;m Mathias, an IT project manager, software developer and network engineer based in Lebbeke,
+              I&apos;m Mathias — an IT project manager, software developer, and network engineer based in Lebbeke,
               Belgium.
               <br />
               In my spare time, you might find me: in a theatre (either watching whatever is on stage or fiddling with
-              the stage lights), swimming, visiting amusement parks or riding my race bike.
+              the stage lights), swimming, visiting amusement parks or riding my race- or motorbike.
             </p>
             <p>
               Currently working for <Link link={LINK_DEHORA} target="_blank" /> as a back-end developer.
