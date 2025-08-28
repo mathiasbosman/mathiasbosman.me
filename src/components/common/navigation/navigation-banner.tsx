@@ -25,7 +25,13 @@ export const NavigationBanner = (props: PropsWithChildren<Props>): ReactElement 
 
   return (
     <>
-      <div className="supports-backdrop-blur:bg-white/60 sticky top-0 z-50 w-full flex-none border-b border-slate-900/10 bg-white/95 backdrop-blur transition-colors duration-500 sm:hidden dark:border-slate-50/[0.06] dark:bg-transparent">
+      <div
+        className="supports-backdrop-blur:bg-white/60 dark:supports-backdrop-blur:bg-zinc-900/60 sticky top-0 z-50
+    w-full flex-none border-b
+    border-slate-900/10 bg-white/60 backdrop-blur transition-colors
+    duration-500 sm:hidden
+    dark:border-slate-50/[0.06] dark:bg-transparent"
+      >
         <header className="m-4 flex items-center justify-between">
           <div className="flex max-w-[calc(100%-3rem)] items-center">
             <button
