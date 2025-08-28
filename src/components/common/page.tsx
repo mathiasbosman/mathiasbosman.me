@@ -1,9 +1,8 @@
 import Footer from './footer.tsx';
 import Navigation from './navigation/navigation.tsx';
-import { publicPages } from '@/models/config/navigation.config.tsx';
-import { Link, useLocation } from 'react-router-dom';
+import { navigationLinks } from '@/models/config/navigation.config.tsx';
+import { Link } from 'react-router-dom';
 import type { PropsWithChildren, ReactElement } from 'react';
-import { useEffect } from 'react';
 import Avatar, { AvatarSize } from '@components/avatar.tsx';
 
 import avatar from '@assets/images/mathias.webp';
@@ -15,22 +14,14 @@ interface Props {
 }
 
 export const Page = (props: PropsWithChildren<Props>): ReactElement => {
-  const { title, renderAvatar, children } = props;
-  const location = useLocation().pathname;
-
-  useEffect(() => {
-    if (title) {
-      document.title = title;
-    }
-  }, [title]);
+  const { renderAvatar, children } = props;
 
   return (
     <>
       <main id="mainBoxy" className="flex flex-col bg-zinc-50 antialiased dark:bg-black">
         <div className="z-20 h-1 bg-gradient-to-r from-violet-500 to-pink-700"></div>
         <NavigationBanner
-          links={publicPages}
-          location={location}
+          links={navigationLinks}
           rightSlot={renderAvatar && <Avatar image={{ src: avatar, alt: 'Avatar' }} size={AvatarSize.xs} />}
         />
         <div className="fixed inset-0 z-0 flex justify-center sm:px-8">
@@ -49,15 +40,14 @@ export const Page = (props: PropsWithChildren<Props>): ReactElement => {
                     </Link>
                   )
                 }
-                links={publicPages}
-                location={location}
+                links={navigationLinks}
               />
             </header>
           </div>
         </div>
         {children}
       </main>
-      <Footer links={publicPages} />
+      <Footer links={navigationLinks} />
     </>
   );
 };
