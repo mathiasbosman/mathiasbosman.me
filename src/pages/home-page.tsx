@@ -34,13 +34,13 @@ export const HomePage = (): ReactElement => {
             title="Mathias Bosman"
             subtitleSlot={
               <div className="mt-2 text-2xl font-medium sm:text-4xl">
-                IT&nbsp;project&nbsp;manager, software&nbsp;developer, network&nbsp;engineer &amp; lighting&nbsp;tech
+                Software&nbsp;developer, IT&nbsp;project&nbsp;manager, network&nbsp;engineer &amp; lighting&nbsp;tech
               </div>
             }
           />
           <div className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I&apos;m Mathias — an IT project manager, software developer, and network engineer based in Lebbeke,
+              I&apos;m Mathias — a software developer, IT project manager, and network engineer based in Lebbeke,
               Belgium.
               <br />
               In my spare time, you might find me: in a theatre (either watching whatever is on stage or fiddling with

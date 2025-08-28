@@ -1,4 +1,3 @@
-// src/layouts/AppLayout.tsx
 import { Outlet, ScrollRestoration, useMatches } from 'react-router-dom';
 import { useEffect } from 'react';
 import Page from '@components/common/page.tsx';
@@ -13,7 +12,7 @@ export default function AppLayout() {
   const active = matches[matches.length - 1];
   const handle = (active?.handle ?? {}) as PageHandle;
 
-  const title = handle.title ?? 'Mathias Bosman';
+  const title = handle.title ? `${handle.title} - Mathias Bosman` : 'Mathias Bosman - Software developer';
   const renderAvatar = !!handle.renderAvatar;
 
   useEffect(() => {

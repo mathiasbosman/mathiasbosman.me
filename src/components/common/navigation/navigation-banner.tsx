@@ -48,7 +48,9 @@ export const NavigationBanner = (props: PropsWithChildren<Props>): ReactElement 
             {/* Breadcrumb */}
             <ol className="ml-4 flex min-w-0 whitespace-nowrap text-sm leading-6">
               <li className="flex items-center">
-                <Link to="/">Mathias Bosman</Link>
+                <Link className="dark:text-slate-200" to="/">
+                  Mathias Bosman
+                </Link>
                 {currentPageLink && (
                   <svg width="3" height="6" aria-hidden="true" className="mx-3 overflow-visible text-slate-400">
                     <path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />

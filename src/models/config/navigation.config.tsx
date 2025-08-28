@@ -4,7 +4,7 @@ import AboutPage from '@pages/about-page.tsx';
 import ErrorPage from '@pages/error-page.tsx';
 import ExperiencePage from '@pages/experience-page.tsx';
 import ProjectsPage from '@pages/projects-page.tsx';
-import AppLayout from '@/layouts/AppLayout.tsx';
+import AppLayout from '@/layouts/app-layout.tsx';
 import type { HTMLSimpleLink } from '@shared/utils.ts';
 
 export const navigationLinks: HTMLSimpleLink[] = [
@@ -25,7 +25,7 @@ export const routes: RouteObject[] = [
           {
             index: true,
             element: <HomePage />,
-            handle: { title: 'Home', renderAvatar: false },
+            handle: { renderAvatar: false },
           },
           {
             path: 'about',
