@@ -9,6 +9,19 @@ export default defineConfig({
     baseUrl: 'http://localhost:9000',
     specPattern: 'e2e/**/*.cy.ts',
     supportFile: './support/e2e.js',
+    setupNodeEvents(on, config) {
+      on('task', {
+        log(message) {
+          console.log(message);
+          return null;
+        },
+        table(rows) {
+          console.table(rows);
+          return null;
+        },
+      });
+      return config;
+    },
   },
   includeShadowDom: true,
   fixturesFolder: './fixtures',

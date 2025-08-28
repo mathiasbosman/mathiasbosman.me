@@ -1,7 +1,6 @@
 import type { ReactElement } from 'react';
 import { Employment } from '@components/employment.tsx';
 import { Contact } from '@components/contact.tsx';
-import Page from '@components/common/page.tsx';
 import ContentWrapper from '@components/common/content-wrapper.tsx';
 import Avatar, { AvatarSize } from '@components/avatar.tsx';
 import Projects from '@components/projects.tsx';
@@ -27,7 +26,7 @@ import Link from '@components/typography/link.tsx';
 
 export const HomePage = (): ReactElement => {
   return (
-    <Page renderAvatar={false}>
+    <>
       <ContentWrapper>
         <section className="relative px-2 sm:px-8 lg:px-12">
           <Avatar image={{ src: avatar, alt: 'Avatar' }} size={AvatarSize.s} />
@@ -35,24 +34,24 @@ export const HomePage = (): ReactElement => {
             title="Mathias Bosman"
             subtitleSlot={
               <div className="mt-2 text-2xl font-medium sm:text-4xl">
-                IT&nbsp;project&nbsp;manager, software&nbsp;developer, network&nbsp;engineer &amp; lighting&nbsp;tech
+                Software&nbsp;developer, IT&nbsp;project&nbsp;manager, network&nbsp;engineer &amp; lighting&nbsp;tech
               </div>
             }
           />
-          <aside className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+          <div className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I&apos;m Mathias, an IT project manager, software developer and network engineer based in Lebbeke,
+              I&apos;m Mathias — a software developer, IT project manager, and network engineer based in Lebbeke,
               Belgium.
               <br />
               In my spare time, you might find me: in a theatre (either watching whatever is on stage or fiddling with
-              the stage lights), swimming, visiting amusement parks or riding my race bike.
+              the stage lights), swimming, visiting amusement parks or riding my race- or motorbike.
             </p>
             <p>
               Currently working for <Link link={LINK_DEHORA} target="_blank" /> as a back-end developer.
               <br />
               Also, I&apos;m proud to be the human of a cute little Beagle; her name is (&apos;Queen&apos;) Luna.
             </p>
-          </aside>
+          </div>
 
           <div className="mt-6 flex gap-6">
             <SocialIconlink link={LINK_GITHUB} icon={GitHubIcon} />
@@ -124,7 +123,7 @@ export const HomePage = (): ReactElement => {
           </div>
         </ContentWrapper>
       </div>
-    </Page>
+    </>
   );
 };
 

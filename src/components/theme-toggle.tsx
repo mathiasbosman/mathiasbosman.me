@@ -1,9 +1,44 @@
-import { useEffect, useCallback } from 'react';
+import { useEffect, useCallback, useState } from 'react';
+
+type ThemePref = 'system' | 'light' | 'dark';
+
+function applyTheme(pref: ThemePref) {
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const isDark = pref === 'dark' || (pref === 'system' && prefersDark);
+  document.documentElement.classList.toggle('dark', isDark);
+}
 
 /**
  * ThemeToggle component: toggles Tailwind dark mode on click
  */
 export const ThemeToggle = () => {
+  const [pref, setPref] = useState<ThemePref>(() => {
+    return (localStorage.getItem('theme') as ThemePref) || 'system';
+  });
+
+  // Keep DOM class in sync with pref, and react to OS changes when in "system"
+  useEffect(() => {
+    const mql = window.matchMedia('(prefers-color-scheme: dark)');
+    const update = () => applyTheme(pref);
+
+    update();
+    if (pref === 'system') {
+      mql.addEventListener('change', update);
+      return () => mql.removeEventListener('change', update);
+    }
+  }, [pref]);
+
+  // Keep multiple tabs in sync
+  useEffect(() => {
+    const onStorage = (e: StorageEvent) => {
+      if (e.key === 'theme' && e.newValue) {
+        setPref(e.newValue as ThemePref);
+      }
+    };
+    window.addEventListener('storage', onStorage);
+    return () => window.removeEventListener('storage', onStorage);
+  }, []);
+
   // Initialize theme on mount
   useEffect(() => {
     const saved = localStorage.getItem('theme');

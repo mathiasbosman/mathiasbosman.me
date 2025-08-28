@@ -1,20 +1,27 @@
 import type { PropsWithChildren, ReactElement, ReactNode } from 'react';
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type { HTMLSimpleLink } from '@shared/utils.ts';
 import { GitHubIcon, LinkedInIcon } from '@shared/icons.tsx';
 import FollowIconLink from '@components/typography/folow-iconlink.tsx';
 import { LINK_GITHUB, LINK_LINKEDIN } from '@/constants.ts';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 interface Props {
   links: HTMLSimpleLink[];
-  location: string;
   rightSlot?: ReactNode;
 }
 
 export const NavigationBanner = (props: PropsWithChildren<Props>): ReactElement => {
+  const { links, rightSlot } = props;
   const [visible, setVisible] = useState(false);
-  const { links, location, rightSlot } = props;
-  const currentPageLink = links.find((link) => link.href === location);
+  const location = useLocation();
+
+  // Close the menu whenever the route changes
+  useEffect(() => {
+    setVisible(false);
+  }, [location.pathname]);
+
+  const currentPageLink = useMemo(() => links.find((l) => l.href === location.pathname), [links, location.pathname]);
 
   return (
     <>
@@ -23,8 +30,9 @@ export const NavigationBanner = (props: PropsWithChildren<Props>): ReactElement 
           <div className="flex max-w-[calc(100%-3rem)] items-center">
             <button
               type="button"
-              aria-expanded={true}
-              onClick={() => setVisible(!visible)}
+              aria-expanded={visible}
+              aria-controls="mobile-nav"
+              onClick={() => setVisible((v) => !v)}
               className="text-zinc-500 hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300"
             >
               <span className="sr-only">Navigation</span>
@@ -36,18 +44,16 @@ export const NavigationBanner = (props: PropsWithChildren<Props>): ReactElement 
                 />
               </svg>
             </button>
+
+            {/* Breadcrumb */}
             <ol className="ml-4 flex min-w-0 whitespace-nowrap text-sm leading-6">
               <li className="flex items-center">
-                <a href="/">Mathias Bosman</a>
+                <Link className="dark:text-slate-200" to="/">
+                  Mathias Bosman
+                </Link>
                 {currentPageLink && (
                   <svg width="3" height="6" aria-hidden="true" className="mx-3 overflow-visible text-slate-400">
-                    <path
-                      d="M0 0L3 3L0 6"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                    ></path>
+                    <path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                   </svg>
                 )}
               </li>
@@ -64,22 +70,25 @@ export const NavigationBanner = (props: PropsWithChildren<Props>): ReactElement 
           <div>{rightSlot}</div>
         </header>
       </div>
+
+      {/* Backdrop */}
       <div
         className={`fixed inset-0 z-50 bg-zinc-800/40 opacity-100 backdrop-blur-sm dark:bg-black/80 ${!visible ? 'hidden' : ''}`}
         aria-hidden={!visible}
-      ></div>
+        onClick={() => setVisible(false)}
+      />
+
+      {/* Drawer */}
       <div
+        id="mobile-nav"
+        role="dialog"
+        aria-label="Mobile navigation"
+        aria-modal="true"
         className={`fixed inset-x-0 top-0 z-50 h-full w-80 max-w-[calc(100%-3rem)] origin-top scale-100 bg-white p-8 opacity-100 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800 ${!visible ? 'hidden' : ''}`}
         tabIndex={-1}
       >
         <div className="flex flex-row-reverse items-center justify-between">
-          <button
-            aria-label="Close menu"
-            className="-m-1 p-1"
-            type="button"
-            tabIndex={0}
-            onClick={() => setVisible(!visible)}
-          >
+          <button aria-label="Close menu" className="-m-1 p-1" type="button" onClick={() => setVisible(false)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -95,20 +104,29 @@ export const NavigationBanner = (props: PropsWithChildren<Props>): ReactElement 
           </button>
           <h2 className="font-bold text-zinc-600 dark:text-zinc-400">Navigation</h2>
         </div>
+
         <nav className="mt-6">
           <ul className="space-y-6 border-l border-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:border-zinc-700 dark:text-zinc-300">
-            {links.map((link, i) => (
-              <li key={i}>
-                <a
-                  className={`-ml-px block border-l pl-4 ${currentPageLink === link ? 'border-current font-bold text-indigo-500' : 'border-transparent hover:border-current hover:text-indigo-500'}`}
-                  href={link.href}
+            {links.map((link) => (
+              <li key={link.href}>
+                <NavLink
+                  to={link.href}
+                  end={link.href === '/'}
+                  className={({ isActive }) =>
+                    `-ml-px block border-l pl-4 ${
+                      isActive
+                        ? 'border-current font-bold text-indigo-500'
+                        : 'border-transparent hover:border-current hover:text-indigo-500'
+                    }`
+                  }
                 >
                   {link.text}
-                </a>
+                </NavLink>
               </li>
             ))}
           </ul>
         </nav>
+
         <h2 className="mt-10 pt-6 font-bold text-zinc-600 dark:text-zinc-400">My social media</h2>
         <ul role="list" className="mt-6">
           <li className="mt-4 flex">

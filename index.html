@@ -36,9 +36,8 @@ Currently full-time employed at the Department of Environment of the Flemish Gov
     <meta content="@MathiasBosman" name="twitter:site" />
     <meta content="@MathiasBosman" name="twitter:creator" />
     <meta
-      content="I'm Mathias, an IT project manager, software developer and network engineer based in Lebbeke, Belgium.
-In my spare time I like to fiddle with stage lights.
-Currently full-time employed at the Department of Environment of the Flemish Government."
+      content="I'm Mathias — an IT project manager, software developer, and network engineer based in Lebbeke,
+              Belgium."
       name="twitter:description"
     />
     <meta content="https://mathiasbosman.me/assets/og_image.webp" name="twitter:image" />
@@ -46,6 +45,17 @@ Currently full-time employed at the Department of Environment of the Flemish Gov
       content="mathias bosman, project manager, it, software developer, web designer, java, developer, network engineer, resume"
       name="keywords"
     />
+    <script>
+      (function () {
+        // avoid "flashing" the user
+        try {
+          const saved = localStorage.getItem('theme'); // 'system' | 'light' | 'dark' | null
+          const mql = window.matchMedia('(prefers-color-scheme: dark)');
+          const dark = saved === 'dark' || ((!saved || saved === 'system') && mql.matches);
+          if (dark) document.documentElement.classList.add('dark');
+        } catch (_) {}
+      })();
+    </script>
   </head>
   <body class="h-full bg-zinc-50 selection:bg-indigo-300 selection:text-indigo-900 dark:bg-black">
     <div id="app-root" role="presentation" class="flex h-screen flex-col justify-between"></div>
