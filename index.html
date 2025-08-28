@@ -46,6 +46,17 @@ Currently full-time employed at the Department of Environment of the Flemish Gov
       content="mathias bosman, project manager, it, software developer, web designer, java, developer, network engineer, resume"
       name="keywords"
     />
+    <script>
+      (function () {
+        // avoid "flashing" the user
+        try {
+          const saved = localStorage.getItem('theme'); // 'system' | 'light' | 'dark' | null
+          const mql = window.matchMedia('(prefers-color-scheme: dark)');
+          const dark = saved === 'dark' || (!saved || saved === 'system') && mql.matches;
+          if (dark) document.documentElement.classList.add('dark');
+        } catch (_) {}
+      })();
+    </script>
   </head>
   <body class="h-full bg-zinc-50 selection:bg-indigo-300 selection:text-indigo-900 dark:bg-black">
     <div id="app-root" role="presentation" class="flex h-screen flex-col justify-between"></div>
