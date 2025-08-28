@@ -54,7 +54,7 @@ export const NavigationBanner = (props: PropsWithChildren<Props>): ReactElement 
             {/* Breadcrumb */}
             <ol className="ml-4 flex min-w-0 whitespace-nowrap text-sm leading-6">
               <li className="flex items-center">
-                <Link className="dark:text-slate-200" to="/">
+                <Link className="text-slate-900 dark:text-slate-200" to="/">
                   Mathias Bosman
                 </Link>
                 {currentPageLink && (
