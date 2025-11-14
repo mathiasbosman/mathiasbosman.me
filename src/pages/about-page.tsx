@@ -74,7 +74,10 @@ export const AboutPage = (): ReactElement => {
                   />
                   — a software suite for workforce management, planning and time registration.
                 </p>
-                <p>On the side, I also help install and support home and small business network infrastructures.</p>
+                <p>
+                  On the side, I also help install and support home and small business network infrastructures.
+                  <br />I work remotely and on-site for clients around Dendermonde and the wider Flemish region.
+                </p>
                 <p>
                   Outside of work, you’ll often find me:
                   <ul className="ml-5 mt-1 list-disc">
