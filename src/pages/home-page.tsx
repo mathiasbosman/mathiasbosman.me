@@ -40,8 +40,8 @@ export const HomePage = (): ReactElement => {
           />
           <div className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I&apos;m Mathias — a software developer, IT project manager, and network engineer based in Lebbeke,
-              Belgium.
+              I&apos;m Mathias — a software developer, IT project manager, and network engineer based near Dendermonde
+              in East Flanders, Belgium.
               <br />
               In my spare time, you might find me: in a theatre (either watching whatever is on stage or fiddling with
               the stage lights), swimming, visiting amusement parks or riding my race- or motorbike.
