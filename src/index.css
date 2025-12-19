@@ -1,6 +1,25 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --animate-fade-in: fade 1.2s ease-in-out forwards;
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@layer components {
+  .link-hover {
+    @apply font-bold hover:bg-linear-to-r hover:from-violet-500 hover:to-pink-600 hover:bg-clip-text hover:text-transparent;
+  }
+}
 
 body {
   font-family:

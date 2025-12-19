@@ -28,12 +28,12 @@
     "react-router-dom": "^7.11.0"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.18",
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^8.45.0",
     "@typescript-eslint/parser": "^8.31.1",
     "@vitejs/plugin-react": "^4.3.4",
-    "autoprefixer": "^10.4.14",
     "axe-core": "^4.10.3",
     "cypress": "^13.17.0",
     "cypress-axe": "^1.6.0",
@@ -45,9 +45,9 @@
     "eslint-plugin-react-hooks": "^5.1.0",
     "postcss": "^8.4.31",
     "prettier": "3.6.2",
-    "prettier-plugin-tailwindcss": "^0.5.4",
+    "prettier-plugin-tailwindcss": "^0.7.2",
     "sass": "^1.93.3",
-    "tailwindcss": "^3.4.0",
+    "tailwindcss": "^4.1.18",
     "typescript": "^5.4.5",
     "vite": "^6.4.1",
     "vitest": "^3.1.2"

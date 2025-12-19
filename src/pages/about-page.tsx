@@ -34,7 +34,7 @@ export const AboutPage = (): ReactElement => {
                 title={
                   <span>
                     I&apos;m&nbsp;
-                    <span className="bg-gradient-to-r  from-violet-500 to-pink-600 bg-clip-text text-transparent">
+                    <span className="bg-linear-to-r from-violet-500 to-pink-600 bg-clip-text text-transparent">
                       Mathias Bosman
                     </span>
                     . Living in Belgium and being part of the future.
@@ -80,7 +80,7 @@ export const AboutPage = (): ReactElement => {
                 </p>
                 <p>
                   Outside of work, you’ll often find me:
-                  <ul className="ml-5 mt-1 list-disc">
+                  <ul className="mt-1 ml-5 list-disc">
                     <li>at the theatre (either in the audience or behind the lights),</li>
                     <li>swimming,</li>
                     <li>visiting amusement parks,</li>
