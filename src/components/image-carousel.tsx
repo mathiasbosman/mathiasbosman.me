@@ -58,12 +58,7 @@ export const ImageCarousel = ({ images, amountToShow = 5, swapInterval = 5_000 }
         return (
           <div
             key={i}
-            className={`
-              ${rot}
-              relative aspect-[5/10] w-24 flex-none overflow-hidden
-              rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-36
-              sm:rounded-2xl lg:aspect-[9/10] lg:w-72
-            `}
+            className={` ${rot} relative aspect-5/10 w-24 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-36 sm:rounded-2xl lg:aspect-9/10 lg:w-72 dark:bg-zinc-800`}
           >
             {/* always show the “current” image underneath */}
             <img
@@ -80,10 +75,7 @@ export const ImageCarousel = ({ images, amountToShow = 5, swapInterval = 5_000 }
               <img
                 src={incoming.img.src}
                 alt={incoming.img.alt}
-                className="
-                  absolute inset-0 h-full w-full animate-fade-in
-                  object-cover opacity-0
-                "
+                className="animate-fade-in absolute inset-0 h-full w-full object-cover opacity-0"
               />
             )}
           </div>

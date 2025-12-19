@@ -19,7 +19,7 @@ export const Page = (props: PropsWithChildren<Props>): ReactElement => {
   return (
     <>
       <main id="mainBoxy" className="flex flex-col bg-zinc-50 antialiased dark:bg-black">
-        <div className="z-20 h-1 bg-gradient-to-r from-violet-500 to-pink-700"></div>
+        <div className="z-20 h-1 bg-linear-to-r from-violet-500 to-pink-700"></div>
         <NavigationBanner
           links={navigationLinks}
           rightSlot={renderAvatar && <Avatar image={{ src: avatar, alt: 'Avatar' }} size={AvatarSize.xs} />}

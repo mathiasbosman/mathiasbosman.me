@@ -25,13 +25,7 @@ export const NavigationBanner = (props: PropsWithChildren<Props>): ReactElement 
 
   return (
     <>
-      <div
-        className="supports-backdrop-blur:bg-white/60 dark:supports-backdrop-blur:bg-zinc-900/60 sticky top-0 z-50
-    w-full flex-none border-b
-    border-slate-900/10 bg-white/60 backdrop-blur transition-colors
-    duration-500 dark:border-slate-50/[0.06]
-    dark:bg-transparent sm:hidden"
-      >
+      <div className="sticky top-0 z-50 w-full flex-none border-b border-slate-900/10 bg-white/60 backdrop-blur-sm transition-colors duration-500 supports-backdrop-blur:bg-white/60 sm:hidden dark:border-slate-50/6 dark:bg-transparent dark:supports-backdrop-blur:bg-zinc-900/60">
         <header className="m-4 flex items-center justify-between">
           <div className="flex max-w-[calc(100%-3rem)] items-center">
             <button
@@ -52,7 +46,7 @@ export const NavigationBanner = (props: PropsWithChildren<Props>): ReactElement 
             </button>
 
             {/* Breadcrumb */}
-            <ol className="ml-4 flex min-w-0 whitespace-nowrap text-sm leading-6">
+            <ol className="ml-4 flex min-w-0 text-sm leading-6 whitespace-nowrap">
               <li className="flex items-center">
                 <Link className="text-slate-900 dark:text-slate-200" to="/">
                   Mathias Bosman
@@ -79,7 +73,7 @@ export const NavigationBanner = (props: PropsWithChildren<Props>): ReactElement 
 
       {/* Backdrop */}
       <div
-        className={`fixed inset-0 z-50 bg-zinc-800/40 opacity-100 backdrop-blur-sm dark:bg-black/80 ${!visible ? 'hidden' : ''}`}
+        className={`fixed inset-0 z-50 bg-zinc-800/40 opacity-100 backdrop-blur-xs dark:bg-black/80 ${!visible ? 'hidden' : ''}`}
         aria-hidden={!visible}
         onClick={() => setVisible(false)}
       />

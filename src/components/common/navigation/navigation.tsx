@@ -17,19 +17,19 @@ export const Navigation = (props: PropsWithChildren<Props>): ReactElement => {
 
       <div className="flex md:basis-1/3 md:justify-center">
         <nav aria-label="Primary" className="pointer-events-auto inline-block md:basis-1/3 md:justify-center">
-          <ul className="flex rounded-lg bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
+          <ul className="flex rounded-lg bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
             {links.map((link) => (
               <li key={link.href} className="list-none">
                 <NavLink
                   to={link.href}
                   end={link.href === '/'}
-                  className="relative inline-block p-2 px-3 hover:bg-gradient-to-r hover:from-violet-500 hover:to-pink-600 hover:bg-clip-text hover:text-transparent"
+                  className="relative inline-block p-2 px-3 hover:bg-linear-to-r hover:from-violet-500 hover:to-pink-600 hover:bg-clip-text hover:text-transparent"
                 >
                   {({ isActive }) => (
                     <>
                       {link.text}
                       {isActive && (
-                        <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-violet-400/0 via-fuchsia-500/40 to-pink-600/0" />
+                        <span className="absolute inset-x-1 -bottom-px h-px bg-linear-to-r from-violet-400/0 via-fuchsia-500/40 to-pink-600/0" />
                       )}
                     </>
                   )}
