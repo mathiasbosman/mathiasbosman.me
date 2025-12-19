@@ -21,7 +21,7 @@ export const Experiences = (props: PropsWithChildren<Props>): ReactElement => {
   const renderItem = (item: ExperienceItem, key: number): ReactElement => (
     <article key={key} className="group relative flex flex-col items-start">
       <h3 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
-        <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-xl dark:bg-zinc-800/50"></div>
+        <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-xl"></div>
         {renderLink(item)}
       </h3>
       <p className="relative z-10 order-first mb-3 flex items-center pl-3.5 text-sm text-zinc-400 contrast-more:text-zinc-600 dark:text-zinc-500">
