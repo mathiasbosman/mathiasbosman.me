@@ -5,7 +5,11 @@ import '@fontsource/inter/400.css';
 import '@fontsource/inter/400-italic.css';
 import '@fontsource/inter/700.css';
 
-const router = createBrowserRouter(routes);
+const router = createBrowserRouter(routes, {
+  future: {
+    v7_relativeSplatPath: true,
+  },
+});
 
 export const App = (): ReactElement => {
   return <RouterProvider router={router} />;
