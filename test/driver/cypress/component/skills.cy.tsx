@@ -5,7 +5,7 @@ describe('<Skills/> component', () => {
   it('Should render provided skills', () => {
     const intro = 'Skill summary paragraph';
     const skills: Skill[] = [
-      { label: 'TypeScript', category: 'Frontend', proficiency: 'Advanced'},
+      { label: 'TypeScript', category: 'Frontend', proficiency: 'Advanced' },
       { label: 'React', category: 'Frontend', proficiency: 'Advanced' },
       { label: 'Java', category: 'Backend', proficiency: 'Expert' },
     ];
@@ -30,4 +30,3 @@ describe('<Skills/> component', () => {
     cy.get('section[aria-labelledby="skills-heading"]').should('not.exist');
   });
 });
-

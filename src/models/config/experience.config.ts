@@ -28,14 +28,14 @@ export interface ExperienceItem {
 
 export const experienceConfig: ExperienceConfig = {
   skills: [
-    { label: 'Java', category: 'Backend', proficiency: 'Expert'},
-    { label: 'Spring Boot', category: 'Backend', proficiency: 'Advanced'},
-    { label: 'REST APIs', category: 'Backend', proficiency: 'Advanced'},
-    { label: 'TypeScript', category: 'Frontend', proficiency: 'Advanced'},
-    { label: 'React', category: 'Frontend', proficiency: 'Advanced'},
-    { label: 'SQL', category: 'Data', proficiency: 'Advanced'},
-    { label: 'DevOps (CI/CD)', category: 'Delivery', proficiency: 'Advanced'},
-    { label: 'Project Management', category: 'Leadership', proficiency: 'Beginner'},
+    { label: 'Java', category: 'Backend', proficiency: 'Expert' },
+    { label: 'Spring Boot', category: 'Backend', proficiency: 'Advanced' },
+    { label: 'REST APIs', category: 'Backend', proficiency: 'Advanced' },
+    { label: 'TypeScript', category: 'Frontend', proficiency: 'Advanced' },
+    { label: 'React', category: 'Frontend', proficiency: 'Advanced' },
+    { label: 'SQL', category: 'Data', proficiency: 'Advanced' },
+    { label: 'DevOps (CI/CD)', category: 'Delivery', proficiency: 'Advanced' },
+    { label: 'Project Management', category: 'Leadership', proficiency: 'Beginner' },
   ],
   experiences: [
     {

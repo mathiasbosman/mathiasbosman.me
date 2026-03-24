@@ -42,9 +42,7 @@ export const Skills = (props: Props): ReactElement => {
                     className="inline-flex items-center gap-2 rounded-full bg-zinc-100 px-3 py-1 text-sm font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
                   >
                     <span>{skill.label}</span>
-                    <span className="text-xs text-zinc-500 dark:text-zinc-400">
-                      {skill.proficiency}
-                    </span>
+                    <span className="text-xs text-zinc-500 dark:text-zinc-400">{skill.proficiency}</span>
                   </li>
                 ))}
               </ul>
@@ -57,4 +55,3 @@ export const Skills = (props: Props): ReactElement => {
 };
 
 export default Skills;
-
