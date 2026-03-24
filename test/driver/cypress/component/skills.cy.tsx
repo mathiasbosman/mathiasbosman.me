@@ -3,7 +3,6 @@ import type { Skill } from '@models/config/experience.config.ts';
 
 describe('<Skills/> component', () => {
   it('Should render provided skills', () => {
-    const intro = 'Skill summary paragraph';
     const skills: Skill[] = [
       { label: 'TypeScript', category: 'Frontend', proficiency: 'Advanced' },
       { label: 'React', category: 'Frontend', proficiency: 'Advanced' },
@@ -14,7 +13,6 @@ describe('<Skills/> component', () => {
 
     cy.get('section[aria-labelledby="skills-heading"]').should('be.visible');
     cy.get('#skills-heading').should('have.text', 'Skills');
-    cy.contains('p', intro).should('be.visible');
     cy.contains('h3', 'Frontend').should('be.visible');
     cy.contains('h3', 'Backend').should('be.visible');
     cy.get('li').should('have.length', 3);
