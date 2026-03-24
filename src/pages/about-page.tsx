@@ -5,7 +5,7 @@ import { GitHubIcon, LinkedInIcon } from '@shared/icons.tsx';
 import PageTitle from '@components/typography/page-title.tsx';
 import { CONTACT_EMAIL, LINK_DEHORA, LINK_GITHUB, LINK_LINKEDIN } from '@/constants.ts';
 import FollowIconLink from '@components/typography/folow-iconlink.tsx';
-import profilePicture from '@assets/images/mathias_curacao.webp';
+import profilePicture from '@assets/images/mathias_corp.webp';
 import Link from '@components/typography/link.tsx';
 import ContentWrapper from '@components/common/content-wrapper.tsx';
 

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import type { PropsWithChildren, ReactElement } from 'react';
 import Avatar, { AvatarSize } from '@components/avatar.tsx';
 
-import avatar from '@assets/images/mathias.webp';
+import avatar from '@assets/images/mathias_corp.webp';
 import NavigationBanner from '@components/common/navigation/navigation-banner.tsx';
 
 interface Props {
