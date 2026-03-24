@@ -2,6 +2,7 @@ import type { ReactElement } from 'react';
 import SectionWrapper from '@components/common/section-wrapper.tsx';
 import PageTitle from '@components/typography/page-title.tsx';
 import Experiences from '@components/experiences.tsx';
+import Skills from '@components/skills.tsx';
 import { experienceConfig } from '@models/config/experience.config.ts';
 import { LINK_LINKEDIN } from '@/constants.ts';
 import Link from '@components/typography/link.tsx';
@@ -24,6 +25,9 @@ export const ExperiencePage = (): ReactElement => {
         <div className="mt-16 sm:mt-20">
           <h2 className="sr-only">Experiences</h2>
           <Experiences experiences={experienceConfig.experiences} />
+        </div>
+        <div className="mt-20 sm:mt-24">
+          <Skills skills={experienceConfig.skills} />
         </div>
       </SectionWrapper>
     </ContentWrapper>
