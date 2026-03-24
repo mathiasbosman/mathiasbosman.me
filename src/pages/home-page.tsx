@@ -11,7 +11,7 @@ import { projectsConfig } from '@models/config/project.config.ts';
 import { experienceConfig } from '@models/config/experience.config.ts';
 import { LINK_DEHORA, LINK_GITHUB, LINK_LINKEDIN } from '@/constants.ts';
 import { GitHubIcon, LinkedInIcon } from '@shared/icons.tsx';
-import avatar from '@assets/images/mathias.webp';
+import avatar from '@assets/images/mathias_corp.webp';
 import img_luna from '@assets/images/luna.webp';
 import img_phantasialand from '@assets/images/phantasialand.webp';
 import img_lights from '@assets/images/mathias_lights.webp';
@@ -20,8 +20,9 @@ import img_office from '@assets/images/mathias_office.webp';
 import img_xsr from '@assets/images/xsr125.webp';
 import img_bike from '@assets/images/mathias_bike.webp';
 import img_desk from '@assets/images/mathias_desk.webp';
-import img_shirt from '@assets/images/mathias_shirt.webp';
 import img_theatre from '@assets/images/mathias_theatre.webp';
+import img_corp from '@assets/images/mathias_corp.webp';
+import img_curacao from '@assets/images/mathias_curacao.webp';
 import Link from '@components/typography/link.tsx';
 
 export const HomePage = (): ReactElement => {
@@ -94,12 +95,16 @@ export const HomePage = (): ReactElement => {
             src: img_desk,
           },
           {
-            alt: 'Looking corporate',
-            src: img_shirt,
-          },
-          {
             alt: 'At the Moulin Rouge',
             src: img_theatre,
+          },
+          {
+            alt: 'Looking very corporate',
+            src: img_corp,
+          },
+          {
+            alt: '',
+            src: img_curacao,
           },
         ]}
       />
