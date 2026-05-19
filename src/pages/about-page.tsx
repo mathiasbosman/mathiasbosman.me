@@ -85,7 +85,6 @@ export const AboutPage = (): ReactElement => {
                     <li>swimming,</li>
                     <li>visiting amusement parks,</li>
                     <li>riding my race- or motorbike, or</li>
-                    <li>spending quality time with my beagle, Luna.</li>
                   </ul>
                 </p>
               </section>

@@ -49,8 +49,6 @@ export const HomePage = (): ReactElement => {
             </p>
             <p>
               Currently working for <Link link={LINK_DEHORA} target="_blank" /> as a back-end developer.
-              <br />
-              Also, I&apos;m proud to be the human of a cute little Beagle; her name is (&apos;Queen&apos;) Luna.
             </p>
           </div>
 
