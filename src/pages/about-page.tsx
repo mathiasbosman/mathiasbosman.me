@@ -84,7 +84,7 @@ export const AboutPage = (): ReactElement => {
                     <li>at the theatre (either in the audience or behind the lights),</li>
                     <li>swimming,</li>
                     <li>visiting amusement parks,</li>
-                    <li>riding my race- or motorbike, or</li>
+                    <li>riding my race- or motorbike</li>
                   </ul>
                 </p>
               </section>
