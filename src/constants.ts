@@ -13,5 +13,3 @@ export const LINK_DEHORA: HTMLSimpleLink = {
   href: 'https://dehora.be/',
   text: 'Déhora Belgium',
 };
-
-export const CONTACT_EMAIL = 'bWF0aGlhc0BtYXRoaWFzYm9zbWFuLmJl';

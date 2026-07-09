@@ -51,7 +51,7 @@ export const ImageCarousel = ({ images, amountToShow = 5, swapInterval = 5_000 }
   }, [hidden, visible, swapInterval]);
 
   return (
-    <div className="mt-8 flex justify-center gap-4 overflow-hidden py-4 sm:mt-16 sm:gap-8">
+    <div className="mt-8 flex justify-center gap-4 overflow-hidden py-4 sm:mt-0 sm:gap-8">
       {visible.map((img, i) => {
         const rot = i % 2 === 0 ? '-rotate-2' : 'rotate-2';
 

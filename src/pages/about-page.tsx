@@ -1,9 +1,8 @@
 import type { ReactElement } from 'react';
 import SectionWrapper from '@components/common/section-wrapper.tsx';
-import { sendEmail } from '@shared/utils.ts';
 import { GitHubIcon, LinkedInIcon } from '@shared/icons.tsx';
 import PageTitle from '@components/typography/page-title.tsx';
-import { CONTACT_EMAIL, LINK_DEHORA, LINK_GITHUB, LINK_LINKEDIN } from '@/constants.ts';
+import { LINK_DEHORA, LINK_GITHUB, LINK_LINKEDIN } from '@/constants.ts';
 import FollowIconLink from '@components/typography/folow-iconlink.tsx';
 import profilePicture from '@assets/images/mathias_corp.webp';
 import Link from '@components/typography/link.tsx';
@@ -97,25 +96,6 @@ export const AboutPage = (): ReactElement => {
                 </li>
                 <li className="mt-4 flex">
                   <FollowIconLink link={LINK_LINKEDIN} icon={LinkedInIcon} />
-                </li>
-                <li className="mt-8 flex border-t border-zinc-100 pt-8 dark:border-zinc-700/40">
-                  <button
-                    className="group flex text-sm font-medium text-zinc-800 transition hover:text-indigo-500 dark:text-zinc-200 dark:hover:text-indigo-500"
-                    onClick={() => {
-                      sendEmail(CONTACT_EMAIL);
-                    }}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      className="h-5 w-5 fill-zinc-500 transition group-hover:fill-indigo-500"
-                    >
-                      <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
-                      <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
-                    </svg>
-                    <span className="ml-4">Send me an email</span>
-                  </button>
                 </li>
               </ul>
             </aside>
