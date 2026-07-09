@@ -1,4 +1,4 @@
-import type { ReactElement, MouseEvent } from 'react';
+import type { ReactElement } from 'react';
 import { Employment } from '@components/employment.tsx';
 import ContentWrapper from '@components/common/content-wrapper.tsx';
 import Projects from '@components/projects.tsx';
@@ -19,21 +19,9 @@ import img_bike from '@assets/images/mathias_bike.webp';
 import img_desk from '@assets/images/mathias_desk.webp';
 import img_theatre from '@assets/images/mathias_theatre.webp';
 import img_curacao from '@assets/images/mathias_curacao.webp';
+import Link from '@components/typography/link.tsx';
 
 export const HomePage = (): ReactElement => {
-  const scrollToProjects = (event: MouseEvent<HTMLAnchorElement>): void => {
-    event.preventDefault();
-
-    const projectsSection = document.getElementById('projects');
-    if (!projectsSection) {
-      window.location.hash = 'projects';
-      return;
-    }
-
-    window.history.replaceState(null, '', '#projects');
-    projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
-
   return (
     <>
       <ContentWrapper>
@@ -52,13 +40,10 @@ export const HomePage = (): ReactElement => {
             <p className="mt-8 text-base text-zinc-600 dark:text-zinc-400 sm:text-lg">
               Currently building workforce management software at Déhora Belgium.
             </p>
-            <a
-              className="mt-8 inline-block text-lg font-bold text-zinc-800 transition hover:bg-gradient-to-r hover:from-violet-500 hover:to-pink-600 hover:bg-clip-text hover:text-transparent dark:text-zinc-100"
-              href="#projects"
-              onClick={scrollToProjects}
-            >
-              ↓ View my recent projects
-            </a>
+            <p className="mt-8 text-base text-zinc-800 dark:text-zinc-100 sm:text-lg">
+              <Link link={{ href: '#projects', text: '↓ View my recent projects' }} scrollIntoView />
+            </p>
+
             <div className="mt-10 flex gap-6">
               <SocialIconlink link={LINK_GITHUB} icon={GitHubIcon} />
               <SocialIconlink link={LINK_LINKEDIN} icon={LinkedInIcon} />
