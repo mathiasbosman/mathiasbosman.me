@@ -13,16 +13,13 @@ describe('<Experiences/> component', () => {
     section.should('be.visible').and('have.attr', 'aria-labelledby', ref);
     section.within(() => {
       // experience checks
-      cy.get('h2')
-        .should('be.visible')
-        .should('have.text', experienceWithOnePlaceAndOneItem.place);
+      cy.get('h2').should('be.visible').should('have.text', experienceWithOnePlaceAndOneItem.place);
 
       const article = cy.get('article');
       article.should('be.visible');
       article.within(() => {
         // item checks
-        cy.get('a[href="/href"]')
-          .should('be.visible');
+        cy.get('a[href="/href"]').should('be.visible');
         cy.get('p').should('contain.text', experienceItemMock.description);
         cy.get('p').should('contain.text', experienceItemMock.period.toString());
       });
