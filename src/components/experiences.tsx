@@ -43,7 +43,7 @@ export const Experiences = (props: PropsWithChildren<Props>): ReactElement => {
     <section
       key={key}
       aria-labelledby={`experience:${key}`}
-      className="group relative overflow-hidden rounded-2xl bg-white/80 p-6 sm:p-8"
+      className="group relative overflow-hidden rounded-2xl p-6 sm:p-8"
     >
       <div className="flex items-center gap-4">
         {experience.logo && (
