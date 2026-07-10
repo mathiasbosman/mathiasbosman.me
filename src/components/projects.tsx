@@ -12,7 +12,7 @@ export const Projects = (props: PropsWithChildren<Props>): ReactElement => {
   const renderItem = (project: Project, key: number): ReactElement => (
     <article
       key={key}
-      className="group relative overflow-hidden rounded-2xl border border-zinc-200/80 bg-white/90 transition duration-300 hover:-translate-y-1 hover:border-violet-300/80 hover:shadow-lg hover:shadow-zinc-900/10 dark:border-zinc-700/50 dark:bg-zinc-900/80 dark:hover:border-violet-500/50 dark:hover:shadow-black/30"
+      className="group relative overflow-hidden rounded-md border border-zinc-200/80 bg-white/90 transition duration-300 hover:-translate-y-1 hover:border-violet-300/80 hover:shadow-lg hover:shadow-zinc-900/10 dark:border-zinc-700/50 dark:bg-zinc-900/80 dark:hover:border-violet-500/50 dark:hover:shadow-black/30"
     >
       <div className="h-44 overflow-hidden border-b border-zinc-100 bg-zinc-100/80 dark:border-zinc-700/50 dark:bg-zinc-800/70">
         <img

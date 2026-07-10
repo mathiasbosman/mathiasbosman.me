@@ -19,16 +19,16 @@ export const Skills = (props: Props): ReactElement => {
   }, {});
 
   return (
-    <section
-      aria-labelledby="skills-heading"
-      className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40"
-    >
-      <div className="grid max-w-3xl grid-cols-1 items-baseline gap-y-8 md:grid-cols-4">
-        <h2 id="skills-heading" className="text-sm font-semibold text-zinc-800 dark:text-zinc-100">
-          Skills
-        </h2>
+    <section aria-labelledby="skills-heading" className="group relative overflow-hidden sm:p-8">
+      <div className="relative grid max-w-4xl grid-cols-1 items-start gap-y-8 md:grid-cols-4">
+        <div>
+          <h2 id="skills-heading" className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
+            Skills
+          </h2>
+          <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">Technology and delivery focus areas.</p>
+        </div>
         <div className="space-y-8 md:col-span-3">
-          <p className="text-sm text-zinc-600 dark:text-zinc-400">
+          <p className="text-sm leading-6 text-zinc-600 dark:text-zinc-400">
             Over the years I have combined software engineering, delivery and leadership skills to ship practical
             solutions for teams and end users.
           </p>
@@ -39,7 +39,7 @@ export const Skills = (props: Props): ReactElement => {
                 {items.map((skill) => (
                   <li
                     key={`${skill.category}-${skill.label}`}
-                    className="inline-flex items-center gap-2 rounded-full bg-zinc-100 px-3 py-1 text-sm font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
+                    className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-zinc-50 px-3 py-1 text-sm font-medium text-zinc-700 transition hover:border-violet-300/80 hover:bg-violet-50/70 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:border-violet-500/50 dark:hover:bg-zinc-800"
                   >
                     <span>{skill.label}</span>
                     <span className="text-xs text-zinc-600 dark:text-zinc-400">{skill.proficiency}</span>
