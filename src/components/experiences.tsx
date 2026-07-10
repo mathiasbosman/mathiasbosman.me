@@ -42,7 +42,7 @@ export const Experiences = (props: PropsWithChildren<Props>): ReactElement => {
   const renderSection = (experience: Experience, key: number): ReactElement => (
     <section
       key={key}
-      aria-labelledby={`experience:${key}`}
+      aria-labelledby={`ref:${experience.place}`}
       className="group relative overflow-hidden rounded-2xl px-0 sm:px-8"
     >
       <div className="flex items-center gap-4">
@@ -57,7 +57,7 @@ export const Experiences = (props: PropsWithChildren<Props>): ReactElement => {
           </div>
         )}
         <div>
-          <h2 id={`experience:${key}`} className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
+          <h2 id={`ref:${experience.place}`} className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
             {experience.place}
           </h2>
         </div>
