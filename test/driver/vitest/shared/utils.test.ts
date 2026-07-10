@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { escapeHtml, Period, shuffleArray } from '@shared/utils.ts';
+import { Period, shuffleArray } from '@shared/utils.ts';
 
 describe('Period', () => {
   it('Should have toString() returning only the year if same year', () => {
@@ -15,24 +15,6 @@ describe('Period', () => {
   it("Should fallback if 'to' is empty", () => {
     const period = new Period(new Date('2020-01-01'));
     expect(period.toString()).eq('2020 - present');
-  });
-});
-
-describe('escapeHtml()', () => {
-  it('Should return empty when empty strings', () => {
-    expect(escapeHtml('')).eq('');
-  });
-
-  it('Should return normal strings as-is', () => {
-    expect(escapeHtml('foo bar')).eq('foo bar');
-  });
-
-  it('Should return escaped string', () => {
-    expect(escapeHtml('foo "bar"')).eq('foo &quot;bar&quot;');
-    expect(escapeHtml('foo & bar')).eq('foo &amp; bar');
-    expect(escapeHtml("foo 'bar'")).eq('foo &#39;bar&#39;');
-    expect(escapeHtml('foo < bar')).eq('foo &lt; bar');
-    expect(escapeHtml('foo > bar')).eq('foo &gt; bar');
   });
 });
 

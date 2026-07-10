@@ -10,11 +10,12 @@ import NavigationBanner from '@components/common/navigation/navigation-banner.ts
 
 interface Props {
   title?: string;
+  renderNavigation?: boolean;
   renderAvatar: boolean;
 }
 
 export const Page = (props: PropsWithChildren<Props>): ReactElement => {
-  const { renderAvatar, children } = props;
+  const { renderAvatar, renderNavigation = true, children } = props;
 
   return (
     <>
@@ -32,16 +33,18 @@ export const Page = (props: PropsWithChildren<Props>): ReactElement => {
         <div className="mx-auto w-full max-w-7xl lg:px-8">
           <div className="relative px-4 sm:px-8 lg:px-12">
             <header className="mx-auto max-w-2xl lg:max-w-5xl">
-              <Navigation
-                leftSlot={
-                  renderAvatar && (
-                    <Link aria-label="Home" className="pointer-events-auto inline-block" to="/">
-                      <Avatar image={{ src: avatar, alt: 'Avatar' }} size={AvatarSize.xs} />
-                    </Link>
-                  )
-                }
-                links={navigationLinks}
-              />
+              {renderNavigation && (
+                <Navigation
+                  leftSlot={
+                    renderAvatar && (
+                      <Link aria-label="Home" className="pointer-events-auto inline-block" to="/">
+                        <Avatar image={{ src: avatar, alt: 'Avatar' }} size={AvatarSize.xs} />
+                      </Link>
+                    )
+                  }
+                  links={navigationLinks}
+                />
+              )}
             </header>
           </div>
         </div>

@@ -1,17 +1,21 @@
 import type { HTMLImage, HTMLSimpleLink } from '@shared/utils.ts';
 
-import avatar from '@assets/images/mathias_corp.webp';
-
 export interface ProjectsConfig {
   projects: Project[];
 }
 
 export interface Project {
   pinned?: boolean;
-  logo: HTMLImage;
+  preview: HTMLImage;
   title: string;
-  link: HTMLSimpleLink;
   description: string;
+  technologies: string[];
+  links: ProjectLinks;
+}
+
+export interface ProjectLinks {
+  github: HTMLSimpleLink;
+  demo?: HTMLSimpleLink;
 }
 
 export const projectsConfig: ProjectsConfig = {
@@ -19,69 +23,85 @@ export const projectsConfig: ProjectsConfig = {
     {
       pinned: true,
       title: 'Witsb',
-      logo: {
-        alt: 'Witsb icon',
-        src: '/assets/logos/witsb.webp',
+      preview: {
+        alt: 'Witsb preview',
+        src: '/assets/logos/witsb.svg',
       },
-      link: {
-        href: 'https://github.com/mathiasbosman/witsb',
-        text: 'GitHub repo',
+      links: {
+        github: {
+          href: 'https://github.com/mathiasbosman/witsb',
+          text: 'GitHub',
+        },
       },
-      description:
-        'Where is the save button? My take on a simple API to store files and reference them in a unique way.',
+      technologies: ['Java', 'Spring Boot', 'Docker', 'PostgreSQL'],
+      description: 'Open-source storage API for immutable file references.',
     },
     {
       pinned: false,
-      logo: {
-        alt: 'Lit logo',
-        src: '/assets/logos/lit.webp',
+      preview: {
+        alt: 'Lit sandbox preview',
+        src: '/assets/logos/lit.svg',
       },
       title: 'Lit sandbox',
-      link: {
-        href: 'https://github.com/mathiasbosman/lit-sandbox',
-        text: 'GitHub repo',
+      links: {
+        github: {
+          href: 'https://github.com/mathiasbosman/lit-sandbox',
+          text: 'GitHub',
+        },
       },
-      description: 'Sandbox project I used to learn some Lit. Uses Vite and Vitest.',
+      technologies: ['TypeScript', 'Lit', 'Vite', 'Vitest'],
+      description: 'Frontend playground to learn Lit with modern tooling.',
     },
     {
       pinned: true,
-      logo: {
-        alt: 'MQTT logo',
-        src: '/assets/logos/mqtt.webp',
+      preview: {
+        alt: 'MQTT stress test preview',
+        src: '/assets/logos/mqtt.svg',
       },
       title: 'MQTT stress test',
-      link: {
-        href: 'https://github.com/mathiasbosman/mqtt-stresstest',
-        text: 'GitHub repo',
+      links: {
+        github: {
+          href: 'https://github.com/mathiasbosman/mqtt-stresstest',
+          text: 'GitHub',
+        },
       },
-      description:
-        'A Spring Boot application to stress test a MQTT service. Originally used to stress test ThingsBoard.',
+      technologies: ['Java', 'Spring Boot', 'MQTT', 'Docker'],
+      description: 'Load test harness for MQTT infrastructures and brokers.',
     },
     {
-      logo: {
-        alt: 'Bitvavo logo',
-        src: '/assets/logos/bitvavo.webp',
+      preview: {
+        alt: 'Cryptobot preview',
+        src: '/assets/logos/bitvavo.svg',
       },
       title: 'Cryptobot',
-      link: {
-        href: 'https://github.com/mathiasbosman/cryptobot',
-        text: 'GitHub repo',
+      links: {
+        github: {
+          href: 'https://github.com/mathiasbosman/cryptobot',
+          text: 'GitHub',
+        },
       },
-      description:
-        'A trial cryptocurrency bot integration for the Bitvavo API. Purely for academic purposes... truly. Written in Java.',
+      technologies: ['Java', 'REST', 'Automation'],
+      description: 'Experimental crypto trading bot integration for Bitvavo.',
     },
     {
       pinned: true,
-      logo: {
-        src: avatar,
-        alt: 'Avatar',
+      preview: {
+        src: '/assets/logos/m.svg',
+        alt: 'mathiasbosman.me preview',
       },
       title: 'mathiasbosman.me',
-      link: {
-        href: 'https://github.com/mathiasbosman/mathiasbosman.me',
-        text: 'GitHub repo',
+      links: {
+        github: {
+          href: 'https://github.com/mathiasbosman/mathiasbosman.me',
+          text: 'GitHub',
+        },
+        demo: {
+          href: 'https://mathiasbosman.me',
+          text: 'Live demo',
+        },
       },
-      description: 'This very website! Using React, Tailwind CSS and Vercel for hosting.',
+      technologies: ['React', 'Tailwind CSS', 'TypeScript', 'Vercel'],
+      description: 'Personal website and digital garden built for speed.',
     },
   ],
 };

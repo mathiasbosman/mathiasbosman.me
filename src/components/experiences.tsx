@@ -8,51 +8,34 @@ interface Props {
 export const Experiences = (props: PropsWithChildren<Props>): ReactElement => {
   const { experiences } = props;
 
-  const renderSubtitle = (subtitle: string): ReactElement => (
-    <>
-      <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
-      <span className="relative z-10">{subtitle}</span>
-    </>
-  );
-
-  const renderLink = (item: ExperienceItem): ReactElement =>
-    item.link ? <a href={item.link.href}>{renderSubtitle(item.title)}</a> : renderSubtitle(item.title);
-
   const renderItem = (item: ExperienceItem, key: number): ReactElement => (
-    <article key={key} className="group relative flex flex-col items-start">
-      <h3 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
-        <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-xl"></div>
-        {renderLink(item)}
-      </h3>
-      <p className="relative z-10 order-first mb-3 flex items-center pl-3.5 text-sm text-zinc-400 contrast-more:text-zinc-600 dark:text-zinc-500">
-        <span className="absolute inset-y-0 left-0 flex items-center" aria-hidden="true">
-          <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
-        </span>
-        {item.period.toString()}
-      </p>
-      {item.description && (
-        <p
-          className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400"
-          dangerouslySetInnerHTML={{ __html: item.description }}
-        ></p>
-      )}
-      {item.link && (
-        <div aria-hidden="true" className="relative z-10 mt-4 flex items-center text-sm font-medium text-indigo-500">
-          {item.link.text}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            className="ml-1 h-3 w-3 stroke-current"
+    <article key={key} className="relative pl-8">
+      <span className="absolute left-4 top-6 z-10 flex h-5 w-5 items-center justify-center rounded-full border border-zinc-300 bg-white dark:border-zinc-600 dark:bg-zinc-900">
+        <span className="h-2 w-2 rounded-full bg-violet-500"></span>
+      </span>
+      <div className="group ml-6 rounded-md border border-zinc-200/80 bg-white/90 p-5 transition duration-300 hover:-translate-y-1 hover:border-violet-300/80 hover:shadow-lg hover:shadow-zinc-900/10 dark:border-zinc-700/50 dark:bg-zinc-900/80 dark:hover:border-violet-500/50 dark:hover:shadow-black/30">
+        <p className="text-xs font-medium uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
+          {item.period.toString()}
+        </p>
+        <h3 className="relative mt-2 text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+          {item.title}
+        </h3>
+        {item.description && (
+          <p
+            className="mt-3 text-sm leading-6 text-zinc-600 dark:text-zinc-400"
+            dangerouslySetInnerHTML={{ __html: item.description }}
+          ></p>
+        )}
+        {item.link && (
+          <a
+            href={item.link.href}
+            aria-label={item.link.text}
+            className="mt-4 inline-flex items-center text-sm font-semibold text-zinc-600 transition hover:bg-gradient-to-r hover:from-violet-500 hover:to-pink-600 hover:bg-clip-text hover:text-transparent dark:text-zinc-300"
           >
-            <path
-              fillRule="evenodd"
-              d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </div>
-      )}
+            {item.link.text} →
+          </a>
+        )}
+      </div>
     </article>
   );
 
@@ -60,20 +43,36 @@ export const Experiences = (props: PropsWithChildren<Props>): ReactElement => {
     <section
       key={key}
       aria-labelledby={`ref:${experience.place}`}
-      className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40"
+      className="group relative overflow-hidden rounded-2xl px-0 sm:px-8"
     >
-      <div className="grid max-w-3xl grid-cols-1 items-baseline gap-y-8 md:grid-cols-4">
-        <h2 id={`ref:${experience.place}`} className="text-sm font-semibold text-zinc-800 dark:text-zinc-100">
-          {experience.place}
-        </h2>
-        <div className="md:col-span-3">
-          <div className="space-y-16">{experience.items.map((item, i) => renderItem(item, i))}</div>
+      <div className="flex items-center gap-4">
+        {experience.logo && (
+          <div className="flex h-12 w-12 items-center justify-center overflow-hidden">
+            <img
+              src={experience.logo.src}
+              alt={experience.logo.alt}
+              className="h-10 w-10 object-contain"
+              loading="lazy"
+            />
+          </div>
+        )}
+        <div>
+          <h2 id={`ref:${experience.place}`} className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
+            {experience.place}
+          </h2>
         </div>
+      </div>
+      <div className="relative mt-8 space-y-5">
+        <span
+          aria-hidden="true"
+          className="absolute bottom-3 left-[26px] top-3 w-px bg-zinc-200 dark:bg-zinc-700"
+        ></span>
+        {experience.items.map((item, i) => renderItem(item, i))}
       </div>
     </section>
   );
 
-  return <div className="space-y-20">{experiences.map((item, i) => renderSection(item, i))}</div>;
+  return <div className="space-y-10">{experiences.map((item, i) => renderSection(item, i))}</div>;
 };
 
 export default Experiences;

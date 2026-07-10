@@ -1,17 +1,14 @@
 import type { ReactElement } from 'react';
 import { Employment } from '@components/employment.tsx';
-import { Contact } from '@components/contact.tsx';
 import ContentWrapper from '@components/common/content-wrapper.tsx';
-import Avatar, { AvatarSize } from '@components/avatar.tsx';
 import Projects from '@components/projects.tsx';
 import ImageCarousel from '@components/image-carousel.tsx';
-import PageTitle from '@components/typography/page-title.tsx';
 import SocialIconlink from '@components/typography/social-iconlink.tsx';
 import { projectsConfig } from '@models/config/project.config.ts';
 import { experienceConfig } from '@models/config/experience.config.ts';
-import { LINK_DEHORA, LINK_GITHUB, LINK_LINKEDIN } from '@/constants.ts';
+import { LINK_GITHUB, LINK_LINKEDIN } from '@/constants.ts';
 import { GitHubIcon, LinkedInIcon } from '@shared/icons.tsx';
-import avatar from '@assets/images/mathias_corp.webp';
+import img_corp from '@assets/images/mathias_corp.webp';
 import img_luna from '@assets/images/luna.webp';
 import img_phantasialand from '@assets/images/phantasialand.webp';
 import img_lights from '@assets/images/mathias_lights.webp';
@@ -21,7 +18,6 @@ import img_xsr from '@assets/images/xsr125.webp';
 import img_bike from '@assets/images/mathias_bike.webp';
 import img_desk from '@assets/images/mathias_desk.webp';
 import img_theatre from '@assets/images/mathias_theatre.webp';
-import img_corp from '@assets/images/mathias_corp.webp';
 import img_curacao from '@assets/images/mathias_curacao.webp';
 import Link from '@components/typography/link.tsx';
 
@@ -29,32 +25,29 @@ export const HomePage = (): ReactElement => {
   return (
     <>
       <ContentWrapper>
-        <section className="relative px-2 sm:px-8 lg:px-12">
-          <Avatar image={{ src: avatar, alt: 'Avatar' }} size={AvatarSize.s} />
-          <PageTitle
-            title="Mathias Bosman"
-            subtitleSlot={
-              <div className="mt-2 text-2xl font-medium sm:text-4xl">
-                Software&nbsp;developer, IT&nbsp;project&nbsp;manager, network&nbsp;engineer &amp; lighting&nbsp;tech
-              </div>
-            }
-          />
-          <div className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            <p>
-              I&apos;m Mathias — a software developer, IT project manager, and network engineer based near Dendermonde
-              in East Flanders, Belgium.
-              <br />
-              In my spare time, you might find me: in a theatre (either watching whatever is on stage or fiddling with
-              the stage lights), swimming, visiting amusement parks or riding my race- or motorbike.
+        <section className="relative flex min-h-[calc(100svh-25rem)] items-center px-2 sm:px-8 lg:px-12">
+          <div className="max-w-4xl">
+            <p className="text-2xl font-medium text-zinc-800 dark:text-zinc-100 sm:text-3xl">Hi, I&apos;m Mathias.</p>
+            <h1 className="mt-4 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-6xl">
+              <span className="bg-gradient-to-r  from-violet-500 to-pink-600 bg-clip-text text-transparent">
+                Backend engineer
+              </span>{' '}
+              <br /> building software that solves <br /> real-world problems.
+            </h1>
+            <p className="mt-6 text-lg font-medium text-zinc-700 dark:text-zinc-300 sm:text-2xl">
+              Java • Spring Boot • React • SQL
             </p>
-            <p>
-              Currently working for <Link link={LINK_DEHORA} target="_blank" /> as a back-end developer.
+            <p className="mt-8 text-base text-zinc-600 dark:text-zinc-400 sm:text-lg">
+              Currently building workforce management software at Déhora Belgium.
             </p>
-          </div>
+            <p className="mt-8 text-base text-zinc-800 dark:text-zinc-100 sm:text-lg">
+              <Link link={{ href: '#projects', text: '↓ View my recent projects' }} scrollIntoView />
+            </p>
 
-          <div className="mt-6 flex gap-6">
-            <SocialIconlink link={LINK_GITHUB} icon={GitHubIcon} />
-            <SocialIconlink link={LINK_LINKEDIN} icon={LinkedInIcon} />
+            <div className="mt-10 flex gap-6">
+              <SocialIconlink link={LINK_GITHUB} icon={GitHubIcon} />
+              <SocialIconlink link={LINK_LINKEDIN} icon={LinkedInIcon} />
+            </div>
           </div>
         </section>
       </ContentWrapper>
@@ -106,7 +99,7 @@ export const HomePage = (): ReactElement => {
           },
         ]}
       />
-      <div className="mt-8 px-2 sm:px-8">
+      <div className="mt-8 scroll-mt-24 px-2 sm:px-8" id="projects">
         <ContentWrapper>
           <div className="mx-auto mt-10 max-w-2xl lg:mt-6 lg:max-w-5xl">
             <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
@@ -115,9 +108,6 @@ export const HomePage = (): ReactElement => {
                 <Projects projects={projectsConfig.projects} pinned={true} />
               </section>
               <section className="space-y-10 lg:pl-16 xl:pl-24">
-                <div className="rounded-lg border border-zinc-100 p-6 dark:border-zinc-700/40">
-                  <Contact />
-                </div>
                 <div className="rounded-lg border border-zinc-100 p-6 dark:border-zinc-700/40">
                   <Employment experiences={experienceConfig.experiences} />
                 </div>

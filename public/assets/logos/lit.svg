@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 248" role="img" aria-labelledby="title desc">
+  <title id="title">Lit logo</title>
+  <desc id="desc">Lit-inspired logo with multicolor geometric icon.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1B4B" />
+      <stop offset="100%" stop-color="#0B1026" />
+    </linearGradient>
+  </defs>
+  <rect width="560" height="248" rx="16" fill="url(#bg)" />
+  <g transform="translate(130 36)">
+    <polygon points="84,0 168,42 168,126 84,168 0,126 0,42" fill="#324FFF" />
+    <polygon points="84,0 126,21 84,42 42,21" fill="#58E6A9" />
+    <polygon points="84,126 126,147 84,168 42,147" fill="#58E6A9" />
+    <polygon points="42,21 84,42 84,126 42,105" fill="#0EA5E9" />
+    <polygon points="126,21 84,42 84,126 126,105" fill="#6E78FF" />
+  </g>
+  <text x="370" y="138" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="3">
+    LIT
+  </text>
+</svg>
