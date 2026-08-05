@@ -100,7 +100,7 @@ Every pull request will deploy a preview app.
 - [Vite][link_vite]
 - [Cypress][link_cypress]
 
-_For other dependencies used check out the [package.json](package.json) file._
+_For other dependencies used check out the [package.json](../package.json) file._
 
 [link_mathiasbosman_me]: https://mathiasbosman.me
 [link_react]: https://react.dev

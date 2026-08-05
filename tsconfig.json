@@ -23,9 +23,7 @@
       "@/*": ["./src/*"],
       "@assets/*": ["./src/assets/*"],
       "@components/*": ["./src/components/*"],
-      "@models/*": ["./src/models/*"],
-      "@shared/*": ["./src/shared/*"],
-      "@pages/*": ["./src/pages/*"]
+      "@models/*": ["./src/models/*"]
     }
   },
   "include": ["src/**/*", "test/**/*"],

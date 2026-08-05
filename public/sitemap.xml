@@ -4,16 +4,4 @@
     <lastmod>{gets updated via preInstall script}</lastmod>
     <loc>https://mathiasbosman.me/</loc>
   </url>
-  <url>
-    <lastmod>{gets updated via preInstall script}</lastmod>
-    <loc>https://mathiasbosman.me/about</loc>
-  </url>
-  <url>
-    <lastmod>{gets updated via preInstall script}</lastmod>
-    <loc>https://mathiasbosman.me/projects</loc>
-  </url>
-  <url>
-    <lastmod>{gets updated via preInstall script}</lastmod>
-    <loc>https://mathiasbosman.me/experiences</loc>
-  </url>
 </urlset>

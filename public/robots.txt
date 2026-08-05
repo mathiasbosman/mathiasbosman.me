@@ -6,7 +6,4 @@ Disallow: /*.png$
 User-agent: Twitterbot
 Allow: /assets
 
-User-agent: facebookexternalhit
-Allow: /assets
-
-Sitemap: http://mathiasbosman.me/sitemap.xml
+Sitemap: https://mathiasbosman.me/sitemap.xml

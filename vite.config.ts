@@ -20,16 +20,8 @@ export default defineConfig({
         replacement: fileURLToPath(new URL('./src/components', import.meta.url)),
       },
       {
-        find: '@shared',
-        replacement: fileURLToPath(new URL('./src/shared', import.meta.url)),
-      },
-      {
         find: '@models',
         replacement: fileURLToPath(new URL('./src/models', import.meta.url)),
-      },
-      {
-        find: '@pages',
-        replacement: fileURLToPath(new URL('./src/pages', import.meta.url)),
       },
     ],
   },

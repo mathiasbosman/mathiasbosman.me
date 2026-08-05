@@ -24,7 +24,7 @@ export default defineConfig({
     },
   },
   includeShadowDom: true,
-  fixturesFolder: './fixtures',
+  fixturesFolder: false,
   component: {
     supportFile: './support/component.ts',
     indexHtmlFile: './support/component-index.html',

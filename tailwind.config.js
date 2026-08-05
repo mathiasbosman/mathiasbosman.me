@@ -1,17 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: 'class',
   content: ['./index.html', './src/**/*.tsx'],
   theme: {
     extend: {
-      keyframes: {
-        fade: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-      },
-      animation: {
-        'fade-in': 'fade 1.2s ease-in-out forwards',
+      colors: {
+        acid: '#DFFF00',
+        electric: '#1756FF',
+        'electric-dark': '#104FE9',
+        ink: '#111820',
+        mist: '#DEDFD9',
+        paper: '#F3F0E8',
       },
     },
   },
