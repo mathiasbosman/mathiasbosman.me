@@ -56,7 +56,7 @@ export const HeroSection = (): ReactElement => {
               <figure className="relative rotate-[1.5deg] border-[0.375rem] border-ink bg-ink">
                 <img
                   alt="Portrait of Mathias Bosman"
-                  className="aspect-[4/5] w-full bg-mist object-cover contrast-[1.05] grayscale"
+                  className="aspect-[4/5] w-full bg-mist object-cover contrast-[1.05] grayscale transition duration-300 hover:rotate-0 hover:grayscale-0"
                   decoding="async"
                   height="1000"
                   src={profilePicture}
