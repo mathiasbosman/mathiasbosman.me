@@ -1,4 +1,4 @@
-import { allPages } from '../config.ts';
+import { rootPage, sectionIds } from '../config.ts';
 import type { Result as AxeResult } from 'axe-core';
 
 const logViolations = (violations: AxeResult[]) => {
@@ -18,50 +18,40 @@ const logViolations = (violations: AxeResult[]) => {
 };
 
 describe('A11 checks', () => {
-  const visitAndInject = (path: string) => {
-    cy.visit(path);
-    // Wait for hydration/paint
-    cy.get('main', { timeout: 10000 }).should('be.visible');
+  const visitAndInject = () => {
+    cy.visit(rootPage);
+    cy.get('main#main-content', { timeout: 10000 }).should('be.visible');
     cy.injectAxe();
   };
 
-  context('Medium viewport', { viewportWidth: 640, viewportHeight: 1250 }, () => {
-    allPages.forEach((page) => {
-      it(`Page passes a11y: ${page}`, () => {
-        visitAndInject(page);
-        cy.checkA11y(undefined, undefined, logViolations);
-      });
+  context('Desktop viewport', { viewportWidth: 1024, viewportHeight: 900 }, () => {
+    it('passes automated accessibility checks', () => {
+      visitAndInject();
+      cy.checkA11y(undefined, undefined, logViolations);
     });
   });
 
-  context('Small viewport', { viewportWidth: 639, viewportHeight: 1250 }, () => {
-    allPages.forEach((page) => {
-      it(`Page passes a11y: ${page}`, () => {
-        visitAndInject(page);
-        cy.checkA11y(undefined, undefined, logViolations);
-      });
-    });
-
-    it('Navigation banner (drawer) is accessible when open', () => {
-      visitAndInject('/');
-      cy.get('button[aria-controls="mobile-nav"]').should('be.visible');
-      cy.get('button[aria-controls="mobile-nav"]').click();
-      cy.get('#mobile-nav').should('be.visible');
-
-      cy.checkA11y('#mobile-nav', undefined, logViolations);
+  context('Mobile viewport', { viewportWidth: 375, viewportHeight: 812 }, () => {
+    it('passes automated accessibility checks', () => {
+      visitAndInject();
+      cy.checkA11y(undefined, undefined, logViolations);
     });
   });
 
-  describe('Landmarks present', () => {
-    allPages.forEach((page) => {
-      it(`Landmarks exist on: ${page}`, () => {
-        cy.visit(page);
-        cy.get('h1').should('be.visible');
-        cy.get('main').should('be.visible');
-        cy.get('nav').should('exist'); // nav may be hidden on small viewports; we just assert it exists
-        cy.get('header').should('be.visible');
-        cy.get('footer').should('be.visible');
-      });
+  it('provides the page landmarks and a logical heading structure', () => {
+    cy.visit(rootPage);
+    cy.get('header').should('be.visible');
+    cy.get('nav[aria-label="Primary navigation"]').should('exist');
+    cy.get('main#main-content').should('be.visible');
+    cy.get('main#main-content h1').should('have.length', 1);
+    cy.get('footer').should('be.visible');
+
+    sectionIds.forEach((sectionId, index) => {
+      cy.get(`main#main-content > section#${sectionId}`)
+        .should('exist')
+        .within(() => {
+          cy.get(index === 0 ? 'h1' : 'h2').should('have.length', 1);
+        });
     });
   });
 });

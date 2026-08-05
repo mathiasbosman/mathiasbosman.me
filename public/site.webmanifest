@@ -1,8 +1,9 @@
 {
-  "name": "mathiasbosman.me",
-  "short_name": "mathiasbosman.me",
-  "description": "Mathias Bosman - IT project manager, software designer, network engineer, and lighting tech",
-  "start_url": "https://mathiasbosman.me",
+  "name": "Mathias Bosman - Backend & Java Software Developer",
+  "short_name": "Mathias Bosman",
+  "description": "Mathias Bosman is a backend and Java software developer in Belgium, turning complex operational rules into maintainable Java and Spring Boot products.",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -15,7 +16,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#F3F0E8",
+  "background_color": "#F3F0E8",
   "display": "standalone"
 }

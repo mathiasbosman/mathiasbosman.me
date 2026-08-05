@@ -3,61 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Mathias Bosman - IT project manager, software and network engineer</title>
+    <title>Mathias Bosman - Backend &amp; Java Software Developer</title>
     <meta
-      content="I'm Mathias, an IT project manager, software developer and network engineer based in Lebbeke, Belgium.
-In my spare time I like to fiddle with stage lights.
-Currently full-time employed at the Department of Environment of the Flemish Government."
+      content="Mathias Bosman is a backend and Java software developer in Belgium, turning complex operational rules into maintainable Java and Spring Boot products."
       name="description"
     />
+    <link href="https://mathiasbosman.me/" rel="canonical" />
     <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
     <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
     <link href="/favicon-32x32.png" rel="shortcut icon" sizes="32x32" type="image/png" />
     <link href="/favicon-16x16.png" rel="shortcut icon" sizes="16x16" type="image/png" />
     <link href="/site.webmanifest" rel="manifest" />
     <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
-    <meta content="dark light" name="color-scheme" />
-    <meta content="#da532c" name="msapplication-TileColor" />
-    <meta content="#fafafa" media="(prefers-color-scheme: light)" name="theme-color" />
-    <meta content="#000000" media="(prefers-color-scheme: dark)" name="theme-color" />
-    <meta content="Mathias Bosman - IT project manager, software and network engineer" property="og:title" />
+    <meta content="light" name="color-scheme" />
+    <meta content="#F3F0E8" name="msapplication-TileColor" />
+    <meta content="#F3F0E8" name="theme-color" />
+    <meta content="Mathias Bosman - Backend &amp; Java Software Developer" property="og:title" />
     <meta content="Mathias Bosman" property="og:site_name" />
     <meta content="https://mathiasbosman.me/" property="og:url" />
-    <meta content="I'm Mathias, backend engineer based near Dendermonde, Belgium." property="og:description" />
+    <meta
+      content="Mathias Bosman is a backend and Java software developer in Belgium, turning complex operational rules into maintainable Java and Spring Boot products."
+      property="og:description"
+    />
     <meta content="website" property="og:type" />
     <meta content="https://mathiasbosman.me/assets/og_image.webp" property="og:image" />
+    <meta content="200" property="og:image:width" />
+    <meta content="200" property="og:image:height" />
+    <meta content="image/webp" property="og:image:type" />
+    <meta content="Portrait of Mathias Bosman" property="og:image:alt" />
     <meta content="summary" name="twitter:card" />
-    <meta content="Mathias Bosman - IT project manager, software and network engineer" name="twitter:title" />
+    <meta content="Mathias Bosman - Backend &amp; Java Software Developer" name="twitter:title" />
     <meta content="@MathiasBosman" name="twitter:site" />
     <meta content="@MathiasBosman" name="twitter:creator" />
-    <meta content="I'm Mathias, backend engineer based near Dendermonde, Belgium." name="twitter:description" />
+    <meta
+      content="Mathias Bosman is a backend and Java software developer in Belgium, turning complex operational rules into maintainable Java and Spring Boot products."
+      name="twitter:description"
+    />
     <meta content="https://mathiasbosman.me/assets/og_image.webp" name="twitter:image" />
-    <script>
-      (function () {
-        // avoid "flashing" the user
-        try {
-          const saved = localStorage.getItem('theme'); // 'system' | 'light' | 'dark' | null
-          const mql = window.matchMedia('(prefers-color-scheme: dark)');
-          const dark = saved === 'dark' || ((!saved || saved === 'system') && mql.matches);
-          if (dark) document.documentElement.classList.add('dark');
-        } catch (_) {}
-      })();
-    </script>
+    <meta content="Portrait of Mathias Bosman" name="twitter:image:alt" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Mathias Bosman",
-        "url": "https://mathiasbosman.me",
-        "jobTitle": "Java software developer & IT project manager",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Déhora Belgium"
-        },
+        "url": "https://mathiasbosman.me/",
+        "jobTitle": "Backend and Java Software Developer",
+        "description": "Mathias Bosman is a backend and Java software developer in Belgium, turning complex operational rules into maintainable Java and Spring Boot products.",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Dendermonde",
-          "addressRegion": "East Flanders",
           "addressCountry": "BE"
         },
         "sameAs": [
@@ -72,12 +65,13 @@ Currently full-time employed at the Department of Environment of the Flemish Gov
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Mathias Bosman",
-        "url": "https://mathiasbosman.me"
+        "url": "https://mathiasbosman.me/",
+        "description": "Portfolio of Mathias Bosman, a backend and Java software developer in Belgium."
       }
     </script>
   </head>
-  <body class="h-full bg-zinc-50 selection:bg-indigo-300 selection:text-indigo-900 dark:bg-black">
-    <div id="app-root" role="presentation" class="flex h-screen flex-col justify-between"></div>
+  <body class="min-h-full bg-[#F3F0E8] text-[#111820] selection:bg-[#DFFF00] selection:text-[#111820]">
+    <div id="app-root" class="min-h-full"></div>
     <script src="src/index.tsx" type="module"></script>
   </body>
 </html>
