@@ -7,6 +7,10 @@ html {
   scroll-padding-top: 1rem;
 }
 
+html.dark {
+  color-scheme: dark;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -18,4 +22,33 @@ body {
     'Geist', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
     'Noto Color Emoji';
   text-rendering: optimizeLegibility;
+}
+
+body,
+header,
+main > section,
+footer {
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease;
+}
+
+.dark body {
+  background: #090a0f;
+  color: #f3efe7;
+}
+
+.dark ::selection {
+  background: #ff2d78;
+  color: #090a0f;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body,
+  header,
+  main > section,
+  footer {
+    transition: none;
+  }
 }

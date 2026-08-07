@@ -5,14 +5,14 @@ import SectionLabel from '@components/ui/section-label.tsx';
 
 export const AboutSection = (): ReactElement => {
   return (
-    <section className="relative overflow-hidden bg-acid text-ink" id="about">
+    <section className="relative overflow-hidden bg-acid text-ink dark:bg-pink dark:text-night" id="about">
       <Container className="py-24 sm:py-28 lg:pb-20 lg:pt-32">
-        <SectionLabel className="text-ink/65" label="Beyond the commit" />
+        <SectionLabel className="text-ink/65 dark:text-night/90" label="Beyond the commit" />
         <div className="lg:col-span-8 lg:col-start-4">
           <h2 className="mt-8 max-w-[50rem] text-[clamp(2.75rem,5vw,4.5rem)] font-normal leading-[0.96] tracking-[-0.06em]">
             Curious by default, practical by choice.
           </h2>
-          <div className="mt-10 grid gap-6 text-sm leading-6 text-ink/70 sm:grid-cols-2 sm:gap-10">
+          <div className="mt-10 grid gap-6 text-sm leading-6 text-ink/70 dark:text-night/90 sm:grid-cols-2 sm:gap-10">
             {portfolioConfig.about.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
