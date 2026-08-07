@@ -29,6 +29,17 @@ describe('A11 checks', () => {
       visitAndInject();
       cy.checkA11y(undefined, undefined, logViolations);
     });
+
+    it('passes automated accessibility checks in dark mode', () => {
+      cy.visit(rootPage, {
+        onBeforeLoad(window) {
+          window.localStorage.setItem('theme', 'dark');
+        },
+      });
+      cy.get('html').should('have.class', 'dark');
+      cy.injectAxe();
+      cy.checkA11y(undefined, undefined, logViolations);
+    });
   });
 
   context('Mobile viewport', { viewportWidth: 375, viewportHeight: 812 }, () => {

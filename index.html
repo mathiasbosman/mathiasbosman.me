@@ -15,9 +15,28 @@
     <link href="/favicon-16x16.png" rel="shortcut icon" sizes="16x16" type="image/png" />
     <link href="/site.webmanifest" rel="manifest" />
     <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
-    <meta content="light" name="color-scheme" />
+    <meta content="light dark" name="color-scheme" />
     <meta content="#F3F0E8" name="msapplication-TileColor" />
     <meta content="#F3F0E8" name="theme-color" />
+    <script>
+      (() => {
+        let savedTheme = null;
+
+        try {
+          savedTheme = localStorage.getItem('theme');
+        } catch {
+          // The system preference remains available when storage is blocked.
+        }
+
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const useDarkTheme = savedTheme === 'dark' || (savedTheme === null && prefersDark);
+
+        document.documentElement.classList.toggle('dark', useDarkTheme);
+        document
+          .querySelector('meta[name="theme-color"]')
+          ?.setAttribute('content', useDarkTheme ? '#090A0F' : '#F3F0E8');
+      })();
+    </script>
     <meta content="Mathias Bosman - Backend &amp; Java Software Developer" property="og:title" />
     <meta content="Mathias Bosman" property="og:site_name" />
     <meta content="https://mathiasbosman.me/" property="og:url" />
@@ -70,7 +89,7 @@
       }
     </script>
   </head>
-  <body class="min-h-full bg-[#F3F0E8] text-[#111820] selection:bg-[#DFFF00] selection:text-[#111820]">
+  <body class="min-h-full bg-paper text-ink selection:bg-acid selection:text-ink dark:selection:bg-pink">
     <div id="app-root" class="min-h-full"></div>
     <script src="src/index.tsx" type="module"></script>
   </body>

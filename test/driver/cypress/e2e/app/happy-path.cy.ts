@@ -31,6 +31,22 @@ describe('One-page portfolio happy path', () => {
       cy.location('hash').should('eq', '#top');
       cy.get('#top').should('be.visible');
     });
+
+    it('switches themes and remembers the choice', () => {
+      cy.get('button[aria-label="Switch to dark mode"]')
+        .should('have.attr', 'aria-pressed', 'false')
+        .click()
+        .should('have.attr', 'aria-label', 'Switch to light mode')
+        .and('have.attr', 'aria-pressed', 'true');
+
+      cy.get('html').should('have.class', 'dark');
+      cy.window().its('localStorage.theme').should('eq', 'dark');
+
+      cy.reload();
+      cy.get('html').should('have.class', 'dark');
+      cy.get('button[aria-label="Switch to light mode"]').click();
+      cy.get('html').should('not.have.class', 'dark');
+    });
   });
 
   context('Mobile navigation', { viewportWidth: 375, viewportHeight: 812 }, () => {
