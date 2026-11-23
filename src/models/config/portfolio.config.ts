@@ -143,8 +143,8 @@ export const portfolioConfig = {
   about: {
     paragraphs: [
       'I started building things with Game Maker in the late nineties, moved through Pascal and PHP, and found my professional home in Java. A bachelor’s degree in Programming & Multimedia turned that curiosity into a career.',
-      'I also trained as a stage-lighting technician; a second passion that still shapes how I think about timing, detail and audience experience. Away from a screen, you’ll usually find me swimming, cycling, at the theatre or out on my motorbike.',
+      'I also trained as a stage-lighting technician; a second passion that still shapes how I think about timing, detail and audience experience. At home, my Home Assistant obsession means there’s always one more thing to automate. Away from a screen, you’ll usually find me swimming, cycling, at the theatre or out on my motorbike.',
     ],
-    interests: ['Swimming', 'Cycling', 'Stage lighting', 'Motorcycles', 'Theme parks', 'Networks'],
+    interests: ['Swimming', 'Cycling', 'Stage lighting', 'Home Assistant', 'Motorcycles', 'Theme parks', 'Networks'],
   },
 } as const;
