@@ -6,7 +6,7 @@ export const SiteFooter = (): ReactElement => {
     <footer className="bg-ink text-white dark:bg-[#07080c] dark:text-warm">
       <Container className="grid min-h-[4.75rem] grid-cols-2 items-center gap-4 py-5 text-[0.625rem] sm:grid-cols-3">
         <a
-          aria-label="Mathias Bosman, back to top"
+          aria-label="MB. — Mathias Bosman, back to top"
           className="w-fit text-sm font-bold tracking-[-0.04em] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
           href="#top"
         >

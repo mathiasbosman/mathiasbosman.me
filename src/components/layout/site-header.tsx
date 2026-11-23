@@ -37,7 +37,7 @@ export const SiteHeader = (): ReactElement => {
       </a>
       <Container className="relative flex h-[4.5rem] items-center justify-between">
         <a
-          aria-label="Mathias Bosman, back to top"
+          aria-label="MB. — Mathias Bosman, back to top"
           className="text-sm font-bold tracking-[-0.04em] text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-electric dark:text-warm dark:focus-visible:outline-pink"
           href="#top"
         >
