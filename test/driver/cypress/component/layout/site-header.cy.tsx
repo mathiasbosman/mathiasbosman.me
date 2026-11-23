@@ -10,7 +10,7 @@ describe('<SiteHeader />', () => {
     cy.get('header').should('be.visible');
     cy.get('a[href="#main-content"]').should('have.text', 'Skip to content');
     cy.get('a[href="#top"]')
-      .should('have.attr', 'aria-label', 'Mathias Bosman, back to top')
+      .should('have.attr', 'aria-label', 'MB. — Mathias Bosman, back to top')
       .and('contain.text', 'MB.');
 
     cy.get('nav[aria-label="Primary navigation"]')

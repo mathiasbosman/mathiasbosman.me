@@ -15,7 +15,7 @@
     "lint:fix": "prettier . --write && eslint src test --ext .ts,.tsx --fix",
     "test:unit": "vitest run",
     "test:e2e": "cypress run --project test/driver/cypress",
-    "test:e2e:app": "cypress run --project test/driver/cypress --spec '**/e2e/app/**/*'",
+    "test:e2e:app": "cypress run --project test/driver/cypress --spec 'test/driver/cypress/e2e/app/**/*.cy.ts'",
     "test:component": "cypress run --project test/driver/cypress --component",
     "cy:ui": "cypress open --project test/driver/cypress",
     "prettier:check": "prettier . --check",
@@ -34,7 +34,7 @@
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.14",
     "axe-core": "^4.10.3",
-    "cypress": "^13.17.0",
+    "cypress": "^15.21.2",
     "cypress-axe": "^1.6.0",
     "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.1.0",
@@ -48,6 +48,6 @@
     "tailwindcss": "^3.4.0",
     "typescript": "^5.4.5",
     "vite": "^6.4.1",
-    "vitest": "^3.1.2"
+    "vitest": "^5.1.1"
   }
 }
